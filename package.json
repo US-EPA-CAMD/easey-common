@@ -30,6 +30,6 @@
     "@types/node": "^16.10.2"
   },
   "publishConfig": {
-    "@KyleHerceg:registry": "https://npm.pkg.github.com"
+    "@Kyle-Herceg:registry": "https://npm.pkg.github.com"
   }
 }
