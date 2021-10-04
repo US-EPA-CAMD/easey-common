@@ -1,0 +1,32 @@
+{
+  "name": "easey-common",
+  "version": "1.0.0",
+  "description": "Shared easey npm package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/US-EPA-CAMD/easey-common.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/US-EPA-CAMD/easey-common/issues"
+  },
+  "homepage": "https://github.com/US-EPA-CAMD/easey-common#readme",
+  "dependencies": {
+    "@nestjs/common": "^8.0.9",
+    "@nestjs/config": "^1.0.2",
+    "@nestjs/core": "^8.0.9",
+    "class-validator": "^0.13.1",
+    "express": "^4.17.1",
+    "json2csv": "^5.0.6",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^16.10.2"
+  }
+}
