@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
-  <file path="/Users/kyleherceg/Desktop/easey-common/src/utilities/parse-token.spec.ts">
-    <testCase name="parseToken() should return an object parsed from a string" duration="3"/>
-  </file>
   <file path="/Users/kyleherceg/Desktop/easey-common/src/guards/auth.guard.spec.ts">
     <testCase name="AuthGuard should be defined" duration="1"/>
     <testCase name="AuthGuard should validate properly and return true given good input" duration="1"/>
-    <testCase name="AuthGuard should error given no auth header" duration="9"/>
+    <testCase name="AuthGuard should error given no auth header" duration="10"/>
     <testCase name="AuthGuard should error given invalid bearer format" duration="1"/>
   </file>
 </testExecutions>
