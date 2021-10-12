@@ -126,6 +126,14 @@ export const propertyMetadata = {
       "The amount of allowances of vintage years up to but not including the current compliance year held in a compliance account. (This is for NBP, OTC)",
     example: 0,
   },
+  beginDate: {
+    fieldLabels: {
+      label: "",
+      value: "beginDate",
+    },
+    description: "Begin date for a given period of a unit's emissions.",
+    example: "2019-01-01",
+  },
   buyAccountName: {
     fieldLabels: {
       label: "Account Name (Transferee)",
@@ -327,6 +335,15 @@ export const propertyMetadata = {
       "Full description for the pollutant minimized by the respective control equipment or method.",
     example: "Particulates (Opacity)",
   },
+  controlTechnologies: {
+    fieldLabels: {
+      label: "",
+      value: "controlTechnologies",
+    },
+    description:
+      "Method or equipment used by the combusion unit to minimize Hg, NOx, PM, or SO2 emissions.",
+    example: "Baghouse",
+  },
   countOpTime: {
     fieldLabels: {
       label: "Operating Time Count",
@@ -422,6 +439,14 @@ export const propertyMetadata = {
     },
     description: "The ending serial number of an allowance block.",
     example: 276987,
+  },
+  endDate: {
+    fieldLabels: {
+      label: "",
+      value: "endDate",
+    },
+    description: "End date for a given period of a unit's emissions.",
+    example: "2019-01-31",
   },
   epaRegion: {
     fieldLabels: {
@@ -682,6 +707,15 @@ export const propertyMetadata = {
       "An indication of the condition of a unit relevant to the year (planned, operating, shutdown, etc.).",
     example: "Operating",
   },
+  operatingHoursOnly: {
+    fieldLabels: {
+      label: "",
+      value: "operatingHoursOnly",
+    },
+    description:
+      "Indicator of whether or not a request should return only data for hours where a unit operated.",
+    example: true,
+  },
   opTime: {
     fieldLabels: {
       label: "Operating Time",
@@ -740,6 +774,22 @@ export const propertyMetadata = {
     },
     description: "Indicator of whether or not the program is an ozone program.",
     example: false,
+  },
+  page: {
+    fieldLabels: {
+      label: "",
+      value: "page",
+    },
+    description: "Page number of data being requested.",
+    example: 1,
+  },
+  perPage: {
+    fieldLabels: {
+      label: "",
+      value: "perPage",
+    },
+    description: "Number of results per page.",
+    example: 100,
   },
   pmControlInfo: {
     fieldLabels: {
@@ -1105,6 +1155,15 @@ export const propertyMetadata = {
     description: "Last date of allowance trading activity for the program.",
     example: "2016-08-10",
   },
+  transactionBeginDate: {
+    fieldLabels: {
+      label: "",
+      value: "transactionBeginDate",
+    },
+    description:
+      "Begin date for a given period of an account's allowance transaction history.",
+    example: "2014-11-24",
+  },
   transactionDate: {
     fieldLabels: {
       label: "Transaction Date",
@@ -1112,6 +1171,15 @@ export const propertyMetadata = {
     },
     description: "The date the allowance transaction was confirmed.",
     example: "2014-11-24",
+  },
+  transactionEndDate: {
+    fieldLabels: {
+      label: "",
+      value: "transactionEndDate",
+    },
+    description:
+      "End date for a given period of an account's allowance transaction history.",
+    example: "2014-11-25",
   },
   transactionId: {
     fieldLabels: {
@@ -1154,6 +1222,14 @@ export const propertyMetadata = {
     },
     description: "Full description for the transaction type.",
     example: "Initial Allocation",
+  },
+  unitFuelType: {
+    fieldLabels: {
+      label: "",
+      value: "unitFuelType",
+    },
+    description: "Primary or Secondary fuel types combusted by the unit.",
+    example: "Coal",
   },
   unitId: {
     fieldLabels: {
