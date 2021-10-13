@@ -5,7 +5,7 @@
   "main": "index.js",
   "types": "index.d.js",
   "files": [
-    "dist/**/*"
+    "lib/**/*"
   ],
   "scripts": {
     "commit": "cz",
