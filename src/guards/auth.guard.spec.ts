@@ -1,7 +1,7 @@
 import { TestingModule, Test } from "@nestjs/testing";
 import { AuthGuard } from "./auth.guard";
 import { ConfigService } from "@nestjs/config";
-import { HttpModule } from "@nestjs/common";
+import { HttpModule } from "@nestjs/axios";
 
 jest.mock("../utilities/parse-token", () => ({
   parseToken: jest.fn(() =>

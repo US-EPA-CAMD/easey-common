@@ -4,12 +4,12 @@ import {
   ExecutionContext,
   BadRequestException,
   InternalServerErrorException,
-  HttpService,
 } from "@nestjs/common";
 import { Observable } from "rxjs";
 
 import { ConfigService } from "@nestjs/config";
 import { parseToken } from "../utilities/parse-token";
+import { HttpService } from "@nestjs/axios";
 
 @Injectable()
 export class AuthGuard implements CanActivate {
