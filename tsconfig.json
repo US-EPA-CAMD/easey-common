@@ -11,5 +11,7 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true
-  }
+  },
+  "include": ["src"],
+  "exclude": ["lib", "node_modules", "**/__tests__/*"]
 }
