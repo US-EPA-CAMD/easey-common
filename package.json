@@ -5,7 +5,7 @@
   "main": "index.js",
   "types": "index.d.js",
   "files": [
-    "lib/**/*"
+    "dist/**/*"
   ],
   "scripts": {
     "commit": "cz",
@@ -29,18 +29,20 @@
   "homepage": "https://github.com/US-EPA-CAMD/easey-common#readme",
   "dependencies": {
     "@nestjs/axios": "0.0.2",
-    "@nestjs/common": "^8.0.9",
+    "@nestjs/common": "^8.1.0",
     "@nestjs/config": "^1.0.2",
     "@nestjs/core": "^8.0.9",
-    "@nestjs/testing": "^8.0.9",
+    "@nestjs/testing": "^8.1.0",
     "@types/jest": "^27.0.2",
     "class-validator": "^0.13.1",
     "express": "^4.17.1",
     "jest-sonar-reporter": "^2.0.0",
     "json2csv": "^5.0.6",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.3.1",
-    "ts-jest": "^27.0.5"
+    "rxjs": "^7.4.0",
+    "ts-jest": "^27.0.5",
+    "uuid": "^8.3.2",
+    "winston": "^3.3.3"
   },
   "jest": {
     "moduleFileExtensions": [
