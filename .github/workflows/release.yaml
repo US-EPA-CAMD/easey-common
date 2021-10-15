@@ -1,9 +1,14 @@
 name: Release Workflow
-
 on:
   pull_request:
   push:
-    branches: [develop]
+    branches:
+      - +([0-9])?(.{+([0-9]),x}).x
+      - master
+      - next
+      - next-major
+      - beta
+      - alpha
 
 jobs:
   build-test:
@@ -20,8 +25,8 @@ jobs:
         env:
           CI: ""
         run: npm run build
+
   release:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
     needs: [build-test]
     steps:
