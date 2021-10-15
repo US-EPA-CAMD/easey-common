@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/US-EPA-CAMD/easey-common/compare/v1.2.2...v1.2.3) (2021-10-15)
+
+
+### Bug Fixes
+
+* potential bug fix ([d8c2d7c](https://github.com/US-EPA-CAMD/easey-common/commit/d8c2d7cce1fd2ebb19664f73bef7e5d44b762a8f))
+
 ## [1.2.2](https://github.com/US-EPA-CAMD/easey-common/compare/v1.2.1...v1.2.2) (2021-10-15)
 
 
