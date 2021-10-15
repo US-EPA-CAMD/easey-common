@@ -4,9 +4,6 @@
   "description": "Shared easey package",
   "main": "index.js",
   "types": "index.d.js",
-  "files": [
-    "lib/**/*"
-  ],
   "scripts": {
     "commit": "cz",
     "build": "tsc",
@@ -83,10 +80,10 @@
     "typescript": "^4.4.3"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com",
+    "pkgRoot": "lib"
   },
   "release": {
-    "pkgRoot": "lib",
     "branches": "develop",
     "plugins": [
       "@semantic-release/commit-analyzer",
