@@ -15,7 +15,8 @@
     "test:cov": "jest --coverage",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint '*/**/*.{js,ts}' --quiet --fix",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "postbuild": "cp package.json lib"
   },
   "repository": {
     "type": "git",
@@ -85,6 +86,7 @@
     "registry": "https://npm.pkg.github.com"
   },
   "release": {
+    "pkgRoot": "lib",
     "branches": "develop",
     "plugins": [
       "@semantic-release/commit-analyzer",
