@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/US-EPA-CAMD/easey-common/compare/v1.1.6...v1.2.0) (2021-10-15)
+
+
+### Features
+
+* changed build order ([0584c38](https://github.com/US-EPA-CAMD/easey-common/commit/0584c38e2d407ed53315ba47eb7050a198f8d4d0))
+
 ## [1.1.6](https://github.com/US-EPA-CAMD/easey-common/compare/v1.1.5...v1.1.6) (2021-10-15)
 
 
