@@ -13,7 +13,7 @@
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint '*/**/*.{js,ts}' --quiet --fix",
     "semantic-release": "semantic-release",
-    "postversion": "cp -r package.json lib"
+    "postversion": "cp -r package.json .."
   },
   "repository": {
     "type": "git",
@@ -118,6 +118,7 @@
         {
           "assets": [
             "package.json",
+            "lib/package.json",
             "package-lock.json",
             "CHANGELOG.md"
           ],
