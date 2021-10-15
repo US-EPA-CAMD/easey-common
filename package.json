@@ -81,9 +81,9 @@
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",
-    "pkgRoot": "lib"
   },
   "release": {
+    "pkgRoot": "lib",
     "branches": "develop",
     "plugins": [
       "@semantic-release/commit-analyzer",
