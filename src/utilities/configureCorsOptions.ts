@@ -6,6 +6,9 @@ export const configureCorsOptions = async (req: Request, appName: string, callba
   let corsOptions;
   const originHeader = req.header('Origin');
 
+  console.log(`appName: ${appName}`);
+  console.log(`originHeader: ${originHeader}`);
+
   if (originHeader !== null && originHeader !== undefined) {
     const manager = getManager();
     const corsResults = await manager.query(`
@@ -19,6 +22,8 @@ export const configureCorsOptions = async (req: Request, appName: string, callba
       ORDER BY key, value;
     `);
 
+    console.log(corsResults);
+
     const allowedOrigins = corsResults.filter(i => i.key === 'origin');
     const allowedHeaders = corsResults.filter(i => i.key === 'header');
     const allowedMethods = corsResults.filter(i => i.key === 'method');
@@ -29,6 +34,10 @@ export const configureCorsOptions = async (req: Request, appName: string, callba
         value: originHeader
       });
     }
+
+    console.log(allowedOrigins);
+    console.log(allowedHeaders);
+    console.log(allowedMethods);
 
     corsOptions = {
       origin: allowedOrigins.map(i => i.value).includes(originHeader) ? originHeader : false,
@@ -43,6 +52,8 @@ export const configureCorsOptions = async (req: Request, appName: string, callba
       methods: [],
     };
   }
+
+  console.log(corsOptions);
 
   callback(null, corsOptions);
 }
