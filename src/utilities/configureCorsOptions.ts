@@ -1,4 +1,8 @@
-const configureCorsOptions = async (req: Request, appName: string, callback: CorsOptionsCallback) => {
+import { Request } from 'express';
+import { getManager } from 'typeorm';
+import { CorsOptionsCallback } from '@nestjs/common/interfaces/external/cors-options.interface';
+
+export const configureCorsOptions = async (req: Request, appName: string, callback: CorsOptionsCallback) => {
   let corsOptions;
   const originHeader = req.header('Origin');
 
@@ -42,5 +46,3 @@ const configureCorsOptions = async (req: Request, appName: string, callback: Cor
 
   callback(null, corsOptions);
 }
-
-export configureCorsOptions;
