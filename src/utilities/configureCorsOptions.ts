@@ -49,7 +49,7 @@ export const configureCorsOptions = async (req: Request, appName: string, callba
     corsOptions = {
       origin: false,
       exposedHeaders: [],
-      methods: [],
+      methods: [], 
     };
   }
 
