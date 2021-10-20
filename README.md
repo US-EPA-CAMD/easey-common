@@ -12,7 +12,7 @@ These instructions will get you a copy of the project package up and running and
 ### Prerequisites
 
 - Project running node
-- An ```.npmrc``` file existing in the root directory, with the contents of: ``` @us-epa-camd:registry=https://npm.pkg.github.com ```
+- A ```.npmrc``` file existing in the root directory, with the contents of: ``` @us-epa-camd:registry=https://npm.pkg.github.com ```
 - [Authenticated to npm package registry on local machine](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry)
 
 ### Installing
@@ -22,7 +22,9 @@ These instructions will get you a copy of the project package up and running and
 
 ### Using
 
-- Import desired files from folder within package
-For exaple, to insert the logger: ``` import { Logger } from '@us-epa-camd/easey-common/logger'; ```
+- Import desired files from folder within package.
+- For example, to insert the logger: ``` import { Logger } from '@us-epa-camd/easey-common/logger'; ```
+
+
 
 
