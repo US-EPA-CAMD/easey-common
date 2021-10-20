@@ -1,3 +1,21 @@
+# [1.5.0](https://github.com/US-EPA-CAMD/easey-common/compare/v1.4.0...v1.5.0) (2021-10-20)
+
+
+### Bug Fixes
+
+* added index file for cors ([b32aafc](https://github.com/US-EPA-CAMD/easey-common/commit/b32aafcf6f4bec5434e2f21de764e977decaff4e))
+* debuggin configureCorsOptions ([288160a](https://github.com/US-EPA-CAMD/easey-common/commit/288160ab8df16292655493882529b8806518d687))
+* fixed imports ([56e2f4c](https://github.com/US-EPA-CAMD/easey-common/commit/56e2f4c84aef6ab32c22e6eaa39de3927f95f3a2))
+* merge conflicts ([126eeee](https://github.com/US-EPA-CAMD/easey-common/commit/126eeee6d57d2e82d1edad9f55f5ff4cc408dc69))
+* pulled from beta ([497bf23](https://github.com/US-EPA-CAMD/easey-common/commit/497bf23be4ee49e7a829315a0618fb6309af93c7))
+
+
+### Features
+
+* added corsConfigModule ([7915ebb](https://github.com/US-EPA-CAMD/easey-common/commit/7915ebbe654c3682582d712db324a08f8029c517))
+* fixed peer dependencies ([6adcca3](https://github.com/US-EPA-CAMD/easey-common/commit/6adcca3c9821f1196036f07119ca5230c01b4c2c))
+* removed old cors ([4c77b8f](https://github.com/US-EPA-CAMD/easey-common/commit/4c77b8f2bafe9331ec41efacc072ebb6a0bfdebd))
+
 # [1.5.0-beta.3](https://github.com/US-EPA-CAMD/easey-common/compare/v1.5.0-beta.2...v1.5.0-beta.3) (2021-10-20)
 
 
