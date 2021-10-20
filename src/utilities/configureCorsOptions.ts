@@ -1,10 +1,14 @@
-import { Request } from 'express';
-import { getManager } from 'typeorm';
-import { CorsOptionsCallback } from '@nestjs/common/interfaces/external/cors-options.interface';
+import { Request } from "express";
+import { getManager } from "typeorm";
+import { CorsOptionsCallback } from "@nestjs/common/interfaces/external/cors-options.interface";
 
-export const configureCorsOptions = async (req: Request, appName: string, callback: CorsOptionsCallback) => {
+export const configureCorsOptions = async (
+  req: Request,
+  appName: string,
+  callback: CorsOptionsCallback
+) => {
   let corsOptions;
-  const originHeader = req.header('Origin');
+  const originHeader = req.header("Origin");
 
   if (originHeader !== null && originHeader !== undefined) {
     const manager = getManager();
@@ -19,24 +23,27 @@ export const configureCorsOptions = async (req: Request, appName: string, callba
       ORDER BY key, value;
     `);
 
-    const allowedOrigins = corsResults.filter(i => i.key === 'origin');
-    const allowedHeaders = corsResults.filter(i => i.key === 'header');
-    const allowedMethods = corsResults.filter(i => i.key === 'method');
+    const allowedOrigins = corsResults.filter((i) => i.key === "origin");
+    const allowedHeaders = corsResults.filter((i) => i.key === "header");
+    const allowedMethods = corsResults.filter((i) => i.key === "method");
 
     if (originHeader.match(/https?:\/\/(localhost|127\.0\.0\.1|\[::1\]):\d+/)) {
       allowedOrigins.push({
         key: "origin",
-        value: originHeader
+        value: originHeader,
       });
     }
 
     corsOptions = {
-      origin: allowedOrigins.map(i => i.value).includes(originHeader) ? originHeader : false,
-      exposedHeaders: allowedHeaders.length > 0 ? allowedHeaders.map(i => i.value) : [],
-      methods: allowedMethods.length > 0 ? allowedMethods.map(i => i.value) : [],
+      origin: allowedOrigins.map((i) => i.value).includes(originHeader)
+        ? originHeader
+        : false,
+      exposedHeaders:
+        allowedHeaders.length > 0 ? allowedHeaders.map((i) => i.value) : [],
+      methods:
+        allowedMethods.length > 0 ? allowedMethods.map((i) => i.value) : [],
     };
-  }
-  else {
+  } else {
     corsOptions = {
       origin: false,
       exposedHeaders: [],
@@ -45,4 +52,4 @@ export const configureCorsOptions = async (req: Request, appName: string, callba
   }
 
   callback(null, corsOptions);
-}
+};
