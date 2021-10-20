@@ -1,3 +1,10 @@
+## [1.4.1-beta.1](https://github.com/US-EPA-CAMD/easey-common/compare/v1.4.0...v1.4.1-beta.1) (2021-10-19)
+
+
+### Bug Fixes
+
+* debuggin configureCorsOptions ([288160a](https://github.com/US-EPA-CAMD/easey-common/commit/288160ab8df16292655493882529b8806518d687))
+
 # [1.4.0](https://github.com/US-EPA-CAMD/easey-common/compare/v1.3.0...v1.4.0) (2021-10-19)
 
 
