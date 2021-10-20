@@ -36,7 +36,13 @@
     "rxjs": "^7.4.0",
     "ts-jest": "^27.0.5",
     "uuid": "^8.3.2",
-    "winston": "^3.3.3"
+    "winston": "^3.3.3",
+    "@nestjs/axios": "^0.0.2",
+    "@nestjs/common": "^8.1.0",
+    "@nestjs/config": "^1.0.2",
+    "@nestjs/core": "^8.0.9",
+    "@nestjs/testing": "^8.1.0",
+    "typeorm": "^0.2.38"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -74,14 +80,6 @@
     "@types/node": "^16.10.2",
     "jest": "^27.2.4",
     "typescript": "^4.4.3"
-  },
-  "peerDependencies": {
-    "@nestjs/axios": "^0.0.2",
-    "@nestjs/common": "^8.1.0",
-    "@nestjs/config": "^1.0.2",
-    "@nestjs/core": "^8.0.9",
-    "@nestjs/testing": "^8.1.0",
-    "typeorm": "^0.2.38"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
