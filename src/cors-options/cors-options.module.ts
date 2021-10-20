@@ -1,8 +1,8 @@
-import { Global, Module } from "@nestjs/common";
+import { Module } from "@nestjs/common";
 import { CorsOptionsService } from "./cors-options.service";
 
-@Global()
 @Module({
+  imports: [],
   providers: [CorsOptionsService],
   exports: [CorsOptionsService],
 })
