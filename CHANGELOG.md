@@ -1,3 +1,11 @@
+# [1.5.0-beta.2](https://github.com/US-EPA-CAMD/easey-common/compare/v1.5.0-beta.1...v1.5.0-beta.2) (2021-10-20)
+
+
+### Bug Fixes
+
+* added index file for cors ([b32aafc](https://github.com/US-EPA-CAMD/easey-common/commit/b32aafcf6f4bec5434e2f21de764e977decaff4e))
+* pulled from beta ([497bf23](https://github.com/US-EPA-CAMD/easey-common/commit/497bf23be4ee49e7a829315a0618fb6309af93c7))
+
 # [1.5.0-beta.1](https://github.com/US-EPA-CAMD/easey-common/compare/v1.4.1-beta.1...v1.5.0-beta.1) (2021-10-20)
 
 
