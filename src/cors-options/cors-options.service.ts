@@ -2,7 +2,7 @@ import { Request } from "express";
 import { getManager } from "typeorm";
 import { CorsOptionsCallback } from "@nestjs/common/interfaces/external/cors-options.interface";
 import { Injectable } from "@nestjs/common";
-import { Logger } from "../logger/Logger.service";
+import { Logger } from "../logger";
 
 @Injectable()
 export class CorsOptionsService {
