@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/US-EPA-CAMD/easey-common/compare/v1.5.1...v1.6.0) (2021-10-25)
+
+
+### Features
+
+* added Cors options and new pipe ([e8a52f0](https://github.com/US-EPA-CAMD/easey-common/commit/e8a52f06e2acc6685f8692727cdf4be230a0c250))
+
 ## [1.5.1](https://github.com/US-EPA-CAMD/easey-common/compare/v1.5.0...v1.5.1) (2021-10-21)
 
 
