@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/US-EPA-CAMD/easey-common/compare/v1.8.0...v1.8.1) (2021-10-27)
+
+
+### Bug Fixes
+
+* removed entities ([8290ce8](https://github.com/US-EPA-CAMD/easey-common/commit/8290ce80962760ab3c03308d3376cb8487f5035e))
+
 # [1.8.0](https://github.com/US-EPA-CAMD/easey-common/compare/v1.7.0...v1.8.0) (2021-10-27)
 
 
