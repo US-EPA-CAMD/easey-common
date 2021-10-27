@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/US-EPA-CAMD/easey-common/compare/v1.7.0...v1.8.0) (2021-10-27)
+
+
+### Features
+
+* updated package to include more shared code ([85cbbd7](https://github.com/US-EPA-CAMD/easey-common/commit/85cbbd7a2b2138f3d6ad3f628c49a699b8c14c51))
+
 # [1.7.0](https://github.com/US-EPA-CAMD/easey-common/compare/v1.6.1...v1.7.0) (2021-10-27)
 
 
