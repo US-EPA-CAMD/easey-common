@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/US-EPA-CAMD/easey-common/compare/v1.6.1...v1.7.0) (2021-10-27)
+
+
+### Features
+
+* updated Is-In-Date-Range ([4ab2fd0](https://github.com/US-EPA-CAMD/easey-common/commit/4ab2fd00d919507a52ac113722f440276f476ef8))
+
 ## [1.6.1](https://github.com/US-EPA-CAMD/easey-common/compare/v1.6.0...v1.6.1) (2021-10-26)
 
 
