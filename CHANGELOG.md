@@ -1,3 +1,10 @@
+## [1.8.2](https://github.com/US-EPA-CAMD/easey-common/compare/v1.8.1...v1.8.2) (2021-10-28)
+
+
+### Bug Fixes
+
+* added missing content ([deaf981](https://github.com/US-EPA-CAMD/easey-common/commit/deaf981fd828b2b04f819328b049f2c7d712f2f5))
+
 ## [1.8.1](https://github.com/US-EPA-CAMD/easey-common/compare/v1.8.0...v1.8.1) (2021-10-27)
 
 
