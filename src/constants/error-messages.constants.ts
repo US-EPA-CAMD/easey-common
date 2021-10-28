@@ -91,6 +91,10 @@ export class ErrorMessages {
     return quarter;
   }
 
+  public static YearRange(parameter: string, minYear: string) {
+    return `Update one or more ${parameter}s to a year greater than or equal to ${minYear}`;
+  }
+
   public static DateValidity() {
     return `The provided $property $value is not a valid date.`;
   }
@@ -119,6 +123,14 @@ export class ErrorMessages {
         return `${mdm}transaction-types`;
       case "sourceCategories":
         return `${mdm}source-categories`;
+      case "facilityId":
+        return `${ApiConfigService.getFacApi()}facilities`;
+      case "accountType":
+        return `${mdm}account-types`;
+      case "accountNumber":
+        return `${ApiConfigService.getAcctApi()}accounts`;
+      case "transactionType":
+        return `${mdm}transaction-types`;
       default:
         return `${mdm}${parameter}s`;
     }
