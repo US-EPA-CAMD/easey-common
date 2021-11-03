@@ -42,7 +42,7 @@ jobs:
           CI: ""
         run: yarn build
       - name: Version & Publish
-        run: npx semantic-release
+        run: yarn semantic-release
         env:
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
