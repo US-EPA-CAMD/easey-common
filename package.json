@@ -119,6 +119,13 @@
       [
         "@semantic-release/git",
         {
+          "assets": [
+            "LICENSE",
+            "README.md",
+            "CHANGELOG.md",
+            "package.json",
+            "yarn.lock"
+          ],
           "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
         }
       ],
