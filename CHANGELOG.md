@@ -1,3 +1,10 @@
+## [1.8.5](https://github.com/US-EPA-CAMD/easey-common/compare/v1.8.4...v1.8.5) (2021-11-03)
+
+
+### Bug Fixes
+
+* added license, readme, & other files to package ([1dd9d85](https://github.com/US-EPA-CAMD/easey-common/commit/1dd9d85e6382ef9fc78f9afc979f45ca433f59d3))
+
 ## [1.8.4](https://github.com/US-EPA-CAMD/easey-common/compare/v1.8.3...v1.8.4) (2021-11-03)
 
 
