@@ -1,3 +1,45 @@
+## [1.8.2](https://github.com/US-EPA-CAMD/easey-common/compare/v1.8.1...v1.8.2) (2021-10-28)
+
+
+### Bug Fixes
+
+* added missing content ([deaf981](https://github.com/US-EPA-CAMD/easey-common/commit/deaf981fd828b2b04f819328b049f2c7d712f2f5))
+
+## [1.8.1](https://github.com/US-EPA-CAMD/easey-common/compare/v1.8.0...v1.8.1) (2021-10-27)
+
+
+### Bug Fixes
+
+* removed entities ([8290ce8](https://github.com/US-EPA-CAMD/easey-common/commit/8290ce80962760ab3c03308d3376cb8487f5035e))
+
+# [1.8.0](https://github.com/US-EPA-CAMD/easey-common/compare/v1.7.0...v1.8.0) (2021-10-27)
+
+
+### Features
+
+* updated package to include more shared code ([85cbbd7](https://github.com/US-EPA-CAMD/easey-common/commit/85cbbd7a2b2138f3d6ad3f628c49a699b8c14c51))
+
+# [1.7.0](https://github.com/US-EPA-CAMD/easey-common/compare/v1.6.1...v1.7.0) (2021-10-27)
+
+
+### Features
+
+* updated Is-In-Date-Range ([4ab2fd0](https://github.com/US-EPA-CAMD/easey-common/commit/4ab2fd00d919507a52ac113722f440276f476ef8))
+
+## [1.6.1](https://github.com/US-EPA-CAMD/easey-common/compare/v1.6.0...v1.6.1) (2021-10-26)
+
+
+### Bug Fixes
+
+* added comment ([93e118d](https://github.com/US-EPA-CAMD/easey-common/commit/93e118de44a621b0ebee8fa652766996c630250b))
+
+# [1.6.0](https://github.com/US-EPA-CAMD/easey-common/compare/v1.5.1...v1.6.0) (2021-10-25)
+
+
+### Features
+
+* added Cors options and new pipe ([e8a52f0](https://github.com/US-EPA-CAMD/easey-common/commit/e8a52f06e2acc6685f8692727cdf4be230a0c250))
+
 ## [1.5.1](https://github.com/US-EPA-CAMD/easey-common/compare/v1.5.0...v1.5.1) (2021-10-21)
 
 

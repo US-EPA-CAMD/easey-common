@@ -28,5 +28,40 @@ These instructions will get you a copy of the project package up and running and
 - For example, to insert the logger: ``` import { Logger } from '@us-epa-camd/easey-common/logger'; ```
 
 
+# Adding and publishing to easey-common
 
 
+## Getting Started 
+
+These instructions will show you how to edit the existing package, and publish a new version.
+
+### Prerequisites
+
+- Cloned easey-common github master branch on your local machine
+
+### Adding directories
+
+- Create a new folder in the ``` src ``` directory of the project
+- Create the export files that you wish to add inside of this folder
+- Create an ```index.ts``` file inside of the new folder
+- Inside of the ```index.ts``` file, export all added files from the folder 
+- For example, the ```index.ts``` of the logger modules is:
+```
+export { LoggerModule } from "./Logger.module";
+export { Logger } from "./Logger.service";
+```
+### Adding files
+
+- Create your file inside of the desired easey-common directory
+- Within the ```index.ts``` file of that directory, export the exported members of the new file
+
+## Publishing new package version
+
+- On the current branch in terminal, add all file changes with ```git add .```
+- Commit the files using [commitizen](https://commitizen-tools.github.io/commitizen/), a commit formatter that is digestible by [semantic-release](https://semantic-release.gitbook.io/semantic-release/)
+``` npm run commit ```
+- Follow the prompts and create your commit
+- Push the commit to your current branch
+``` git push origin CURRENT_BRANCH```
+- Github workflows for this package are set up to create new package versions whenever a push or merge to the ```master, next, next-major, beta, or alpha``` branches is executed
+- Semantic-Release will version all code automatically, based on the input received from the commitizen commit
