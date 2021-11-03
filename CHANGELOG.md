@@ -1,3 +1,10 @@
+## [1.8.4](https://github.com/US-EPA-CAMD/easey-common/compare/v1.8.3...v1.8.4) (2021-11-03)
+
+
+### Bug Fixes
+
+* added test2 constant ([c82e525](https://github.com/US-EPA-CAMD/easey-common/commit/c82e5252be48cb6e0089fcc7c86777970950a601))
+
 ## [1.8.3](https://github.com/US-EPA-CAMD/easey-common/compare/v1.8.2...v1.8.3) (2021-11-03)
 
 
