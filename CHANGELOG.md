@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/US-EPA-CAMD/easey-common/compare/v1.8.5...v1.9.0) (2021-11-05)
+
+
+### Features
+
+* **program enums:** modify the program enums to include caspar ozone group 3 program (CSOSG3) ([d233e15](https://github.com/US-EPA-CAMD/easey-common/commit/d233e15d120ab53bfb57020352e811428e6bbe06))
+
 ## [1.8.5](https://github.com/US-EPA-CAMD/easey-common/compare/v1.8.4...v1.8.5) (2021-11-03)
 
 
