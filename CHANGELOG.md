@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/US-EPA-CAMD/easey-common/compare/v1.9.0...v1.10.0) (2021-11-19)
+
+
+### Features
+
+* **property-metadata.constants.ts:** modify propertyMetadata labels ([bdcd26c](https://github.com/US-EPA-CAMD/easey-common/commit/bdcd26c65a2ba6da47fb3398f8e035c4812cc5b0))
+
 # [1.9.0](https://github.com/US-EPA-CAMD/easey-common/compare/v1.8.5...v1.9.0) (2021-11-05)
 
 
