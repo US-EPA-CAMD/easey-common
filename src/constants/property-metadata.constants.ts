@@ -91,6 +91,15 @@ export const propertyMetadata = {
       "Indicator of whether or not the program is an annual program.",
     example: true,
   },
+  associatedGeneratorsAndNameplateCapacity: {
+    fieldLabels: {
+      label: "Associated Generators & Nameplate Capacity (MWe)",
+      value: "associatedGeneratorsAndNameplateCapacity",
+    },
+    description:
+      "One or more unique identifiers for generators at a facility associated with the unit, and the maximum electrical generating output (in MWe, rounded to the nearest tenth) that the generator is capable of producing on a steady state basis and during continuous operation (when not restricted by seasonal or other deratings). This value is usually indicated on a nameplate physically attached to the generator.",
+    example: "A1ST (191.8)",
+  },
   associatedStacks: {
     fieldLabels: {
       label: "Associated Stacks",
@@ -525,15 +534,6 @@ export const propertyMetadata = {
     description: "Full description for the type of fuel combusted by the unit.",
     example: "Coal",
   },
-  generatorId: {
-    fieldLabels: {
-      label: "Generator ID",
-      value: "generatorId",
-    },
-    description:
-      "One or more unique identifiers for generators at a facility associated with the unit.",
-    example: 1,
-  },
   grossLoad: {
     fieldLabels: {
       label: "Gross Load (MWh)",
@@ -620,15 +620,6 @@ export const propertyMetadata = {
     },
     description: "Month on which activity occurred.",
     example: 12,
-  },
-  nameplateCapacity: {
-    fieldLabels: {
-      label: "Nameplate Capacity (MWe)",
-      value: "nameplateCapacity",
-    },
-    description:
-      "The maximum electrical generating output (in MWe, rounded to the nearest tenth) that the generator is capable of producing on a steady state basis and during continuous operation (when not restricted by seasonal or other deratings).  This value is usually indicated on a nameplate physically attached to the generator.",
-    example: 660,
   },
   nercRegion: {
     fieldLabels: {
@@ -858,15 +849,6 @@ export const propertyMetadata = {
     },
     description: "Calendar quarter in which activity occurred.",
     example: 4,
-  },
-  reportingFrequency: {
-    fieldLabels: {
-      label: "Reporting Frequency",
-      value: "reportingFrequency",
-    },
-    description:
-      "Indicates whether a unit reports annual or only ozone season data on a quarterly basis.",
-    example: "Q",
   },
   retiredIndicator: {
     fieldLabels: {
