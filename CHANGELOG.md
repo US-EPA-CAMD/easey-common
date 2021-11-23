@@ -1,3 +1,11 @@
+## [1.10.1](https://github.com/US-EPA-CAMD/easey-common/compare/v1.10.0...v1.10.1) (2021-11-23)
+
+
+### Bug Fixes
+
+* added README.md disclaimer, license & contribution ([7ae379e](https://github.com/US-EPA-CAMD/easey-common/commit/7ae379e23cc61a6e5fa1b82e73a9925354af0ebf))
+* reordered license, contributing, and disclaimer text ([22aac4b](https://github.com/US-EPA-CAMD/easey-common/commit/22aac4baa130aee48c1037e0a7cba8d31985a065))
+
 # [1.10.0](https://github.com/US-EPA-CAMD/easey-common/compare/v1.9.0...v1.10.0) (2021-11-19)
 
 
