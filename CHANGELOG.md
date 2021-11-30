@@ -1,3 +1,10 @@
+## [1.11.2](https://github.com/US-EPA-CAMD/easey-common/compare/v1.11.1...v1.11.2) (2021-11-30)
+
+
+### Bug Fixes
+
+* fixing dependency issues causing build breaks ([cada167](https://github.com/US-EPA-CAMD/easey-common/commit/cada167c0c8b256fe0e148b15c1cd028d2605fa4))
+
 ## [1.11.1](https://github.com/US-EPA-CAMD/easey-common/compare/v1.11.0...v1.11.1) (2021-11-30)
 
 
