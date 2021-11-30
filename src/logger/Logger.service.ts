@@ -4,7 +4,7 @@ const winston = require('winston');
 
 interface LogInterface {
   warn: (message: string, args?: any[]) => void;
-  error: (errorType: Error, message: string, args?: any[]) => void;
+  error: (errorType: Error, message: string, throws?: boolean, args?: any[]) => void;
   info: (message: string, args?: any[]) => void;
 }
 
@@ -24,7 +24,7 @@ export class Logger implements LogInterface {
     this.logInstance.warn(message, { ...args });
   }
 
-  error(errorType, message, args?): string {
+  error(errorType, message, throws = false, args?): string {
     const errorId = uuid_v4();
 
     const errorInstance = new errorType(message, errorId);
@@ -35,7 +35,11 @@ export class Logger implements LogInterface {
       stack: errorInstance.stack,
     });
 
-    return errorId;
+    if(throws){
+      throw errorInstance;
+    }
+
+    return  errorId;
   }
 
   info(message, args?): void {
