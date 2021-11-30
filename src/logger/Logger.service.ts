@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { uuid } from 'uuidv4';
+import { v4 as uuid } from "uuid";
+
 const winston = require('winston');
 
 interface LogInterface {

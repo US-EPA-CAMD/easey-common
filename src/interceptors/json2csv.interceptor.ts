@@ -7,7 +7,7 @@ import {
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { Parser } from "json2csv";
-import { uuid } from "uuidv4";
+import { v4 as uuid } from "uuid";
 
 @Injectable()
 export class Json2CsvInterceptor implements NestInterceptor {
