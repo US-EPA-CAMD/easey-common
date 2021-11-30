@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { v4 as uuid_v4 } from 'uuid';
+import { uuid } from 'uuidv4';
 const winston = require('winston');
 
 interface LogInterface {
@@ -25,8 +25,7 @@ export class Logger implements LogInterface {
   }
 
   error(errorType, message, throws = false, args?): string {
-    const errorId = uuid_v4();
-
+    const errorId = uuid();
     const errorInstance = new errorType(message, errorId);
 
     this.logInstance.error(errorInstance.message, {
