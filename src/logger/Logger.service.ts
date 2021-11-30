@@ -24,7 +24,7 @@ export class Logger implements LogInterface {
     this.logInstance.warn(message, { ...args });
   }
 
-  error(errorType, message, args?): void {
+  error(errorType, message, args?): string {
     const errorId = uuid_v4();
 
     const errorInstance = new errorType(message, errorId);
@@ -35,7 +35,7 @@ export class Logger implements LogInterface {
       stack: errorInstance.stack,
     });
 
-    throw errorInstance;
+    return errorId;
   }
 
   info(message, args?): void {
