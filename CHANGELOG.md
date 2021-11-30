@@ -1,3 +1,10 @@
+## [1.11.5](https://github.com/US-EPA-CAMD/easey-common/compare/v1.11.4...v1.11.5) (2021-11-30)
+
+
+### Bug Fixes
+
+* adding back resolutions but without nestjs dependencies that conflict ([595a44e](https://github.com/US-EPA-CAMD/easey-common/commit/595a44ee17fc79b168fca2423610b012320c28ff))
+
 ## [1.11.4](https://github.com/US-EPA-CAMD/easey-common/compare/v1.11.3...v1.11.4) (2021-11-30)
 
 
