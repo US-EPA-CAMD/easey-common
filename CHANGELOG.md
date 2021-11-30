@@ -1,3 +1,10 @@
+## [1.11.4](https://github.com/US-EPA-CAMD/easey-common/compare/v1.11.3...v1.11.4) (2021-11-30)
+
+
+### Bug Fixes
+
+* removing resolutions and down grading uuid and others that conflict with nestjs ([44046d9](https://github.com/US-EPA-CAMD/easey-common/commit/44046d9569d54a66b76c4d13ec2cea9a8b46f9b2))
+
 ## [1.11.3](https://github.com/US-EPA-CAMD/easey-common/compare/v1.11.2...v1.11.3) (2021-11-30)
 
 
