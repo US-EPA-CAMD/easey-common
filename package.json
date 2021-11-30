@@ -1,6 +1,6 @@
 {
   "name": "@us-epa-camd/easey-common",
-  "version": "1.11.5",
+  "version": "1.11.6",
   "description": "Shared easey package",
   "main": "index.js",
   "types": "index.d.js",
@@ -38,7 +38,7 @@
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.4.0",
     "typeorm": "^0.2.38",
-    "uuidv4": "^6.2.12",    
+    "uuidv4": "^6.2.12",
     "winston": "^3.3.3"
   },
   "devDependencies": {
