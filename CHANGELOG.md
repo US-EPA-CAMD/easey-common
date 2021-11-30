@@ -1,3 +1,10 @@
+## [1.11.1](https://github.com/US-EPA-CAMD/easey-common/compare/v1.11.0...v1.11.1) (2021-11-30)
+
+
+### Bug Fixes
+
+* edit to logger error handler ([e19331b](https://github.com/US-EPA-CAMD/easey-common/commit/e19331bcbef8d4785c2e845d8f44743f1184ef1b))
+
 # [1.11.0](https://github.com/US-EPA-CAMD/easey-common/compare/v1.10.1...v1.11.0) (2021-11-30)
 
 
