@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { v4 as uuid } from "uuid";
+import { uuid } from "uuidv4";
 
 const winston = require('winston');
 
