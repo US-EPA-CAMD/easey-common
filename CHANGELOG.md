@@ -1,3 +1,11 @@
+## [1.11.9](https://github.com/US-EPA-CAMD/easey-common/compare/v1.11.8...v1.11.9) (2021-12-01)
+
+
+### Bug Fixes
+
+* pulled master ([c1f9602](https://github.com/US-EPA-CAMD/easey-common/commit/c1f9602ad2cffd7948d8cb09a8e03cd874884fe9))
+* removed uuidv4 ([31d8e8a](https://github.com/US-EPA-CAMD/easey-common/commit/31d8e8a74ac5f470379e109f3f83704faa5e7b68))
+
 ## [1.11.8](https://github.com/US-EPA-CAMD/easey-common/compare/v1.11.7...v1.11.8) (2021-12-01)
 
 
