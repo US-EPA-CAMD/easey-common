@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { uuid } from "uuidv4";
 
 const winston = require('winston');
-
+//
 interface LogInterface {
   warn: (message: string, args?: any[]) => void;
   error: (errorType: Error, message: string, throws?: boolean, args?: any[]) => void;
