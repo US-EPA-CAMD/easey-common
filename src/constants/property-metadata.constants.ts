@@ -169,6 +169,14 @@ export const propertyMetadata = {
     description: `Type of buyer's allowance account (Facility, General, etc.).`,
     example: "Facility Account",
   },
+  buyAccountTypeCode: {
+    fieldLables: {
+      label: "",
+      value: "buyAccountTypeCode",
+    },
+    description: "Code for the type of account purchasing allowances.",
+    example: "GENERAL",
+  },
   buyEpaRegion: {
     fieldLabels: {
       label: "EPA Region (Transferee)",
@@ -891,6 +899,14 @@ export const propertyMetadata = {
     },
     description: `Type of seller's allowance account (Facility, General, etc.).`,
     example: "Facility Account",
+  },
+  sellAccountTypeCode: {
+    fieldLabels: {
+      label: "",
+      value: "sellAccountTypeCode",
+    },
+    description: "Code for the type of account selling allowances.",
+    example: "GENERAL",
   },
   sellEpaRegion: {
     fieldLabels: {
