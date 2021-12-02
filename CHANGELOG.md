@@ -1,3 +1,10 @@
+## [1.12.1](https://github.com/US-EPA-CAMD/easey-common/compare/v1.12.0...v1.12.1) (2021-12-02)
+
+
+### Bug Fixes
+
+* **property-metadata.constants.ts:** modify typo in buyAccountTypeCode ([5eb92fb](https://github.com/US-EPA-CAMD/easey-common/commit/5eb92fb3d148e6d419eb0ba01320b7dedbef43de))
+
 # [1.12.0](https://github.com/US-EPA-CAMD/easey-common/compare/v1.11.9...v1.12.0) (2021-12-02)
 
 
