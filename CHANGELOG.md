@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/US-EPA-CAMD/easey-common/compare/v1.11.9...v1.12.0) (2021-12-02)
+
+
+### Features
+
+* **property-metadata.constants.ts:** add buy and sell account type code labels ([2488d55](https://github.com/US-EPA-CAMD/easey-common/commit/2488d556e6bc16dbb2d204c3b28e1073c69579f4))
+
 ## [1.11.9](https://github.com/US-EPA-CAMD/easey-common/compare/v1.11.8...v1.11.9) (2021-12-01)
 
 
