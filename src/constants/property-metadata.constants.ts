@@ -170,7 +170,7 @@ export const propertyMetadata = {
     example: "Facility Account",
   },
   buyAccountTypeCode: {
-    fieldLables: {
+    fieldLabels: {
       label: "",
       value: "buyAccountTypeCode",
     },
