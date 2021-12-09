@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/US-EPA-CAMD/easey-common/compare/v1.12.1...v1.13.0) (2021-12-09)
+
+
+### Features
+
+* current date query ([8b38718](https://github.com/US-EPA-CAMD/easey-common/commit/8b38718b350bba394f2cc47d1bd7edeb10da1800))
+
 ## [1.12.1](https://github.com/US-EPA-CAMD/easey-common/compare/v1.12.0...v1.12.1) (2021-12-02)
 
 
