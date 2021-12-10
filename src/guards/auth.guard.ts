@@ -18,14 +18,17 @@ export class AuthGuard implements CanActivate {
     private httpService: HttpService
   ) {}
 
-  async validateToken(token: string, ip: string): Promise<any> {
+  async validateToken(token: string, ip: string, apiKey: string): Promise<any> {
     const url = this.configService.get("app.authApi").uri + "/tokens/validate";
-
+    console.log("API Key " + apiKey);
     return this.httpService
       .post(url, {
         token: token,
         clientIp: ip,
-      })
+      },
+      {headers: {"x-api-key": apiKey}
+      }
+      )
       .toPromise()
       .then((result) => {
         return result.data;
@@ -52,7 +55,11 @@ export class AuthGuard implements CanActivate {
       ip = request.headers["x-forwarded-for"].split(",")[0];
     }
 
-    const validatedToken = await this.validateToken(splitString[1], ip);
+    if(!request.header["x-api-key"]){
+      throw new BadRequestException("API key is required.");
+    }
+
+    const validatedToken = await this.validateToken(splitString[1], ip, request.header["x-api-key"]);
     const parsedToken = parseToken(validatedToken);
 
     request.userId = parsedToken.userId; // Attach userId to request body
