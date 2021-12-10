@@ -1,3 +1,11 @@
+## [1.13.1](https://github.com/US-EPA-CAMD/easey-common/compare/v1.13.0...v1.13.1) (2021-12-10)
+
+
+### Bug Fixes
+
+* fixed bug ([b10de5f](https://github.com/US-EPA-CAMD/easey-common/commit/b10de5fc2b37dc36d4e1f3bcc4b9121e2d92302c))
+* pass API key to auth api ([0316287](https://github.com/US-EPA-CAMD/easey-common/commit/031628730b4249cbd05cf1683eeb4e86f51d7e82))
+
 # [1.13.0](https://github.com/US-EPA-CAMD/easey-common/compare/v1.12.1...v1.13.0) (2021-12-09)
 
 
