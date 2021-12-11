@@ -6,13 +6,7 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 import { CorsOptionsService } from '../cors-options/cors-options.service';
 
-export async function bootstrap(
-  module: any,
-  enableCors: boolean = false,
-  enableApiKey: boolean = false,
-  enableAuthToken: boolean = false,
-  enableGlobalValidationPipe: boolean = false,
-  ) {
+export async function bootstrap(module: any) {
   const app = await NestFactory.create(module);
 
   const configService = app.get(ConfigService);
@@ -41,11 +35,11 @@ export async function bootstrap(
   app.use(helmet());
   app.setGlobalPrefix(appPath);
 
-  if (enableGlobalValidationPipe) {
+  if (configService.get<boolean>('app.enableGlobalValidationPipes')) {
     app.useGlobalPipes(new ValidationPipe({ transform: true }));
   }
 
-  if (enableCors) {
+  if (configService.get<boolean>('app.enableCors')) {
     app.enableCors(async (req, callback) => {
       await corsOptionsService.configure(req, appName, callback);
     });
@@ -56,7 +50,7 @@ export async function bootstrap(
     .setDescription(appDesc)
     .setVersion(`${appVersion} published: ${appPublished}`);
 
-  if (enableApiKey) {
+    if (configService.get<boolean>('app.enableApiKey')) {
     swaggerDocOptions.addApiKey({
       in: 'header',
       type: 'apiKey',
@@ -65,7 +59,7 @@ export async function bootstrap(
     }, 'APIKey');
   }
 
-  if (enableAuthToken) {
+  if (configService.get<boolean>('app.enableAuthToken')) {
     swaggerDocOptions.addBearerAuth({
       in: 'header',
       type: 'http',
