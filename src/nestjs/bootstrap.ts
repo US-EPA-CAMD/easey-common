@@ -8,10 +8,10 @@ import { CorsOptionsService } from '../cors-options/cors-options.service';
 
 export async function bootstrap(
   module: any,
-  useGlobablPipes: boolean = false,
   enableCors: boolean = false,
   enableApiKey: boolean = false,
   enableAuthToken: boolean = false,
+  enableGlobalValidationPipe: boolean = false,
   ) {
   const app = await NestFactory.create(module);
 
@@ -41,7 +41,7 @@ export async function bootstrap(
   app.use(helmet());
   app.setGlobalPrefix(appPath);
 
-  if (useGlobablPipes) {
+  if (enableGlobalValidationPipe) {
     app.useGlobalPipes(new ValidationPipe({ transform: true }));
   }
 
@@ -61,7 +61,7 @@ export async function bootstrap(
       in: 'header',
       type: 'apiKey',
       name: 'x-api-key',
-      description: 'API Gateway requires x-api-key request header!',
+      description: 'API Key required via "x-api-key" request header!',
     }, 'APIKey');
   }
 
@@ -71,7 +71,7 @@ export async function bootstrap(
       type: 'http',
       scheme: 'bearer',
       name: 'Token',
-      description: 'Authorization token required for operations with padlock!',
+      description: 'Authorization "bearer" token required for data modification operations!',
     }, 'Token');
   }
 

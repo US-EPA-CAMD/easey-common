@@ -26,7 +26,7 @@
   },
   "resolutions": {
     "ansi-regex": "^5.0.1",
-    "class-transformer": "^0.4.0"
+    "class-transformer": "0.4.0"
   },
   "dependencies": {
     "@nestjs/axios": "0.0.3",
