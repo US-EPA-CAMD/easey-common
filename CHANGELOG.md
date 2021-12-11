@@ -1,3 +1,15 @@
+# [1.14.0](https://github.com/US-EPA-CAMD/easey-common/compare/v1.13.1...v1.14.0) (2021-12-11)
+
+
+### Bug Fixes
+
+* forgot dependencies ([0ec6ee4](https://github.com/US-EPA-CAMD/easey-common/commit/0ec6ee4eb2da6f2751030f261535c030fab164ee))
+
+
+### Features
+
+* added nestjs bootstrap function ([363ea06](https://github.com/US-EPA-CAMD/easey-common/commit/363ea06bbd3e4ed114faa65d9c887f3b1a3638ee))
+
 ## [1.13.1](https://github.com/US-EPA-CAMD/easey-common/compare/v1.13.0...v1.13.1) (2021-12-10)
 
 
