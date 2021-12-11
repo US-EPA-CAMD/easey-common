@@ -1,3 +1,16 @@
+# [2.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v1.16.0...v2.0.0) (2021-12-11)
+
+
+### Code Refactoring
+
+* removed nestjs bootstrap boolean params in favor of env vars ([89372c4](https://github.com/US-EPA-CAMD/easey-common/commit/89372c49d931b5314ef1f4424510c2bc87a5ce77))
+
+
+### BREAKING CHANGES
+
+* removed enableCors, enableApiKey, enableAuthToken, & enableGlobalValidationPipes
+params and switched them to env vars
+
 # [1.16.0](https://github.com/US-EPA-CAMD/easey-common/compare/v1.15.0...v1.16.0) (2021-12-11)
 
 
