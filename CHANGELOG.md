@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/US-EPA-CAMD/easey-common/compare/v1.15.0...v1.16.0) (2021-12-11)
+
+
+### Features
+
+* changed nestjs bootstrap function param useGlobalPipes to enableGlobalValidationPipe ([5ba03aa](https://github.com/US-EPA-CAMD/easey-common/commit/5ba03aaf90ba082bfa2d3fa7001a97d940d5eb8e))
+
 # [1.15.0](https://github.com/US-EPA-CAMD/easey-common/compare/v1.14.1...v1.15.0) (2021-12-11)
 
 
