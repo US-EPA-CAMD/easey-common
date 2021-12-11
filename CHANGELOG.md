@@ -1,3 +1,11 @@
+## [1.14.1](https://github.com/US-EPA-CAMD/easey-common/compare/v1.14.0...v1.14.1) (2021-12-11)
+
+
+### Bug Fixes
+
+* added class transform due to global validation pipe ([1dd65e0](https://github.com/US-EPA-CAMD/easey-common/commit/1dd65e05b261dcff7c0af580474218b43b246f39))
+* fixing conflicts ([f0ebd1c](https://github.com/US-EPA-CAMD/easey-common/commit/f0ebd1c0b17ce6c7e34cfbf1757e0d73cafafb7a))
+
 # [1.14.0](https://github.com/US-EPA-CAMD/easey-common/compare/v1.13.1...v1.14.0) (2021-12-11)
 
 
