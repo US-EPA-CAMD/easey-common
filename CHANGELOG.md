@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/US-EPA-CAMD/easey-common/compare/v1.14.1...v1.15.0) (2021-12-11)
+
+
+### Features
+
+* added params to nestjs bootstrap function for cors, auth, & validation ([0ad92a0](https://github.com/US-EPA-CAMD/easey-common/commit/0ad92a05cc5aea5e40c996a73899894c53fdbeab))
+
 ## [1.14.1](https://github.com/US-EPA-CAMD/easey-common/compare/v1.14.0...v1.14.1) (2021-12-11)
 
 
