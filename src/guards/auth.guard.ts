@@ -25,10 +25,9 @@ export class AuthGuard implements CanActivate {
       .post(url, {
         token: token,
         clientIp: ip,
-      },
-      {headers: {"x-api-key": apiKey}
-      }
-      )
+      }, {
+        headers: { "x-api-key": apiKey }
+      })
       .toPromise()
       .then((result) => {
         return result.data;
