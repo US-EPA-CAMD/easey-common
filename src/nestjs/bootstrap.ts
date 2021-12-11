@@ -6,7 +6,13 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 import { CorsOptionsService } from '../cors-options/cors-options.service';
 
-export async function bootstrap(module: any) {
+export async function bootstrap(
+  module: any,
+  useGlobablPipes: boolean = false,
+  enableCors: boolean = false,
+  enableApiKey: boolean = false,
+  enableAuthToken: boolean = false,
+  ) {
   const app = await NestFactory.create(module);
 
   const configService = app.get(ConfigService);
@@ -34,32 +40,40 @@ export async function bootstrap(module: any) {
 
   app.use(helmet());
   app.setGlobalPrefix(appPath);
-  app.useGlobalPipes(new ValidationPipe({ transform: true }));
 
-  app.enableCors(async (req, callback) => {
-    await corsOptionsService.configure(req, appName, callback);
-  });
+  if (useGlobablPipes) {
+    app.useGlobalPipes(new ValidationPipe({ transform: true }));
+  }
+
+  if (enableCors) {
+    app.enableCors(async (req, callback) => {
+      await corsOptionsService.configure(req, appName, callback);
+    });
+  }
 
   const swaggerDocOptions = new DocumentBuilder()
     .setTitle(`${appTitle} OpenAPI Specification`)
     .setDescription(appDesc)
-    .setVersion(`${appVersion} published: ${appPublished}`)
-    .addApiKey({
+    .setVersion(`${appVersion} published: ${appPublished}`);
+
+  if (enableApiKey) {
+    swaggerDocOptions.addApiKey({
       in: 'header',
       type: 'apiKey',
       name: 'x-api-key',
       description: 'API Gateway requires x-api-key request header!',
-    }, "APIKey")
-    .addBearerAuth(
-      {
-        in: 'header',
-        type: 'http',
-        scheme: 'bearer',
-        name: 'Token',
-        description: 'Authorization token required for operations with padlock!',
-      },
-      'Token',
-    );
+    }, 'APIKey');
+  }
+
+  if (enableAuthToken) {
+    swaggerDocOptions.addBearerAuth({
+      in: 'header',
+      type: 'http',
+      scheme: 'bearer',
+      name: 'Token',
+      description: 'Authorization token required for operations with padlock!',
+    }, 'Token');
+  }
 
   if (appHost !== 'localhost') {
     swaggerDocOptions.addServer(`https://${apiHost}`);
