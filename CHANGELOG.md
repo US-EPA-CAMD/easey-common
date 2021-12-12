@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/US-EPA-CAMD/easey-common/compare/v2.0.1...v2.0.2) (2021-12-12)
+
+
+### Bug Fixes
+
+* looking for api key in either the x-api-key or x-api-user-id request headers ([7346dcd](https://github.com/US-EPA-CAMD/easey-common/commit/7346dcd50bd1fd65d5d06173f9c5d168bc6c5750))
+
 ## [2.0.1](https://github.com/US-EPA-CAMD/easey-common/compare/v2.0.0...v2.0.1) (2021-12-11)
 
 
