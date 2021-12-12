@@ -7,15 +7,18 @@ import {
 } from "@nestjs/common";
 import { Observable } from "rxjs";
 
-import { ConfigService } from "@nestjs/config";
-import { parseToken } from "../utilities/parse-token";
 import { HttpService } from "@nestjs/axios";
+import { ConfigService } from "@nestjs/config";
+
+import { Logger } from '../logger/Logger.service';
+import { parseToken } from "../utilities/parse-token";
 
 @Injectable()
 export class AuthGuard implements CanActivate {
   constructor(
     private configService: ConfigService,
-    private httpService: HttpService
+    private httpService: HttpService,
+    private logger: Logger,
   ) {}
 
   async validateToken(token: string, ip: string, apiKey: string): Promise<any> {
@@ -32,6 +35,7 @@ export class AuthGuard implements CanActivate {
         return result.data;
       })
       .catch((error) => {
+        this.logger.error(error, 'An error occurred while validating user security token.')
         if (error.response) {
           throw new InternalServerErrorException(error.response.data.message);
         }
@@ -39,13 +43,17 @@ export class AuthGuard implements CanActivate {
   }
 
   async validateRequest(request): Promise<boolean> {
+    let errorMsg = 'Prior Authorization token is required.';
+
     if (request.headers.authorization === undefined) {
-      throw new BadRequestException("Prior Authorization token is required.");
+      this.logger.warn(errorMsg);
+      throw new BadRequestException(errorMsg);
     }
 
     const splitString = request.headers.authorization.split(" ");
     if (splitString.length !== 2 && splitString[0] !== "Bearer") {
-      throw new BadRequestException("Prior Authorization token is required.");
+      this.logger.warn(errorMsg);
+      throw new BadRequestException(errorMsg);
     }
 
     let ip = request.ip;
@@ -53,9 +61,16 @@ export class AuthGuard implements CanActivate {
       ip = request.headers["x-forwarded-for"].split(",")[0];
     }
 
-    let apiKey = request.headers["x-api-key"] || request.headers["x-api-user-id"];
+    let apiKey = request.headers["x-api-key"];
+    this.logger.info(`x-api-key = ${apiKey}`);
     if (!apiKey) {
-      throw new BadRequestException('API key required but not provided in either of the "x-api-key" or "x-api-user-id" request headers.');
+      apiKey = request.headers["x-api-user-id"];
+      this.logger.info(`x-api-user-id = ${apiKey}`);
+      if (!apiKey) {
+        errorMsg = 'API key required but not provided in either of the "x-api-key" or "x-api-user-id" request headers.';
+        this.logger.warn(errorMsg);
+        throw new BadRequestException(errorMsg);
+      }
     }
 
     const validatedToken = await this.validateToken(splitString[1], ip, apiKey);
@@ -70,7 +85,6 @@ export class AuthGuard implements CanActivate {
     context: ExecutionContext
   ): boolean | Promise<boolean> | Observable<boolean> {
     const request = context.switchToHttp().getRequest();
-
     return this.validateRequest(request);
   }
 }
