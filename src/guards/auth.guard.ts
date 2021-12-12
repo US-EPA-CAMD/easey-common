@@ -6,11 +6,9 @@ import {
   InternalServerErrorException,
 } from "@nestjs/common";
 import { Observable } from "rxjs";
-
 import { HttpService } from "@nestjs/axios";
 import { ConfigService } from "@nestjs/config";
 
-import { Logger } from '../logger/Logger.service';
 import { parseToken } from "../utilities/parse-token";
 
 @Injectable()
@@ -18,26 +16,25 @@ export class AuthGuard implements CanActivate {
   constructor(
     private configService: ConfigService,
     private httpService: HttpService,
-    private logger: Logger,
   ) {}
 
-  async validateToken(token: string, ip: string, apiKey: string): Promise<any> {
+  async validateToken(token: string, ip: string): Promise<any> {
     const url = this.configService.get("app.authApi").uri + "/tokens/validate";
+
     return this.httpService
       .post(url, {
         token: token,
         clientIp: ip,
       }, {
-        headers: { "x-api-key": apiKey }
+        headers: { "x-api-key": this.configService.get("app.apiKey") }
       })
       .toPromise()
       .then((result) => {
         return result.data;
       })
       .catch((error) => {
-        this.logger.error(error, 'An error occurred while validating user security token.')
         if (error.response) {
-          throw new InternalServerErrorException(error.response.data.message);
+          throw new InternalServerErrorException(error.response.data.message, 'An error occurred in AuthGuard while validating user security token.');
         }
       });
   }
@@ -46,13 +43,11 @@ export class AuthGuard implements CanActivate {
     let errorMsg = 'Prior Authorization token is required.';
 
     if (request.headers.authorization === undefined) {
-      this.logger.warn(errorMsg);
       throw new BadRequestException(errorMsg);
     }
 
     const splitString = request.headers.authorization.split(" ");
     if (splitString.length !== 2 && splitString[0] !== "Bearer") {
-      this.logger.warn(errorMsg);
       throw new BadRequestException(errorMsg);
     }
 
@@ -61,19 +56,7 @@ export class AuthGuard implements CanActivate {
       ip = request.headers["x-forwarded-for"].split(",")[0];
     }
 
-    let apiKey = request.headers["x-api-key"];
-    this.logger.info(`x-api-key = ${apiKey}`);
-    if (!apiKey) {
-      apiKey = request.headers["x-api-user-id"];
-      this.logger.info(`x-api-user-id = ${apiKey}`);
-      if (!apiKey) {
-        errorMsg = 'API key required but not provided in either of the "x-api-key" or "x-api-user-id" request headers.';
-        this.logger.warn(errorMsg);
-        throw new BadRequestException(errorMsg);
-      }
-    }
-
-    const validatedToken = await this.validateToken(splitString[1], ip, apiKey);
+    const validatedToken = await this.validateToken(splitString[1], ip);
     const parsedToken = parseToken(validatedToken);
 
     request.userId = parsedToken.userId; // Attach userId to request body
