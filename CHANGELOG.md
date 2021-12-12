@@ -1,3 +1,10 @@
+## [2.0.4](https://github.com/US-EPA-CAMD/easey-common/compare/v2.0.3...v2.0.4) (2021-12-12)
+
+
+### Bug Fixes
+
+* fixing exception thrown in auth guard when checking out monitor plan ([21449fb](https://github.com/US-EPA-CAMD/easey-common/commit/21449fbeb526669b0402ce6bf9d91700a6fd2b8b))
+
 ## [2.0.3](https://github.com/US-EPA-CAMD/easey-common/compare/v2.0.2...v2.0.3) (2021-12-12)
 
 
