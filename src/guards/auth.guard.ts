@@ -54,11 +54,12 @@ export class AuthGuard implements CanActivate {
       ip = request.headers["x-forwarded-for"].split(",")[0];
     }
 
-    if(!request.headers["X-Api-User-Id"]){
-      throw new BadRequestException("API key is required.");
+    let apiKey = request.headers["x-api-key"] || request.headers["x-api-user-id"];
+    if (!apiKey) {
+      throw new BadRequestException('API key required but not provided in either of the "x-api-key" or "x-api-user-id" request headers.');
     }
 
-    const validatedToken = await this.validateToken(splitString[1], ip, request.headers["X-Api-User-Id"]);
+    const validatedToken = await this.validateToken(splitString[1], ip, apiKey);
     const parsedToken = parseToken(validatedToken);
 
     request.userId = parsedToken.userId; // Attach userId to request body
