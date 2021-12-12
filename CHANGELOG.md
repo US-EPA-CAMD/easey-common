@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/US-EPA-CAMD/easey-common/compare/v2.0.0...v2.0.1) (2021-12-11)
+
+
+### Bug Fixes
+
+* fixing auth guard to use X-Api-User-Id vs x-api-key header ([94708ca](https://github.com/US-EPA-CAMD/easey-common/commit/94708ca94a8cca8b94ef92090046b9653a547bc4))
+
 # [2.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v1.16.0...v2.0.0) (2021-12-11)
 
 
