@@ -20,7 +20,6 @@ export class AuthGuard implements CanActivate {
 
   async validateToken(token: string, ip: string, apiKey: string): Promise<any> {
     const url = this.configService.get("app.authApi").uri + "/tokens/validate";
-    console.log("API Key " + apiKey);
     return this.httpService
       .post(url, {
         token: token,
