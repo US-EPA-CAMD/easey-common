@@ -1,3 +1,10 @@
+## [2.0.5](https://github.com/US-EPA-CAMD/easey-common/compare/v2.0.4...v2.0.5) (2021-12-12)
+
+
+### Bug Fixes
+
+* switched AuthGuard to get api key from app config ([60eef5d](https://github.com/US-EPA-CAMD/easey-common/commit/60eef5d39221ed4047286d7ad6be024ad445464f))
+
 ## [2.0.4](https://github.com/US-EPA-CAMD/easey-common/compare/v2.0.3...v2.0.4) (2021-12-12)
 
 
