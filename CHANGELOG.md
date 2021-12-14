@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/US-EPA-CAMD/easey-common/compare/v2.0.5...v2.1.0) (2021-12-14)
+
+
+### Features
+
+* added more metadata properties ([bdb0c60](https://github.com/US-EPA-CAMD/easey-common/commit/bdb0c6042d37a81d24f4c1e3b80f3102c31c2310))
+
 ## [2.0.5](https://github.com/US-EPA-CAMD/easey-common/compare/v2.0.4...v2.0.5) (2021-12-12)
 
 
