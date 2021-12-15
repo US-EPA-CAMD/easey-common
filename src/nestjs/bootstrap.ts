@@ -32,7 +32,25 @@ export async function bootstrap(module: any) {
     };
   }
 
-  app.use(helmet());
+  app.use(helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        baseUri: ["'self'"],
+        blockAllMixedContent: [],
+        fontSrc: ["'self'", "https:", "data:"],
+        frameAncestors: ["'self'"],
+        imgSrc: ["'self'", "data:"],
+        objectSrc: ["'none'"],
+        scriptSrc: ["'self'"],
+        scriptSrcAttr: ["'none'"],
+        styleSrc: ["'self'", "https:", "'unsafe-inline'"],
+        upgradeInsecureRequests: [],
+        connectSrc: ["'self'", 'api.epa.gov'],
+      }
+    }
+  }));
+  
   app.setGlobalPrefix(appPath);
 
   if (configService.get<boolean>('app.enableGlobalValidationPipes')) {
