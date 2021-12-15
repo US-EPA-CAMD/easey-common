@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/US-EPA-CAMD/easey-common/compare/v2.1.0...v2.1.1) (2021-12-15)
+
+
+### Bug Fixes
+
+* helmet Content Security Policy support for Swagger UI ([3118a35](https://github.com/US-EPA-CAMD/easey-common/commit/3118a3541161c3a72f9d51740bc5adc9242d1192))
+
 # [2.1.0](https://github.com/US-EPA-CAMD/easey-common/compare/v2.0.5...v2.1.0) (2021-12-14)
 
 
