@@ -1,3 +1,10 @@
+## [2.1.2](https://github.com/US-EPA-CAMD/easey-common/compare/v2.1.1...v2.1.2) (2021-12-27)
+
+
+### Bug Fixes
+
+* **property-metadata.constants.ts:** updated fieldLabels ([bcfdb90](https://github.com/US-EPA-CAMD/easey-common/commit/bcfdb9015167cfba16760a636673c894992ce416)), closes [#2409](https://github.com/US-EPA-CAMD/easey-common/issues/2409)
+
 ## [2.1.1](https://github.com/US-EPA-CAMD/easey-common/compare/v2.1.0...v2.1.1) (2021-12-15)
 
 
