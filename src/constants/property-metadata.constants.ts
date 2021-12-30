@@ -1042,7 +1042,7 @@ export const propertyMetadata = {
       value: "sortOrder",
     },
     description:"",
-    example:"null",
+    example: null,
   },
   sourceCategory: {
     fieldLabels: {
