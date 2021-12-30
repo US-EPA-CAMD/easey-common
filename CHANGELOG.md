@@ -1,3 +1,11 @@
+# [2.2.0](https://github.com/US-EPA-CAMD/easey-common/compare/v2.1.2...v2.2.0) (2021-12-30)
+
+
+### Features
+
+* **property-metadata.constants.ts:** added MDM parameter descriptions ([24e1fe4](https://github.com/US-EPA-CAMD/easey-common/commit/24e1fe48510fc41ab5a3672e4b684b703861d04d))
+* **property-metadata.constants.ts:** fixed null example value ([255b330](https://github.com/US-EPA-CAMD/easey-common/commit/255b33038b4c166efdd5ad206508c85191ad746f))
+
 ## [2.1.2](https://github.com/US-EPA-CAMD/easey-common/compare/v2.1.1...v2.1.2) (2021-12-27)
 
 
