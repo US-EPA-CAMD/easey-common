@@ -483,6 +483,14 @@ export const propertyMetadata = {
       "The amount of pollutant in short tons emitted in excess of the number of allowances held.",
     example: 0,
   },
+  exclude: {
+    fieldLabels:{
+      label: "exclude",
+      value: ""
+    },
+    description: "Selected items will be excluded from the response",
+    example:""
+  },
   facilityId: {
     fieldLabels: {
       label: "Facility ID",
@@ -586,6 +594,14 @@ export const propertyMetadata = {
     description:
       "Hour in which activity occurred, recorded using local, standard time.",
     example: 23,
+  },
+  isActive:{
+    fieldLabels: {
+      label:"isActive",
+      value: ""
+    },
+    description: "Indicator of whether or not the program is Active (True) or Retired (False)",
+    example:""
   },
   inCompliance: {
     fieldLabels: {
@@ -1026,7 +1042,7 @@ export const propertyMetadata = {
       value: "sortOrder",
     },
     description:"",
-    example:"",
+    example: null,
   },
   sourceCategory: {
     fieldLabels: {
