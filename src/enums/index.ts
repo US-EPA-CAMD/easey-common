@@ -1,5 +1,5 @@
 export { AccountType } from "./account-type.enum";
-export { AccountTypeCode} from "./account-type-code.enum"
+export { AccountTypeCode } from "./account-type-code.enum";
 export { ActiveAllowanceProgram } from "./active-allowance-program.enum";
 export { AllowanceProgram } from "./allowance-programs.enum";
 export { ControlTechnology } from "./control-technology.enum";
