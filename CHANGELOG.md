@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/US-EPA-CAMD/easey-common/compare/v2.2.0...v2.3.0) (2022-01-03)
+
+
+### Features
+
+* **account-type-code.enum.ts:** added account type code enum for MDM endpoint ([9a7bb96](https://github.com/US-EPA-CAMD/easey-common/commit/9a7bb96906142b50846d9534cbbc26adca4831cb))
+
 # [2.2.0](https://github.com/US-EPA-CAMD/easey-common/compare/v2.1.2...v2.2.0) (2021-12-30)
 
 
