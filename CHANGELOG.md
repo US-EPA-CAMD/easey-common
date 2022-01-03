@@ -1,3 +1,11 @@
+## [2.3.1](https://github.com/US-EPA-CAMD/easey-common/compare/v2.3.0...v2.3.1) (2022-01-03)
+
+
+### Bug Fixes
+
+* **account-type-code.enum.ts:** add AccountTypeCode to index.ts ([2e5974d](https://github.com/US-EPA-CAMD/easey-common/commit/2e5974d48e6aa6e692436705633f4bcdaf7c701f))
+* **enums/index.ts:** fix formatting ([bb0c0ef](https://github.com/US-EPA-CAMD/easey-common/commit/bb0c0ef38ac656a79f6f73a778b58ee55761e932))
+
 # [2.3.0](https://github.com/US-EPA-CAMD/easey-common/compare/v2.2.0...v2.3.0) (2022-01-03)
 
 
