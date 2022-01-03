@@ -1,4 +1,4 @@
-export enum AccountTypeCodes {
+export enum AccountTypeCode {
   CASURR = "CASURR",
   ENFSURR = "ENFSURR",
   FACLTY = "FACLTY",
