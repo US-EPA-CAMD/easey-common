@@ -63,7 +63,7 @@ export const propertyMetadata = {
     },
     description:
       "For ARP NOx, the actual rate at which a pollutant was emitted during a given time period for a single unit. (lb/mmBtu)",
-    example: 0.5,
+    example: 0.500,
   },
   allocated: {
     fieldLabels: {
@@ -358,7 +358,7 @@ export const propertyMetadata = {
       value: "controlTechnologies",
     },
     description:
-      "Method or equipment used by the combusion unit to minimize Hg, NOx, PM, or SO2 emissions.",
+      "Method or equipment used by the combustion unit to minimize Hg, NOx, PM, or SO2 emissions.",
     example: "Baghouse",
   },
   countOpTime: {
@@ -438,7 +438,7 @@ export const propertyMetadata = {
     },
     description:
       "For ARP NOx, the applicable emissions limit based on compliance plan. May either be unit-specific or part of an averaging plan. (lb/mmBtu)",
-    example: 0.55,
+    example: 0.550,
   },
   emissionsUIFilter: {
     fieldLabels: {
@@ -905,7 +905,7 @@ export const propertyMetadata = {
       value: "sellAccountNumber",
     },
     description:
-      "The number of the account transfering allowances in an allowance transaction.",
+      "The number of the account transferring allowances in an allowance transaction.",
     example: "002828FACLTY",
   },
   sellAccountType: {
@@ -1090,7 +1090,7 @@ export const propertyMetadata = {
       label:"State",
       value: "stateCode",
     },
-    description: "Two letter abreviation for the State.",
+    description: "Two letter abbreviation for the State.",
     example: "AK",
   },
   stateName: {
@@ -1227,7 +1227,7 @@ export const propertyMetadata = {
       value: "transactionTypeCode",
     },
     description: "Code for the transaction type.",
-    example: "INITALL",
+    example: "INITIAL",
   },
   transactionTypeDescription: {
     fieldLabels: {
@@ -1351,7 +1351,7 @@ export const propertyMetadata = {
       value: "addDate",
     },
     description: "Date and time in which record was added.",
-    example: "5/21/2018",
+    example: "2009-02-20",
   },
   
   analyzerRangeDTOUpdateDate:{
@@ -1360,7 +1360,7 @@ export const propertyMetadata = {
       value: "updateDate",
     },
     description: "Date and time in which record was last updated.",
-    example: "NULL",
+    example: "2009-02-20",
   },
   
   analyzerRangeDTOAnalyzerRangeCode:{
@@ -1387,7 +1387,7 @@ export const propertyMetadata = {
       value: "beginDate",
     },
     description: "Date in which information became effective or activity started.",
-    example: "5/17/2018",
+    example: "2008-05-17",
   },
   
   analyzerRangeDTOBeginHour:{
@@ -1404,8 +1404,8 @@ export const propertyMetadata = {
       label: "End Date",
       value: "endDate",
     },
-    description: "Last date in which information was effective or date in which activity ended.",
-    example: "NULL",
+    description: "Last date in which information was effective or date in which activity ended. This value will be null if active record.",
+    example: null,
   },
   
   analyzerRangeDTOEndHour:{
@@ -1413,8 +1413,8 @@ export const propertyMetadata = {
       label: "End Hour",
       value: "endHour",
     },
-    description: "Last hour in which information was effective or hour in which activity ended.",
-    example: "NULL",
+    description: "Last hour in which information was effective or hour in which activity ended. This value will be null if active record.",
+    example: null,
   },
   
   analyzerRangeDTOActive:{
@@ -1423,7 +1423,7 @@ export const propertyMetadata = {
       value: "active",
     },
     description: "Flag for active monitor location record",
-    example: "",
+    example: true,
   },
   
   componentDTOId:{
@@ -1459,7 +1459,7 @@ export const propertyMetadata = {
       value: "addDate",
     },
     description: "Date and time in which record was added.",
-    example: "2/20/2009",
+    example: "2009-02-20",
   },
   
   componentDTOUpdateDate:{
@@ -1468,7 +1468,7 @@ export const propertyMetadata = {
       value: "updateDate",
     },
     description: "Date and time in which record was last updated.",
-    example: "NULL",
+    example: "2009-02-20",
   },
   
   componentDTOComponentId:{
@@ -1540,7 +1540,7 @@ export const propertyMetadata = {
       value: "hgConverterIndicator",
     },
     description: "For an Hg component, indicates whether the analyzer has a converter.",
-    example: "NULL",
+    example: "1",
   },
   
   ductWafDTOId:{
@@ -1576,7 +1576,7 @@ export const propertyMetadata = {
       value: "addDate",
     },
     description: "Date and time in which record was added.",
-    example: "2/20/2009",
+    example: "2009-02-20",
   },
   
   ductWafDTOUpdateDate:{
@@ -1585,7 +1585,7 @@ export const propertyMetadata = {
       value: "updateDate",
     },
     description: "Date and time in which record was last updated.",
-    example: "10/20/2021",
+    example: "2009-02-20",
   },
   
   ductWafDTOWafDeterminationDate:{
@@ -1594,7 +1594,7 @@ export const propertyMetadata = {
       value: "wafDeterminationDate",
     },
     description: "The date the WAF applied in column 20 was determined.",
-    example: "11/18/2020",
+    example: "2020-11-18",
   },
   
   ductWafDTOWafBeginDate:{
@@ -1603,7 +1603,7 @@ export const propertyMetadata = {
       value: "wafBeginDate",
     },
     description: "The date on which the WAF was first applied to the flow rate data.",
-    example: "11/18/2020",
+    example: "2020-11-28",
   },
   
   ductWafDTOWafBeginHour:{
@@ -1612,7 +1612,7 @@ export const propertyMetadata = {
       value: "wafBeginHour",
     },
     description: "The hour in which the WAF was first applied to the flow rate data.",
-    example: "1",
+    example: 12,
   },
   
   ductWafDTOWafMethodCode:{
@@ -1630,7 +1630,7 @@ export const propertyMetadata = {
       value: "wafValue",
     },
     description: "The WAF applied to the flow rate data, to four decimal places.",
-    example: "1",
+    example: 1.0454,
   },
   
   ductWafDTONumberOfTestRuns:{
@@ -1639,7 +1639,7 @@ export const propertyMetadata = {
       value: "numberOfTestRuns",
     },
     description: "The number of runs in the WAF test (must be one for default WAF and at least three for a measured WAF)",
-    example: "1",
+    example: 3,
   },
   
   ductWafDTONumberOfTraversePointsWaf:{
@@ -1648,7 +1648,7 @@ export const propertyMetadata = {
       value: "numberOfTraversePointsWaf",
     },
     description: "The number of Method 1 traverse points in the WAF test runs.",
-    example: "1",
+    example: 48,
   },
   
   ductWafDTONumberOfTestPorts:{
@@ -1657,7 +1657,7 @@ export const propertyMetadata = {
       value: "numberOfTestPorts",
     },
     description: "The number of test ports at which measurements were made during the WAF test runs.",
-    example: "4",
+    example: 4,
   },
   
   ductWafDTONumberOfTraversePointsRef:{
@@ -1666,7 +1666,7 @@ export const propertyMetadata = {
       value: "numberOfTraversePointsRef",
     },
     description: "The number of Method 1 traverse points in the reference flow RATA test runs.",
-    example: "1",
+    example: 48,
   },
   
   ductWafDTODuctWidth:{
@@ -1675,7 +1675,7 @@ export const propertyMetadata = {
       value: "ductWidth",
     },
     description: "The width of the rectangular duct at the test location.",
-    example: "1",
+    example: 12,
   },
   
   ductWafDTODuctDepth:{
@@ -1684,7 +1684,7 @@ export const propertyMetadata = {
       value: "ductDepth",
     },
     description: "The depth of the rectangular duct at the test location. ",
-    example: "1",
+    example: 18.5,
   },
   
   ductWafDTOWafEndDate:{
@@ -1693,7 +1693,7 @@ export const propertyMetadata = {
       value: "wafEndDate",
     },
     description: "The date on which the WAF was last applied to the flow rate data.",
-    example: "9/20/2021",
+    example: "2021-09-18",
   },
   
   ductWafDTOWafEndHour:{
@@ -1702,7 +1702,7 @@ export const propertyMetadata = {
       value: "wafEndHour",
     },
     description: "The hour in which the WAF was last applied to the flow rate data.",
-    example: "1",
+    example: 9,
   },
   
   matsMethodDTOId:{
@@ -1738,7 +1738,7 @@ export const propertyMetadata = {
       value: "addDate",
     },
     description: "Date and time in which record was added.",
-    example: "2/23/2016",
+    example: "2016-02-23",
   },
   
   matsMethodDTOUpdateDate:{
@@ -1747,7 +1747,7 @@ export const propertyMetadata = {
       value: "updateDate",
     },
     description: "Date and time in which record was last updated.",
-    example: "NULL",
+    example: "2016-02-23",
   },
   
   matsMethodDTOSupplementalMATSParameterCode:{
@@ -1774,7 +1774,7 @@ export const propertyMetadata = {
       value: "beginDate",
     },
     description: "Date on which information became effective or activity started.",
-    example: "4/16/2016",
+    example: "2016-04-28",
   },
   
   matsMethodDTOBeginHour:{
@@ -1783,7 +1783,7 @@ export const propertyMetadata = {
       value: "beginHour",
     },
     description: "Hour in which information became effective.",
-    example: "0",
+    example: 1,
   },
   
   matsMethodDTOEndDate:{
@@ -1792,7 +1792,7 @@ export const propertyMetadata = {
       value: "endDate",
     },
     description: "Last date in which information was effective. This date will be null for active records.",
-    example: "NULLL",
+    example: "2020-04-28",
   },
   
   matsMethodDTOEndHour:{
@@ -1801,7 +1801,7 @@ export const propertyMetadata = {
       value: "endHour",
     },
     description: "Last hour in which information was effective. This value will be null for active records.",
-    example: "NULL",
+    example: 23,
   },
   
   matsMethodDTOActive:{
@@ -1810,7 +1810,7 @@ export const propertyMetadata = {
       value: "active",
     },
     description: "Flag for active monitor location record",
-    example: "",
+    example: true,
   },
   
   monitorAttributeDTOId:{
@@ -1846,7 +1846,7 @@ export const propertyMetadata = {
       value: "addDate",
     },
     description: "Date and time in which record was added.",
-    example: "4/21/2009",
+    example: "2009-02-20",
   },
   
   monitorAttributeDTOUpdateDate:{
@@ -1855,7 +1855,7 @@ export const propertyMetadata = {
       value: "updateDate",
     },
     description: "Date and time in which record was last updated.",
-    example: "11/3/2015",
+    example: "2009-02-20",
   },
   
   monitorAttributeDTOBeginDate:{
@@ -1864,7 +1864,7 @@ export const propertyMetadata = {
       value: "beginDate",
     },
     description: "Date on which information became effective or activity started.",
-    example: "1/1/2008",
+    example: "2008-01-01",
   },
   
   monitorAttributeDTOEndDate:{
@@ -1873,7 +1873,7 @@ export const propertyMetadata = {
       value: "endDate",
     },
     description: "Last date in which information was effective.  This date will be null for active records.",
-    example: "NULL",
+    example: null,
   },
   
   monitorAttributeDTOBypassIndicator:{
@@ -1882,7 +1882,7 @@ export const propertyMetadata = {
       value: "bypassIndicator",
     },
     description: "Used to indicate that the stack is used for bypass.",
-    example: "NULL",
+    example: "1",
   },
   
   monitorAttributeDTOCrossAreaFlow:{
@@ -1891,7 +1891,7 @@ export const propertyMetadata = {
       value: "crossAreaFlow",
     },
     description: "The reported inside cross-sectional area in square feet of the stack or duct at the flow monitoring location.",
-    example: "306",
+    example: 306,
   },
   
   monitorAttributeDTOCrossAreaStackExit:{
@@ -1900,7 +1900,7 @@ export const propertyMetadata = {
       value: "crossAreaStackExit",
     },
     description: "The inside cross-sectional area in square feet of the stack at the exit.",
-    example: "306",
+    example: 306,
   },
   
   monitorAttributeDTODuctIndicator:{
@@ -1909,7 +1909,7 @@ export const propertyMetadata = {
       value: "ductIndicator",
     },
     description: "Used to indicate that this location is a duct.",
-    example: "NULL",
+    example: "1",
   },
   
   monitorAttributeDTOGroundElevation:{
@@ -1918,7 +1918,7 @@ export const propertyMetadata = {
       value: "groundElevation",
     },
     description: "The number of feet above sea level at ground level of the stack or unit.",
-    example: "40",
+    example: 40,
   },
   
   monitorAttributeDTOMaterialCode:{
@@ -1945,7 +1945,7 @@ export const propertyMetadata = {
       value: "stackHeight",
     },
     description: "The height in feet of a stack exit above ground level.",
-    example: "400",
+    example: 400,
   },
   
   monitorAttributeDTOActive:{
@@ -1954,7 +1954,7 @@ export const propertyMetadata = {
       value: "active",
     },
     description: "Flag for active monitor location record",
-    example: "",
+    example: true,
   },
   
   monitorDefaultDTOId:{
@@ -1990,7 +1990,7 @@ export const propertyMetadata = {
       value: "addDate",
     },
     description: "Date and time in which record was added.",
-    example: "4/21/2009",
+    example: "2009-02-20",
   },
   
   monitorDefaultDTOUpdateDate:{
@@ -1999,7 +1999,7 @@ export const propertyMetadata = {
       value: "updateDate",
     },
     description: "Date and time in which record was last updated.",
-    example: "4/21/2009",
+    example: "2009-02-20",
   },
   
   monitorDefaultDTOParameterCode:{
@@ -2017,7 +2017,7 @@ export const propertyMetadata = {
       value: "defaultValue",
     },
     description: "Value of default, maximum, minimum or constant.",
-    example: "5",
+    example: 5.0,
   },
   
   monitorDefaultDTODefaultUnitsOfMeasureCode:{
@@ -2070,8 +2070,8 @@ export const propertyMetadata = {
       label: "Group ID",
       value: "groupId",
     },
-    description: "For a group of identical units using testing to determine default NOx rate, this ID identifies the group.",
-    example: "NULL",
+    description: "For a group of identical LME units using testing to determine default NOx rate, this ID identifies the group.",
+    example: "GP2249",
   },
   
   monitorDefaultDTOBeginDate:{
@@ -2080,7 +2080,7 @@ export const propertyMetadata = {
       value: "beginDate",
     },
     description: "Date on which information became effective or activity started.",
-    example: "1/1/2008",
+    example: "2008-01-01",
   },
   
   monitorDefaultDTOBeginHour:{
@@ -2089,7 +2089,7 @@ export const propertyMetadata = {
       value: "beginHour",
     },
     description: "Hour in which information became effective.",
-    example: "0",
+    example: 1,
   },
   
   monitorDefaultDTOEndDate:{
@@ -2098,7 +2098,7 @@ export const propertyMetadata = {
       value: "endDate",
     },
     description: "Last date in which information was effective.  This date will be null for active records.",
-    example: "NULL",
+    example: null,
   },
   
   monitorDefaultDTOEndHour:{
@@ -2107,7 +2107,7 @@ export const propertyMetadata = {
       value: "endHour",
     },
     description: "Last hour in which information was effective.  This value will be null for active records.",
-    example: "NULL",
+    example: null,
   },
   
   monitorDefaultDTOActive:{
@@ -2116,7 +2116,7 @@ export const propertyMetadata = {
       value: "active",
     },
     description: "Flag for active monitor location record",
-    example: "",
+    example: "true",
   },
   
   monitorFormulaDTOId:{
@@ -2152,7 +2152,7 @@ export const propertyMetadata = {
       value: "addDate",
     },
     description: "Date and time in which record was added.",
-    example: "2/20/2009",
+    example: "2009-02-20",
   },
   
   monitorFormulaDTOUpdateDate:{
@@ -2161,7 +2161,7 @@ export const propertyMetadata = {
       value: "updateDate",
     },
     description: "Date and time in which record was last updated.",
-    example: "NULL",
+    example: "2009-02-20",
   },
   
   monitorFormulaDTOFormulaId:{
@@ -2170,7 +2170,7 @@ export const propertyMetadata = {
       value: "formulaId",
     },
     description: "The three character formula ID assigned by the source.",
-    example: "16",
+    example: "140",
   },
   
   monitorFormulaDTOParameterCode:{
@@ -2206,7 +2206,7 @@ export const propertyMetadata = {
       value: "beginDate",
     },
     description: "Date on which information became effective or activity started.",
-    example: "11/8/2007",
+    example: "2007-11-08",
   },
   
   monitorFormulaDTOBeginHour:{
@@ -2215,7 +2215,7 @@ export const propertyMetadata = {
       value: "beginHour",
     },
     description: "Hour in which information became effective.",
-    example: "17",
+    example: 17,
   },
   
   monitorFormulaDTOEndDate:{
@@ -2224,7 +2224,7 @@ export const propertyMetadata = {
       value: "endDate",
     },
     description: "Last date in which information was effective.  This date will be null for active records.",
-    example: "NULL",
+    example: null,
   },
   
   monitorFormulaDTOEndHour:{
@@ -2233,7 +2233,7 @@ export const propertyMetadata = {
       value: "endHour",
     },
     description: "Last hour in which information was effective.  This value will be null for active records.",
-    example: "NULL",
+    example: null,
   },
   
   monitorFormulaDTOActive:{
@@ -2242,7 +2242,7 @@ export const propertyMetadata = {
       value: "active",
     },
     description: "Flag for active monitor location record",
-    example: "",
+    example: true,
   },
   
   monitorLoadDTOId:{
@@ -2278,7 +2278,7 @@ export const propertyMetadata = {
       value: "addDate",
     },
     description: "Date and time in which record was added.",
-    example: "11/12/2019",
+    example: "2018-10-12",
   },
   
   monitorLoadDTOUpdateDate:{
@@ -2287,7 +2287,7 @@ export const propertyMetadata = {
       value: "updateDate",
     },
     description: "Date and time in which record was last updated.",
-    example: "null",
+    example: "2018-10-12",
   },
   
   monitorLoadDTOMaximumLoadValue:{
@@ -2295,8 +2295,8 @@ export const propertyMetadata = {
       label: "Max Load Value",
       value: "maximumLoadValue",
     },
-    description: "Maximum hourly gross load.",
-    example: "353",
+    description: "Maximum hourly gross load associated with the unit, stack, or pipe at full capacity.",
+    example: 353,
   },
   
   monitorLoadDTOMaximumLoadUnitsOfMeasureCode:{
@@ -2314,7 +2314,7 @@ export const propertyMetadata = {
       value: "lowerOperationBoundary",
     },
     description: "Lower boundary of range of operation.",
-    example: "145",
+    example: 145,
   },
   
   monitorLoadDTOUpperOperationBoundary:{
@@ -2323,7 +2323,7 @@ export const propertyMetadata = {
       value: "upperOperationBoundary",
     },
     description: "Upper boundary of range of operation.",
-    example: "301",
+    example: 301,
   },
   
   monitorLoadDTONormalLevelCode:{
@@ -2359,7 +2359,7 @@ export const propertyMetadata = {
       value: "loadAnalysisDate",
     },
     description: "The date in which load analysis was performed.  This date only applies to CEM and Appendix D locations.",
-    example: "10/31/2018",
+    example: "2018-09-31",
   },
   
   monitorLoadDTOBeginDate:{
@@ -2368,7 +2368,7 @@ export const propertyMetadata = {
       value: "beginDate",
     },
     description: "Date on which information became effective or activity started.",
-    example: "10/31/2018",
+    example: "2018-09-31",
   },
   
   monitorLoadDTOBeginHour:{
@@ -2377,7 +2377,7 @@ export const propertyMetadata = {
       value: "beginHour",
     },
     description: "Hour in which information became effective.",
-    example: "23",
+    example: 23,
   },
   
   monitorLoadDTOEndDate:{
@@ -2386,7 +2386,7 @@ export const propertyMetadata = {
       value: "endDate",
     },
     description: "Last date in which information was effective.  This date will be null for active records.",
-    example: "10/30/2019",
+    example: null,
   },
   
   monitorLoadDTOEndHour:{
@@ -2395,7 +2395,7 @@ export const propertyMetadata = {
       value: "endHour",
     },
     description: "Last hour in which information was effective.  This value will be null for active records.",
-    example: "23",
+    example: null,
   },
   
   monitorLoadDTOActive:{
@@ -2404,7 +2404,7 @@ export const propertyMetadata = {
       value: "active",
     },
     description: "Flag for active monitor location record",
-    example: "",
+    example: true,
   },
   
   monitorMethodDTOId:{
@@ -2440,7 +2440,7 @@ export const propertyMetadata = {
       value: "addDate",
     },
     description: "Date and time in which record was added.",
-    example: "4/21/2009",
+    example: "2009-02-20",
   },
   
   monitorMethodDTOUpdateDate:{
@@ -2449,7 +2449,7 @@ export const propertyMetadata = {
       value: "updateDate",
     },
     description: "Date and time in which record was last updated.",
-    example: "null",
+    example: "2009-02-20",
   },
   
   monitorMethodDTOParameterCode:{
@@ -2485,7 +2485,7 @@ export const propertyMetadata = {
       value: "bypassApproachCode",
     },
     description: "Code used to identify the value to be used for an unmonitored bypass stack.",
-    example: "null",
+    example: "BYMAX",
   },
   
   monitorMethodDTOBeginDate:{
@@ -2494,7 +2494,7 @@ export const propertyMetadata = {
       value: "beginDate",
     },
     description: "Date on which information became effective or activity started.",
-    example: "11/28/2007",
+    example: "2007-11-27",
   },
   
   monitorMethodDTOBeginHour:{
@@ -2503,7 +2503,7 @@ export const propertyMetadata = {
       value: "beginHour",
     },
     description: "Hour in which information became effective.",
-    example: "17",
+    example: 17,
   },
   
   monitorMethodDTOEndDate:{
@@ -2512,7 +2512,7 @@ export const propertyMetadata = {
       value: "endDate",
     },
     description: "Last date in which information was effective.  This date will be null for active records.",
-    example: "null",
+    example: null,
   },
   
   monitorMethodDTOEndHour:{
@@ -2521,7 +2521,7 @@ export const propertyMetadata = {
       value: "endHour",
     },
     description: "Last hour in which information was effective.  This value will be null for active records.",
-    example: "null",
+    example: null,
   },
   
   monitorMethodDTOActive:{
@@ -2530,7 +2530,7 @@ export const propertyMetadata = {
       value: "active",
     },
     description: "Flag for active monitor location record",
-    example: "",
+    example: true,
   },
   
   monitorPlanCommentDTOId:{
@@ -2566,7 +2566,7 @@ export const propertyMetadata = {
       value: "addDate",
     },
     description: "Date and time in which record was added.",
-    example: "9/8/2021",
+    example: "2020-10-28",
   },
   
   monitorPlanCommentDTOUpdateDate:{
@@ -2575,7 +2575,7 @@ export const propertyMetadata = {
       value: "updateDate",
     },
     description: "Date and time in which record was last updated.",
-    example: "null",
+    example: "2020-10-28",
   },
   
   monitorPlanCommentDTOMonitoringPlanComment:{
@@ -2584,7 +2584,7 @@ export const propertyMetadata = {
       value: "monitoringPlanComment",
     },
     description: "Comment on a monitoring plan",
-    example: "DAHS was updated for GT-1 on 11/10/2016 by a previous owner, but the component ID was not updated on the gas system. This was corrected on 9/8/2021.",
+    example: "DAHS was updated for GT-1 on 11/10/2016 by a previous owner, but the component ID was not updated on the gas system. This was corrected on 9/8/2020.",
   },
   
   monitorPlanCommentDTOBeginDate:{
@@ -2593,7 +2593,7 @@ export const propertyMetadata = {
       value: "beginDate",
     },
     description: "Date and time in which an activity started or ended.",
-    example: "9/8/2021",
+    example: "2020-09-28",
   },
   
   monitorPlanCommentDTOEndDate:{
@@ -2602,7 +2602,7 @@ export const propertyMetadata = {
       value: "endDate",
     },
     description: "Last date in which information was effective.  This date will be null for active records.",
-    example: "9/8/2021",
+    example: null,
   },
   
   monitorPlanCommentDTOActive:{
@@ -2611,7 +2611,7 @@ export const propertyMetadata = {
       value: "active",
     },
     description: "Flag for active monitor location record",
-    example: "",
+    example: true,
   },
   
   monitorQualificationDTOId:{
@@ -2647,7 +2647,7 @@ export const propertyMetadata = {
       value: "addDate",
     },
     description: "Date and time in which record was added.",
-    example: "7/20/2018",
+    example: "2018-07-20",
   },
   
   monitorQualificationDTOUpdateDate:{
@@ -2656,7 +2656,7 @@ export const propertyMetadata = {
       value: "updateDate",
     },
     description: "Date and time in which record was last updated.",
-    example: "4/14/2020",
+    example: "2018-07-20",
   },
   
   monitorQualificationDTOQualificationTypeCode:{
@@ -2665,7 +2665,7 @@ export const propertyMetadata = {
       value: "qualificationTypeCode",
     },
     description: "Code used to identify the qualification type.",
-    example: "lMES",
+    example: "LMES",
   },
   
   monitorQualificationDTOBeginDate:{
@@ -2674,7 +2674,7 @@ export const propertyMetadata = {
       value: "beginDate",
     },
     description: "Date on which information became effective or activity started.",
-    example: "5/1/2018",
+    example: "2018-05-01",
   },
   
   monitorQualificationDTOEndDate:{
@@ -2683,7 +2683,7 @@ export const propertyMetadata = {
       value: "endDate",
     },
     description: "Last date in which information was effective.  This date will be null for active records.",
-    example: "2019-04-31",
+    example: null,
   },
   
   monitorQualificationDTOActive:{
@@ -2692,7 +2692,7 @@ export const propertyMetadata = {
       value: "active",
     },
     description: "Flag for active monitor location record",
-    example: "",
+    example: true,
   },
   
   lEEQualificationDTOId:{
@@ -2728,7 +2728,7 @@ export const propertyMetadata = {
       value: "addDate",
     },
     description: "Date and time in which record was added.",
-    example: "10/25/2018",
+    example: "2018-10-25",
   },
   
   lEEQualificationDTOUpdateDate:{
@@ -2737,7 +2737,7 @@ export const propertyMetadata = {
       value: "updateDate",
     },
     description: "Date and time in which record was last updated.",
-    example: "null",
+    example: "2018-10-25",
   },
   
   lEEQualificationDTOQualificationTestDate:{
@@ -2746,7 +2746,7 @@ export const propertyMetadata = {
       value: "qualificationTestDate",
     },
     description: "End date of the initial LEE qualifying test or a retest.",
-    example: "7/15/2018",
+    example: "2018-07-15",
   },
   
   lEEQualificationDTOParameterCode:{
@@ -2773,7 +2773,7 @@ export const propertyMetadata = {
       value: "potentialAnnualMassEmissions",
     },
     description: "Potential annual mass emissions used for LEE qualification.",
-    example: "null",
+    example: 10.2,
   },
   
   lEEQualificationDTOApplicableEmissionStandard:{
@@ -2782,7 +2782,7 @@ export const propertyMetadata = {
       value: "applicableEmissionStandard",
     },
     description: "Applicable Emission Standard used for LEE qualification.",
-    example: "29",
+    example: 29,
   },
   
   lEEQualificationDTOUnitsOfStandard:{
@@ -2800,7 +2800,7 @@ export const propertyMetadata = {
       value: "percentageOfEmissionStandard",
     },
     description: "Result of initial test or retest as a percentage of the Applicable Emission Standard.",
-    example: "72.8",
+    example: 72.8,
   },
   
   lMEQualificationDTOId:{
@@ -2836,7 +2836,7 @@ export const propertyMetadata = {
       value: "addDate",
     },
     description: "Date and time in which record was added.",
-    example: "7/20/2018",
+    example: "2015-07-20",
   },
   
   lMEQualificationDTOUpdateDate:{
@@ -2845,7 +2845,7 @@ export const propertyMetadata = {
       value: "updateDate",
     },
     description: "Date and time in which record was last updated.",
-    example: "null",
+    example: "2015-07-20",
   },
   
   lMEQualificationDTOQualificationDataYear:{
@@ -2863,7 +2863,7 @@ export const propertyMetadata = {
       value: "operatingHours",
     },
     description: "Annual number of operating hours used to determine qualification.",
-    example: "105",
+    example: 105,
   },
   
   lMEQualificationDTOSo2Tons:{
@@ -2872,7 +2872,7 @@ export const propertyMetadata = {
       value: "so2Tons",
     },
     description: "Annual SO2 value used to determine qualification.",
-    example: "",
+    example: 0.9,
   },
   
   lMEQualificationDTONoxTons:{
@@ -2881,7 +2881,7 @@ export const propertyMetadata = {
       value: "noxTons",
     },
     description: "Annual NOX emissions to determine qualification.",
-    example: "6.4",
+    example: 6.4,
   },
   
   pCTQualificationDTOId:{
@@ -2917,7 +2917,7 @@ export const propertyMetadata = {
       value: "addDate",
     },
     description: "Date and time in which record was added.",
-    example: "4/29/2021",
+    example: "2021-04-01",
   },
   
   pCTQualificationDTOUpdateDate:{
@@ -2926,7 +2926,7 @@ export const propertyMetadata = {
       value: "updateDate",
     },
     description: "Date and time in which record was last updated.",
-    example: "null",
+    example: "2021-04-01",
   },
   
   pCTQualificationDTOQualificationYear:{
@@ -2934,8 +2934,8 @@ export const propertyMetadata = {
       label: "Qualification Year",
       value: "qualificationYear",
     },
-    description: "The average percent capacity or heat input usage.",
-    example: "2021",
+    description: "Year corresponding to the qualification data.",
+    example: 2021,
   },
   
   pCTQualificationDTOAveragePercentValue:{
@@ -2943,8 +2943,8 @@ export const propertyMetadata = {
       label: "Average Percentage Value",
       value: "averagePercentValue",
     },
-    description: "Year corresponding to the qualification data.",
-    example: "100",
+    description: "The average percent capacity or heat input usage.",
+    example: 100,
   },
   
   pCTQualificationDTOYr1QualificationDataYear:{
@@ -2953,7 +2953,7 @@ export const propertyMetadata = {
       value: "yr1QualificationDataYear",
     },
     description: "The first year corresponding to the qualification data.",
-    example: "2018",
+    example: 2018,
   },
   
   pCTQualificationDTOYr1QualificationDataTypeCode:{
@@ -2971,7 +2971,7 @@ export const propertyMetadata = {
       value: "yr1PercentageValue",
     },
     description: "The percent capacity or heat input usage in the first year.",
-    example: "100",
+    example: 100,
   },
   
   pCTQualificationDTOYr2QualificationDataYear:{
@@ -2980,7 +2980,7 @@ export const propertyMetadata = {
       value: "yr2QualificationDataYear",
     },
     description: "The second year corresponding to the qualification data.",
-    example: "2019",
+    example: 2019,
   },
   
   pCTQualificationDTOYr2QualificationDataTypeCode:{
@@ -2998,7 +2998,7 @@ export const propertyMetadata = {
       value: "yr2PercentageValue",
     },
     description: "The percent capacity or heat input usage in the second year.",
-    example: "100",
+    example: 100,
   },
   
   pCTQualificationDTOYr3QualificationDataYear:{
@@ -3007,7 +3007,7 @@ export const propertyMetadata = {
       value: "yr3QualificationDataYear",
     },
     description: "The third year corresponding to the qualification data.",
-    example: "2020",
+    example: 2020,
   },
   
   pCTQualificationDTOYr3QualificationDataTypeCode:{
@@ -3025,7 +3025,7 @@ export const propertyMetadata = {
       value: "yr3PercentageValue",
     },
     description: "The percent capacity or heat input usage in the third year.",
-    example: "100",
+    example: 100,
   },
   
   monitorSpanDTOId:{
@@ -3061,7 +3061,7 @@ export const propertyMetadata = {
       value: "addDate",
     },
     description: "Date and time in which record was added.",
-    example: "5/21/2018",
+    example: "2009-02-20",
   },
   
   monitorSpanDTOUpdateDate:{
@@ -3070,7 +3070,7 @@ export const propertyMetadata = {
       value: "updateDate",
     },
     description: "Date and time in which record was last updated.",
-    example: "null",
+    example: "2009-02-20",
   },
   
   monitorSpanDTOComponentTypeCode:{
@@ -3105,8 +3105,8 @@ export const propertyMetadata = {
       label: "MEC Value",
       value: "mecValue",
     },
-    description: "Maximum expected concentration (MEC).",
-    example: "100",
+    description: "The Maximum Expected Concentration (MEC) value reported in the SO2 and NOx span records.",
+    example: 156.9,
   },
   
   monitorSpanDTOMpcValue:{
@@ -3114,8 +3114,8 @@ export const propertyMetadata = {
       label: "MPC Value",
       value: "mpcValue",
     },
-    description: "Maximum potential concentration (MPC).",
-    example: "1200",
+    description: "The Maximum Potential Concentration (MPC) value reported in the high scale record for NOx, SO2, or CO2.",
+    example: 177.2,
   },
   
   monitorSpanDTOMpfValue:{
@@ -3123,8 +3123,8 @@ export const propertyMetadata = {
       label: "MPF Value",
       value: "mpfValue",
     },
-    description: "Maximum Potential Flow (MPF).",
-    example: "null",
+    description: "For parameter FLOW, report the Maximum Potential Flow (MPF) value for the monitoring location in (scfh) on a wet basis.",
+    example: 8563000,
   },
   
   monitorSpanDTOSpanValue:{
@@ -3132,8 +3132,8 @@ export const propertyMetadata = {
       label: "Span Value Value",
       value: "spanValue",
     },
-    description: "Span value in units of daily calibration.",
-    example: "1200",
+    description:"The Span Value determined according to the requirements of Part 75 or (if applicable) 40 CFR Part 63, Subpart UUUUU.",
+    example: 200,
   },
   
   monitorSpanDTOFullScaleRange:{
@@ -3141,8 +3141,8 @@ export const propertyMetadata = {
       label: "Full Scale Range",
       value: "fullScaleRange",
     },
-    description: "Full scale range in units of daily calibration.",
-    example: "1200",
+    description: "Full scale range in units of daily calibration for SO2, NOx, CO2, O2, HCl, and flow rate, must be greater than or equal to the span value.",
+    example: 200,
   },
   
   monitorSpanDTOSpanUnitsOfMeasureCode:{
@@ -3159,8 +3159,8 @@ export const propertyMetadata = {
       label: "Default High Range",
       value: "defaultHighRange",
     },
-    description: "Default High Range value.",
-    example: "null",
+    description: "The default high range value must be 200 percent of the maximum potential concentration, only reported if the high scale record for the parameter.",
+    example: null,
   },
   
   monitorSpanDTOFlowSpanValue:{
@@ -3168,8 +3168,8 @@ export const propertyMetadata = {
       label: "Flow Span Value",
       value: "flowSpanValue",
     },
-    description: "Flow rate span value in scfh.",
-    example: "null",
+    description: "The product of the MPF and a factor no less than 1.00 and no greater than 1.25. Flow rate span value in scfh.",
+    example: null,
   },
   
   monitorSpanDTOFlowFullScaleRange:{
@@ -3177,8 +3177,8 @@ export const propertyMetadata = {
       label: "Flow Full Range",
       value: "flowFullScaleRange",
     },
-    description: "Flow rate full scale value in scfh.",
-    example: "null",
+    description: "The actual full-scale range value expressed in units of scfh for the parameter FLOW, must be greater than or equal to the flow rate span value",
+    example: null,
   },
   
   monitorSpanDTOBeginDate:{
@@ -3187,7 +3187,7 @@ export const propertyMetadata = {
       value: "beginDate",
     },
     description: "Date on which information became effective or activity started.",
-    example: "5/17/2018",
+    example: "2018-05-17",
   },
   
   monitorSpanDTOBeginHour:{
@@ -3196,7 +3196,7 @@ export const propertyMetadata = {
       value: "beginHour",
     },
     description: "Hour in which information became effective.",
-    example: "14",
+    example: 14,
   },
   
   monitorSpanDTOEndDate:{
@@ -3205,7 +3205,7 @@ export const propertyMetadata = {
       value: "endDate",
     },
     description: "Last date in which information was effective.  This date will be null for active records.",
-    example: "null",
+    example: null,
   },
   
   monitorSpanDTOEndHour:{
@@ -3214,7 +3214,7 @@ export const propertyMetadata = {
       value: "endHour",
     },
     description: "Last hour in which information was effective.  This value will be null for active records.",
-    example: "null",
+    example: null,
   },
   
   monitorSpanDTOActive:{
@@ -3223,7 +3223,7 @@ export const propertyMetadata = {
       value: "active",
     },
     description: "Flag for active monitor location record",
-    example: "",
+    example: true,
   },
   
   monitorSystemDTOId:{
@@ -3259,7 +3259,7 @@ export const propertyMetadata = {
       value: "addDate",
     },
     description: "Date and time in which record was added.",
-    example: "2/20/2009",
+    example: "2009-02-20",
   },
   
   monitorSystemDTOUpdateDate:{
@@ -3268,7 +3268,7 @@ export const propertyMetadata = {
       value: "updateDate",
     },
     description: "Date and time in which record was last updated.",
-    example: "null",
+    example: "2009-02-20",
   },
   
   monitorSystemDTOMonitoringSystemId:{
@@ -3313,7 +3313,7 @@ export const propertyMetadata = {
       value: "beginDate",
     },
     description: "Date on which information became effective or activity started.",
-    example: "11/28/2007",
+    example: "2007-11-28",
   },
   
   monitorSystemDTOBeginHour:{
@@ -3322,7 +3322,7 @@ export const propertyMetadata = {
       value: "beginHour",
     },
     description: "Hour in which information became effective or activity started.",
-    example: "17",
+    example: 17,
   },
   
   monitorSystemDTOEndDate:{
@@ -3331,7 +3331,7 @@ export const propertyMetadata = {
       value: "endDate",
     },
     description: "Last date in which information was effective.  This date will be null for active records.",
-    example: "null",
+    example: null,
   },
   
   monitorSystemDTOEndHour:{
@@ -3340,7 +3340,7 @@ export const propertyMetadata = {
       value: "endHour",
     },
     description: "Last hour in which information was effective.  This value will be null for active records.",
-    example: "null",
+    example: null,
   },
   
   monitorSystemDTOActive:{
@@ -3349,7 +3349,7 @@ export const propertyMetadata = {
       value: "active",
     },
     description: "Flag for active monitor location record",
-    example: "",
+    example: true,
   },
   
   systemComponentDTOId:{
@@ -3403,7 +3403,7 @@ export const propertyMetadata = {
       value: "addDate",
     },
     description: "Date and time in which record was added.",
-    example: "5/27/2015",
+    example: "2009-02-20",
   },
   
   systemComponentDTOUpdateDate:{
@@ -3412,7 +3412,7 @@ export const propertyMetadata = {
       value: "updateDate",
     },
     description: "Date and time in which record was last updated.",
-    example: "null",
+    example: "2009-02-20",
   },
   
   systemComponentDTOBeginDate:{
@@ -3421,7 +3421,7 @@ export const propertyMetadata = {
       value: "beginDate",
     },
     description: "Date on which information became effective or activity started.",
-    example: "5/21/2015",
+    example: "2008-12-31",
   },
   
   systemComponentDTOBeginHour:{
@@ -3430,7 +3430,7 @@ export const propertyMetadata = {
       value: "beginHour",
     },
     description: "Hour in which information became effective.",
-    example: "9",
+    example: 23,
   },
   
   systemComponentDTOEndDate:{
@@ -3439,7 +3439,7 @@ export const propertyMetadata = {
       value: "endDate",
     },
     description: "Last date in which information was effective.  This date will be null for active records.",
-    example: "null",
+    example: null,
   },
   
   systemComponentDTOEndHour:{
@@ -3448,7 +3448,7 @@ export const propertyMetadata = {
       value: "endHour",
     },
     description: "Last hour in which information was effective.  This value will be null for active records.",
-    example: "null",
+    example: null,
   },
   
   systemComponentDTOComponentId:{
@@ -3475,7 +3475,7 @@ export const propertyMetadata = {
       value: "sampleAcquisitionMethodCode",
     },
     description: "Code used to identify the sample acquisition method.",
-    example: "null",
+    example: "DIL",
   },
   
   systemComponentDTOBasisCode:{
@@ -3483,8 +3483,8 @@ export const propertyMetadata = {
       label: "Basis Code",
       value: "basisCode",
     },
-    description: "Code used to identify the moisture basis.",
-    example: "null",
+    description: "Code used to identify the moisture basis (W,D).",
+    example: "W",
   },
   
   systemComponentDTOManufacturer:{
@@ -3502,7 +3502,7 @@ export const propertyMetadata = {
       value: "modelVersion",
     },
     description: "The model of any hardware component or the version number of the software component.",
-    example: "8864",
+    example: "SM8175",
   },
   
   systemComponentDTOSerialNumber:{
@@ -3511,7 +3511,7 @@ export const propertyMetadata = {
       value: "serialNumber",
     },
     description: "Serial number of the component.",
-    example: "321",
+    example: "X11011",
   },
   
   systemComponentDTOHgConverterIndicator:{
@@ -3520,7 +3520,7 @@ export const propertyMetadata = {
       value: "hgConverterIndicator",
     },
     description: "For an Hg component, indicates whether the analyzer has a converter.",
-    example: "null",
+    example: "1",
   },
   
   systemComponentDTOActive:{
@@ -3529,7 +3529,7 @@ export const propertyMetadata = {
       value: "active",
     },
     description: "Flag for active monitor location record",
-    example: "",
+    example: true,
   },
   
   systemFuelFlowDTOId:{
@@ -3565,7 +3565,7 @@ export const propertyMetadata = {
       value: "addDate",
     },
     description: "Date and time in which record was added.",
-    example: "6/26/2009",
+    example: "2009-02-20",
   },
   
   systemFuelFlowDTOUpdateDate:{
@@ -3574,7 +3574,7 @@ export const propertyMetadata = {
       value: "updateDate",
     },
     description: "Date and time in which record was last updated.",
-    example: "2/9/2010",
+    example: "2010-09-01",
   },
   
   systemFuelFlowDTOMaximumFuelFlowRate:{
@@ -3583,7 +3583,7 @@ export const propertyMetadata = {
       value: "maximumFuelFlowRate",
     },
     description: "Maximum fuel flow rate.",
-    example: "30667",
+    example: 30667,
   },
   
   systemFuelFlowDTOSystemFuelFlowUOMCode:{
@@ -3597,7 +3597,7 @@ export const propertyMetadata = {
   
   systemFuelFlowDTOMaximumFuelFlowRateSourceCode:{
     fieldLabels: {
-      label: "Max  Fuel Flow Rate Source",
+      label: "Max Fuel Flow Rate Source",
       value: "maximumFuelFlowRateSourceCode",
     },
     description: "Code used to identify the source of maximum fuel flow.",
@@ -3610,7 +3610,7 @@ export const propertyMetadata = {
       value: "beginDate",
     },
     description: "Date on which information became effective or activity started.",
-    example: "9/10/2009",
+    example: "2010-08-01",
   },
   
   systemFuelFlowDTOBeginHour:{
@@ -3619,7 +3619,7 @@ export const propertyMetadata = {
       value: "beginHour",
     },
     description: "Hour in which information became effective.",
-    example: "0",
+    example: 12,
   },
   
   systemFuelFlowDTOEndDate:{
@@ -3628,7 +3628,7 @@ export const propertyMetadata = {
       value: "endDate",
     },
     description: "Last date in which information was effective.  This date will be null for active records.",
-    example: "null",
+    example: null,
   },
   
   systemFuelFlowDTOEndHour:{
@@ -3637,7 +3637,7 @@ export const propertyMetadata = {
       value: "endHour",
     },
     description: "Last hour in which information was effective or hour in which activity ended. This value will be null for active records.",
-    example: "null",
+    example: null,
   },
   
   systemFuelFlowDTOFuelCode:{
@@ -3664,7 +3664,7 @@ export const propertyMetadata = {
       value: "active",
     },
     description: "Flag for active monitor location record",
-    example: "",
+    example: true,
   },
   
   unitCapacityDTOId:{
@@ -3673,7 +3673,7 @@ export const propertyMetadata = {
       value: "id",
     },
     description: "Identity key for UNIT_CAPACITY table.",
-    example: "1",
+    example: "50233",
   },
   
   unitCapacityDTOUnitId:{
@@ -3682,7 +3682,7 @@ export const propertyMetadata = {
       value: "unitId",
     },
     description: "Identity key for UNIT table.",
-    example: "1",
+    example: "4705",
   },
   
   unitCapacityDTOUserId:{
@@ -3700,7 +3700,7 @@ unitCapacityDTOAddDate:{
       value: "addDate",
     },
     description: "Date the record was created.",
-    example: "2/20/2009",
+    example: "2009-02-20",
   },
 
   unitCapacityDTOUpdateDate:{
@@ -3709,7 +3709,7 @@ unitCapacityDTOAddDate:{
       value: "updateDate",
     },
     description: "Date of the last record update.",
-    example: "3/23/2009",
+    example: "2009-02-20",
   },
   
   unitCapacityDTOMaximumHourlyHeatInputCapacity:{
@@ -3717,8 +3717,8 @@ unitCapacityDTOAddDate:{
       label: "Maximum Hourly Heat Input Capacity",
       value: "maximumHourlyHeatInputCapacity",
     },
-    description: "The maximum hourly heat input (mmBtu/hr) associated with a UNIT.",
-    example: "2322",
+    description: "The design heat input capacity (in mmBtu/hr) for the unit or the highest hourly heat input rate observed in the past five years, whichever is greater.",
+    example: 2322.1,
   },
   
   unitCapacityDTOBeginDate:{
@@ -3727,7 +3727,7 @@ unitCapacityDTOAddDate:{
       value: "beginDate",
     },
     description: "Date on which a relationship or an activity began.",
-    example: "10/31/2002",
+    example: "2009-01-01",
   },
   
   unitCapacityDTOEndDate:{
@@ -3735,8 +3735,8 @@ unitCapacityDTOAddDate:{
       label: "End Date",
       value: "endDate",
     },
-    description: "Date on which a relationship or an activity ended.",
-    example: "null",
+    description: "Date on which a relationship or an activity ended. This value will be null for active records.",
+    example: null,
   },
   
   unitCapacityDTOActive:{
@@ -3745,7 +3745,7 @@ unitCapacityDTOAddDate:{
       value: "active",
     },
     description: "Flag for active monitor location record",
-    example: "",
+    example: true,
   },
   
   unitControlDTOId:{
@@ -3754,7 +3754,7 @@ unitCapacityDTOAddDate:{
       value: "id",
     },
     description: "Unique identifier of a unit control record.",
-    example: "1",
+    example: "618",
   },
   
   unitControlDTOUnitId:{
@@ -3763,7 +3763,7 @@ unitCapacityDTOAddDate:{
       value: "unitId",
     },
     description: "Unique identifier of a unit record.",
-    example: "1",
+    example: "734",
   },
   
   unitControlDTOUserId:{
@@ -3781,7 +3781,7 @@ unitCapacityDTOAddDate:{
       value: "addDate",
     },
     description: "Date and time in which record was added.",
-    example: "2/20/2009",
+    example: "2009-02-20",
   },
   
   unitControlDTOUpdateDate:{
@@ -3790,7 +3790,7 @@ unitCapacityDTOAddDate:{
       value: "updateDate",
     },
     description: "Date and time in which record was last updated.",
-    example: "null",
+    example: "2009-02-20",
   },
   
   unitControlDTOParameterCode:{
@@ -3826,7 +3826,7 @@ unitCapacityDTOAddDate:{
       value: "installDate",
     },
     description: "Approximate date the original control equipment was or will be installed.",
-    example: "5/1/2006",
+    example: "2005-01-01",
   },
   
   unitControlDTOOptimizationDate:{
@@ -3835,7 +3835,7 @@ unitCapacityDTOAddDate:{
       value: "optimizationDate",
     },
     description: "The approximate date on which optimization of control equipment was completed and the equipment made fully operational if the control equipment was not part of the original installation.",
-    example: "null",
+    example: "2006-06-01",
   },
   
   unitControlDTOSeasonalControlsIndicator:{
@@ -3852,8 +3852,8 @@ unitCapacityDTOAddDate:{
       label: "Retire Date",
       value: "retireDate",
     },
-    description: "Date control equipment was retired.",
-    example: "null",
+    description: "Date control equipment was retired. This value will be null for active records.",
+    example: null,
   },
   
   unitControlDTOActive:{
@@ -3862,7 +3862,7 @@ unitCapacityDTOAddDate:{
       value: "active",
     },
     description: "Flag for active monitor location record",
-    example: "",
+    example: true,
   },
   
   unitFuelDTOId:{
@@ -3871,7 +3871,7 @@ unitCapacityDTOAddDate:{
       value: "id",
     },
     description: "Identity key for UNIT_FUEL table.",
-    example: "1",
+    example: "EXPCH0876-C97319A3E96540BF92077C58DB9E2A17",
   },
   
   unitFuelDTOUnitId:{
@@ -3880,7 +3880,7 @@ unitCapacityDTOAddDate:{
       value: "unitId",
     },
     description: "Identity key for UNIT table.",
-    example: "1",
+    example: "91233",
   },
   
   unitFuelDTOUserId:{
@@ -3898,7 +3898,7 @@ unitCapacityDTOAddDate:{
       value: "addDate",
     },
     description: "Date the record was created.",
-    example: "2/20/2009",
+    example: "2009-02-20",
   },
   
   unitFuelDTOUpdateDate:{
@@ -3907,7 +3907,7 @@ unitCapacityDTOAddDate:{
       value: "updateDate",
     },
     description: "Date of the last record update.",
-    example: "4/21/2015",
+    example: "2015-04-15",
   },
   
   unitFuelDTOFuelCode:{
@@ -3943,7 +3943,7 @@ unitCapacityDTOAddDate:{
       value: "demGCV",
     },
     description: "Demonstration method to qualify for monthly GCV fuel sampling.",
-    example: "null",
+    example: "GGC",
   },
   
   unitFuelDTODemSO2:{
@@ -3952,7 +3952,7 @@ unitCapacityDTOAddDate:{
       value: "demSO2",
     },
     description: "Demonstration method to qualify for daily fuel sampling for percent sulfur.",
-    example: "null",
+    example: "SGC",
   },
   
   unitFuelDTOActualOrProjectCode:{
@@ -3979,7 +3979,7 @@ unitCapacityDTOAddDate:{
       value: "beginDate",
     },
     description: "Date on which a relationship or an activity began.",
-    example: "1/1/1995",
+    example: "1995-01-01",
   },
   
   unitFuelDTOEndDate:{
@@ -3988,7 +3988,7 @@ unitCapacityDTOAddDate:{
       value: "endDate",
     },
     description: "Date on which a relationship or an activity ended.",
-    example: "3/31/2015",
+    example: "2015-03-30",
   },
   
   unitFuelDTOActive:{
@@ -3997,7 +3997,7 @@ unitCapacityDTOAddDate:{
       value: "active",
     },
     description: "Flag for active monitor location record",
-    example: "",
+    example: true,
   },
   
   unitStackConfigurationDTOId:{
@@ -4024,7 +4024,7 @@ unitCapacityDTOAddDate:{
       value: "addDate",
     },
     description: "Date and time in which record was added.",
-    example: "2/20/2009",
+    example: "2009-02-20",
   },
   
   unitStackConfigurationDTOUpdateDate:{
@@ -4033,7 +4033,7 @@ unitCapacityDTOAddDate:{
       value: "updateDate",
     },
     description: "Date and time in which record was last updated.",
-    example: "null",
+    example: "2009-02-20",
   },
   
   unitStackConfigurationDTOUnitId:{
@@ -4042,7 +4042,7 @@ unitCapacityDTOAddDate:{
       value: "unitId",
     },
     description: "Unique identifier of a unit record which is generated by the EPA Host System.",
-    example: "1",
+    example: "2",
   },
   
   unitStackConfigurationDTOStackPipeId:{
@@ -4060,7 +4060,7 @@ unitCapacityDTOAddDate:{
       value: "beginDate",
     },
     description: "Date in which information became effective or activity started.",
-    example: "1/1/1995",
+    example: "1995-01-01",
   },
   
   unitStackConfigurationDTOEndDate:{
@@ -4068,8 +4068,8 @@ unitCapacityDTOAddDate:{
       label: "End Date",
       value: "endDate",
     },
-    description: "Last date in which information was effective or date in which activity ended.",
-    example: "null",
+    description: "Last date in which information was effective or date in which activity ended. This value will be null for active records.",
+    example: "2020-12-31",
   },
   
   unitStackConfigurationDTOActive:{
@@ -4078,7 +4078,7 @@ unitCapacityDTOAddDate:{
       value: "active",
     },
     description: "Flag for active monitor location record",
-    example: "",
+    example: true,
   },
   
   monitorLocationDTOId:{
@@ -4095,8 +4095,8 @@ unitCapacityDTOAddDate:{
       label: "Unit ID",
       value: "unitId",
     },
-    description: "Unique identifier of a unit record which is generated by the EPA Host System.",
-    example: "null",
+    description: "Unique identifier of a unit record which is generated by the EPA Host System. This value will be null if the record contains stack configuration.",
+    example: null,
   },
   
   monitorLocationDTOStackPipeId:{
@@ -4114,7 +4114,7 @@ unitCapacityDTOAddDate:{
       value: "activeDate",
     },
     description: "The date that emissions first went through the stack or the effective date for data reporting.",
-    example: "1/1/1995",
+    example: "1995-01-01",
   },
   
   monitorLocationDTORetireDate:{
@@ -4123,7 +4123,7 @@ unitCapacityDTOAddDate:{
       value: "retireDate",
     },
     description: "The actual date that the stack or pipe was last used for emissions measurement or estimation purposes.",
-    example: "null",
+    example: "2015-08-24",
   },
   
   monitorLocationDTONonLoadBasedIndicator:{
@@ -4132,7 +4132,7 @@ unitCapacityDTOAddDate:{
       value: "nonLoadBasedIndicator",
     },
     description: "Used to indicate whether the unit is classified as a non-load based unit.",
-    example: "null",
+    example: "1",
   },
   
   monitorLocationDTOUnitRecordId:{
@@ -4141,7 +4141,7 @@ unitCapacityDTOAddDate:{
       value: "unitRecordId",
     },
     description: "Unique identifier of a unit record which is generated by the EPA Host System.",
-    example: "null",
+    example: "3",
   },
   
   monitorLocationDTOName:{
@@ -4158,7 +4158,7 @@ unitCapacityDTOAddDate:{
       label: "",
       value: "type",
     },
-    description: "Configuration type, uni or stack",
+    description: "Configuration type, unit or stack",
     example: "stack",
   },
   
@@ -4168,7 +4168,7 @@ unitCapacityDTOAddDate:{
       value: "active",
     },
     description: "Flag for active monitor location record",
-    example: "",
+    example: true,
   },
   
   monitorPlanDTOId:{
@@ -4186,7 +4186,7 @@ unitCapacityDTOAddDate:{
       value: "orisCode",
     },
     description: "EIA-assigned identifier or facility ID assigned by CAMD (if EIA number is not applicable).",
-    example: "3",
+    example: 3,
   },
   
   monitorPlanDTOFacId:{
@@ -4212,8 +4212,8 @@ unitCapacityDTOAddDate:{
       label: "",
       value: "endReportPeriodId",
     },
-    description: "Unique identifier of a reporting period record.",
-    example: "null",
+    description: "Unique identifier of a reporting period record. This value will be null for active records.",
+    example: null,
   },
   
   
