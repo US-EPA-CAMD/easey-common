@@ -14,13 +14,13 @@ These instructions will get you a copy of the project package up and running and
 ### Prerequisites
 
 - Project running node
-- A ```.npmrc``` file existing in the root directory, with the contents of: ``` @us-epa-camd:registry=https://npm.pkg.github.com ```
-- [Authenticated to npm package registry on local machine](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry)
+- A ```.yarnrc``` file existing in the root directory, with the contents of: ``` @us-epa-camd:registry=https://npm.pkg.github.com ```
+- [Authenticate to github package registry on local machine](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry)
 
 ### Installing
 
 - Select desired version of package. The most up to date package version is [![GitHub version](https://badge.fury.io/gh/US-EPA-CAMD%2Feasey-common.svg)](https://badge.fury.io/gh/US-EPA-CAMD%2Feasey-common) . <br>
-- In terminal execute ```npm install @us-epa-camd/easey-common@CURRENT_VERSION```
+- In terminal execute ```yarn add @us-epa-camd/easey-common@CURRENT_VERSION```
 
 ### Using
 
@@ -59,7 +59,7 @@ export { Logger } from "./Logger.service";
 
 - On the current branch in terminal, add all file changes with ```git add .```
 - Commit the files using [commitizen](https://commitizen-tools.github.io/commitizen/), a commit formatter that is digestible by [semantic-release](https://semantic-release.gitbook.io/semantic-release/)
-``` npm run commit ```
+``` yarn commit ```
 - Follow the prompts and create your commit
 - Push the commit to your current branch
 ``` git push origin CURRENT_BRANCH```
