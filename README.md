@@ -20,7 +20,7 @@ These instructions will get you a copy of the project package up and running and
 ### Installing
 
 - Select desired version of package. The most up to date package version is [![GitHub version](https://badge.fury.io/gh/US-EPA-CAMD%2Feasey-common.svg)](https://badge.fury.io/gh/US-EPA-CAMD%2Feasey-common) . <br>
-- In terminal execute ```yarn add @us-epa-camd/easey-common@CURRENT_VERSION```
+- In terminal execute ```yarn add @us-epa-camd/easey-common``` for latest current version or ```yarn add @us-epa-camd/easey-common@VERSION``` to install a specific version
 
 ### Using
 
