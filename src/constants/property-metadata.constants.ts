@@ -3907,7 +3907,7 @@ unitCapacityDTOAddDate:{
       value: "updateDate",
     },
     description: "Date of the last record update.",
-    example: "2015-04-15",
+    example: "2015-04-16",
   },
   
   unitFuelDTOFuelCode:{
