@@ -1,3 +1,10 @@
+## [2.3.2](https://github.com/US-EPA-CAMD/easey-common/compare/v2.3.1...v2.3.2) (2022-01-21)
+
+
+### Bug Fixes
+
+* **error messages:** fixed typo in reporting quarter error message ([2e476df](https://github.com/US-EPA-CAMD/easey-common/commit/2e476dfba9874ca438500eefc96d0d5f59e9b502))
+
 ## [2.3.1](https://github.com/US-EPA-CAMD/easey-common/compare/v2.3.0...v2.3.1) (2022-01-03)
 
 
