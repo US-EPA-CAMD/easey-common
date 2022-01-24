@@ -11,6 +11,7 @@ export class CorsOptionsService {
   configure = async (
     req: Request,
     appName: string,
+    allowCredentialsHeader: boolean,
     callback: CorsOptionsCallback
   ) => {
     let corsOptions;
@@ -50,14 +51,14 @@ export class CorsOptionsService {
           allowedHeaders.length > 0 ? allowedHeaders.map((i) => i.value) : [],
         methods:
           allowedMethods.length > 0 ? allowedMethods.map((i) => i.value) : [],
-        credentials: true,
+        credentials: allowCredentialsHeader,
       };
     } else {
       corsOptions = {
         origin: false,
         exposedHeaders: [],
         methods: [],
-        creddentials: true,
+        creddentials: false,
       };
     }
     this.logger.info(corsOptions);
