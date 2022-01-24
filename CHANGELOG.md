@@ -1,3 +1,10 @@
+# [2.4.0](https://github.com/US-EPA-CAMD/easey-common/compare/v2.3.2...v2.4.0) (2022-01-24)
+
+
+### Features
+
+* included access-allow-credential to preflight requests ([cff7952](https://github.com/US-EPA-CAMD/easey-common/commit/cff7952892b51e198988a1dc4c732185076be8d8))
+
 ## [2.3.2](https://github.com/US-EPA-CAMD/easey-common/compare/v2.3.1...v2.3.2) (2022-01-21)
 
 
