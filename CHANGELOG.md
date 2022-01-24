@@ -1,3 +1,10 @@
+## [2.4.1](https://github.com/US-EPA-CAMD/easey-common/compare/v2.4.0...v2.4.1) (2022-01-24)
+
+
+### Bug Fixes
+
+* added config boolean ([548eaa8](https://github.com/US-EPA-CAMD/easey-common/commit/548eaa88e4f0aa61658dbac6a11054310b19184b))
+
 # [2.4.0](https://github.com/US-EPA-CAMD/easey-common/compare/v2.3.2...v2.4.0) (2022-01-24)
 
 
