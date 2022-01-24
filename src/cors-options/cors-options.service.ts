@@ -50,12 +50,14 @@ export class CorsOptionsService {
           allowedHeaders.length > 0 ? allowedHeaders.map((i) => i.value) : [],
         methods:
           allowedMethods.length > 0 ? allowedMethods.map((i) => i.value) : [],
+        credentials: true,
       };
     } else {
       corsOptions = {
         origin: false,
         exposedHeaders: [],
         methods: [],
+        creddentials: true,
       };
     }
     this.logger.info(corsOptions);
