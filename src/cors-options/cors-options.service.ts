@@ -1,6 +1,6 @@
 import { Request } from "express";
 import { getManager } from "typeorm";
-import { CorsOptionsCallback } from "@nestjs/common/interfaces/external/cors-options.interface";
+import { CorsOptions, CorsOptionsCallback } from "@nestjs/common/interfaces/external/cors-options.interface";
 import { Injectable } from "@nestjs/common";
 import { Logger } from "../logger";
 
@@ -11,10 +11,10 @@ export class CorsOptionsService {
   configure = async (
     req: Request,
     appName: string,
-    allowCredentialsHeader: boolean,
-    callback: CorsOptionsCallback
+    callback: CorsOptionsCallback,
+    allowCredentials: boolean = false,
   ) => {
-    let corsOptions;
+    let corsOptions: CorsOptions;
     const originHeader = req.header("Origin");
 
     if (originHeader !== null && originHeader !== undefined) {
@@ -51,14 +51,14 @@ export class CorsOptionsService {
           allowedHeaders.length > 0 ? allowedHeaders.map((i) => i.value) : [],
         methods:
           allowedMethods.length > 0 ? allowedMethods.map((i) => i.value) : [],
-        credentials: allowCredentialsHeader,
+        credentials: allowCredentials,
       };
     } else {
       corsOptions = {
         origin: false,
         exposedHeaders: [],
         methods: [],
-        creddentials: false,
+        credentials: false,
       };
     }
     this.logger.info(corsOptions);

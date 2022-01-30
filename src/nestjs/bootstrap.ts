@@ -6,7 +6,7 @@ import { SwaggerModule, DocumentBuilder } from "@nestjs/swagger";
 
 import { CorsOptionsService } from "../cors-options/cors-options.service";
 
-export async function bootstrap(module: any, allowAccessHeader: boolean) {
+export async function bootstrap(module: any, allowCredentials: boolean = false) {
   const app = await NestFactory.create(module);
 
   const configService = app.get(ConfigService);
@@ -64,8 +64,8 @@ export async function bootstrap(module: any, allowAccessHeader: boolean) {
       await corsOptionsService.configure(
         req,
         appName,
-        allowAccessHeader,
-        callback
+        callback,
+        allowCredentials,
       );
     });
   }
