@@ -1,3 +1,10 @@
+# [2.5.0](https://github.com/US-EPA-CAMD/easey-common/compare/v2.4.1...v2.5.0) (2022-01-29)
+
+
+### Features
+
+* added PlainToCSV and PlainToJSON transforms to suport streaming ([d7dfa79](https://github.com/US-EPA-CAMD/easey-common/commit/d7dfa793962f07faddcf088dc82e1bc9ed98b680))
+
 ## [2.4.1](https://github.com/US-EPA-CAMD/easey-common/compare/v2.4.0...v2.4.1) (2022-01-24)
 
 
