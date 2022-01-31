@@ -1,3 +1,10 @@
+# [2.7.0](https://github.com/US-EPA-CAMD/easey-common/compare/v2.6.2...v2.7.0) (2022-01-31)
+
+
+### Features
+
+* **transaction type enum:** update the transaction-type enum ([6548df7](https://github.com/US-EPA-CAMD/easey-common/commit/6548df7ff25e270f84d6a022e60dbaf578fb183c))
+
 ## [2.6.2](https://github.com/US-EPA-CAMD/easey-common/compare/v2.6.1...v2.6.2) (2022-01-31)
 
 
