@@ -1,3 +1,10 @@
+## [2.6.1](https://github.com/US-EPA-CAMD/easey-common/compare/v2.6.0...v2.6.1) (2022-01-31)
+
+
+### Bug Fixes
+
+* changed default buffer size in transforms to 1MB & fixed a bug with streaming small payloads ([3a7fba7](https://github.com/US-EPA-CAMD/easey-common/commit/3a7fba77ae0d8f8c1a8f5d34d52518657935bc13))
+
 # [2.6.0](https://github.com/US-EPA-CAMD/easey-common/compare/v2.5.0...v2.6.0) (2022-01-30)
 
 
