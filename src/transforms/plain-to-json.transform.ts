@@ -4,7 +4,7 @@ import {
   TransformCallback
 } from "stream";
 
-const DEFAULT_BUFFER_SIZE = 10240;
+const DEFAULT_BUFFER_SIZE = 1048576; //1MB
 
 export class PlainToJSON extends Transform {
   private buffer: string = '';
@@ -25,6 +25,7 @@ export class PlainToJSON extends Transform {
 
   _transform(data: any, _encoding: string, callback: TransformCallback): void {
     let transformedData = this.isFirstChunk ? '[' : ',';
+
     this.isFirstChunk = false;
     transformedData += JSON.stringify(data);
 
@@ -37,7 +38,8 @@ export class PlainToJSON extends Transform {
   }
 
   _flush(callback: TransformCallback): void {
-    this.push(this.buffer + this.isFinalChunk ? ']' : '');
+    this.buffer += this.isFinalChunk ? ']' : '';
+    this.push(this.buffer);
     callback();
   }
 
