@@ -1,3 +1,10 @@
+## [2.6.2](https://github.com/US-EPA-CAMD/easey-common/compare/v2.6.1...v2.6.2) (2022-01-31)
+
+
+### Bug Fixes
+
+* fixing bug regarding field mapping for csv conversion ([f662e0d](https://github.com/US-EPA-CAMD/easey-common/commit/f662e0d3ba63a68a03e9a8c6440d102a2c747c28))
+
 ## [2.6.1](https://github.com/US-EPA-CAMD/easey-common/compare/v2.6.0...v2.6.1) (2022-01-31)
 
 
