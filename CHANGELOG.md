@@ -1,3 +1,10 @@
+# [2.6.0](https://github.com/US-EPA-CAMD/easey-common/compare/v2.5.0...v2.6.0) (2022-01-30)
+
+
+### Features
+
+* added NumericColumnTransformer & default value to bootstrao allowCredentials param ([d96e791](https://github.com/US-EPA-CAMD/easey-common/commit/d96e791a6614833cda0c6ccdf8bd449f863eb4a3))
+
 # [2.5.0](https://github.com/US-EPA-CAMD/easey-common/compare/v2.4.1...v2.5.0) (2022-01-29)
 
 
