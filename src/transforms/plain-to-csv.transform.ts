@@ -24,12 +24,7 @@ export class PlainToCSV extends Transform {
       writableObjectMode: true,
     })
 
-    this.fields = fields.map(i => {
-      return {
-        label: i.label,
-        value: i.value.toLowerCase()
-      }
-    });
+    this.fields = fields;
 
     this.noHeader = new Parser({
       fields: this.fields,
