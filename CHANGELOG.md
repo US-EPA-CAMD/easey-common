@@ -1,3 +1,10 @@
+# [2.8.0](https://github.com/US-EPA-CAMD/easey-common/compare/v2.7.0...v2.8.0) (2022-02-04)
+
+
+### Features
+
+* added additional number validation pipes for pagination ([0474f98](https://github.com/US-EPA-CAMD/easey-common/commit/0474f9846563e8f8de951808908fa0527233f8cd))
+
 # [2.7.0](https://github.com/US-EPA-CAMD/easey-common/compare/v2.6.2...v2.7.0) (2022-01-31)
 
 
