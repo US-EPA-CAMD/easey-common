@@ -5,3 +5,7 @@ export { IsOrisCode } from "./is-oris-code.pipe";
 export { IsValidDate } from "./is-valid-date.pipe";
 export { IsYearFormat } from "./is-year-format.pipe";
 export { IsInYearRange } from "./is-in-year-range.pipe";
+export { IsValidNumber } from "./is-valid-number.pipe";
+export { IsInRange } from "./is-in-range.pipe";
+export { Min } from "./min.pipe";
+export { Max } from "./max.pipe";

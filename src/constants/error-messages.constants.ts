@@ -1,6 +1,18 @@
 import { ApiConfigService } from "./api-config.service";
 
 export class ErrorMessages {
+  public static LessThanOrEqual(parameter: string, value: number) {
+    return `${parameter} must be less than or equal to ${value}`;
+  }
+
+  public static GreaterThanOrEqual(parameter: string, value: number) {
+    return `${parameter} must be greater than or equal to ${value}`;
+  }  
+
+  public static Between(parameter: string, minVal: number, maxVal: number) {
+    return `${parameter} must be between ${minVal} and ${maxVal}`;
+  }
+
   public static AccountCharacteristics(
     plural: boolean,
     parameter: string
