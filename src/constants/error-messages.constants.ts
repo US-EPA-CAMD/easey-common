@@ -25,7 +25,7 @@ export class ErrorMessages {
         ? "Use the two letter postal abbreviation (use TX, not Texas)"
         : `Refer to the list of available ${parameter}s for valid values`;
 
-    if (parameter === "state") {
+    if (parameter === "stateCode") {
       return `${grammar} not valid. ${referList}`;
     }
 
@@ -42,7 +42,7 @@ export class ErrorMessages {
       ? `One or more ${parameter}s are`
       : `The ${parameter} is`;
     let referList =
-      parameter === "state"
+      parameter === "stateCode"
         ? "Use the two letter postal abbreviation (use TX, not Texas)"
         : `Refer to the list of available ${parameter}s for valid values`;
 
@@ -51,7 +51,7 @@ export class ErrorMessages {
       referList = referList.replace(`${parameter}s`, parameter);
     }
 
-    if (parameter === "state") {
+    if (parameter === "stateCode") {
       return `${grammar} not valid. ${referList}`;
     }
 
@@ -119,8 +119,6 @@ export class ErrorMessages {
     const mdm = `${ApiConfigService.getMdm()}`;
 
     switch (parameter) {
-      case "orisCode":
-        return `${ApiConfigService.getFacApi()}facilities`;
       case "unitType":
         return `${mdm}unit-types`;
       case "unitFuelType":
@@ -143,6 +141,8 @@ export class ErrorMessages {
         return `${ApiConfigService.getAcctApi()}accounts`;
       case "transactionType":
         return `${mdm}transaction-types`;
+      case "programCodeInfo":
+        return `${ApiConfigService.getAcctApi()}programs`;
       default:
         return `${mdm}${parameter}s`;
     }
