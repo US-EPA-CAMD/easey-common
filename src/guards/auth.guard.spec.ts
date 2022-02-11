@@ -12,7 +12,7 @@ jest.mock("../utilities/parse-token", () => ({
 describe("AuthGuard", () => {
   let guard;
 
-  beforeAll(async () => {
+  beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       imports: [HttpModule],
       providers: [AuthGuard, ConfigService],
