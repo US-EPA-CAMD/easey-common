@@ -2,11 +2,11 @@ import { Injectable } from "@nestjs/common";
 //
 @Injectable()
 export class ApiConfigService {
-  public static getHostEmissions(): string {
-    const host = process.env.EASEY_EMISSIONS_API_HOST || "localhost";
+  public static getHostMDM(): string {
+    const host = process.env.EASEY_MDM_API_HOST || "localhost";
 
     if (host === "localhost") {
-      const port = process.env.EASEY_EMISSIONS_API_PORT || 8040;
+      const port = process.env.EASEY_MDM_API_PORT || 8050;
       return `localhost:${port}`;
     }
     return host;
@@ -33,7 +33,7 @@ export class ApiConfigService {
   }
 
   public static getMdm(): string {
-    return `https://${this.getHostEmissions()}/master-data-mgmt/`;
+    return `https://${this.getHostMDM()}/master-data-mgmt/`;
   }
 
   public static getFacApi(): string {
