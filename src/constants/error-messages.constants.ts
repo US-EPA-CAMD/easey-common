@@ -142,7 +142,7 @@ export class ErrorMessages {
       case "transactionType":
         return `${mdm}transaction-types`;
       case "programCodeInfo":
-        return '';
+        return `${ApiConfigService.getAcctApi()}programs`;
       default:
         return `${mdm}${parameter}s`;
     }
