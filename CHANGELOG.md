@@ -1,3 +1,12 @@
+# [2.9.0](https://github.com/US-EPA-CAMD/easey-common/compare/v2.8.0...v2.9.0) (2022-02-11)
+
+
+### Features
+
+* **error messages update:** update error messages to reflect changes to APIs ([eec22f6](https://github.com/US-EPA-CAMD/easey-common/commit/eec22f6fcb56d770f2d41db518cfaf4d2280d904)), closes [#2447](https://github.com/US-EPA-CAMD/easey-common/issues/2447)
+* **error messages:** update error messages ([fec904f](https://github.com/US-EPA-CAMD/easey-common/commit/fec904fd7e201683c56d5f6e5863e7a76096b27f)), closes [#2447](https://github.com/US-EPA-CAMD/easey-common/issues/2447)
+* **error messages:** update the error messages to reflect changes to APIs ([011fe52](https://github.com/US-EPA-CAMD/easey-common/commit/011fe52b9c013613af00e8d5e43c2c39cce61e9b)), closes [#2447](https://github.com/US-EPA-CAMD/easey-common/issues/2447)
+
 # [2.8.0](https://github.com/US-EPA-CAMD/easey-common/compare/v2.7.0...v2.8.0) (2022-02-04)
 
 
