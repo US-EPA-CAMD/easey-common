@@ -18,7 +18,7 @@ if (process.env.VCAP_SERVICES) {
   pgDb = vcapSvcCreds.name;
 }
 
-export default registerAs('database', () => ({
+export const dbConfig = registerAs('database', () => ({
   host: pgHost,
   port: pgPort,
   user: pgUser,
