@@ -1,3 +1,10 @@
+# [2.11.0](https://github.com/US-EPA-CAMD/easey-common/compare/v2.10.0...v2.11.0) (2022-02-12)
+
+
+### Features
+
+* added common dbConfig for api's ([3bdc65c](https://github.com/US-EPA-CAMD/easey-common/commit/3bdc65c88797b75769a8c44b3f9065017aca3c41))
+
 # [2.10.0](https://github.com/US-EPA-CAMD/easey-common/compare/v2.9.0...v2.10.0) (2022-02-12)
 
 
