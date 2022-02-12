@@ -1,1 +1,1 @@
-export * from "./db.config";
+export * as dbConfig from "./db.config";
