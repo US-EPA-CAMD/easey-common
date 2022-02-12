@@ -1,3 +1,10 @@
+# [2.10.0](https://github.com/US-EPA-CAMD/easey-common/compare/v2.9.0...v2.10.0) (2022-02-12)
+
+
+### Features
+
+* added parseBool function & cors cache control headers ([051f4a6](https://github.com/US-EPA-CAMD/easey-common/commit/051f4a681f83537e99ad492af2fefedb061c58f7))
+
 # [2.9.0](https://github.com/US-EPA-CAMD/easey-common/compare/v2.8.0...v2.9.0) (2022-02-11)
 
 
