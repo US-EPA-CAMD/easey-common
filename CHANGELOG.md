@@ -1,3 +1,10 @@
+# [2.13.0](https://github.com/US-EPA-CAMD/easey-common/compare/v2.12.0...v2.13.0) (2022-02-14)
+
+
+### Features
+
+* **error messages update:** update error messages ([1a7adcb](https://github.com/US-EPA-CAMD/easey-common/commit/1a7adcb9401f54920671b3b0db0da0a175fdda0b)), closes [#2447](https://github.com/US-EPA-CAMD/easey-common/issues/2447)
+
 # [2.12.0](https://github.com/US-EPA-CAMD/easey-common/compare/v2.11.0...v2.12.0) (2022-02-12)
 
 
