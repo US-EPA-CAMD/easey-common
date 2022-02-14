@@ -1,3 +1,15 @@
+# [3.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v2.13.0...v3.0.0) (2022-02-14)
+
+
+### Code Refactoring
+
+* refactoring response headers to be consistent across all api's ([87efd81](https://github.com/US-EPA-CAMD/easey-common/commit/87efd81e1178aab4fff920f38c1e0a2128f2549c))
+
+
+### BREAKING CHANGES
+
+* function paramters changed
+
 # [2.13.0](https://github.com/US-EPA-CAMD/easey-common/compare/v2.12.0...v2.13.0) (2022-02-14)
 
 
