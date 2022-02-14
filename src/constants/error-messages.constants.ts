@@ -135,12 +135,6 @@ export class ErrorMessages {
         return `${mdm}source-categories`;
       case "facilityId":
         return `${ApiConfigService.getFacApi()}facilities`;
-      case "accountType":
-        return `${mdm}account-types`;
-      case "accountNumber":
-        return `${ApiConfigService.getAcctApi()}accounts`;
-      case "transactionType":
-        return `${mdm}transaction-types`;
       case "programCodeInfo":
         return `${ApiConfigService.getAcctApi()}programs`;
       default:
