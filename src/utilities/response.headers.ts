@@ -1,31 +1,30 @@
-import { Request } from "express";
+import { Request } from 'express';
 
 export class ResponseHeaders {
   public static setPagination(
-    page: number,
-    perPage: number,
-    totalCount: number,
-    req: Request
+    req: Request,
+    totalCount: number
   ) {
     let concatLinks: string;
 
-    if (page && perPage) {
-      const totalPages = Math.ceil(totalCount / perPage);
+    const page = +req.query.page;
+    const perPage = +req.query.perPage;
+    const totalPages = Math.ceil(totalCount / (perPage));
 
-      const pageParam = `page=${+page}`;
-      const first = `<${req.url.replace(pageParam, `page=1`)}>; rel="first"`;
-      const prev = `<${req.url.replace(
-        pageParam,
-        `page=${+page - +1}`
-      )}>; rel="previous"`;
-      const next = `<${req.url.replace(
-        pageParam,
-        `page=${+page + +1}`
-      )}>; rel="next"`;
-      const last = `<${req.url.replace(
-        pageParam,
-        `page=${totalPages}`
-      )}>; rel="last"`;
+    if (page && perPage && totalPages > 1) {
+      const pageParam = `page=${page}`;
+
+      let url = req.url.replace(pageParam, 'page=1');
+      const first = `<${url}>; rel="first"`;
+
+      url = req.url.replace(pageParam, `page=${page - 1}`);
+      const prev = `<${url}>; rel="previous"`;
+
+      url = req.url.replace(pageParam, `page=${page + 1}`);
+      const next = `<${url}>; rel="next"`;
+
+      url = req.url.replace(pageParam, `page=${totalPages}`);
+      const last = `<${url}>; rel="last"`;
 
       switch (+page) {
         case 1: {
@@ -41,8 +40,9 @@ export class ResponseHeaders {
           break;
         }
       }
-      req.res.setHeader("Link", concatLinks);
-      req.res.setHeader("X-Total-Count", totalCount);
+
+      req.res.setHeader('Link', concatLinks);
+      req.res.setHeader('X-Total-Count', totalCount);
     }
   }
 }
