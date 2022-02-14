@@ -23,7 +23,7 @@ export class ApiConfigService {
   }
 
   public static getHostFacilities() {
-    const host = process.env.EASEY_FACILITIES_API_PORT || "localhost";
+    const host = process.env.EASEY_FACILITIES_API_HOST || "localhost";
 
     if (host === "localhost") {
       const port = process.env.EASEY_FACILITIES_API_PORT || 8020;
