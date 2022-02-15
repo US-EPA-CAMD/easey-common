@@ -1,3 +1,10 @@
+# [4.1.0](https://github.com/US-EPA-CAMD/easey-common/compare/v4.0.4...v4.1.0) (2022-02-15)
+
+
+### Features
+
+* **error messages:** update state code error message ([7350a67](https://github.com/US-EPA-CAMD/easey-common/commit/7350a677e8e8aa964242427a5f7af4e74597c0ec)), closes [#2447](https://github.com/US-EPA-CAMD/easey-common/issues/2447)
+
 ## [4.0.4](https://github.com/US-EPA-CAMD/easey-common/compare/v4.0.3...v4.0.4) (2022-02-15)
 
 
