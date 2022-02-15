@@ -1,3 +1,15 @@
+# [4.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v3.0.0...v4.0.0) (2022-02-15)
+
+
+### Code Refactoring
+
+* refactor ResponseHeaders and ApiConfigService ([f2799f1](https://github.com/US-EPA-CAMD/easey-common/commit/f2799f1f4edf40f6dba4b9c77c871e767cf9d630))
+
+
+### BREAKING CHANGES
+
+* function names & parameter changes
+
 # [3.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v2.13.0...v3.0.0) (2022-02-14)
 
 
