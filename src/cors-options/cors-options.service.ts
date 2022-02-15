@@ -44,7 +44,7 @@ export class CorsOptionsService {
       }
 
       corsOptions = {
-        maxAge: 86400,
+        //maxAge: 86400,
         origin: allowedOrigins.map((i) => i.value).includes(originHeader)
           ? originHeader
           : false,
@@ -62,8 +62,8 @@ export class CorsOptionsService {
         credentials: false,
       };
     }
-    req.res.setHeader('Cache-Control', 'public, max-age=86400')
-    this.logger.info(corsOptions);
+    //req.res.setHeader('Cache-Control', 'public, max-age=86400')
+    //this.logger.info(corsOptions);
     callback(null, corsOptions);
   };
 }

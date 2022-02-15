@@ -17,11 +17,8 @@ export class ResponseHeaders {
       if (totalPages > 1) {
         const pageParam = `page=${page}`;
 
-        let url = req.url.replace(pageParam, 'page=1');
-        const first = `<${url}>; rel="first"`;
-
         let pageNumber = page - 1;
-        url = req.url.replace(pageParam, `page=${pageNumber}`);
+        let url = req.url.replace(pageParam, `page=${pageNumber}`);
         const prev = `<${url}>; rel="previous"`;
 
         pageNumber = page + 1;
@@ -36,16 +33,12 @@ export class ResponseHeaders {
             concatLinks = `${next},${last}`;
             break;
           }
-          case 2: {
-            concatLinks = `${prev},${next},${last}`;
-            break;
-          }          
           case totalPages: {
-            concatLinks = `${first},${prev}`;
+            concatLinks = `${prev}`;
             break;
           }
           default: {
-            concatLinks = `${first},${prev},${next},${last}`;
+            concatLinks = `${prev},${next},${last}`;
             break;
           }
         }
