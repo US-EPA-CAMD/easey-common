@@ -18,20 +18,26 @@ export class ResponseHeaders {
         let url = req.url.replace(pageParam, 'page=1');
         const first = `<${url}>; rel="first"`;
 
-        url = req.url.replace(pageParam, `page=${page - 1}`);
+        let pageNumber = page - 1;
+        url = req.url.replace(pageParam, `page=${pageNumber}`);
         const prev = `<${url}>; rel="previous"`;
 
-        url = req.url.replace(pageParam, `page=${page + 1}`);
+        pageNumber = page + 1;
+        url = req.url.replace(pageParam, `page=${pageNumber}`);
         const next = `<${url}>; rel="next"`;
 
         url = req.url.replace(pageParam, `page=${totalPages}`);
         const last = `<${url}>; rel="last"`;
 
-        switch (page) {
+        switch (+page) {
           case 1: {
             concatLinks = `${next},${last}`;
             break;
           }
+          case 2: {
+            concatLinks = `${prev},${next},${last}`;
+            break;
+          }          
           case totalPages: {
             concatLinks = `${first},${prev}`;
             break;
