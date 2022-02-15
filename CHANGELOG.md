@@ -1,3 +1,10 @@
+## [4.0.4](https://github.com/US-EPA-CAMD/easey-common/compare/v4.0.3...v4.0.4) (2022-02-15)
+
+
+### Bug Fixes
+
+* fixing api config to use http for localhost ([a36dd63](https://github.com/US-EPA-CAMD/easey-common/commit/a36dd6307fe2fd271c95dd7e113f1f0922612706))
+
 ## [4.0.3](https://github.com/US-EPA-CAMD/easey-common/compare/v4.0.2...v4.0.3) (2022-02-15)
 
 
