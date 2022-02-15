@@ -116,7 +116,7 @@ export class ErrorMessages {
   }
 
   static ApiConfigLink(parameter: string) {
-    const mdm = `${ApiConfigService.getMdm()}`;
+    const mdm = `${ApiConfigService.getMasterDataApi()}`;
 
     switch (parameter) {
       case "unitType":
@@ -128,15 +128,15 @@ export class ErrorMessages {
       case "accountType":
         return `${mdm}account-types`;
       case "accountNumber":
-        return `${ApiConfigService.getAcctApi()}accounts`;
+        return `${ApiConfigService.getAccountApi()}accounts`;
       case "transactionType":
         return `${mdm}transaction-types`;
       case "sourceCategories":
         return `${mdm}source-categories`;
       case "facilityId":
-        return `${ApiConfigService.getFacApi()}facilities`;
+        return `${ApiConfigService.getFacilitiesApi()}facilities`;
       case "programCodeInfo":
-        return `${ApiConfigService.getAcctApi()}programs`;
+        return `${ApiConfigService.getAccountApi()}programs`;
       default:
         return `${mdm}${parameter}s`;
     }
