@@ -1,3 +1,10 @@
+## [4.0.2](https://github.com/US-EPA-CAMD/easey-common/compare/v4.0.1...v4.0.2) (2022-02-15)
+
+
+### Bug Fixes
+
+* fixing pagination response headers ([fe87ca2](https://github.com/US-EPA-CAMD/easey-common/commit/fe87ca2525ff988f80b470786192b623b13a42ea))
+
 ## [4.0.1](https://github.com/US-EPA-CAMD/easey-common/compare/v4.0.0...v4.0.1) (2022-02-15)
 
 
