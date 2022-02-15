@@ -11,24 +11,24 @@ export class ApiConfigService {
 
     if (host === "localhost") {
       const port = +process.env[`EASEY_${apiName}_API_PORT`] || defaultPort;
-      return `localhost:${port}`;
+      return `http://localhost:${port}`;
     }
 
-    return host;
+    return `https://${host}`;
   }
 
   public static getMasterDataApi(): string {
     const host = this.getHost('MDM', 8050);
-    return `https://${host}/master-data-mgmt/`;
+    return `${host}/master-data-mgmt/`;
   }
 
   public static getFacilitiesApi(): string {
     const host = this.getHost('FACILITIES', 8020);
-    return `https://${host}/facilities-mgmt/`;
+    return `${host}/facilities-mgmt/`;
   }
 
   public static getAccountApi(): string {
     const host = this.getHost('ACCOUNT', 8030);
-    return `https://${host}/account-mgmt/`;
+    return `${host}/account-mgmt/`;
   }
 }
