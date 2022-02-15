@@ -10,6 +10,8 @@ export class ResponseHeaders {
     let concatLinks: string;
 
     if (page && perPage) {
+      page = +page;
+      perPage = +perPage;
       const totalPages = Math.ceil(totalCount / perPage);
 
       if (totalPages > 1) {
@@ -29,7 +31,7 @@ export class ResponseHeaders {
         url = req.url.replace(pageParam, `page=${totalPages}`);
         const last = `<${url}>; rel="last"`;
 
-        switch (+page) {
+        switch (page) {
           case 1: {
             concatLinks = `${next},${last}`;
             break;
