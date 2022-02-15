@@ -21,7 +21,7 @@ export class ErrorMessages {
       ? `One or more ${parameter}s are`
       : `The ${parameter} is`;
     const referList =
-      parameter === "state"
+      parameter === "stateCode"
         ? "Use the two letter postal abbreviation (use TX, not Texas)"
         : `Refer to the list of available ${parameter}s for valid values`;
 
