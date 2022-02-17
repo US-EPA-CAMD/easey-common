@@ -1,3 +1,10 @@
+## [4.1.2](https://github.com/US-EPA-CAMD/easey-common/compare/v4.1.1...v4.1.2) (2022-02-17)
+
+
+### Bug Fixes
+
+* **api-config.service.ts:** env variable checks ([e4b3a29](https://github.com/US-EPA-CAMD/easey-common/commit/e4b3a29b5154a5f30f55883772498bdfb3ab6619)), closes [#2651](https://github.com/US-EPA-CAMD/easey-common/issues/2651)
+
 ## [4.1.1](https://github.com/US-EPA-CAMD/easey-common/compare/v4.1.0...v4.1.1) (2022-02-17)
 
 
