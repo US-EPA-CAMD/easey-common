@@ -4,9 +4,9 @@ import { Injectable } from "@nestjs/common";
 export class ApiConfigService {
 
   private static getHost(apiName: string, defaultPort: number) {
-    const host = 
+    const host =
+      process.env.EASEY_API_GATEWAY_HOST || 
       process.env[`EASEY_${apiName}_API_HOST`] ||
-      process.env.EASEY_API_GATEWAY_HOST ||
       "localhost";
 
     if (host === "localhost") {
