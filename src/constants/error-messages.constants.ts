@@ -136,7 +136,7 @@ export class ErrorMessages {
       case "facilityId":
         return `${ApiConfigService.getFacilitiesApi()}facilities`;
       case "programCodeInfo":
-        return `${ApiConfigService.getAccountApi()}programs`;
+        return `${mdm}programs`;
       default:
         return `${mdm}${parameter}s`;
     }
