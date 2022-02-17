@@ -1,3 +1,10 @@
+## [4.1.1](https://github.com/US-EPA-CAMD/easey-common/compare/v4.1.0...v4.1.1) (2022-02-17)
+
+
+### Bug Fixes
+
+* **error message constants:** updated the program error message to link out to the MDM ([82e55b4](https://github.com/US-EPA-CAMD/easey-common/commit/82e55b4b700d33012158fd66a3434d77a358cc74)), closes [#2651](https://github.com/US-EPA-CAMD/easey-common/issues/2651)
+
 # [4.1.0](https://github.com/US-EPA-CAMD/easey-common/compare/v4.0.4...v4.1.0) (2022-02-15)
 
 
