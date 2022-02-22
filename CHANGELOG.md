@@ -1,3 +1,10 @@
+# [4.2.0](https://github.com/US-EPA-CAMD/easey-common/compare/v4.1.2...v4.2.0) (2022-02-22)
+
+
+### Features
+
+* **property-metadata.constants.ts:** adding MATS properties ([ed06ee5](https://github.com/US-EPA-CAMD/easey-common/commit/ed06ee580d8b32f0f6f618155e11a5e6c66460dc))
+
 ## [4.1.2](https://github.com/US-EPA-CAMD/easey-common/compare/v4.1.1...v4.1.2) (2022-02-17)
 
 
