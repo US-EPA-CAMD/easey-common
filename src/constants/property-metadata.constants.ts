@@ -568,6 +568,38 @@ export const propertyMetadata = {
       "Electrical generation in MW produced by combusting a given heat input of fuel.",
     example: 146,
   },
+  hclInputRate: {
+    fieldLabels: {
+      label: "HCL Input Rate (lb/mmBtu)",
+      value: "hclInputRate"
+    },
+    description: "Average HCl hourly emissions rate (lbs/mmBtu)",
+    example: 407.5244879786
+  },
+  hclMass: {
+    fieldLabels: {
+      label: "HCl Mass (lbs)",
+      value: "hclMass"
+    },
+    description: "HCl mass emissions (lbs)",
+    example: 0.36612
+  },
+  hclMassMeasureFlg: {
+    fieldLabels: {
+      label: "HCl Mass Measure Indicator",
+      value: "hclMassMeasureFlg"
+    },
+    description: "Describes how the HCl Mass values were determined. ",
+    example: "Measured"
+  },
+  hclOutputRate: {
+    fieldLabels: {
+      label: "HCl Output Rate (lb/MWh)",
+      value: "hclOutputRate"
+    },
+    description: "Average HCl hourly emissions rate per megawatt hour of output (lbs/MWh)",
+    example: 0.00452
+  },
   heatInput: {
     fieldLabels: {
       label: "Heat Input (mmBtu)",
@@ -577,6 +609,34 @@ export const propertyMetadata = {
       "Quantity of heat in mmBtu calculated by multiplying the quantity of fuel by the fuels heat content.",
     example: 1470.2,
   },
+  hfInputRate:{
+    fieldLabels: {
+      label: "HF Input Rate (lb/mmBtu)",
+      value: "hfInputRate"
+    },
+    description: "Average HF hourly emissions rate (lbs/mmBtu)"
+  },
+  hfMass: {
+    fieldLabels: {
+      label: "HF Mass (lbs)",
+      value: "hfMass"
+    },
+    description: "HF mass emissions (lbs)"
+  },
+  hfMassMeasureFlg: {
+    fieldLabels: {
+      label: "HF Mass Measure Indicator",
+      value: "hfMassMeasureFlg"
+    },
+    description: "Describes how the HF Mass values were determined. "
+  },
+  hfOutputRate: {
+    fieldLabels: {
+      label: "HF Output Rate (lb/MWh)",
+      value: "hfOutputRate"
+    },
+    description: "Average HF hourly emissions rate per megawatt hour of output (lbs/MWh)"
+  },
   hgControlInfo: {
     fieldLabels: {
       label: "Hg Controls",
@@ -585,6 +645,38 @@ export const propertyMetadata = {
     description:
       "Method or equipment used by the combustion unit to minimize Hg emissions.",
     example: "Catalyst (gold, palladium, or other) used to oxidize mercury",
+  },
+  hgInputRate: {
+    fieldLabels: {
+      label: "Hg Input Rate (lb/TBtu)",
+      value: "hgInputRate"
+    },
+    description: "Average Hg hourly emissions rate (lbs/TBtu)",
+    example: 0.9236604702
+  },
+  hgMass: {
+    fieldLabels: {
+      label: "hgMass",
+      value: "Hg Mass (lbs)"
+    },
+    description: "Hg mass emissions (lbs)",
+    example: 0.002703
+  },
+  hgMassMeasureFlg: {
+    fieldLabels: {
+      label: "Hg Mass Measure Indicator",
+      value: "hgMassMeasureFlg"
+    },
+    description: "Describes how the Hg Mass values were determined.",
+    example: "Measured"
+  },
+  hgOutputRate: {
+    fieldLabels: {
+      label: "Hg Output Rate (lb/GWh)",
+      value: "hgOutputRate"
+    },
+    description: "Average Hg hourly emissions rate per gigawatt hour of output (lbs/GWh)",
+    example: 0.0102
   },
   hour: {
     fieldLabels: {
@@ -627,6 +719,22 @@ export const propertyMetadata = {
     },
     description: "Represents the physical longitude of the facility.",
     example: -93.8958,
+  },
+  matsGrossLoad: {
+    fieldLabels: {
+      label: "MATS Gross Load (MW)",
+      value: "matsGrossLoad"
+    },
+    description: "Electrical generation in MW produced by combusting a given heat input of fuel.",
+    example: 146
+  },
+  matsHeatInput: {
+    fieldLabels: {
+      label: "MATS Heat Input (mmBtu)",
+      value: "matsHeatInput"
+    },
+    description: "Quantity of heat in mmBtu calculated by multiplying the quantity of fuel by the fuels heat content.",
+    example: 1470.2
   },
   maxHourlyHIRate: {
     fieldLabels: {
