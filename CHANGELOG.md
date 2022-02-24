@@ -1,3 +1,10 @@
+## [4.2.1](https://github.com/US-EPA-CAMD/easey-common/compare/v4.2.0...v4.2.1) (2022-02-24)
+
+
+### Bug Fixes
+
+* fix IsInRange ([6023b3d](https://github.com/US-EPA-CAMD/easey-common/commit/6023b3dc584e43c9b58f5ed15593ef783858c176))
+
 # [4.2.0](https://github.com/US-EPA-CAMD/easey-common/compare/v4.1.2...v4.2.0) (2022-02-22)
 
 
