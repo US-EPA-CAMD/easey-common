@@ -3,22 +3,26 @@ import {
   ValidationOptions,
   ValidationArguments,
   isNumberString,
-} from 'class-validator';
+} from "class-validator";
 
 export function IsInRange(
   minVal: number,
   maxVal: number,
-  validationOptions?: ValidationOptions,
+  validationOptions?: ValidationOptions
 ) {
-  return function(object: Object, propertyName: string) {
+  return function (object: Object, propertyName: string) {
     registerDecorator({
-      name: 'IsInRange',
+      name: "IsInRange",
       target: object.constructor,
       propertyName: propertyName,
       options: validationOptions,
       validator: {
         validate(value: any, args: ValidationArguments) {
           if (value) {
+            if (typeof value === "number") {
+              return value >= minVal && value <= maxVal;
+            }
+
             return (
               isNumberString(value, { no_symbols: true }) &&
               (value as number) >= minVal &&
