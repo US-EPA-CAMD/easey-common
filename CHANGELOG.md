@@ -1,3 +1,10 @@
+# [4.3.0](https://github.com/US-EPA-CAMD/easey-common/compare/v4.2.1...v4.3.0) (2022-02-24)
+
+
+### Features
+
+* added app container ([3200524](https://github.com/US-EPA-CAMD/easey-common/commit/3200524abf5a5fa16ea63fdc2e963e11ff867084))
+
 ## [4.2.1](https://github.com/US-EPA-CAMD/easey-common/compare/v4.2.0...v4.2.1) (2022-02-24)
 
 
