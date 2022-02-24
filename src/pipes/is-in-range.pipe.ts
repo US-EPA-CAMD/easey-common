@@ -22,7 +22,7 @@ export function IsInRange(
             if (typeof value === "number") {
               return value >= minVal && value <= maxVal;
             }
-
+            //
             return (
               isNumberString(value, { no_symbols: true }) &&
               (value as number) >= minVal &&
