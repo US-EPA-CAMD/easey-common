@@ -5,9 +5,17 @@ import { ValidationPipe } from "@nestjs/common";
 import { SwaggerModule, DocumentBuilder } from "@nestjs/swagger";
 
 import { CorsOptionsService } from "../cors-options/cors-options.service";
+import { useContainer } from "class-validator";
 
-export async function bootstrap(module: any, allowCredentials: boolean = false) {
+export async function bootstrap(
+  module: any,
+  allowCredentials: boolean = false,
+  useServiceContainers: boolean = false
+) {
   const app = await NestFactory.create(module);
+  if (useServiceContainers === true) {
+    useContainer(app.select(module), { fallbackOnErrors: true });
+  }
 
   const configService = app.get(ConfigService);
   const corsOptionsService = app.get(CorsOptionsService);
@@ -65,7 +73,7 @@ export async function bootstrap(module: any, allowCredentials: boolean = false) 
         req,
         appName,
         callback,
-        allowCredentials,
+        allowCredentials
       );
     });
   }
