@@ -656,8 +656,8 @@ export const propertyMetadata = {
   },
   hgMass: {
     fieldLabels: {
-      label: "hgMass",
-      value: "Hg Mass (lbs)"
+      label: "Hg Mass (lbs)",
+      value: "hgMass"
     },
     description: "Hg mass emissions (lbs)",
     example: 0.002703
