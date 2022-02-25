@@ -1,3 +1,10 @@
+## [4.3.1](https://github.com/US-EPA-CAMD/easey-common/compare/v4.3.0...v4.3.1) (2022-02-25)
+
+
+### Bug Fixes
+
+* **property-metadata.constants.ts:** fix hgMass label ([c572a14](https://github.com/US-EPA-CAMD/easey-common/commit/c572a143b3d3f764dfdc929a5b096c5357821f61))
+
 # [4.3.0](https://github.com/US-EPA-CAMD/easey-common/compare/v4.2.1...v4.3.0) (2022-02-24)
 
 
