@@ -1,3 +1,10 @@
+## [4.4.1](https://github.com/US-EPA-CAMD/easey-common/compare/v4.4.0...v4.4.1) (2022-03-08)
+
+
+### Bug Fixes
+
+* **index.ts:** add exports to index.ts in enums, pipes, and utilities folders ([b093913](https://github.com/US-EPA-CAMD/easey-common/commit/b09391369ed2633bca9c2c6353ff51dfecc66841))
+
 # [4.4.0](https://github.com/US-EPA-CAMD/easey-common/compare/v4.3.1...v4.4.0) (2022-03-08)
 
 
