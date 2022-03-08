@@ -1,4 +1,5 @@
 export { parseToken } from "./parse-token";
+export { exclude } from "./exclude.helper";
 export { Regex } from "./regex";
 export { ResponseHeaders } from "./response.headers";
 
