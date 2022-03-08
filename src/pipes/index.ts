@@ -8,6 +8,6 @@ export { IsInYearRange } from "./is-in-year-range.pipe";
 export { IsValidNumber } from "./is-valid-number.pipe";
 export { IsInRange } from "./is-in-range.pipe";
 export { IsInEnum } from "./is-in-enum.pipe";
-export { IsInResponseObject } from "./is-in-response-object.pipe";
+export { IsInResponse } from "./is-in-response.pipe";
 export { Min } from "./min.pipe";
 export { Max } from "./max.pipe";
