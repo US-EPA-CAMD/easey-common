@@ -7,7 +7,7 @@ export class ErrorMessages {
 
   public static GreaterThanOrEqual(parameter: string, value: number) {
     return `${parameter} must be greater than or equal to ${value}`;
-  }  
+  }
 
   public static Between(parameter: string, minVal: number, maxVal: number) {
     return `${parameter} must be between ${minVal} and ${maxVal}`;
@@ -113,6 +113,14 @@ export class ErrorMessages {
 
   public static RequiredProperty() {
     return `$property should not be null or undefined`;
+  }
+
+  public static ValidParameter() {
+    return `One or more excluded values are not valid`;
+  }
+
+  public static RemovableParameter() {
+    return `One or more excluded values cannot be removed`;
   }
 
   static ApiConfigLink(parameter: string) {
