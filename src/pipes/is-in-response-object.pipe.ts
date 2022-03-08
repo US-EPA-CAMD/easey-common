@@ -4,19 +4,19 @@ import {
   ValidationArguments,
 } from "class-validator";
 
-export function IsInResponseObject(
-  responseObj,
+export function IsInResponse(
+  responseList,
   validationOptions?: ValidationOptions
 ) {
   return function (object: Object, propertyName: string) {
     registerDecorator({
-      name: "IsInResponseObject",
+      name: "IsInResponse",
       target: object.constructor,
       propertyName: propertyName,
       options: validationOptions,
       validator: {
         validate(value: any, args: ValidationArguments) {
-          const valueObjList = responseObj.map(({ value }) => ({
+          const valueObjList = responseList.map(({ value }) => ({
             value,
           }));
           const valueList = valueObjList.map((el) => el.value);
