@@ -5,7 +5,7 @@ import {
 } from "class-validator";
 
 export function IsInResponseObject(
-  responseObj: Object,
+  responseObj,
   validationOptions?: ValidationOptions
 ) {
   return function (object: Object, propertyName: string) {
@@ -16,8 +16,7 @@ export function IsInResponseObject(
       options: validationOptions,
       validator: {
         validate(value: any, args: ValidationArguments) {
-          const responseList = Object.values(responseObj);
-          const valueObjList = responseList.map(({ value }) => ({
+          const valueObjList = responseObj.map(({ value }) => ({
             value,
           }));
           const valueList = valueObjList.map((el) => el.value);
