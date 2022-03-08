@@ -1,3 +1,10 @@
+# [4.4.0](https://github.com/US-EPA-CAMD/easey-common/compare/v4.3.1...v4.4.0) (2022-03-08)
+
+
+### Features
+
+* add validation, helper function, and enum to support exclude parameter ([609a82c](https://github.com/US-EPA-CAMD/easey-common/commit/609a82c611aa6d467246b77ac5ff5c0abfc9ecef))
+
 ## [4.3.1](https://github.com/US-EPA-CAMD/easey-common/compare/v4.3.0...v4.3.1) (2022-02-25)
 
 
