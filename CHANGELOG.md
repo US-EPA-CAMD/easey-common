@@ -1,3 +1,10 @@
+## [4.4.2](https://github.com/US-EPA-CAMD/easey-common/compare/v4.4.1...v4.4.2) (2022-03-09)
+
+
+### Bug Fixes
+
+* **excludehourlymatsapportionedemissions:** fix hfInputRate typo ([9057b5e](https://github.com/US-EPA-CAMD/easey-common/commit/9057b5ef73ca9809b855cf90ac35060220520f03))
+
 ## [4.4.1](https://github.com/US-EPA-CAMD/easey-common/compare/v4.4.0...v4.4.1) (2022-03-08)
 
 
