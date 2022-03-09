@@ -1,3 +1,10 @@
+## [4.4.3](https://github.com/US-EPA-CAMD/easey-common/compare/v4.4.2...v4.4.3) (2022-03-09)
+
+
+### Bug Fixes
+
+* **exclude.helper.ts:** fix to check if exclude exists ([964dc0e](https://github.com/US-EPA-CAMD/easey-common/commit/964dc0e9e182fd1e45777f07216f49222eb7075b))
+
 ## [4.4.2](https://github.com/US-EPA-CAMD/easey-common/compare/v4.4.1...v4.4.2) (2022-03-09)
 
 
