@@ -2,7 +2,7 @@ export enum ExcludeHourlyMatsApportionedEmissions {
   HCL_INPUT_RATE = "hclInputRate",
   HCL_MASS_MEASURE_FLAG = "hclMassMeasureFlg",
   HCL_OUTPUT_RATE = "hclOutputRate",
-  HF_INPUT_RATE = "hclInputRate",
+  HF_INPUT_RATE = "hfInputRate",
   HF_MASS_MEASURE_FLAG = "hfMassMeasureFlg",
   HF_OUTPUT_RATE = "hfOutputRate",
   HG_CONTROL_INFO = "hgControlInfo",
