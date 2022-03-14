@@ -1,3 +1,10 @@
+## [4.5.1](https://github.com/US-EPA-CAMD/easey-common/compare/v4.5.0...v4.5.1) (2022-03-14)
+
+
+### Bug Fixes
+
+* **enum/index.ts:** add enums to index.ts file ([d77f547](https://github.com/US-EPA-CAMD/easey-common/commit/d77f547faf97d7a2a7e1edc816100feaae49232c))
+
 # [4.5.0](https://github.com/US-EPA-CAMD/easey-common/compare/v4.4.3...v4.5.0) (2022-03-14)
 
 
