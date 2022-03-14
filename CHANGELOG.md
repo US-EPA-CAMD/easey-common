@@ -1,3 +1,11 @@
+# [4.5.0](https://github.com/US-EPA-CAMD/easey-common/compare/v4.4.3...v4.5.0) (2022-03-14)
+
+
+### Features
+
+* **enums:** adding exclude enums for account API ([a3b9725](https://github.com/US-EPA-CAMD/easey-common/commit/a3b9725c41696b98fdb65d6ee6ffa3aac409315b))
+* **exclude-facility-attributes.enum.ts:** added exclude facility attributes enum ([e7ee7b9](https://github.com/US-EPA-CAMD/easey-common/commit/e7ee7b96c48de4d36d6b7274dfa094b4aaa2bc3c))
+
 ## [4.4.3](https://github.com/US-EPA-CAMD/easey-common/compare/v4.4.2...v4.4.3) (2022-03-09)
 
 
