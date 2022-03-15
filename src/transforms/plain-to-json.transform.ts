@@ -21,7 +21,11 @@ export class PlainToJSON extends Transform {
     }
   }
 
-  _transform(data: any, _encoding: string, callback: TransformCallback): void {
+  async _transform(
+    data: any,
+    _encoding: string,
+    callback: TransformCallback
+  ): Promise<void> {
     let transformedData = this.isFirstChunk ? "[" : ",";
 
     this.isFirstChunk = false;
@@ -42,7 +46,7 @@ export class PlainToJSON extends Transform {
     this.bufferOffset += transformedData.length;
     callback();
   }
-
+  //
   _flush(callback: TransformCallback): void {
     if (this.isFinalChunk) {
       this.buffer.fill("]", this.bufferOffset, this.bufferOffset + 1);
