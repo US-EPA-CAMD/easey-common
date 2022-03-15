@@ -1,3 +1,11 @@
+# [4.6.0](https://github.com/US-EPA-CAMD/easey-common/compare/v4.5.3...v4.6.0) (2022-03-15)
+
+
+### Features
+
+* improved transformer efficiency ([d157f10](https://github.com/US-EPA-CAMD/easey-common/commit/d157f101fdbcefd944e7afd66bd76affddce6b55))
+* reconfigured the transformers to be more efficient ([9a88345](https://github.com/US-EPA-CAMD/easey-common/commit/9a8834524bbb888ccc721a271dcde45c479649c2))
+
 ## [4.5.3](https://github.com/US-EPA-CAMD/easey-common/compare/v4.5.2...v4.5.3) (2022-03-15)
 
 
