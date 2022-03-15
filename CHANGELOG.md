@@ -1,3 +1,10 @@
+## [4.5.2](https://github.com/US-EPA-CAMD/easey-common/compare/v4.5.1...v4.5.2) (2022-03-14)
+
+
+### Bug Fixes
+
+* **exclude-allowance-transactions.enum.ts:** modify ExcludeAllowanceTransactions ([16d5065](https://github.com/US-EPA-CAMD/easey-common/commit/16d50651b17c3af744792e24e74995a32422eb53))
+
 ## [4.5.1](https://github.com/US-EPA-CAMD/easey-common/compare/v4.5.0...v4.5.1) (2022-03-14)
 
 
