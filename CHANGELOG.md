@@ -1,3 +1,10 @@
+## [4.5.3](https://github.com/US-EPA-CAMD/easey-common/compare/v4.5.2...v4.5.3) (2022-03-15)
+
+
+### Bug Fixes
+
+* **exclude-allowance-compliance.enum.ts:** added additional excludable values ([f2e51f4](https://github.com/US-EPA-CAMD/easey-common/commit/f2e51f49cd79d4e60d4b8678ca78fd6cbd248f7e))
+
 ## [4.5.2](https://github.com/US-EPA-CAMD/easey-common/compare/v4.5.1...v4.5.2) (2022-03-14)
 
 
