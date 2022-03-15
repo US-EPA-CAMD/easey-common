@@ -1,6 +1,6 @@
-import { Transform, TransformOptions, TransformCallback } from "stream";
+import { Transform, TransformOptions, TransformCallback } from 'stream';
 
-import { Parser } from "json2csv";
+import { Parser } from 'json2csv';
 
 const DEFAULT_BUFFER_SIZE = 1048576; //1MB
 
@@ -40,21 +40,23 @@ export class PlainToCSV extends Transform {
   async _transform(
     data: any,
     _encoding: string,
-    callback: TransformCallback
+    callback: TransformCallback,
   ): Promise<void> {
-    let transformedData = "";
+    let transformedData = '';
 
     if (this.isFirstChunk) {
       this.isFirstChunk = false;
-      transformedData = this.withHeader.parse(data) + "\n";
+      transformedData = this.withHeader.parse(data) + '\n';
     } else {
-      transformedData = this.noHeader.parse(data) + "\n";
+      transformedData = this.noHeader.parse(data) + '\n';
     }
 
-    await new Promise((f) => setTimeout(f, 1));
+    await new Promise(f => setTimeout(f, 1));
 
     if (this.bufferOffset + transformedData.length >= this.maxBufferlength) {
-      this.push(this.buffer);
+      const newBuf = Buffer.alloc(this.bufferOffset);
+      this.buffer.copy(newBuf);
+      this.push(newBuf);
       this.bufferOffset = 0;
       this.buffer = Buffer.alloc(DEFAULT_BUFFER_SIZE);
     }
@@ -62,7 +64,7 @@ export class PlainToCSV extends Transform {
     this.buffer.fill(
       transformedData,
       this.bufferOffset,
-      this.bufferOffset + transformedData.length
+      this.bufferOffset + transformedData.length,
     );
     this.bufferOffset += transformedData.length;
 
@@ -70,7 +72,10 @@ export class PlainToCSV extends Transform {
   }
 
   _flush(callback: TransformCallback): void {
-    this.push(this.buffer);
+    const newBuf = Buffer.alloc(this.bufferOffset);
+    this.buffer.copy(newBuf);
+    this.push(newBuf);
+
     callback();
   }
 }
