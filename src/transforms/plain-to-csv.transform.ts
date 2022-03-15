@@ -1,8 +1,4 @@
-import {
-  Transform,
-  TransformOptions,
-  TransformCallback
-} from "stream";
+import { Transform, TransformOptions, TransformCallback } from "stream";
 
 import { Parser } from "json2csv";
 
@@ -10,10 +6,11 @@ const DEFAULT_BUFFER_SIZE = 1048576; //1MB
 
 export class PlainToCSV extends Transform {
   private isFirstChunk: boolean = true;
-  private maxBufferlength: number = DEFAULT_BUFFER_SIZE;
+  private maxBufferlength: number = DEFAULT_BUFFER_SIZE - 100;
 
   private fields: any[];
-  private buffer: string = '';
+  private buffer: Buffer = Buffer.alloc(DEFAULT_BUFFER_SIZE);
+  private bufferOffset: number = 0;
 
   private noHeader = null;
   private withHeader = null;
@@ -22,7 +19,7 @@ export class PlainToCSV extends Transform {
     super({
       ...opts,
       writableObjectMode: true,
-    })
+    });
 
     this.fields = fields;
 
@@ -32,7 +29,7 @@ export class PlainToCSV extends Transform {
     });
 
     this.withHeader = new Parser({
-      fields: this.fields
+      fields: this.fields,
     });
 
     if (bufferSize) {
@@ -40,21 +37,35 @@ export class PlainToCSV extends Transform {
     }
   }
 
-  _transform(data: any, _encoding: string, callback: TransformCallback): void {
-    let transformedData = '';
+  async _transform(
+    data: any,
+    _encoding: string,
+    callback: TransformCallback
+  ): Promise<void> {
+    let transformedData = "";
 
     if (this.isFirstChunk) {
       this.isFirstChunk = false;
-      transformedData = this.withHeader.parse(data) + '\n';
+      transformedData = this.withHeader.parse(data) + "\n";
     } else {
-      transformedData = this.noHeader.parse(data) + '\n';
+      transformedData = this.noHeader.parse(data) + "\n";
     }
 
-    if (this.buffer.length + transformedData.length >= this.maxBufferlength) {
+    await new Promise((f) => setTimeout(f, 1));
+
+    if (this.bufferOffset + transformedData.length >= this.maxBufferlength) {
       this.push(this.buffer);
-      this.buffer = '';
+      this.bufferOffset = 0;
+      this.buffer = Buffer.alloc(DEFAULT_BUFFER_SIZE);
     }
-    this.buffer += transformedData;
+
+    this.buffer.fill(
+      transformedData,
+      this.bufferOffset,
+      this.bufferOffset + transformedData.length
+    );
+    this.bufferOffset += transformedData.length;
+
     callback();
   }
 
