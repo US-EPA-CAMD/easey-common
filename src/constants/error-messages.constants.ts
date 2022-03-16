@@ -112,7 +112,7 @@ export class ErrorMessages {
   }
 
   public static RequiredProperty() {
-    return `$property should not be null or undefined`;
+    return `$property should not be null, undefined, or empty`;
   }
 
   public static ValidParameter() {
