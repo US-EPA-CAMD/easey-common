@@ -1,3 +1,10 @@
+## [4.6.2](https://github.com/US-EPA-CAMD/easey-common/compare/v4.6.1...v4.6.2) (2022-03-16)
+
+
+### Bug Fixes
+
+* **error-messages.constants.ts:** modify required parameter error message ([f2d2e9f](https://github.com/US-EPA-CAMD/easey-common/commit/f2d2e9f6e1b7ed329aaece3ccb6ce33814d8197c))
+
 ## [4.6.1](https://github.com/US-EPA-CAMD/easey-common/compare/v4.6.0...v4.6.1) (2022-03-15)
 
 
