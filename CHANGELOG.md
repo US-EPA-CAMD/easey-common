@@ -1,3 +1,16 @@
+# [4.7.0](https://github.com/US-EPA-CAMD/easey-common/compare/v4.6.2...v4.7.0) (2022-03-23)
+
+
+### Bug Fixes
+
+* **index.ts:** add IsNotEmptyString validaiton pipe to index.ts file ([742e215](https://github.com/US-EPA-CAMD/easey-common/commit/742e2155e94fc981b13e0e09f0a2e53f5d1b54c1))
+* **is-not-empty-string.pipe.ts:** modify validation to use isNotEmpty ([4175f62](https://github.com/US-EPA-CAMD/easey-common/commit/4175f62915e8a1f492698bbd67ab2861c72cff9a))
+
+
+### Features
+
+* **is-not-empty-string.pipe.ts:** add validation to check if value is empty ([64e1578](https://github.com/US-EPA-CAMD/easey-common/commit/64e1578e6bd43445a0afd5b1a2be4b7c0c08ecde))
+
 ## [4.6.2](https://github.com/US-EPA-CAMD/easey-common/compare/v4.6.1...v4.6.2) (2022-03-16)
 
 
