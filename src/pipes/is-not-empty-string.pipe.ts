@@ -2,6 +2,7 @@ import {
   registerDecorator,
   ValidationOptions,
   ValidationArguments,
+  isNotEmpty,
 } from "class-validator";
 
 export function IsNotEmptyString(validationOptions?: ValidationOptions) {
@@ -13,7 +14,7 @@ export function IsNotEmptyString(validationOptions?: ValidationOptions) {
       options: validationOptions,
       validator: {
         validate(value: any, args: ValidationArguments) {
-          return value && String(value) !== "";
+          return value && isNotEmpty(String(value));
         },
       },
     });
