@@ -1,3 +1,10 @@
+## [4.8.1](https://github.com/US-EPA-CAMD/easey-common/compare/v4.8.0...v4.8.1) (2022-04-07)
+
+
+### Bug Fixes
+
+* added index.ts ([d6bb2aa](https://github.com/US-EPA-CAMD/easey-common/commit/d6bb2aa4d88ffc4ae557c20a738085dfe4083351))
+
 # [4.8.0](https://github.com/US-EPA-CAMD/easey-common/compare/v4.7.0...v4.8.0) (2022-04-07)
 
 
