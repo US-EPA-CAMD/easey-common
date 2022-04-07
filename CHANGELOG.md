@@ -1,3 +1,10 @@
+# [4.8.0](https://github.com/US-EPA-CAMD/easey-common/compare/v4.7.0...v4.8.0) (2022-04-07)
+
+
+### Features
+
+* added streaming service and module ([8b28581](https://github.com/US-EPA-CAMD/easey-common/commit/8b28581c9289889a180c820336710cf5ac0d21e6))
+
 # [4.7.0](https://github.com/US-EPA-CAMD/easey-common/compare/v4.6.2...v4.7.0) (2022-03-23)
 
 
