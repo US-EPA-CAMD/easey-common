@@ -1,5 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
+import { Console } from "console";
 import { ReadStream } from "fs";
 
 var Pool = require("pg-pool");
@@ -18,7 +19,7 @@ export class StreamService {
       port: this.configService.get<number>("database.port"),
       max: 20, // set pool max size to 20
       idleTimeoutMillis: 1000, // close idle clients after 1 second
-      connectionTimeoutMillis: 1000, // return an error after 1 second if connection could not be established
+      connectionTimeoutMillis: 5000, // return an error after 1 second if connection could not be established
       maxUses: 500, // close (and replace) a connection after it has been used 7500 times
     });
   }
@@ -34,8 +35,20 @@ export class StreamService {
     });
 
     const client = await this.pool.connect();
+
     const queryStream = new QueryStream(queryString);
 
-    return client.query(queryStream);
+    let stream = client.query(queryStream);
+
+    stream.on("end", () => {
+      try {
+        client.release();
+        stream.destroy();
+        stream = null;
+        console.log("Released Streaming Client");
+      } catch (e) {}
+    });
+
+    return stream;
   }
 }
