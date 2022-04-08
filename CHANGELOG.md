@@ -1,3 +1,10 @@
+## [4.8.2](https://github.com/US-EPA-CAMD/easey-common/compare/v4.8.1...v4.8.2) (2022-04-08)
+
+
+### Bug Fixes
+
+* added client release to streaming on end ([b731fb1](https://github.com/US-EPA-CAMD/easey-common/commit/b731fb10225c0ad2ad48c673259d31c5d3e0672f))
+
 ## [4.8.1](https://github.com/US-EPA-CAMD/easey-common/compare/v4.8.0...v4.8.1) (2022-04-07)
 
 
