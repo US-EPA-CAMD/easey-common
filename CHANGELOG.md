@@ -1,3 +1,11 @@
+## [5.0.1](https://github.com/US-EPA-CAMD/easey-common/compare/v5.0.0...v5.0.1) (2022-05-07)
+
+
+### Bug Fixes
+
+* configuring body-parser to allow configurable request payload size ([2f9c750](https://github.com/US-EPA-CAMD/easey-common/commit/2f9c750b4e19f2f8f2d3d2ab101227c5568a1b09))
+* using body-parser to configure request payload size ([2a5eae8](https://github.com/US-EPA-CAMD/easey-common/commit/2a5eae8a77956a8de6b9c5157c56688469c96ee8))
+
 # [5.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v4.8.2...v5.0.0) (2022-05-07)
 
 
