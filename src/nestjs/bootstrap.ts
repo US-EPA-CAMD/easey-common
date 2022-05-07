@@ -1,5 +1,5 @@
 import * as helmet from "helmet";
-import { urlencoded, json } from 'express';
+import * as bodyParser from 'body-parser';
 import { NestFactory } from "@nestjs/core";
 import { ConfigService } from "@nestjs/config";
 import { ValidationPipe } from "@nestjs/common";
@@ -64,8 +64,8 @@ export async function bootstrap(
   );
 
   app.setGlobalPrefix(appPath);
-  app.use(json({ limit: reqSizeLimit }));
-  app.use(urlencoded({ limit: reqSizeLimit, extended: true }));
+  app.use(bodyParser.json({ limit: reqSizeLimit }));
+  app.use(bodyParser.urlencoded({ limit: reqSizeLimit, extended: true }));
 
   if (configService.get<boolean>("app.enableGlobalValidationPipes")) {
     app.useGlobalPipes(new ValidationPipe({ transform: true }));
