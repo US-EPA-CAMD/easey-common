@@ -1,4 +1,5 @@
 import * as helmet from "helmet";
+import { urlencoded, json } from 'express';
 import { NestFactory } from "@nestjs/core";
 import { ConfigService } from "@nestjs/config";
 import { ValidationPipe } from "@nestjs/common";
@@ -28,6 +29,7 @@ export async function bootstrap(
   const apiHost = configService.get<string>("app.apiHost");
   const appVersion = configService.get<string>("app.version");
   const appPublished = configService.get<string>("app.published");
+  const reqSizeLimit = configService.get<string>("app.reqSizeLimit");
 
   let appDesc = null;
   let swaggerCustomOptions = null;
@@ -62,6 +64,8 @@ export async function bootstrap(
   );
 
   app.setGlobalPrefix(appPath);
+  app.use(json({ limit: reqSizeLimit }));
+  app.use(urlencoded({ limit: reqSizeLimit, extended: true }));
 
   if (configService.get<boolean>("app.enableGlobalValidationPipes")) {
     app.useGlobalPipes(new ValidationPipe({ transform: true }));
