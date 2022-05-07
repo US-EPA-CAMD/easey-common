@@ -1,3 +1,16 @@
+# [5.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v4.8.2...v5.0.0) (2022-05-07)
+
+
+### Features
+
+* added request size limit configuration ([a016d7a](https://github.com/US-EPA-CAMD/easey-common/commit/a016d7a129b43fc6528c2110fcf2bb17fd36c45a))
+
+
+### BREAKING CHANGES
+
+* added request size limit configuration to provide ability to increase payload size
+to prevent payload too large error
+
 ## [4.8.2](https://github.com/US-EPA-CAMD/easey-common/compare/v4.8.1...v4.8.2) (2022-04-08)
 
 
