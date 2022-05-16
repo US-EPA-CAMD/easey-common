@@ -1,4 +1,3 @@
-import { IsDateInRangeLimit } from "./is-date-in-range-limit.pipe";
 export { IsDateGreaterThanEqualTo } from "./is-date-greater.pipe";
 export { IsInDateRange } from "./is-in-date-range.pipe";
 export { IsIsoFormat } from "./is-iso-format.pipe";

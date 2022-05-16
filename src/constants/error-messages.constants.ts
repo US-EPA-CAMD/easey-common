@@ -72,6 +72,10 @@ export class ErrorMessages {
     return `Enter an $property that is greater than or equal to the ${constraint}`;
   }
 
+  public static DateRangeLimit(constraint: string, range: number) {
+    return `${constraint} and $property should be limited to a ${range} year range`;
+  }
+
   public static DateRange(
     parameter: string,
     plural: boolean,
