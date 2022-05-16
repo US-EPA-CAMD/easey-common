@@ -1,3 +1,11 @@
+# [5.1.0](https://github.com/US-EPA-CAMD/easey-common/compare/v5.0.1...v5.1.0) (2022-05-16)
+
+
+### Features
+
+* **error-messages.constants.ts:** added error message for date range limit ([224d205](https://github.com/US-EPA-CAMD/easey-common/commit/224d205b678bf87565c0143959d96604ada76353))
+* **is-date-in-range-limit.pipe.ts:** added date range validation pipe ([fb1fdce](https://github.com/US-EPA-CAMD/easey-common/commit/fb1fdceefade4e914a1026e4cbd7e6206ec7529b))
+
 ## [5.0.1](https://github.com/US-EPA-CAMD/easey-common/compare/v5.0.0...v5.0.1) (2022-05-07)
 
 
