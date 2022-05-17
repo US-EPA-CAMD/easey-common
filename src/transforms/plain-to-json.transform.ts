@@ -1,6 +1,6 @@
-import { Transform, TransformOptions, TransformCallback } from 'stream';
+import { Transform, TransformOptions, TransformCallback } from "stream";
 
-const DEFAULT_BUFFER_SIZE = 1048576; //1MB
+const DEFAULT_BUFFER_SIZE = 1048; //1MB
 
 export class PlainToJSON extends Transform {
   private isFirstChunk: boolean = true;
@@ -24,14 +24,12 @@ export class PlainToJSON extends Transform {
   async _transform(
     data: any,
     _encoding: string,
-    callback: TransformCallback,
+    callback: TransformCallback
   ): Promise<void> {
-    let transformedData = this.isFirstChunk ? '[' : ',';
+    let transformedData = this.isFirstChunk ? "[" : ",";
 
     this.isFirstChunk = false;
     transformedData += JSON.stringify(data);
-
-    await new Promise(f => setTimeout(f, 1));
 
     if (this.bufferOffset + transformedData.length >= this.maxBufferlength) {
       const newBuf = Buffer.alloc(this.bufferOffset);
@@ -39,11 +37,12 @@ export class PlainToJSON extends Transform {
       this.push(newBuf);
       this.bufferOffset = 0;
       this.buffer = Buffer.alloc(DEFAULT_BUFFER_SIZE);
+      await new Promise((f) => setTimeout(f, 1));
     }
     this.buffer.fill(
       transformedData,
       this.bufferOffset,
-      this.bufferOffset + transformedData.length,
+      this.bufferOffset + transformedData.length
     );
     this.bufferOffset += transformedData.length;
     callback();
@@ -53,7 +52,7 @@ export class PlainToJSON extends Transform {
     let newBuf;
 
     if (this.isFinalChunk) {
-      this.buffer.fill(']', this.bufferOffset, this.bufferOffset + 1);
+      this.buffer.fill("]", this.bufferOffset, this.bufferOffset + 1);
       this.bufferOffset++;
     }
 
