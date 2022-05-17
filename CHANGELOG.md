@@ -1,3 +1,10 @@
+## [5.1.1](https://github.com/US-EPA-CAMD/easey-common/compare/v5.1.0...v5.1.1) (2022-05-17)
+
+
+### Bug Fixes
+
+* modified transforms to download faster ([5a7a9a0](https://github.com/US-EPA-CAMD/easey-common/commit/5a7a9a0f04e4fb0037a85c1f813bb44d00ddcf1c))
+
 # [5.1.0](https://github.com/US-EPA-CAMD/easey-common/compare/v5.0.1...v5.1.0) (2022-05-16)
 
 
