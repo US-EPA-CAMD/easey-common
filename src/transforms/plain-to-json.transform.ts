@@ -1,23 +1,33 @@
 import { Transform, TransformOptions, TransformCallback } from "stream";
 
-const DEFAULT_BUFFER_SIZE = 1048; //1MB
+const DEFAULT_BUFFER_SIZE = 1048576; //1MB
 
 export class PlainToJSON extends Transform {
   private isFirstChunk: boolean = true;
   private isFinalChunk: boolean = false;
-  private maxBufferlength: number = DEFAULT_BUFFER_SIZE;
+  private maxBufferlength: number = DEFAULT_BUFFER_SIZE - 100;
+  private miliseconds: number = 100;
 
   private buffer: Buffer = Buffer.alloc(DEFAULT_BUFFER_SIZE);
   private bufferOffset: number = 0;
 
-  constructor(bufferSize?: number, opts?: TransformOptions) {
+  constructor(
+    miliseconds?: number,
+    bufferSize?: number,
+    opts?: TransformOptions
+  ) {
     super({
       ...opts,
       writableObjectMode: true,
     });
 
+    if (miliseconds) {
+      this.miliseconds = miliseconds;
+    }
+
     if (bufferSize) {
       this.maxBufferlength = bufferSize;
+      this.buffer = Buffer.alloc(this.maxBufferlength);
     }
   }
 
@@ -36,8 +46,8 @@ export class PlainToJSON extends Transform {
       this.buffer.copy(newBuf);
       this.push(newBuf);
       this.bufferOffset = 0;
-      this.buffer = Buffer.alloc(DEFAULT_BUFFER_SIZE);
-      await new Promise((f) => setTimeout(f, 1));
+      this.buffer = Buffer.alloc(this.maxBufferlength + 100);
+      await new Promise((f) => setTimeout(f, this.miliseconds));
     }
     this.buffer.fill(
       transformedData,

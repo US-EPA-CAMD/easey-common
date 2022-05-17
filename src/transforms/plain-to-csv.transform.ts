@@ -1,12 +1,12 @@
-import { Transform, TransformOptions, TransformCallback } from "stream";
+import { Transform, TransformOptions, TransformCallback } from 'stream';
 
-import { Parser } from "json2csv";
-
-const DEFAULT_BUFFER_SIZE = 1048; //1MB
+import { Parser } from 'json2csv';
+const DEFAULT_BUFFER_SIZE = 1048576;
 
 export class PlainToCSV extends Transform {
   private isFirstChunk: boolean = true;
   private maxBufferlength: number = DEFAULT_BUFFER_SIZE - 100;
+  private miliseconds: number = 100;
 
   private fields: any[];
   private buffer: Buffer = Buffer.alloc(DEFAULT_BUFFER_SIZE);
@@ -15,7 +15,12 @@ export class PlainToCSV extends Transform {
   private noHeader = null;
   private withHeader = null;
 
-  constructor(fields: any[], bufferSize?: number, opts?: TransformOptions) {
+  constructor(
+    fields: any[],
+    miliSeconds?: number,
+    bufferSize?: number,
+    opts?: TransformOptions,
+  ) {
     super({
       ...opts,
       writableObjectMode: true,
@@ -32,23 +37,28 @@ export class PlainToCSV extends Transform {
       fields: this.fields,
     });
 
+    if (miliSeconds) {
+      this.miliseconds = miliSeconds;
+    }
+
     if (bufferSize) {
-      this.maxBufferlength = bufferSize;
+      this.maxBufferlength = bufferSize - 100;
+      this.buffer = Buffer.alloc(bufferSize);
     }
   }
 
   async _transform(
     data: any,
     _encoding: string,
-    callback: TransformCallback
+    callback: TransformCallback,
   ): Promise<void> {
-    let transformedData = "";
+    let transformedData = '';
 
     if (this.isFirstChunk) {
       this.isFirstChunk = false;
-      transformedData = this.withHeader.parse(data) + "\n";
+      transformedData = this.withHeader.parse(data) + '\n';
     } else {
-      transformedData = this.noHeader.parse(data) + "\n";
+      transformedData = this.noHeader.parse(data) + '\n';
     }
 
     if (this.bufferOffset + transformedData.length >= this.maxBufferlength) {
@@ -56,14 +66,14 @@ export class PlainToCSV extends Transform {
       this.buffer.copy(newBuf);
       this.push(newBuf);
       this.bufferOffset = 0;
-      this.buffer = Buffer.alloc(DEFAULT_BUFFER_SIZE);
-      await new Promise((f) => setTimeout(f, 1));
+      this.buffer = Buffer.alloc(this.maxBufferlength + 100);
+      await new Promise(f => setTimeout(f, this.miliseconds));
     }
 
     this.buffer.fill(
       transformedData,
       this.bufferOffset,
-      this.bufferOffset + transformedData.length
+      this.bufferOffset + transformedData.length,
     );
     this.bufferOffset += transformedData.length;
 
