@@ -1,3 +1,10 @@
+# [5.2.0](https://github.com/US-EPA-CAMD/easey-common/compare/v5.1.2...v5.2.0) (2022-06-09)
+
+
+### Features
+
+* added ClientToken guard ([b92290d](https://github.com/US-EPA-CAMD/easey-common/commit/b92290d4c9df5c7a661b42d0ddbf0bbea42cd964))
+
 ## [5.1.2](https://github.com/US-EPA-CAMD/easey-common/compare/v5.1.1...v5.1.2) (2022-05-17)
 
 
