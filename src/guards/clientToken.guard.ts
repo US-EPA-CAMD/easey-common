@@ -9,25 +9,24 @@ import { firstValueFrom, Observable } from "rxjs";
 import { HttpService } from "@nestjs/axios";
 import { ConfigService } from "@nestjs/config";
 
-import { parseToken } from "../utilities/parse-token";
-
 @Injectable()
-export class AuthGuard implements CanActivate {
+export class ClientTokenGuard implements CanActivate {
   constructor(
     private configService: ConfigService,
     private httpService: HttpService
   ) {}
 
-  async validateToken(token: string, ip: string): Promise<any> {
-    const url = this.configService.get("app.authApi").uri + "/tokens/validate";
+  async validateToken(clientId: string, clientToken: string): Promise<any> {
+    const url =
+      this.configService.get("app.authApi").uri + "/tokens/client/validate";
 
     try {
       const result = await firstValueFrom(
         this.httpService.post(
           url,
           {
-            token: token,
-            clientIp: ip,
+            clientId,
+            clientToken,
           },
           {
             headers: { "x-api-key": this.configService.get("app.apiKey") },
@@ -35,7 +34,11 @@ export class AuthGuard implements CanActivate {
         )
       );
 
-      return result.data;
+      if (result.data) {
+        return true;
+      }
+
+      return false;
     } catch (error) {
       if (error.response) {
         throw new InternalServerErrorException(
@@ -47,9 +50,9 @@ export class AuthGuard implements CanActivate {
   }
 
   async validateRequest(request): Promise<boolean> {
-    let errorMsg = "Prior Authorization token is required.";
+    let errorMsg = "clientToken and clientId is required.";
 
-    if (request.headers.authorization === undefined) {
+    if (!request.headers.authorization || !request.headers["x-client-id"]) {
       throw new BadRequestException(errorMsg);
     }
 
@@ -58,17 +61,13 @@ export class AuthGuard implements CanActivate {
       throw new BadRequestException(errorMsg);
     }
 
-    let ip = request.ip;
-    if (request.headers["x-forwarded-for"]) {
-      ip = request.headers["x-forwarded-for"].split(",")[0];
+    if (
+      await this.validateToken(request.headers["x-client-id"], splitString[1])
+    ) {
+      return true;
     }
 
-    const validatedToken = await this.validateToken(splitString[1], ip);
-    const parsedToken = parseToken(validatedToken);
-
-    request.userId = parsedToken.userId; // Attach userId to request body
-
-    return true;
+    return false;
   }
 
   canActivate(

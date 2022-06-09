@@ -1,5 +1,5 @@
 import * as helmet from "helmet";
-import { json } from 'body-parser';
+import { json } from "body-parser";
 import { NestFactory } from "@nestjs/core";
 import { ConfigService } from "@nestjs/config";
 import { ValidationPipe } from "@nestjs/common";
@@ -106,9 +106,34 @@ export async function bootstrap(
         scheme: "bearer",
         name: "Token",
         description:
-          'Authorization "bearer" token required for data modification operations!',
+          'Authorization "bearer" token required for data modification operations',
       },
       "Token"
+    );
+  }
+
+  if (configService.get<boolean>("app.enableClientToken")) {
+    swaggerDocOptions.addBearerAuth(
+      {
+        in: "header",
+        type: "http",
+        scheme: "bearer",
+        bearerFormat: "jwt",
+        name: "ClientToken",
+        description:
+          'Authorization "bearer" client jwt token required for api endpoints',
+      },
+      "ClientToken"
+    );
+
+    swaggerDocOptions.addApiKey(
+      {
+        in: "header",
+        type: "apiKey",
+        name: "x-client-id",
+        description: 'ClientId required via "x-client-id" request header',
+      },
+      "ClientId"
     );
   }
 
