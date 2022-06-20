@@ -1,3 +1,10 @@
+# [5.3.0](https://github.com/US-EPA-CAMD/easey-common/compare/v5.2.0...v5.3.0) (2022-06-20)
+
+
+### Features
+
+* switched to new cors_config table ([e7d89c8](https://github.com/US-EPA-CAMD/easey-common/commit/e7d89c8572ae1202631bbe0b20a52336fff314df))
+
 # [5.2.0](https://github.com/US-EPA-CAMD/easey-common/compare/v5.1.2...v5.2.0) (2022-06-09)
 
 
