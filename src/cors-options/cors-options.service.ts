@@ -1,6 +1,9 @@
 import { Request } from "express";
 import { getManager } from "typeorm";
-import { CorsOptions, CorsOptionsCallback } from "@nestjs/common/interfaces/external/cors-options.interface";
+import {
+  CorsOptions,
+  CorsOptionsCallback,
+} from "@nestjs/common/interfaces/external/cors-options.interface";
 import { Injectable } from "@nestjs/common";
 import { Logger } from "../logger";
 
@@ -12,7 +15,7 @@ export class CorsOptionsService {
     req: Request,
     appName: string,
     callback: CorsOptionsCallback,
-    allowCredentials: boolean = false,
+    allowCredentials: boolean = false
   ) => {
     let corsOptions: CorsOptions;
     const originHeader = req.header("Origin");
@@ -21,13 +24,7 @@ export class CorsOptionsService {
       const manager = getManager();
       const corsResults = await manager.query(`
         SELECT key, value
-        FROM camdaux.cors
-        LEFT JOIN camdaux.cors_to_api
-          USING(cors_id)
-        LEFT JOIN camdaux.api
-          USING(api_id)
-        WHERE api_id IS NULL OR name = '${appName}'
-        ORDER BY key, value;
+        FROM camdaux.cors_config
       `);
 
       const allowedOrigins = corsResults.filter((i) => i.key === "origin");
