@@ -20,7 +20,7 @@ export class CorsOptionsService {
     let corsOptions: CorsOptions;
     const originHeader = req.header("Origin");
 
-    req.res.setHeader("vary", "*");
+    req.res.setHeader("Vary", "Origin");
 
     if (originHeader !== null && originHeader !== undefined) {
       const manager = getManager();
@@ -45,7 +45,7 @@ export class CorsOptionsService {
       corsOptions = {
         //maxAge: 86400,
         origin: allowedOrigins.map((i) => i.value).includes(originHeader)
-          ? originHeader
+          ? true
           : false,
         exposedHeaders:
           allowedHeaders.length > 0 ? allowedHeaders.map((i) => i.value) : [],
