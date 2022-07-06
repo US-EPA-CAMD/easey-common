@@ -1,3 +1,10 @@
+## [5.3.2](https://github.com/US-EPA-CAMD/easey-common/compare/v5.3.1...v5.3.2) (2022-07-06)
+
+
+### Bug Fixes
+
+* added a vary * header to all cors preflight responses ([12c1f91](https://github.com/US-EPA-CAMD/easey-common/commit/12c1f914aa3ee5ebdd4fbb0bb1a1b89d3ba89c92))
+
 ## [5.3.1](https://github.com/US-EPA-CAMD/easey-common/compare/v5.3.0...v5.3.1) (2022-07-06)
 
 
