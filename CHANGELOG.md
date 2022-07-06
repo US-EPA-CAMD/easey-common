@@ -1,3 +1,10 @@
+## [5.3.1](https://github.com/US-EPA-CAMD/easey-common/compare/v5.3.0...v5.3.1) (2022-07-06)
+
+
+### Bug Fixes
+
+* logging for CORs ([0b6132d](https://github.com/US-EPA-CAMD/easey-common/commit/0b6132d9231ae58233eddfbea6daaf808bf0d502))
+
 # [5.3.0](https://github.com/US-EPA-CAMD/easey-common/compare/v5.2.0...v5.3.0) (2022-06-20)
 
 
