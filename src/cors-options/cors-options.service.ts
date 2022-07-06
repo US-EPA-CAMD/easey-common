@@ -20,6 +20,8 @@ export class CorsOptionsService {
     let corsOptions: CorsOptions;
     const originHeader = req.header("Origin");
 
+    console.log(originHeader);
+
     if (originHeader !== null && originHeader !== undefined) {
       const manager = getManager();
       const corsResults = await manager.query(`
@@ -51,6 +53,8 @@ export class CorsOptionsService {
           allowedMethods.length > 0 ? allowedMethods.map((i) => i.value) : [],
         credentials: allowCredentials,
       };
+
+      console.log(corsOptions);
     } else {
       corsOptions = {
         origin: false,
