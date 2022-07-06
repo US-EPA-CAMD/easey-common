@@ -72,7 +72,6 @@ export async function bootstrap(
 
   if (configService.get<boolean>("app.enableCors")) {
     app.enableCors(async (req, callback) => {
-      console.log("REQUEST ", req);
       await corsOptionsService.configure(
         req,
         appName,
