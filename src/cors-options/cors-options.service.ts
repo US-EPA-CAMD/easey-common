@@ -6,6 +6,7 @@ import {
 } from "@nestjs/common/interfaces/external/cors-options.interface";
 import { Injectable } from "@nestjs/common";
 import { Logger } from "../logger";
+import { equal } from "assert";
 
 @Injectable()
 export class CorsOptionsService {
@@ -21,6 +22,9 @@ export class CorsOptionsService {
     const originHeader = req.header("Origin");
 
     req.res.setHeader("Vary", "Origin");
+    req.res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+    req.res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+    req.res.setHeader("Expires", "0");
 
     if (originHeader !== null && originHeader !== undefined) {
       const manager = getManager();
