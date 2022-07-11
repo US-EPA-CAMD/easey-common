@@ -1,3 +1,10 @@
+## [5.3.5](https://github.com/US-EPA-CAMD/easey-common/compare/v5.3.4...v5.3.5) (2022-07-11)
+
+
+### Bug Fixes
+
+* added a cache control header ([1310c08](https://github.com/US-EPA-CAMD/easey-common/commit/1310c08a0f72f9d30ccd39fa3db7ff3a2616a778))
+
 ## [5.3.4](https://github.com/US-EPA-CAMD/easey-common/compare/v5.3.3...v5.3.4) (2022-07-11)
 
 
