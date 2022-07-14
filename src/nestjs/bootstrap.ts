@@ -149,7 +149,14 @@ export async function bootstrap(
     swaggerCustomOptions
   );
 
-  await app.listen(configService.get<number>("app.port"));
+  const server = await app.listen(configService.get<number>("app.port"));
+
+  if (configService.get<number>("app.timeout")) {
+    server.setTimeout(configService.get<number>("app.timeout"));
+  } else {
+    server.setTimeout(1800000);
+  }
+
   console.log(
     `Application is running on: ${await app.getUrl()}/${appPath}/swagger`
   );
