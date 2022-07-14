@@ -150,12 +150,7 @@ export async function bootstrap(
   );
 
   const server = await app.listen(configService.get<number>("app.port"));
-
-  if (configService.get<number>("app.timeout")) {
-    server.setTimeout(configService.get<number>("app.timeout")); //log
-  } else {
-    server.setTimeout(1800000);
-  }
+  server.setTimeout(1800000);
 
   console.log(
     `Application is running on: ${await app.getUrl()}/${appPath}/swagger`
