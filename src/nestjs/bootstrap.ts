@@ -152,7 +152,7 @@ export async function bootstrap(
   const server = await app.listen(configService.get<number>("app.port"));
 
   if (configService.get<number>("app.timeout")) {
-    server.setTimeout(configService.get<number>("app.timeout"));
+    server.setTimeout(configService.get<number>("app.timeout")); //log
   } else {
     server.setTimeout(1800000);
   }
