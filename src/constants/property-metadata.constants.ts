@@ -1177,6 +1177,14 @@ export const propertyMetadata = {
     description: "Full description for the source category type.",
     example: "Cogeneration",
   },
+  stackPipeId: {
+    fieldLabels: {
+      label: "",
+      value: "stackPipeId"
+    },
+    description: "This is the alphanumeric code assigned by a source to identify a multiple or common stack or pipe at which emissions are determined",
+    example: "CS0AAN"
+  },
   startBlock: {
     fieldLabels: {
       label: "Serial Number Start",
@@ -1234,6 +1242,22 @@ export const propertyMetadata = {
     },
     description: "Sum of operating time for the time interval",
     example: 1795.25,
+  },
+  testSummaryId: {
+    fieldLabels: {
+      label: "",
+      value: "id"
+    },
+    description: "Unique identifier of a test summary record",
+    example: "TESTSUM7DAY123"
+  },
+  testTypeCode: {
+    fieldLabels: {
+      label: "",
+      value: "testTypeCode",
+    },
+    description: "Code used to identify test type or the type of test performed",
+    example: "7DAY"
   },
   totalAllowancesDeducted: {
     fieldLabels: {
