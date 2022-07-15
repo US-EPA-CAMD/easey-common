@@ -1,3 +1,10 @@
+# [5.4.0](https://github.com/US-EPA-CAMD/easey-common/compare/v5.3.7...v5.4.0) (2022-07-15)
+
+
+### Features
+
+* **property-metadata.constants.ts:** added qa certification parameters to metadata ([82225e1](https://github.com/US-EPA-CAMD/easey-common/commit/82225e16688cb184d3a0b60712eb70caddda9a3a))
+
 ## [5.3.7](https://github.com/US-EPA-CAMD/easey-common/compare/v5.3.6...v5.3.7) (2022-07-14)
 
 
