@@ -1,3 +1,17 @@
+## [5.3.7](https://github.com/US-EPA-CAMD/easey-common/compare/v5.3.6...v5.3.7) (2022-07-14)
+
+
+### Bug Fixes
+
+* defaulted to number ms value ([894b325](https://github.com/US-EPA-CAMD/easey-common/commit/894b3259def1a0ceaacc43f156f6367bc7cf7e7a))
+
+## [5.3.6](https://github.com/US-EPA-CAMD/easey-common/compare/v5.3.5...v5.3.6) (2022-07-14)
+
+
+### Bug Fixes
+
+* added app timeout config ([915daa2](https://github.com/US-EPA-CAMD/easey-common/commit/915daa223857ea713d7d861361f0190f837b7497))
+
 ## [5.3.5](https://github.com/US-EPA-CAMD/easey-common/compare/v5.3.4...v5.3.5) (2022-07-11)
 
 
