@@ -1,3 +1,10 @@
+## [5.4.1](https://github.com/US-EPA-CAMD/easey-common/compare/v5.4.0...v5.4.1) (2022-07-15)
+
+
+### Bug Fixes
+
+* **cors-options.service.ts:** removed uneeded logs ([58515cb](https://github.com/US-EPA-CAMD/easey-common/commit/58515cb7fb19d9ce60c81c51830d6ef6b1fb0e80))
+
 # [5.4.0](https://github.com/US-EPA-CAMD/easey-common/compare/v5.3.7...v5.4.0) (2022-07-15)
 
 
