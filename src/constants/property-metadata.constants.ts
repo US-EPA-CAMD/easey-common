@@ -1182,7 +1182,7 @@ export const propertyMetadata = {
       label: "",
       value: "stackPipeId"
     },
-    description: "This is the alphanumeric code assigned by a source to identify a multiple or common stack or pipe at which emissions are determined",
+    description: "This is the alphanumeric code assigned by a source to identify a multiple or common stack or pipe at which emissions are determined.",
     example: "CS0AAN"
   },
   startBlock: {
@@ -1248,7 +1248,7 @@ export const propertyMetadata = {
       label: "",
       value: "id"
     },
-    description: "Unique identifier of a test summary record",
+    description: "Unique identifier of a test summary record.",
     example: "TESTSUM7DAY123"
   },
   testTypeCode: {
@@ -1256,7 +1256,7 @@ export const propertyMetadata = {
       label: "",
       value: "testTypeCode",
     },
-    description: "Code used to identify test type or the type of test performed",
+    description: "Code used to identify test type or the type of test performed.",
     example: "7DAY"
   },
   totalAllowancesDeducted: {
