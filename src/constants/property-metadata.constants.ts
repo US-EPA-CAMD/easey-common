@@ -2664,7 +2664,7 @@ export const propertyMetadata = {
     description: "Flag for active monitor location record",
     example: true,
   },
-  
+
   monitorPlanCommentDTOId:{
     fieldLabels: {
       label: "",
@@ -2717,6 +2717,60 @@ export const propertyMetadata = {
     },
     description: "Comment on a monitoring plan",
     example: "DAHS was updated for GT-1 on 11/10/2016 by a previous owner, but the component ID was not updated on the gas system. This was corrected on 9/8/2020.",
+  },
+  
+  monitorPlanReportingFreqDTOId:{
+    fieldLabels: {
+      label: "",
+      value: "id",
+    },
+    description: "Unique identifier of a monitoring plan Reporting Frequency record.",
+    example: "MDC-7A8D8E101C484732954BE84D49D9249A",
+  },
+  
+  monitorPlanReportingFreqDTOPlanId:{
+    fieldLabels: {
+      label: "",
+      value: "planId",
+    },
+    description: "Unique identifier of a monitoring plan record.",
+    example: "MDC-2483BA898490441B97B7D7CFB1BE6D9A",
+  },
+  
+  monitorPlanReportingFreqDTOUserId:{
+    fieldLabels: {
+      label: "",
+      value: "userId",
+    },
+    description: "User account or source of data that added or updated record.",
+    example: "abcde",
+  },
+  
+  monitorPlanReportingFreqDTOAddDate:{
+    fieldLabels: {
+      label: "",
+      value: "addDate",
+    },
+    description: "Date and time in which record was added.",
+    example: "2020-10-28",
+  },
+  
+  monitorPlanReportingFreqDTOUpdateDate:{
+    fieldLabels: {
+      label: "",
+      value: "updateDate",
+    },
+    description: "Date and time in which record was last updated.",
+    example: "2020-10-28",
+  },
+  
+  monitorPlanReportingFreqDTOMonitoringPlanReportingFreqCode:{
+    fieldLabels: {
+      label: "",
+      value: "reportFrequencyCode",
+    },
+    description: "Report Frequency Code on a monitoring plan",
+    example: "OS",
   },
   
   monitorPlanCommentDTOBeginDate:{
@@ -4339,6 +4393,15 @@ unitCapacityDTOAddDate:{
     example: "1,2,CSA00N",
   },
   
+  monitorPlanDTOBeginReportPeriodId:{
+    fieldLabels: {
+      label: "",
+      value: "beginReportPeriodId",
+    },
+    description: "Unique identifier of a reporting period record.",
+    example: null,
+  },
+
   monitorPlanDTOEndReportPeriodId:{
     fieldLabels: {
       label: "",
