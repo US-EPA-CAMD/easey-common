@@ -1,3 +1,16 @@
+# [6.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v5.4.2...v6.0.0) (2022-07-22)
+
+
+### Features
+
+* added support for new logging framework ([c9c03e9](https://github.com/US-EPA-CAMD/easey-common/commit/c9c03e975e61bf443df88be885cdf18829677035))
+
+
+### BREAKING CHANGES
+
+* The new logger.error() method now only takes the actually error, and should not be
+called directly. Only LoggingError() exception should be thrown when errors need to be logged.
+
 ## [5.4.2](https://github.com/US-EPA-CAMD/easey-common/compare/v5.4.1...v5.4.2) (2022-07-22)
 
 
