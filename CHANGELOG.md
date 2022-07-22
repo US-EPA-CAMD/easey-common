@@ -1,3 +1,10 @@
+## [5.4.2](https://github.com/US-EPA-CAMD/easey-common/compare/v5.4.1...v5.4.2) (2022-07-22)
+
+
+### Bug Fixes
+
+* update property metadata for reporting period ([81d80d3](https://github.com/US-EPA-CAMD/easey-common/commit/81d80d3b122b28e5c961f357ce7e85a5bc4b36f9))
+
 ## [5.4.1](https://github.com/US-EPA-CAMD/easey-common/compare/v5.4.0...v5.4.1) (2022-07-15)
 
 
