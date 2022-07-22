@@ -1,11 +1,16 @@
-import { Injectable } from '@nestjs/common';
-import { v4 as uuid } from 'uuid';
+import { Injectable } from "@nestjs/common";
+import { v4 as uuid } from "uuid";
 
-const winston = require('winston');
+const winston = require("winston");
 //
 interface LogInterface {
   warn: (message: string, args?: any[]) => void;
-  error: (errorType: Error, message: string, throws?: boolean, args?: any[]) => void;
+  error: (
+    errorType: Error,
+    message: string,
+    throws?: boolean,
+    args?: any[]
+  ) => void;
   info: (message: string, args?: any[]) => void;
 }
 
@@ -15,7 +20,7 @@ export class Logger implements LogInterface {
 
   constructor() {
     this.logInstance = winston.createLogger({
-      level: 'info',
+      level: "info",
       format: winston.format.json(),
       transports: [new winston.transports.Console()],
     });
@@ -25,25 +30,20 @@ export class Logger implements LogInterface {
     this.logInstance.warn(message, { ...args });
   }
 
-  error(errorType, message, throws = false, args?): string {
+  error(error): string {
     const errorId = uuid();
-    const errorInstance = new errorType(message, errorId);
 
-    this.logInstance.error(errorInstance.message, {
-      ...args,
+    this.logInstance.error(error.message, {
+      ...error.metadata,
       errorId: errorId,
-      stack: errorInstance.stack,
+      stack: error.stack,
     });
 
-    if(throws){
-      throw errorInstance;
-    }
-
-    return  errorId;
+    return errorId;
   }
 
   info(message, args?): void {
-    this.logInstance.log('info', message, { ...args });
+    this.logInstance.log("info", message, { ...args });
   }
 }
 export default Logger;
