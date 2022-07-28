@@ -1,3 +1,15 @@
+# [6.1.0](https://github.com/US-EPA-CAMD/easey-common/compare/v6.0.0...v6.1.0) (2022-07-28)
+
+
+### Bug Fixes
+
+* merged current code base ([9750d9e](https://github.com/US-EPA-CAMD/easey-common/commit/9750d9e9cdbfecea437e4ac70cdd30bfd7cc6170))
+
+
+### Features
+
+* added description to bootstrap swagger ([6b0e64d](https://github.com/US-EPA-CAMD/easey-common/commit/6b0e64dc50e74de1ba2b7203dca8faf175818398))
+
 # [6.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v5.4.2...v6.0.0) (2022-07-22)
 
 
