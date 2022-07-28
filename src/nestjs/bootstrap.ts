@@ -50,7 +50,7 @@ export async function bootstrap(
       appDesc = configService.get<string>("app.description");
       swaggerCustomOptions = {
         customCss:
-          ".description .renderedMarkdown p { color: #FC0; padding: 10px; background: linear-gradient(to bottom,#B2BEB5 0%,#A9A9A9 100%); }",
+          ".description .renderedMarkdown p { color: #000000; padding: 10px; background: linear-gradient(to bottom,#B2BEB5 0%,#A9A9A9 100%); }",
       };
     }
   } else {
