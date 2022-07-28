@@ -7,6 +7,8 @@ import { SwaggerModule, DocumentBuilder } from "@nestjs/swagger";
 
 import { CorsOptionsService } from "../cors-options/cors-options.service";
 import { useContainer } from "class-validator";
+import { LoggingInterceptor } from "../interceptors";
+import { Logger } from "../logger";
 
 export async function bootstrap(
   module: any,
@@ -14,6 +16,7 @@ export async function bootstrap(
   useServiceContainers: boolean = false
 ) {
   const app = await NestFactory.create(module);
+  app.useGlobalInterceptors(new LoggingInterceptor(new Logger()));
   if (useServiceContainers === true) {
     useContainer(app.select(module), { fallbackOnErrors: true });
   }

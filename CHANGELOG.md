@@ -1,3 +1,44 @@
+# [6.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v5.4.2...v6.0.0) (2022-07-22)
+
+
+### Features
+
+* added support for new logging framework ([c9c03e9](https://github.com/US-EPA-CAMD/easey-common/commit/c9c03e975e61bf443df88be885cdf18829677035))
+
+
+### BREAKING CHANGES
+
+* The new logger.error() method now only takes the actually error, and should not be
+called directly. Only LoggingError() exception should be thrown when errors need to be logged.
+
+## [5.4.2](https://github.com/US-EPA-CAMD/easey-common/compare/v5.4.1...v5.4.2) (2022-07-22)
+
+
+### Bug Fixes
+
+* update property metadata for reporting period ([81d80d3](https://github.com/US-EPA-CAMD/easey-common/commit/81d80d3b122b28e5c961f357ce7e85a5bc4b36f9))
+
+## [5.4.1](https://github.com/US-EPA-CAMD/easey-common/compare/v5.4.0...v5.4.1) (2022-07-15)
+
+
+### Bug Fixes
+
+* **cors-options.service.ts:** removed uneeded logs ([58515cb](https://github.com/US-EPA-CAMD/easey-common/commit/58515cb7fb19d9ce60c81c51830d6ef6b1fb0e80))
+
+# [5.4.0](https://github.com/US-EPA-CAMD/easey-common/compare/v5.3.7...v5.4.0) (2022-07-15)
+
+
+### Features
+
+* **property-metadata.constants.ts:** added qa certification parameters to metadata ([82225e1](https://github.com/US-EPA-CAMD/easey-common/commit/82225e16688cb184d3a0b60712eb70caddda9a3a))
+
+## [5.3.7](https://github.com/US-EPA-CAMD/easey-common/compare/v5.3.6...v5.3.7) (2022-07-14)
+
+
+### Bug Fixes
+
+* defaulted to number ms value ([894b325](https://github.com/US-EPA-CAMD/easey-common/commit/894b3259def1a0ceaacc43f156f6367bc7cf7e7a))
+
 ## [5.3.6](https://github.com/US-EPA-CAMD/easey-common/compare/v5.3.5...v5.3.6) (2022-07-14)
 
 

@@ -65,8 +65,6 @@ export class CorsOptionsService {
         credentials: false,
       };
     }
-
-    //req.res.setHeader('Cache-Control', 'public, max-age=86400')
     callback(null, corsOptions);
   };
 }
