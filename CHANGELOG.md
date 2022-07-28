@@ -1,3 +1,10 @@
+## [6.1.1](https://github.com/US-EPA-CAMD/easey-common/compare/v6.1.0...v6.1.1) (2022-07-28)
+
+
+### Bug Fixes
+
+* added line breaks to swagger description ([a19e9a7](https://github.com/US-EPA-CAMD/easey-common/commit/a19e9a73c2eab772b75e31646ddb125db3425818))
+
 # [6.1.0](https://github.com/US-EPA-CAMD/easey-common/compare/v6.0.0...v6.1.0) (2022-07-28)
 
 
