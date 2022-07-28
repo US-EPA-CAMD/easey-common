@@ -1,3 +1,10 @@
+## [6.1.2](https://github.com/US-EPA-CAMD/easey-common/compare/v6.1.1...v6.1.2) (2022-07-28)
+
+
+### Bug Fixes
+
+* changed production text color ([f8b6b41](https://github.com/US-EPA-CAMD/easey-common/commit/f8b6b41d0739e1c54b034f781a87eeb55056c64f))
+
 ## [6.1.1](https://github.com/US-EPA-CAMD/easey-common/compare/v6.1.0...v6.1.1) (2022-07-28)
 
 
