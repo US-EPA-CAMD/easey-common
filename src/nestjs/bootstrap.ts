@@ -39,7 +39,7 @@ export async function bootstrap(
 
   if (configService.get<string>("app.description")) {
     if (appEnv != "production") {
-      appDesc = `EPA ${appEnv} Environment: The content on this page is not production data and used for <strong>development</strong> and/or <strong>testing</strong> purposes only.\n${configService.get<string>(
+      appDesc = `EPA ${appEnv} Environment: The content on this page is not production data and used for <strong>development</strong> and/or <strong>testing</strong> purposes only. <br> <br> ${configService.get<string>(
         "app.description"
       )}`;
       swaggerCustomOptions = {
