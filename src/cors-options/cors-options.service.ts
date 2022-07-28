@@ -67,12 +67,6 @@ export class CorsOptionsService {
     }
 
     //req.res.setHeader('Cache-Control', 'public, max-age=86400')
-    this.logger.info(corsOptions);
-
     callback(null, corsOptions);
-
-    this.logger.info(req.res);
-
-    this.logger.info(req.res.getHeaders());
   };
 }

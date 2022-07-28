@@ -34,12 +34,31 @@ export async function bootstrap(
   let appDesc = null;
   let swaggerCustomOptions = null;
 
-  if (appEnv != "production") {
-    appDesc = `EPA ${appEnv} Environment: The content on this page is not production data and used for <strong>development</strong> and/or <strong>testing</strong> purposes only.`;
-    swaggerCustomOptions = {
-      customCss:
-        ".description .renderedMarkdown p { color: #FC0; padding: 10px; background: linear-gradient(to bottom,#520001 0%,#6c0810 100%); }",
-    };
+  if (configService.get<string>("app.description")) {
+    if (appEnv != "production") {
+      appDesc = `EPA ${appEnv} Environment: The content on this page is not production data and used for <strong>development</strong> and/or <strong>testing</strong> purposes only.\n${configService.get<string>(
+        "app.description"
+      )}`;
+      swaggerCustomOptions = {
+        customCss:
+          ".description .renderedMarkdown p { color: #FC0; padding: 10px; background: linear-gradient(to bottom,#520001 0%,#6c0810 100%); }",
+      };
+    } else {
+      appDesc = configService.get<string>("app.description");
+      swaggerCustomOptions = {
+        customCss:
+          ".description .renderedMarkdown p { color: #FC0; padding: 10px; background: linear-gradient(to bottom,#B2BEB5 0%,#A9A9A9 100%); }",
+      };
+    }
+  } else {
+    if (appEnv != "production") {
+      appDesc = `EPA ${appEnv} Environment: The content on this page is not production data and used for <strong>development</strong> and/or <strong>testing</strong> purposes only.`;
+
+      swaggerCustomOptions = {
+        customCss:
+          ".description .renderedMarkdown p { color: #FC0; padding: 10px; background: linear-gradient(to bottom,#520001 0%,#6c0810 100%); }",
+      };
+    }
   }
 
   app.use(
