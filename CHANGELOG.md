@@ -1,3 +1,10 @@
+## [6.1.4](https://github.com/US-EPA-CAMD/easey-common/compare/v6.1.3...v6.1.4) (2022-08-05)
+
+
+### Bug Fixes
+
+* update logging exceptions ([6ad40e6](https://github.com/US-EPA-CAMD/easey-common/commit/6ad40e681cf6f0e133944a5f97ba97e5a2f93420))
+
 ## [6.1.3](https://github.com/US-EPA-CAMD/easey-common/compare/v6.1.2...v6.1.3) (2022-08-05)
 
 
