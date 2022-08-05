@@ -7,7 +7,7 @@ export class LoggingException extends HttpException {
     super(
       {
         message: message,
-        status: status,
+        statusCode: status,
       },
       status
     );
