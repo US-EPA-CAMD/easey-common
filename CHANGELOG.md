@@ -1,3 +1,10 @@
+## [6.1.3](https://github.com/US-EPA-CAMD/easey-common/compare/v6.1.2...v6.1.3) (2022-08-05)
+
+
+### Bug Fixes
+
+* fixed the logging exception to accept object as well as string ([e2b766b](https://github.com/US-EPA-CAMD/easey-common/commit/e2b766b9493bd60d9cb52114a828e35eba510d05))
+
 ## [6.1.2](https://github.com/US-EPA-CAMD/easey-common/compare/v6.1.1...v6.1.2) (2022-07-28)
 
 
