@@ -431,6 +431,1378 @@ export const propertyMetadata = {
       "Banked allowances with a 2 to 1 ratio. (This is for OTC, NBP)",
     example: 0,
   },
+  emissions:{
+    onLineOffLineIndicator:{
+      fieldLabels: {
+        label: "Online Offline Indicator",
+        value: "onLineOffLineIndicator",
+      },
+      description: "Indicator code used to report if the daily calibration was performed online or offline, reported as OnLineOffLineIndicator in the DailyCalibrationData record.",
+      example: "Yes",
+    },
+    upscaleGasCode:{
+      fieldLabels: {
+        label: "Upscale Gas Level Code",
+        value: "upscaleGasCode",
+      },
+      description: "The gas level code of the upscale gas injection, reported as UpscaleGasCode in the DailyCalibrationData record.",
+      example: "HIGH",
+    },
+    zeroInjectionDate:{
+      fieldLabels: {
+        label: "Zero Injection Date",
+        value: "zeroInjectionDate",
+      },
+      description: "The completion date of the zero gas injection",
+      example: "2019-03-01",
+  
+    },
+    zeroInjectionHour:{
+      fieldLabels: {
+        label: "Zero Injection Hour",
+        value: "zeroInjectionHour",
+      },
+      description: "The completion time of the zero gas injection",
+      example: "4",
+  
+    },
+    zeroInjectionMinute:{
+      fieldLabels: {
+        label: "Zero Injection Minute",
+        value: "zeroInjectionMinute",
+      },
+      description: "The completion time of the zero gas injection",
+      example: "1",
+  
+    },
+    upscaleInjectionDate:{
+      fieldLabels: {
+        label: "ZUpscale Injection Date",
+        value: "upscaleInjectionDate",
+      },
+      description: "The completion date of the upscale gas injection",
+      example: "2019-03-01",
+  
+    },
+    upscaleInjectionHour:{
+      fieldLabels: {
+        label: "Upscale Injection Hour",
+        value: "upscaleInjectionHour",
+      },
+      description: "The completion time of the upscale gas injection",
+      example: "5",
+  
+    },
+    upscaleInjectionMinute:{
+      fieldLabels: {
+        label: "Upscale Injection Minute",
+        value: "upscaleInjectionMinute",
+      },
+      description: "The completion time of the upscale gas injection",
+      example: "1",
+  
+    },
+    zeroMeasuredValue:{
+      fieldLabels: {
+        label: "Zero Measured Value",
+        value: "zeroMeasuredValue",
+      },
+      description: "The value measured by the instrument in response to the zero gas injection, reported as ZeroMeasuredValue in the DailyCalibrationData record.",
+      example: "2.6",
+  
+    },
+    upscaleMeasuredValue :{
+      fieldLabels: {
+        label: "Upscale Measured Value",
+        value: "upscaleMeasuredValue ",
+      },
+      description: "ThThe value measured by the instrument in response to the upscale gas injection, reported as UpscaleMeasuredValue in the DailyCalibrationData record.",
+      example: "523.9",
+  
+    },
+    zeroAPSIndicator:{
+      fieldLabels: {
+        label: "Zero APS Indicator",
+        value: "zeroAPSIndicator",
+      },
+      description: "Indicator code used to report if zero injection result was determined using the alternative performance specification, reported as ZeroAPSIndicator in the DailyCalibrationData record.",
+      example: "No",
+  
+    },
+    upscaleAPSIndicator:{
+      fieldLabels: {
+        label: "Upscale APS Indicator",
+        value: "upscaleAPSIndicator",
+      },
+      description: "Indicator code used to report if upscale injection result was determined using the alternative performance specification, reported as UpscaleAPSIndicator in the DailyCalibrationData record.",
+      example: "No ",
+  
+    },
+    zeroCalibrationError:{
+      fieldLabels: {
+        label: "Zero Calibration Error",
+        value: "zeroCalibrationError",
+      },
+      description: "The calibration error results or mean difference from the zero gas injection, reported as ZeroCalibrationError in the DailyCalibrationData record.",
+      example: "0.6",
+  
+    },
+    upscaleCalibrationError:{
+      fieldLabels: {
+        label: "Upscale Calibration Error",
+        value: "upscaleCalibrationError",
+      },
+      description: "The calibration error or mean difference results from the upscale gas injection, reported as UpscaleCalibrationError in the DailyCalibrationData record.",
+      example: "0.6",
+  
+    },
+    zeroReferenceValue:{
+      fieldLabels: {
+        label: "Zero Reference Value",
+        value: "zeroReferenceValue",
+      },
+      description: "The zero calibration gas or reference signal value, reported as ZeroReferenceValue in the DailyCalibrationData record.",
+      example: "0",
+  
+    },
+    upscaleReferenceValue:{
+      fieldLabels: {
+        label: "Upscale Reference Value",
+        value: "upscaleReferenceValue",
+      },
+      description: "Code indicating the type of gas in the cylinder used for the upscale injection.",
+      example: "NOX",
+  
+    },
+    cylinderIdentifier:{
+      fieldLabels: {
+        label: "Cylinder ID",
+        value: "cylinderIdentifier",
+      },
+      description: "The vendor-assigned identification or serial number located on the cylinder.",
+      example: "CC277493",
+  
+    },
+    summaryValueDtoId:{
+      fieldLabels: {
+        label: "Summary Value ID",
+        value: "id",
+      },
+      description: "Unique identifier of a summary value record.",
+      example: "FOS-D6QLND-709320C8C5ED4E378942701BD683D8F2",  
+    },
+    parameterCode:{
+      fieldLabels: {
+        label: "Parameter Code",
+        value: "parameterCode",
+      },
+      description: "Code used to identify the parameter.",
+      example: "NOXM",
+  
+    },
+    currentReportingPeriodTotal:{
+      fieldLabels: {
+        label: "Current Reporting Period Total",
+        value: "currentReportingPeriodTotal",
+      },
+      description: "Total value for current reporting period.",
+      example: "1091.6",
+    },
+    ozoneSeasonToDateTotal:{
+      fieldLabels: {
+        label: "Ozone Season to Date Total",
+        value: "ozoneSeasonToDateTotal",
+      },
+      description: "Ozone season year to date total. ",
+      example: "596.7",
+  
+    },
+    yearToDateTotal:{
+      fieldLabels: {
+        label: "Year to Date Total",
+        value: "yearToDateTotal",
+      },
+      description: "Year to date total.",
+      example: "2250.5",
+  
+    },
+    dailyTestSummaryId:{
+      fieldLabels: {
+        label: "Daily Test Summary ID",
+        value: "id",
+      },
+      description: "Unique identifier of a daily test summary record",
+      example: "FOS-D6QLND-62BAF816050B46BAA78CD6009278156E",
+    },
+    monitoringLocationId:{
+      fieldLabels: {
+        label: "Monitor Location Id",
+        value: "monitoringLocationId",
+      },
+      description: "Unique identifier of a monitoring location record. ",
+      example: "785",
+    },
+    userId:{
+      fieldLabels: {
+        label: "User ID",
+        value: "userId",
+      },
+      description: "User account or source of data that added or updated record.",
+      example: "abcdef",
+    },
+    addDate:{
+      fieldLabels: {
+        label: "Add Date",
+        value: "addDate",
+      },
+      description: "Date and time in which record was added. ",
+      example: "2019-04-23",
+    },
+    updateDate:{
+      fieldLabels: {
+        label: "Update Date",
+        value: "updateDate",
+      },
+      description: "Date and time in which record was last updated.",
+      example: "2019-04-23",
+    },
+    reportingPeriodId:{
+      fieldLabels: {
+        label: "Reporting Period ID",
+        value: "reportingPeriodId",
+      },
+      description: "Unique identifier of a reporting period record. ",
+      example: "105",
+    },
+    monitoringSystemID:{
+      fieldLabels: {
+        label: "System Identifier",
+        value: "monitoringSystemId",
+      },
+      description: "Unique identifier of a monitoring system record.",
+      example: "111",
+    },
+    componentID:{
+      fieldLabels: {
+        label: "Component Identifier",
+        value: "componentId",
+      },
+      description: "Component ID of the analyzer, reported as ComponentID in the ComponentData record",
+      example: "6",
+    },
+    spanScaleCode:{
+      fieldLabels: {
+        label: "Span Scale Code",
+        value: "spanScaleCode",
+      },
+      description: "Code used to identify the span scale.",
+      example: "H",
+    },
+    testTypeCode:{
+      fieldLabels: {
+        label: "Test Type Code",
+        value: "testTypeCode",
+      },
+      description: "Code used to identify test type.",
+      example: "DAYCAL",
+    },
+    testResultCode:{
+      fieldLabels: {
+        label: "Test Result Code",
+        value: "testResultCode",
+      },
+      description: "Code used to identify reported test result.",
+      example: "PASSED",
+    },
+    dailyTestDate:{
+      fieldLabels: {
+        label: "Daily Test Date",
+        value: "date",
+      },
+      description: "Date of the daily test.",
+      example: "2019-03-01",
+    },
+    dailyTestHour:{
+      fieldLabels: {
+        label: "Daily Test Hour",
+        value: "hour",
+      },
+      description: "Hour of the daily test.",
+      example: "5",
+    },
+    dailyTestMinute:{
+      fieldLabels: {
+        label: "Daily Test Minute",
+        value: "minute",
+      },
+      description: "Minute of the daily test.",
+      example: "1",
+    },
+    dailyCalibrationId:{
+      fieldLabels: {
+        label: "Daily Calibration ID",
+        value: "id",
+      },
+      description: "Unique identifier for a daily calibration injection record. ",
+      example: "dhintzma-85A88C7C0887AC2DE053D7DD4386D597",
+    },
+    injectionProtocolCode:{
+      fieldLabels: {
+        label: "Injection Protocol Code",
+        value: "injectionProtocolCode",
+      },
+      description: "Injection Protocol code.",
+      example: "HGE",
+    },
+    expirationDate:{
+      fieldLabels: {
+        label: "Expiration Date",
+        value: "expirationDate",
+      },
+      description: "Date of Expiration of the upscale gas cylinder.",
+      example: "2026-08-04",
+    },
+    vendorIdentifier:{
+      fieldLabels: {
+        label: "Vendor ID",
+        value: "vendorIdentifier",
+      },
+      description: "The EPA-assigned PGVP Vendor ID at the time of cylinder production.",
+      example: "A32018",
+    },
+    upscaleGasTypeCode:{
+      fieldLabels: {
+        label: "Upscale Gas Type Code",
+        value: "upscaleGasTypeCode",
+      },
+      description: "Code indicating the type of gas in the cylinder used for the upscale injection.",
+      example: "BALN,CO2,NO,NOX",
+    },
+    dailyEmissionsId:{
+      fieldLabels: {
+        label: "Daily Emissions ID",
+        value: "id",
+      },
+      description: "Unique identifier of a daily emission record.",
+      example: "2GH3WF2-CB0DF7BD5388427C8B32E3F5F6C80371",
+    },
+    beginDateDailyEmissionsDTO:{
+      fieldLabels: {
+        label: "Begin Date",
+        value: "beginDate",
+      },
+      description: "Date corresponding to the daily emissions.",
+      example: "2019-02-20",
+    },
+    unadjustedDailyEmission:{
+      fieldLabels: {
+        label: "Unadjusted Daily Emission",
+        value: "unadjustedDailyEmission",
+      },
+      description: "Reported unadjusted daily CO2 mass value determined using the G-1 equation; reported as UnadjustedDailyEmissions in the DailyEmissionData record.",
+      example: "2928.4",
+    },
+    adjustedDailyEmissions:{
+      fieldLabels: {
+        label: "Adjusted Daily Emission",
+        value: "adjustedDailyEmission",
+      },
+      description: "Reported daily combustion-related CO2 Mass (tons) adjusted for carbon retained in the ash; reported as AdjustedDailyEmissions in the DailyEmissionData record.",
+      example: "2928.4",
+    },
+    sorbentMassEmission:{
+      fieldLabels: {
+        label: "Sorbent Mass Emission",
+        value: "sorbentMassEmission",
+      },
+      description: "Total daily sorbent-related CO2 mass emissions.",
+      example: "0",
+    },
+    totalCarbonBurned:{
+      fieldLabels: {
+        label: "Total Carbon Burned",
+        value: "totalCarbonBurned",
+      },
+      description: "Total amount of carbon burned.",
+      example: "1205152.7",
+    },
+    totalDailyEmissions:{
+      fieldLabels: {
+        label: "Total Daily Emission",
+        value: "totalDailyEmission",
+      },
+      description: "Reported daily total combustion-related CO2 mass emissions in tons as TotalDailyEmissions in the DailyEmissionData record.",
+      example: "2928.4",
+    },
+    dailyFuelId:{
+      fieldLabels: {
+        label: "Daily Fuel ID",
+        value: "id",
+      },
+      description: "Unique identifier of a daily fuel record.",
+      example: "GEOFFI7-999C4B810FA8416C89265F87493A11E6",
+    },
+    dailyEmissionId:{
+      fieldLabels: {
+        label: "Daily Emission ID",
+        value: "dailyEmissionId",
+      },
+      description: "Unique identifier of a daily emission record.",
+      example: "GEOFFI7-9AFBAFA8BA3A4CE28B24DDE281A5F46D",
+    },
+    fuelCode:{
+      fieldLabels: {
+        label: "Fuel Code",
+        value: "fuelCode",
+      },
+      description: "Code used to identify the type of fuel.",
+      example: "DSL",
+    },
+    dailyFuelFeed:{
+      fieldLabels: {
+        label: "Daily Fuel Feed",
+        value: "dailyFuelFeed",
+      },
+      description: "Feed rate of fuel.",
+      example: "139526.3",
+    },
+    carbonContentUsed:{
+      fieldLabels: {
+        label: "Carbon Content Used",
+        value: "carbonContentUsed",
+      },
+      description: "Amount of carbon burned as a percentage of the daily feed rate",
+      example: "73.6",
+    },
+    fuelCarbonBurned:{
+      fieldLabels: {
+        label: "Fuel Carbon Burned",
+        value: "fuelCarbonBurned",
+      },
+      description: "Amount of carbon burned.",
+      example: "102691.4",
+    },
+    derivedHourlyValueId:{
+      fieldLabels: {
+        label: "Derived Hourly Value ID",
+        value: "id",
+      },
+      description: "Unique identifier of a derived hourly value record. ",
+      example: "jwalke12-877751BA987DE71FE053D7DD438665B9",
+    },
+    hourId:{
+      fieldLabels: {
+        label: "Hour ID",
+        value: "hourId",
+      },
+      description: "Unique identifier of an hourly operating data record.",
+      example: "DPGLISSO11-0C90B40DF78D457F9E49AD75A3C28F21",
+    },
+    formulaIdentifier:{
+      fieldLabels: {
+        label: "Formula Code",
+        value: "formulaIdentifier",
+      },
+      description: "Unique identifier of a monitoring formula record.",
+      example: "F-6",
+    },
+    modcCode:{
+      fieldLabels: {
+        label: "MODC Code",
+        value: "modcCode",
+      },
+      description: "Code used to identify the method of determination.",
+      example: "1",
+    },
+    operatingConditionCode:{
+      fieldLabels: {
+        label: "Operating Condition ",
+        value: "operatingConditionCode",
+      },
+      description: "Code used to identify the operating condition.",
+      example: "B",
+    },
+    percentAvailable:{
+      fieldLabels: {
+        label: "Percent Monitor Availability",
+        value: "percentAvailable",
+      },
+      description: "Percent monitor data availability.",
+      example: "98.7",
+    },
+    adjustedHourlyValueDerivedHourlyValueDTO:{
+      fieldLabels: {
+        label: "Adjusted Hourly Value",
+        value: "adjustedHourlyValue",
+      },
+      description: "Adjusted parameter value for the hour, as calculated from measured values and then adjusted for bias, or the substitute value for missing data hours. ",
+      example: "0.327",
+    },
+    unadjustedHourlyValue:{
+      fieldLabels: {
+        label: "Unadjusted Hourly Value",
+        value: "unadjustedHourlyValue",
+      },
+      description: "Unadjusted value calculated from measured values for the hour.",
+      example: "0.327",
+    },
+    biasAdjustmentFactorDerivedHourlyValueDTO:{
+      fieldLabels: {
+        label: "Applicable Bias Adjusted Factor",
+        value: "biasAdjustmentFactor",
+      },
+      description: "BAF determined from most recent prior RATA (as calculated by ECMPS Client Tool).",
+      example: "1",
+    },
+    segmentNumber:{
+      fieldLabels: {
+        label: "Segment Number",
+        value: "segmentNumber",
+      },
+      description: "Segment number of correlation curve.  Rather than a user-assigned identifier, this is just an integer that indicates the segment number (assuming the first segment is number 1).",
+      example: "1",
+    },
+    unadjustedHourlyValueDerivedHourlyValueDTO:{
+      fieldLabels: {
+        label: "Unadjusted Hourly Value",
+        value: "unadjustedHourlyValue",
+      },
+      description: "Unadjusted value calculated from measured values for the hour.",
+      example: "0.327",
+    },
+    hourlyFuelFlowId:{
+      fieldLabels: {
+        label: "Hourly Fuel Flow ID",
+        value: "id",
+      },
+      description: "Unique identifier of a derived hourly value record.",
+      example: "jwalke12-877751BA987DE71FE053D7DD438665B9",
+    },
+    fuelUsageTime:{
+      fieldLabels: {
+        label: "Fuel Usage Time",
+        value: "fuelUsageTime",
+      },
+      description: "The fraction of the clock hour during which the unit or pipe combusted the fuel, reported as FuelUsageTime in the HFF record.",
+      example: "1",
+    },
+    massFlowRate:{
+      fieldLabels: {
+        label: "Mass Flow Rate",
+        value: "massFlowRate",
+      },
+      description: "Mass flow rate during combustion. ",
+      example: "358",
+    },
+    sourceOfDataMassCode:{
+      fieldLabels: {
+        label: "Source Of Data Mass ",
+        value: "sourceOfDataMassCode",
+      },
+      description: "Source of Data Code for fuel flow reported as SourceOfDataMassCode in the HFF record.",
+      example: "5",
+    },
+    sourceOfDataVolumetricCode:{
+      fieldLabels: {
+        label: "Source Of Data Volumetric",
+        value: "sourceOfDataVolumetricCode",
+      },
+      description: "Source of Data Code for fuel flow reported as SourceOfDataVolumetricCode in the HFF record.",
+      example: "0",
+    },
+    volumetricUnitsOfMeasureCode:{
+      fieldLabels: {
+        label: "Volumetric Units of Measure",
+        value: "volumetricUnitsOfMeasureCode",
+      },
+      description: "Code used to identify the units of measure for volumetric fuel flow.",
+      example: "HSCF",
+    },
+    hourlyGasFlowMeterId:{
+      fieldLabels: {
+        label: "Hourly Gas Flow Meter ID",
+        value: "hourlyGasFlowMeterId",
+      },
+      description: "Unique identifier of an hourly fuel flow record.",
+      example: "LSYSFHBZLH-1BB107E892004188BBC94D1170EC6756",
+    },
+    samplingRateUOM:{
+      fieldLabels: {
+        label: "Sampling Rate UOM",
+        value: "samplingRateUOM",
+      },
+      description: "Unit of Measure for average sample flow rate.",
+      example: "CCMIN",
+    },
+    avgHourlySamplingRate:{
+      fieldLabels: {
+        label: "Average Hourly Sampling Rate",
+        value: "avgHourlySamplingRate",
+      },
+      description: "Average sample flow rate.",
+      example: "302.71",
+    },
+    beginEndHourFlag:{
+      fieldLabels: {
+        label: "Begin End Hour Flag",
+        value: "beginEndHourFlag",
+      },
+      description: "Marks transition hour.",
+      example: "F",
+    },
+    hourlyGFMReading:{
+      fieldLabels: {
+        label: "Hourly GFM Reading",
+        value: "hourlyGFMReading",
+      },
+      description: "Monitored value of Gas Flow Meter. ",
+      example: "0.02",
+    },
+    hourlySFSRRatio :{
+      fieldLabels: {
+        label: "Hourly SFSR Ratio",
+        value: "hourlySFSRRatio ",
+      },
+      description: "Reported hourly SFSR Ratio.",
+      example: "38.3",
+    }, 
+    hourlyOpDataId:{
+      fieldLabels: {
+        label: "Hourly Operating Data ID",
+        value: "id",
+      },
+      description: "Unique identifier of an hourly operating data record.",
+      example: "DT3YSLPW1-360FCE62B3A147918C1B2E260D78D929",
+    },
+    beginDateHourlyOpDataDTO:{
+      fieldLabels: {
+        label: "Begin Date",
+        value: "beginDate",
+      },
+      description: "Date of the hourly operating data.",
+      example: "2019-01-01",
+    },
+    beginHourHourlyOpDataDTO:{
+      fieldLabels: {
+        label: "Begin Hour",
+        value: "hour",
+      },
+      description: "Hour of the hourly operating data.",
+      example: "21",
+    },
+    operatingTime:{
+      fieldLabels: {
+        label: "Operating Time",
+        value: "operatingTime",
+      },
+      description: "The fraction of the clock hour during which the unit (or any unit venting through the stack) combusted any fuel. ",
+      example: "1",
+    },
+    loadRange:{
+      fieldLabels: {
+        label: "Load Range",
+        value: "loadRange",
+      },
+      description: "Operating load range or load bin number (1 to 10); reported as LoadRange in the HourlyOperatingData record.",
+      example: "6",
+    },
+    commonStackLoadRange:{
+      fieldLabels: {
+        label: "Common Stack Load Range",
+        value: "commonStackLoadRange",
+      },
+      description: "Load range for stack flow at a common stack (between 1 and 20).  Optional alternative to standard load range.",
+      example: "10",
+    },
+    hourLoad:{
+      fieldLabels: {
+        label: "Hour Load",
+        value: "hourLoad",
+      },
+      description: "Gross unit load or steam load value during unit operation.",
+      example: "120",
+    },
+    loadUnitsOfMeasureCode:{
+      fieldLabels: {
+        label: "Load Units of Measure ",
+        value: "loadUnitsOfMeasureCode",
+      },
+      description: "Load units of measure; reported as LoadUnitsOfMeasureCode in the HourlyOperatingData record.",
+      example: "MW",
+    },
+    matsHourLoad:{
+      fieldLabels: {
+        label: "MATS Hour Load",
+        value: "matsHourLoad",
+      },
+      description: "The MATS speciic megawatt load.",
+      example: "68",
+    },
+    matsStartupShutdownFlag:{
+      fieldLabels: {
+        label: "MATS Startup Shutdown Flag",
+        value: "matsStartupShutdownFlag",
+      },
+      description: "Flag indicating whether the current hour is either a MATS startup or shutdown hour.",
+      example: "D",
+    },
+    fcFactor:{
+      fieldLabels: {
+        label: "Fc Factor",
+        value: "fcFactor",
+      },
+      description: "Carbon based F-factor corresponding to fuel(s) burned during the hour.",
+      example: "1040",
+    },
+    fdFactor:{
+      fieldLabels: {
+        label: "Fd Factor",
+        value: "fdFactor",
+      },
+      description: "Dry basis F-factor corresponding to fuel(s) burned during the hour.",
+      example: "8710",
+    },
+    fwFactor:{
+      fieldLabels: {
+        label: "Fw Factor",
+        value: "fwFactor",
+      },
+      description: "Wet basis F-factor corresponding to fuel(s) burned during the hour.",
+      example: "9120",
+    },
+    hourlyParamFuelFlowId:{
+      fieldLabels: {
+        label: "Hourly Param Fuel Flow ID",
+        value: "id",
+      },
+      description: "Unique identifier of an hourly parameter fuel flow record.",
+      example: "jwalke12-877751BA9CD4E71FE053D7DD438665B9",
+    },
+    parameterValueForFuel:{
+      fieldLabels: {
+        label: "Parameter Value",
+        value: "parameterValueForFuel",
+      },
+      description: "Hourly parameter value for fuel. (Currently SO2 mass rate, CO2 mass rate or heat input rate.)",
+      example: "0.44718",
+    },
+    parameterUOMCode:{
+      fieldLabels: {
+        label: "Parameter UOM",
+        value: "parameterUOMCode",
+      },
+      description: "Code used to identify the parameter units of measure.",
+      example: "LBHR",
+    },
+    sampleTypeCode:{
+      fieldLabels: {
+        label: "Sample Type",
+        value: "sampleTypeCode",
+      },
+      description: "Code indicating the source of value reported as SampleTypeCode in the HPFF record.",
+      example: "2",
+    },
+    longTermFuelFlowId:{
+      fieldLabels: {
+        label: "Long Term Fuel Flow ID",
+        value: "id",
+      },
+      description: "Unique identifier of a long term fuel flow record.",
+      example: "NAES003449-194B5AA148DE4833B675A69A29B9BA51",
+    },
+    fuelFlowPeriodCode:{
+      fieldLabels: {
+        label: "Fuel Flow Period Code",
+        value: "",
+      },
+      description: "Code used to identify the long term fuel flow period. ",
+      example: "MJ",
+    },
+    gcvUnitsOfMeasureCode:{
+      fieldLabels: {
+        label: "GCV Units of Measure",
+        value: "gcvUnitsOfMeasureCode",
+      },
+      description: "Code used to identify the units of measure for the GCV.",
+      example: "BTUSCF",
+    },
+    grossCalorificValue:{
+      fieldLabels: {
+        label: "Gross Calorific Value",
+        value: "grossCalorificValue",
+      },
+      description: "Gross Calorific Value.",
+      example: "1050",
+    },
+    longTermFuelFlowValue:{
+      fieldLabels: {
+        label: "Long Term Fuel Flow Value",
+        value: "longTermFuelFlowValue",
+      },
+      description: "Long term fuel flow value ",
+      example: "655000",
+    },
+    longTermFuelFlowUOMCode:{
+      fieldLabels: {
+        label: "Long Term Fuel Flow UOM",
+        value: "longTermFuelFlowUOMCode",
+      },
+      description: "Code used to identify the units of measure for the long term fuel flow value.",
+      example: "SCF",
+    },
+    totalHeatInput:{
+      fieldLabels: {
+        label: "Total Heat Input",
+        value: "totalHeatInput",
+      },
+      description: "Total heat input from this long term fuel flow value.",
+      example: "688",
+    },
+    matsDerivedHourlyValueId:{
+      fieldLabels: {
+        label: "MATS Derived Hourly Value ID",
+        value: "id",
+      },
+      description: "Unique identifier of a MATS derived hourly value record.",
+      example: "EDE-55998-61C01575C5DB49BF8FDB46F91385E716",
+    },
+    unadjustedHourlyValueMatsDerivedHourlyValueDTO:{
+      fieldLabels: {
+        label: "Unadjusted Hourly Value",
+        value: "unadjustedHourlyValue",
+      },
+      description: "Unadjusted value calculated from measured values for the hour in scientific notation. ",
+      example: "6.27E-02",
+    },
+    matsMonitorHourlyValueId:{
+      fieldLabels: {
+        label: "MATS Monitor Hourly Value ID",
+        value: "id",
+      },
+      description: "Unadjusted value calculated from measured values for the hour in scientific notation.",
+      example: "EDE-55998-88F5731B058F45D980A4D29467609B3D",
+    },
+    unadjustedHourlyValueMatsMonitorHourlyValueDTO:{
+      fieldLabels: {
+        label: "Unadjusted Hourly Value",
+        value: "unadjustedHourlyValue",
+      },
+      description: "Unadjusted measured value in scientific notation.",
+      example: "0.122E-01",
+    },
+    monitorHourlyValueId:{
+      fieldLabels: {
+        label: "Monitor Hourly Value ID",
+        value: "id",
+      },
+      description: "Unique identifier of monitor hourly value record.",
+      example: "MMillick-8763429842D7F2CDE053D7DD4386A62F",
+    },
+    adjustedHourlyValueMonitorHourlyValueDTO:{
+      fieldLabels: {
+        label: "Adjusted Hourly Value",
+        value: "adjustedHourlyValue",
+      },
+      description: "Adjusted average concentration or flow for the hour.",
+      example: "99330000",
+    },
+    biasAdjustmentFactorMonitorHourlyValueDTO:{
+      fieldLabels: {
+        label: "Applicable Bias Adjusted Factor",
+        value: "biasAdjustmentFactor",
+      },
+      description: "Bias Adjustment Factor from most recent applicable RATA, as determined by ECMPS Client Tool.",
+      example: "1.036",
+    },
+    moistureBasis:{
+      fieldLabels: {
+        label: "Moisture Basis ",
+        value: "moistureBasis",
+      },
+      description: "Moisture basis for measured value. ",
+      example: "D",
+    },
+    unadjustedHourlyValueMonitorHourlyValueDTO:{
+      fieldLabels: {
+        label: "Unadjusted Hourly Value",
+        value: "unadjustedHourlyValue",
+      },
+      description: "Unadjusted measured value.",
+      example: "95878000",
+    },
+    nsps4tSummaryId:{
+      fieldLabels: {
+        label: "NSPS4T Summary ID",
+        value: "id",
+      },
+      description: "Unique identifier of a NSPS4T Summary record.",
+      example: "OCELGNWDP7-80B955DABF384007B62DEE4A5DAFEAD9",
+    },
+    electricalLoadCode:{
+      fieldLabels: {
+        label: "Electrical Load Code",
+        value: "electricalLoadCode",
+      },
+      description: "Code used to identify the NSPS4T Electrical Load.",
+      example: "GROSS",
+    },
+    co2EmissionStandardCode:{
+      fieldLabels: {
+        label: "CO2 Emission Standard Code",
+        value: "co2EmissionStandardCode",
+      },
+      description: "Code used to identify the NSPS4T Emission Standard.",
+      example: "CTOUT",
+    },
+    modusValue:{
+      fieldLabels: {
+        label: "MODUS Value",
+        value: "modusValue",
+      },
+      description: "Standard value for a modified steam generating or IGCC unit with a unit-specific stanrdard.",
+      example: "450",
+    },
+    modusUOMCode:{
+      fieldLabels: {
+        label: "MODUS Units of Measure Code",
+        value: "modusUOMCode",
+      },
+      description: "Code used to identify the NSPS4T Mass Rate for a modified steam generating or IGCC unit with a unit-specific stanrdard.",
+      example: "KGMWH",
+    },
+    noCompliancePeriodEndedComment:{
+      fieldLabels: {
+        label: "No Compliance Period Ended Comment",
+        value: "noCompliancePeriodEndedComment",
+      },
+      description: "Comment about whether a compliance period ended during the reporting period.",
+      example: "No compliance period has ended since the source became subject to Subpart TTTT on 2019/01/25.",
+    },
+    noCompliancePeriodEndedIndicator:{
+      fieldLabels: {
+        label: "No Compliance Period Ended Indicator",
+        value: "noCompliancePeriodEndedIndicator",
+      },
+      description: "Indicates whether a compliance period ended during the reporting period.",
+      example: "",
+    },
+    nsps4tCompliancePeriodDataId:{
+      fieldLabels: {
+        label: "NSPS4T Compliance Period Data ID",
+        value: "id",
+      },
+      description: "Unique identifier of a NSPS4T Compliance Period record.",
+      example: "OCELGNWDP7-49B1D74DCEF147BDAAB44A32A783D314",
+    },
+    nsps4tSumId:{
+      fieldLabels: {
+        label: "NSPS4T Summary ID",
+        value: "nsps4tSumId",
+      },
+      description: "Unique identifier of a NSPS4T Summary record.",
+      example: "OCELGNWDP7-80B955DABF384007B62DEE4A5DAFEAD9",
+    },
+    averageCO2EmissionRate:{
+      fieldLabels: {
+        label: "Average CO2 Emission Rate",
+        value: "averageCO2EmissionRate",
+      },
+      description: "12 month rolling average for compliance month (the end month).",
+      example: "350",
+    },
+    co2EmissionRateUOMCode:{
+      fieldLabels: {
+        label: "CO2 Emission Rate Units of Measure ",
+        value: "co2EmissionRateUOMCode",
+      },
+      description: "Unit of measure for the 12 month rolling average.",
+      example: "KGMWH",
+    },
+    percentValidOpHours:{
+      fieldLabels: {
+        label: "Percent Valid Operating Hours",
+        value: "percentValidOpHours",
+      },
+      description: "Percent of valid hours withing the compliance months.",
+      example: "99.9",
+    },
+    violationOfCO2StandardComment:{
+      fieldLabels: {
+        label: "Violation of CO2 Standard Comment",
+        value: "violationOfCO2StandardComment",
+      },
+      description: "Comment on the violation of the emission standard for the location.",
+      example: "No Violation",
+    },
+    violationOfCO2StandardIndicator:{
+      fieldLabels: {
+        label: "Violation of CO2 Standard",
+        value: "violationOfCO2StandardIndicator",
+      },
+      description: "Indicates whether the 12 month rolling average violated the emission standard fpr the location.",
+      example: "0",
+    },
+    beginMonth:{
+      fieldLabels: {
+        label: "Begin Month",
+        value: "beginMonth",
+      },
+      description: "The month the first calendar month included in the rolling average for the compliance period.",
+      example: "2",
+    },
+    beginYear:{
+      fieldLabels: {
+        label: "Begin Year",
+        value: "beginYear",
+      },
+      description: "The year of the first calendar month included in the rolling average for the compliance period.",
+      example: "2018",
+    },
+    endMonth:{
+      fieldLabels: {
+        label: "End Month",
+        value: "endMonth",
+      },
+      description: "The month of the last calendar month included in the rolling average for the compliance period.",
+      example: "1",
+    },
+    endYear:{
+      fieldLabels: {
+        label: "End Year",
+        value: "endYear",
+      },
+      description: "The year of the last calendar month included in the rolling average for the compliance period.",
+      example: "2019",
+    },
+    nsps4tFourthQuarterId:{
+      fieldLabels: {
+        label: "NSPS4T Fourth Quarter ID",
+        value: "id",
+      },
+      description: "Unique identifier of a NSPS4T Compliance Period record. ",
+      example: "OCELGNWDP7-49B1D74DCEF147BDAAB44A32A783D314",
+    },
+    annualEnergySold:{
+      fieldLabels: {
+        label: "Annual Energy Sold",
+        value: "annualEnergySold",
+      },
+      description: "The annual energy sold for the calendar year.",
+      example: "2842824",
+    },
+    annualEnergySoldTypeCode:{
+      fieldLabels: {
+        label: "Annual Energy Sold Type",
+        value: "annualEnergySoldTypeCode",
+      },
+      description: "Indicates the type of energy sold (i.e. NET or GROSS)",
+      example: "GROSS",
+    },
+    annualPotentialElectricOutput:{
+      fieldLabels: {
+        label: "Annual Potential Electric Output",
+        value: "annualPotentialElectricOutput",
+      },
+      description: "The annual potential (energy) output for the calendar year.",
+      example: "1440011",
+    },
+    sorbentTrapId:{
+      fieldLabels: {
+        label: "Sorbent Trap ID",
+        value: "id",
+      },
+      description: "Unique identifier of a sorbent trap record.",
+      example: "SDM4661-4A7D784055084412953E84209293CDFE",
+    },
+    beginDateSorbentTrapDTO:{
+      fieldLabels: {
+        label: "Begin Date",
+        value: "beginDate",
+      },
+      description: "Begin date of the sampling period, reported as BeginDate and BeginHour in the Sorbent Trap Data records.",
+      example: "2019-07-31",
+    },
+    beginHourSorbentTrapDTO:{
+      fieldLabels: {
+        label: "Begin Hour",
+        value: "beginHour",
+      },
+      description: "Begin time of the sampling period, reported as BeginDate and BeginHour in the Sorbent Trap Data records.",
+      example: "6",
+    },
+    endDate:{
+      fieldLabels: {
+        label: "End Date",
+        value: "endDate",
+      },
+      description: "End date of the sampling period, reported as EndDate and EndHour in the Sorbent Trap Data records.",
+      example: "2019-07-31",
+    },
+    endHour:{
+      fieldLabels: {
+        label: "End Hour",
+        value: "endHour",
+      },
+      description: "End time of the sampling period, reported as EndDate and EndHour in the Sorbent Trap Data records.",
+      example: "7",
+    },
+    absoluteDifferenceIndicator:{
+      fieldLabels: {
+        label: "Absolute Difference Indicator",
+        value: "absoluteDifferenceIndicator",
+      },
+      description: "Indicates the basis for the Paired Trap Agreement test: relative deviation (0) or absolute difference (1).",
+      example: "0",
+    },
+    hgSystemConcentration:{
+      fieldLabels: {
+        label: "Hg System Concentration",
+        value: "hgSystemConcentration",
+      },
+      description: "The Hg concentration in ug/scm reported as UnadjustedHourlyValue in the MATS MHV record.",
+      example: "0.107",
+    },
+    modcCodeSorbentTrapDTO:{
+      fieldLabels: {
+        label: "MODC Code",
+        value: "modcCode",
+      },
+      description: "Method of Determination Code for the hourly Hg concentration, reported as MODCCode in Sorbent Trap Data record.",
+      example: "1",
+    },
+    pairedTrapAgreement:{
+      fieldLabels: {
+        label: "Paired Trap Agreement",
+        value: "pairedTrapAgreement",
+      },
+      description: "Relative deviation (RD) between Traps \"a\" and \"b\", rounded to two decimal places.  Reported as PairedTrapAgreement in the Sorbent Trap Data record.",
+      example: "8.21",
+    },
+    rataIndicator:{
+      fieldLabels: {
+        label: "RATA Indicator",
+        value: "rataIndicator",
+      },
+      description: "Indicates whether the sorbent trap was used for a RATA.",
+      example: "1",
+    },
+    apsCode:{
+      fieldLabels: {
+        label: "APS Code",
+        value: "apsCode",
+      },
+      description: "Code used to identify the sorbent trap APS.",
+      example: "RATA",
+    },
+    samplingTrainId:{
+      fieldLabels: {
+        label: "Sampling Train ID",
+        value: "id",
+      },
+      description: "Unique identifier of a sampling train record.",
+      example: "VM300-9004-CD4DD09DE7634B5E8A7D5F3A89F6F5DF",
+    },
+    sorbentTrapDTOId:{
+      fieldLabels: {
+        label: "Sorbent Trap ID",
+        value: "sorbentTrapId",
+      },
+      description: "Unique identifier of a sorbent trap record.",
+      example: "VM300-9004-1420D935886D4B27B49E78C20FA57B93",
+    },
+    sorbentTrapSN:{
+      fieldLabels: {
+        label: "Sorbent Trap Serial Number",
+        value: "sorbentTrapSN",
+      },
+      description: "Serial number (ID) for the sorbent trap on the component sampling train.  Reported as SerialNumber in Sampling Train Data record.",
+      example: "OL564824",
+    },
+    btTrapHg:{
+      fieldLabels: {
+        label: "Breakthrough Trap Hg",
+        value: "btTrapHg",
+      },
+      description: "Percent breakthrough for the component sampling train sorbent trap.  Reported as PercentBreakthrough in Sampling Train Data record.",
+      example: "4.00E-04",
+    },
+    hgConcentration:{
+      fieldLabels: {
+        label: "Hg Concentration",
+        value: "hgConcentration",
+      },
+      description: "Hg concentration determined from the total Hg catch and the total volume of dry gas metered for component sampling train.  Reported as HgConcentration in Sampling Train Data record.",
+      example: "2.16E-03",
+    },
+    mainTrapHg:{
+      fieldLabels: {
+        label: "Main Trap Hg",
+        value: "mainTrapHg",
+      },
+      description: "Hg recovered from the main collection section (Section 1) of the sorbent trap for the component sampling train in micrograms.  Reported as MainTrapHg in SamplingTrainData record.",
+      example: "2.00E-03",
+    },
+    percentBreakthrough:{
+      fieldLabels: {
+        label: "Percent Breakthrough",
+        value: "percentBreakthrough",
+      },
+      description: "Percent breakthrough for the component sampling train sorbent trap.  Reported as PercentBreakthrough in Sampling Train Data record.",
+      example: "20",
+    },
+    percentSpikeRecovery:{
+      fieldLabels: {
+        label: "Percent Spike Recovery",
+        value: "percentSpikeRecovery",
+      },
+      description: "Percent spike recovery result (%) for the component sampling train sorbent trap.  Reported as PercentSpikeRecovery in Sampling Train Data record.",
+      example: "97",
+    },
+    postLeakCheckResultCode:{
+      fieldLabels: {
+        label: "Post Leak Check Result",
+        value: "postLeakCheckResultCode",
+      },
+      description: "Reports whether component sampling train passed post test leak check: PASSED or FAILED.  Reported as PostLeakCheckResultCode in Sampling Train Data record.",
+      example: "PASSED",
+    },
+    referenceSFSRRatio:{
+      fieldLabels: {
+        label: "Reference SFSR Ratio",
+        value: "referenceSFSRRatio",
+      },
+      description: "Reference ratio of the unadjusted hourly stack gas volumetric flow rate to the average sample flow rate for the component sampling train.  Reported as ReferenceSFSRRatio in Sampling Train Data record.",
+      example: "14.3",
+    },
+    sampleDamageExplantion:{
+      fieldLabels: {
+        label: "Sample Damage Explanation",
+        value: "sampleDamageExplantion",
+      },
+      description: "Whenever the sample is accidentally lost, damaged, or broken and cannot be analyzed (i.e., the Train QA Status Code is \"LOST\"), provide a brief explanation of the reason why the sample could not be analyzed.",
+      example: "RUN #1",
+    },
+    samplingRatioCheckResultCode:{
+      fieldLabels: {
+        label: "Sampling Ratio Check Result",
+        value: "samplingRatioCheckResultCode",
+      },
+      description: "Reports whether flow proportional sampling maintained for the component sampling train:  PASSED or FAILED.  Reported as SamplingRatioCheckResultCode in Sampling Train Data record.",
+      example: "PASSED",
+    },
+    spikeReferenceValue:{
+      fieldLabels: {
+        label: "Spike Reference Value",
+        value: "spikeReferenceValue",
+      },
+      description: "Mass of the pre-sampling Hg spike in micrograms for the sorbent trap on the component sampling train. Reported as SpikeReferenceValue in Sampling Traiin Data record.",
+      example: "2.00E-02",
+    },
+    totalSampleVolumeDSCM:{
+      fieldLabels: {
+        label: "Total Sample Volume DSCM",
+        value: "totalSampleVolumeDSCM",
+      },
+      description: "The total sample volume (dscm) collected by the component sampling train gas flow meter during the sampling period.  Reported as TotalSampleVolumeDSCM in Sampling Train Data record.",
+      example: "1.11",
+    },
+    trainQAStatusCode:{
+      fieldLabels: {
+        label: "Train QA Status Code",
+        value: "trainQAStatusCode",
+      },
+      description: "Reports component sampling train status with PS-12B requirements.  Reported as TrainQAStatusCode in Sampling Train Data record.",
+      example: "PASSED",
+    },
+    weeklyTestSummaryId:{
+      fieldLabels: {
+        label: "Weekly Test Summary ID",
+        value: "id",
+      },
+      description: "Unique identifier of a weekly test summary record.",
+      example: "PAULDESKTO-98968A0A86D449F7A53F3176BA9B8B99",
+    },
+    dateWeeklyTestSummaryDTO:{
+      fieldLabels: {
+        label: "Test Date",
+        value: "testDate",
+      },
+      description: "The date corresponding to the completion of the test.",
+      example: "2019-05-07",
+    },
+    hourWeeklyTestSummaryDTO:{
+      fieldLabels: {
+        label: "Test Hour",
+        value: "testHour",
+      },
+      description: "The hour corresponding to the completion of the test.",
+      example: "15",
+    },
+    minuteWeeklyTestSummaryDTO:{
+      fieldLabels: {
+        label: "Test Minute",
+        value: "testMinute",
+      },
+      description: "The minute corresponding to the completion of the test.",
+      example: "0",
+    },
+    weeklySystemIntegrityId:{
+      fieldLabels: {
+        label: "Weekly System Integrity ID",
+        value: "id",
+      },
+      description: "Unique identifier of a weekly system integrity record.",
+      example: "PAULDESKTO-43BFEC874EE54620875D85BAE00FA83D",
+    },
+    weeklyTestSumId:{
+      fieldLabels: {
+        label: "Weekly Test Summary ID",
+        value: "weeklyTestSumId",
+      },
+      description: "Unique identifier of a weekly test summary record. ",
+      example: "PAULDESKTO-98968A0A86D449F7A53F3176BA9B8B99",
+    },
+    apsIndicator:{
+      fieldLabels: {
+        label: "APS Indicator",
+        value: "apsIndicator",
+      },
+      description: "If the system integrity error (SIE) is determined using the standard performance specification, \"0\" is reported. If the alternative performance specification (APS) is used to pass the test, \"1\" is reported.",
+      example: "0",
+    },
+    systemIntegrityError:{
+      fieldLabels: {
+        label: "System Integrity Error",
+        value: "systemIntegrityError",
+      },
+      description: "The results of the single-point system integrity check as a percentage of the reference gas value or, if necessary, as the absolute value of the difference between the reference and measured values.  Reported as SystemIntegrityError in Weekly System Integrity Data record.",
+      example: "7.4",
+    },
+    gasLevelCode:{
+      fieldLabels: {
+        label: "Gas Level Code",
+        value: "gasLevelCode",
+      },
+      description: "Identifies whether the standard used is a high- or mid-level NIST-traceable source of oxidized Hg. Reported as GasLevelCode in the Weekly System Integrity Data record.",
+      example: "HIGH",
+    },
+    referenceValue:{
+      fieldLabels: {
+        label: "Reference Value",
+        value: "referenceValue",
+      },
+      description: "Value of the calibration standard used for the injection (ug/scm).  Reported as ReferenceValue in Weekly System Integrity Data record.",
+      example: "2.7",
+    },
+    measuredValue:{
+      fieldLabels: {
+        label: "Measured Value",
+        value: "measuredValue",
+      },
+      description: "Value measured by instrument for the calibration standard injection (ug/scm).  Reported as MeasuredValue in Weekly System Integrity Data record.",
+      example: "2.5",
+    },
+  },
   emissionsLimitDisplay: {
     fieldLabels: {
       label: "Emissions Limit (lb/mmBtu)",
