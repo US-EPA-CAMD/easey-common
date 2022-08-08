@@ -7,6 +7,7 @@ import {
 import { Injectable } from "@nestjs/common";
 import { Logger } from "../logger";
 import { equal } from "assert";
+import { ConfigService } from "@nestjs/config";
 
 @Injectable()
 export class CorsOptionsService {
@@ -16,7 +17,8 @@ export class CorsOptionsService {
     req: Request,
     appName: string,
     callback: CorsOptionsCallback,
-    allowCredentials: boolean = false
+    allowCredentials: boolean = false,
+    env: string
   ) => {
     let corsOptions: CorsOptions;
     const originHeader = req.header("Origin");
@@ -37,7 +39,10 @@ export class CorsOptionsService {
       const allowedHeaders = corsResults.filter((i) => i.key === "header");
       const allowedMethods = corsResults.filter((i) => i.key === "method");
 
+      //TODO: Switch to only non-prod environments
+
       if (
+        env != "production" &&
         originHeader.match(/https?:\/\/(localhost|127\.0\.0\.1|\[::1\]):\d+/)
       ) {
         allowedOrigins.push({

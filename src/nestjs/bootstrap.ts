@@ -98,7 +98,8 @@ export async function bootstrap(
         req,
         appName,
         callback,
-        allowCredentials
+        allowCredentials,
+        configService.get<string>("app.env")
       );
     });
   }
