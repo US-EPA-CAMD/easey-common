@@ -33,11 +33,18 @@ export class Logger implements LogInterface {
   error(error): string {
     const errorId = uuid();
 
-    this.logInstance.error(error.message, {
-      ...error.metadata,
-      errorId: errorId,
-      stack: error.stack,
-    });
+    if (error.metadata) {
+      this.logInstance.error(error.message, {
+        ...error.metadata,
+        errorId: errorId,
+        stack: error.stack,
+      });
+    } else {
+      this.logInstance.error(error.message, {
+        errorId: errorId,
+        stack: error.stack,
+      });
+    }
 
     return errorId;
   }

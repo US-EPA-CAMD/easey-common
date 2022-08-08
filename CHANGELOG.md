@@ -1,3 +1,24 @@
+## [6.1.4](https://github.com/US-EPA-CAMD/easey-common/compare/v6.1.3...v6.1.4) (2022-08-05)
+
+
+### Bug Fixes
+
+* update logging exceptions ([6ad40e6](https://github.com/US-EPA-CAMD/easey-common/commit/6ad40e681cf6f0e133944a5f97ba97e5a2f93420))
+
+## [6.1.3](https://github.com/US-EPA-CAMD/easey-common/compare/v6.1.2...v6.1.3) (2022-08-05)
+
+
+### Bug Fixes
+
+* fixed the logging exception to accept object as well as string ([e2b766b](https://github.com/US-EPA-CAMD/easey-common/commit/e2b766b9493bd60d9cb52114a828e35eba510d05))
+
+## [6.1.2](https://github.com/US-EPA-CAMD/easey-common/compare/v6.1.1...v6.1.2) (2022-07-28)
+
+
+### Bug Fixes
+
+* changed production text color ([f8b6b41](https://github.com/US-EPA-CAMD/easey-common/commit/f8b6b41d0739e1c54b034f781a87eeb55056c64f))
+
 ## [6.1.1](https://github.com/US-EPA-CAMD/easey-common/compare/v6.1.0...v6.1.1) (2022-07-28)
 
 

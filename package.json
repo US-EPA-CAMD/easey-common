@@ -1,6 +1,6 @@
 {
   "name": "@us-epa-camd/easey-common",
-  "version": "6.1.1",
+  "version": "6.1.4",
   "description": "Shared easey package",
   "main": "index.js",
   "types": "index.d.js",
@@ -26,7 +26,8 @@
   },
   "resolutions": {
     "ansi-regex": "^5.0.1",
-    "class-transformer": "0.4.0"
+    "class-transformer": "0.4.0",
+    "minimist": "^1.2.6"
   },
   "dependencies": {
     "@nestjs/axios": "0.0.3",
@@ -57,7 +58,7 @@
     "cz-conventional-changelog": "^3.3.0",
     "jest": "^27.3.1",
     "jest-sonar-reporter": "^2.0.0",
-    "semantic-release": "^18.0.0",
+    "semantic-release": "^19.0.3",
     "ts-jest": "^27.0.7",
     "typescript": "^4.4.4"
   },
