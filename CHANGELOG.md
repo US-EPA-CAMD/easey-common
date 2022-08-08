@@ -1,3 +1,10 @@
+## [6.1.5](https://github.com/US-EPA-CAMD/easey-common/compare/v6.1.4...v6.1.5) (2022-08-08)
+
+
+### Bug Fixes
+
+* added environment check to cors service ([a85d5d7](https://github.com/US-EPA-CAMD/easey-common/commit/a85d5d7b97c1bcff13a932da1cee072f5991562b))
+
 ## [6.1.4](https://github.com/US-EPA-CAMD/easey-common/compare/v6.1.3...v6.1.4) (2022-08-05)
 
 
