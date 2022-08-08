@@ -1745,10 +1745,10 @@ export const propertyMetadata = {
         "Reports whether component sampling train passed post test leak check: PASSED or FAILED.  Reported as PostLeakCheckResultCode in Sampling Train Data record.",
       example: "PASSED",
     },
-    referenceSFSRRatio: {
+    referenceSfsrRatio: {
       fieldLabels: {
         label: "Reference SFSR Ratio",
-        value: "referenceSFSRRatio",
+        value: "referenceSfsrRatio",
       },
       description:
         "Reference ratio of the unadjusted hourly stack gas volumetric flow rate to the average sample flow rate for the component sampling train.  Reported as ReferenceSFSRRatio in Sampling Train Data record.",
