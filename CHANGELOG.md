@@ -1,3 +1,10 @@
+# [6.2.0](https://github.com/US-EPA-CAMD/easey-common/compare/v6.1.5...v6.2.0) (2022-08-28)
+
+
+### Features
+
+* **added new nestjs functions:** split nestjs bootstrap function into 2 new common functions ([1e105f1](https://github.com/US-EPA-CAMD/easey-common/commit/1e105f1fa06220a2423215d8484bf07b01a11702))
+
 ## [6.1.5](https://github.com/US-EPA-CAMD/easey-common/compare/v6.1.4...v6.1.5) (2022-08-08)
 
 
