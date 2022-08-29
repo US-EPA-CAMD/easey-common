@@ -1,3 +1,15 @@
+# [6.3.0](https://github.com/US-EPA-CAMD/easey-common/compare/v6.2.0...v6.3.0) (2022-08-29)
+
+
+### Bug Fixes
+
+* fixing missing comma in function def ([eb050c7](https://github.com/US-EPA-CAMD/easey-common/commit/eb050c78388bad9ab1c417886e85703fc03faff9))
+
+
+### Features
+
+* **added check catalog service:** added check catalog service to manage result messages ([36c434e](https://github.com/US-EPA-CAMD/easey-common/commit/36c434e09e4b26b1a0cfb9dfd561db95680002b1))
+
 # [6.2.0](https://github.com/US-EPA-CAMD/easey-common/compare/v6.1.5...v6.2.0) (2022-08-28)
 
 
