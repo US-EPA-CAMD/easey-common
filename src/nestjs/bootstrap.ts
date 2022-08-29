@@ -10,6 +10,7 @@ export async function bootstrap(
   useServiceContainers: boolean = false
 ) {
   const app = await NestFactory.create(module);
+
   applyMiddleware(module, app, allowCredentials, useServiceContainers);
   applySwagger(app);
 

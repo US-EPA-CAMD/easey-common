@@ -13,7 +13,7 @@ export class CorsOptionsService {
 
   configure = async (
     req: Request,
-    env: string
+    env: string,
     callback: CorsOptionsCallback,
     allowCredentials: boolean = false,
   ) => {
