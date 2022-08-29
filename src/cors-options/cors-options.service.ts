@@ -6,8 +6,6 @@ import {
 } from "@nestjs/common/interfaces/external/cors-options.interface";
 import { Injectable } from "@nestjs/common";
 import { Logger } from "../logger";
-import { equal } from "assert";
-import { ConfigService } from "@nestjs/config";
 
 @Injectable()
 export class CorsOptionsService {
@@ -15,10 +13,9 @@ export class CorsOptionsService {
 
   configure = async (
     req: Request,
-    appName: string,
+    env: string
     callback: CorsOptionsCallback,
     allowCredentials: boolean = false,
-    env: string
   ) => {
     let corsOptions: CorsOptions;
     const originHeader = req.header("Origin");
@@ -30,16 +27,10 @@ export class CorsOptionsService {
 
     if (originHeader !== null && originHeader !== undefined) {
       const manager = getManager();
-      const corsResults = await manager.query(`
-        SELECT key, value
-        FROM camdaux.cors_config
-      `);
-
+      const corsResults = await manager.query('SELECT key, value FROM camdaux.cors_config');
       const allowedOrigins = corsResults.filter((i) => i.key === "origin");
       const allowedHeaders = corsResults.filter((i) => i.key === "header");
       const allowedMethods = corsResults.filter((i) => i.key === "method");
-
-      //TODO: Switch to only non-prod environments
 
       if (
         env != "production" &&
@@ -52,7 +43,6 @@ export class CorsOptionsService {
       }
 
       corsOptions = {
-        //maxAge: 86400,
         origin: allowedOrigins.map((i) => i.value).includes(originHeader)
           ? true
           : false,

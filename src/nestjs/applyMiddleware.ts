@@ -29,7 +29,6 @@ export async function applyMiddleware(
   const corsOptionsService = app.get(CorsOptionsService);
 
   const appEnv = configService.get<string>("app.env");
-  const appName = configService.get<string>("app.name");
   const appPath = configService.get<string>("app.path");
   const enableCors = configService.get<boolean>("app.enableCors");
   const reqSizeLimit = configService.get<string>("app.reqSizeLimit");
@@ -71,10 +70,9 @@ export async function applyMiddleware(
     app.enableCors(async (req, callback) => {
       await corsOptionsService.configure(
         req,
-        appName,
+        appEnv,
         callback,
         allowCredentials,
-        appEnv,
       );
     });
   }
