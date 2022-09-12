@@ -1,3 +1,10 @@
+# [6.4.0](https://github.com/US-EPA-CAMD/easey-common/compare/v6.3.0...v6.4.0) (2022-09-12)
+
+
+### Features
+
+* added global gateway guard ([73b73d9](https://github.com/US-EPA-CAMD/easey-common/commit/73b73d9df11e0c3f3e20e5dcc2a3deb52424dbe6))
+
 # [6.3.0](https://github.com/US-EPA-CAMD/easey-common/compare/v6.2.0...v6.3.0) (2022-08-29)
 
 
