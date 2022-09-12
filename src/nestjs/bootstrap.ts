@@ -3,6 +3,7 @@ import { ConfigService } from "@nestjs/config";
 
 import { applySwagger } from "./applySwagger";
 import { applyMiddleware } from "./applyMiddleware";
+import { GatewayGuard } from "../guards/gateway.guard";
 
 export async function bootstrap(
   module: any,
@@ -15,6 +16,8 @@ export async function bootstrap(
   applySwagger(app);
 
   const configService = app.get(ConfigService);
+  app.useGlobalGuards(new GatewayGuard(configService));
+
   const appPath = configService.get<string>("app.path");
   const appPort = configService.get<number>("app.port");
 
