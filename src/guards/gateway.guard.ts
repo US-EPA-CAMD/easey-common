@@ -27,6 +27,10 @@ export class GatewayGuard implements CanActivate {
       .replace("-", "_")
       .toUpperCase()}_SECRET_TOKEN`;
 
+    console.log(checkKey);
+    console.log(request.headers["x-secret-token"]);
+    console.log(this.configService.get<string>(checkKey));
+
     if (
       request.headers["x-secret-token"] !=
       this.configService.get<string>(checkKey)
