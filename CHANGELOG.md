@@ -1,3 +1,10 @@
+## [6.4.2](https://github.com/US-EPA-CAMD/easey-common/compare/v6.4.1...v6.4.2) (2022-09-13)
+
+
+### Bug Fixes
+
+* change to gateway guard naming convention ([218251f](https://github.com/US-EPA-CAMD/easey-common/commit/218251f675219ad49a8fbed4d90a9db7e9c37b5a))
+
 ## [6.4.1](https://github.com/US-EPA-CAMD/easey-common/compare/v6.4.0...v6.4.1) (2022-09-13)
 
 
