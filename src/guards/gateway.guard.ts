@@ -32,7 +32,7 @@ export class GatewayGuard implements CanActivate {
       this.configService.get<string>(checkKey)
     ) {
       throw new BadRequestException("Incorrect gateway access token.");
-    }
+    } //
 
     return true;
   }
