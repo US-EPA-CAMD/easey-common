@@ -20,6 +20,8 @@ export class ClientTokenGuard implements CanActivate {
     const url =
       this.configService.get("app.authApi").uri + "/tokens/client/validate";
 
+    console.log(url);
+
     try {
       const result = await firstValueFrom(
         this.httpService.post(
@@ -40,10 +42,11 @@ export class ClientTokenGuard implements CanActivate {
 
       return false;
     } catch (error) {
+      console.log(error);
       if (error.response) {
         throw new InternalServerErrorException(
-          error.response.data.message,
-          "An error occurred in AuthGuard while validating user security token."
+          "An error occurred while validating client security token: " +
+            error.response.data.message
         );
       }
     }
