@@ -1,3 +1,10 @@
+## [6.4.4](https://github.com/US-EPA-CAMD/easey-common/compare/v6.4.3...v6.4.4) (2022-09-14)
+
+
+### Bug Fixes
+
+* fix to parsing of gateway guard ([29f9f62](https://github.com/US-EPA-CAMD/easey-common/commit/29f9f625a578619e22401917d7383274fbe85ef2))
+
 ## [6.4.3](https://github.com/US-EPA-CAMD/easey-common/compare/v6.4.2...v6.4.3) (2022-09-13)
 
 
