@@ -25,7 +25,7 @@ export class GatewayGuard implements CanActivate {
     const checkKey = `EASEY_${this.configService
       .get<string>("app.name")
       .replace(/-/g, "_")
-      .toUpperCase()}_SECRET_TOKEN`;
+      .toUpperCase()}_SECRET_TOKEN`; //
 
     console.log(checkKey);
     console.log(request.headers["x-secret-token"]);
