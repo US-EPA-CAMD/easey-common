@@ -7,32 +7,34 @@ import { INestApplication, ValidationPipe } from "@nestjs/common";
 import { Logger } from "../logger";
 import { LoggingInterceptor } from "../interceptors";
 import { CorsOptionsService } from "../cors-options";
+import { GatewayGuard } from "src/guards/gateway.guard";
 
 export async function applyMiddleware(
   module: any,
   app: INestApplication,
   allowCredentials: boolean = false,
-  useServiceContainers: boolean = false,
+  useServiceContainers: boolean = false
 ) {
-  app.useGlobalInterceptors(
-    new LoggingInterceptor(new Logger())
-  );
-
-  if (useServiceContainers === true) {
-    useContainer(
-      app.select(module),
-      { fallbackOnErrors: true }
-    );
-  }
+  app.useGlobalInterceptors(new LoggingInterceptor(new Logger()));
 
   const configService = app.get(ConfigService);
   const corsOptionsService = app.get(CorsOptionsService);
-
   const appEnv = configService.get<string>("app.env");
   const appPath = configService.get<string>("app.path");
   const enableCors = configService.get<boolean>("app.enableCors");
   const reqSizeLimit = configService.get<string>("app.reqSizeLimit");
-  const enableGlobalValidationPipes = configService.get<boolean>("app.enableGlobalValidationPipes");
+  const enableSecretToken = configService.get<boolean>("app.enableSecretToken");
+  const enableGlobalValidationPipes = configService.get<boolean>(
+    "app.enableGlobalValidationPipes"
+  );
+
+  if (useServiceContainers === true) {
+    useContainer(app.select(module), { fallbackOnErrors: true });
+  }
+
+  if (enableSecretToken) {
+    app.useGlobalGuards(new GatewayGuard(configService));
+  }
 
   app.use(
     helmet({
@@ -61,7 +63,7 @@ export async function applyMiddleware(
   if (enableGlobalValidationPipes) {
     app.useGlobalPipes(
       new ValidationPipe({
-        transform: true
+        transform: true,
       })
     );
   }
@@ -72,7 +74,7 @@ export async function applyMiddleware(
         req,
         appEnv,
         callback,
-        allowCredentials,
+        allowCredentials
       );
     });
   }

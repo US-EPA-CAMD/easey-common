@@ -12,10 +12,6 @@ export class GatewayGuard implements CanActivate {
   constructor(private configService: ConfigService) {}
 
   async validateRequest(request): Promise<boolean> {
-    if (this.configService.get<string>("app.env") == "local-dev") {
-      return true;
-    }
-
     if (!request.headers["x-secret-token"]) {
       throw new BadRequestException(
         "Must go through the gateway to access this resource."
