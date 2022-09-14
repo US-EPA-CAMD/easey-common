@@ -7,7 +7,7 @@ import { INestApplication, ValidationPipe } from "@nestjs/common";
 import { Logger } from "../logger";
 import { LoggingInterceptor } from "../interceptors";
 import { CorsOptionsService } from "../cors-options";
-import { GatewayGuard } from "src/guards/gateway.guard";
+import { GatewayGuard } from "../guards";
 
 export async function applyMiddleware(
   module: any,
