@@ -1,3 +1,15 @@
+# [7.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v6.4.4...v7.0.0) (2022-09-14)
+
+
+### Features
+
+* removed nestjs bootstrap ([a8321e9](https://github.com/US-EPA-CAMD/easey-common/commit/a8321e9da24775ff343f98215246f9b753ff1c47))
+
+
+### BREAKING CHANGES
+
+* Removed bootstrap.js from nestjs directory
+
 ## [6.4.4](https://github.com/US-EPA-CAMD/easey-common/compare/v6.4.3...v6.4.4) (2022-09-14)
 
 
