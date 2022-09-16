@@ -1,3 +1,10 @@
+## [7.0.1](https://github.com/US-EPA-CAMD/easey-common/compare/v7.0.0...v7.0.1) (2022-09-14)
+
+
+### Bug Fixes
+
+* locally scoped gateway guard ([a32004b](https://github.com/US-EPA-CAMD/easey-common/commit/a32004ba2af168642d4a5a4800094aee958c266f))
+
 # [7.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v6.4.4...v7.0.0) (2022-09-14)
 
 
