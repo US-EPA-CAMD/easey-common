@@ -45,7 +45,6 @@ export class StreamService {
         client.release();
         stream.destroy();
         stream = null;
-        console.log("Released Streaming Client");
       } catch (e) {}
     });
 
