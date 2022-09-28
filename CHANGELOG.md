@@ -1,3 +1,22 @@
+# [8.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v7.0.1...v8.0.0) (2022-09-28)
+
+
+### Bug Fixes
+
+* fixed LoggingException super call & added auth-token decorator to index file ([c3d8e70](https://github.com/US-EPA-CAMD/easey-common/commit/c3d8e7050427f1f35e4357c87f259fd0830950ea))
+
+
+### Features
+
+* added error classification ([31c2852](https://github.com/US-EPA-CAMD/easey-common/commit/31c2852981933da75e1d0160dd1e09d29a75908b))
+* **auth & token guards:** changes to auth & token guard to fix auth issues ([9be4987](https://github.com/US-EPA-CAMD/easey-common/commit/9be49874b8b87de62a4650f6af75bbcd3b8695d4))
+
+
+### BREAKING CHANGES
+
+* **auth & token guards:** changes to auth & token guard to fix passing of tokens in authorization header
+properly
+
 ## [7.0.1](https://github.com/US-EPA-CAMD/easey-common/compare/v7.0.0...v7.0.1) (2022-09-14)
 
 
