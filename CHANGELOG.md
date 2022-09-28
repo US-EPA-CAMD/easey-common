@@ -1,3 +1,16 @@
+# [9.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v8.2.0...v9.0.0) (2022-09-28)
+
+
+### Features
+
+* changed CurrentUser decorator to User ([fde831c](https://github.com/US-EPA-CAMD/easey-common/commit/fde831c8803cb22d5e8318a38da86cfb9860057a))
+
+
+### BREAKING CHANGES
+
+* changed CurrentUser decorator to User to prevent conflict with CurrentUser
+interface
+
 # [8.2.0](https://github.com/US-EPA-CAMD/easey-common/compare/v8.1.0...v8.2.0) (2022-09-28)
 
 
