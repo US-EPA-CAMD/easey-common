@@ -1,3 +1,10 @@
+# [8.1.0](https://github.com/US-EPA-CAMD/easey-common/compare/v8.0.0...v8.1.0) (2022-09-28)
+
+
+### Features
+
+* removed authtoken decorator as it is not a common function ([e63646c](https://github.com/US-EPA-CAMD/easey-common/commit/e63646c36fc54f47819d3ba6e223456ed2e867b4))
+
 # [8.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v7.0.1...v8.0.0) (2022-09-28)
 
 
