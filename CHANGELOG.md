@@ -1,3 +1,10 @@
+# [8.2.0](https://github.com/US-EPA-CAMD/easey-common/compare/v8.1.0...v8.2.0) (2022-09-28)
+
+
+### Features
+
+* added UserRole and CurrentUser interfaces ([18c72b7](https://github.com/US-EPA-CAMD/easey-common/commit/18c72b7d79f357491f4ec959f7f5298f5deea700))
+
 # [8.1.0](https://github.com/US-EPA-CAMD/easey-common/compare/v8.0.0...v8.1.0) (2022-09-28)
 
 
