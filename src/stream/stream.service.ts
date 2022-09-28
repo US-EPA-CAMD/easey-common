@@ -1,9 +1,8 @@
 import { Injectable } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
-import { Console } from "console";
 import { ReadStream } from "fs";
 
-var Pool = require("pg-pool");
+let Pool = require("pg-pool");
 const QueryStream = require("pg-query-stream");
 
 @Injectable()
