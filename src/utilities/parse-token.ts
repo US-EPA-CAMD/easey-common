@@ -1,19 +1,22 @@
+import { CurrentUser } from "../interfaces/current-user.interface";
+
 export const parseToken = (token: string) => {
-  const obj = {
+  const user: CurrentUser = {
     userId: null,
     sessionId: null,
     expiration: null,
     clientIp: null,
-    facilities: [{ orisCode: null, role: null }],
+    isAdmin: false,
+    roles: [],
   };
 
   const arr = token.split("&");
   arr.forEach((element) => {
     const keyValue = element.split("=");
-    obj[keyValue[0]] = keyValue[1];
+    user[keyValue[0]] = keyValue[1];
   });
 
-  return obj;
+  return user;
 };
 
 export default parseToken;

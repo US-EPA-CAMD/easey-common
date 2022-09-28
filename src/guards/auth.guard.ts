@@ -9,6 +9,7 @@ import { HttpService } from "@nestjs/axios";
 import { ConfigService } from "@nestjs/config";
 
 import { parseToken } from "../utilities";
+import { CurrentUser } from '../interfaces';
 import { LoggingException } from '../exceptions';
 
 @Injectable()
@@ -65,12 +66,7 @@ export class AuthGuard implements CanActivate {
     }
 
     const validatedToken = await this.validateToken(splitString[1], ip);
-    const parsedToken = parseToken(validatedToken);
-
-    request.user = {
-      userId: parsedToken.userId,
-      facilities: parsedToken.facilities,
-    }
+    request.user = parseToken(validatedToken);
 
     return true;
   }
@@ -84,10 +80,11 @@ export class AuthGuard implements CanActivate {
       return this.validateRequest(request);
     }
 
-    request.user = {
-      userId: this.configService.get("app.userId"),
-      facilities: this.configService.get("app.userFacilities"),
-    };
+    const currentUser: CurrentUser = JSON.parse(
+      this.configService.get("app.currentUser")
+    );
+
+    request.user = currentUser;
 
     return true;
   }
