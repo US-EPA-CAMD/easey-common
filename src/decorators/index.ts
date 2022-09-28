@@ -1,1 +1,1 @@
-export { CurrentUser } from "./current-user.decorator";
+export { User } from "./user.decorator";
