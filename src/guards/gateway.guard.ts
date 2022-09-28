@@ -2,19 +2,23 @@ import {
   Injectable,
   CanActivate,
   ExecutionContext,
-  BadRequestException,
+  HttpStatus,
 } from "@nestjs/common";
 import { Observable } from "rxjs";
 import { ConfigService } from "@nestjs/config";
+import { LoggingException } from '../exceptions';
 
 @Injectable()
 export class GatewayGuard implements CanActivate {
   constructor(private configService: ConfigService) {}
 
   async validateRequest(request): Promise<boolean> {
-    if (!request.headers["x-secret-token"]) {
-      throw new BadRequestException(
-        "Must go through the gateway to access this resource."
+    const tokenHeader = request.headers["x-secret-token"];
+
+    if (tokenHeader === null || tokenHeader === undefined) {
+      throw new LoggingException(
+        "Direct access to CAMD API's are not allowed. Please go through the API gateway (api.epa.gov/easey) to access this resource.",
+        HttpStatus.BAD_REQUEST,
       );
     }
 
@@ -23,16 +27,12 @@ export class GatewayGuard implements CanActivate {
       .replace(/-/g, "_")
       .toUpperCase()}_SECRET_TOKEN`; //
 
-    console.log(checkKey);
-    console.log(request.headers["x-secret-token"]);
-    console.log(this.configService.get<string>(checkKey));
-
-    if (
-      request.headers["x-secret-token"] !=
-      this.configService.get<string>(checkKey)
-    ) {
-      throw new BadRequestException("Incorrect gateway access token.");
-    } //
+    if (tokenHeader !== this.configService.get<string>(checkKey)) {
+      throw new LoggingException(
+        "The API Secret Token provided is invalid. Access to this resource denied.",
+        HttpStatus.BAD_REQUEST,
+      );
+    }
 
     return true;
   }
@@ -40,7 +40,11 @@ export class GatewayGuard implements CanActivate {
   canActivate(
     context: ExecutionContext
   ): boolean | Promise<boolean> | Observable<boolean> {
-    const request = context.switchToHttp().getRequest();
-    return this.validateRequest(request);
+    if (this.configService.get("app.enableSecretToken") === true) {
+      const request = context.switchToHttp().getRequest();
+      return this.validateRequest(request);
+    }
+
+    return true;
   }
 }

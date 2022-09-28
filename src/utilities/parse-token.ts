@@ -4,6 +4,7 @@ export const parseToken = (token: string) => {
     sessionId: null,
     expiration: null,
     clientIp: null,
+    facilities: [{ orisCode: null, role: null }],
   };
 
   const arr = token.split("&");

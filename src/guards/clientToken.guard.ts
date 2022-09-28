@@ -2,12 +2,12 @@ import {
   Injectable,
   CanActivate,
   ExecutionContext,
-  BadRequestException,
-  InternalServerErrorException,
+  HttpStatus,
 } from "@nestjs/common";
 import { firstValueFrom, Observable } from "rxjs";
 import { HttpService } from "@nestjs/axios";
 import { ConfigService } from "@nestjs/config";
+import { LoggingException } from '../exceptions';
 
 @Injectable()
 export class ClientTokenGuard implements CanActivate {
@@ -17,23 +17,17 @@ export class ClientTokenGuard implements CanActivate {
   ) {}
 
   async validateToken(clientId: string, clientToken: string): Promise<any> {
-    const url =
-      this.configService.get("app.authApi").uri + "/tokens/client/validate";
-
-    console.log(url);
+    const apiKey = this.configService.get("app.apiKey");
+    const url = this.configService.get("app.authApi").uri + "/tokens/client/validate";
 
     try {
       const result = await firstValueFrom(
-        this.httpService.post(
-          url,
-          {
-            clientId,
-            clientToken,
+        this.httpService.post(url, { clientId }, {
+          headers: {
+            authorization: `Bearer ${clientToken}`,
+            "x-api-key": apiKey,
           },
-          {
-            headers: { "x-api-key": this.configService.get("app.apiKey") },
-          }
-        )
+        })
       );
 
       if (result.data) {
@@ -42,31 +36,33 @@ export class ClientTokenGuard implements CanActivate {
 
       return false;
     } catch (error) {
-      console.log(error);
       if (error.response) {
-        throw new InternalServerErrorException(
-          "An error occurred while validating client security token: " +
-            error.response.data.message
+        throw new LoggingException(
+          "An error occurred while validating the client's security token.",
+          HttpStatus.INTERNAL_SERVER_ERROR,
+          error,
         );
       }
     }
   }
 
   async validateRequest(request): Promise<boolean> {
-    let errorMsg = "clientToken and clientId is required.";
+    const authHeader = request.headers.authorization;
+    const clientIdHeader = request.headers["x-client-id"];
+    const errorMsg = "Client Id and Token are required to access this resource.";
 
-    if (!request.headers.authorization || !request.headers["x-client-id"]) {
-      throw new BadRequestException(errorMsg);
-    }
-
-    const splitString = request.headers.authorization.split(" ");
-    if (splitString.length !== 2 && splitString[0] !== "Bearer") {
-      throw new BadRequestException(errorMsg);
-    }
-
-    if (
-      await this.validateToken(request.headers["x-client-id"], splitString[1])
+    if (authHeader === null || authHeader === undefined ||
+      clientIdHeader === null || clientIdHeader === undefined
     ) {
+      throw new LoggingException(errorMsg, HttpStatus.BAD_REQUEST);
+    }
+
+    const splitString = authHeader.split(" ");
+    if (splitString.length !== 2 && splitString[0] !== "Bearer") {
+      throw new LoggingException(errorMsg, HttpStatus.BAD_REQUEST);
+    }
+
+    if (await this.validateToken(clientIdHeader, splitString[1])) {
       return true;
     }
 
@@ -76,7 +72,11 @@ export class ClientTokenGuard implements CanActivate {
   canActivate(
     context: ExecutionContext
   ): boolean | Promise<boolean> | Observable<boolean> {
-    const request = context.switchToHttp().getRequest();
-    return this.validateRequest(request);
+    if (this.configService.get("app.enableClientToken") === true) {
+      const request = context.switchToHttp().getRequest();
+      return this.validateRequest(request);
+    }
+
+    return true;
   }
 }
