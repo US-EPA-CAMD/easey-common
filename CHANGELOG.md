@@ -1,3 +1,15 @@
+# [10.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v9.0.0...v10.0.0) (2022-09-30)
+
+
+### Features
+
+* added functions for getting config values ([cdaef74](https://github.com/US-EPA-CAMD/easey-common/commit/cdaef7432ce9cfa0e72172040bfdfc560979ec27))
+
+
+### BREAKING CHANGES
+
+* added functions for getting config values
+
 # [9.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v8.2.0...v9.0.0) (2022-09-28)
 
 
