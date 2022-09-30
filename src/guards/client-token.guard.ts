@@ -72,7 +72,7 @@ export class ClientTokenGuard implements CanActivate {
   canActivate(
     context: ExecutionContext
   ): boolean | Promise<boolean> | Observable<boolean> {
-    if (this.configService.get("app.enableClientToken") === true) {
+    if (this.configService.get("app.enableAuthToken") === true) {
       const request = context.switchToHttp().getRequest();
       return this.validateRequest(request);
     }
