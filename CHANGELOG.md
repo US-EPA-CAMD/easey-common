@@ -1,3 +1,10 @@
+# [10.1.0](https://github.com/US-EPA-CAMD/easey-common/compare/v10.0.0...v10.1.0) (2022-09-30)
+
+
+### Features
+
+* **client guard:** changed client guard to use enableAuthToken env var ([6049883](https://github.com/US-EPA-CAMD/easey-common/commit/6049883286ef167b15cb8af4c29aaa6048735cb8))
+
 # [10.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v9.0.0...v10.0.0) (2022-09-30)
 
 
