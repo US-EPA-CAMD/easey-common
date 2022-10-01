@@ -1,5 +1,8 @@
 import { ApiConfigService } from "./api-config.service";
 
+const STATE_CODE = 'state-code';
+const CONTROL_CODE = 'control-code';
+
 export class ErrorMessages {
   public static LessThanOrEqual(parameter: string, value: number) {
     return `${parameter} must be less than or equal to ${value}`;
@@ -21,11 +24,11 @@ export class ErrorMessages {
       ? `One or more ${parameter}s are`
       : `The ${parameter} is`;
     const referList =
-      parameter === "stateCode"
+      parameter === STATE_CODE
         ? "Use the two letter postal abbreviation (use TX, not Texas)"
         : `Refer to the list of available ${parameter}s for valid values`;
 
-    if (parameter === "stateCode") {
+    if (parameter === STATE_CODE) {
       return `${grammar} not valid. ${referList}`;
     }
 
@@ -42,16 +45,16 @@ export class ErrorMessages {
       ? `One or more ${parameter}s are`
       : `The ${parameter} is`;
     let referList =
-      parameter === "stateCode"
+      parameter === STATE_CODE
         ? "Use the two letter postal abbreviation (use TX, not Texas)"
         : `Refer to the list of available ${parameter}s for valid values`;
 
-    if (parameter === "controlTechnologies") {
+    if (parameter === CONTROL_CODE) {
       grammar = plural ? grammar.replace(`${parameter}s`, parameter) : grammar;
       referList = referList.replace(`${parameter}s`, parameter);
     }
 
-    if (parameter === "stateCode") {
+    if (parameter === STATE_CODE) {
       return `${grammar} not valid. ${referList}`;
     }
 
@@ -131,24 +134,10 @@ export class ErrorMessages {
     const mdm = `${ApiConfigService.getMasterDataApi()}`;
 
     switch (parameter) {
-      case "unitType":
-        return `${mdm}unit-type-codes`;
-      case "unitFuelType":
-        return `${mdm}fuel-type-codes`;
-      case "controlTechnologies":
-        return `${mdm}control-codes`;
-      case "accountType":
-        return `${mdm}account-type-codes`;
       case "accountNumber":
         return `${ApiConfigService.getAccountApi()}accounts`;
-      case "transactionType":
-        return `${mdm}transaction-type-codes`;
-      case "sourceCategories":
-        return `${mdm}source-category-codes`;
       case "facilityId":
         return `${ApiConfigService.getFacilitiesApi()}facilities`;
-      case "programCodeInfo":
-        return `${mdm}program-codes`;
       default:
         return `${mdm}${parameter}s`;
     }
