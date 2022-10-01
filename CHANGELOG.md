@@ -1,3 +1,10 @@
+## [10.1.2](https://github.com/US-EPA-CAMD/easey-common/compare/v10.1.1...v10.1.2) (2022-10-01)
+
+
+### Bug Fixes
+
+* changed mdm urls to fit the new standard code table format ([5bddf0b](https://github.com/US-EPA-CAMD/easey-common/commit/5bddf0bcfae94c2cc8c8a11cca668b894d0f1c1b))
+
 ## [10.1.1](https://github.com/US-EPA-CAMD/easey-common/compare/v10.1.0...v10.1.1) (2022-09-30)
 
 
