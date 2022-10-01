@@ -1,3 +1,10 @@
+# [10.2.0](https://github.com/US-EPA-CAMD/easey-common/compare/v10.1.2...v10.2.0) (2022-10-01)
+
+
+### Features
+
+* changed mdm validation error messages to use standard code table format ([73dc658](https://github.com/US-EPA-CAMD/easey-common/commit/73dc658e277b55239adef77ee4861c94cf000085))
+
 ## [10.1.2](https://github.com/US-EPA-CAMD/easey-common/compare/v10.1.1...v10.1.2) (2022-10-01)
 
 
