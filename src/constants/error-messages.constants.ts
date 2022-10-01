@@ -132,23 +132,23 @@ export class ErrorMessages {
 
     switch (parameter) {
       case "unitType":
-        return `${mdm}unit-types`;
+        return `${mdm}unit-type-codes`;
       case "unitFuelType":
-        return `${mdm}fuel-types`;
+        return `${mdm}fuel-type-codes`;
       case "controlTechnologies":
-        return `${mdm}control-technologies`;
+        return `${mdm}control-codes`;
       case "accountType":
-        return `${mdm}account-types`;
+        return `${mdm}account-type-codes`;
       case "accountNumber":
         return `${ApiConfigService.getAccountApi()}accounts`;
       case "transactionType":
-        return `${mdm}transaction-types`;
+        return `${mdm}transaction-type-codes`;
       case "sourceCategories":
-        return `${mdm}source-categories`;
+        return `${mdm}source-category-codes`;
       case "facilityId":
         return `${ApiConfigService.getFacilitiesApi()}facilities`;
       case "programCodeInfo":
-        return `${mdm}programs`;
+        return `${mdm}program-codes`;
       default:
         return `${mdm}${parameter}s`;
     }
