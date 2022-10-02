@@ -22,12 +22,7 @@ export class GatewayGuard implements CanActivate {
       );
     }
 
-    const checkKey = `EASEY_${this.configService
-      .get<string>("app.name")
-      .replace(/-/g, "_")
-      .toUpperCase()}_SECRET_TOKEN`; //
-
-    if (tokenHeader !== this.configService.get<string>(checkKey)) {
+    if (tokenHeader !== this.configService.get<string>('app.secretToken')) {
       throw new LoggingException(
         "The API Secret Token provided is invalid. Access to this resource denied.",
         HttpStatus.BAD_REQUEST,
