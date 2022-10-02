@@ -1,3 +1,10 @@
+# [10.3.0](https://github.com/US-EPA-CAMD/easey-common/compare/v10.2.0...v10.3.0) (2022-10-02)
+
+
+### Features
+
+* changed gateway guard to use the app.secretToken var from config.js ([b5f28ca](https://github.com/US-EPA-CAMD/easey-common/commit/b5f28cafee142db047c36c14e1be2ade0ad60ff8))
+
 # [10.2.0](https://github.com/US-EPA-CAMD/easey-common/compare/v10.1.2...v10.2.0) (2022-10-01)
 
 
