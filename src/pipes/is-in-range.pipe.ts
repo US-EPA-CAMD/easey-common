@@ -18,7 +18,7 @@ export function IsInRange(
       options: validationOptions,
       validator: {
         validate(value: any, args: ValidationArguments) {
-          if (value) {
+          if (value !== null) {
             if (typeof value === "number") {
               return value >= minVal && value <= maxVal;
             }
