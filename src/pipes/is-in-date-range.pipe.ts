@@ -2,7 +2,7 @@ import {
   registerDecorator,
   ValidationOptions,
   ValidationArguments,
-} from 'class-validator';
+} from "class-validator";
 
 /**
  * This decorator takes in a min date and 'currentDate' as a parameter
@@ -17,7 +17,7 @@ export function IsInDateRange(
 ) {
   return function (object: Object, propertyName: string) {
     registerDecorator({
-      name: 'isInDateRange',
+      name: "isInDateRange",
       target: object.constructor,
       propertyName: propertyName,
       constraints: [property],
@@ -27,7 +27,7 @@ export function IsInDateRange(
           if (value) {
             if (
               isAnnual &&
-              (value === '1980' || value === '1985' || value === '1990')
+              (value === "1980" || value === "1985" || value === "1990")
             ) {
               return true;
             }

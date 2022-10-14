@@ -1,5 +1,5 @@
-import { getManager } from 'typeorm';
-import { Injectable } from '@nestjs/common';
+import { getManager } from "typeorm";
+import { Injectable } from "@nestjs/common";
 
 @Injectable()
 export class CheckCatalogService {
@@ -8,31 +8,27 @@ export class CheckCatalogService {
   static async load(viewName: string) {
     const results = await getManager().query(`SELECT * FROM ${viewName}`);
 
-    CheckCatalogService.checkCatalog = results.map(i => {
-      const parts = i.resultMessage.split('[')
-        .filter(i => i.includes(']'));
+    CheckCatalogService.checkCatalog = results.map((i) => {
+      const parts = i.resultMessage.split("[").filter((i) => i.includes("]"));
       return {
         code: `${i.checkTypeCode}-${i.checkNumber}-${i.resultCode}`,
         message: i.resultMessage,
-        plugins: parts && parts.length > 0
-          ? parts.map(i => i.split(']')[0])
-          : [],
-      }
+        plugins:
+          parts && parts.length > 0 ? parts.map((i) => i.split("]")[0]) : [],
+      };
     });
   }
 
   static formatMessage(message: string, values?: {}, plugins?: string[]) {
-   
     if (!plugins || (plugins && plugins.length === 0)) {
-      const parts = message.split('[').filter(i => i.includes(']'));
-      plugins = parts && parts.length > 0
-        ? parts.map(i => i.split(']')[0])
-        : [];
+      const parts = message.split("[").filter((i) => i.includes("]"));
+      plugins =
+        parts && parts.length > 0 ? parts.map((i) => i.split("]")[0]) : [];
     }
 
     if (plugins && values) {
       plugins.forEach((i: string) => {
-        const parts = i.split(' ');
+        const parts = i.split(" ");
         let fieldname = parts[0];
 
         if (parts.length === 1) {
@@ -40,9 +36,11 @@ export class CheckCatalogService {
         } else {
           parts.forEach((p: string, index: number) => {
             if (index > 0) {
-              fieldname = `${fieldname.toLowerCase()}${p.charAt(0).toUpperCase()}${p.slice(1)}`;
+              fieldname = `${fieldname.toLowerCase()}${p
+                .charAt(0)
+                .toUpperCase()}${p.slice(1)}`;
             }
-          })
+          });
         }
 
         message = message.replace(`[${i}]`, `[${values[fieldname]}]`);
@@ -54,8 +52,10 @@ export class CheckCatalogService {
 
   static formatResultMessage = (code: string, values?: {}): string => {
     let message = `[${code}]`;
-    const result = CheckCatalogService.checkCatalog.find(i => i.code === code);
+    const result = CheckCatalogService.checkCatalog.find(
+      (i) => i.code === code
+    );
     message = `${message} - ${result.message}`;
     return CheckCatalogService.formatMessage(message, values, result.plugins);
-  }
+  };
 }

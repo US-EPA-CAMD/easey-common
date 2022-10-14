@@ -1,11 +1,11 @@
-import { Request } from 'express';
+import { Request } from "express";
 
 export class ResponseHeaders {
   public static setPagination(
     req: Request,
     page: number,
     perPage: number,
-    totalCount: number,
+    totalCount: number
   ) {
     let concatLinks: string;
 
@@ -43,8 +43,8 @@ export class ResponseHeaders {
           }
         }
 
-        req.res.setHeader('Link', concatLinks);
-        req.res.setHeader('X-Total-Count', totalCount);
+        req.res.setHeader("Link", concatLinks);
+        req.res.setHeader("X-Total-Count", totalCount);
       }
     }
   }

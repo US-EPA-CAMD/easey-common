@@ -7,7 +7,7 @@ import {
 import { firstValueFrom, Observable } from "rxjs";
 import { HttpService } from "@nestjs/axios";
 import { ConfigService } from "@nestjs/config";
-import { LoggingException } from '../exceptions';
+import { LoggingException } from "../exceptions";
 
 @Injectable()
 export class ClientTokenGuard implements CanActivate {
@@ -18,16 +18,21 @@ export class ClientTokenGuard implements CanActivate {
 
   async validateToken(clientId: string, clientToken: string): Promise<any> {
     const apiKey = this.configService.get("app.apiKey");
-    const url = this.configService.get("app.authApi").uri + "/tokens/client/validate";
+    const url =
+      this.configService.get("app.authApi").uri + "/tokens/client/validate";
 
     try {
       const result = await firstValueFrom(
-        this.httpService.post(url, { clientId }, {
-          headers: {
-            authorization: `Bearer ${clientToken}`,
-            "x-api-key": apiKey,
-          },
-        })
+        this.httpService.post(
+          url,
+          { clientId },
+          {
+            headers: {
+              authorization: `Bearer ${clientToken}`,
+              "x-api-key": apiKey,
+            },
+          }
+        )
       );
 
       if (result.data) {
@@ -40,7 +45,7 @@ export class ClientTokenGuard implements CanActivate {
         throw new LoggingException(
           "An error occurred while validating the client's security token.",
           HttpStatus.INTERNAL_SERVER_ERROR,
-          error,
+          error
         );
       }
     }
@@ -49,10 +54,14 @@ export class ClientTokenGuard implements CanActivate {
   async validateRequest(request): Promise<boolean> {
     const authHeader = request.headers.authorization;
     const clientIdHeader = request.headers["x-client-id"];
-    const errorMsg = "Client Id and Token are required to access this resource.";
+    const errorMsg =
+      "Client Id and Token are required to access this resource.";
 
-    if (authHeader === null || authHeader === undefined ||
-      clientIdHeader === null || clientIdHeader === undefined
+    if (
+      authHeader === null ||
+      authHeader === undefined ||
+      clientIdHeader === null ||
+      clientIdHeader === undefined
     ) {
       throw new LoggingException(errorMsg, HttpStatus.BAD_REQUEST);
     }

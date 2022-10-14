@@ -2,18 +2,18 @@ import {
   registerDecorator,
   ValidationOptions,
   ValidationArguments,
-} from 'class-validator';
+} from "class-validator";
 
 /**
  * This decorator takes in a date property - in the same object - as a parameter
  */
 export function IsDateGreaterThanEqualTo(
   property: string,
-  validationOptions?: ValidationOptions,
+  validationOptions?: ValidationOptions
 ) {
-  return function(object: Object, propertyName: string) {
+  return function (object: Object, propertyName: string) {
     registerDecorator({
-      name: 'isDateGreaterThanEqualTo',
+      name: "isDateGreaterThanEqualTo",
       target: object.constructor,
       propertyName: propertyName,
       constraints: [property],

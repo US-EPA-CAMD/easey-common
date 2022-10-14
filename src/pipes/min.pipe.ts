@@ -3,15 +3,12 @@ import {
   ValidationOptions,
   ValidationArguments,
   isNumberString,
-} from 'class-validator';
+} from "class-validator";
 
-export function Min(
-  minVal: number,
-  validationOptions?: ValidationOptions,
-) {
-  return function(object: Object, propertyName: string) {
+export function Min(minVal: number, validationOptions?: ValidationOptions) {
+  return function (object: Object, propertyName: string) {
     registerDecorator({
-      name: 'Min',
+      name: "Min",
       target: object.constructor,
       propertyName: propertyName,
       options: validationOptions,

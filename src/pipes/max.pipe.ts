@@ -3,15 +3,12 @@ import {
   ValidationOptions,
   ValidationArguments,
   isNumberString,
-} from 'class-validator';
+} from "class-validator";
 
-export function Max(
-  maxVal: number,
-  validationOptions?: ValidationOptions,
-) {
-  return function(object: Object, propertyName: string) {
+export function Max(maxVal: number, validationOptions?: ValidationOptions) {
+  return function (object: Object, propertyName: string) {
     registerDecorator({
-      name: 'Max',
+      name: "Max",
       target: object.constructor,
       propertyName: propertyName,
       options: validationOptions,

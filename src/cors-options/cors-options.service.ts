@@ -15,7 +15,7 @@ export class CorsOptionsService {
     req: Request,
     env: string,
     callback: CorsOptionsCallback,
-    allowCredentials: boolean = false,
+    allowCredentials: boolean = false
   ) => {
     let corsOptions: CorsOptions;
     const originHeader = req.header("Origin");
@@ -27,7 +27,9 @@ export class CorsOptionsService {
 
     if (originHeader !== null && originHeader !== undefined) {
       const manager = getManager();
-      const corsResults = await manager.query('SELECT key, value FROM camdaux.cors_config');
+      const corsResults = await manager.query(
+        "SELECT key, value FROM camdaux.cors_config"
+      );
       const allowedOrigins = corsResults.filter((i) => i.key === "origin");
       const allowedHeaders = corsResults.filter((i) => i.key === "header");
       const allowedMethods = corsResults.filter((i) => i.key === "method");

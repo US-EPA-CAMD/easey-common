@@ -3,12 +3,12 @@ import {
   ValidationOptions,
   ValidationArguments,
   isNumberString,
-} from 'class-validator';
+} from "class-validator";
 
 export function IsYearFormat(validationOptions?: ValidationOptions) {
-  return function(object: Object, propertyName: string) {
+  return function (object: Object, propertyName: string) {
     registerDecorator({
-      name: 'IsYearFormat',
+      name: "IsYearFormat",
       target: object.constructor,
       propertyName: propertyName,
       options: validationOptions,

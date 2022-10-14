@@ -2,10 +2,9 @@ import { Injectable } from "@nestjs/common";
 
 @Injectable()
 export class ApiConfigService {
-
   private static getHost(apiName: string, defaultPort: number) {
     const host =
-      process.env.EASEY_API_GATEWAY_HOST || 
+      process.env.EASEY_API_GATEWAY_HOST ||
       process.env[`EASEY_${apiName}_API_HOST`] ||
       "localhost";
 
@@ -18,17 +17,17 @@ export class ApiConfigService {
   }
 
   public static getMasterDataApi(): string {
-    const host = this.getHost('MDM', 8050);
+    const host = this.getHost("MDM", 8050);
     return `${host}/master-data-mgmt/`;
   }
 
   public static getFacilitiesApi(): string {
-    const host = this.getHost('FACILITIES', 8020);
+    const host = this.getHost("FACILITIES", 8020);
     return `${host}/facilities-mgmt/`;
   }
 
   public static getAccountApi(): string {
-    const host = this.getHost('ACCOUNT', 8030);
+    const host = this.getHost("ACCOUNT", 8030);
     return `${host}/account-mgmt/`;
   }
 }
