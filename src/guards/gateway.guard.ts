@@ -6,7 +6,7 @@ import {
 } from "@nestjs/common";
 import { Observable } from "rxjs";
 import { ConfigService } from "@nestjs/config";
-import { LoggingException } from '../exceptions';
+import { LoggingException } from "../exceptions";
 
 @Injectable()
 export class GatewayGuard implements CanActivate {
@@ -18,14 +18,14 @@ export class GatewayGuard implements CanActivate {
     if (tokenHeader === null || tokenHeader === undefined) {
       throw new LoggingException(
         "Direct access to CAMD API's are not allowed. Please go through the API gateway (api.epa.gov/easey) to access this resource.",
-        HttpStatus.BAD_REQUEST,
+        HttpStatus.BAD_REQUEST
       );
     }
 
-    if (tokenHeader !== this.configService.get<string>('app.secretToken')) {
+    if (tokenHeader !== this.configService.get<string>("app.secretToken")) {
       throw new LoggingException(
         "The API Secret Token provided is invalid. Access to this resource denied.",
-        HttpStatus.BAD_REQUEST,
+        HttpStatus.BAD_REQUEST
       );
     }
 

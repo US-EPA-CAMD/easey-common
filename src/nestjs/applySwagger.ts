@@ -15,12 +15,15 @@ export async function applySwagger(app: INestApplication) {
   let appDesc = `EPA ${appEnv} Environment: The content on this page is not production data and used for <strong>development</strong> and/or <strong>testing</strong> purposes only.`;
 
   let swaggerCustomOptions = {
-    customCss: ".description .renderedMarkdown p { color: #FC0; padding: 10px; background: linear-gradient(to bottom,#520001 0%,#6c0810 100%); }"
+    customCss:
+      ".description .renderedMarkdown p { color: #FC0; padding: 10px; background: linear-gradient(to bottom,#520001 0%,#6c0810 100%); }",
   };
- 
+
   if (configService.get<string>("app.description")) {
     if (appEnv != "production") {
-      appDesc = `${appDesc} <br> <br> ${configService.get<string>("app.description")}`;
+      appDesc = `${appDesc} <br> <br> ${configService.get<string>(
+        "app.description"
+      )}`;
     } else {
       appDesc = configService.get<string>("app.description");
       swaggerCustomOptions = {

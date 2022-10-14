@@ -3,15 +3,15 @@ import {
   ValidationOptions,
   ValidationArguments,
   isNumberString,
-} from 'class-validator';
+} from "class-validator";
 
 export function IsValidNumber(
   maxNumber: number,
-  validationOptions?: ValidationOptions,
+  validationOptions?: ValidationOptions
 ) {
-  return function(object: Object, propertyName: string) {
+  return function (object: Object, propertyName: string) {
     registerDecorator({
-      name: 'IsValidNumber',
+      name: "IsValidNumber",
       target: object.constructor,
       propertyName: propertyName,
       options: validationOptions,

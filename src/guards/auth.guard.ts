@@ -9,8 +9,8 @@ import { HttpService } from "@nestjs/axios";
 import { ConfigService } from "@nestjs/config";
 
 import { parseToken } from "../utilities";
-import { CurrentUser } from '../interfaces';
-import { LoggingException } from '../exceptions';
+import { CurrentUser } from "../interfaces";
+import { LoggingException } from "../exceptions";
 
 @Injectable()
 export class AuthGuard implements CanActivate {
@@ -40,7 +40,7 @@ export class AuthGuard implements CanActivate {
         throw new LoggingException(
           "An error occurred in while validating the user's security token.",
           HttpStatus.INTERNAL_SERVER_ERROR,
-          error,
+          error
         );
       }
     }
@@ -49,7 +49,8 @@ export class AuthGuard implements CanActivate {
   async validateRequest(request): Promise<boolean> {
     const authHeader = request.headers.authorization;
     const forwardedForHeader = request.headers["x-forwarded-for"];
-    let errorMsg = "Prior Authorization (User Security Token) required to access this resource.";
+    let errorMsg =
+      "Prior Authorization (User Security Token) required to access this resource.";
 
     if (authHeader === null || authHeader === undefined) {
       throw new LoggingException(errorMsg, HttpStatus.BAD_REQUEST);

@@ -2,26 +2,23 @@ export const parseBool = (
   value: any,
   defaultValue: boolean = false
 ): boolean => {
-  if (typeof value == 'number' || value instanceof Number) {
-    return (value > 0);
+  if (typeof value == "number" || value instanceof Number) {
+    return value > 0;
   }
-  if (typeof value == 'boolean' || value instanceof Boolean) {
+  if (typeof value == "boolean" || value instanceof Boolean) {
     return Boolean(value);
   }
-  if (typeof value == 'string' || value instanceof String) {
+  if (typeof value == "string" || value instanceof String) {
     value = value.trim().toLowerCase();
-    if (value === 'true' || value === 'false') {
-      return (value === 'true');
+    if (value === "true" || value === "false") {
+      return value === "true";
     }
   }
-  
-  return defaultValue;
-}
 
-export const getConfigValue = (
-  key: string,
-  defaultValue?: any
-): string => {
+  return defaultValue;
+};
+
+export const getConfigValue = (key: string, defaultValue?: any): string => {
   let returnValue: string;
 
   if (process.env[key]) {
@@ -35,16 +32,12 @@ export const getConfigValueNumber = (
   key: string,
   defaultValue?: number
 ): number => {
-  return Number(
-    getConfigValue(key, defaultValue)
-  );
-}
+  return Number(getConfigValue(key, defaultValue));
+};
 
 export const getConfigValueBoolean = (
   key: string,
   defaultValue: boolean = false
 ): boolean => {
-  return parseBool(
-    getConfigValue(key, defaultValue)
-  );
-}
+  return parseBool(getConfigValue(key, defaultValue));
+};

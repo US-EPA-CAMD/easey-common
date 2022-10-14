@@ -6,5 +6,5 @@ export {
   parseBool,
   getConfigValue,
   getConfigValueNumber,
-  getConfigValueBoolean
-} from './functions';
+  getConfigValueBoolean,
+} from "./functions";

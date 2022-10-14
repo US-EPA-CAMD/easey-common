@@ -1,7 +1,7 @@
 import { ApiConfigService } from "./api-config.service";
 
-const STATE_CODE = 'state-code';
-const CONTROL_CODE = 'control-code';
+const STATE_CODE = "state-code";
+const CONTROL_CODE = "control-code";
 
 export class ErrorMessages {
   public static LessThanOrEqual(parameter: string, value: number) {

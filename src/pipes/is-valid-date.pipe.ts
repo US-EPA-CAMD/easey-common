@@ -3,12 +3,12 @@ import {
   ValidationOptions,
   ValidationArguments,
   isISO8601,
-} from 'class-validator';
+} from "class-validator";
 
 export function IsValidDate(validationOptions?: ValidationOptions) {
-  return function(object: Object, propertyName: string) {
+  return function (object: Object, propertyName: string) {
     registerDecorator({
-      name: 'IsValidDate',
+      name: "IsValidDate",
       target: object.constructor,
       propertyName: propertyName,
       options: validationOptions,

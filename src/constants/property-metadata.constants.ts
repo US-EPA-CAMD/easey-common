@@ -25,7 +25,7 @@ export const propertyMetadata = {
   },
   accountTypeCode: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "accountTypeCode",
     },
     description: "Code for the type of allowance account.",
@@ -33,7 +33,7 @@ export const propertyMetadata = {
   },
   accountTypeDescription: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "accountTypeDescription",
     },
     description: "Full description for the type of allowance account.",
@@ -41,7 +41,7 @@ export const propertyMetadata = {
   },
   accountTypeGroupCode: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "accountTypeGroupCode",
     },
     description: "Code for the group to which the allowance account belongs.",
@@ -49,7 +49,7 @@ export const propertyMetadata = {
   },
   accountTypeGroupDescription: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "accountTypeGroupDescription",
     },
     description:
@@ -63,7 +63,7 @@ export const propertyMetadata = {
     },
     description:
       "For ARP NOx, the actual rate at which a pollutant was emitted during a given time period for a single unit. (lb/mmBtu)",
-    example: 0.500,
+    example: 0.5,
   },
   allocated: {
     fieldLabels: {
@@ -75,7 +75,7 @@ export const propertyMetadata = {
   },
   allowanceUIFilter: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "allowanceUIFilter",
     },
     description:
@@ -84,7 +84,7 @@ export const propertyMetadata = {
   },
   annualIndicator: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "annualIndicator",
     },
     description:
@@ -137,7 +137,7 @@ export const propertyMetadata = {
   },
   beginDate: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "beginDate",
     },
     description: "Begin date for a given period of a unit's emissions.",
@@ -171,7 +171,7 @@ export const propertyMetadata = {
   },
   buyAccountTypeCode: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "buyAccountTypeCode",
     },
     description: "Code for the type of account purchasing allowances.",
@@ -292,7 +292,7 @@ export const propertyMetadata = {
   },
   complianceUIFilter: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "complianceUIFilter",
     },
     description:
@@ -310,7 +310,7 @@ export const propertyMetadata = {
   },
   compParameterCode: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "compParameterCode",
     },
     description: "Code for pollutant regulated by program.",
@@ -318,7 +318,7 @@ export const propertyMetadata = {
   },
   controlCode: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "controlCode",
     },
     description:
@@ -327,7 +327,7 @@ export const propertyMetadata = {
   },
   controlDescription: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "controlDescription",
     },
     description:
@@ -336,7 +336,7 @@ export const propertyMetadata = {
   },
   controlEquipParamCode: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "controlEquipParamCode",
     },
     description:
@@ -345,7 +345,7 @@ export const propertyMetadata = {
   },
   controlEquipParamDescription: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "controlEquipParamDescription",
     },
     description:
@@ -354,7 +354,7 @@ export const propertyMetadata = {
   },
   controlTechnologies: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "controlTechnologies",
     },
     description:
@@ -742,14 +742,13 @@ export const propertyMetadata = {
         "Unique identifier for a daily calibration injection record.",
       example: "dhintzma-85A88C7C0887AC2DE053D7DD4386D597",
     },
-    dailyTestSummaryIdDailyCalibrationDto:{
-        fieldLabels: {
-            label: "Daily Test Summary ID",
-            value: "dailyTestSummaryId",
-          },
-          description:
-            "Unique identifier of a daily test summary record.",
-          example: "FOS-D6QLND-62BAF816050B46BAA78CD6009278156E",
+    dailyTestSummaryIdDailyCalibrationDto: {
+      fieldLabels: {
+        label: "Daily Test Summary ID",
+        value: "dailyTestSummaryId",
+      },
+      description: "Unique identifier of a daily test summary record.",
+      example: "FOS-D6QLND-62BAF816050B46BAA78CD6009278156E",
     },
     injectionProtocolCode: {
       fieldLabels: {
@@ -1207,13 +1206,13 @@ export const propertyMetadata = {
       example: "jwalke12-877751BA9CD4E71FE053D7DD438665B9",
     },
     hourlyFuelFlowIdHourlyParamFuelFlowDto: {
-        fieldLabels: {
-          label: "Hourly Fuel Flow ID",
-          value: "hourlyFuelFlowId",
-        },
-        description: "Unique identifier of an hourly fuel flow record.",
-        example: "DPGLISSO11-CACDF19D9A8441ECBBB01B51560188C3",
+      fieldLabels: {
+        label: "Hourly Fuel Flow ID",
+        value: "hourlyFuelFlowId",
       },
+      description: "Unique identifier of an hourly fuel flow record.",
+      example: "DPGLISSO11-CACDF19D9A8441ECBBB01B51560188C3",
+    },
     parameterValueForFuel: {
       fieldLabels: {
         label: "Parameter Value",
@@ -1319,8 +1318,7 @@ export const propertyMetadata = {
         label: "MATS Monitor Hourly Value ID",
         value: "id",
       },
-      description:
-        "Unique identifier of MATS monitor hourly value record.",
+      description: "Unique identifier of MATS monitor hourly value record.",
       example: "EDE-55998-88F5731B058F45D980A4D29467609B3D",
     },
     unadjustedHourlyValueMatsMonitorHourlyValueDto: {
@@ -1896,7 +1894,8 @@ export const propertyMetadata = {
         label: "Calc. Online Offline Indicator",
         value: "calcOnlineOfflineIndicator",
       },
-      description: "Indicator code used to report if the daily calibration was performed online or offline, reported as OnLineOffLineIndicator in the DailyCalibrationData record.  EPA recalculates these values and compares them to reported values",
+      description:
+        "Indicator code used to report if the daily calibration was performed online or offline, reported as OnLineOffLineIndicator in the DailyCalibrationData record.  EPA recalculates these values and compares them to reported values",
       example: "No",
     },
     calcTestResultCode: {
@@ -1904,48 +1903,54 @@ export const propertyMetadata = {
         label: "Calc. Test Result Code",
         value: "calcTestResultCode",
       },
-      description: "Code used to identify reported test result. EPA recalculates these values and compares them to reported values",
-      example: "IGNORED"
+      description:
+        "Code used to identify reported test result. EPA recalculates these values and compares them to reported values",
+      example: "IGNORED",
     },
     calcUpscaleAPSInd: {
       fieldLabels: {
         label: "Calc. Upscale APS Indicator",
         value: "calcUpscaleApsIndicator",
       },
-      description: "indicator code used to report if upscale injection result was determined using the alternative performance specification, reported as UpscaleAPSIndicator in the DailyCalibrationData record. EPA recalculates these values and compares them to reported values",
-      example: "Yes"
+      description:
+        "indicator code used to report if upscale injection result was determined using the alternative performance specification, reported as UpscaleAPSIndicator in the DailyCalibrationData record. EPA recalculates these values and compares them to reported values",
+      example: "Yes",
     },
     calcUpscaleCalibrationError: {
       fieldLabels: {
         label: "Calc. Upscale Calibration Error",
-        value: "calcUpscaleCalibrationError"
+        value: "calcUpscaleCalibrationError",
       },
-      description: "The calibration error or mean difference results from the upscale gas injection, reported as UpscaleCalibrationError in the DailyCalibrationData record.  EPA recalculates these values and compares them to reported values",
-      example: "0.5"
+      description:
+        "The calibration error or mean difference results from the upscale gas injection, reported as UpscaleCalibrationError in the DailyCalibrationData record.  EPA recalculates these values and compares them to reported values",
+      example: "0.5",
     },
     calcZeroAPSIndicator: {
       fieldLabels: {
         label: "Calc. Zero APS Indicator",
-        value: "calcZeroAPSIndicator"
+        value: "calcZeroAPSIndicator",
       },
-      description: "Indicator code used to report if zero injection result was determined using the alternative performance specification, reported as ZeroAPSIndicator in the DailyCalibrationData record. EPA recalculates these values and compares them to reported values",
-      example: "Yes"
+      description:
+        "Indicator code used to report if zero injection result was determined using the alternative performance specification, reported as ZeroAPSIndicator in the DailyCalibrationData record. EPA recalculates these values and compares them to reported values",
+      example: "Yes",
     },
     calcZeroCalibrationError: {
       fieldLabels: {
         label: "Calc. Zero Calibration Error",
-        value: "calcZeroCalibrationError"
+        value: "calcZeroCalibrationError",
       },
-      description: "The calibration error results or mean difference from the zero gas injection, reported as ZeroCalibrationError in the DailyCalibrationData record. EPA recalculates these values and compares them to reported values",
-      example: "0.5"
+      description:
+        "The calibration error results or mean difference from the zero gas injection, reported as ZeroCalibrationError in the DailyCalibrationData record. EPA recalculates these values and compares them to reported values",
+      example: "0.5",
     },
     spikeTrapHg: {
       fieldLabels: {
         label: "Spike Trap Hg",
         value: "spikeTrapHg",
       },
-      description: "Hg recovered from the spiked section (Section 3) of the sorbent trap for the component sampling train in micrograms.  Reported as SpikeTrapHg in SamplingTrainData record.",
-      example: "1.94E-02"
+      description:
+        "Hg recovered from the spiked section (Section 3) of the sorbent trap for the component sampling train in micrograms.  Reported as SpikeTrapHg in SamplingTrainData record.",
+      example: "1.94E-02",
     },
     volumetricFlowRate: {
       fieldLabels: {
@@ -1954,7 +1959,7 @@ export const propertyMetadata = {
       },
       description: "Volumetric flow rate during combustion.",
       example: "784",
-    }
+    },
   },
   emissionsLimitDisplay: {
     fieldLabels: {
@@ -1963,11 +1968,11 @@ export const propertyMetadata = {
     },
     description:
       "For ARP NOx, the applicable emissions limit based on compliance plan. May either be unit-specific or part of an averaging plan. (lb/mmBtu)",
-    example: 0.550,
+    example: 0.55,
   },
   emissionsUIFilter: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "emissionsUIFilter",
     },
     description:
@@ -1984,7 +1989,7 @@ export const propertyMetadata = {
   },
   endDate: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "endDate",
     },
     description: "End date for a given period of a unit's emissions.",
@@ -2009,12 +2014,12 @@ export const propertyMetadata = {
     example: 0,
   },
   exclude: {
-    fieldLabels:{
+    fieldLabels: {
       label: "exclude",
-      value: ""
+      value: "",
     },
     description: "Selected items will be excluded from the response",
-    example:""
+    example: "",
   },
   facilityId: {
     fieldLabels: {
@@ -2043,7 +2048,7 @@ export const propertyMetadata = {
   },
   fuelGroupCode: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "fuelGroupCode",
     },
     description:
@@ -2052,7 +2057,7 @@ export const propertyMetadata = {
   },
   fuelGroupDescription: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "fuelGroupDescription",
     },
     description:
@@ -2061,7 +2066,7 @@ export const propertyMetadata = {
   },
   fuelTypeCode: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "fuelTypeCode",
     },
     description: "Code for the type of fuel combusted by the unit.",
@@ -2069,7 +2074,7 @@ export const propertyMetadata = {
   },
   fuelTypeDescription: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "fuelTypeDescription",
     },
     description: "Full description for the type of fuel combusted by the unit.",
@@ -2096,34 +2101,35 @@ export const propertyMetadata = {
   hclInputRate: {
     fieldLabels: {
       label: "HCL Input Rate (lb/mmBtu)",
-      value: "hclInputRate"
+      value: "hclInputRate",
     },
     description: "Average HCl hourly emissions rate (lbs/mmBtu)",
-    example: 407.5244879786
+    example: 407.5244879786,
   },
   hclMass: {
     fieldLabels: {
       label: "HCl Mass (lbs)",
-      value: "hclMass"
+      value: "hclMass",
     },
     description: "HCl mass emissions (lbs)",
-    example: 0.36612
+    example: 0.36612,
   },
   hclMassMeasureFlg: {
     fieldLabels: {
       label: "HCl Mass Measure Indicator",
-      value: "hclMassMeasureFlg"
+      value: "hclMassMeasureFlg",
     },
     description: "Describes how the HCl Mass values were determined. ",
-    example: "Measured"
+    example: "Measured",
   },
   hclOutputRate: {
     fieldLabels: {
       label: "HCl Output Rate (lb/MWh)",
-      value: "hclOutputRate"
+      value: "hclOutputRate",
     },
-    description: "Average HCl hourly emissions rate per megawatt hour of output (lbs/MWh)",
-    example: 0.00452
+    description:
+      "Average HCl hourly emissions rate per megawatt hour of output (lbs/MWh)",
+    example: 0.00452,
   },
   heatInput: {
     fieldLabels: {
@@ -2134,33 +2140,34 @@ export const propertyMetadata = {
       "Quantity of heat in mmBtu calculated by multiplying the quantity of fuel by the fuels heat content.",
     example: 1470.2,
   },
-  hfInputRate:{
+  hfInputRate: {
     fieldLabels: {
       label: "HF Input Rate (lb/mmBtu)",
-      value: "hfInputRate"
+      value: "hfInputRate",
     },
-    description: "Average HF hourly emissions rate (lbs/mmBtu)"
+    description: "Average HF hourly emissions rate (lbs/mmBtu)",
   },
   hfMass: {
     fieldLabels: {
       label: "HF Mass (lbs)",
-      value: "hfMass"
+      value: "hfMass",
     },
-    description: "HF mass emissions (lbs)"
+    description: "HF mass emissions (lbs)",
   },
   hfMassMeasureFlg: {
     fieldLabels: {
       label: "HF Mass Measure Indicator",
-      value: "hfMassMeasureFlg"
+      value: "hfMassMeasureFlg",
     },
-    description: "Describes how the HF Mass values were determined. "
+    description: "Describes how the HF Mass values were determined. ",
   },
   hfOutputRate: {
     fieldLabels: {
       label: "HF Output Rate (lb/MWh)",
-      value: "hfOutputRate"
+      value: "hfOutputRate",
     },
-    description: "Average HF hourly emissions rate per megawatt hour of output (lbs/MWh)"
+    description:
+      "Average HF hourly emissions rate per megawatt hour of output (lbs/MWh)",
   },
   hgControlInfo: {
     fieldLabels: {
@@ -2174,34 +2181,35 @@ export const propertyMetadata = {
   hgInputRate: {
     fieldLabels: {
       label: "Hg Input Rate (lb/TBtu)",
-      value: "hgInputRate"
+      value: "hgInputRate",
     },
     description: "Average Hg hourly emissions rate (lbs/TBtu)",
-    example: 0.9236604702
+    example: 0.9236604702,
   },
   hgMass: {
     fieldLabels: {
       label: "Hg Mass (lbs)",
-      value: "hgMass"
+      value: "hgMass",
     },
     description: "Hg mass emissions (lbs)",
-    example: 0.002703
+    example: 0.002703,
   },
   hgMassMeasureFlg: {
     fieldLabels: {
       label: "Hg Mass Measure Indicator",
-      value: "hgMassMeasureFlg"
+      value: "hgMassMeasureFlg",
     },
     description: "Describes how the Hg Mass values were determined.",
-    example: "Measured"
+    example: "Measured",
   },
   hgOutputRate: {
     fieldLabels: {
       label: "Hg Output Rate (lb/GWh)",
-      value: "hgOutputRate"
+      value: "hgOutputRate",
     },
-    description: "Average Hg hourly emissions rate per gigawatt hour of output (lbs/GWh)",
-    example: 0.0102
+    description:
+      "Average Hg hourly emissions rate per gigawatt hour of output (lbs/GWh)",
+    example: 0.0102,
   },
   hour: {
     fieldLabels: {
@@ -2212,13 +2220,14 @@ export const propertyMetadata = {
       "Hour in which activity occurred, recorded using local, standard time.",
     example: 23,
   },
-  isActive:{
+  isActive: {
     fieldLabels: {
-      label:"isActive",
-      value: ""
+      label: "isActive",
+      value: "",
     },
-    description: "Indicator of whether or not the program is Active (True) or Retired (False)",
-    example:""
+    description:
+      "Indicator of whether or not the program is Active (True) or Retired (False)",
+    example: "",
   },
   inCompliance: {
     fieldLabels: {
@@ -2248,18 +2257,20 @@ export const propertyMetadata = {
   matsGrossLoad: {
     fieldLabels: {
       label: "MATS Gross Load (MW)",
-      value: "matsGrossLoad"
+      value: "matsGrossLoad",
     },
-    description: "Electrical generation in MW produced by combusting a given heat input of fuel.",
-    example: 146
+    description:
+      "Electrical generation in MW produced by combusting a given heat input of fuel.",
+    example: 146,
   },
   matsHeatInput: {
     fieldLabels: {
       label: "MATS Heat Input (mmBtu)",
-      value: "matsHeatInput"
+      value: "matsHeatInput",
     },
-    description: "Quantity of heat in mmBtu calculated by multiplying the quantity of fuel by the fuels heat content.",
-    example: 1470.2
+    description:
+      "Quantity of heat in mmBtu calculated by multiplying the quantity of fuel by the fuels heat content.",
+    example: 1470.2,
   },
   maxHourlyHIRate: {
     fieldLabels: {
@@ -2357,7 +2368,7 @@ export const propertyMetadata = {
   },
   operatingHoursOnly: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "operatingHoursOnly",
     },
     description:
@@ -2383,7 +2394,7 @@ export const propertyMetadata = {
   },
   ownerOperator: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "ownerOperator",
     },
     description:
@@ -2401,7 +2412,7 @@ export const propertyMetadata = {
   },
   ownId: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "ownId",
     },
     description: "Unique ID for owner/operator.",
@@ -2409,7 +2420,7 @@ export const propertyMetadata = {
   },
   ownType: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "ownType",
     },
     description: "Owner/Operator type. Either Owner, Operator, or Both.",
@@ -2417,7 +2428,7 @@ export const propertyMetadata = {
   },
   ozoneIndicator: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "ozoneIndicator",
     },
     description: "Indicator of whether or not the program is an ozone program.",
@@ -2425,7 +2436,7 @@ export const propertyMetadata = {
   },
   page: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "page",
     },
     description: "Page number of data being requested.",
@@ -2433,7 +2444,7 @@ export const propertyMetadata = {
   },
   perPage: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "perPage",
     },
     description: "Number of results per page.",
@@ -2458,7 +2469,7 @@ export const propertyMetadata = {
   },
   programCode: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "programCode",
     },
     description:
@@ -2476,7 +2487,7 @@ export const propertyMetadata = {
   },
   programDescription: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "programDescription",
     },
     description:
@@ -2485,7 +2496,7 @@ export const propertyMetadata = {
   },
   programGroupCode: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "programGroupCode",
     },
     description: "Code for the group to which the program belongs.",
@@ -2493,7 +2504,7 @@ export const propertyMetadata = {
   },
   programGroupDescription: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "programGroupDescription",
     },
     description: "Full description for the group to which the program belongs.",
@@ -2509,7 +2520,7 @@ export const propertyMetadata = {
   },
   retiredIndicator: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "retiredIndicator",
     },
     description: "Indicator of whether or not the program is retired.",
@@ -2551,7 +2562,7 @@ export const propertyMetadata = {
   },
   sellAccountTypeCode: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "sellAccountTypeCode",
     },
     description: "Code for the type of account selling allowances.",
@@ -2671,10 +2682,10 @@ export const propertyMetadata = {
   },
   sortOrder: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "sortOrder",
     },
-    description:"",
+    description: "",
     example: null,
   },
   sourceCategory: {
@@ -2688,7 +2699,7 @@ export const propertyMetadata = {
   },
   sourceCategoryCode: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "sourceCategoryCode",
     },
     description: "Code for the source category type.",
@@ -2696,7 +2707,7 @@ export const propertyMetadata = {
   },
   sourceCategoryDescription: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "sourceCategoryDescription",
     },
     description: "Full description for the source category type.",
@@ -2705,10 +2716,11 @@ export const propertyMetadata = {
   stackPipeId: {
     fieldLabels: {
       label: "",
-      value: "stackPipeId"
+      value: "stackPipeId",
     },
-    description: "This is the alphanumeric code assigned by a source to identify a multiple or common stack or pipe at which emissions are determined.",
-    example: "CS0AAN"
+    description:
+      "This is the alphanumeric code assigned by a source to identify a multiple or common stack or pipe at which emissions are determined.",
+    example: "CS0AAN",
   },
   startBlock: {
     fieldLabels: {
@@ -2728,7 +2740,7 @@ export const propertyMetadata = {
   },
   stateCode: {
     fieldLabels: {
-      label:"State",
+      label: "State",
       value: "stateCode",
     },
     description: "Two letter abbreviation for the State.",
@@ -2736,7 +2748,7 @@ export const propertyMetadata = {
   },
   stateName: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "stateName",
     },
     description: "Full description of State.",
@@ -2771,18 +2783,19 @@ export const propertyMetadata = {
   testSummaryId: {
     fieldLabels: {
       label: "",
-      value: "id"
+      value: "id",
     },
     description: "Unique identifier of a test summary record.",
-    example: "TESTSUM7DAY123"
+    example: "TESTSUM7DAY123",
   },
   testTypeCode: {
     fieldLabels: {
       label: "",
       value: "testTypeCode",
     },
-    description: "Code used to identify test type or the type of test performed.",
-    example: "7DAY"
+    description:
+      "Code used to identify test type or the type of test performed.",
+    example: "7DAY",
   },
   totalAllowancesDeducted: {
     fieldLabels: {
@@ -2820,7 +2833,7 @@ export const propertyMetadata = {
   },
   tradingEndDate: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "tradingEndDate",
     },
     description: "Last date of allowance trading activity for the program.",
@@ -2828,7 +2841,7 @@ export const propertyMetadata = {
   },
   transactionBeginDate: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "transactionBeginDate",
     },
     description:
@@ -2845,7 +2858,7 @@ export const propertyMetadata = {
   },
   transactionEndDate: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "transactionEndDate",
     },
     description:
@@ -2880,7 +2893,7 @@ export const propertyMetadata = {
   },
   transactionTypeCode: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "transactionTypeCode",
     },
     description: "Code for the transaction type.",
@@ -2888,7 +2901,7 @@ export const propertyMetadata = {
   },
   transactionTypeDescription: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "transactionTypeDescription",
     },
     description: "Full description for the transaction type.",
@@ -2896,7 +2909,7 @@ export const propertyMetadata = {
   },
   unitFuelType: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "unitFuelType",
     },
     description: "Primary or Secondary fuel types combusted by the unit.",
@@ -2921,7 +2934,7 @@ export const propertyMetadata = {
   },
   unitType: {
     fieldLabels: {
-      label:"Unit Type",
+      label: "Unit Type",
       value: "unitType",
     },
     description: "Type of unit or boiler.",
@@ -2929,7 +2942,7 @@ export const propertyMetadata = {
   },
   unitTypeCode: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "unitTypeCode",
     },
     description: "Code for the unit or boiler type.",
@@ -2937,7 +2950,7 @@ export const propertyMetadata = {
   },
   unitTypeDescription: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "unitTypeDescription",
     },
     description: "Full description for the unit or boiler type.",
@@ -2945,7 +2958,7 @@ export const propertyMetadata = {
   },
   unitTypeGroupCode: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "unitTypeGroupCode",
     },
     description: "Code for the unit or boiler type group.",
@@ -2953,7 +2966,7 @@ export const propertyMetadata = {
   },
   unitTypeGroupDescription: {
     fieldLabels: {
-      label:"",
+      label: "",
       value: "unitTypeGroupDescription",
     },
     description: "Full description for the unit or boiler group.",
@@ -2975,7 +2988,7 @@ export const propertyMetadata = {
     description: "The calendar year during which activity occurred.",
     example: 2020,
   },
-  analyzerRangeDTOId:{
+  analyzerRangeDTOId: {
     fieldLabels: {
       label: "",
       value: "id",
@@ -2984,7 +2997,7 @@ export const propertyMetadata = {
     example: "MRHODES16-10C1A63683D34BA7A0833475C802CF91",
   },
 
-  analyzerRangeDTOComponentRecordId:{
+  analyzerRangeDTOComponentRecordId: {
     fieldLabels: {
       label: "",
       value: "componentRecordId",
@@ -2993,7 +3006,7 @@ export const propertyMetadata = {
     example: "CAMD-646D15E327E1480D814D48286DA7F073",
   },
 
-  analyzerRangeDTOUserId:{
+  analyzerRangeDTOUserId: {
     fieldLabels: {
       label: "",
       value: "userId",
@@ -3002,7 +3015,7 @@ export const propertyMetadata = {
     example: "abcde",
   },
 
-  analyzerRangeDTOAddDate:{
+  analyzerRangeDTOAddDate: {
     fieldLabels: {
       label: "",
       value: "addDate",
@@ -3011,7 +3024,7 @@ export const propertyMetadata = {
     example: "2009-02-20",
   },
 
-  analyzerRangeDTOUpdateDate:{
+  analyzerRangeDTOUpdateDate: {
     fieldLabels: {
       label: "",
       value: "updateDate",
@@ -3020,7 +3033,7 @@ export const propertyMetadata = {
     example: "2009-02-20",
   },
 
-  analyzerRangeDTOAnalyzerRangeCode:{
+  analyzerRangeDTOAnalyzerRangeCode: {
     fieldLabels: {
       label: "Analyzer Range",
       value: "analyzerRangeCode",
@@ -3029,52 +3042,57 @@ export const propertyMetadata = {
     example: "A",
   },
 
-  analyzerRangeDTODualRangeIndicator:{
+  analyzerRangeDTODualRangeIndicator: {
     fieldLabels: {
       label: "Dual Range Indicator",
       value: "dualRangeIndicator",
     },
-    description: "Used to indicate whether the component is a dual-range analyzer.",
+    description:
+      "Used to indicate whether the component is a dual-range analyzer.",
     example: "1",
   },
 
-  analyzerRangeDTOBeginDate:{
+  analyzerRangeDTOBeginDate: {
     fieldLabels: {
       label: "Begin Date",
       value: "beginDate",
     },
-    description: "Date in which information became effective or activity started.",
+    description:
+      "Date in which information became effective or activity started.",
     example: "2008-05-17",
   },
 
-  analyzerRangeDTOBeginHour:{
+  analyzerRangeDTOBeginHour: {
     fieldLabels: {
       label: "Begin Hour",
       value: "beginHour",
     },
-    description: "Hour in which information became effective or activity started.",
+    description:
+      "Hour in which information became effective or activity started.",
     example: "14",
   },
 
-  analyzerRangeDTOEndDate:{
+  analyzerRangeDTOEndDate: {
     fieldLabels: {
       label: "End Date",
       value: "endDate",
     },
-    description: "Last date in which information was effective or date in which activity ended. This value will be null if active record.",
+    description:
+      "Last date in which information was effective or date in which activity ended. This value will be null if active record.",
     example: null,
   },
 
-  analyzerRangeDTOEndHour:{
+  analyzerRangeDTOEndHour: {
     fieldLabels: {
       label: "End Hour",
       value: "endHour",
     },
-    description: "Last hour in which information was effective or hour in which activity ended. This value will be null if active record.",
+    description:
+      "Last hour in which information was effective or hour in which activity ended. This value will be null if active record.",
     example: null,
   },
 
-  analyzerRangeDTOActive:{
+  analyzerRangeDTOActive: {
     fieldLabels: {
       label: "",
       value: "active",
@@ -3083,7 +3101,7 @@ export const propertyMetadata = {
     example: true,
   },
 
-  componentDTOId:{
+  componentDTOId: {
     fieldLabels: {
       label: "",
       value: "id",
@@ -3092,7 +3110,7 @@ export const propertyMetadata = {
     example: "CAMD-646D15E327E1480D814D48286DA7F073",
   },
 
-  componentDTOLocationId:{
+  componentDTOLocationId: {
     fieldLabels: {
       label: "",
       value: "locationId",
@@ -3101,7 +3119,7 @@ export const propertyMetadata = {
     example: "5770",
   },
 
-  componentDTOUserId:{
+  componentDTOUserId: {
     fieldLabels: {
       label: "",
       value: "userId",
@@ -3110,7 +3128,7 @@ export const propertyMetadata = {
     example: "abcde",
   },
 
-  componentDTOAddDate:{
+  componentDTOAddDate: {
     fieldLabels: {
       label: "",
       value: "addDate",
@@ -3119,7 +3137,7 @@ export const propertyMetadata = {
     example: "2009-02-20",
   },
 
-  componentDTOUpdateDate:{
+  componentDTOUpdateDate: {
     fieldLabels: {
       label: "",
       value: "updateDate",
@@ -3128,16 +3146,17 @@ export const propertyMetadata = {
     example: "2009-02-20",
   },
 
-  componentDTOComponentId:{
+  componentDTOComponentId: {
     fieldLabels: {
       label: "Component ID",
       value: "componentId",
     },
-    description: "The three digit code assigned by the source to identify the component.",
+    description:
+      "The three digit code assigned by the source to identify the component.",
     example: "027",
   },
 
-  componentDTOComponentTypeCode:{
+  componentDTOComponentTypeCode: {
     fieldLabels: {
       label: "Component Type",
       value: "componentTypeCode",
@@ -3146,7 +3165,7 @@ export const propertyMetadata = {
     example: "SO2",
   },
 
-  componentDTOSampleAcquisitionMethodCode:{
+  componentDTOSampleAcquisitionMethodCode: {
     fieldLabels: {
       label: "Sample Acquisition Method",
       value: "sampleAcquisitionMethodCode",
@@ -3155,7 +3174,7 @@ export const propertyMetadata = {
     example: "DOU",
   },
 
-  componentDTOBasisCode:{
+  componentDTOBasisCode: {
     fieldLabels: {
       label: "Basis Code",
       value: "basisCode",
@@ -3164,7 +3183,7 @@ export const propertyMetadata = {
     example: "W",
   },
 
-  componentDTOManufacturer:{
+  componentDTOManufacturer: {
     fieldLabels: {
       label: "Manufacturer",
       value: "manufacturer",
@@ -3173,16 +3192,17 @@ export const propertyMetadata = {
     example: "TECO",
   },
 
-  componentDTOModelVersion:{
+  componentDTOModelVersion: {
     fieldLabels: {
       label: "Model Version",
       value: "modelVersion",
     },
-    description: "The model of any hardware component or the version number of the software component.",
+    description:
+      "The model of any hardware component or the version number of the software component.",
     example: "43I",
   },
 
-  componentDTOSerialNumber:{
+  componentDTOSerialNumber: {
     fieldLabels: {
       label: "Serial Number",
       value: "serialNumber",
@@ -3191,16 +3211,17 @@ export const propertyMetadata = {
     example: "631819420",
   },
 
-  componentDTOHgConverterIndicator:{
+  componentDTOHgConverterIndicator: {
     fieldLabels: {
       label: "Hg Converter Indicator",
       value: "hgConverterIndicator",
     },
-    description: "For an Hg component, indicates whether the analyzer has a converter.",
+    description:
+      "For an Hg component, indicates whether the analyzer has a converter.",
     example: "1",
   },
 
-  ductWafDTOId:{
+  ductWafDTOId: {
     fieldLabels: {
       label: "",
       value: "id",
@@ -3209,7 +3230,7 @@ export const propertyMetadata = {
     example: "CAMD-6847FB7858174AD0ADF87FFBAF85EF9C",
   },
 
-  ductWafDTOLocationId:{
+  ductWafDTOLocationId: {
     fieldLabels: {
       label: "",
       value: "locationId",
@@ -3218,7 +3239,7 @@ export const propertyMetadata = {
     example: "5",
   },
 
-  ductWafDTOUserId:{
+  ductWafDTOUserId: {
     fieldLabels: {
       label: "",
       value: "userId",
@@ -3227,7 +3248,7 @@ export const propertyMetadata = {
     example: "abcde",
   },
 
-  ductWafDTOAddDate:{
+  ductWafDTOAddDate: {
     fieldLabels: {
       label: "",
       value: "addDate",
@@ -3236,7 +3257,7 @@ export const propertyMetadata = {
     example: "2009-02-20",
   },
 
-  ductWafDTOUpdateDate:{
+  ductWafDTOUpdateDate: {
     fieldLabels: {
       label: "",
       value: "updateDate",
@@ -3245,7 +3266,7 @@ export const propertyMetadata = {
     example: "2009-02-20",
   },
 
-  ductWafDTOWafDeterminationDate:{
+  ductWafDTOWafDeterminationDate: {
     fieldLabels: {
       label: "WAF Determination Date",
       value: "wafDeterminationDate",
@@ -3254,25 +3275,27 @@ export const propertyMetadata = {
     example: "2020-11-18",
   },
 
-  ductWafDTOWafBeginDate:{
+  ductWafDTOWafBeginDate: {
     fieldLabels: {
       label: "WAF Begin Date",
       value: "wafBeginDate",
     },
-    description: "The date on which the WAF was first applied to the flow rate data.",
+    description:
+      "The date on which the WAF was first applied to the flow rate data.",
     example: "2020-11-28",
   },
 
-  ductWafDTOWafBeginHour:{
+  ductWafDTOWafBeginHour: {
     fieldLabels: {
       label: "WAF Begin Hour",
       value: "wafBeginHour",
     },
-    description: "The hour in which the WAF was first applied to the flow rate data.",
+    description:
+      "The hour in which the WAF was first applied to the flow rate data.",
     example: 12,
   },
 
-  ductWafDTOWafMethodCode:{
+  ductWafDTOWafMethodCode: {
     fieldLabels: {
       label: "WAF Method",
       value: "wafMethodCode",
@@ -3281,25 +3304,27 @@ export const propertyMetadata = {
     example: "FT",
   },
 
-  ductWafDTOWafValue:{
+  ductWafDTOWafValue: {
     fieldLabels: {
       label: "WAF Value",
       value: "wafValue",
     },
-    description: "The WAF applied to the flow rate data, to four decimal places.",
+    description:
+      "The WAF applied to the flow rate data, to four decimal places.",
     example: 1.0454,
   },
 
-  ductWafDTONumberOfTestRuns:{
+  ductWafDTONumberOfTestRuns: {
     fieldLabels: {
       label: "Number of Test Runs",
       value: "numberOfTestRuns",
     },
-    description: "The number of runs in the WAF test (must be one for default WAF and at least three for a measured WAF)",
+    description:
+      "The number of runs in the WAF test (must be one for default WAF and at least three for a measured WAF)",
     example: 3,
   },
 
-  ductWafDTONumberOfTraversePointsWaf:{
+  ductWafDTONumberOfTraversePointsWaf: {
     fieldLabels: {
       label: "Number of Traverse Points WAF",
       value: "numberOfTraversePointsWaf",
@@ -3308,25 +3333,27 @@ export const propertyMetadata = {
     example: 48,
   },
 
-  ductWafDTONumberOfTestPorts:{
+  ductWafDTONumberOfTestPorts: {
     fieldLabels: {
       label: "Number of Test Ports",
       value: "numberOfTestPorts",
     },
-    description: "The number of test ports at which measurements were made during the WAF test runs.",
+    description:
+      "The number of test ports at which measurements were made during the WAF test runs.",
     example: 4,
   },
 
-  ductWafDTONumberOfTraversePointsRef:{
+  ductWafDTONumberOfTraversePointsRef: {
     fieldLabels: {
       label: "Number of Traverse Points Reference",
       value: "numberOfTraversePointsRef",
     },
-    description: "The number of Method 1 traverse points in the reference flow RATA test runs.",
+    description:
+      "The number of Method 1 traverse points in the reference flow RATA test runs.",
     example: 48,
   },
 
-  ductWafDTODuctWidth:{
+  ductWafDTODuctWidth: {
     fieldLabels: {
       label: "Duct Width",
       value: "ductWidth",
@@ -3335,7 +3362,7 @@ export const propertyMetadata = {
     example: 12,
   },
 
-  ductWafDTODuctDepth:{
+  ductWafDTODuctDepth: {
     fieldLabels: {
       label: "Duct Depth",
       value: "ductDepth",
@@ -3344,25 +3371,27 @@ export const propertyMetadata = {
     example: 18.5,
   },
 
-  ductWafDTOWafEndDate:{
+  ductWafDTOWafEndDate: {
     fieldLabels: {
       label: "WAF End Date",
       value: "wafEndDate",
     },
-    description: "The date on which the WAF was last applied to the flow rate data.",
+    description:
+      "The date on which the WAF was last applied to the flow rate data.",
     example: "2021-09-18",
   },
 
-  ductWafDTOWafEndHour:{
+  ductWafDTOWafEndHour: {
     fieldLabels: {
       label: "WAF End Hour",
       value: "wafEndHour",
     },
-    description: "The hour in which the WAF was last applied to the flow rate data.",
+    description:
+      "The hour in which the WAF was last applied to the flow rate data.",
     example: 9,
   },
 
-  matsMethodDTOId:{
+  matsMethodDTOId: {
     fieldLabels: {
       label: "",
       value: "id",
@@ -3371,7 +3400,7 @@ export const propertyMetadata = {
     example: "MELISSARHO-FD768B60E4D343158F7AD52EFD704D0E",
   },
 
-  matsMethodDTOLocationId:{
+  matsMethodDTOLocationId: {
     fieldLabels: {
       label: "",
       value: "locationId",
@@ -3380,7 +3409,7 @@ export const propertyMetadata = {
     example: "5770",
   },
 
-  matsMethodDTOUserId:{
+  matsMethodDTOUserId: {
     fieldLabels: {
       label: "",
       value: "userId",
@@ -3389,7 +3418,7 @@ export const propertyMetadata = {
     example: "abcde",
   },
 
-  matsMethodDTOAddDate:{
+  matsMethodDTOAddDate: {
     fieldLabels: {
       label: "",
       value: "addDate",
@@ -3398,7 +3427,7 @@ export const propertyMetadata = {
     example: "2016-02-23",
   },
 
-  matsMethodDTOUpdateDate:{
+  matsMethodDTOUpdateDate: {
     fieldLabels: {
       label: "",
       value: "updateDate",
@@ -3407,7 +3436,7 @@ export const propertyMetadata = {
     example: "2016-02-23",
   },
 
-  matsMethodDTOSupplementalMATSParameterCode:{
+  matsMethodDTOSupplementalMATSParameterCode: {
     fieldLabels: {
       label: "Supplemental MATS Parameter",
       value: "supplementalMATSParameterCode",
@@ -3416,7 +3445,7 @@ export const propertyMetadata = {
     example: "QST",
   },
 
-  matsMethodDTOSupplementalMATSMonitoringMethodCode:{
+  matsMethodDTOSupplementalMATSMonitoringMethodCode: {
     fieldLabels: {
       label: "Supplemental MATS Method",
       value: "supplementalMATSMonitoringMethodCode",
@@ -3425,16 +3454,17 @@ export const propertyMetadata = {
     example: "TNHGM",
   },
 
-  matsMethodDTOBeginDate:{
+  matsMethodDTOBeginDate: {
     fieldLabels: {
       label: "Begin Date",
       value: "beginDate",
     },
-    description: "Date on which information became effective or activity started.",
+    description:
+      "Date on which information became effective or activity started.",
     example: "2016-04-28",
   },
 
-  matsMethodDTOBeginHour:{
+  matsMethodDTOBeginHour: {
     fieldLabels: {
       label: "Begin Hour",
       value: "beginHour",
@@ -3443,25 +3473,27 @@ export const propertyMetadata = {
     example: 1,
   },
 
-  matsMethodDTOEndDate:{
+  matsMethodDTOEndDate: {
     fieldLabels: {
       label: "End Date",
       value: "endDate",
     },
-    description: "Last date in which information was effective. This date will be null for active records.",
+    description:
+      "Last date in which information was effective. This date will be null for active records.",
     example: "2020-04-28",
   },
 
-  matsMethodDTOEndHour:{
+  matsMethodDTOEndHour: {
     fieldLabels: {
       label: "End Hour",
       value: "endHour",
     },
-    description: "Last hour in which information was effective. This value will be null for active records.",
+    description:
+      "Last hour in which information was effective. This value will be null for active records.",
     example: 23,
   },
 
-  matsMethodDTOActive:{
+  matsMethodDTOActive: {
     fieldLabels: {
       label: "",
       value: "active",
@@ -3470,16 +3502,17 @@ export const propertyMetadata = {
     example: true,
   },
 
-  monitorAttributeDTOId:{
+  monitorAttributeDTOId: {
     fieldLabels: {
       label: "",
       value: "id",
     },
-    description: "Unique combination of DB_Token and identity key generated by sequence generator.",
+    description:
+      "Unique combination of DB_Token and identity key generated by sequence generator.",
     example: "MELISSAMAT-E496678DE19E4827ADE4D541B18B5756",
   },
 
-  monitorAttributeDTOLocationId:{
+  monitorAttributeDTOLocationId: {
     fieldLabels: {
       label: "",
       value: "locationId",
@@ -3488,7 +3521,7 @@ export const propertyMetadata = {
     example: "5770",
   },
 
-  monitorAttributeDTOUserId:{
+  monitorAttributeDTOUserId: {
     fieldLabels: {
       label: "",
       value: "userId",
@@ -3497,7 +3530,7 @@ export const propertyMetadata = {
     example: "abcde",
   },
 
-  monitorAttributeDTOAddDate:{
+  monitorAttributeDTOAddDate: {
     fieldLabels: {
       label: "",
       value: "addDate",
@@ -3506,7 +3539,7 @@ export const propertyMetadata = {
     example: "2009-02-20",
   },
 
-  monitorAttributeDTOUpdateDate:{
+  monitorAttributeDTOUpdateDate: {
     fieldLabels: {
       label: "",
       value: "updateDate",
@@ -3515,25 +3548,27 @@ export const propertyMetadata = {
     example: "2009-02-20",
   },
 
-  monitorAttributeDTOBeginDate:{
+  monitorAttributeDTOBeginDate: {
     fieldLabels: {
       label: "Begin Date",
       value: "beginDate",
     },
-    description: "Date on which information became effective or activity started.",
+    description:
+      "Date on which information became effective or activity started.",
     example: "2008-01-01",
   },
 
-  monitorAttributeDTOEndDate:{
+  monitorAttributeDTOEndDate: {
     fieldLabels: {
       label: "End Date",
       value: "endDate",
     },
-    description: "Last date in which information was effective.  This date will be null for active records.",
+    description:
+      "Last date in which information was effective.  This date will be null for active records.",
     example: null,
   },
 
-  monitorAttributeDTOBypassIndicator:{
+  monitorAttributeDTOBypassIndicator: {
     fieldLabels: {
       label: "Bypass Indicator",
       value: "bypassIndicator",
@@ -3542,25 +3577,27 @@ export const propertyMetadata = {
     example: "1",
   },
 
-  monitorAttributeDTOCrossAreaFlow:{
+  monitorAttributeDTOCrossAreaFlow: {
     fieldLabels: {
       label: "Cross Area Flow",
       value: "crossAreaFlow",
     },
-    description: "The reported inside cross-sectional area in square feet of the stack or duct at the flow monitoring location.",
+    description:
+      "The reported inside cross-sectional area in square feet of the stack or duct at the flow monitoring location.",
     example: 306,
   },
 
-  monitorAttributeDTOCrossAreaStackExit:{
+  monitorAttributeDTOCrossAreaStackExit: {
     fieldLabels: {
       label: "Cross Area Stack Exit",
       value: "crossAreaStackExit",
     },
-    description: "The inside cross-sectional area in square feet of the stack at the exit.",
+    description:
+      "The inside cross-sectional area in square feet of the stack at the exit.",
     example: 306,
   },
 
-  monitorAttributeDTODuctIndicator:{
+  monitorAttributeDTODuctIndicator: {
     fieldLabels: {
       label: "Duct Indicator",
       value: "ductIndicator",
@@ -3569,25 +3606,27 @@ export const propertyMetadata = {
     example: "1",
   },
 
-  monitorAttributeDTOGroundElevation:{
+  monitorAttributeDTOGroundElevation: {
     fieldLabels: {
       label: "Ground Elevation",
       value: "groundElevation",
     },
-    description: "The number of feet above sea level at ground level of the stack or unit.",
+    description:
+      "The number of feet above sea level at ground level of the stack or unit.",
     example: 40,
   },
 
-  monitorAttributeDTOMaterialCode:{
+  monitorAttributeDTOMaterialCode: {
     fieldLabels: {
       label: "Material Code",
       value: "materialCode",
     },
-    description: "Code used to identify the material that is used in the monitoring location.",
+    description:
+      "Code used to identify the material that is used in the monitoring location.",
     example: "OTHER",
   },
 
-  monitorAttributeDTOShapeCode:{
+  monitorAttributeDTOShapeCode: {
     fieldLabels: {
       label: "Shape Code",
       value: "shapeCode",
@@ -3596,7 +3635,7 @@ export const propertyMetadata = {
     example: "ROUND",
   },
 
-  monitorAttributeDTOStackHeight:{
+  monitorAttributeDTOStackHeight: {
     fieldLabels: {
       label: "Stack Height",
       value: "stackHeight",
@@ -3605,7 +3644,7 @@ export const propertyMetadata = {
     example: 400,
   },
 
-  monitorAttributeDTOActive:{
+  monitorAttributeDTOActive: {
     fieldLabels: {
       label: "",
       value: "active",
@@ -3614,7 +3653,7 @@ export const propertyMetadata = {
     example: true,
   },
 
-  monitorDefaultDTOId:{
+  monitorDefaultDTOId: {
     fieldLabels: {
       label: "",
       value: "id",
@@ -3623,7 +3662,7 @@ export const propertyMetadata = {
     example: "MELISSAMAT-65FB5323A47A459B8FF3E2996EA4EB78",
   },
 
-  monitorDefaultDTOLocationId:{
+  monitorDefaultDTOLocationId: {
     fieldLabels: {
       label: "",
       value: "locationId",
@@ -3632,7 +3671,7 @@ export const propertyMetadata = {
     example: "5770",
   },
 
-  monitorDefaultDTOUserId:{
+  monitorDefaultDTOUserId: {
     fieldLabels: {
       label: "",
       value: "userId",
@@ -3641,7 +3680,7 @@ export const propertyMetadata = {
     example: "abcde",
   },
 
-  monitorDefaultDTOAddDate:{
+  monitorDefaultDTOAddDate: {
     fieldLabels: {
       label: "",
       value: "addDate",
@@ -3650,7 +3689,7 @@ export const propertyMetadata = {
     example: "2009-02-20",
   },
 
-  monitorDefaultDTOUpdateDate:{
+  monitorDefaultDTOUpdateDate: {
     fieldLabels: {
       label: "",
       value: "updateDate",
@@ -3659,7 +3698,7 @@ export const propertyMetadata = {
     example: "2009-02-20",
   },
 
-  monitorDefaultDTOParameterCode:{
+  monitorDefaultDTOParameterCode: {
     fieldLabels: {
       label: "Parameter",
       value: "parameterCode",
@@ -3668,7 +3707,7 @@ export const propertyMetadata = {
     example: "CO2N",
   },
 
-  monitorDefaultDTODefaultValue:{
+  monitorDefaultDTODefaultValue: {
     fieldLabels: {
       label: "Default Value",
       value: "defaultValue",
@@ -3677,7 +3716,7 @@ export const propertyMetadata = {
     example: 5.0,
   },
 
-  monitorDefaultDTODefaultUnitsOfMeasureCode:{
+  monitorDefaultDTODefaultUnitsOfMeasureCode: {
     fieldLabels: {
       label: "Default Units of Measure",
       value: "defaultUnitsOfMeasureCode",
@@ -3686,16 +3725,17 @@ export const propertyMetadata = {
     example: "PCT",
   },
 
-  monitorDefaultDTODefaultPurposeCode:{
+  monitorDefaultDTODefaultPurposeCode: {
     fieldLabels: {
       label: "Default Purpose",
       value: "defaultPurposeCode",
     },
-    description: "Code used to identify the purpose or intended use of defaults, maximums and constants.",
+    description:
+      "Code used to identify the purpose or intended use of defaults, maximums and constants.",
     example: "DC",
   },
 
-  monitorDefaultDTOFuelCode:{
+  monitorDefaultDTOFuelCode: {
     fieldLabels: {
       label: "Fuel Code",
       value: "fuelCode",
@@ -3704,7 +3744,7 @@ export const propertyMetadata = {
     example: "NFS",
   },
 
-  monitorDefaultDTOOperatingConditionCode:{
+  monitorDefaultDTOOperatingConditionCode: {
     fieldLabels: {
       label: "Operating Condition",
       value: "operatingConditionCode",
@@ -3713,7 +3753,7 @@ export const propertyMetadata = {
     example: "A",
   },
 
-  monitorDefaultDTODefaultSourceCode:{
+  monitorDefaultDTODefaultSourceCode: {
     fieldLabels: {
       label: "Default Source",
       value: "defaultSourceCode",
@@ -3722,25 +3762,27 @@ export const propertyMetadata = {
     example: "DEF",
   },
 
-  monitorDefaultDTOGroupId:{
+  monitorDefaultDTOGroupId: {
     fieldLabels: {
       label: "Group ID",
       value: "groupId",
     },
-    description: "For a group of identical LME units using testing to determine default NOx rate, this ID identifies the group.",
+    description:
+      "For a group of identical LME units using testing to determine default NOx rate, this ID identifies the group.",
     example: "GP2249",
   },
 
-  monitorDefaultDTOBeginDate:{
+  monitorDefaultDTOBeginDate: {
     fieldLabels: {
       label: "Begin Date",
       value: "beginDate",
     },
-    description: "Date on which information became effective or activity started.",
+    description:
+      "Date on which information became effective or activity started.",
     example: "2008-01-01",
   },
 
-  monitorDefaultDTOBeginHour:{
+  monitorDefaultDTOBeginHour: {
     fieldLabels: {
       label: "Begin Hour",
       value: "beginHour",
@@ -3749,25 +3791,27 @@ export const propertyMetadata = {
     example: 1,
   },
 
-  monitorDefaultDTOEndDate:{
+  monitorDefaultDTOEndDate: {
     fieldLabels: {
       label: "End Date",
       value: "endDate",
     },
-    description: "Last date in which information was effective.  This date will be null for active records.",
+    description:
+      "Last date in which information was effective.  This date will be null for active records.",
     example: null,
   },
 
-  monitorDefaultDTOEndHour:{
+  monitorDefaultDTOEndHour: {
     fieldLabels: {
       label: "End Hour",
       value: "endHour",
     },
-    description: "Last hour in which information was effective.  This value will be null for active records.",
+    description:
+      "Last hour in which information was effective.  This value will be null for active records.",
     example: null,
   },
 
-  monitorDefaultDTOActive:{
+  monitorDefaultDTOActive: {
     fieldLabels: {
       label: "",
       value: "active",
@@ -3776,7 +3820,7 @@ export const propertyMetadata = {
     example: "true",
   },
 
-  monitorFormulaDTOId:{
+  monitorFormulaDTOId: {
     fieldLabels: {
       label: "",
       value: "id",
@@ -3785,7 +3829,7 @@ export const propertyMetadata = {
     example: "CAMD-1CDAA10B7D6A41BBA6BCFF5534F5C5CA",
   },
 
-  monitorFormulaDTOLocationId:{
+  monitorFormulaDTOLocationId: {
     fieldLabels: {
       label: "",
       value: "locationId",
@@ -3794,7 +3838,7 @@ export const propertyMetadata = {
     example: "5770",
   },
 
-  monitorFormulaDTOUserId:{
+  monitorFormulaDTOUserId: {
     fieldLabels: {
       label: "",
       value: "userId",
@@ -3803,7 +3847,7 @@ export const propertyMetadata = {
     example: "abcde",
   },
 
-  monitorFormulaDTOAddDate:{
+  monitorFormulaDTOAddDate: {
     fieldLabels: {
       label: "",
       value: "addDate",
@@ -3812,7 +3856,7 @@ export const propertyMetadata = {
     example: "2009-02-20",
   },
 
-  monitorFormulaDTOUpdateDate:{
+  monitorFormulaDTOUpdateDate: {
     fieldLabels: {
       label: "",
       value: "updateDate",
@@ -3821,7 +3865,7 @@ export const propertyMetadata = {
     example: "2009-02-20",
   },
 
-  monitorFormulaDTOFormulaId:{
+  monitorFormulaDTOFormulaId: {
     fieldLabels: {
       label: "Formula ID",
       value: "formulaId",
@@ -3830,7 +3874,7 @@ export const propertyMetadata = {
     example: "140",
   },
 
-  monitorFormulaDTOParameterCode:{
+  monitorFormulaDTOParameterCode: {
     fieldLabels: {
       label: "Parameter ",
       value: "parameterCode",
@@ -3839,7 +3883,7 @@ export const propertyMetadata = {
     example: "SO2",
   },
 
-  monitorFormulaDTOFormulaCode:{
+  monitorFormulaDTOFormulaCode: {
     fieldLabels: {
       label: "Formula Code",
       value: "formulaCode",
@@ -3848,7 +3892,7 @@ export const propertyMetadata = {
     example: "F-1",
   },
 
-  monitorFormulaDTOFormulaText:{
+  monitorFormulaDTOFormulaText: {
     fieldLabels: {
       label: "Formula Text",
       value: "formulaText",
@@ -3857,16 +3901,17 @@ export const propertyMetadata = {
     example: "1.667 * 10**-7 * S#(027-C40) * S#(029-C42)",
   },
 
-  monitorFormulaDTOBeginDate:{
+  monitorFormulaDTOBeginDate: {
     fieldLabels: {
       label: "Begin Date",
       value: "beginDate",
     },
-    description: "Date on which information became effective or activity started.",
+    description:
+      "Date on which information became effective or activity started.",
     example: "2007-11-08",
   },
 
-  monitorFormulaDTOBeginHour:{
+  monitorFormulaDTOBeginHour: {
     fieldLabels: {
       label: "Begin Hour",
       value: "beginHour",
@@ -3875,25 +3920,27 @@ export const propertyMetadata = {
     example: 17,
   },
 
-  monitorFormulaDTOEndDate:{
+  monitorFormulaDTOEndDate: {
     fieldLabels: {
       label: "End Date",
       value: "endDate",
     },
-    description: "Last date in which information was effective.  This date will be null for active records.",
+    description:
+      "Last date in which information was effective.  This date will be null for active records.",
     example: null,
   },
 
-  monitorFormulaDTOEndHour:{
+  monitorFormulaDTOEndHour: {
     fieldLabels: {
       label: "End Hour",
       value: "endHour",
     },
-    description: "Last hour in which information was effective.  This value will be null for active records.",
+    description:
+      "Last hour in which information was effective.  This value will be null for active records.",
     example: null,
   },
 
-  monitorFormulaDTOActive:{
+  monitorFormulaDTOActive: {
     fieldLabels: {
       label: "",
       value: "active",
@@ -3902,7 +3949,7 @@ export const propertyMetadata = {
     example: true,
   },
 
-  monitorLoadDTOId:{
+  monitorLoadDTOId: {
     fieldLabels: {
       label: "",
       value: "id",
@@ -3911,7 +3958,7 @@ export const propertyMetadata = {
     example: "MRHODES16-A1EAFB506CA8442D843275B667DD3C53",
   },
 
-  monitorLoadDTOLocationId:{
+  monitorLoadDTOLocationId: {
     fieldLabels: {
       label: "",
       value: "locationId",
@@ -3920,7 +3967,7 @@ export const propertyMetadata = {
     example: "5770",
   },
 
-  monitorLoadDTOUserId:{
+  monitorLoadDTOUserId: {
     fieldLabels: {
       label: "",
       value: "userId",
@@ -3929,7 +3976,7 @@ export const propertyMetadata = {
     example: "abcde",
   },
 
-  monitorLoadDTOAddDate:{
+  monitorLoadDTOAddDate: {
     fieldLabels: {
       label: "",
       value: "addDate",
@@ -3938,7 +3985,7 @@ export const propertyMetadata = {
     example: "2018-10-12",
   },
 
-  monitorLoadDTOUpdateDate:{
+  monitorLoadDTOUpdateDate: {
     fieldLabels: {
       label: "",
       value: "updateDate",
@@ -3947,25 +3994,27 @@ export const propertyMetadata = {
     example: "2018-10-12",
   },
 
-  monitorLoadDTOMaximumLoadValue:{
+  monitorLoadDTOMaximumLoadValue: {
     fieldLabels: {
       label: "Max Load Value",
       value: "maximumLoadValue",
     },
-    description: "Maximum hourly gross load associated with the unit, stack, or pipe at full capacity.",
+    description:
+      "Maximum hourly gross load associated with the unit, stack, or pipe at full capacity.",
     example: 353,
   },
 
-  monitorLoadDTOMaximumLoadUnitsOfMeasureCode:{
+  monitorLoadDTOMaximumLoadUnitsOfMeasureCode: {
     fieldLabels: {
       label: "Max Load Units of Measure",
       value: "maximumLoadUnitsOfMeasureCode",
     },
-    description: "Code used to identify the units of measure for maximum load value",
+    description:
+      "Code used to identify the units of measure for maximum load value",
     example: "MW",
   },
 
-  monitorLoadDTOLowerOperationBoundary:{
+  monitorLoadDTOLowerOperationBoundary: {
     fieldLabels: {
       label: "Lower Operation Boundary",
       value: "lowerOperationBoundary",
@@ -3974,7 +4023,7 @@ export const propertyMetadata = {
     example: 145,
   },
 
-  monitorLoadDTOUpperOperationBoundary:{
+  monitorLoadDTOUpperOperationBoundary: {
     fieldLabels: {
       label: "Upper Operation Boundary",
       value: "upperOperationBoundary",
@@ -3983,7 +4032,7 @@ export const propertyMetadata = {
     example: 301,
   },
 
-  monitorLoadDTONormalLevelCode:{
+  monitorLoadDTONormalLevelCode: {
     fieldLabels: {
       label: "Normal Level ",
       value: "normalLevelCode",
@@ -3992,43 +4041,47 @@ export const propertyMetadata = {
     example: "L",
   },
 
-  monitorLoadDTOSecondLevelCode:{
+  monitorLoadDTOSecondLevelCode: {
     fieldLabels: {
       label: "Second Level",
       value: "secondLevelCode",
     },
-    description: "Code used to identify the second most frequently used load or operating level.",
+    description:
+      "Code used to identify the second most frequently used load or operating level.",
     example: "M",
   },
 
-  monitorLoadDTOSecondNormalIndicator:{
+  monitorLoadDTOSecondNormalIndicator: {
     fieldLabels: {
       label: "Second Normal Indicator",
       value: "secondNormalIndicator",
     },
-    description: "Used to indicate the reporting of an additional normal load or a second operating level.",
+    description:
+      "Used to indicate the reporting of an additional normal load or a second operating level.",
     example: "1",
   },
 
-  monitorLoadDTOLoadAnalysisDate:{
+  monitorLoadDTOLoadAnalysisDate: {
     fieldLabels: {
       label: "Load Analysis Date",
       value: "loadAnalysisDate",
     },
-    description: "The date in which load analysis was performed.  This date only applies to CEM and Appendix D locations.",
+    description:
+      "The date in which load analysis was performed.  This date only applies to CEM and Appendix D locations.",
     example: "2018-09-31",
   },
 
-  monitorLoadDTOBeginDate:{
+  monitorLoadDTOBeginDate: {
     fieldLabels: {
       label: "Begin Date",
       value: "beginDate",
     },
-    description: "Date on which information became effective or activity started.",
+    description:
+      "Date on which information became effective or activity started.",
     example: "2018-09-31",
   },
 
-  monitorLoadDTOBeginHour:{
+  monitorLoadDTOBeginHour: {
     fieldLabels: {
       label: "Begin Hour",
       value: "beginHour",
@@ -4037,25 +4090,27 @@ export const propertyMetadata = {
     example: 23,
   },
 
-  monitorLoadDTOEndDate:{
+  monitorLoadDTOEndDate: {
     fieldLabels: {
       label: "End Date",
       value: "endDate",
     },
-    description: "Last date in which information was effective.  This date will be null for active records.",
+    description:
+      "Last date in which information was effective.  This date will be null for active records.",
     example: null,
   },
 
-  monitorLoadDTOEndHour:{
+  monitorLoadDTOEndHour: {
     fieldLabels: {
       label: "End Hour",
       value: "endHour",
     },
-    description: "Last hour in which information was effective.  This value will be null for active records.",
+    description:
+      "Last hour in which information was effective.  This value will be null for active records.",
     example: null,
   },
 
-  monitorLoadDTOActive:{
+  monitorLoadDTOActive: {
     fieldLabels: {
       label: "",
       value: "active",
@@ -4064,7 +4119,7 @@ export const propertyMetadata = {
     example: true,
   },
 
-  monitorMethodDTOId:{
+  monitorMethodDTOId: {
     fieldLabels: {
       label: "",
       value: "id",
@@ -4073,7 +4128,7 @@ export const propertyMetadata = {
     example: "MELISSAMAT-7BA7D94FDB4F4D4A8E1161E4B46150F6",
   },
 
-  monitorMethodDTOLocationId:{
+  monitorMethodDTOLocationId: {
     fieldLabels: {
       label: "",
       value: "locationId",
@@ -4082,7 +4137,7 @@ export const propertyMetadata = {
     example: "5770",
   },
 
-  monitorMethodDTOUserId:{
+  monitorMethodDTOUserId: {
     fieldLabels: {
       label: "",
       value: "userId",
@@ -4091,7 +4146,7 @@ export const propertyMetadata = {
     example: "abcde",
   },
 
-  monitorMethodDTOAddDate:{
+  monitorMethodDTOAddDate: {
     fieldLabels: {
       label: "",
       value: "addDate",
@@ -4100,7 +4155,7 @@ export const propertyMetadata = {
     example: "2009-02-20",
   },
 
-  monitorMethodDTOUpdateDate:{
+  monitorMethodDTOUpdateDate: {
     fieldLabels: {
       label: "",
       value: "updateDate",
@@ -4109,7 +4164,7 @@ export const propertyMetadata = {
     example: "2009-02-20",
   },
 
-  monitorMethodDTOParameterCode:{
+  monitorMethodDTOParameterCode: {
     fieldLabels: {
       label: "Parameter",
       value: "parameterCode",
@@ -4118,7 +4173,7 @@ export const propertyMetadata = {
     example: "SO2",
   },
 
-  monitorMethodDTOMonitoringMethodCode:{
+  monitorMethodDTOMonitoringMethodCode: {
     fieldLabels: {
       label: "Methodology",
       value: "monitoringMethodCode",
@@ -4127,7 +4182,7 @@ export const propertyMetadata = {
     example: "CEM",
   },
 
-  monitorMethodDTOSubstituteDataCode:{
+  monitorMethodDTOSubstituteDataCode: {
     fieldLabels: {
       label: "Substitute Data",
       value: "substituteDataCode",
@@ -4136,25 +4191,27 @@ export const propertyMetadata = {
     example: "SPTS",
   },
 
-  monitorMethodDTOBypassApproachCode:{
+  monitorMethodDTOBypassApproachCode: {
     fieldLabels: {
       label: "Bypass Approach",
       value: "bypassApproachCode",
     },
-    description: "Code used to identify the value to be used for an unmonitored bypass stack.",
+    description:
+      "Code used to identify the value to be used for an unmonitored bypass stack.",
     example: "BYMAX",
   },
 
-  monitorMethodDTOBeginDate:{
+  monitorMethodDTOBeginDate: {
     fieldLabels: {
       label: "Begin Date",
       value: "beginDate",
     },
-    description: "Date on which information became effective or activity started.",
+    description:
+      "Date on which information became effective or activity started.",
     example: "2007-11-27",
   },
 
-  monitorMethodDTOBeginHour:{
+  monitorMethodDTOBeginHour: {
     fieldLabels: {
       label: "Begin Hour",
       value: "beginHour",
@@ -4163,25 +4220,27 @@ export const propertyMetadata = {
     example: 17,
   },
 
-  monitorMethodDTOEndDate:{
+  monitorMethodDTOEndDate: {
     fieldLabels: {
       label: "End Date",
       value: "endDate",
     },
-    description: "Last date in which information was effective.  This date will be null for active records.",
+    description:
+      "Last date in which information was effective.  This date will be null for active records.",
     example: null,
   },
 
-  monitorMethodDTOEndHour:{
+  monitorMethodDTOEndHour: {
     fieldLabels: {
       label: "End Hour",
       value: "endHour",
     },
-    description: "Last hour in which information was effective.  This value will be null for active records.",
+    description:
+      "Last hour in which information was effective.  This value will be null for active records.",
     example: null,
   },
 
-  monitorMethodDTOActive:{
+  monitorMethodDTOActive: {
     fieldLabels: {
       label: "",
       value: "active",
@@ -4190,7 +4249,7 @@ export const propertyMetadata = {
     example: true,
   },
 
-  monitorPlanCommentDTOId:{
+  monitorPlanCommentDTOId: {
     fieldLabels: {
       label: "",
       value: "id",
@@ -4199,7 +4258,7 @@ export const propertyMetadata = {
     example: "V-APPWORK--66020554D3C844E78730052AC3808151",
   },
 
-  monitorPlanCommentDTOPlanId:{
+  monitorPlanCommentDTOPlanId: {
     fieldLabels: {
       label: "",
       value: "planId",
@@ -4208,7 +4267,7 @@ export const propertyMetadata = {
     example: "MDC-2483BA898490441B97B7D7CFB1BE6D9A",
   },
 
-  monitorPlanCommentDTOUserId:{
+  monitorPlanCommentDTOUserId: {
     fieldLabels: {
       label: "",
       value: "userId",
@@ -4217,7 +4276,7 @@ export const propertyMetadata = {
     example: "abcde",
   },
 
-  monitorPlanCommentDTOAddDate:{
+  monitorPlanCommentDTOAddDate: {
     fieldLabels: {
       label: "",
       value: "addDate",
@@ -4226,7 +4285,7 @@ export const propertyMetadata = {
     example: "2020-10-28",
   },
 
-  monitorPlanCommentDTOUpdateDate:{
+  monitorPlanCommentDTOUpdateDate: {
     fieldLabels: {
       label: "",
       value: "updateDate",
@@ -4235,25 +4294,27 @@ export const propertyMetadata = {
     example: "2020-10-28",
   },
 
-  monitorPlanCommentDTOMonitoringPlanComment:{
+  monitorPlanCommentDTOMonitoringPlanComment: {
     fieldLabels: {
       label: "Comment",
       value: "monitoringPlanComment",
     },
     description: "Comment on a monitoring plan",
-    example: "DAHS was updated for GT-1 on 11/10/2016 by a previous owner, but the component ID was not updated on the gas system. This was corrected on 9/8/2020.",
+    example:
+      "DAHS was updated for GT-1 on 11/10/2016 by a previous owner, but the component ID was not updated on the gas system. This was corrected on 9/8/2020.",
   },
 
-  monitorPlanReportingFreqDTOId:{
+  monitorPlanReportingFreqDTOId: {
     fieldLabels: {
       label: "",
       value: "id",
     },
-    description: "Unique identifier of a monitoring plan Reporting Frequency record.",
+    description:
+      "Unique identifier of a monitoring plan Reporting Frequency record.",
     example: "MDC-7A8D8E101C484732954BE84D49D9249A",
   },
 
-  monitorPlanReportingFreqDTOPlanId:{
+  monitorPlanReportingFreqDTOPlanId: {
     fieldLabels: {
       label: "",
       value: "planId",
@@ -4262,7 +4323,7 @@ export const propertyMetadata = {
     example: "MDC-2483BA898490441B97B7D7CFB1BE6D9A",
   },
 
-  monitorPlanReportingFreqDTOUserId:{
+  monitorPlanReportingFreqDTOUserId: {
     fieldLabels: {
       label: "",
       value: "userId",
@@ -4271,7 +4332,7 @@ export const propertyMetadata = {
     example: "abcde",
   },
 
-  monitorPlanReportingFreqDTOAddDate:{
+  monitorPlanReportingFreqDTOAddDate: {
     fieldLabels: {
       label: "",
       value: "addDate",
@@ -4280,7 +4341,7 @@ export const propertyMetadata = {
     example: "2020-10-28",
   },
 
-  monitorPlanReportingFreqDTOUpdateDate:{
+  monitorPlanReportingFreqDTOUpdateDate: {
     fieldLabels: {
       label: "",
       value: "updateDate",
@@ -4289,7 +4350,7 @@ export const propertyMetadata = {
     example: "2020-10-28",
   },
 
-  monitorPlanReportingFreqDTOMonitoringPlanReportingFreqCode:{
+  monitorPlanReportingFreqDTOMonitoringPlanReportingFreqCode: {
     fieldLabels: {
       label: "",
       value: "reportFrequencyCode",
@@ -4298,7 +4359,7 @@ export const propertyMetadata = {
     example: "OS",
   },
 
-  monitorPlanCommentDTOBeginDate:{
+  monitorPlanCommentDTOBeginDate: {
     fieldLabels: {
       label: "Begin Date",
       value: "beginDate",
@@ -4307,16 +4368,17 @@ export const propertyMetadata = {
     example: "2020-09-28",
   },
 
-  monitorPlanCommentDTOEndDate:{
+  monitorPlanCommentDTOEndDate: {
     fieldLabels: {
       label: "End Date",
       value: "endDate",
     },
-    description: "Last date in which information was effective.  This date will be null for active records.",
+    description:
+      "Last date in which information was effective.  This date will be null for active records.",
     example: null,
   },
 
-  monitorPlanCommentDTOActive:{
+  monitorPlanCommentDTOActive: {
     fieldLabels: {
       label: "",
       value: "active",
@@ -4325,7 +4387,7 @@ export const propertyMetadata = {
     example: true,
   },
 
-  monitorQualificationDTOId:{
+  monitorQualificationDTOId: {
     fieldLabels: {
       label: "",
       value: "id",
@@ -4334,7 +4396,7 @@ export const propertyMetadata = {
     example: "NJCHQLAPA3-82CD1A0A9D2A48BFB5203F82D390183E",
   },
 
-  monitorQualificationDTOLocationId:{
+  monitorQualificationDTOLocationId: {
     fieldLabels: {
       label: "",
       value: "locationId",
@@ -4343,7 +4405,7 @@ export const propertyMetadata = {
     example: "4168",
   },
 
-  monitorQualificationDTOUserId:{
+  monitorQualificationDTOUserId: {
     fieldLabels: {
       label: "",
       value: "userId",
@@ -4352,7 +4414,7 @@ export const propertyMetadata = {
     example: "abcde",
   },
 
-  monitorQualificationDTOAddDate:{
+  monitorQualificationDTOAddDate: {
     fieldLabels: {
       label: "",
       value: "addDate",
@@ -4361,7 +4423,7 @@ export const propertyMetadata = {
     example: "2018-07-20",
   },
 
-  monitorQualificationDTOUpdateDate:{
+  monitorQualificationDTOUpdateDate: {
     fieldLabels: {
       label: "",
       value: "updateDate",
@@ -4370,7 +4432,7 @@ export const propertyMetadata = {
     example: "2018-07-20",
   },
 
-  monitorQualificationDTOQualificationTypeCode:{
+  monitorQualificationDTOQualificationTypeCode: {
     fieldLabels: {
       label: "Qualification Type",
       value: "qualificationTypeCode",
@@ -4379,25 +4441,27 @@ export const propertyMetadata = {
     example: "LMES",
   },
 
-  monitorQualificationDTOBeginDate:{
+  monitorQualificationDTOBeginDate: {
     fieldLabels: {
       label: "Begin Date",
       value: "beginDate",
     },
-    description: "Date on which information became effective or activity started.",
+    description:
+      "Date on which information became effective or activity started.",
     example: "2018-05-01",
   },
 
-  monitorQualificationDTOEndDate:{
+  monitorQualificationDTOEndDate: {
     fieldLabels: {
       label: "End Date",
       value: "endDate",
     },
-    description: "Last date in which information was effective.  This date will be null for active records.",
+    description:
+      "Last date in which information was effective.  This date will be null for active records.",
     example: null,
   },
 
-  monitorQualificationDTOActive:{
+  monitorQualificationDTOActive: {
     fieldLabels: {
       label: "",
       value: "active",
@@ -4406,7 +4470,7 @@ export const propertyMetadata = {
     example: true,
   },
 
-  lEEQualificationDTOId:{
+  lEEQualificationDTOId: {
     fieldLabels: {
       label: "",
       value: "id",
@@ -4415,7 +4479,7 @@ export const propertyMetadata = {
     example: "MIKE-DELL-CFEDE4EB21124391BE13E7FB5A56081C",
   },
 
-  lEEQualificationDTOQualificationId:{
+  lEEQualificationDTOQualificationId: {
     fieldLabels: {
       label: "",
       value: "qualificationId",
@@ -4424,7 +4488,7 @@ export const propertyMetadata = {
     example: "MIKE-DELL-E4CE3931A24E4C1395B3C81457B300CC",
   },
 
-  lEEQualificationDTOUserId:{
+  lEEQualificationDTOUserId: {
     fieldLabels: {
       label: "",
       value: "userId",
@@ -4433,7 +4497,7 @@ export const propertyMetadata = {
     example: "abcde",
   },
 
-  lEEQualificationDTOAddDate:{
+  lEEQualificationDTOAddDate: {
     fieldLabels: {
       label: "",
       value: "addDate",
@@ -4442,7 +4506,7 @@ export const propertyMetadata = {
     example: "2018-10-25",
   },
 
-  lEEQualificationDTOUpdateDate:{
+  lEEQualificationDTOUpdateDate: {
     fieldLabels: {
       label: "",
       value: "updateDate",
@@ -4451,7 +4515,7 @@ export const propertyMetadata = {
     example: "2018-10-25",
   },
 
-  lEEQualificationDTOQualificationTestDate:{
+  lEEQualificationDTOQualificationTestDate: {
     fieldLabels: {
       label: "Qualification Test Date",
       value: "qualificationTestDate",
@@ -4460,7 +4524,7 @@ export const propertyMetadata = {
     example: "2018-07-15",
   },
 
-  lEEQualificationDTOParameterCode:{
+  lEEQualificationDTOParameterCode: {
     fieldLabels: {
       label: "Parameter Code",
       value: "parameterCode",
@@ -4469,16 +4533,17 @@ export const propertyMetadata = {
     example: "HG",
   },
 
-  lEEQualificationDTOQualificationTestType:{
+  lEEQualificationDTOQualificationTestType: {
     fieldLabels: {
       label: "Qualification Test Type",
       value: "qualificationTestType",
     },
-    description: "Indication of whether the qualifying test was an initial test or retest.",
+    description:
+      "Indication of whether the qualifying test was an initial test or retest.",
     example: "INITIAL",
   },
 
-  lEEQualificationDTOPotentialAnnualMassEmissions:{
+  lEEQualificationDTOPotentialAnnualMassEmissions: {
     fieldLabels: {
       label: "Potential Annual Hg Mass Emissions",
       value: "potentialAnnualMassEmissions",
@@ -4487,7 +4552,7 @@ export const propertyMetadata = {
     example: 10.2,
   },
 
-  lEEQualificationDTOApplicableEmissionStandard:{
+  lEEQualificationDTOApplicableEmissionStandard: {
     fieldLabels: {
       label: "Applicable Emission Standard",
       value: "applicableEmissionStandard",
@@ -4496,7 +4561,7 @@ export const propertyMetadata = {
     example: 29,
   },
 
-  lEEQualificationDTOUnitsOfStandard:{
+  lEEQualificationDTOUnitsOfStandard: {
     fieldLabels: {
       label: "Unit of Standard",
       value: "unitsOfStandard",
@@ -4505,16 +4570,17 @@ export const propertyMetadata = {
     example: "LBGWH",
   },
 
-  lEEQualificationDTOPercentageOfEmissionStandard:{
+  lEEQualificationDTOPercentageOfEmissionStandard: {
     fieldLabels: {
       label: "Percentage of Emission Standard",
       value: "percentageOfEmissionStandard",
     },
-    description: "Result of initial test or retest as a percentage of the Applicable Emission Standard.",
+    description:
+      "Result of initial test or retest as a percentage of the Applicable Emission Standard.",
     example: 72.8,
   },
 
-  lMEQualificationDTOId:{
+  lMEQualificationDTOId: {
     fieldLabels: {
       label: "",
       value: "id",
@@ -4523,7 +4589,7 @@ export const propertyMetadata = {
     example: "NJCHQLAPA3-C89F6E1CE9D447A298B7D5E428ADD1AC",
   },
 
-  lMEQualificationDTOQualificationId:{
+  lMEQualificationDTOQualificationId: {
     fieldLabels: {
       label: "",
       value: "qualificationId",
@@ -4532,7 +4598,7 @@ export const propertyMetadata = {
     example: "NJCHQLAPA3-82CD1A0A9D2A48BFB5203F82D390183E",
   },
 
-  lMEQualificationDTOUserId:{
+  lMEQualificationDTOUserId: {
     fieldLabels: {
       label: "",
       value: "userId",
@@ -4541,7 +4607,7 @@ export const propertyMetadata = {
     example: "abcde",
   },
 
-  lMEQualificationDTOAddDate:{
+  lMEQualificationDTOAddDate: {
     fieldLabels: {
       label: "",
       value: "addDate",
@@ -4550,7 +4616,7 @@ export const propertyMetadata = {
     example: "2015-07-20",
   },
 
-  lMEQualificationDTOUpdateDate:{
+  lMEQualificationDTOUpdateDate: {
     fieldLabels: {
       label: "",
       value: "updateDate",
@@ -4559,7 +4625,7 @@ export const propertyMetadata = {
     example: "2015-07-20",
   },
 
-  lMEQualificationDTOQualificationDataYear:{
+  lMEQualificationDTOQualificationDataYear: {
     fieldLabels: {
       label: "Qualification Data Year",
       value: "qualificationDataYear",
@@ -4568,16 +4634,17 @@ export const propertyMetadata = {
     example: "2015",
   },
 
-  lMEQualificationDTOOperatingHours:{
+  lMEQualificationDTOOperatingHours: {
     fieldLabels: {
       label: "Operating Hours",
       value: "operatingHours",
     },
-    description: "Annual number of operating hours used to determine qualification.",
+    description:
+      "Annual number of operating hours used to determine qualification.",
     example: 105,
   },
 
-  lMEQualificationDTOSo2Tons:{
+  lMEQualificationDTOSo2Tons: {
     fieldLabels: {
       label: "SO2 Tons",
       value: "so2Tons",
@@ -4586,7 +4653,7 @@ export const propertyMetadata = {
     example: 0.9,
   },
 
-  lMEQualificationDTONoxTons:{
+  lMEQualificationDTONoxTons: {
     fieldLabels: {
       label: "NOx Tons",
       value: "noxTons",
@@ -4595,16 +4662,17 @@ export const propertyMetadata = {
     example: 6.4,
   },
 
-  pCTQualificationDTOId:{
+  pCTQualificationDTOId: {
     fieldLabels: {
       label: "",
       value: "id",
     },
-    description: "Unique identifier of a monitoring qualification percentage record.",
+    description:
+      "Unique identifier of a monitoring qualification percentage record.",
     example: "02227-BSGR-56EB0D4D400642A4860D6402698BBE16",
   },
 
-  pCTQualificationDTOQualificationId:{
+  pCTQualificationDTOQualificationId: {
     fieldLabels: {
       label: "",
       value: "qualificationId",
@@ -4613,7 +4681,7 @@ export const propertyMetadata = {
     example: "02022-614W-608B84AEDB8148C7B3935EE935AB835F",
   },
 
-  pCTQualificationDTOUserId:{
+  pCTQualificationDTOUserId: {
     fieldLabels: {
       label: "",
       value: "userId",
@@ -4622,7 +4690,7 @@ export const propertyMetadata = {
     example: "abcde",
   },
 
-  pCTQualificationDTOAddDate:{
+  pCTQualificationDTOAddDate: {
     fieldLabels: {
       label: "",
       value: "addDate",
@@ -4631,7 +4699,7 @@ export const propertyMetadata = {
     example: "2021-04-01",
   },
 
-  pCTQualificationDTOUpdateDate:{
+  pCTQualificationDTOUpdateDate: {
     fieldLabels: {
       label: "",
       value: "updateDate",
@@ -4640,7 +4708,7 @@ export const propertyMetadata = {
     example: "2021-04-01",
   },
 
-  pCTQualificationDTOQualificationYear:{
+  pCTQualificationDTOQualificationYear: {
     fieldLabels: {
       label: "Qualification Year",
       value: "qualificationYear",
@@ -4649,7 +4717,7 @@ export const propertyMetadata = {
     example: 2021,
   },
 
-  pCTQualificationDTOAveragePercentValue:{
+  pCTQualificationDTOAveragePercentValue: {
     fieldLabels: {
       label: "Average Percentage Value",
       value: "averagePercentValue",
@@ -4658,7 +4726,7 @@ export const propertyMetadata = {
     example: 100,
   },
 
-  pCTQualificationDTOYr1QualificationDataYear:{
+  pCTQualificationDTOYr1QualificationDataYear: {
     fieldLabels: {
       label: "Year 1 Qualification Data Year",
       value: "yr1QualificationDataYear",
@@ -4667,16 +4735,17 @@ export const propertyMetadata = {
     example: 2018,
   },
 
-  pCTQualificationDTOYr1QualificationDataTypeCode:{
+  pCTQualificationDTOYr1QualificationDataTypeCode: {
     fieldLabels: {
       label: "Year 1 Qualification Data Type",
       value: "yr1QualificationDataTypeCode",
     },
-    description: "Code used to identify the type qualification in the first year.",
+    description:
+      "Code used to identify the type qualification in the first year.",
     example: "A",
   },
 
-  pCTQualificationDTOYr1PercentageValue:{
+  pCTQualificationDTOYr1PercentageValue: {
     fieldLabels: {
       label: "Year 1 Percentage Value",
       value: "yr1PercentageValue",
@@ -4685,7 +4754,7 @@ export const propertyMetadata = {
     example: 100,
   },
 
-  pCTQualificationDTOYr2QualificationDataYear:{
+  pCTQualificationDTOYr2QualificationDataYear: {
     fieldLabels: {
       label: "Year 2 Qualification Data Year",
       value: "yr2QualificationDataYear",
@@ -4694,16 +4763,17 @@ export const propertyMetadata = {
     example: 2019,
   },
 
-  pCTQualificationDTOYr2QualificationDataTypeCode:{
+  pCTQualificationDTOYr2QualificationDataTypeCode: {
     fieldLabels: {
       label: "Year 2 Qualification Data Type",
       value: "yr2QualificationDataTypeCode",
     },
-    description: "Code used to identify the type qualification in the second year.",
+    description:
+      "Code used to identify the type qualification in the second year.",
     example: "A",
   },
 
-  pCTQualificationDTOYr2PercentageValue:{
+  pCTQualificationDTOYr2PercentageValue: {
     fieldLabels: {
       label: "Year 2 Percentage Value",
       value: "yr2PercentageValue",
@@ -4712,7 +4782,7 @@ export const propertyMetadata = {
     example: 100,
   },
 
-  pCTQualificationDTOYr3QualificationDataYear:{
+  pCTQualificationDTOYr3QualificationDataYear: {
     fieldLabels: {
       label: "Year 3 Qualification Data Year",
       value: "yr3QualificationDataYear",
@@ -4721,16 +4791,17 @@ export const propertyMetadata = {
     example: 2020,
   },
 
-  pCTQualificationDTOYr3QualificationDataTypeCode:{
+  pCTQualificationDTOYr3QualificationDataTypeCode: {
     fieldLabels: {
       label: "Year 3 Qualification Data Type",
       value: "yr3QualificationDataTypeCode",
     },
-    description: "Code used to indicate type of data for year (actual or projected) used to determine peaking or gas-fired qualification.",
+    description:
+      "Code used to indicate type of data for year (actual or projected) used to determine peaking or gas-fired qualification.",
     example: "A",
   },
 
-  pCTQualificationDTOYr3PercentageValue:{
+  pCTQualificationDTOYr3PercentageValue: {
     fieldLabels: {
       label: "Year 3 Percentage Value",
       value: "yr3PercentageValue",
@@ -4739,7 +4810,7 @@ export const propertyMetadata = {
     example: 100,
   },
 
-  monitorSpanDTOId:{
+  monitorSpanDTOId: {
     fieldLabels: {
       label: "",
       value: "id",
@@ -4748,7 +4819,7 @@ export const propertyMetadata = {
     example: "MRHODES16-A5DBB8DF4F1D4D3A95AD2553008EB554",
   },
 
-  monitorSpanDTOLocationId:{
+  monitorSpanDTOLocationId: {
     fieldLabels: {
       label: "",
       value: "locationId",
@@ -4757,7 +4828,7 @@ export const propertyMetadata = {
     example: "5770",
   },
 
-  monitorSpanDTOUserid:{
+  monitorSpanDTOUserid: {
     fieldLabels: {
       label: "",
       value: "userid",
@@ -4766,7 +4837,7 @@ export const propertyMetadata = {
     example: "abcde",
   },
 
-  monitorSpanDTOAddDate:{
+  monitorSpanDTOAddDate: {
     fieldLabels: {
       label: "",
       value: "addDate",
@@ -4775,7 +4846,7 @@ export const propertyMetadata = {
     example: "2009-02-20",
   },
 
-  monitorSpanDTOUpdateDate:{
+  monitorSpanDTOUpdateDate: {
     fieldLabels: {
       label: "",
       value: "updateDate",
@@ -4784,7 +4855,7 @@ export const propertyMetadata = {
     example: "2009-02-20",
   },
 
-  monitorSpanDTOComponentTypeCode:{
+  monitorSpanDTOComponentTypeCode: {
     fieldLabels: {
       label: "Component Type",
       value: "componentTypeCode",
@@ -4793,7 +4864,7 @@ export const propertyMetadata = {
     example: "SO2",
   },
 
-  monitorSpanDTOSpanScaleCode:{
+  monitorSpanDTOSpanScaleCode: {
     fieldLabels: {
       label: "Span Scale",
       value: "spanScaleCode",
@@ -4802,61 +4873,67 @@ export const propertyMetadata = {
     example: "H",
   },
 
-  monitorSpanDTOSpanMethodCode:{
+  monitorSpanDTOSpanMethodCode: {
     fieldLabels: {
       label: "Span Method",
       value: "spanMethodCode",
     },
-    description: "Code used to identify the method used to calculate MPC/MEC/MPF.",
+    description:
+      "Code used to identify the method used to calculate MPC/MEC/MPF.",
     example: "HD",
   },
 
-  monitorSpanDTOMecValue:{
+  monitorSpanDTOMecValue: {
     fieldLabels: {
       label: "MEC Value",
       value: "mecValue",
     },
-    description: "The Maximum Expected Concentration (MEC) value reported in the SO2 and NOx span records.",
+    description:
+      "The Maximum Expected Concentration (MEC) value reported in the SO2 and NOx span records.",
     example: 156.9,
   },
 
-  monitorSpanDTOMpcValue:{
+  monitorSpanDTOMpcValue: {
     fieldLabels: {
       label: "MPC Value",
       value: "mpcValue",
     },
-    description: "The Maximum Potential Concentration (MPC) value reported in the high scale record for NOx, SO2, or CO2.",
+    description:
+      "The Maximum Potential Concentration (MPC) value reported in the high scale record for NOx, SO2, or CO2.",
     example: 177.2,
   },
 
-  monitorSpanDTOMpfValue:{
+  monitorSpanDTOMpfValue: {
     fieldLabels: {
       label: "MPF Value",
       value: "mpfValue",
     },
-    description: "For parameter FLOW, report the Maximum Potential Flow (MPF) value for the monitoring location in (scfh) on a wet basis.",
+    description:
+      "For parameter FLOW, report the Maximum Potential Flow (MPF) value for the monitoring location in (scfh) on a wet basis.",
     example: 8563000,
   },
 
-  monitorSpanDTOSpanValue:{
+  monitorSpanDTOSpanValue: {
     fieldLabels: {
       label: "Span Value Value",
       value: "spanValue",
     },
-    description:"The Span Value determined according to the requirements of Part 75 or (if applicable) 40 CFR Part 63, Subpart UUUUU.",
+    description:
+      "The Span Value determined according to the requirements of Part 75 or (if applicable) 40 CFR Part 63, Subpart UUUUU.",
     example: 200,
   },
 
-  monitorSpanDTOFullScaleRange:{
+  monitorSpanDTOFullScaleRange: {
     fieldLabels: {
       label: "Full Scale Range",
       value: "fullScaleRange",
     },
-    description: "Full scale range in units of daily calibration for SO2, NOx, CO2, O2, HCl, and flow rate, must be greater than or equal to the span value.",
+    description:
+      "Full scale range in units of daily calibration for SO2, NOx, CO2, O2, HCl, and flow rate, must be greater than or equal to the span value.",
     example: 200,
   },
 
-  monitorSpanDTOSpanUnitsOfMeasureCode:{
+  monitorSpanDTOSpanUnitsOfMeasureCode: {
     fieldLabels: {
       label: "Span Unit of Measure",
       value: "spanUnitsOfMeasureCode",
@@ -4865,43 +4942,47 @@ export const propertyMetadata = {
     example: "PPM",
   },
 
-  monitorSpanDTODefaultHighRange:{
+  monitorSpanDTODefaultHighRange: {
     fieldLabels: {
       label: "Default High Range",
       value: "defaultHighRange",
     },
-    description: "The default high range value must be 200 percent of the maximum potential concentration, only reported if the high scale record for the parameter.",
+    description:
+      "The default high range value must be 200 percent of the maximum potential concentration, only reported if the high scale record for the parameter.",
     example: null,
   },
 
-  monitorSpanDTOFlowSpanValue:{
+  monitorSpanDTOFlowSpanValue: {
     fieldLabels: {
       label: "Flow Span Value",
       value: "flowSpanValue",
     },
-    description: "The product of the MPF and a factor no less than 1.00 and no greater than 1.25. Flow rate span value in scfh.",
+    description:
+      "The product of the MPF and a factor no less than 1.00 and no greater than 1.25. Flow rate span value in scfh.",
     example: null,
   },
 
-  monitorSpanDTOFlowFullScaleRange:{
+  monitorSpanDTOFlowFullScaleRange: {
     fieldLabels: {
       label: "Flow Full Range",
       value: "flowFullScaleRange",
     },
-    description: "The actual full-scale range value expressed in units of scfh for the parameter FLOW, must be greater than or equal to the flow rate span value",
+    description:
+      "The actual full-scale range value expressed in units of scfh for the parameter FLOW, must be greater than or equal to the flow rate span value",
     example: null,
   },
 
-  monitorSpanDTOBeginDate:{
+  monitorSpanDTOBeginDate: {
     fieldLabels: {
       label: "Begin Date",
       value: "beginDate",
     },
-    description: "Date on which information became effective or activity started.",
+    description:
+      "Date on which information became effective or activity started.",
     example: "2018-05-17",
   },
 
-  monitorSpanDTOBeginHour:{
+  monitorSpanDTOBeginHour: {
     fieldLabels: {
       label: "Begin Hour",
       value: "beginHour",
@@ -4910,25 +4991,27 @@ export const propertyMetadata = {
     example: 14,
   },
 
-  monitorSpanDTOEndDate:{
+  monitorSpanDTOEndDate: {
     fieldLabels: {
       label: "End Date",
       value: "endDate",
     },
-    description: "Last date in which information was effective.  This date will be null for active records.",
+    description:
+      "Last date in which information was effective.  This date will be null for active records.",
     example: null,
   },
 
-  monitorSpanDTOEndHour:{
+  monitorSpanDTOEndHour: {
     fieldLabels: {
       label: "End Hour",
       value: "endHour",
     },
-    description: "Last hour in which information was effective.  This value will be null for active records.",
+    description:
+      "Last hour in which information was effective.  This value will be null for active records.",
     example: null,
   },
 
-  monitorSpanDTOActive:{
+  monitorSpanDTOActive: {
     fieldLabels: {
       label: "",
       value: "active",
@@ -4937,7 +5020,7 @@ export const propertyMetadata = {
     example: true,
   },
 
-  monitorSystemDTOId:{
+  monitorSystemDTOId: {
     fieldLabels: {
       label: "",
       value: "id",
@@ -4946,7 +5029,7 @@ export const propertyMetadata = {
     example: "CAMD-4B0DC37051224A7AA9D8CA1E5BE6B4D4",
   },
 
-  monitorSystemDTOLocationId:{
+  monitorSystemDTOLocationId: {
     fieldLabels: {
       label: "",
       value: "locationId",
@@ -4955,7 +5038,7 @@ export const propertyMetadata = {
     example: "5770",
   },
 
-  monitorSystemDTOUserId:{
+  monitorSystemDTOUserId: {
     fieldLabels: {
       label: "",
       value: "userId",
@@ -4964,7 +5047,7 @@ export const propertyMetadata = {
     example: "abcde",
   },
 
-  monitorSystemDTOAddDate:{
+  monitorSystemDTOAddDate: {
     fieldLabels: {
       label: "",
       value: "addDate",
@@ -4973,7 +5056,7 @@ export const propertyMetadata = {
     example: "2009-02-20",
   },
 
-  monitorSystemDTOUpdateDate:{
+  monitorSystemDTOUpdateDate: {
     fieldLabels: {
       label: "",
       value: "updateDate",
@@ -4982,16 +5065,17 @@ export const propertyMetadata = {
     example: "2009-02-20",
   },
 
-  monitorSystemDTOMonitoringSystemId:{
+  monitorSystemDTOMonitoringSystemId: {
     fieldLabels: {
       label: "system ID",
       value: "monitoringSystemId",
     },
-    description: "The three digit code used by the source to identify the monitoring system.",
+    description:
+      "The three digit code used by the source to identify the monitoring system.",
     example: "C42",
   },
 
-  monitorSystemDTOSystemTypeCode:{
+  monitorSystemDTOSystemTypeCode: {
     fieldLabels: {
       label: "system Type",
       value: "systemTypeCode",
@@ -5000,16 +5084,17 @@ export const propertyMetadata = {
     example: "FLOW",
   },
 
-  monitorSystemDTOSystemDesignationCode:{
+  monitorSystemDTOSystemDesignationCode: {
     fieldLabels: {
       label: "system Designation",
       value: "systemDesignationCode",
     },
-    description: "Code used to indicate designation of monitoring system as primary, backup etc.",
+    description:
+      "Code used to indicate designation of monitoring system as primary, backup etc.",
     example: "P",
   },
 
-  monitorSystemDTOFuelCode:{
+  monitorSystemDTOFuelCode: {
     fieldLabels: {
       label: "Fuel Code",
       value: "fuelCode",
@@ -5018,43 +5103,47 @@ export const propertyMetadata = {
     example: "NFS",
   },
 
-  monitorSystemDTOBeginDate:{
+  monitorSystemDTOBeginDate: {
     fieldLabels: {
       label: "Begin Date",
       value: "beginDate",
     },
-    description: "Date on which information became effective or activity started.",
+    description:
+      "Date on which information became effective or activity started.",
     example: "2007-11-28",
   },
 
-  monitorSystemDTOBeginHour:{
+  monitorSystemDTOBeginHour: {
     fieldLabels: {
       label: "Begin Hour",
       value: "beginHour",
     },
-    description: "Hour in which information became effective or activity started.",
+    description:
+      "Hour in which information became effective or activity started.",
     example: 17,
   },
 
-  monitorSystemDTOEndDate:{
+  monitorSystemDTOEndDate: {
     fieldLabels: {
       label: "End Date",
       value: "endDate",
     },
-    description: "Last date in which information was effective.  This date will be null for active records.",
+    description:
+      "Last date in which information was effective.  This date will be null for active records.",
     example: null,
   },
 
-  monitorSystemDTOEndHour:{
+  monitorSystemDTOEndHour: {
     fieldLabels: {
       label: "End Hour",
       value: "endHour",
     },
-    description: "Last hour in which information was effective.  This value will be null for active records.",
+    description:
+      "Last hour in which information was effective.  This value will be null for active records.",
     example: null,
   },
 
-  monitorSystemDTOActive:{
+  monitorSystemDTOActive: {
     fieldLabels: {
       label: "",
       value: "active",
@@ -5063,7 +5152,7 @@ export const propertyMetadata = {
     example: true,
   },
 
-  systemComponentDTOId:{
+  systemComponentDTOId: {
     fieldLabels: {
       label: "",
       value: "id",
@@ -5072,7 +5161,7 @@ export const propertyMetadata = {
     example: "MELISSARHO-3F31E53DE9B14764936BFB0AC7225847",
   },
 
-  systemComponentDTOLocationId:{
+  systemComponentDTOLocationId: {
     fieldLabels: {
       label: "",
       value: "locationId",
@@ -5081,7 +5170,7 @@ export const propertyMetadata = {
     example: "5770",
   },
 
-  systemComponentDTOMonitoringSystemRecordId:{
+  systemComponentDTOMonitoringSystemRecordId: {
     fieldLabels: {
       label: "",
       value: "monitoringSystemRecordId",
@@ -5090,7 +5179,7 @@ export const propertyMetadata = {
     example: "CAMD-4B0DC37051224A7AA9D8CA1E5BE6B4D4",
   },
 
-  systemComponentDTOComponentRecordId:{
+  systemComponentDTOComponentRecordId: {
     fieldLabels: {
       label: "",
       value: "componentRecordId",
@@ -5099,7 +5188,7 @@ export const propertyMetadata = {
     example: "MELISSARHO-58F5F687BFDB4BD7AD49046386B13ABE",
   },
 
-  systemComponentDTOUserId:{
+  systemComponentDTOUserId: {
     fieldLabels: {
       label: "",
       value: "userId",
@@ -5108,7 +5197,7 @@ export const propertyMetadata = {
     example: "abcde",
   },
 
-  systemComponentDTOAddDate:{
+  systemComponentDTOAddDate: {
     fieldLabels: {
       label: "",
       value: "addDate",
@@ -5117,7 +5206,7 @@ export const propertyMetadata = {
     example: "2009-02-20",
   },
 
-  systemComponentDTOUpdateDate:{
+  systemComponentDTOUpdateDate: {
     fieldLabels: {
       label: "",
       value: "updateDate",
@@ -5126,16 +5215,17 @@ export const propertyMetadata = {
     example: "2009-02-20",
   },
 
-  systemComponentDTOBeginDate:{
+  systemComponentDTOBeginDate: {
     fieldLabels: {
       label: "Begin Date",
       value: "beginDate",
     },
-    description: "Date on which information became effective or activity started.",
+    description:
+      "Date on which information became effective or activity started.",
     example: "2008-12-31",
   },
 
-  systemComponentDTOBeginHour:{
+  systemComponentDTOBeginHour: {
     fieldLabels: {
       label: "Begin Hour",
       value: "beginHour",
@@ -5144,34 +5234,37 @@ export const propertyMetadata = {
     example: 23,
   },
 
-  systemComponentDTOEndDate:{
+  systemComponentDTOEndDate: {
     fieldLabels: {
       label: "End Date",
       value: "endDate",
     },
-    description: "Last date in which information was effective.  This date will be null for active records.",
+    description:
+      "Last date in which information was effective.  This date will be null for active records.",
     example: null,
   },
 
-  systemComponentDTOEndHour:{
+  systemComponentDTOEndHour: {
     fieldLabels: {
       label: "End Hour",
       value: "endHour",
     },
-    description: "Last hour in which information was effective.  This value will be null for active records.",
+    description:
+      "Last hour in which information was effective.  This value will be null for active records.",
     example: null,
   },
 
-  systemComponentDTOComponentId:{
+  systemComponentDTOComponentId: {
     fieldLabels: {
       label: "Component ID",
       value: "componentId",
     },
-    description: "The three digit code assigned by the source to identify the component.",
+    description:
+      "The three digit code assigned by the source to identify the component.",
     example: "044",
   },
 
-  systemComponentDTOComponentTypeCode:{
+  systemComponentDTOComponentTypeCode: {
     fieldLabels: {
       label: "Component Type",
       value: "componentTypeCode",
@@ -5180,7 +5273,7 @@ export const propertyMetadata = {
     example: "DL",
   },
 
-  systemComponentDTOSampleAcquisitionMethodCode:{
+  systemComponentDTOSampleAcquisitionMethodCode: {
     fieldLabels: {
       label: "Sample Acquisition Method",
       value: "sampleAcquisitionMethodCode",
@@ -5189,7 +5282,7 @@ export const propertyMetadata = {
     example: "DIL",
   },
 
-  systemComponentDTOBasisCode:{
+  systemComponentDTOBasisCode: {
     fieldLabels: {
       label: "Basis Code",
       value: "basisCode",
@@ -5198,7 +5291,7 @@ export const propertyMetadata = {
     example: "W",
   },
 
-  systemComponentDTOManufacturer:{
+  systemComponentDTOManufacturer: {
     fieldLabels: {
       label: "Manufacturer",
       value: "manufacturer",
@@ -5207,16 +5300,17 @@ export const propertyMetadata = {
     example: "ESC",
   },
 
-  systemComponentDTOModelVersion:{
+  systemComponentDTOModelVersion: {
     fieldLabels: {
       label: "Model Version",
       value: "modelVersion",
     },
-    description: "The model of any hardware component or the version number of the software component.",
+    description:
+      "The model of any hardware component or the version number of the software component.",
     example: "SM8175",
   },
 
-  systemComponentDTOSerialNumber:{
+  systemComponentDTOSerialNumber: {
     fieldLabels: {
       label: "Serial Number",
       value: "serialNumber",
@@ -5225,16 +5319,17 @@ export const propertyMetadata = {
     example: "X11011",
   },
 
-  systemComponentDTOHgConverterIndicator:{
+  systemComponentDTOHgConverterIndicator: {
     fieldLabels: {
       label: "Hg Converter Indicator",
       value: "hgConverterIndicator",
     },
-    description: "For an Hg component, indicates whether the analyzer has a converter.",
+    description:
+      "For an Hg component, indicates whether the analyzer has a converter.",
     example: "1",
   },
 
-  systemComponentDTOActive:{
+  systemComponentDTOActive: {
     fieldLabels: {
       label: "",
       value: "active",
@@ -5243,7 +5338,7 @@ export const propertyMetadata = {
     example: true,
   },
 
-  systemFuelFlowDTOId:{
+  systemFuelFlowDTOId: {
     fieldLabels: {
       label: "",
       value: "id",
@@ -5252,7 +5347,7 @@ export const propertyMetadata = {
     example: "WS150071-0C5A8F50F7F24DB8B73E65C18C2063E3",
   },
 
-  systemFuelFlowDTOMonitoringSystemRecordId:{
+  systemFuelFlowDTOMonitoringSystemRecordId: {
     fieldLabels: {
       label: "",
       value: "monitoringSystemRecordId",
@@ -5261,7 +5356,7 @@ export const propertyMetadata = {
     example: "WS150071-1BCDEDC4D2944376ACA55FCABE9D60A1",
   },
 
-  systemFuelFlowDTOUserId:{
+  systemFuelFlowDTOUserId: {
     fieldLabels: {
       label: "",
       value: "userId",
@@ -5270,7 +5365,7 @@ export const propertyMetadata = {
     example: "abcde",
   },
 
-  systemFuelFlowDTOAddDate:{
+  systemFuelFlowDTOAddDate: {
     fieldLabels: {
       label: "",
       value: "addDate",
@@ -5279,7 +5374,7 @@ export const propertyMetadata = {
     example: "2009-02-20",
   },
 
-  systemFuelFlowDTOUpdateDate:{
+  systemFuelFlowDTOUpdateDate: {
     fieldLabels: {
       label: "",
       value: "updateDate",
@@ -5288,7 +5383,7 @@ export const propertyMetadata = {
     example: "2010-09-01",
   },
 
-  systemFuelFlowDTOMaximumFuelFlowRate:{
+  systemFuelFlowDTOMaximumFuelFlowRate: {
     fieldLabels: {
       label: "Max  Fuel Rate",
       value: "maximumFuelFlowRate",
@@ -5297,7 +5392,7 @@ export const propertyMetadata = {
     example: 30667,
   },
 
-  systemFuelFlowDTOSystemFuelFlowUOMCode:{
+  systemFuelFlowDTOSystemFuelFlowUOMCode: {
     fieldLabels: {
       label: "system Fuel Flow Units of Measure",
       value: "systemFuelFlowUOMCode",
@@ -5306,7 +5401,7 @@ export const propertyMetadata = {
     example: "HSCF",
   },
 
-  systemFuelFlowDTOMaximumFuelFlowRateSourceCode:{
+  systemFuelFlowDTOMaximumFuelFlowRateSourceCode: {
     fieldLabels: {
       label: "Max Fuel Flow Rate Source",
       value: "maximumFuelFlowRateSourceCode",
@@ -5315,16 +5410,17 @@ export const propertyMetadata = {
     example: "URV",
   },
 
-  systemFuelFlowDTOBeginDate:{
+  systemFuelFlowDTOBeginDate: {
     fieldLabels: {
       label: "Begin Date",
       value: "beginDate",
     },
-    description: "Date on which information became effective or activity started.",
+    description:
+      "Date on which information became effective or activity started.",
     example: "2010-08-01",
   },
 
-  systemFuelFlowDTOBeginHour:{
+  systemFuelFlowDTOBeginHour: {
     fieldLabels: {
       label: "Begin Hour",
       value: "beginHour",
@@ -5333,25 +5429,27 @@ export const propertyMetadata = {
     example: 12,
   },
 
-  systemFuelFlowDTOEndDate:{
+  systemFuelFlowDTOEndDate: {
     fieldLabels: {
       label: "End Date",
       value: "endDate",
     },
-    description: "Last date in which information was effective.  This date will be null for active records.",
+    description:
+      "Last date in which information was effective.  This date will be null for active records.",
     example: null,
   },
 
-  systemFuelFlowDTOEndHour:{
+  systemFuelFlowDTOEndHour: {
     fieldLabels: {
       label: "End Hour",
       value: "endHour",
     },
-    description: "Last hour in which information was effective or hour in which activity ended. This value will be null for active records.",
+    description:
+      "Last hour in which information was effective or hour in which activity ended. This value will be null for active records.",
     example: null,
   },
 
-  systemFuelFlowDTOFuelCode:{
+  systemFuelFlowDTOFuelCode: {
     fieldLabels: {
       label: "Fuel Code",
       value: "fuelCode",
@@ -5360,7 +5458,7 @@ export const propertyMetadata = {
     example: "PNG",
   },
 
-  systemFuelFlowDTOSystemTypeCode:{
+  systemFuelFlowDTOSystemTypeCode: {
     fieldLabels: {
       label: "system Type",
       value: "systemTypeCode",
@@ -5369,7 +5467,7 @@ export const propertyMetadata = {
     example: "GAS",
   },
 
-  systemFuelFlowDTOActive:{
+  systemFuelFlowDTOActive: {
     fieldLabels: {
       label: "",
       value: "active",
@@ -5378,7 +5476,7 @@ export const propertyMetadata = {
     example: true,
   },
 
-  unitCapacityDTOId:{
+  unitCapacityDTOId: {
     fieldLabels: {
       label: "",
       value: "id",
@@ -5387,7 +5485,7 @@ export const propertyMetadata = {
     example: "50233",
   },
 
-  unitCapacityDTOUnitId:{
+  unitCapacityDTOUnitId: {
     fieldLabels: {
       label: "",
       value: "unitId",
@@ -5396,16 +5494,17 @@ export const propertyMetadata = {
     example: "4705",
   },
 
-  unitCapacityDTOUserId:{
+  unitCapacityDTOUserId: {
     fieldLabels: {
       label: "",
       value: "userId",
     },
-    description: "The user name of the person or process that created the record if the Update Date is empty.  Otherwise this is the user name of the person or process that made the last update.",
+    description:
+      "The user name of the person or process that created the record if the Update Date is empty.  Otherwise this is the user name of the person or process that made the last update.",
     example: "abcde",
   },
 
-unitCapacityDTOAddDate:{
+  unitCapacityDTOAddDate: {
     fieldLabels: {
       label: "",
       value: "addDate",
@@ -5414,7 +5513,7 @@ unitCapacityDTOAddDate:{
     example: "2009-02-20",
   },
 
-  unitCapacityDTOUpdateDate:{
+  unitCapacityDTOUpdateDate: {
     fieldLabels: {
       label: "",
       value: "updateDate",
@@ -5423,16 +5522,17 @@ unitCapacityDTOAddDate:{
     example: "2009-02-20",
   },
 
-  unitCapacityDTOMaximumHourlyHeatInputCapacity:{
+  unitCapacityDTOMaximumHourlyHeatInputCapacity: {
     fieldLabels: {
       label: "Maximum Hourly Heat Input Capacity",
       value: "maximumHourlyHeatInputCapacity",
     },
-    description: "The design heat input capacity (in mmBtu/hr) for the unit or the highest hourly heat input rate observed in the past five years, whichever is greater.",
+    description:
+      "The design heat input capacity (in mmBtu/hr) for the unit or the highest hourly heat input rate observed in the past five years, whichever is greater.",
     example: 2322.1,
   },
 
-  unitCapacityDTOBeginDate:{
+  unitCapacityDTOBeginDate: {
     fieldLabels: {
       label: "Begin Date",
       value: "beginDate",
@@ -5441,16 +5541,17 @@ unitCapacityDTOAddDate:{
     example: "2009-01-01",
   },
 
-  unitCapacityDTOEndDate:{
+  unitCapacityDTOEndDate: {
     fieldLabels: {
       label: "End Date",
       value: "endDate",
     },
-    description: "Date on which a relationship or an activity ended. This value will be null for active records.",
+    description:
+      "Date on which a relationship or an activity ended. This value will be null for active records.",
     example: null,
   },
 
-  unitCapacityDTOActive:{
+  unitCapacityDTOActive: {
     fieldLabels: {
       label: "",
       value: "active",
@@ -5459,7 +5560,7 @@ unitCapacityDTOAddDate:{
     example: true,
   },
 
-  unitControlDTOId:{
+  unitControlDTOId: {
     fieldLabels: {
       label: "",
       value: "id",
@@ -5468,7 +5569,7 @@ unitCapacityDTOAddDate:{
     example: "618",
   },
 
-  unitControlDTOUnitId:{
+  unitControlDTOUnitId: {
     fieldLabels: {
       label: "",
       value: "unitId",
@@ -5477,7 +5578,7 @@ unitCapacityDTOAddDate:{
     example: "734",
   },
 
-  unitControlDTOUserId:{
+  unitControlDTOUserId: {
     fieldLabels: {
       label: "",
       value: "userId",
@@ -5486,7 +5587,7 @@ unitCapacityDTOAddDate:{
     example: "abcde",
   },
 
-  unitControlDTOAddDate:{
+  unitControlDTOAddDate: {
     fieldLabels: {
       label: "",
       value: "addDate",
@@ -5495,7 +5596,7 @@ unitCapacityDTOAddDate:{
     example: "2009-02-20",
   },
 
-  unitControlDTOUpdateDate:{
+  unitControlDTOUpdateDate: {
     fieldLabels: {
       label: "",
       value: "updateDate",
@@ -5504,16 +5605,17 @@ unitCapacityDTOAddDate:{
     example: "2009-02-20",
   },
 
-  unitControlDTOParameterCode:{
+  unitControlDTOParameterCode: {
     fieldLabels: {
       label: "Parameter Code",
       value: "parameterCode",
     },
-    description: "Code used to identify the parameter which is controlled by the control equipment.",
+    description:
+      "Code used to identify the parameter which is controlled by the control equipment.",
     example: "NOX",
   },
 
-  unitControlDTOControlCode:{
+  unitControlDTOControlCode: {
     fieldLabels: {
       label: "Control Code",
       value: "controlCode",
@@ -5522,52 +5624,57 @@ unitCapacityDTOAddDate:{
     example: "SNCR",
   },
 
-  unitControlDTOOriginalCode:{
+  unitControlDTOOriginalCode: {
     fieldLabels: {
       label: "Original Code",
       value: "originalCode",
     },
-    description: "Code used to identify that the control equipment was installed and operational as part of the original unit design.",
+    description:
+      "Code used to identify that the control equipment was installed and operational as part of the original unit design.",
     example: "0",
   },
 
-  unitControlDTOInstallDate:{
+  unitControlDTOInstallDate: {
     fieldLabels: {
       label: "Install Date",
       value: "installDate",
     },
-    description: "Approximate date the original control equipment was or will be installed.",
+    description:
+      "Approximate date the original control equipment was or will be installed.",
     example: "2005-01-01",
   },
 
-  unitControlDTOOptimizationDate:{
+  unitControlDTOOptimizationDate: {
     fieldLabels: {
       label: "Optimization Date",
       value: "optimizationDate",
     },
-    description: "The approximate date on which optimization of control equipment was completed and the equipment made fully operational if the control equipment was not part of the original installation.",
+    description:
+      "The approximate date on which optimization of control equipment was completed and the equipment made fully operational if the control equipment was not part of the original installation.",
     example: "2006-06-01",
   },
 
-  unitControlDTOSeasonalControlsIndicator:{
+  unitControlDTOSeasonalControlsIndicator: {
     fieldLabels: {
       label: "Seasonal Controls Indicator",
       value: "seasonalControlsIndicator",
     },
-    description: "Code used to identify if the NOx control equipment was used during the ozone season.",
+    description:
+      "Code used to identify if the NOx control equipment was used during the ozone season.",
     example: "0",
   },
 
-  unitControlDTORetireDate:{
+  unitControlDTORetireDate: {
     fieldLabels: {
       label: "Retire Date",
       value: "retireDate",
     },
-    description: "Date control equipment was retired. This value will be null for active records.",
+    description:
+      "Date control equipment was retired. This value will be null for active records.",
     example: null,
   },
 
-  unitControlDTOActive:{
+  unitControlDTOActive: {
     fieldLabels: {
       label: "",
       value: "active",
@@ -5576,7 +5683,7 @@ unitCapacityDTOAddDate:{
     example: true,
   },
 
-  unitFuelDTOId:{
+  unitFuelDTOId: {
     fieldLabels: {
       label: "",
       value: "id",
@@ -5585,7 +5692,7 @@ unitCapacityDTOAddDate:{
     example: "EXPCH0876-C97319A3E96540BF92077C58DB9E2A17",
   },
 
-  unitFuelDTOUnitId:{
+  unitFuelDTOUnitId: {
     fieldLabels: {
       label: "",
       value: "unitId",
@@ -5594,16 +5701,17 @@ unitCapacityDTOAddDate:{
     example: "91233",
   },
 
-  unitFuelDTOUserId:{
+  unitFuelDTOUserId: {
     fieldLabels: {
       label: "",
       value: "userId",
     },
-    description: "The user name of the person or process that created the record if the Update Date is empty.  Otherwise this is the user name of the person or process that made the last update.",
+    description:
+      "The user name of the person or process that created the record if the Update Date is empty.  Otherwise this is the user name of the person or process that made the last update.",
     example: "abcde",
   },
 
-  unitFuelDTOAddDate:{
+  unitFuelDTOAddDate: {
     fieldLabels: {
       label: "",
       value: "addDate",
@@ -5612,7 +5720,7 @@ unitCapacityDTOAddDate:{
     example: "2009-02-20",
   },
 
-  unitFuelDTOUpdateDate:{
+  unitFuelDTOUpdateDate: {
     fieldLabels: {
       label: "",
       value: "updateDate",
@@ -5621,16 +5729,17 @@ unitCapacityDTOAddDate:{
     example: "2015-04-16",
   },
 
-  unitFuelDTOFuelCode:{
+  unitFuelDTOFuelCode: {
     fieldLabels: {
       label: "Fuel Code",
       value: "fuelCode",
     },
-    description: "The type of fuel which a UNIT is capable or will be capable of combusting.",
+    description:
+      "The type of fuel which a UNIT is capable or will be capable of combusting.",
     example: "C",
   },
 
-  unitFuelDTOIndicatorCode:{
+  unitFuelDTOIndicatorCode: {
     fieldLabels: {
       label: "Indicator Code",
       value: "indicatorCode",
@@ -5639,7 +5748,7 @@ unitCapacityDTOAddDate:{
     example: "P",
   },
 
-  unitFuelDTOOzoneSeasonIndicator:{
+  unitFuelDTOOzoneSeasonIndicator: {
     fieldLabels: {
       label: "Ozone Season Indicator",
       value: "ozoneSeasonIndicator",
@@ -5648,34 +5757,37 @@ unitCapacityDTOAddDate:{
     example: "0",
   },
 
-  unitFuelDTODemGCV:{
+  unitFuelDTODemGCV: {
     fieldLabels: {
       label: "Demonstration Method for Gross Calorific Value",
       value: "demGCV",
     },
-    description: "Demonstration method to qualify for monthly GCV fuel sampling.",
+    description:
+      "Demonstration method to qualify for monthly GCV fuel sampling.",
     example: "GGC",
   },
 
-  unitFuelDTODemSO2:{
+  unitFuelDTODemSO2: {
     fieldLabels: {
       label: "Demonstration Method for Percent Sulfur",
       value: "demSO2",
     },
-    description: "Demonstration method to qualify for daily fuel sampling for percent sulfur.",
+    description:
+      "Demonstration method to qualify for daily fuel sampling for percent sulfur.",
     example: "SGC",
   },
 
-  unitFuelDTOActualOrProjectCode:{
+  unitFuelDTOActualOrProjectCode: {
     fieldLabels: {
       label: "",
       value: "actualOrProjectCode",
     },
-    description: "Indicator of whether the begin date for the fuel type is an actual date or a projected date.",
+    description:
+      "Indicator of whether the begin date for the fuel type is an actual date or a projected date.",
     example: "",
   },
 
-  unitFuelDTOSulfurContent:{
+  unitFuelDTOSulfurContent: {
     fieldLabels: {
       label: "",
       value: "sulfurContent",
@@ -5684,7 +5796,7 @@ unitCapacityDTOAddDate:{
     example: "",
   },
 
-  unitFuelDTOBeginDate:{
+  unitFuelDTOBeginDate: {
     fieldLabels: {
       label: "Begin Date",
       value: "beginDate",
@@ -5693,7 +5805,7 @@ unitCapacityDTOAddDate:{
     example: "1995-01-01",
   },
 
-  unitFuelDTOEndDate:{
+  unitFuelDTOEndDate: {
     fieldLabels: {
       label: "End Date",
       value: "endDate",
@@ -5702,7 +5814,7 @@ unitCapacityDTOAddDate:{
     example: "2015-03-30",
   },
 
-  unitFuelDTOActive:{
+  unitFuelDTOActive: {
     fieldLabels: {
       label: "",
       value: "active",
@@ -5711,7 +5823,7 @@ unitCapacityDTOAddDate:{
     example: true,
   },
 
-  unitStackConfigurationDTOId:{
+  unitStackConfigurationDTOId: {
     fieldLabels: {
       label: "",
       value: "id",
@@ -5720,7 +5832,7 @@ unitCapacityDTOAddDate:{
     example: "CAMD-18DD175CE7EF4256B78469865D84F576",
   },
 
-  unitStackConfigurationDTOUserId:{
+  unitStackConfigurationDTOUserId: {
     fieldLabels: {
       label: "",
       value: "userId",
@@ -5729,7 +5841,7 @@ unitCapacityDTOAddDate:{
     example: "abcde",
   },
 
-  unitStackConfigurationDTOAddDate:{
+  unitStackConfigurationDTOAddDate: {
     fieldLabels: {
       label: "",
       value: "addDate",
@@ -5738,7 +5850,7 @@ unitCapacityDTOAddDate:{
     example: "2009-02-20",
   },
 
-  unitStackConfigurationDTOUpdateDate:{
+  unitStackConfigurationDTOUpdateDate: {
     fieldLabels: {
       label: "",
       value: "updateDate",
@@ -5747,16 +5859,17 @@ unitCapacityDTOAddDate:{
     example: "2009-02-20",
   },
 
-  unitStackConfigurationDTOUnitId:{
+  unitStackConfigurationDTOUnitId: {
     fieldLabels: {
       label: "",
       value: "unitId",
     },
-    description: "Unique identifier of a unit record which is generated by the EPA Host System.",
+    description:
+      "Unique identifier of a unit record which is generated by the EPA Host System.",
     example: "2",
   },
 
-  unitStackConfigurationDTOStackPipeId:{
+  unitStackConfigurationDTOStackPipeId: {
     fieldLabels: {
       label: "Stack Pipe ID",
       value: "stackPipeId",
@@ -5765,25 +5878,27 @@ unitCapacityDTOAddDate:{
     example: "MDC-CCB8D6D0D4E34D24A99C01DCD14078DF",
   },
 
-  unitStackConfigurationDTOBeginDate:{
+  unitStackConfigurationDTOBeginDate: {
     fieldLabels: {
       label: "Begin Date",
       value: "beginDate",
     },
-    description: "Date in which information became effective or activity started.",
+    description:
+      "Date in which information became effective or activity started.",
     example: "1995-01-01",
   },
 
-  unitStackConfigurationDTOEndDate:{
+  unitStackConfigurationDTOEndDate: {
     fieldLabels: {
       label: "End Date",
       value: "endDate",
     },
-    description: "Last date in which information was effective or date in which activity ended. This value will be null for active records.",
+    description:
+      "Last date in which information was effective or date in which activity ended. This value will be null for active records.",
     example: "2020-12-31",
   },
 
-  unitStackConfigurationDTOActive:{
+  unitStackConfigurationDTOActive: {
     fieldLabels: {
       label: "",
       value: "active",
@@ -5792,7 +5907,7 @@ unitCapacityDTOAddDate:{
     example: true,
   },
 
-  monitorLocationDTOId:{
+  monitorLocationDTOId: {
     fieldLabels: {
       label: "",
       value: "id",
@@ -5801,16 +5916,17 @@ unitCapacityDTOAddDate:{
     example: "5",
   },
 
-  monitorLocationDTOUnitId:{
+  monitorLocationDTOUnitId: {
     fieldLabels: {
       label: "Unit ID",
       value: "unitId",
     },
-    description: "Unique identifier of a unit record which is generated by the EPA Host System. This value will be null if the record contains stack configuration.",
+    description:
+      "Unique identifier of a unit record which is generated by the EPA Host System. This value will be null if the record contains stack configuration.",
     example: null,
   },
 
-  monitorLocationDTOStackPipeId:{
+  monitorLocationDTOStackPipeId: {
     fieldLabels: {
       label: "Stack Pipe ID",
       value: "stackPipeId",
@@ -5819,52 +5935,57 @@ unitCapacityDTOAddDate:{
     example: "CS0AAN",
   },
 
-  monitorLocationDTOActiveDate:{
+  monitorLocationDTOActiveDate: {
     fieldLabels: {
       label: "Active Date",
       value: "activeDate",
     },
-    description: "The date that emissions first went through the stack or the effective date for data reporting.",
+    description:
+      "The date that emissions first went through the stack or the effective date for data reporting.",
     example: "1995-01-01",
   },
 
-  monitorLocationDTORetireDate:{
+  monitorLocationDTORetireDate: {
     fieldLabels: {
       label: "Retire Date",
       value: "retireDate",
     },
-    description: "The actual date that the stack or pipe was last used for emissions measurement or estimation purposes.",
+    description:
+      "The actual date that the stack or pipe was last used for emissions measurement or estimation purposes.",
     example: "2015-08-24",
   },
 
-  monitorLocationDTONonLoadBasedIndicator:{
+  monitorLocationDTONonLoadBasedIndicator: {
     fieldLabels: {
       label: "Non Load Based Indicator",
       value: "nonLoadBasedIndicator",
     },
-    description: "Used to indicate whether the unit is classified as a non-load based unit.",
+    description:
+      "Used to indicate whether the unit is classified as a non-load based unit.",
     example: "1",
   },
 
-  monitorLocationDTOUnitRecordId:{
+  monitorLocationDTOUnitRecordId: {
     fieldLabels: {
       label: "",
       value: "unitRecordId",
     },
-    description: "Unique identifier of a unit record which is generated by the EPA Host System.",
+    description:
+      "Unique identifier of a unit record which is generated by the EPA Host System.",
     example: "3",
   },
 
-  monitorLocationDTOName:{
+  monitorLocationDTOName: {
     fieldLabels: {
       label: "",
       value: "name",
     },
-    description: "Character codes source assigned to identify a stack, pipe and/or unit.",
+    description:
+      "Character codes source assigned to identify a stack, pipe and/or unit.",
     example: "CS0AAN",
   },
 
-  monitorLocationDTOType:{
+  monitorLocationDTOType: {
     fieldLabels: {
       label: "",
       value: "type",
@@ -5873,7 +5994,7 @@ unitCapacityDTOAddDate:{
     example: "stack",
   },
 
-  monitorLocationDTOActive:{
+  monitorLocationDTOActive: {
     fieldLabels: {
       label: "",
       value: "active",
@@ -5882,7 +6003,7 @@ unitCapacityDTOAddDate:{
     example: true,
   },
 
-  monitorPlanDTOId:{
+  monitorPlanDTOId: {
     fieldLabels: {
       label: "",
       value: "id",
@@ -5891,34 +6012,37 @@ unitCapacityDTOAddDate:{
     example: "TWCORNEL5-C0E3879920A14159BAA98E03F1980A7A",
   },
 
-  monitorPlanDTOOrisCode:{
+  monitorPlanDTOOrisCode: {
     fieldLabels: {
       label: "Oris Code",
       value: "orisCode",
     },
-    description: "EIA-assigned identifier or facility ID assigned by CAMD (if EIA number is not applicable).",
+    description:
+      "EIA-assigned identifier or facility ID assigned by CAMD (if EIA number is not applicable).",
     example: 3,
   },
 
-  monitorPlanDTOFacId:{
+  monitorPlanDTOFacId: {
     fieldLabels: {
       label: "",
       value: "facId",
     },
-    description: "Unique identifier of a facility record which is generated by the EPA Host System.",
+    description:
+      "Unique identifier of a facility record which is generated by the EPA Host System.",
     example: "1",
   },
 
-  monitorPlanDTOName:{
+  monitorPlanDTOName: {
     fieldLabels: {
       label: "",
       value: "name",
     },
-    description: "Character codes source assigned to identify a stack, pipe and/or unit.",
+    description:
+      "Character codes source assigned to identify a stack, pipe and/or unit.",
     example: "1,2,CSA00N",
   },
 
-  monitorPlanDTOBeginReportPeriodId:{
+  monitorPlanDTOBeginReportPeriodId: {
     fieldLabels: {
       label: "",
       value: "beginReportPeriodId",
@@ -5927,43 +6051,13 @@ unitCapacityDTOAddDate:{
     example: null,
   },
 
-  monitorPlanDTOEndReportPeriodId:{
+  monitorPlanDTOEndReportPeriodId: {
     fieldLabels: {
       label: "",
       value: "endReportPeriodId",
     },
-    description: "Unique identifier of a reporting period record. This value will be null for active records.",
+    description:
+      "Unique identifier of a reporting period record. This value will be null for active records.",
     example: null,
   },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 };

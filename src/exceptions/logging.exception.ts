@@ -4,7 +4,8 @@ export class LoggingException extends HttpException {
   public metadata: object = {};
 
   constructor(message: string | object, status: number, metadata?: object) {
-    super({
+    super(
+      {
         message: message,
         statusCode: status,
         error: (status: number) => {

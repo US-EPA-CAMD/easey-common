@@ -2,7 +2,7 @@ import {
   registerDecorator,
   ValidationOptions,
   ValidationArguments,
-} from 'class-validator';
+} from "class-validator";
 
 /**
  * This decorator takes in a min date and max date as a parameter
@@ -10,12 +10,12 @@ import {
  */
 export function IsInYearRange(
   property: Date[],
-  validationOptions?: ValidationOptions,
+  validationOptions?: ValidationOptions
 ) {
   // eslint-disable-next-line @typescript-eslint/ban-types
-  return function(object: Object, propertyName: string) {
+  return function (object: Object, propertyName: string) {
     registerDecorator({
-      name: 'isInDateRange',
+      name: "isInDateRange",
       target: object.constructor,
       propertyName: propertyName,
       constraints: [property],
@@ -26,9 +26,9 @@ export function IsInYearRange(
             const date = new Date(value, 0);
 
             return (
-              value === '1980' ||
-              value === '1985' ||
-              value === '1990' ||
+              value === "1980" ||
+              value === "1985" ||
+              value === "1990" ||
               (date >= property[0] && date <= property[1])
             );
           }
