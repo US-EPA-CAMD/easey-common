@@ -1,3 +1,10 @@
+# [10.4.0](https://github.com/US-EPA-CAMD/easey-common/compare/v10.3.1...v10.4.0) (2022-10-14)
+
+
+### Features
+
+* add pipe to validate email ([9cf22d0](https://github.com/US-EPA-CAMD/easey-common/commit/9cf22d0063fb1eff0aefea501b121f45d559f706))
+
 ## [10.3.1](https://github.com/US-EPA-CAMD/easey-common/compare/v10.3.0...v10.3.1) (2022-10-05)
 
 
