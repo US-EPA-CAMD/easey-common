@@ -1,3 +1,10 @@
+# [10.5.0](https://github.com/US-EPA-CAMD/easey-common/compare/v10.4.2...v10.5.0) (2022-10-26)
+
+
+### Features
+
+* **property metadata:** added heatInputMeasureFlg and primaryRepInfo property metadata ([312a565](https://github.com/US-EPA-CAMD/easey-common/commit/312a565e0d855bb88eb55b20741d0e214316cb9d))
+
 ## [10.4.2](https://github.com/US-EPA-CAMD/easey-common/compare/v10.4.1...v10.4.2) (2022-10-26)
 
 
