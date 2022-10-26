@@ -1,3 +1,10 @@
+## [10.4.2](https://github.com/US-EPA-CAMD/easey-common/compare/v10.4.1...v10.4.2) (2022-10-26)
+
+
+### Bug Fixes
+
+* fix in-in-range pipe ([a86ed44](https://github.com/US-EPA-CAMD/easey-common/commit/a86ed448ca3e341ef837c595a9f66fff4f2daa89))
+
 ## [10.4.1](https://github.com/US-EPA-CAMD/easey-common/compare/v10.4.0...v10.4.1) (2022-10-14)
 
 
