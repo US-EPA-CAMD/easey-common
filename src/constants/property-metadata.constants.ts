@@ -431,6 +431,15 @@ export const propertyMetadata = {
       "Banked allowances with a 2 to 1 ratio. (This is for OTC, NBP)",
     example: 0,
   },
+  primaryRepInfo: {
+    fieldLabels: {
+      label: "Primary Rep Info",
+      value: "primaryRepInfo",
+    },
+    description:
+      "Unique identifier(s) for the primary representative(s) at a facility",
+    example: 17364,
+  },
   emissions: {
     onLineOffLineIndicator: {
       fieldLabels: {
@@ -608,7 +617,7 @@ export const propertyMetadata = {
         label: "Ozone Season to Date Total",
         value: "ozoneSeasonToDateTotal",
       },
-      description: "Ozone season year to date total. ",
+      description: "Ozone season year to date total.",
       example: "596.7",
     },
     yearToDateTotal: {
@@ -632,7 +641,7 @@ export const propertyMetadata = {
         label: "Monitor Location Id",
         value: "monitoringLocationId",
       },
-      description: "Unique identifier of a monitoring location record. ",
+      description: "Unique identifier of a monitoring location record.",
       example: "785",
     },
     userId: {
@@ -649,7 +658,7 @@ export const propertyMetadata = {
         label: "Add Date",
         value: "addDate",
       },
-      description: "Date and time in which record was added. ",
+      description: "Date and time in which record was added.",
       example: "2019-04-23",
     },
     updateDate: {
@@ -665,7 +674,7 @@ export const propertyMetadata = {
         label: "Reporting Period ID",
         value: "reportingPeriodId",
       },
-      description: "Unique identifier of a reporting period record. ",
+      description: "Unique identifier of a reporting period record.",
       example: "105",
     },
     monitoringSystemId: {
@@ -897,7 +906,7 @@ export const propertyMetadata = {
         label: "Derived Hourly Value ID",
         value: "id",
       },
-      description: "Unique identifier of a derived hourly value record. ",
+      description: "Unique identifier of a derived hourly value record.",
       example: "jwalke12-877751BA987DE71FE053D7DD438665B9",
     },
     hourId: {
@@ -946,7 +955,7 @@ export const propertyMetadata = {
         value: "adjustedHourlyValue",
       },
       description:
-        "Adjusted parameter value for the hour, as calculated from measured values and then adjusted for bias, or the substitute value for missing data hours. ",
+        "Adjusted parameter value for the hour, as calculated from measured values and then adjusted for bias, or the substitute value for missing data hours.",
       example: "0.327",
     },
     unadjustedHourlyValue: {
@@ -1007,7 +1016,7 @@ export const propertyMetadata = {
         label: "Mass Flow Rate",
         value: "massFlowRate",
       },
-      description: "Mass flow rate during combustion. ",
+      description: "Mass flow rate during combustion.",
       example: "358",
     },
     sourceOfDataMassCode: {
@@ -1074,7 +1083,7 @@ export const propertyMetadata = {
         label: "Hourly GFM Reading",
         value: "hourlyGfmReading",
       },
-      description: "Monitored value of Gas Flow Meter. ",
+      description: "Monitored value of Gas Flow Meter.",
       example: "0.02",
     },
     hourlySfsrRatio: {
@@ -1115,7 +1124,7 @@ export const propertyMetadata = {
         value: "operatingTime",
       },
       description:
-        "The fraction of the clock hour during which the unit (or any unit venting through the stack) combusted any fuel. ",
+        "The fraction of the clock hour during which the unit (or any unit venting through the stack) combusted any fuel.",
       example: "1",
     },
     loadRange: {
@@ -1252,7 +1261,7 @@ export const propertyMetadata = {
         label: "Fuel Flow Period Code",
         value: "fuelFlowPeriodCode",
       },
-      description: "Code used to identify the long term fuel flow period. ",
+      description: "Code used to identify the long term fuel flow period.",
       example: "MJ",
     },
     gcvUnitsOfMeasureCode: {
@@ -1310,7 +1319,7 @@ export const propertyMetadata = {
         value: "unadjustedHourlyValue",
       },
       description:
-        "Unadjusted value calculated from measured values for the hour in scientific notation. ",
+        "Unadjusted value calculated from measured values for the hour in scientific notation.",
       example: "6.27E-02",
     },
     matsMonitorHourlyValueId: {
@@ -1359,7 +1368,7 @@ export const propertyMetadata = {
         label: "Moisture Basis ",
         value: "moistureBasis",
       },
-      description: "Moisture basis for measured value. ",
+      description: "Moisture basis for measured value.",
       example: "D",
     },
     unadjustedHourlyValueMonitorHourlyValueDto: {
@@ -1531,7 +1540,7 @@ export const propertyMetadata = {
         label: "NSPS4T Fourth Quarter ID",
         value: "id",
       },
-      description: "Unique identifier of a NSPS4T Compliance Period record. ",
+      description: "Unique identifier of a NSPS4T Compliance Period record.",
       example: "OCELGNWDP7-49B1D74DCEF147BDAAB44A32A783D314",
     },
     nsps4tSummaryIdNsps4tFourthQuarterDto: {
@@ -1539,7 +1548,7 @@ export const propertyMetadata = {
         label: "NSPS4T Fourth Quarter ID",
         value: "nsps4tSumId",
       },
-      description: "Unique identifier of a NSPS4T Compliance Period record. ",
+      description: "Unique identifier of a NSPS4T Compliance Period record.",
       example: "OCELGNWDP7-49B1D74DCEF147BDAAB44A32A783D314",
     },
     annualEnergySold: {
@@ -1841,7 +1850,7 @@ export const propertyMetadata = {
         label: "Weekly Test Summary ID",
         value: "weeklyTestSumId",
       },
-      description: "Unique identifier of a weekly test summary record. ",
+      description: "Unique identifier of a weekly test summary record.",
       example: "PAULDESKTO-98968A0A86D449F7A53F3176BA9B8B99",
     },
     apsIndicator: {
@@ -2119,7 +2128,7 @@ export const propertyMetadata = {
       label: "HCl Mass Measure Indicator",
       value: "hclMassMeasureFlg",
     },
-    description: "Describes how the HCl Mass values were determined. ",
+    description: "Describes how the HCl Mass values were determined.",
     example: "Measured",
   },
   hclOutputRate: {
@@ -2140,6 +2149,13 @@ export const propertyMetadata = {
       "Quantity of heat in mmBtu calculated by multiplying the quantity of fuel by the fuels heat content.",
     example: 1470.2,
   },
+  heatInputMeasureFlg: {
+    fieldLabels: {
+      label: "Heat Input Measure Indicator",
+      value: "heatInputMeasureFlg",
+    },
+    description: "Describes how the Heat Input values were determined.",
+  },
   hfInputRate: {
     fieldLabels: {
       label: "HF Input Rate (lb/mmBtu)",
@@ -2159,7 +2175,7 @@ export const propertyMetadata = {
       label: "HF Mass Measure Indicator",
       value: "hfMassMeasureFlg",
     },
-    description: "Describes how the HF Mass values were determined. ",
+    description: "Describes how the HF Mass values were determined.",
   },
   hfOutputRate: {
     fieldLabels: {
@@ -3367,7 +3383,7 @@ export const propertyMetadata = {
       label: "Duct Depth",
       value: "ductDepth",
     },
-    description: "The depth of the rectangular duct at the test location. ",
+    description: "The depth of the rectangular duct at the test location.",
     example: 18.5,
   },
 
