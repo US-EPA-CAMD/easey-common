@@ -1,3 +1,10 @@
+# [10.6.0](https://github.com/US-EPA-CAMD/easey-common/compare/v10.5.0...v10.6.0) (2022-10-27)
+
+
+### Features
+
+* **excludable columns:** adding heatInputMeasureFlg and primaryRepInfo to excludable columns ([0c20e0e](https://github.com/US-EPA-CAMD/easey-common/commit/0c20e0eb8065f03d9e6d758bff37cd66d4386784))
+
 # [10.5.0](https://github.com/US-EPA-CAMD/easey-common/compare/v10.4.2...v10.5.0) (2022-10-26)
 
 
