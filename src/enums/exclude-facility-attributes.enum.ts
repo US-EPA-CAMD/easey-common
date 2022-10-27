@@ -1,6 +1,7 @@
 export enum ExcludeFacilityAttributes {
   ASSOC_STACKS = "associatedStacks",
   PRG_CODE_INFO = "programCodeInfo",
+  PRIMARY_REP_INFO = "primaryRepInfo",
   EPA_REGION = "epaRegion",
   NERC_REGION = "nercRegion",
   COUNTY = "county",

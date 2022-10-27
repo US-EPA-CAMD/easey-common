@@ -7,6 +7,7 @@ export enum ExcludeHourlyApportionedEmissions {
   NOX_CONTROL_INFO = "noxControlInfo",
   NOX_MASS_MEASURE_FLAG = "noxMassMeasureFlg",
   NOX_RATE_MEASURE_FLAG = "noxRateMeasureFlg",
+  HEAT_INPUT_MEASURE_FLAG = "heatInputMeasureFlg",
   OP_TIME = "opTime",
   PM_CONTROL_INFO = "pmControlInfo",
   PRIMARY_FUEL_INFO = "primaryFuelInfo",
