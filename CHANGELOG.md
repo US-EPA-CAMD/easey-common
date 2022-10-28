@@ -1,3 +1,16 @@
+# [11.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v10.7.0...v11.0.0) (2022-10-28)
+
+
+### Bug Fixes
+
+* **validation pipes:** fixed IsInDateRange validation issue ([a32f5f8](https://github.com/US-EPA-CAMD/easey-common/commit/a32f5f8a3c7db9a41870de00ad420f4997359e43))
+
+
+### BREAKING CHANGES
+
+* **validation pipes:** IsInDateRange validation pipe no longer takes the 'currentDate' property as a
+parameter
+
 # [10.7.0](https://github.com/US-EPA-CAMD/easey-common/compare/v10.6.0...v10.7.0) (2022-10-28)
 
 
