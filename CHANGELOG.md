@@ -1,3 +1,10 @@
+# [10.7.0](https://github.com/US-EPA-CAMD/easey-common/compare/v10.6.0...v10.7.0) (2022-10-28)
+
+
+### Features
+
+* add additional arguments to IsInRagePipe ([3ca93e9](https://github.com/US-EPA-CAMD/easey-common/commit/3ca93e9b4220ab0c9cb2122fd2ae36fd3cdda2fd))
+
 # [10.6.0](https://github.com/US-EPA-CAMD/easey-common/compare/v10.5.0...v10.6.0) (2022-10-27)
 
 
