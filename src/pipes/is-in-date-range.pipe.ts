@@ -4,12 +4,8 @@ import {
   ValidationArguments,
 } from "class-validator";
 
-/**
- * This decorator takes in a min date and 'currentDate' as a parameter
- * The date range is the min date -> max date inclusive
- */
 export function IsInDateRange(
-  property: [Date, string],
+  minDate: Date,
   yearOnly: boolean,
   reportingQuarter: boolean,
   isAnnual: boolean,
@@ -20,7 +16,6 @@ export function IsInDateRange(
       name: "isInDateRange",
       target: object.constructor,
       propertyName: propertyName,
-      constraints: [property],
       options: validationOptions,
       validator: {
         validate(value: any, args: ValidationArguments) {
@@ -31,12 +26,13 @@ export function IsInDateRange(
             ) {
               return true;
             }
+
+            const curDate = new Date(Date.now());
+            const curYear = curDate.getFullYear();
             const dateObject = yearOnly
               ? new Date(value as number, 0)
               : new Date(value);
-            const minDate = args.constraints[0][0];
-            const curDate = (args.object as Date)[args.constraints[0][1]];
-            const curYear = curDate.getFullYear();
+
             if (reportingQuarter) {
               if (curDate < new Date(`March 31, ${curYear}`)) {
                 return (
