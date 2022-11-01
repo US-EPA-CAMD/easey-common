@@ -14,12 +14,12 @@ export function Min(minVal: number, validationOptions?: ValidationOptions) {
       options: validationOptions,
       validator: {
         validate(value: any, args: ValidationArguments) {
-          if (value) {
-            return (
-              isNumberString(value, { no_symbols: true }) &&
-              (value as number) >= minVal
-            );
-          }
+          if (value !== null) {
+						return (
+							isNumberString(value, { no_symbols: true }) &&
+							(value as number) >= minVal
+						);
+					}
           return true;
         },
       },

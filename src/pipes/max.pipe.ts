@@ -14,12 +14,12 @@ export function Max(maxVal: number, validationOptions?: ValidationOptions) {
       options: validationOptions,
       validator: {
         validate(value: any, args: ValidationArguments) {
-          if (value) {
-            return (
-              isNumberString(value, { no_symbols: true }) &&
-              (value as number) <= maxVal
-            );
-          }
+          if (value !== null) {
+						return (
+							isNumberString(value, { no_symbols: true }) &&
+							(value as number) <= maxVal
+						);
+					}
           return true;
         },
       },
