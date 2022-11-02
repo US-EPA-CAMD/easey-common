@@ -1,3 +1,10 @@
+## [11.0.2](https://github.com/US-EPA-CAMD/easey-common/compare/v11.0.1...v11.0.2) (2022-11-02)
+
+
+### Bug Fixes
+
+* update min and max pipes ([26505d2](https://github.com/US-EPA-CAMD/easey-common/commit/26505d25488784a1f35ef7ca332027d106a731ac))
+
 ## [11.0.1](https://github.com/US-EPA-CAMD/easey-common/compare/v11.0.0...v11.0.1) (2022-11-01)
 
 
