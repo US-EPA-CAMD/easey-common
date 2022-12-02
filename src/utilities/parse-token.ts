@@ -13,7 +13,14 @@ export const parseToken = (token: string) => {
   const arr = token.split("&");
   arr.forEach((element) => {
     const keyValue = element.split("=");
-    user[keyValue[0]] = keyValue[1];
+
+    if(keyValue[0] === "permissions"){
+      const permissions = JSON.parse(keyValue[1]);
+      user.isAdmin = permissions.isAdmin;
+      user.roles = permissions.facilities;
+    }else{
+      user[keyValue[0]] = keyValue[1];  
+    }
   });
 
   return user;
