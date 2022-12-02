@@ -1,3 +1,10 @@
+# [11.1.0](https://github.com/US-EPA-CAMD/easey-common/compare/v11.0.2...v11.1.0) (2022-12-02)
+
+
+### Features
+
+* upgraded parseToken implementation ([91b4c44](https://github.com/US-EPA-CAMD/easey-common/commit/91b4c44a795222b69a44556521308331aea7a8a0))
+
 ## [11.0.2](https://github.com/US-EPA-CAMD/easey-common/compare/v11.0.1...v11.0.2) (2022-11-02)
 
 
