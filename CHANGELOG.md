@@ -1,3 +1,12 @@
+## [11.1.1](https://github.com/US-EPA-CAMD/easey-common/compare/v11.1.0...v11.1.1) (2022-12-16)
+
+
+### Bug Fixes
+
+* fix build issue ([557290d](https://github.com/US-EPA-CAMD/easey-common/commit/557290d0bab803bd0034d1758076d6bd332ebb94))
+* made permissions an array ([faf8695](https://github.com/US-EPA-CAMD/easey-common/commit/faf8695daa6b6a27bad07ec7b21241823fd326ab))
+* updated parseToken and CurrentUser to be consistent ([bc5f355](https://github.com/US-EPA-CAMD/easey-common/commit/bc5f355d6c3a8b278dc5b3036b47b04a168bd6a2))
+
 # [11.1.0](https://github.com/US-EPA-CAMD/easey-common/compare/v11.0.2...v11.1.0) (2022-12-02)
 
 
