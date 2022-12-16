@@ -7,19 +7,19 @@ export const parseToken = (token: string) => {
     expiration: null,
     clientIp: null,
     isAdmin: false,
-    roles: [],
+    permissionSet: [],
   };
 
-  const arr = token.split("&");
+  const arr = token.split('&');
   arr.forEach((element) => {
-    const keyValue = element.split("=");
+    const keyValue = element.split('=');
 
-    if(keyValue[0] === "permissions"){
+    if (keyValue[0] === 'permissions') {
       const permissions = JSON.parse(keyValue[1]);
       user.isAdmin = permissions.isAdmin;
-      user.roles = permissions.facilities;
-    }else{
-      user[keyValue[0]] = keyValue[1];  
+      user.permissionSet = permissions.facilities;
+    } else {
+      user[keyValue[0]] = keyValue[1];
     }
   });
 

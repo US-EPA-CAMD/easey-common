@@ -1,6 +1,6 @@
-export interface UserRole {
-  orisCode: string;
-  role: string;
+export interface UserPermissionSet {
+  id: number;
+  permissions: string;
 }
 
 export interface CurrentUser {
@@ -9,5 +9,5 @@ export interface CurrentUser {
   expiration: string;
   clientIp: string;
   isAdmin: boolean;
-  roles: UserRole[];
+  permissionSet: UserPermissionSet[];
 }
