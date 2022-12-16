@@ -1,6 +1,6 @@
 export interface UserPermissionSet {
   id: number;
-  permissions: string;
+  permissions: string[];
 }
 
 export interface CurrentUser {
