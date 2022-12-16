@@ -1,1 +1,1 @@
-export { UserRole, CurrentUser } from "./current-user.interface";
+export { UserPermissionSet, CurrentUser } from "./current-user.interface";
