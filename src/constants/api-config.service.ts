@@ -30,4 +30,9 @@ export class ApiConfigService {
     const host = this.getHost("ACCOUNT", 8030);
     return `${host}/account-mgmt/`;
   }
+
+  public static getEmissionsApi(): string {
+    const host = this.getHost("EMISSIONS", 8040);
+    return `${host}/emissions-mgmt`;
+  }
 }
