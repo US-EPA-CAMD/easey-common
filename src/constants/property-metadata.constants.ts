@@ -2812,6 +2812,14 @@ export const propertyMetadata = {
     description: "Unique identifier of a test extension exemption record.",
     example: "EPA-TESTEXTEXEM-123-a3b0c1d4e6",
   },
+  qaCertificationEventId: {
+    fieldLabels: {
+      label: "",
+      value: "id",
+    },
+    description: "Unique identifier of a QA certification event record.",
+    example: "EPA-QACERTEVENT-123-a3b0c1d4e6",
+  },
   testTypeCode: {
     fieldLabels: {
       label: "",
