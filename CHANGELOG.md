@@ -1,3 +1,10 @@
+## [11.2.2](https://github.com/US-EPA-CAMD/easey-common/compare/v11.2.1...v11.2.2) (2023-01-20)
+
+
+### Bug Fixes
+
+* update qa-cert-event property metadata ([f9bb0b5](https://github.com/US-EPA-CAMD/easey-common/commit/f9bb0b5fc458b7402cb04f7b4eb12dd03f97b9e3))
+
 ## [11.2.1](https://github.com/US-EPA-CAMD/easey-common/compare/v11.2.0...v11.2.1) (2023-01-20)
 
 
