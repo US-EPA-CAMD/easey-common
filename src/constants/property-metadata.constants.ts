@@ -2810,7 +2810,7 @@ export const propertyMetadata = {
       value: "id",
     },
     description: "Unique identifier of a test extension exemption record.",
-    example: "EPA-TESTEXTEXEM-123",
+    example: "EPA-TESTEXTEXEM-123-a3b0c1",
   },
   testTypeCode: {
     fieldLabels: {
