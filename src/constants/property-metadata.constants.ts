@@ -2804,6 +2804,14 @@ export const propertyMetadata = {
     description: "Unique identifier of a test summary record.",
     example: "TESTSUM7DAY123",
   },
+  testExtensionExemptionId: {
+    fieldLabels: {
+      label: "",
+      value: "id",
+    },
+    description: "Unique identifier of a test extension exemption record.",
+    example: "EPA-TESTEXTEXEM-123",
+  },
   testTypeCode: {
     fieldLabels: {
       label: "",
