@@ -1,4 +1,4 @@
-import { uuidv4 } from 'uuid';
+import { v4 as uuid } from 'uuid';
 import { existsSync, readFileSync } from 'fs';
 
 export class DataDictionaryService {
@@ -32,7 +32,7 @@ export class DataDictionaryService {
     if (propertyName === 'id') {
       return {
         description: `Primary unique identifier of a ${metadataKey} record. `,
-        example: uuidv4(),
+        example: uuid(),
       };
     }
 
