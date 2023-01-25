@@ -1,1 +1,1 @@
-export { DataDictionaryService } from "./data-dictionary.service";
+export { DataDictionary } from "./data-dictionary";
