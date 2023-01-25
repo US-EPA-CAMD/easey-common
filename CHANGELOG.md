@@ -1,3 +1,15 @@
+# [13.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v12.0.0...v13.0.0) (2023-01-25)
+
+
+### Features
+
+* **data dictionaey:** refactored data dictionary to be used more easily ([49186bd](https://github.com/US-EPA-CAMD/easey-common/commit/49186bdfdb37cde4daee05f775a254956dcea6de))
+
+
+### BREAKING CHANGES
+
+* **data dictionaey:** refactored data dictionary to be used more easily
+
 # [12.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v11.2.2...v12.0.0) (2023-01-25)
 
 
