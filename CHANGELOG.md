@@ -1,3 +1,20 @@
+# [12.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v11.2.2...v12.0.0) (2023-01-25)
+
+
+### Bug Fixes
+
+* **bug:** fixing usage of uuid in data dictionary service ([06e8578](https://github.com/US-EPA-CAMD/easey-common/commit/06e8578afb5187509d8a3509a5ca341079e21a9f))
+
+
+### Features
+
+* **data dictionary service:** added data dictionary service and methods ([86a9afe](https://github.com/US-EPA-CAMD/easey-common/commit/86a9afe09f72f7ea3bfb498f6e715e10754a60f4))
+
+
+### BREAKING CHANGES
+
+* **data dictionary service:** removed old data dictionary methods and added a service
+
 ## [11.2.2](https://github.com/US-EPA-CAMD/easey-common/compare/v11.2.1...v11.2.2) (2023-01-20)
 
 
