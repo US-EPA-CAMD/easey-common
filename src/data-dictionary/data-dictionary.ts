@@ -4,8 +4,7 @@ export class DataDictionary {
   static properties = DataDictionary.load();
 
   private static load() {
-    const path = `${__dirname}../../../../data-dictionary.json`;
-    console.log(path);
+    const path = `${__dirname}/../../../../data-dictionary.json`;
 
     if (existsSync(path)) {
       return JSON.parse(readFileSync(path, 'utf8'));
