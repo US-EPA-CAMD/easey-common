@@ -1,3 +1,10 @@
+# [13.1.0](https://github.com/US-EPA-CAMD/easey-common/compare/v13.0.4...v13.1.0) (2023-01-26)
+
+
+### Features
+
+* **data dictionary:** fixed path loading issue to load from app root ([ae0b64c](https://github.com/US-EPA-CAMD/easey-common/commit/ae0b64c3326c3be6e5b983b04708c3f2da4f21c9))
+
 ## [13.0.4](https://github.com/US-EPA-CAMD/easey-common/compare/v13.0.3...v13.0.4) (2023-01-26)
 
 
