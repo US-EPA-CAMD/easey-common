@@ -4,17 +4,13 @@ export class DataDictionary {
   static properties = DataDictionary.load();
 
   private static load() {
-    if (existsSync('src/data-dictionary.json')) {
-      return JSON.parse(
-        readFileSync('src/data-dictionary.json', 'utf8')
-      );
-    } else if (existsSync('./data-dictionary.json')) {
-      return JSON.parse(
-        readFileSync('./data-dictionary.json', 'utf8')
-      );
+    const path = '../../../data-dictionary.json';
+
+    if (existsSync(path)) {
+      return JSON.parse(readFileSync(path, 'utf8'));
     } else {
       console.log('data-dictionary.json is mising and can not be loaded...');
-      console.log('To properly create swagger documentation download data-dictionary.json using the content api and place in app root');
+      console.log('To properly create swagger documentation download data-dictionary.json using the content api and place in the "app" root');
     }
 
     return {};
