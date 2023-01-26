@@ -1,3 +1,10 @@
+## [13.0.1](https://github.com/US-EPA-CAMD/easey-common/compare/v13.0.0...v13.0.1) (2023-01-26)
+
+
+### Bug Fixes
+
+* **data dictionary:** correcting the path to load file from ([2c3304f](https://github.com/US-EPA-CAMD/easey-common/commit/2c3304f276f73573a098bdf08daaa4ba3b46ef32))
+
 # [13.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v12.0.0...v13.0.0) (2023-01-25)
 
 
