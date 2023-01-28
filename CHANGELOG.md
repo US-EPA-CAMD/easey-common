@@ -1,3 +1,15 @@
+# [14.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v13.1.0...v14.0.0) (2023-01-28)
+
+
+### Features
+
+* **data dictionary:** updated data dictionary format and added enums ([75abff7](https://github.com/US-EPA-CAMD/easey-common/commit/75abff7980efa65e0e9d02d707807805348dbd03))
+
+
+### BREAKING CHANGES
+
+* **data dictionary:** updated to new format and added property key and override key enums
+
 # [13.1.0](https://github.com/US-EPA-CAMD/easey-common/compare/v13.0.4...v13.1.0) (2023-01-26)
 
 
