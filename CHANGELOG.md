@@ -1,3 +1,10 @@
+# [14.1.0](https://github.com/US-EPA-CAMD/easey-common/compare/v14.0.1...v14.1.0) (2023-02-02)
+
+
+### Features
+
+* added RoleGuard ([a995fd7](https://github.com/US-EPA-CAMD/easey-common/commit/a995fd74a4682b437cc5c0418d40748096ee6dd8))
+
 ## [14.0.1](https://github.com/US-EPA-CAMD/easey-common/compare/v14.0.0...v14.0.1) (2023-01-28)
 
 
