@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+  <file path="C:\Users\kyleh\Desktop\Apis\easey-common\src\guards\roles.guard.spec.ts">
+    <testCase name="RolesGuard should be defined" duration="8"/>
+    <testCase name="RolesGuard should execute without error and call the handlePathParamFunction when path param is present" duration="3"/>
+    <testCase name="RolesGuard should execute without error and call the handleBodyParamValidation when path param is present" duration="2"/>
+    <testCase name="RolesGuard execute the handlePathParamValidation with existing property" duration="2"/>
+    <testCase name="RolesGuard execute the handleBodyParamValidation with nested dto object" duration="25"/>
+    <testCase name="RolesGuard execute the handleBodyParamValidation with nested dto object and fail" duration="3"/>
+  </file>
+</testExecutions>

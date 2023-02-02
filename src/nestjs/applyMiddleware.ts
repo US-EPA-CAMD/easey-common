@@ -64,6 +64,7 @@ export async function applyMiddleware(
     app.useGlobalPipes(
       new ValidationPipe({
         transform: true,
+        forbidUnknownValues: false,
       })
     );
   }
