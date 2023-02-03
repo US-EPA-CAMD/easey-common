@@ -1,3 +1,10 @@
+# [14.2.0](https://github.com/US-EPA-CAMD/easey-common/compare/v14.1.0...v14.2.0) (2023-02-03)
+
+
+### Features
+
+* added role guard enable config ([b67b30b](https://github.com/US-EPA-CAMD/easey-common/commit/b67b30b15e729343101ecca48446ca7f5979087a))
+
 # [14.1.0](https://github.com/US-EPA-CAMD/easey-common/compare/v14.0.1...v14.1.0) (2023-02-02)
 
 
