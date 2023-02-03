@@ -3,15 +3,10 @@ import { ApiBearerAuth } from "@nestjs/swagger";
 import { AuthGuard, RolesGuard } from "../guards";
 import { ValidatorParams } from "../interfaces";
 
-export function RoleGuard(
-  params: ValidatorParams,
-  lookupType: number,
-  requiredRole: string
-) {
+export function RoleGuard(params: ValidatorParams, lookupType: number) {
   return applyDecorators(
     SetMetadata("params", params),
     SetMetadata("lookupType", lookupType),
-    SetMetadata("requiredRole", requiredRole),
     UseGuards(AuthGuard, RolesGuard),
     ApiBearerAuth("Token")
   );

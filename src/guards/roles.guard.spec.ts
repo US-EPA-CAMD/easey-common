@@ -5,6 +5,7 @@ import { createMock } from "@golevelup/ts-jest";
 import { ExecutionContext } from "@nestjs/common";
 import { LookupType } from "../enums";
 import { ValidatorParams } from "src/interfaces";
+import { ConfigService } from "@nestjs/config";
 
 describe("RolesGuard", () => {
   let guard: RolesGuard;
@@ -21,6 +22,12 @@ describe("RolesGuard", () => {
           useValue: {
             constructor: jest.fn(),
             get: jest.fn(),
+          },
+        },
+        {
+          provide: ConfigService,
+          useFactory: () => {
+            return { get: jest.fn().mockReturnValue("true") };
           },
         },
       ],
