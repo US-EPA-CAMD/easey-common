@@ -1,14 +1,20 @@
 import { Injectable, CanActivate, ExecutionContext } from "@nestjs/common";
 import { BadRequestException } from "@nestjs/common/exceptions";
+import { ConfigService } from "@nestjs/config";
 import { Reflector } from "@nestjs/core";
+import { parseBool } from "../utilities";
 import { getManager } from "typeorm";
 import { LookupType } from "../enums";
 import { ValidatorParams } from "../interfaces";
 
 @Injectable()
 export class RolesGuard implements CanActivate {
-  constructor(private reflector: Reflector) {}
+  constructor(
+    private reflector: Reflector,
+    private configService: ConfigService
+  ) {}
 
+  // Need this to mock the getManager without mocking all of typeorm
   returnManager(): any {
     return getManager();
   }
@@ -70,25 +76,29 @@ export class RolesGuard implements CanActivate {
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
     const request = context.switchToHttp().getRequest();
-    const permissions = request.user.permissionSet;
 
-    const requiredRole = this.reflector.get<string>(
-      "requiredRole",
-      context.getHandler()
-    );
+    // Allow enable or disable of the guard but still set the allowed decorators
+    if (!parseBool(this.configService.get("app.enableRoleGuard"))) {
+      request.allowedLocations = null;
+      request.allowedPlans = null;
+      request.allowedOrisCodes = null;
+      return true;
+    }
+
+    const permissions = request.user.permissionSet;
     const lookupType = this.reflector.get<number>(
       "lookupType",
       context.getHandler()
     );
+
     const params = this.reflector.get<ValidatorParams>(
       "params",
       context.getHandler()
     );
 
-    const facilitiesWithRole = permissions
-      .filter((f) => f.permissions.includes(requiredRole))
-      .map((m) => m.id);
+    const facilitiesWithRole = permissions.map((p) => p.id);
 
+    // Pull the list of data that the user has access to based on their facility list
     let lookupDataList;
     switch (lookupType) {
       case LookupType.Location:
@@ -113,18 +123,21 @@ export class RolesGuard implements CanActivate {
         break;
     }
 
+    //Determine the validation that needs to get executed. In the case there is none, return true, and use the unpacked list of accesible location / plan / facility data from the decorators
     if (params.pathParam) {
       return this.handlePathParamValidation(
         context,
         params.pathParam,
         lookupDataList
       );
-    } else {
+    } else if (params.bodyParam) {
       return this.handleBodyParamValidation(
         context,
         params.bodyParam,
         lookupDataList
       );
+    } else {
+      return true;
     }
   }
 }
