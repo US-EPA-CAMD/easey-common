@@ -157,7 +157,9 @@ describe("RolesGuard", () => {
       }),
     });
 
-    expect(guard.handlePathParamValidation(context, "locId", ["5"])).toBe(true);
+    expect(
+      guard.handlePathParamValidation(context, "locId", ["5"], false)
+    ).toBe(true);
   });
 
   it("execute the handleBodyParamValidation with nested dto object", async () => {
@@ -215,7 +217,8 @@ describe("RolesGuard", () => {
     const result = await guard.handleBodyParamValidation(
       context,
       "locations.*.innerLocation.*.val",
-      ["5"]
+      ["5"],
+      false
     );
 
     expect(result).toBe(true);
@@ -276,7 +279,8 @@ describe("RolesGuard", () => {
     const result = await guard.handleBodyParamValidation(
       context,
       "locations.*.innerLocation.*.val",
-      ["5"]
+      ["5"],
+      false
     );
 
     expect(result).toBe(false);

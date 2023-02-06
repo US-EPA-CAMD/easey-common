@@ -20,12 +20,22 @@ export class RolesGuard implements CanActivate {
   }
 
   // Find the corresponding request parameter and check to see if the user has permissions
-  handlePathParamValidation(context: ExecutionContext, lookupKey, lookupList) {
+  handlePathParamValidation(
+    context: ExecutionContext,
+    lookupKey,
+    lookupList,
+    toParseInt
+  ) {
     const request = context.switchToHttp().getRequest();
     const params = request.params;
 
     if (params[lookupKey]) {
       const lookupVal = params[lookupKey];
+
+      if (toParseInt) {
+        return lookupList.includes(parseInt(lookupVal));
+      }
+
       return lookupList.includes(lookupVal);
     } else {
       console.warn("Are you sure you entered the request parameter correctly?");
@@ -36,16 +46,26 @@ export class RolesGuard implements CanActivate {
   }
 
   // Recursively drills into a nested object and makes sure all properties are included in the lookup list
-  private recurseBody(data, pathChunks, step, lookupList) {
+  private recurseBody(data, pathChunks, step, lookupList, toParseInt) {
     if (step === pathChunks.length - 1) {
       //Finish recursion base case
+      if (toParseInt) {
+        return lookupList.includes(parseInt(data[pathChunks[step]]));
+      }
+
       return lookupList.includes(data[pathChunks[step]]);
     }
 
     if (pathChunks[step] === "*") {
       for (const newChunk of data) {
         if (
-          this.recurseBody(newChunk, pathChunks, step + 1, lookupList) === false
+          this.recurseBody(
+            newChunk,
+            pathChunks,
+            step + 1,
+            lookupList,
+            toParseInt
+          ) === false
         ) {
           return false;
         }
@@ -57,7 +77,8 @@ export class RolesGuard implements CanActivate {
         data[pathChunks[step]],
         pathChunks,
         step + 1,
-        lookupList
+        lookupList,
+        toParseInt
       );
     }
   }
@@ -66,12 +87,19 @@ export class RolesGuard implements CanActivate {
   async handleBodyParamValidation(
     context: ExecutionContext,
     lookupKey,
-    lookupList
+    lookupList,
+    toParseInt
   ) {
     const lookupKeyParts = lookupKey.split(".");
     let dataChunk = context.switchToHttp().getRequest().body;
 
-    return this.recurseBody(dataChunk, lookupKeyParts, 0, lookupList);
+    return this.recurseBody(
+      dataChunk,
+      lookupKeyParts,
+      0,
+      lookupList,
+      toParseInt
+    );
   }
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
@@ -98,6 +126,8 @@ export class RolesGuard implements CanActivate {
 
     const facilitiesWithRole = permissions.map((p) => p.id);
 
+    let toParseInt = false;
+
     // Pull the list of data that the user has access to based on their facility list
     let lookupDataList;
     switch (lookupType) {
@@ -118,6 +148,7 @@ export class RolesGuard implements CanActivate {
         request.allowedPlans = lookupDataList;
         break;
       case LookupType.Facility:
+        toParseInt = true;
         lookupDataList = facilitiesWithRole;
         request.allowedOrisCodes = lookupDataList;
         break;
@@ -128,13 +159,15 @@ export class RolesGuard implements CanActivate {
       return this.handlePathParamValidation(
         context,
         params.pathParam,
-        lookupDataList
+        lookupDataList,
+        toParseInt
       );
     } else if (params.bodyParam) {
       return this.handleBodyParamValidation(
         context,
         params.bodyParam,
-        lookupDataList
+        lookupDataList,
+        toParseInt
       );
     } else {
       return true;
