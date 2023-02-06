@@ -1,3 +1,10 @@
+## [14.2.1](https://github.com/US-EPA-CAMD/easey-common/compare/v14.2.0...v14.2.1) (2023-02-06)
+
+
+### Bug Fixes
+
+* fixed role guard parsing issue ([09dd891](https://github.com/US-EPA-CAMD/easey-common/commit/09dd89172138787c2956a974b5ef41f1ae5e014d))
+
 # [14.2.0](https://github.com/US-EPA-CAMD/easey-common/compare/v14.1.0...v14.2.0) (2023-02-03)
 
 
