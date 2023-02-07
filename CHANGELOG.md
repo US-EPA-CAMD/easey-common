@@ -1,3 +1,10 @@
+## [14.2.2](https://github.com/US-EPA-CAMD/easey-common/compare/v14.2.1...v14.2.2) (2023-02-07)
+
+
+### Bug Fixes
+
+* added possible null permissionSet ([eee5a3f](https://github.com/US-EPA-CAMD/easey-common/commit/eee5a3fbb0eaec21134235eb76d6d402f46f262d))
+
 ## [14.2.1](https://github.com/US-EPA-CAMD/easey-common/compare/v14.2.0...v14.2.1) (2023-02-06)
 
 
