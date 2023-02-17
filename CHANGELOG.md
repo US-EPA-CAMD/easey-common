@@ -1,3 +1,24 @@
+## [14.2.2](https://github.com/US-EPA-CAMD/easey-common/compare/v14.2.1...v14.2.2) (2023-02-07)
+
+
+### Bug Fixes
+
+* added possible null permissionSet ([eee5a3f](https://github.com/US-EPA-CAMD/easey-common/commit/eee5a3fbb0eaec21134235eb76d6d402f46f262d))
+
+## [14.2.1](https://github.com/US-EPA-CAMD/easey-common/compare/v14.2.0...v14.2.1) (2023-02-06)
+
+
+### Bug Fixes
+
+* fixed role guard parsing issue ([09dd891](https://github.com/US-EPA-CAMD/easey-common/commit/09dd89172138787c2956a974b5ef41f1ae5e014d))
+
+# [14.2.0](https://github.com/US-EPA-CAMD/easey-common/compare/v14.1.0...v14.2.0) (2023-02-03)
+
+
+### Features
+
+* added role guard enable config ([b67b30b](https://github.com/US-EPA-CAMD/easey-common/commit/b67b30b15e729343101ecca48446ca7f5979087a))
+
 # [14.1.0](https://github.com/US-EPA-CAMD/easey-common/compare/v14.0.1...v14.1.0) (2023-02-02)
 
 
