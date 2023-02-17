@@ -1,3 +1,10 @@
+# [14.3.0](https://github.com/US-EPA-CAMD/easey-common/compare/v14.2.2...v14.3.0) (2023-02-17)
+
+
+### Features
+
+* added role guard query parameter support ([958c85e](https://github.com/US-EPA-CAMD/easey-common/commit/958c85e3b46cb652cf77737dd48d37e4301d3a64))
+
 ## [14.2.2](https://github.com/US-EPA-CAMD/easey-common/compare/v14.2.1...v14.2.2) (2023-02-07)
 
 
