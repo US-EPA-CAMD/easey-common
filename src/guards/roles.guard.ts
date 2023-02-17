@@ -18,7 +18,7 @@ export class RolesGuard implements CanActivate {
   returnManager(): any {
     return getManager();
   }
-
+  //
   // Find the corresponding request parameter and check to see if the user has permissions
   handlePathParamValidation(
     context: ExecutionContext,
