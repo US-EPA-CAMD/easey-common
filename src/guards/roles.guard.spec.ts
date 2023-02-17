@@ -162,6 +162,42 @@ describe("RolesGuard", () => {
     ).toBe(true);
   });
 
+  it("execute the handleQueryParamValidation with existing property", async () => {
+    const context = createMock<ExecutionContext>({
+      getHandler: jest.fn(),
+      switchToHttp: jest.fn().mockReturnValue({
+        getRequest: jest.fn().mockReturnValue({
+          query: { locId: "5" },
+        }),
+      }),
+    });
+
+    expect(
+      guard.handleQueryParamValidation(context, "locId", ["5"], false)
+    ).toBe(true);
+  });
+
+  it("execute the handleQueryParamValidation with delimitting", async () => {
+    const context = createMock<ExecutionContext>({
+      getHandler: jest.fn(),
+      switchToHttp: jest.fn().mockReturnValue({
+        getRequest: jest.fn().mockReturnValue({
+          query: { locId: "5|6" },
+        }),
+      }),
+    });
+
+    expect(
+      guard.handleQueryParamValidation(
+        context,
+        "locId",
+        ["5", "6"],
+        false,
+        true
+      )
+    ).toBe(true);
+  });
+
   it("execute the handleBodyParamValidation with nested dto object", async () => {
     const context = createMock<ExecutionContext>({
       getHandler: jest.fn(),
