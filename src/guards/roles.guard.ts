@@ -148,7 +148,10 @@ export class RolesGuard implements CanActivate {
 
     if (this.configService.get<string>("app.env") !== "production") {
       // Allow enable or disable of the guard but still set the allowed decorators
-      if (!parseBool(this.configService.get("app.enableRoleGuard"))) {
+      if (
+        !parseBool(this.configService.get("app.enableRoleGuard")) ||
+        request.user.permissionSet === null
+      ) {
         request.allowedLocations = null;
         request.allowedPlans = null;
         request.allowedOrisCodes = null;
