@@ -1,3 +1,10 @@
+## [14.3.1](https://github.com/US-EPA-CAMD/easey-common/compare/v14.3.0...v14.3.1) (2023-02-17)
+
+
+### Bug Fixes
+
+* fix to facilities when permissions are null ([e7f98a1](https://github.com/US-EPA-CAMD/easey-common/commit/e7f98a1842cc87649f5720555e45908fdee55e0c))
+
 # [14.3.0](https://github.com/US-EPA-CAMD/easey-common/compare/v14.2.2...v14.3.0) (2023-02-17)
 
 
