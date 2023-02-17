@@ -102,15 +102,58 @@ export class RolesGuard implements CanActivate {
     );
   }
 
+  handleQueryParamValidation(
+    context: ExecutionContext,
+    lookupKey,
+    lookupList,
+    toParseInt,
+    isDelimitted = false
+  ) {
+    const request = context.switchToHttp().getRequest();
+    const params = request.query;
+
+    if (params[lookupKey]) {
+      const lookupVal = params[lookupKey];
+      if (isDelimitted) {
+        const pathChunks = lookupVal
+          .split("|")
+          .map((item: string) =>
+            toParseInt ? parseInt(item.trim()) : item.trim()
+          );
+
+        for (const chunk of pathChunks) {
+          if (!lookupList.includes(chunk)) {
+            return false;
+          }
+        }
+
+        return true;
+      }
+
+      if (toParseInt) {
+        return lookupList.includes(parseInt(lookupVal));
+      }
+
+      return lookupList.includes(lookupVal);
+    } else {
+      console.warn("Are you sure you entered the request parameter correctly?");
+      throw new BadRequestException(
+        "Lookup parameter does not exist in request"
+      );
+    }
+  }
+
   async canActivate(context: ExecutionContext): Promise<boolean> {
     const request = context.switchToHttp().getRequest();
 
-    // Allow enable or disable of the guard but still set the allowed decorators
-    if (!parseBool(this.configService.get("app.enableRoleGuard"))) {
-      request.allowedLocations = null;
-      request.allowedPlans = null;
-      request.allowedOrisCodes = null;
-      return true;
+    if (this.configService.get<string>("app.env") !== "production") {
+      // Allow enable or disable of the guard but still set the allowed decorators
+      if (!parseBool(this.configService.get("app.enableRoleGuard"))) {
+        request.allowedLocations = null;
+        request.allowedPlans = null;
+        request.allowedOrisCodes = null;
+        return true;
+      }
     }
 
     const permissions = request.user.permissionSet;
@@ -168,6 +211,14 @@ export class RolesGuard implements CanActivate {
         params.bodyParam,
         lookupDataList,
         toParseInt
+      );
+    } else if (params.queryParam) {
+      return this.handleQueryParamValidation(
+        context,
+        params.queryParam,
+        lookupDataList,
+        toParseInt,
+        params.isPipeDelimitted
       );
     } else {
       return true;
