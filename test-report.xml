@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
-  <file path="C:\Users\kyleh\Desktop\Apis\easey-common\src\guards\auth.guard.spec.ts">
-    <testCase name="AuthGuard should be defined" duration="10"/>
-    <testCase name="AuthGuard should validate properly and return true given good input" duration="3"/>
-    <testCase name="AuthGuard should error given no auth header" duration="10"/>
-    <testCase name="AuthGuard should error given invalid bearer format" duration="4"/>
-  </file>
   <file path="C:\Users\kyleh\Desktop\Apis\easey-common\src\guards\roles.guard.spec.ts">
-    <testCase name="RolesGuard should be defined" duration="11"/>
-    <testCase name="RolesGuard should execute without error and call the handlePathParamFunction when path param is present" duration="7"/>
-    <testCase name="RolesGuard should execute without error and call the handleBodyParamValidation when path param is present" duration="5"/>
+    <testCase name="RolesGuard should be defined" duration="10"/>
+    <testCase name="RolesGuard should execute without error and call the handlePathParamFunction when path param is present" duration="4"/>
+    <testCase name="RolesGuard should execute without error and call the handleBodyParamValidation when path param is present" duration="12"/>
     <testCase name="RolesGuard execute the handlePathParamValidation with existing property" duration="4"/>
-    <testCase name="RolesGuard execute the handleBodyParamValidation with nested dto object" duration="3"/>
-    <testCase name="RolesGuard execute the handleBodyParamValidation with nested dto object and fail" duration="3"/>
+    <testCase name="RolesGuard execute the handleQueryParamValidation with existing property" duration="3"/>
+    <testCase name="RolesGuard execute the handleQueryParamValidation with delimitting" duration="3"/>
+    <testCase name="RolesGuard execute the handleBodyParamValidation with nested dto object" duration="2"/>
+    <testCase name="RolesGuard execute the handleBodyParamValidation with nested dto object and fail" duration="2"/>
   </file>
 </testExecutions>
