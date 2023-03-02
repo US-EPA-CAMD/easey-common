@@ -14,3 +14,4 @@ export { IsDateInRangeLimit } from "./is-date-in-range-limit.pipe";
 export { Min } from "./min.pipe";
 export { Max } from "./max.pipe";
 export { IsEmail } from "./is-email.pipe";
+export { IsValidCode } from "./is-valid-code.pipe";
