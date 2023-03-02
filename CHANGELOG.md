@@ -1,3 +1,11 @@
+# [14.4.0](https://github.com/US-EPA-CAMD/easey-common/compare/v14.3.1...v14.4.0) (2023-03-02)
+
+
+### Features
+
+* add IsValidCode Pipe ([8fe60d7](https://github.com/US-EPA-CAMD/easey-common/commit/8fe60d73809baf72bb8d7e48152b2e2ca6adab52))
+* add validationsArgs param to pipe ([8ea6141](https://github.com/US-EPA-CAMD/easey-common/commit/8ea614137be1e3a2d616979b672101ff562010d1))
+
 ## [14.3.1](https://github.com/US-EPA-CAMD/easey-common/compare/v14.3.0...v14.3.1) (2023-02-17)
 
 
