@@ -4,9 +4,13 @@ import {
 	ValidationArguments,
 } from "class-validator";
 
-import { getManager } from "typeorm";
+import { FindManyOptions, getManager } from "typeorm";
 
-export function IsValidCode(type: any, validationOptions?: ValidationOptions) {
+export function IsValidCode(
+	type: any,
+	validationOptions?: ValidationOptions,
+	findOption?: (ValidationArguments: ValidationArguments) => FindManyOptions
+) {
 	return function (object: Object, propertyName: string) {
 		registerDecorator({
 			name: "isValidCode",
@@ -14,10 +18,15 @@ export function IsValidCode(type: any, validationOptions?: ValidationOptions) {
 			propertyName: propertyName,
 			options: validationOptions,
 			validator: {
-				async validate(value: any, _args: ValidationArguments) {
+				async validate(value: any, args: ValidationArguments) {
 					if (value) {
 						const manager = getManager();
-						const found = await manager.findOne(type, value);
+						let found;
+						if (findOption) {
+							found = await manager.findOne(type, findOption(args));
+						} else {
+							found = await manager.findOne(type, value);
+						}
 						return found != null;
 					}
 					return true;
