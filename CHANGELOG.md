@@ -1,3 +1,15 @@
+# [15.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v14.4.0...v15.0.0) (2023-03-06)
+
+
+### Features
+
+* upgraded NestJs to 9.0 ([07d28f7](https://github.com/US-EPA-CAMD/easey-common/commit/07d28f7a10e0889f70825c183bf7252d7c47bdc5))
+
+
+### BREAKING CHANGES
+
+* Upgrade of nest will cause breaking changes to apps that are also not running 9.0
+
 # [14.4.0](https://github.com/US-EPA-CAMD/easey-common/compare/v14.3.1...v14.4.0) (2023-03-02)
 
 
