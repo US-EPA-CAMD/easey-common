@@ -1,4 +1,4 @@
-import * as helmet from "helmet";
+import helmet from "helmet";
 import { json } from "body-parser";
 import { useContainer } from "class-validator";
 import { ConfigService } from "@nestjs/config";
