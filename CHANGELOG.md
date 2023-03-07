@@ -1,3 +1,10 @@
+## [15.1.1](https://github.com/US-EPA-CAMD/easey-common/compare/v15.1.0...v15.1.1) (2023-03-07)
+
+
+### Bug Fixes
+
+* downgrade typeorm ([1868cfe](https://github.com/US-EPA-CAMD/easey-common/commit/1868cfe950a193eed9dd8ab35f9844fd560274ef))
+
 # [15.1.0](https://github.com/US-EPA-CAMD/easey-common/compare/v15.0.0...v15.1.0) (2023-03-07)
 
 
