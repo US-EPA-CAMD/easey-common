@@ -1,3 +1,10 @@
+# [15.1.0](https://github.com/US-EPA-CAMD/easey-common/compare/v15.0.0...v15.1.0) (2023-03-07)
+
+
+### Features
+
+* removed forbidden values false on transformer ([0e8d273](https://github.com/US-EPA-CAMD/easey-common/commit/0e8d2732d3536d43aabf1f4339a7cb4e7204e7a1))
+
 # [15.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v14.4.0...v15.0.0) (2023-03-06)
 
 
