@@ -26,8 +26,6 @@
   },
   "resolutions": {
     "ansi-regex": "^5.0.1",
-    "class-transformer": "0.4.0",
-    "class-validator": "0.13.1",
     "minimist": "^1.2.6"
   },
   "dependencies": {
@@ -37,7 +35,7 @@
     "@nestjs/config": "^1.0.2",
     "@nestjs/core": "^8.1.1",
     "@nestjs/swagger": "^5.1.2",
-    "class-validator": "0.13.1",
+    "class-validator": "^0.14.0",
     "dotenv": "^10.0.0",
     "express": "^4.17.3",
     "helmet": "^4.6.0",
