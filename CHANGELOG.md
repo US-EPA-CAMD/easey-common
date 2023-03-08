@@ -1,3 +1,10 @@
+## [15.1.2](https://github.com/US-EPA-CAMD/easey-common/compare/v15.1.1...v15.1.2) (2023-03-08)
+
+
+### Bug Fixes
+
+* **revert to old helmet impl.:** reverted to import * as helmet from helmet ([9f8ae2f](https://github.com/US-EPA-CAMD/easey-common/commit/9f8ae2f384812dbe9b431b5ebb7343c4f993312c))
+
 ## [15.1.1](https://github.com/US-EPA-CAMD/easey-common/compare/v15.1.0...v15.1.1) (2023-03-07)
 
 
