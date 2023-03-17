@@ -1,18 +1,20 @@
-import { existsSync, readFileSync } from 'fs';
-import { PropertyKeys } from './property-keys.enum';
-import { OverrideKeys } from './override-keys.enum';
+import { existsSync, readFileSync } from "fs";
+import { PropertyKeys } from "./property-keys.enum";
+import { OverrideKeys } from "./override-keys.enum";
 
 export class DataDictionary {
   private static data = DataDictionary.load();
-  
+
   private static load() {
     const path = `${__dirname}/../../../../data-dictionary.json`;
 
     if (existsSync(path)) {
-      return JSON.parse(readFileSync(path, 'utf8'));
+      return JSON.parse(readFileSync(path, "utf8"));
     } else {
-      console.log('data-dictionary.json is mising and can not be loaded...');
-      console.log('To properly create swagger documentation run "./.profile" in Git Bash or download data-dictionary.json using the content api and place in the "app" root');
+      console.log("data-dictionary.json is mising and can not be loaded...");
+      console.log(
+        'To properly create swagger documentation run "./.profile" in Git Bash or download data-dictionary.json using the content api and place in the "app" root'
+      );
     }
 
     return {};
@@ -25,7 +27,7 @@ export class DataDictionary {
     if (item) {
       const properties = {
         label: item.label,
-        value: item.value??key,
+        value: item.value ?? key,
         description: item.description,
         examples: item.examples,
         example: item.example,
@@ -37,7 +39,7 @@ export class DataDictionary {
         return {
           ...properties,
           ...overrides,
-        }
+        };
       }
 
       return properties;
@@ -63,15 +65,15 @@ export class DataDictionary {
 
     delete properties.label;
     delete properties.value;
-    
+
     if (excludeExampleData || !properties.examples) {
       delete properties.examples;
     }
-    
+
     if (excludeExampleData || !properties.example || properties.examples) {
       delete properties.example;
     }
-    
+
     return properties;
   }
 }

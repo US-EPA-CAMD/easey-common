@@ -17,6 +17,6 @@ export enum OverrideKeys {
   REPORT_DETAIL = "reportDetail",
   REPORT_PARAM = "reportParameter",
   REPORTING_PERIOD = "reportingPeriod",
-  SUBMISSION = "submission",  
+  SUBMISSION = "submission",
   UNIT_TYPE = "unitType",
 }

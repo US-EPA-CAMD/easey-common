@@ -25,7 +25,7 @@ export function IsInRange(
               if (!isMinValValid && !isMaxValValid) {
                 return value > minVal && value < maxVal;
               }
-              
+
               if (!isMinValValid) {
                 return value > minVal && value <= maxVal;
               }
@@ -36,7 +36,7 @@ export function IsInRange(
 
               return value >= minVal && value <= maxVal;
             }
-            
+
             if (!isMinValValid && !isMaxValValid) {
               return (
                 isNumberString(value, { no_symbols: true }) &&

@@ -15,7 +15,7 @@ export enum PropertyKeys {
   END_MINUTE = "endMinute",
   EXCLUDE = "exclude",
   GROUP_CODE = "groupCode",
-  GROUP_DESCRIPTION = "groupDescription",  
+  GROUP_DESCRIPTION = "groupDescription",
   ID = "id",
   LAST_ACCESSED_DATE = "lastAccessedDate",
   NAME = "name",
