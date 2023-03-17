@@ -1,3 +1,10 @@
+## [15.1.3](https://github.com/US-EPA-CAMD/easey-common/compare/v15.1.2...v15.1.3) (2023-03-17)
+
+
+### Bug Fixes
+
+* fix formatting ([4e1d331](https://github.com/US-EPA-CAMD/easey-common/commit/4e1d331a214a7ed3aef9c4efa17dfff4a68a0c34))
+
 ## [15.1.2](https://github.com/US-EPA-CAMD/easey-common/compare/v15.1.1...v15.1.2) (2023-03-08)
 
 
