@@ -22,6 +22,10 @@ export function IsInRange(
         validate(value: any, args: ValidationArguments) {
           if (value !== null) {
             if (typeof value === "number") {
+              if (!isMinValValid && !isMaxValValid) {
+                return value > minVal && value < maxVal;
+              }
+
               if (!isMinValValid) {
                 return value > minVal && value <= maxVal;
               }
@@ -30,10 +34,15 @@ export function IsInRange(
                 return value >= minVal && value < maxVal;
               }
 
-              if (!isMinValValid && !isMaxValValid) {
-                return value > minVal && value < maxVal;
-              }
               return value >= minVal && value <= maxVal;
+            }
+
+            if (!isMinValValid && !isMaxValValid) {
+              return (
+                isNumberString(value, { no_symbols: true }) &&
+                (value as number) > minVal &&
+                (value as number) < maxVal
+              );
             }
 
             if (!isMinValValid) {
@@ -48,14 +57,6 @@ export function IsInRange(
               return (
                 isNumberString(value, { no_symbols: true }) &&
                 (value as number) >= minVal &&
-                (value as number) < maxVal
-              );
-            }
-
-            if (!isMinValValid && !isMaxValValid) {
-              return (
-                isNumberString(value, { no_symbols: true }) &&
-                (value as number) > minVal &&
                 (value as number) < maxVal
               );
             }
