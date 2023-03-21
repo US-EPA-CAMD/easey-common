@@ -1,3 +1,10 @@
+# [15.2.0](https://github.com/US-EPA-CAMD/easey-common/compare/v15.1.3...v15.2.0) (2023-03-21)
+
+
+### Features
+
+* **check catalog:** handling special cases ([a59fa88](https://github.com/US-EPA-CAMD/easey-common/commit/a59fa8876101ef0e1075b94ac1bb7f313e9363ca))
+
 ## [15.1.3](https://github.com/US-EPA-CAMD/easey-common/compare/v15.1.2...v15.1.3) (2023-03-17)
 
 
