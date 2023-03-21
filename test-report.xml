@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
-  <file path="C:\Users\kyleh\Desktop\Apis\easey-common\src\guards\roles.guard.spec.ts">
-    <testCase name="RolesGuard should be defined" duration="10"/>
-    <testCase name="RolesGuard should execute without error and call the handlePathParamFunction when path param is present" duration="4"/>
-    <testCase name="RolesGuard should execute without error and call the handleBodyParamValidation when path param is present" duration="12"/>
-    <testCase name="RolesGuard execute the handlePathParamValidation with existing property" duration="4"/>
-    <testCase name="RolesGuard execute the handleQueryParamValidation with existing property" duration="3"/>
-    <testCase name="RolesGuard execute the handleQueryParamValidation with delimitting" duration="3"/>
-    <testCase name="RolesGuard execute the handleBodyParamValidation with nested dto object" duration="2"/>
-    <testCase name="RolesGuard execute the handleBodyParamValidation with nested dto object and fail" duration="2"/>
+  <file path="C:\Projects\US-EPA-CAMD\easey-common\src\check-catalog\check-catalog.service.spec.ts">
+    <testCase name="CheckCatalogService [fieldname] [key]" duration="3"/>
+    <testCase name="CheckCatalogService [Stack Pipe ID]" duration="0"/>
+    <testCase name="CheckCatalogService [ORIS Code]" duration="0"/>
+    <testCase name="CheckCatalogService [SystemID]" duration="1"/>
+    <testCase name="CheckCatalogService [Stack/Pipe ID]" duration="0"/>
+    <testCase name="CheckCatalogService [UNADJUSTED_HRLY_VALUE]" duration="0"/>
+    <testCase name="CheckCatalogService [SAMPLE-METHOD]" duration="0"/>
+    <testCase name="CheckCatalogService [Children]" duration="1"/>
   </file>
 </testExecutions>

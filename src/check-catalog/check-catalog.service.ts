@@ -5,9 +5,12 @@ import { Injectable } from "@nestjs/common";
 export class CheckCatalogService {
   private static checkCatalog = [];
 
-  static async load(viewName: string) {
-    const results = await getManager().query(`SELECT * FROM ${viewName}`);
+  static async getViewData(viewName: string) {
+    return await getManager().query(`SELECT * FROM ${viewName}`);
+  }
 
+  static async load(viewName: string) {
+    const results = await CheckCatalogService.getViewData(viewName);
     CheckCatalogService.checkCatalog = results.map((i) => {
       const parts = i.resultMessage.split("[").filter((i) => i.includes("]"));
       return {
@@ -27,23 +30,28 @@ export class CheckCatalogService {
     }
 
     if (plugins && values) {
-      plugins.forEach((i: string) => {
-        const parts = i.split(" ");
-        let fieldname = parts[0];
+      plugins.forEach((plugin: string) => {
+        let i = plugin;
+        const regex = /[-|_|\/]/g;
 
-        if (parts.length === 1) {
-          fieldname = `${parts[0].charAt(0).toLowerCase()}${parts[0].slice(1)}`;
-        } else {
+        if (i.match(regex)) {
+          i = i.replace(regex, ' ');
+        }
+
+        const parts = i.split(" ");
+        let fieldname = `${parts[0].charAt(0).toLowerCase()}${parts[0].slice(1)}`;
+
+        if (parts.length > 1) {
           parts.forEach((p: string, index: number) => {
-            if (index > 0) {
-              fieldname = `${fieldname.toLowerCase()}${p
-                .charAt(0)
-                .toUpperCase()}${p.slice(1)}`;
+            if (index === 0) {
+              fieldname = fieldname.toLowerCase();
+            } else {
+              fieldname += `${p.charAt(0).toUpperCase()}${p.slice(1).toLowerCase()}`;
             }
           });
         }
 
-        message = message.replace(`[${i}]`, `[${values[fieldname]}]`);
+        message = message.replace(`[${plugin}]`, `[${values[fieldname]}]`);
       });
     }
 
@@ -51,11 +59,10 @@ export class CheckCatalogService {
   }
 
   static formatResultMessage = (code: string, values?: {}): string => {
-    let message = `[${code}]`;
     const result = CheckCatalogService.checkCatalog.find(
       (i) => i.code === code
     );
-    message = `${message} - ${result.message}`;
+    const message = `[${code}] - ${result.message}`;
     return CheckCatalogService.formatMessage(message, values, result.plugins);
   };
 }
