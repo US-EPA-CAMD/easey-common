@@ -7,4 +7,5 @@ export {
   getConfigValue,
   getConfigValueNumber,
   getConfigValueBoolean,
+  dateToEstString,
 } from "./functions";

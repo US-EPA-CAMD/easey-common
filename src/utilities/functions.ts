@@ -41,3 +41,15 @@ export const getConfigValueBoolean = (
 ): boolean => {
   return parseBool(getConfigValue(key, defaultValue));
 };
+
+export const dateToEstString = (date?: string | number | Date): string => {
+  if (date) {
+    return new Date(date).toLocaleString("en-US", {
+      timeZone: "America/New_York",
+    });
+  }
+
+  return new Date().toLocaleString("en-US", {
+    timeZone: "America/New_York",
+  });
+};
