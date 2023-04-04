@@ -1,3 +1,10 @@
+# [15.4.0](https://github.com/US-EPA-CAMD/easey-common/compare/v15.3.0...v15.4.0) (2023-04-04)
+
+
+### Features
+
+* made common compatible with auth changes ([81e0be0](https://github.com/US-EPA-CAMD/easey-common/commit/81e0be0b224788a54ee1618ba7f427587e648c04))
+
 # [15.3.0](https://github.com/US-EPA-CAMD/easey-common/compare/v15.2.0...v15.3.0) (2023-03-22)
 
 
