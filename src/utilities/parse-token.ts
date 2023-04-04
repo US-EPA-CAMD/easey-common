@@ -1,4 +1,4 @@
-import { CurrentUser } from "../interfaces/current-user.interface";
+import { CurrentUser } from "../interfaces";
 
 export const parseToken = (token: string) => {
   const user: CurrentUser = {
@@ -6,18 +6,20 @@ export const parseToken = (token: string) => {
     sessionId: null,
     expiration: null,
     clientIp: null,
-    isAdmin: false,
-    permissionSet: [],
+    facilities: [],
+    roles: [],
   };
 
   const arr = token.split("&");
   arr.forEach((element) => {
     const keyValue = element.split("=");
 
-    if (keyValue[0] === "permissions") {
+    if (keyValue[0] === "facilities") {
       const permissions = JSON.parse(keyValue[1]);
-      user.isAdmin = permissions.isAdmin;
-      user.permissionSet = permissions.facilities;
+      user.facilities = permissions;
+    } else if (keyValue[0] === "roles") {
+      const roles = JSON.parse(keyValue[1]);
+      user.roles = roles;
     } else {
       user[keyValue[0]] = keyValue[1];
     }

@@ -150,7 +150,7 @@ export class RolesGuard implements CanActivate {
       // Allow enable or disable of the guard but still set the allowed decorators
       if (
         !parseBool(this.configService.get("app.enableRoleGuard")) ||
-        request.user.permissionSet === null
+        request.user.facilities === null
       ) {
         request.allowedLocations = null;
         request.allowedPlans = null;
@@ -159,7 +159,7 @@ export class RolesGuard implements CanActivate {
       }
     }
 
-    const permissions = request.user.permissionSet;
+    const facilities = request.user.facilities;
     const lookupType = this.reflector.get<number>(
       "lookupType",
       context.getHandler()
@@ -170,7 +170,7 @@ export class RolesGuard implements CanActivate {
       context.getHandler()
     );
 
-    const facilitiesWithRole = permissions.map((p) => p.id);
+    const facilitiesWithRole = facilities.map((p) => p.orisCode);
 
     let toParseInt = false;
 

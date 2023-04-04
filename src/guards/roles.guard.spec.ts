@@ -78,9 +78,9 @@ describe("RolesGuard", () => {
       switchToHttp: jest.fn().mockReturnValue({
         getRequest: jest.fn().mockReturnValue({
           user: {
-            permissionSet: [
+            facilities: [
               {
-                id: 3,
+                orisCode: 3,
                 permissions: ["DSMP"],
               },
             ],
@@ -131,9 +131,9 @@ describe("RolesGuard", () => {
       switchToHttp: jest.fn().mockReturnValue({
         getRequest: jest.fn().mockReturnValue({
           user: {
-            permissionSet: [
+            facilities: [
               {
-                id: 3,
+                orisCode: 3,
                 permissions: ["DSMP"],
               },
             ],
