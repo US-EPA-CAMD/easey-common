@@ -1,3 +1,10 @@
+# [15.3.0](https://github.com/US-EPA-CAMD/easey-common/compare/v15.2.0...v15.3.0) (2023-03-22)
+
+
+### Features
+
+* added dateToEstString utility function ([9314ad1](https://github.com/US-EPA-CAMD/easey-common/commit/9314ad16df632be9fbda5a975868595ff7438a44))
+
 # [15.2.0](https://github.com/US-EPA-CAMD/easey-common/compare/v15.1.3...v15.2.0) (2023-03-21)
 
 
