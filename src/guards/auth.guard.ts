@@ -60,7 +60,7 @@ export class AuthGuard implements CanActivate {
 
     const splitString = authHeader.split(" ");
     if (splitString.length !== 2 && splitString[0] !== "Bearer") {
-      throw new LoggingException(errorMsg, HttpStatus.BAD_REQUEST);
+      throw new LoggingException(errorMsg, HttpStatus.BAD_REQUEST); //
     }
 
     let ip = request.ip;
