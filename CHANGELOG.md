@@ -1,3 +1,10 @@
+## [15.4.1](https://github.com/US-EPA-CAMD/easey-common/compare/v15.4.0...v15.4.1) (2023-04-05)
+
+
+### Bug Fixes
+
+* logging ([5038a3f](https://github.com/US-EPA-CAMD/easey-common/commit/5038a3f1b52ac3eeeab986333293adc0e91c68de))
+
 # [15.4.0](https://github.com/US-EPA-CAMD/easey-common/compare/v15.3.0...v15.4.0) (2023-04-04)
 
 
