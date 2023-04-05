@@ -1,3 +1,10 @@
+## [15.4.2](https://github.com/US-EPA-CAMD/easey-common/compare/v15.4.1...v15.4.2) (2023-04-05)
+
+
+### Bug Fixes
+
+* fixed validate request auth ([f7f4607](https://github.com/US-EPA-CAMD/easey-common/commit/f7f460704582bc0c6b0d9c8c416c49e5b9ee3f39))
+
 ## [15.4.1](https://github.com/US-EPA-CAMD/easey-common/compare/v15.4.0...v15.4.1) (2023-04-05)
 
 
