@@ -23,9 +23,6 @@ export class AuthGuard implements CanActivate {
     const apiKey = this.configService.get("app.apiKey");
     const url = this.configService.get("app.authApi").uri + "/tokens/validate";
 
-    console.log(apiKey);
-    console.log(url); //
-
     try {
       const result = await firstValueFrom(
         this.httpService.post(url, null, {
@@ -36,9 +33,6 @@ export class AuthGuard implements CanActivate {
           },
         })
       );
-
-      console.log(result);
-      console.log(result.data);
 
       return result.data;
     } catch (error) {
@@ -76,8 +70,7 @@ export class AuthGuard implements CanActivate {
 
     const validatedToken = await this.validateToken(splitString[1], ip);
 
-    console.log(validatedToken);
-    request.user = parseToken(validatedToken);
+    request.user = validatedToken;
 
     return true;
   }
