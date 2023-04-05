@@ -23,6 +23,9 @@ export class AuthGuard implements CanActivate {
     const apiKey = this.configService.get("app.apiKey");
     const url = this.configService.get("app.authApi").uri + "/tokens/validate";
 
+    console.log(apiKey);
+    console.log(url);
+
     try {
       const result = await firstValueFrom(
         this.httpService.post(url, null, {
@@ -34,8 +37,12 @@ export class AuthGuard implements CanActivate {
         })
       );
 
+      console.log(result);
+      console.log(result.data);
+
       return result.data;
     } catch (error) {
+      console.log(error);
       if (error.response) {
         throw new LoggingException(
           "An error occurred in while validating the user's security token.",
@@ -48,6 +55,7 @@ export class AuthGuard implements CanActivate {
 
   async validateRequest(request): Promise<boolean> {
     const authHeader = request.headers.authorization;
+    console.log(authHeader);
     const forwardedForHeader = request.headers["x-forwarded-for"];
     let errorMsg =
       "Prior Authorization (User Security Token) required to access this resource.";
@@ -67,6 +75,8 @@ export class AuthGuard implements CanActivate {
     }
 
     const validatedToken = await this.validateToken(splitString[1], ip);
+
+    console.log(validatedToken);
     request.user = parseToken(validatedToken);
 
     return true;
