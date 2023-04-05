@@ -24,7 +24,7 @@ export class AuthGuard implements CanActivate {
     const url = this.configService.get("app.authApi").uri + "/tokens/validate";
 
     console.log(apiKey);
-    console.log(url);
+    console.log(url); //
 
     try {
       const result = await firstValueFrom(
