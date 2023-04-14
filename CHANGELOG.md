@@ -1,3 +1,10 @@
+# [15.5.0](https://github.com/US-EPA-CAMD/easey-common/compare/v15.4.2...v15.5.0) (2023-04-14)
+
+
+### Features
+
+* added bulk load service ([4f10885](https://github.com/US-EPA-CAMD/easey-common/commit/4f108853ebc73d8524dfe5bb96b86d29c2f055c9))
+
 ## [15.4.2](https://github.com/US-EPA-CAMD/easey-common/compare/v15.4.1...v15.4.2) (2023-04-05)
 
 
