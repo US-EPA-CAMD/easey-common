@@ -21,6 +21,7 @@ export function Max(maxVal: number, validationOptions?: ValidationOptions) {
             }
           }
           return true;
+        },
       },
     });
   };
