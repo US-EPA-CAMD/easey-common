@@ -1,3 +1,10 @@
+## [15.5.2](https://github.com/US-EPA-CAMD/easey-common/compare/v15.5.1...v15.5.2) (2023-04-18)
+
+
+### Bug Fixes
+
+* resolution of xml2js ([e3ef874](https://github.com/US-EPA-CAMD/easey-common/commit/e3ef874e7def177f8a57c74452047a4895f21b63))
+
 ## [15.5.1](https://github.com/US-EPA-CAMD/easey-common/compare/v15.5.0...v15.5.1) (2023-04-18)
 
 
