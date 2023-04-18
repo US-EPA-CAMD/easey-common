@@ -1,3 +1,10 @@
+## [15.5.1](https://github.com/US-EPA-CAMD/easey-common/compare/v15.5.0...v15.5.1) (2023-04-18)
+
+
+### Bug Fixes
+
+* fix to max and min pipe ([0d5b8f1](https://github.com/US-EPA-CAMD/easey-common/commit/0d5b8f1c588fe968ac2a55db91901f069ad3aa6b))
+
 # [15.5.0](https://github.com/US-EPA-CAMD/easey-common/compare/v15.4.2...v15.5.0) (2023-04-14)
 
 
