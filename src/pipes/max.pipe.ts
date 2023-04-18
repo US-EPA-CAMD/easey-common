@@ -4,10 +4,6 @@ import {
   ValidationArguments,
 } from "class-validator";
 
-function max(num, max) {
-  return typeof num === "number" && typeof max === "number" && num <= max;
-}
-
 export function Max(maxVal: number, validationOptions?: ValidationOptions) {
   return function (object: Object, propertyName: string) {
     registerDecorator({
@@ -18,7 +14,11 @@ export function Max(maxVal: number, validationOptions?: ValidationOptions) {
       validator: {
         validate(value: any, args: ValidationArguments) {
           if (value !== null) {
-            return max(value, maxVal);
+            if (typeof value === "number") {
+              return value <= maxVal;
+            } else if (typeof value === "string") {
+              return parseFloat(value) <= maxVal;
+            }
           }
           return true;
         },
