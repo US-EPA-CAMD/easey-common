@@ -1,3 +1,10 @@
+# [15.6.0](https://github.com/US-EPA-CAMD/easey-common/compare/v15.5.2...v15.6.0) (2023-04-20)
+
+
+### Features
+
+* **adds begin/end date consistency validator:** adds Begin/End Date Consistency Validator ([c02465f](https://github.com/US-EPA-CAMD/easey-common/commit/c02465fcf773e3888689cbeef02b4774d12a2b3c))
+
 ## [15.5.2](https://github.com/US-EPA-CAMD/easey-common/compare/v15.5.1...v15.5.2) (2023-04-18)
 
 
