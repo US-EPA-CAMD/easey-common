@@ -1,3 +1,10 @@
+## [15.6.1](https://github.com/US-EPA-CAMD/easey-common/compare/v15.6.0...v15.6.1) (2023-04-21)
+
+
+### Bug Fixes
+
+* **begin-end-dates-consistent.pipe.ts:** skip Begin/End Date Comparision if Required Field Missing ([fe19d11](https://github.com/US-EPA-CAMD/easey-common/commit/fe19d11e0a4e10d8a942c60dbc47b534035dc320))
+
 # [15.6.0](https://github.com/US-EPA-CAMD/easey-common/compare/v15.5.2...v15.6.0) (2023-04-20)
 
 
