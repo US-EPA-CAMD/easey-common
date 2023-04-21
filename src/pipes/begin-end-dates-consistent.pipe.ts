@@ -8,7 +8,6 @@ export function BeginEndDatesConsistent(validationOptions: BeginEndDatesConsiste
             propertyName: propertyName,
             options: validationOptions,
             constraints: [
-                (validationOptions.skipIf),
                 validationOptions.beginDate ? validationOptions.beginDate : 'beginDate',
                 validationOptions.beginHour ? validationOptions.beginHour : 'beginHour',
                 validationOptions.beginMinute ? validationOptions.beginMinute : 'beginMinute',
@@ -19,24 +18,43 @@ export function BeginEndDatesConsistent(validationOptions: BeginEndDatesConsiste
             validator: {
                 validate(value: any, args: ValidationArguments) {
                     const [
-                        skipValidation,
                         beginDateField, beginHourField, beginMinuteField,
                         endDateField, endHourField, endMinuteField,
                     ] = args.constraints;
 
-                    if(skipValidation) return true;
+                    // Can't validate when missing required field
+                    if(args.object[beginDateField] == null || args.object[endDateField] == null)
+                        return true;
 
                     const beginDate = new Date(args.object[beginDateField] + 'T00:00:00');
-                    if(args.object[beginHourField] !== undefined)
+                    if(args.object[beginHourField] !== undefined) {
+                        // Can't validate when missing required field
+                        if(args.object[beginHourField] == null) return true;
+
                         beginDate.setHours(args.object[beginHourField]);
-                    if(args.object[beginMinuteField] !== undefined)
+                    }
+
+                    if(args.object[beginMinuteField] !== undefined) {
+                        // Can't validate when missing required field
+                        if(args.object[beginMinuteField] == null) return true;
+
                         beginDate.setMinutes(args.object[beginMinuteField]);
+                    }
 
                     const endDate = new Date(args.object[endDateField] + 'T00:00:00');
-                    if(args.object[endHourField] !== undefined)
+                    if(args.object[endHourField] !== undefined) {
+                        // Can't validate when missing required field
+                        if(args.object[endHourField] == null) return true;
+
                         endDate.setHours(args.object[endHourField]);
-                    if(args.object[endMinuteField] !== undefined)
+                    }
+
+                    if(args.object[endMinuteField] !== undefined) {
+                        // Can't validate when missing required field
+                        if(args.object[endMinuteField] == null) return true;
+
                         endDate.setMinutes(args.object[endMinuteField]);
+                    }
 
                     return endDate >= beginDate;
                 },
@@ -52,5 +70,4 @@ export interface BeginEndDatesConsistentOptions extends ValidationOptions {
     endDate?: string,
     endHour?: string,
     endMinute?: string,
-    skipIf?: ((object: any) => boolean),
 }
