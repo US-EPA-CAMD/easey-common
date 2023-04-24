@@ -1,3 +1,10 @@
+## [15.7.1](https://github.com/US-EPA-CAMD/easey-common/compare/v15.7.0...v15.7.1) (2023-04-24)
+
+
+### Bug Fixes
+
+* cast look up based oris code ([3fc71e3](https://github.com/US-EPA-CAMD/easey-common/commit/3fc71e3ba827aac05715d7676aba8946fe3ad65d))
+
 # [15.7.0](https://github.com/US-EPA-CAMD/easey-common/compare/v15.6.1...v15.7.0) (2023-04-24)
 
 
