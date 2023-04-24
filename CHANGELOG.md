@@ -1,3 +1,10 @@
+## [15.7.2](https://github.com/US-EPA-CAMD/easey-common/compare/v15.7.1...v15.7.2) (2023-04-24)
+
+
+### Bug Fixes
+
+* added support for missing import sections ([421ab9f](https://github.com/US-EPA-CAMD/easey-common/commit/421ab9fdd76e4ec35abd3e3209f6dfa8af381afc))
+
 ## [15.7.1](https://github.com/US-EPA-CAMD/easey-common/compare/v15.7.0...v15.7.1) (2023-04-24)
 
 
