@@ -312,33 +312,41 @@ export class RolesGuard implements CanActivate {
         const paths = importLocationSource.split(".");
         let chunk = context.switchToHttp().getRequest().body;
         const orisCode = chunk["orisCode"];
+
+        let foundChunk = true;
         for (const pathChunk of paths) {
           // Drill down into each location source
-          chunk = chunk[pathChunk];
+          if (chunk[pathChunk]) {
+            chunk = chunk[pathChunk];
+          } else {
+            foundChunk = false;
+          }
         }
 
-        for (const locationChunk of chunk) {
-          //Perform validation of the data
-          let monitorLocations = await this.returnManager().query(
-            "SELECT camdecmpswks.get_locations_by_unit_and_stack($1, $2, $3)",
-            [orisCode, locationChunk["unitId"], locationChunk["stackPipeId"]]
-          );
+        if (foundChunk) {
+          for (const locationChunk of chunk) {
+            //Perform validation of the data
+            let monitorLocations = await this.returnManager().query(
+              "SELECT camdecmpswks.get_locations_by_unit_and_stack($1, $2, $3)",
+              [orisCode, locationChunk["unitId"], locationChunk["stackPipeId"]]
+            );
 
-          if (monitorLocations && monitorLocations.length === 0) {
-            // Return false if the query returns no results
-            return false;
-          }
-
-          monitorLocations = monitorLocations.map(
-            (ml) => ml["get_locations_by_unit_and_stack"]
-          );
-
-          for (const ml of monitorLocations) {
-            if (
-              (enforceCheckout && !checkedOutCriteria.has(ml)) ||
-              !lookupDataList.has(ml)
-            ) {
+            if (monitorLocations && monitorLocations.length === 0) {
+              // Return false if the query returns no results
               return false;
+            }
+
+            monitorLocations = monitorLocations.map(
+              (ml) => ml["get_locations_by_unit_and_stack"]
+            );
+
+            for (const ml of monitorLocations) {
+              if (
+                (enforceCheckout && !checkedOutCriteria.has(ml)) ||
+                !lookupDataList.has(ml)
+              ) {
+                return false;
+              }
             }
           }
         }
