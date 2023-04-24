@@ -1,3 +1,10 @@
+# [15.7.0](https://github.com/US-EPA-CAMD/easey-common/compare/v15.6.1...v15.7.0) (2023-04-24)
+
+
+### Features
+
+* added support for checking if a record is checked out ([cd440c0](https://github.com/US-EPA-CAMD/easey-common/commit/cd440c09a1d1a76d5e7a0f8558522ba211edf346))
+
 ## [15.6.1](https://github.com/US-EPA-CAMD/easey-common/compare/v15.6.0...v15.6.1) (2023-04-21)
 
 
