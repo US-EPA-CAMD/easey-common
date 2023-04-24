@@ -1,17 +1,17 @@
-import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common';
-import { BadRequestException } from '@nestjs/common/exceptions';
-import { ConfigService } from '@nestjs/config';
-import { Reflector } from '@nestjs/core';
-import { parseBool } from '../utilities';
-import { getManager } from 'typeorm';
-import { LookupType } from '../enums';
-import { ValidatorParams } from '../interfaces';
+import { Injectable, CanActivate, ExecutionContext } from "@nestjs/common";
+import { BadRequestException } from "@nestjs/common/exceptions";
+import { ConfigService } from "@nestjs/config";
+import { Reflector } from "@nestjs/core";
+import { parseBool } from "../utilities";
+import { getManager } from "typeorm";
+import { LookupType } from "../enums";
+import { ValidatorParams } from "../interfaces";
 
 @Injectable()
 export class RolesGuard implements CanActivate {
   constructor(
     private reflector: Reflector,
-    private configService: ConfigService,
+    private configService: ConfigService
   ) {}
 
   // Need this to mock the getManager without mocking all of typeorm
@@ -23,7 +23,7 @@ export class RolesGuard implements CanActivate {
     item: string,
     lookupType: LookupType,
     enforceCheckout: boolean,
-    checkedOutCriteria: Set<string>,
+    checkedOutCriteria: Set<string>
   ): boolean {
     if (enforceCheckout) {
       if (
@@ -31,7 +31,7 @@ export class RolesGuard implements CanActivate {
         lookupType === LookupType.MonitorPlan
       ) {
         if (!checkedOutCriteria.has(item)) {
-          console.log('Location not checked out!');
+          console.log("Location not checked out!");
           return false;
         }
       }
@@ -48,7 +48,7 @@ export class RolesGuard implements CanActivate {
     lookupList,
     lookupType,
     enforceCheckout,
-    checkedOutCriteria,
+    checkedOutCriteria
   ) {
     const request = context.switchToHttp().getRequest();
     const params = request.params;
@@ -61,7 +61,7 @@ export class RolesGuard implements CanActivate {
           lookupVal,
           lookupType,
           enforceCheckout,
-          checkedOutCriteria,
+          checkedOutCriteria
         )
       ) {
         return lookupList.has(lookupVal);
@@ -69,9 +69,9 @@ export class RolesGuard implements CanActivate {
 
       return false;
     } else {
-      console.warn('Are you sure you entered the request parameter correctly?');
+      console.warn("Are you sure you entered the request parameter correctly?");
       throw new BadRequestException(
-        'Lookup parameter does not exist in request',
+        "Lookup parameter does not exist in request"
       );
     }
   }
@@ -84,7 +84,7 @@ export class RolesGuard implements CanActivate {
     lookupList,
     lookupType,
     enforceCheckout,
-    checkedOutCriteria,
+    checkedOutCriteria
   ) {
     if (step === pathChunks.length - 1) {
       if (
@@ -92,7 +92,7 @@ export class RolesGuard implements CanActivate {
           data[pathChunks[step]],
           lookupType,
           enforceCheckout,
-          checkedOutCriteria,
+          checkedOutCriteria
         )
       ) {
         return lookupList.has(data[pathChunks[step]]);
@@ -101,7 +101,7 @@ export class RolesGuard implements CanActivate {
       return false;
     }
 
-    if (pathChunks[step] === '*') {
+    if (pathChunks[step] === "*") {
       for (const newChunk of data) {
         if (
           this.recurseBody(
@@ -111,7 +111,7 @@ export class RolesGuard implements CanActivate {
             lookupList,
             lookupType,
             enforceCheckout,
-            checkedOutCriteria,
+            checkedOutCriteria
           ) === false
         ) {
           return false;
@@ -127,7 +127,7 @@ export class RolesGuard implements CanActivate {
         lookupList,
         lookupType,
         enforceCheckout,
-        checkedOutCriteria,
+        checkedOutCriteria
       );
     }
   }
@@ -139,9 +139,9 @@ export class RolesGuard implements CanActivate {
     lookupList,
     lookupType,
     enforceCheckout,
-    checkedOutCriteria,
+    checkedOutCriteria
   ) {
-    const lookupKeyParts = lookupKey.split('.');
+    const lookupKeyParts = lookupKey.split(".");
     let dataChunk = context.switchToHttp().getRequest().body;
 
     return this.recurseBody(
@@ -151,7 +151,7 @@ export class RolesGuard implements CanActivate {
       lookupList,
       lookupType,
       enforceCheckout,
-      checkedOutCriteria,
+      checkedOutCriteria
     );
   }
 
@@ -162,7 +162,7 @@ export class RolesGuard implements CanActivate {
     lookupType,
     enforceCheckout,
     checkedOutCriteria,
-    isDelimitted = false,
+    isDelimitted = false
   ) {
     const request = context.switchToHttp().getRequest();
     const params = request.query;
@@ -171,7 +171,7 @@ export class RolesGuard implements CanActivate {
       const lookupVal = params[lookupKey];
       if (isDelimitted) {
         const pathChunks = lookupVal
-          .split('|')
+          .split("|")
           .map((item: string) => item.trim());
 
         for (const chunk of pathChunks) {
@@ -180,7 +180,7 @@ export class RolesGuard implements CanActivate {
               chunk,
               lookupType,
               enforceCheckout,
-              checkedOutCriteria,
+              checkedOutCriteria
             )
           ) {
             return false;
@@ -199,7 +199,7 @@ export class RolesGuard implements CanActivate {
           lookupVal,
           lookupType,
           enforceCheckout,
-          checkedOutCriteria,
+          checkedOutCriteria
         )
       ) {
         return lookupList.has(lookupVal);
@@ -207,9 +207,9 @@ export class RolesGuard implements CanActivate {
 
       return false;
     } else {
-      console.warn('Are you sure you entered the request parameter correctly?');
+      console.warn("Are you sure you entered the request parameter correctly?");
       throw new BadRequestException(
-        'Lookup parameter does not exist in request',
+        "Lookup parameter does not exist in request"
       );
     }
   }
@@ -217,10 +217,10 @@ export class RolesGuard implements CanActivate {
   async canActivate(context: ExecutionContext): Promise<boolean> {
     const request = context.switchToHttp().getRequest();
 
-    if (this.configService.get<string>('app.env') !== 'production') {
+    if (this.configService.get<string>("app.env") !== "production") {
       // Allow enable or disable of the guard but still set the allowed decorators
       if (
-        !parseBool(this.configService.get('app.enableRoleGuard')) ||
+        !parseBool(this.configService.get("app.enableRoleGuard")) ||
         request.user.facilities === null
       ) {
         request.allowedLocations = null;
@@ -232,19 +232,19 @@ export class RolesGuard implements CanActivate {
 
     const facilities = request.user.facilities;
     const lookupType = this.reflector.get<number>(
-      'lookupType',
-      context.getHandler(),
+      "lookupType",
+      context.getHandler()
     );
 
     const params = this.reflector.get<ValidatorParams>(
-      'params',
-      context.getHandler(),
+      "params",
+      context.getHandler()
     );
 
-    const facilitiesWithRole = facilities.map(p => p.orisCode);
+    const facilitiesWithRole = facilities.map((p) => p.orisCode.toString());
 
     let enforceCheckout = true; //Determine if thise endpoint needs to enforce that all records are also currently checked out
-    if (this.configService.get<boolean>('app.enableRoleGuardCheckoutCheck')) {
+    if (this.configService.get<boolean>("app.enableRoleGuardCheckoutCheck")) {
       if (
         params.enforceCheckout !== null &&
         params.enforceCheckout !== undefined &&
@@ -261,21 +261,21 @@ export class RolesGuard implements CanActivate {
       if (lookupType === LookupType.MonitorPlan) {
         //Pull back all of our checked out monitor plans
         checkedOutCriteria = await this.returnManager().query(
-          'SELECT mon_plan_id FROM camdecmpswks.user_check_out WHERE checked_out_by = $1',
-          [request.user.userId],
+          "SELECT mon_plan_id FROM camdecmpswks.user_check_out WHERE checked_out_by = $1",
+          [request.user.userId]
         );
         checkedOutCriteria = new Set(
-          checkedOutCriteria.map(c => c['mon_plan_id']),
+          checkedOutCriteria.map((c) => c["mon_plan_id"])
         );
       } else if (lookupType === LookupType.Location) {
         checkedOutCriteria = await this.returnManager().query(
           `SELECT mon_loc_id FROM camdecmpswks.user_check_out 
          JOIN camdecmpswks.monitor_plan_location USING (mon_plan_id) 
          WHERE checked_out_by = $1`,
-          [request.user.userId],
+          [request.user.userId]
         );
         checkedOutCriteria = new Set(
-          checkedOutCriteria.map(c => c['mon_loc_id']),
+          checkedOutCriteria.map((c) => c["mon_loc_id"])
         );
       }
     }
@@ -285,20 +285,20 @@ export class RolesGuard implements CanActivate {
     switch (lookupType) {
       case LookupType.Location:
         const locations = await this.returnManager().query(
-          'SELECT camdecmpswks.get_facility_locations($1)',
-          [facilitiesWithRole],
+          "SELECT camdecmpswks.get_facility_locations($1)",
+          [facilitiesWithRole]
         );
         lookupDataList = new Set(
-          locations.map(o => o['get_facility_locations']),
+          locations.map((o) => o["get_facility_locations"])
         );
         request.allowedLocations = lookupDataList;
         break;
       case LookupType.MonitorPlan:
         const plans = await this.returnManager().query(
-          'SELECT camdecmpswks.get_facility_plans($1)',
-          [facilitiesWithRole],
+          "SELECT camdecmpswks.get_facility_plans($1)",
+          [facilitiesWithRole]
         );
-        lookupDataList = new Set(plans.map(o => o['get_facility_plans']));
+        lookupDataList = new Set(plans.map((o) => o["get_facility_plans"]));
         request.allowedPlans = lookupDataList;
         break;
       case LookupType.Facility:
@@ -309,9 +309,9 @@ export class RolesGuard implements CanActivate {
 
     if (params.importLocationSources) {
       for (const importLocationSource of params.importLocationSources) {
-        const paths = importLocationSource.split('.');
+        const paths = importLocationSource.split(".");
         let chunk = context.switchToHttp().getRequest().body;
-        const orisCode = chunk['orisCode'];
+        const orisCode = chunk["orisCode"];
         for (const pathChunk of paths) {
           // Drill down into each location source
           chunk = chunk[pathChunk];
@@ -320,8 +320,8 @@ export class RolesGuard implements CanActivate {
         for (const locationChunk of chunk) {
           //Perform validation of the data
           let monitorLocations = await this.returnManager().query(
-            'SELECT camdecmpswks.get_locations_by_unit_and_stack($1, $2, $3)',
-            [orisCode, locationChunk['unitId'], locationChunk['stackPipeId']],
+            "SELECT camdecmpswks.get_locations_by_unit_and_stack($1, $2, $3)",
+            [orisCode, locationChunk["unitId"], locationChunk["stackPipeId"]]
           );
 
           if (monitorLocations && monitorLocations.length === 0) {
@@ -330,7 +330,7 @@ export class RolesGuard implements CanActivate {
           }
 
           monitorLocations = monitorLocations.map(
-            ml => ml['get_locations_by_unit_and_stack'],
+            (ml) => ml["get_locations_by_unit_and_stack"]
           );
 
           for (const ml of monitorLocations) {
@@ -355,7 +355,7 @@ export class RolesGuard implements CanActivate {
         lookupDataList,
         lookupType,
         enforceCheckout,
-        checkedOutCriteria,
+        checkedOutCriteria
       );
     } else if (params.bodyParam) {
       return this.handleBodyParamValidation(
@@ -364,7 +364,7 @@ export class RolesGuard implements CanActivate {
         lookupDataList,
         lookupType,
         enforceCheckout,
-        checkedOutCriteria,
+        checkedOutCriteria
       );
     } else if (params.queryParam) {
       return this.handleQueryParamValidation(
@@ -374,7 +374,7 @@ export class RolesGuard implements CanActivate {
         lookupType,
         enforceCheckout,
         checkedOutCriteria,
-        params.isPipeDelimitted,
+        params.isPipeDelimitted
       );
     } else {
       return true;
