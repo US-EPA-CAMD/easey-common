@@ -33,7 +33,7 @@ export class RolesGuard implements CanActivate {
         if (!checkedOutCriteria.has(item)) {
           console.log("Location not checked out!");
           return false;
-        }
+        } //
       }
     }
 
@@ -323,30 +323,36 @@ export class RolesGuard implements CanActivate {
           }
         }
 
-        if (foundChunk) {
+        if (foundChunk && chunk.length > 0) {
+          const unitSet = new Set();
+          const stackPipeSet = new Set();
+
           for (const locationChunk of chunk) {
             //Perform validation of the data
-            let monitorLocations = await this.returnManager().query(
-              "SELECT camdecmpswks.get_locations_by_unit_and_stack($1, $2, $3)",
-              [orisCode, locationChunk["unitId"], locationChunk["stackPipeId"]]
-            );
+            unitSet.add(locationChunk["unitId"]);
+            stackPipeSet.add(locationChunk["stackPipeId"]);
+          }
 
-            if (monitorLocations && monitorLocations.length === 0) {
-              // Return false if the query returns no results
+          let monitorLocations = await this.returnManager().query(
+            "SELECT camdecmpswks.get_locations_by_unit_and_stack($1, $2, $3)",
+            [orisCode, Array.from(unitSet), Array.from(stackPipeSet)]
+          );
+
+          if (monitorLocations && monitorLocations.length === 0) {
+            // Return false if the query returns no results
+            return false;
+          }
+
+          monitorLocations = monitorLocations.map(
+            (ml) => ml["get_locations_by_unit_and_stack"]
+          );
+
+          for (const ml of monitorLocations) {
+            if (
+              (enforceCheckout && !checkedOutCriteria.has(ml)) ||
+              !lookupDataList.has(ml)
+            ) {
               return false;
-            }
-
-            monitorLocations = monitorLocations.map(
-              (ml) => ml["get_locations_by_unit_and_stack"]
-            );
-
-            for (const ml of monitorLocations) {
-              if (
-                (enforceCheckout && !checkedOutCriteria.has(ml)) ||
-                !lookupDataList.has(ml)
-              ) {
-                return false;
-              }
             }
           }
         }
