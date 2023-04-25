@@ -1,3 +1,10 @@
+## [15.7.3](https://github.com/US-EPA-CAMD/easey-common/compare/v15.7.2...v15.7.3) (2023-04-25)
+
+
+### Bug Fixes
+
+* increased performance of import role guard ([4a5e41d](https://github.com/US-EPA-CAMD/easey-common/commit/4a5e41d356e677ee1a6837b3a44e25c2e497a273))
+
 ## [15.7.2](https://github.com/US-EPA-CAMD/easey-common/compare/v15.7.1...v15.7.2) (2023-04-24)
 
 
