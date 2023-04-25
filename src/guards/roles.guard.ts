@@ -33,7 +33,7 @@ export class RolesGuard implements CanActivate {
         if (!checkedOutCriteria.has(item)) {
           console.log("Location not checked out!");
           return false;
-        }
+        } //
       }
     }
 
