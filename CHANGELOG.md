@@ -1,3 +1,10 @@
+# [15.8.0](https://github.com/US-EPA-CAMD/easey-common/compare/v15.7.4...v15.8.0) (2023-04-30)
+
+
+### Features
+
+* **bulk load:** support to specify delimiter on bulk load ([fbf72b5](https://github.com/US-EPA-CAMD/easey-common/commit/fbf72b507c3097319e4273ef50ea371e603a895a))
+
 ## [15.7.4](https://github.com/US-EPA-CAMD/easey-common/compare/v15.7.3...v15.7.4) (2023-04-30)
 
 
