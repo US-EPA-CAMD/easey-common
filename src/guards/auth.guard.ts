@@ -36,6 +36,7 @@ export class AuthGuard implements CanActivate {
 
       return result.data;
     } catch (error) {
+      console.log(error);
       if (error.response) {
         throw new LoggingException(
           "An error occurred in while validating the user's security token.",
@@ -48,6 +49,7 @@ export class AuthGuard implements CanActivate {
 
   async validateRequest(request): Promise<boolean> {
     const authHeader = request.headers.authorization;
+    console.log(authHeader);
     const forwardedForHeader = request.headers["x-forwarded-for"];
     let errorMsg =
       "Prior Authorization (User Security Token) required to access this resource.";
@@ -58,7 +60,7 @@ export class AuthGuard implements CanActivate {
 
     const splitString = authHeader.split(" ");
     if (splitString.length !== 2 && splitString[0] !== "Bearer") {
-      throw new LoggingException(errorMsg, HttpStatus.BAD_REQUEST);
+      throw new LoggingException(errorMsg, HttpStatus.BAD_REQUEST); //
     }
 
     let ip = request.ip;
@@ -67,7 +69,8 @@ export class AuthGuard implements CanActivate {
     }
 
     const validatedToken = await this.validateToken(splitString[1], ip);
-    request.user = parseToken(validatedToken);
+
+    request.user = validatedToken;
 
     return true;
   }

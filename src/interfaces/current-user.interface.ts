@@ -1,5 +1,6 @@
 export interface UserPermissionSet {
-  id: number;
+  facId: number;
+  orisCode: number;
   permissions: string[];
 }
 
@@ -8,6 +9,6 @@ export interface CurrentUser {
   sessionId: string;
   expiration: string;
   clientIp: string;
-  isAdmin: boolean;
-  permissionSet: UserPermissionSet[];
+  facilities: UserPermissionSet[];
+  roles: string[];
 }

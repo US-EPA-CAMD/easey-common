@@ -78,9 +78,9 @@ describe("RolesGuard", () => {
       switchToHttp: jest.fn().mockReturnValue({
         getRequest: jest.fn().mockReturnValue({
           user: {
-            permissionSet: [
+            facilities: [
               {
-                id: 3,
+                orisCode: 3,
                 permissions: ["DSMP"],
               },
             ],
@@ -131,9 +131,9 @@ describe("RolesGuard", () => {
       switchToHttp: jest.fn().mockReturnValue({
         getRequest: jest.fn().mockReturnValue({
           user: {
-            permissionSet: [
+            facilities: [
               {
-                id: 3,
+                orisCode: 3,
                 permissions: ["DSMP"],
               },
             ],
@@ -158,11 +158,18 @@ describe("RolesGuard", () => {
     });
 
     expect(
-      guard.handlePathParamValidation(context, "locId", ["5"], false)
+      guard.handlePathParamValidation(
+        context,
+        "locId",
+        new Set(["5"]),
+        false,
+        false,
+        []
+      )
     ).toBe(true);
   });
 
-  it("execute the handleQueryParamValidation with existing property", async () => {
+  it("execute the handleQueryParamValidation with existing property and checkedOutCriteria set", async () => {
     const context = createMock<ExecutionContext>({
       getHandler: jest.fn(),
       switchToHttp: jest.fn().mockReturnValue({
@@ -173,7 +180,14 @@ describe("RolesGuard", () => {
     });
 
     expect(
-      guard.handleQueryParamValidation(context, "locId", ["5"], false)
+      guard.handleQueryParamValidation(
+        context,
+        "locId",
+        new Set(["5"]),
+        true,
+        new Set(["5"]),
+        []
+      )
     ).toBe(true);
   });
 
@@ -191,8 +205,10 @@ describe("RolesGuard", () => {
       guard.handleQueryParamValidation(
         context,
         "locId",
-        ["5", "6"],
+        new Set(["5", "6"]),
         false,
+        false,
+        [],
         true
       )
     ).toBe(true);
@@ -253,8 +269,10 @@ describe("RolesGuard", () => {
     const result = await guard.handleBodyParamValidation(
       context,
       "locations.*.innerLocation.*.val",
-      ["5"],
-      false
+      new Set(["5"]),
+      false,
+      false,
+      []
     );
 
     expect(result).toBe(true);
@@ -315,8 +333,10 @@ describe("RolesGuard", () => {
     const result = await guard.handleBodyParamValidation(
       context,
       "locations.*.innerLocation.*.val",
-      ["5"],
-      false
+      new Set(["5"]),
+      false,
+      false,
+      []
     );
 
     expect(result).toBe(false);

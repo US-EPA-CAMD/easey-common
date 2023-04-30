@@ -1,3 +1,101 @@
+## [15.7.3](https://github.com/US-EPA-CAMD/easey-common/compare/v15.7.2...v15.7.3) (2023-04-25)
+
+
+### Bug Fixes
+
+* increased performance of import role guard ([4a5e41d](https://github.com/US-EPA-CAMD/easey-common/commit/4a5e41d356e677ee1a6837b3a44e25c2e497a273))
+
+## [15.7.2](https://github.com/US-EPA-CAMD/easey-common/compare/v15.7.1...v15.7.2) (2023-04-24)
+
+
+### Bug Fixes
+
+* added support for missing import sections ([421ab9f](https://github.com/US-EPA-CAMD/easey-common/commit/421ab9fdd76e4ec35abd3e3209f6dfa8af381afc))
+
+## [15.7.1](https://github.com/US-EPA-CAMD/easey-common/compare/v15.7.0...v15.7.1) (2023-04-24)
+
+
+### Bug Fixes
+
+* cast look up based oris code ([3fc71e3](https://github.com/US-EPA-CAMD/easey-common/commit/3fc71e3ba827aac05715d7676aba8946fe3ad65d))
+
+# [15.7.0](https://github.com/US-EPA-CAMD/easey-common/compare/v15.6.1...v15.7.0) (2023-04-24)
+
+
+### Features
+
+* added support for checking if a record is checked out ([cd440c0](https://github.com/US-EPA-CAMD/easey-common/commit/cd440c09a1d1a76d5e7a0f8558522ba211edf346))
+
+## [15.6.1](https://github.com/US-EPA-CAMD/easey-common/compare/v15.6.0...v15.6.1) (2023-04-21)
+
+
+### Bug Fixes
+
+* **begin-end-dates-consistent.pipe.ts:** skip Begin/End Date Comparision if Required Field Missing ([fe19d11](https://github.com/US-EPA-CAMD/easey-common/commit/fe19d11e0a4e10d8a942c60dbc47b534035dc320))
+
+# [15.6.0](https://github.com/US-EPA-CAMD/easey-common/compare/v15.5.2...v15.6.0) (2023-04-20)
+
+
+### Features
+
+* **adds begin/end date consistency validator:** adds Begin/End Date Consistency Validator ([c02465f](https://github.com/US-EPA-CAMD/easey-common/commit/c02465fcf773e3888689cbeef02b4774d12a2b3c))
+
+## [15.5.2](https://github.com/US-EPA-CAMD/easey-common/compare/v15.5.1...v15.5.2) (2023-04-18)
+
+
+### Bug Fixes
+
+* resolution of xml2js ([e3ef874](https://github.com/US-EPA-CAMD/easey-common/commit/e3ef874e7def177f8a57c74452047a4895f21b63))
+
+## [15.5.1](https://github.com/US-EPA-CAMD/easey-common/compare/v15.5.0...v15.5.1) (2023-04-18)
+
+
+### Bug Fixes
+
+* fix to max and min pipe ([0d5b8f1](https://github.com/US-EPA-CAMD/easey-common/commit/0d5b8f1c588fe968ac2a55db91901f069ad3aa6b))
+
+# [15.5.0](https://github.com/US-EPA-CAMD/easey-common/compare/v15.4.2...v15.5.0) (2023-04-14)
+
+
+### Features
+
+* added bulk load service ([4f10885](https://github.com/US-EPA-CAMD/easey-common/commit/4f108853ebc73d8524dfe5bb96b86d29c2f055c9))
+
+## [15.4.2](https://github.com/US-EPA-CAMD/easey-common/compare/v15.4.1...v15.4.2) (2023-04-05)
+
+
+### Bug Fixes
+
+* fixed validate request auth ([f7f4607](https://github.com/US-EPA-CAMD/easey-common/commit/f7f460704582bc0c6b0d9c8c416c49e5b9ee3f39))
+
+## [15.4.1](https://github.com/US-EPA-CAMD/easey-common/compare/v15.4.0...v15.4.1) (2023-04-05)
+
+
+### Bug Fixes
+
+* logging ([5038a3f](https://github.com/US-EPA-CAMD/easey-common/commit/5038a3f1b52ac3eeeab986333293adc0e91c68de))
+
+# [15.4.0](https://github.com/US-EPA-CAMD/easey-common/compare/v15.3.0...v15.4.0) (2023-04-04)
+
+
+### Features
+
+* made common compatible with auth changes ([81e0be0](https://github.com/US-EPA-CAMD/easey-common/commit/81e0be0b224788a54ee1618ba7f427587e648c04))
+
+# [15.3.0](https://github.com/US-EPA-CAMD/easey-common/compare/v15.2.0...v15.3.0) (2023-03-22)
+
+
+### Features
+
+* added dateToEstString utility function ([9314ad1](https://github.com/US-EPA-CAMD/easey-common/commit/9314ad16df632be9fbda5a975868595ff7438a44))
+
+# [15.2.0](https://github.com/US-EPA-CAMD/easey-common/compare/v15.1.3...v15.2.0) (2023-03-21)
+
+
+### Features
+
+* **check catalog:** handling special cases ([a59fa88](https://github.com/US-EPA-CAMD/easey-common/commit/a59fa8876101ef0e1075b94ac1bb7f313e9363ca))
+
 ## [15.1.3](https://github.com/US-EPA-CAMD/easey-common/compare/v15.1.2...v15.1.3) (2023-03-17)
 
 
