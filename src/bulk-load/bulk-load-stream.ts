@@ -1,17 +1,17 @@
 import { WriteStream } from 'fs';
 
 export class BulkLoadStream {
-  private resolver;
+  private resolver: any;
   private client: any;
+  private delimiter: string;
   private hasWritten: boolean;
   private stream: WriteStream;
 
   public status: string;
   public finished: Promise<boolean>;
-  public static readonly delimiter: string = '|';
   public static readonly nullChar: string = './0';
 
-  constructor(stream: WriteStream, client) {
+  constructor(stream: WriteStream, client: any, delimiter: string) {
     this.hasWritten = false;
     this.stream = stream;
     this.status = 'Writing';
@@ -19,6 +19,7 @@ export class BulkLoadStream {
       this.resolver = resolve;
     });
     this.client = client;
+    this.delimiter = delimiter;
 
     this.stream.on('finish', () => {
       if (this.status != 'Error') {
@@ -46,7 +47,7 @@ export class BulkLoadStream {
             return obj[o];
           }
         })
-        .join(BulkLoadStream.delimiter);
+        .join(this.delimiter);
 
       this.stream.write(delimitted);
     } catch (e) {

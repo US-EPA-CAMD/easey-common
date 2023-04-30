@@ -26,7 +26,8 @@ export class BulkLoadService {
 
   async startBulkLoader(
     tableLocation: string,
-    columns?: string[]
+    columns?: string[],
+    delimiter: string = ',',
   ): Promise<BulkLoadStream> {
     const client = await this.pool.connect();
 
@@ -44,10 +45,10 @@ export class BulkLoadService {
 
     const ingestStream: WriteStream = client.query(
       copyFrom(
-        `COPY ${tableLocation} ${columnFormatting} FROM STDIN (DELIMITER '${BulkLoadStream.delimiter}', NULL '${BulkLoadStream.nullChar}')`
+        `COPY ${tableLocation} ${columnFormatting} FROM STDIN (DELIMITER '${delimiter}', NULL '${BulkLoadStream.nullChar}')`
       )
     );
 
-    return new BulkLoadStream(ingestStream, client);
+    return new BulkLoadStream(ingestStream, client, delimiter);
   }
 }
