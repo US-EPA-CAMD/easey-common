@@ -49,6 +49,12 @@ const viewData = [
     resultCode: "A",
     resultMessage: "[Children]",
   },
+  {
+    checkTypeCode: "TEST",
+    checkNumber: 9,
+    resultCode: "A",
+    resultMessage: "[Key]",
+  },
 ];
 
 describe("CheckCatalogService", () => {
@@ -154,6 +160,18 @@ describe("CheckCatalogService", () => {
     });
     expect(result).toEqual(
       `[${checkTypeCode}] - [${children}]`
+    );
+  });
+
+  it("[Key]", async () => {
+    const key = "1234";
+    const checkTypeCode = "TEST-9-A";
+    await CheckCatalogService.load("view");
+    const result = CheckCatalogService.formatResultMessage(checkTypeCode, {
+      key: key
+    });
+    expect(result).toEqual(
+      `[${checkTypeCode}] - [${key}]`
     );
   });
 })
