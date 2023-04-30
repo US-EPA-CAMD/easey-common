@@ -1,14 +1,15 @@
 import { WriteStream } from 'fs';
 
 export class BulkLoadStream {
+  private resolver;
+  private client: any;
   private hasWritten: boolean;
   private stream: WriteStream;
+
   public status: string;
-
-  private resolver;
   public finished: Promise<boolean>;
-
-  private client: any;
+  public static readonly delimiter: string = '|';
+  public static readonly nullChar: string = './0';
 
   constructor(stream: WriteStream, client) {
     this.hasWritten = false;
@@ -40,12 +41,12 @@ export class BulkLoadStream {
       const delimitted = Object.keys(obj)
         .map(o => {
           if (obj[o] === null) {
-            return './0';
+            return BulkLoadStream.nullChar;
           } else {
             return obj[o];
           }
         })
-        .join(',');
+        .join(BulkLoadStream.delimiter);
 
       this.stream.write(delimitted);
     } catch (e) {

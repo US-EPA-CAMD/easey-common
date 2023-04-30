@@ -44,7 +44,7 @@ export class BulkLoadService {
 
     const ingestStream: WriteStream = client.query(
       copyFrom(
-        `COPY ${tableLocation} ${columnFormatting} FROM STDIN (DELIMITER ',', NULL './0')`
+        `COPY ${tableLocation} ${columnFormatting} FROM STDIN (DELIMITER '${BulkLoadStream.delimiter}', NULL '${BulkLoadStream.nullChar}')`
       )
     );
 
