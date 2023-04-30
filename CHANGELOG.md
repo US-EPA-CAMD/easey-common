@@ -1,3 +1,10 @@
+## [15.7.4](https://github.com/US-EPA-CAMD/easey-common/compare/v15.7.3...v15.7.4) (2023-04-30)
+
+
+### Bug Fixes
+
+* **bulk-load:** changing bulk load stream to use pipe delimiter ([dce6b9c](https://github.com/US-EPA-CAMD/easey-common/commit/dce6b9cd2783b7d38ec0378879664aa2012925d8))
+
 ## [15.7.3](https://github.com/US-EPA-CAMD/easey-common/compare/v15.7.2...v15.7.3) (2023-04-25)
 
 
