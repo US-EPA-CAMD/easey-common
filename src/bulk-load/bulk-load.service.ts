@@ -17,7 +17,7 @@ export class BulkLoadService {
       database: this.configService.get<string>("database.name"),
       password: this.configService.get<string>("database.pwd"),
       port: this.configService.get<number>("database.port"),
-      max: 100, // set pool max size to 100
+      max: this.configService.get<number>("app.bulkLoadMaxPoolSize"), // set pool max size to 100
       idleTimeoutMillis: 1000, // close idle clients after 1 second
       connectionTimeoutMillis: 20000, // return an error after 20 seconds if connection could not be established
       maxUses: 500, // close (and replace) a connection after it has been used 7500 times
@@ -27,7 +27,7 @@ export class BulkLoadService {
   async startBulkLoader(
     tableLocation: string,
     columns?: string[],
-    delimiter: string = ',',
+    delimiter: string = ","
   ): Promise<BulkLoadStream> {
     const client = await this.pool.connect();
 
