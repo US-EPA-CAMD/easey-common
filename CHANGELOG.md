@@ -1,3 +1,10 @@
+## [15.8.1](https://github.com/US-EPA-CAMD/easey-common/compare/v15.8.0...v15.8.1) (2023-05-01)
+
+
+### Bug Fixes
+
+* made bulk load pool size configurable ([43bd88b](https://github.com/US-EPA-CAMD/easey-common/commit/43bd88b020ad8398b6c07042806e65cdbb8b9bc4))
+
 # [15.8.0](https://github.com/US-EPA-CAMD/easey-common/compare/v15.7.4...v15.8.0) (2023-04-30)
 
 
