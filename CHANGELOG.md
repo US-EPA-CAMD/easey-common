@@ -1,3 +1,10 @@
+# [15.9.0](https://github.com/US-EPA-CAMD/easey-common/compare/v15.8.1...v15.9.0) (2023-05-02)
+
+
+### Features
+
+* **functions:** added currentDateTime function ([accda0d](https://github.com/US-EPA-CAMD/easey-common/commit/accda0d896ee7c5d176c7119ff0358c2bf3ac0fd))
+
 ## [15.8.1](https://github.com/US-EPA-CAMD/easey-common/compare/v15.8.0...v15.8.1) (2023-05-01)
 
 
