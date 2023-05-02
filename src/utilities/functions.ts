@@ -42,14 +42,23 @@ export const getConfigValueBoolean = (
   return parseBool(getConfigValue(key, defaultValue));
 };
 
-export const dateToEstString = (date?: string | number | Date): string => {
-  if (date) {
-    return new Date(date).toLocaleString("en-US", {
-      timeZone: "America/New_York",
-    });
+export const dateToEstString = (value?: string | number | Date): string => {
+  let date: Date = new Date();
+
+  if (value) {
+    if (typeof(value) !== typeof(Date)) {
+      date = new Date(value);
+    }
+    else {
+      date = value as Date;
+    }
   }
 
-  return new Date().toLocaleString("en-US", {
+  return date.toLocaleString("en-US", {
     timeZone: "America/New_York",
   });
+};
+
+export const currentDateTime = (): Date => {
+  return new Date(dateToEstString(new Date()));
 };
