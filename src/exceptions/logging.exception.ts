@@ -1,5 +1,6 @@
 import { HttpException } from "@nestjs/common";
 
+//Takes an error message string, and status code, with optional metadata useful for filtering
 export class LoggingException extends HttpException {
   public metadata: object = {};
 
