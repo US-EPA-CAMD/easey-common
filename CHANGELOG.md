@@ -1,3 +1,10 @@
+## [15.9.1](https://github.com/US-EPA-CAMD/easey-common/compare/v15.9.0...v15.9.1) (2023-06-15)
+
+
+### Bug Fixes
+
+* removed object type in LoggingException message ([d8e5cea](https://github.com/US-EPA-CAMD/easey-common/commit/d8e5ceadc917182eca9e3f81098052326ffae326))
+
 # [15.9.0](https://github.com/US-EPA-CAMD/easey-common/compare/v15.8.1...v15.9.0) (2023-05-02)
 
 
