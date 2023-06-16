@@ -1,3 +1,10 @@
+## [16.0.2](https://github.com/US-EPA-CAMD/easey-common/compare/v16.0.1...v16.0.2) (2023-06-16)
+
+
+### Bug Fixes
+
+* configure internal logger to use the custom implementation ([620a260](https://github.com/US-EPA-CAMD/easey-common/commit/620a260e374d40ac1d9b8f6e7faa0876728dde7f))
+
 ## [16.0.1](https://github.com/US-EPA-CAMD/easey-common/compare/v16.0.0...v16.0.1) (2023-06-16)
 
 
