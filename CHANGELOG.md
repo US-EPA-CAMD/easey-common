@@ -1,3 +1,16 @@
+# [16.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v15.9.1...v16.0.0) (2023-06-16)
+
+
+### Features
+
+* refactored the logger to use ExceptionFilters ([838cfdd](https://github.com/US-EPA-CAMD/easey-common/commit/838cfdd196da490b78c3e5e154919332c7fdef01))
+
+
+### BREAKING CHANGES
+
+* Renamed the LoggingException to EaseyException, and changed its input type to take
+in an Error
+
 ## [15.9.1](https://github.com/US-EPA-CAMD/easey-common/compare/v15.9.0...v15.9.1) (2023-06-15)
 
 
