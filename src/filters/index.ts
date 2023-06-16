@@ -1,1 +1,1 @@
-export { HttpExceptionFilter } from "./http-exception.filter";
+export { EaseyExceptionFilter } from "./easey-exception.filter";

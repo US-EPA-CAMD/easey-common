@@ -3,27 +3,40 @@ import {
   Catch,
   ArgumentsHost,
   HttpException,
+  HttpStatus,
 } from "@nestjs/common";
 import { Request, Response } from "express";
 import { v4 as uuid } from "uuid";
 import { Logger } from "../logger";
 
-@Catch(HttpException)
-export class HttpExceptionFilter implements ExceptionFilter {
+@Catch()
+export class EaseyExceptionFilter implements ExceptionFilter {
   constructor(private readonly logger: Logger) {}
 
-  catch(exception: HttpException, host: ArgumentsHost) {
+  catch(exception: unknown, host: ArgumentsHost) {
     const ctx = host.switchToHttp();
     const response = ctx.getResponse<Response>();
     const request = ctx.getRequest<Request>();
-    const status = exception.getStatus();
+
+    const httpStatus =
+      exception instanceof HttpException
+        ? exception.getStatus()
+        : HttpStatus.INTERNAL_SERVER_ERROR;
+
+    const message = exception["message"]
+      ? exception["message"]
+      : "Internal Server Error";
+
+    const stack = exception["stack"]
+      ? exception["stack"]
+      : "No stack information available";
 
     const errorId = uuid();
 
     let logMetadata = {
       path: request.url,
-      stack: exception.stack,
-      statusCode: status,
+      stack: stack,
+      statusCode: httpStatus,
       errorId: errorId,
     };
 
@@ -34,12 +47,12 @@ export class HttpExceptionFilter implements ExceptionFilter {
       };
     }
 
-    this.logger.error(exception.message, logMetadata);
+    this.logger.error(message, logMetadata);
 
-    response.status(status).json({
-      message: exception.message,
+    response.status(httpStatus).json({
+      message: message,
       errorId: errorId,
-      statusCode: status,
+      statusCode: httpStatus,
     });
   }
 }

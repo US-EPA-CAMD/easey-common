@@ -7,7 +7,7 @@ import { INestApplication, ValidationPipe } from "@nestjs/common";
 import { Logger } from "../logger";
 import { CorsOptionsService } from "../cors-options";
 import { GatewayGuard } from "../guards";
-import { HttpExceptionFilter } from "../filters/http-exception.filter";
+import { EaseyExceptionFilter } from "../filters/easey-exception.filter";
 
 export async function applyMiddleware(
   module: any,
@@ -15,7 +15,7 @@ export async function applyMiddleware(
   allowCredentials: boolean = false,
   useServiceContainers: boolean = false
 ) {
-  app.useGlobalFilters(new HttpExceptionFilter(new Logger()));
+  app.useGlobalFilters(new EaseyExceptionFilter(new Logger()));
 
   const configService = app.get(ConfigService);
   const corsOptionsService = app.get(CorsOptionsService);
