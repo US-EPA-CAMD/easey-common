@@ -5,9 +5,9 @@ import { ConfigService } from "@nestjs/config";
 import { INestApplication, ValidationPipe } from "@nestjs/common";
 
 import { Logger } from "../logger";
-import { LoggingInterceptor } from "../interceptors";
 import { CorsOptionsService } from "../cors-options";
 import { GatewayGuard } from "../guards";
+import { HttpExceptionFilter } from "../filters/http-exception.filter";
 
 export async function applyMiddleware(
   module: any,
@@ -15,7 +15,7 @@ export async function applyMiddleware(
   allowCredentials: boolean = false,
   useServiceContainers: boolean = false
 ) {
-  app.useGlobalInterceptors(new LoggingInterceptor(new Logger()));
+  app.useGlobalFilters(new HttpExceptionFilter(new Logger()));
 
   const configService = app.get(ConfigService);
   const corsOptionsService = app.get(CorsOptionsService);

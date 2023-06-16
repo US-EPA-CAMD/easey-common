@@ -1,13 +1,13 @@
 import { HttpException } from "@nestjs/common";
 
 //Takes an error message string, and status code, with optional metadata useful for filtering
-export class LoggingException extends HttpException {
+export class EaseyException extends HttpException {
   public metadata: object = {};
 
-  constructor(message: string, status: number, metadata?: object) {
+  constructor(error: Error, status, metadata?: object) {
     super(
       {
-        message,
+        message: error.message,
         statusCode: status,
         error: (status: number) => {
           switch (status) {
@@ -32,6 +32,8 @@ export class LoggingException extends HttpException {
       },
       status
     );
+
+    this.stack = error.stack; //Override the stack to show the underlying error stack only
 
     if (metadata) {
       this.metadata = metadata;

@@ -7,7 +7,7 @@ import {
 import { firstValueFrom, Observable } from "rxjs";
 import { HttpService } from "@nestjs/axios";
 import { ConfigService } from "@nestjs/config";
-import { LoggingException } from "../exceptions";
+import { EaseyException } from "../exceptions";
 
 @Injectable()
 export class ClientTokenGuard implements CanActivate {
@@ -42,8 +42,10 @@ export class ClientTokenGuard implements CanActivate {
       return false;
     } catch (error) {
       if (error.response) {
-        throw new LoggingException(
-          "An error occurred while validating the client's security token.",
+        throw new EaseyException(
+          new Error(
+            "An error occurred while validating the client's security token."
+          ),
           HttpStatus.INTERNAL_SERVER_ERROR,
           error
         );
@@ -63,12 +65,12 @@ export class ClientTokenGuard implements CanActivate {
       clientIdHeader === null ||
       clientIdHeader === undefined
     ) {
-      throw new LoggingException(errorMsg, HttpStatus.BAD_REQUEST);
+      throw new EaseyException(new Error(errorMsg), HttpStatus.BAD_REQUEST);
     }
 
     const splitString = authHeader.split(" ");
     if (splitString.length !== 2 && splitString[0] !== "Bearer") {
-      throw new LoggingException(errorMsg, HttpStatus.BAD_REQUEST);
+      throw new EaseyException(new Error(errorMsg), HttpStatus.BAD_REQUEST);
     }
 
     if (await this.validateToken(clientIdHeader, splitString[1])) {
