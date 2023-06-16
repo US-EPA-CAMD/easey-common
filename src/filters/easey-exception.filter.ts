@@ -47,7 +47,7 @@ export class EaseyExceptionFilter implements ExceptionFilter {
       };
     }
 
-    this.logger.error(message, logMetadata);
+    this.logger.error(message, stack, request.url, logMetadata);
 
     response.status(httpStatus).json({
       message: message,
