@@ -1,28 +1,32 @@
-import { Injectable } from "@nestjs/common";
+import { ConsoleLogger, Injectable, Scope } from "@nestjs/common";
+import { ConfigService } from "@nestjs/config";
 const winston = require("winston");
 
-@Injectable()
-export class Logger {
+@Injectable({ scope: Scope.TRANSIENT })
+export class Logger extends ConsoleLogger {
   private logInstance;
+  private isDevelopment = false;
 
-  constructor() {
+  constructor(private readonly configService: ConfigService) {
+    super();
+
+    const { combine, prettyPrint, json } = winston.format;
+
     this.logInstance = winston.createLogger({
-      level: "info",
-      format: winston.format.json(),
-      transports: [new winston.transports.Console()],
+      format: combine(json(), prettyPrint()),
+      transports: [new winston.transports.Console({})],
     });
+
+    if (this.configService.get<string>("app.env") === "local-dev") {
+      this.isDevelopment = true;
+    }
   }
 
-  warn(message: string, args?: object): void {
-    this.logInstance.warn(message, { ...args });
-  }
-
-  error(message: string, args?: object): void {
-    this.logInstance.error(message, { ...args });
-  }
-
-  info(message: string, args?: object): void {
-    this.logInstance.log("info", message, { ...args });
+  error(message: any, stack?: string, context?: string, args?: object) {
+    super.error(message, stack, context);
+    if (!this.isDevelopment) {
+      //If in local development mode only show the internal errors
+      this.logInstance.error(message, { ...args });
+    }
   }
 }
-export default Logger;

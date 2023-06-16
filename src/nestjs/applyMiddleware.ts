@@ -15,8 +15,6 @@ export async function applyMiddleware(
   allowCredentials: boolean = false,
   useServiceContainers: boolean = false
 ) {
-  app.useGlobalFilters(new EaseyExceptionFilter(new Logger()));
-
   const configService = app.get(ConfigService);
   const corsOptionsService = app.get(CorsOptionsService);
   const appEnv = configService.get<string>("app.env");
@@ -27,6 +25,9 @@ export async function applyMiddleware(
   const enableGlobalValidationPipes = configService.get<boolean>(
     "app.enableGlobalValidationPipes"
   );
+
+  app.useLogger(new Logger(configService));
+  app.useGlobalFilters(new EaseyExceptionFilter(new Logger(configService)));
 
   if (useServiceContainers === true) {
     useContainer(app.select(module), { fallbackOnErrors: true });
