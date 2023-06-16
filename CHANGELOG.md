@@ -1,3 +1,10 @@
+## [16.0.1](https://github.com/US-EPA-CAMD/easey-common/compare/v16.0.0...v16.0.1) (2023-06-16)
+
+
+### Bug Fixes
+
+* fix to log all errors ([e809a52](https://github.com/US-EPA-CAMD/easey-common/commit/e809a527bbb3b45fcd4cf7289967be93b69d94fd))
+
 # [16.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v15.9.1...v16.0.0) (2023-06-16)
 
 
