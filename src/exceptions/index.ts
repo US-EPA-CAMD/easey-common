@@ -1,1 +1,1 @@
-export { LoggingException } from "./logging.exception";
+export { EaseyException } from "./easey.exception";

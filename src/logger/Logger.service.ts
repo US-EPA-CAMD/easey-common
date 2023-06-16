@@ -1,21 +1,8 @@
 import { Injectable } from "@nestjs/common";
-import { v4 as uuid } from "uuid";
-
 const winston = require("winston");
-//
-interface LogInterface {
-  warn: (message: string, args?: any[]) => void;
-  error: (
-    errorType: Error,
-    message: string,
-    throws?: boolean,
-    args?: any[]
-  ) => void;
-  info: (message: string, args?: any[]) => void;
-}
 
 @Injectable()
-export class Logger implements LogInterface {
+export class Logger {
   private logInstance;
 
   constructor() {
@@ -26,30 +13,15 @@ export class Logger implements LogInterface {
     });
   }
 
-  warn(message, args?): void {
+  warn(message: string, args?: object): void {
     this.logInstance.warn(message, { ...args });
   }
 
-  error(error): string {
-    const errorId = uuid();
-
-    if (error.metadata) {
-      this.logInstance.error(error.message, {
-        ...error.metadata,
-        errorId: errorId,
-        stack: error.stack,
-      });
-    } else {
-      this.logInstance.error(error.message, {
-        errorId: errorId,
-        stack: error.stack,
-      });
-    }
-
-    return errorId;
+  error(message: string, args?: object): void {
+    this.logInstance.error(message, { ...args });
   }
 
-  info(message, args?): void {
+  info(message: string, args?: object): void {
     this.logInstance.log("info", message, { ...args });
   }
 }
