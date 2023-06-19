@@ -1,3 +1,10 @@
+## [16.0.3](https://github.com/US-EPA-CAMD/easey-common/compare/v16.0.2...v16.0.3) (2023-06-19)
+
+
+### Bug Fixes
+
+* added config service as provider ([c8a75b2](https://github.com/US-EPA-CAMD/easey-common/commit/c8a75b251ebdc0d266cbc3a977bd1df498e5fd30))
+
 ## [16.0.2](https://github.com/US-EPA-CAMD/easey-common/compare/v16.0.1...v16.0.2) (2023-06-16)
 
 
