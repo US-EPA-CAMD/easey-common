@@ -1,6 +1,6 @@
 import { HttpException } from "@nestjs/common";
 
-//Takes an error message string, and status code, with optional metadata useful for filtering
+//Takes an error message string or error object, and status code, with optional metadata useful for filtering
 export class EaseyException extends HttpException {
   public metadata: object = {};
 
