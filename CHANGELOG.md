@@ -1,3 +1,10 @@
+# [16.1.0](https://github.com/US-EPA-CAMD/easey-common/compare/v16.0.3...v16.1.0) (2023-07-05)
+
+
+### Features
+
+* add cpms qualification property metadata ([3ea4d8a](https://github.com/US-EPA-CAMD/easey-common/commit/3ea4d8a45419d6704d0905b62753648c249d8e39))
+
 ## [16.0.3](https://github.com/US-EPA-CAMD/easey-common/compare/v16.0.2...v16.0.3) (2023-06-19)
 
 
