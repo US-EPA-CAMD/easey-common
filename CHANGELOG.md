@@ -1,3 +1,10 @@
+# [16.2.0](https://github.com/US-EPA-CAMD/easey-common/compare/v16.1.0...v16.2.0) (2023-07-05)
+
+
+### Features
+
+* update easeyException to accept string error message ([6956bfb](https://github.com/US-EPA-CAMD/easey-common/commit/6956bfb5cd9b4504236f7612818334ac611c9aa1))
+
 # [16.1.0](https://github.com/US-EPA-CAMD/easey-common/compare/v16.0.3...v16.1.0) (2023-07-05)
 
 
