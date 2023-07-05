@@ -4612,6 +4612,78 @@ export const propertyMetadata = {
     example: 72.8,
   },
 
+  cpmsQualificationDTOId: {
+    fieldLabels: {
+      label: "",
+      value: "id",
+    },
+    description: "Unique identifier of a monitoring qualification CPMS record.",
+    example: "MIKE-DELL-CFEDE4EB21124391BE13E7FB5A56081C",
+  },
+
+  cpmsQualificationDTOQualificationId: {
+    fieldLabels: {
+      label: "",
+      value: "qualificationId",
+    },
+    description: "Unique identifier of a monitoring qualification record.",
+    example: "MIKE-DELL-E4CE3931A24E4C1395B3C81457B300CC",
+  },
+
+  cpmsQualificationDTOUserId: {
+    fieldLabels: {
+      label: "",
+      value: "userId",
+    },
+    description: "User account or source of data that added or updated record.",
+    example: "abcde",
+  },
+
+  cpmsQualificationDTOAddDate: {
+    fieldLabels: {
+      label: "",
+      value: "addDate",
+    },
+    description: "Date and time in which record was added.",
+    example: "2018-10-25",
+  },
+
+  cpmsQualificationDTOUpdateDate: {
+    fieldLabels: {
+      label: "",
+      value: "updateDate",
+    },
+    description: "Date and time in which record was last updated.",
+    example: "2018-10-25",
+  },
+
+  cpmsQualificationDTOQualificationDataYear: {
+    fieldLabels: {
+      label: "Qualification Data Year",
+      value: "qualificationDataYear",
+    },
+    description: "Data year of the initial CPMS qualifying test or a retest.",
+    example: "2023",
+  },
+
+  cpmsQualificationDTOStackTestNumber: {
+    fieldLabels: {
+      label: "Stack Test Number",
+      value: "stackTestNumber",
+    },
+    description: "Test Number of the initial CPMS qualifying test or a retest.",
+    example: "Test1234",
+  },
+
+  cpmsQualificationDTOOperatingLimit: {
+    fieldLabels: {
+      label: "Operating Limit",
+      value: "operatingLimit",
+    },
+    description: "Operating Limit of the initial CPMS qualifying test or a retest.",
+    example: "9999.9",
+  },
+
   lMEQualificationDTOId: {
     fieldLabels: {
       label: "",
