@@ -4,7 +4,7 @@ import { HttpException } from "@nestjs/common";
 export class EaseyException extends HttpException {
   public metadata: object = {};
 
-  constructor(error: Error | string , status, metadata?: object) {
+  constructor(error: Error | string, status, metadata?: object) {
     super(
       {
         message: typeof error === 'string' ? error : error.message,
@@ -33,7 +33,7 @@ export class EaseyException extends HttpException {
       status
     );
 
-    if(typeof error !== 'string') {
+    if (typeof error !== 'string') {
       this.stack = error.stack; //Override the stack to show the underlying error stack only
     }
 
