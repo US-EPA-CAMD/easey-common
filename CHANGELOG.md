@@ -1,3 +1,10 @@
+## [16.2.1](https://github.com/US-EPA-CAMD/easey-common/compare/v16.2.0...v16.2.1) (2023-07-06)
+
+
+### Bug Fixes
+
+* revert easey-exception changes and fix code formatting ([6d5a62d](https://github.com/US-EPA-CAMD/easey-common/commit/6d5a62d6ec440ef9da4297c013f1b59233de9739))
+
 # [16.2.0](https://github.com/US-EPA-CAMD/easey-common/compare/v16.1.0...v16.2.0) (2023-07-05)
 
 
