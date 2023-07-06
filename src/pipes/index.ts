@@ -15,4 +15,7 @@ export { Min } from "./min.pipe";
 export { Max } from "./max.pipe";
 export { IsEmail } from "./is-email.pipe";
 export { IsValidCode } from "./is-valid-code.pipe";
-export { BeginEndDatesConsistent, BeginEndDatesConsistentOptions } from "./begin-end-dates-consistent.pipe"
+export {
+  BeginEndDatesConsistent,
+  BeginEndDatesConsistentOptions,
+} from "./begin-end-dates-consistent.pipe";

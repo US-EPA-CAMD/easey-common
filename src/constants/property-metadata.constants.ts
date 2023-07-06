@@ -4680,7 +4680,8 @@ export const propertyMetadata = {
       label: "Operating Limit",
       value: "operatingLimit",
     },
-    description: "Operating Limit of the initial CPMS qualifying test or a retest.",
+    description:
+      "Operating Limit of the initial CPMS qualifying test or a retest.",
     example: "9999.9",
   },
 

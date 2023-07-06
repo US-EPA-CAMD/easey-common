@@ -46,10 +46,9 @@ export const dateToEstString = (value?: string | number | Date): string => {
   let date: Date = new Date();
 
   if (value) {
-    if (typeof(value) !== typeof(Date)) {
+    if (typeof value !== typeof Date) {
       date = new Date(value);
-    }
-    else {
+    } else {
       date = value as Date;
     }
   }

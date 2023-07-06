@@ -35,18 +35,22 @@ export class CheckCatalogService {
         const regex = /[-|_|\/]/g;
 
         if (i.match(regex)) {
-          i = i.replace(regex, ' ');
+          i = i.replace(regex, " ");
         }
 
         const parts = i.split(" ");
-        let fieldname = `${parts[0].charAt(0).toLowerCase()}${parts[0].slice(1)}`;
+        let fieldname = `${parts[0].charAt(0).toLowerCase()}${parts[0].slice(
+          1
+        )}`;
 
         if (parts.length > 1) {
           parts.forEach((p: string, index: number) => {
             if (index === 0) {
               fieldname = fieldname.toLowerCase();
             } else {
-              fieldname += `${p.charAt(0).toUpperCase()}${p.slice(1).toLowerCase()}`;
+              fieldname += `${p.charAt(0).toUpperCase()}${p
+                .slice(1)
+                .toLowerCase()}`;
             }
           });
         }
