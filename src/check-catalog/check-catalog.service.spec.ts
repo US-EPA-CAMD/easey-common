@@ -58,11 +58,8 @@ const viewData = [
 ];
 
 describe("CheckCatalogService", () => {
-
   beforeEach(async () => {
-    jest
-      .spyOn(CheckCatalogService, 'getViewData')
-      .mockResolvedValue(viewData);
+    jest.spyOn(CheckCatalogService, "getViewData").mockResolvedValue(viewData);
     await CheckCatalogService.load("view");
   });
 
@@ -74,9 +71,7 @@ describe("CheckCatalogService", () => {
       key: key,
       fieldname: fieldname,
     });
-    expect(result).toEqual(
-      `[${checkTypeCode}] - [${fieldname}] [${key}]`
-    );
+    expect(result).toEqual(`[${checkTypeCode}] - [${fieldname}] [${key}]`);
   });
 
   it("[Stack Pipe ID]", async () => {
@@ -84,11 +79,9 @@ describe("CheckCatalogService", () => {
     const checkTypeCode = "TEST-2-A";
     await CheckCatalogService.load("view");
     const result = CheckCatalogService.formatResultMessage(checkTypeCode, {
-      stackPipeId: stackPipeId
+      stackPipeId: stackPipeId,
     });
-    expect(result).toEqual(
-      `[${checkTypeCode}] - [${stackPipeId}]`
-    );
+    expect(result).toEqual(`[${checkTypeCode}] - [${stackPipeId}]`);
   });
 
   it("[ORIS Code]", async () => {
@@ -96,11 +89,9 @@ describe("CheckCatalogService", () => {
     const checkTypeCode = "TEST-3-A";
     await CheckCatalogService.load("view");
     const result = CheckCatalogService.formatResultMessage(checkTypeCode, {
-      orisCode: orisCode
+      orisCode: orisCode,
     });
-    expect(result).toEqual(
-      `[${checkTypeCode}] - [${orisCode}]`
-    );
+    expect(result).toEqual(`[${checkTypeCode}] - [${orisCode}]`);
   });
 
   it("[SystemID]", async () => {
@@ -108,11 +99,9 @@ describe("CheckCatalogService", () => {
     const checkTypeCode = "TEST-4-A";
     await CheckCatalogService.load("view");
     const result = CheckCatalogService.formatResultMessage(checkTypeCode, {
-      systemID: systemId
+      systemID: systemId,
     });
-    expect(result).toEqual(
-      `[${checkTypeCode}] - [${systemId}]`
-    );
+    expect(result).toEqual(`[${checkTypeCode}] - [${systemId}]`);
   });
 
   it("[Stack/Pipe ID]", async () => {
@@ -120,11 +109,9 @@ describe("CheckCatalogService", () => {
     const checkTypeCode = "TEST-5-A";
     await CheckCatalogService.load("view");
     const result = CheckCatalogService.formatResultMessage(checkTypeCode, {
-      stackPipeId: stackPipeId
+      stackPipeId: stackPipeId,
     });
-    expect(result).toEqual(
-      `[${checkTypeCode}] - [${stackPipeId}]`
-    );
+    expect(result).toEqual(`[${checkTypeCode}] - [${stackPipeId}]`);
   });
 
   it("[UNADJUSTED_HRLY_VALUE]", async () => {
@@ -132,11 +119,9 @@ describe("CheckCatalogService", () => {
     const checkTypeCode = "TEST-6-A";
     await CheckCatalogService.load("view");
     const result = CheckCatalogService.formatResultMessage(checkTypeCode, {
-      unadjustedHrlyValue: unadjustedHrlyValue
+      unadjustedHrlyValue: unadjustedHrlyValue,
     });
-    expect(result).toEqual(
-      `[${checkTypeCode}] - [${unadjustedHrlyValue}]`
-    );
+    expect(result).toEqual(`[${checkTypeCode}] - [${unadjustedHrlyValue}]`);
   });
 
   it("[SAMPLE-METHOD]", async () => {
@@ -144,11 +129,9 @@ describe("CheckCatalogService", () => {
     const checkTypeCode = "TEST-7-A";
     await CheckCatalogService.load("view");
     const result = CheckCatalogService.formatResultMessage(checkTypeCode, {
-      sampleMethod: sampleMethod
+      sampleMethod: sampleMethod,
     });
-    expect(result).toEqual(
-      `[${checkTypeCode}] - [${sampleMethod}]`
-    );
+    expect(result).toEqual(`[${checkTypeCode}] - [${sampleMethod}]`);
   });
 
   it("[Children]", async () => {
@@ -156,11 +139,9 @@ describe("CheckCatalogService", () => {
     const checkTypeCode = "TEST-8-A";
     await CheckCatalogService.load("view");
     const result = CheckCatalogService.formatResultMessage(checkTypeCode, {
-      children: children
+      children: children,
     });
-    expect(result).toEqual(
-      `[${checkTypeCode}] - [${children}]`
-    );
+    expect(result).toEqual(`[${checkTypeCode}] - [${children}]`);
   });
 
   it("[Key]", async () => {
@@ -168,10 +149,8 @@ describe("CheckCatalogService", () => {
     const checkTypeCode = "TEST-9-A";
     await CheckCatalogService.load("view");
     const result = CheckCatalogService.formatResultMessage(checkTypeCode, {
-      key: key
+      key: key,
     });
-    expect(result).toEqual(
-      `[${checkTypeCode}] - [${key}]`
-    );
+    expect(result).toEqual(`[${checkTypeCode}] - [${key}]`);
   });
-})
+});

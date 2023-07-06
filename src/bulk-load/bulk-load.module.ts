@@ -1,6 +1,6 @@
-import { Module } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
-import { BulkLoadService } from './bulk-load.service';
+import { Module } from "@nestjs/common";
+import { ConfigService } from "@nestjs/config";
+import { BulkLoadService } from "./bulk-load.service";
 
 @Module({
   providers: [ConfigService, BulkLoadService],
