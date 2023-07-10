@@ -1,3 +1,10 @@
+## [16.3.3](https://github.com/US-EPA-CAMD/easey-common/compare/v16.3.2...v16.3.3) (2023-07-10)
+
+
+### Bug Fixes
+
+* context for validation errors ([d6c2ac6](https://github.com/US-EPA-CAMD/easey-common/commit/d6c2ac6de3c2ced99953b1c947bdc2d3f196b020))
+
 ## [16.3.2](https://github.com/US-EPA-CAMD/easey-common/compare/v16.3.1...v16.3.2) (2023-07-10)
 
 
