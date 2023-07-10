@@ -2,12 +2,13 @@ import * as helmet from "helmet";
 import { json } from "body-parser";
 import { useContainer } from "class-validator";
 import { ConfigService } from "@nestjs/config";
-import { INestApplication, ValidationPipe } from "@nestjs/common";
+import { HttpStatus, INestApplication, ValidationPipe } from "@nestjs/common";
 
 import { Logger } from "../logger";
 import { CorsOptionsService } from "../cors-options";
 import { GatewayGuard } from "../guards";
 import { EaseyExceptionFilter } from "../filters/easey-exception.filter";
+import { EaseyException } from "src/exceptions";
 
 export async function applyMiddleware(
   module: any,
@@ -65,6 +66,17 @@ export async function applyMiddleware(
     app.useGlobalPipes(
       new ValidationPipe({
         transform: true,
+        exceptionFactory: (errors) => {
+          const errorMessages = [];
+          for (const error of errors) {
+            errorMessages.push(error.toString());
+          }
+
+          throw new EaseyException(
+            new Error(JSON.stringify(errorMessages)),
+            HttpStatus.BAD_REQUEST
+          );
+        },
       })
     );
   }
