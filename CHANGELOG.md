@@ -1,3 +1,10 @@
+# [16.3.0](https://github.com/US-EPA-CAMD/easey-common/compare/v16.2.1...v16.3.0) (2023-07-10)
+
+
+### Features
+
+* logging for validator ([8154377](https://github.com/US-EPA-CAMD/easey-common/commit/81543771bdfc489b2f3d9d71ec0c129d8547a01d))
+
 ## [16.2.1](https://github.com/US-EPA-CAMD/easey-common/compare/v16.2.0...v16.2.1) (2023-07-06)
 
 
