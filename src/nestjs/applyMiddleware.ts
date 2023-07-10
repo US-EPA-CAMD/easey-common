@@ -70,7 +70,7 @@ export async function applyMiddleware(
           let str: string = "";
           for (const error of errors) {
             const vError: ValidationError = error; //Have to set to a new instance to gain access to the overriden toString without throwing an IDE error
-            str += vError.toString(true, undefined, undefined, true) + "\n";
+            str += vError.toString(false, undefined, undefined, true) + "\n";
           }
 
           throw new EaseyException(new Error(str), HttpStatus.BAD_REQUEST);
