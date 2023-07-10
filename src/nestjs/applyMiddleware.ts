@@ -8,7 +8,7 @@ import { Logger } from "../logger";
 import { CorsOptionsService } from "../cors-options";
 import { GatewayGuard } from "../guards";
 import { EaseyExceptionFilter } from "../filters/easey-exception.filter";
-import { EaseyException } from "src/exceptions";
+import { EaseyException } from "../exceptions";
 
 export async function applyMiddleware(
   module: any,
