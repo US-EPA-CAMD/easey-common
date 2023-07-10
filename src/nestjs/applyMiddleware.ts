@@ -1,6 +1,6 @@
 import * as helmet from "helmet";
 import { json } from "body-parser";
-import { useContainer } from "class-validator";
+import { ValidationError, useContainer } from "class-validator";
 import { ConfigService } from "@nestjs/config";
 import { HttpStatus, INestApplication, ValidationPipe } from "@nestjs/common";
 
@@ -69,7 +69,8 @@ export async function applyMiddleware(
         exceptionFactory: (errors) => {
           let str: string = "";
           for (const error of errors) {
-            str += error.toString() + "\n";
+            const vError: ValidationError = error; //Have to set to a new instance to gain access to the overriden toString without throwing an IDE error
+            str += vError.toString(true, undefined, undefined, true) + "\n";
           }
 
           throw new EaseyException(new Error(str), HttpStatus.BAD_REQUEST);
