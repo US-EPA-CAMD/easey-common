@@ -1,3 +1,10 @@
+## [16.3.4](https://github.com/US-EPA-CAMD/easey-common/compare/v16.3.3...v16.3.4) (2023-07-10)
+
+
+### Bug Fixes
+
+* removed log formatting ([e3ce619](https://github.com/US-EPA-CAMD/easey-common/commit/e3ce6192083db6af38e35a0e13982430b0f892f3))
+
 ## [16.3.3](https://github.com/US-EPA-CAMD/easey-common/compare/v16.3.2...v16.3.3) (2023-07-10)
 
 
