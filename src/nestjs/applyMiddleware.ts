@@ -67,15 +67,12 @@ export async function applyMiddleware(
       new ValidationPipe({
         transform: true,
         exceptionFactory: (errors) => {
-          const errorMessages = [];
+          let str: string = "";
           for (const error of errors) {
-            errorMessages.push(error.toString());
+            str += error.toString() + "\n";
           }
 
-          throw new EaseyException(
-            new Error(JSON.stringify(errorMessages)),
-            HttpStatus.BAD_REQUEST
-          );
+          throw new EaseyException(new Error(str), HttpStatus.BAD_REQUEST);
         },
       })
     );
