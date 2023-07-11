@@ -19,3 +19,4 @@ export {
   BeginEndDatesConsistent,
   BeginEndDatesConsistentOptions,
 } from "./begin-end-dates-consistent.pipe";
+export { EaseyValidationPipe } from "./easey-validation.pipe";

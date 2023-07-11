@@ -1,14 +1,14 @@
 import * as helmet from "helmet";
 import { json } from "body-parser";
-import { ValidationError, useContainer } from "class-validator";
+import { useContainer } from "class-validator";
 import { ConfigService } from "@nestjs/config";
-import { HttpStatus, INestApplication, ValidationPipe } from "@nestjs/common";
+import { INestApplication } from "@nestjs/common";
 
 import { Logger } from "../logger";
 import { CorsOptionsService } from "../cors-options";
 import { GatewayGuard } from "../guards";
 import { EaseyExceptionFilter } from "../filters/easey-exception.filter";
-import { EaseyException } from "../exceptions";
+import { EaseyValidationPipe } from "../pipes";
 
 export async function applyMiddleware(
   module: any,
@@ -63,20 +63,7 @@ export async function applyMiddleware(
   app.use(json({ limit: reqSizeLimit }));
 
   if (enableGlobalValidationPipes) {
-    app.useGlobalPipes(
-      new ValidationPipe({
-        transform: true,
-        exceptionFactory: (errors) => {
-          let str: string = "";
-          for (const error of errors) {
-            const vError: ValidationError = error; //Have to set to a new instance to gain access to the overriden toString without throwing an IDE error
-            str += vError.toString(false, undefined, undefined, true) + "\n";
-          }
-
-          throw new EaseyException(new Error(str), HttpStatus.BAD_REQUEST);
-        },
-      })
-    );
+    app.useGlobalPipes(new EaseyValidationPipe());
   }
 
   if (enableCors) {

@@ -49,8 +49,15 @@ export class EaseyExceptionFilter implements ExceptionFilter {
 
     this.logger.error(message, stack, request.url, logMetadata);
 
+    let responseMessage;
+    if (exception["metadata"] && exception["metadata"]["validatorMessages"]) {
+      responseMessage = exception["metadata"]["validatorMessages"]; //Return a list of errors during dto-validation if issues occur
+    } else {
+      responseMessage = message; //Return string otherwise
+    }
+
     response.status(httpStatus).json({
-      message: message,
+      message: responseMessage,
       errorId: errorId,
       statusCode: httpStatus,
     });
