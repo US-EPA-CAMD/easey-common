@@ -1,3 +1,10 @@
+## [16.3.5](https://github.com/US-EPA-CAMD/easey-common/compare/v16.3.4...v16.3.5) (2023-07-11)
+
+
+### Bug Fixes
+
+* fix to return class-validate errors as list ([56c5c1d](https://github.com/US-EPA-CAMD/easey-common/commit/56c5c1d1171a6f2d2845e2a486a067e4b62bd710))
+
 ## [16.3.4](https://github.com/US-EPA-CAMD/easey-common/compare/v16.3.3...v16.3.4) (2023-07-10)
 
 
