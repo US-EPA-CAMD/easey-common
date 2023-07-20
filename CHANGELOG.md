@@ -1,3 +1,10 @@
+## [16.3.6](https://github.com/US-EPA-CAMD/easey-common/compare/v16.3.5...v16.3.6) (2023-07-20)
+
+
+### Bug Fixes
+
+* added ability to add objects to json response ([579ead1](https://github.com/US-EPA-CAMD/easey-common/commit/579ead1413c41a7701b16faac8710d254a25ecf3))
+
 ## [16.3.5](https://github.com/US-EPA-CAMD/easey-common/compare/v16.3.4...v16.3.5) (2023-07-11)
 
 
