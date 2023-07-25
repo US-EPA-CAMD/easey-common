@@ -1,3 +1,10 @@
+## [16.3.7](https://github.com/US-EPA-CAMD/easey-common/compare/v16.3.6...v16.3.7) (2023-07-25)
+
+
+### Bug Fixes
+
+* added fix to change the way error messages are returned in non-prod vs prod envs ([7238284](https://github.com/US-EPA-CAMD/easey-common/commit/72382848e778c5cbbc041ab889d0e5eaa7759b15))
+
 ## [16.3.6](https://github.com/US-EPA-CAMD/easey-common/compare/v16.3.5...v16.3.6) (2023-07-20)
 
 
