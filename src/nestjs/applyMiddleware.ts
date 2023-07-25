@@ -28,7 +28,9 @@ export async function applyMiddleware(
   );
 
   app.useLogger(new Logger(configService));
-  app.useGlobalFilters(new EaseyExceptionFilter(new Logger(configService)));
+  app.useGlobalFilters(
+    new EaseyExceptionFilter(new Logger(configService), configService)
+  );
 
   if (useServiceContainers === true) {
     useContainer(app.select(module), { fallbackOnErrors: true });
