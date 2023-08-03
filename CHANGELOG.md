@@ -1,3 +1,10 @@
+## [16.3.10](https://github.com/US-EPA-CAMD/easey-common/compare/v16.3.9...v16.3.10) (2023-08-03)
+
+
+### Bug Fixes
+
+* add property metadata for qa maintainance ([d73afbf](https://github.com/US-EPA-CAMD/easey-common/commit/d73afbf0d1f2f13c8815795d4ffd0b67ba037e71))
+
 ## [16.3.9](https://github.com/US-EPA-CAMD/easey-common/compare/v16.3.8...v16.3.9) (2023-08-02)
 
 
