@@ -876,6 +876,14 @@ export const propertyMetadata = {
 			description: "Code used to identify the type of fuel.",
 			example: "DSL",
 		},
+		fuelDescription: {
+			fieldLabels: {
+				label: "Fuel Description",
+				value: "fuelDescription",
+			},
+			description: "Type of Fuel",
+			example: "Diesel Oil",
+		},
 		dailyFuelFeed: {
 			fieldLabels: {
 				label: "Daily Fuel Feed",
@@ -6223,6 +6231,14 @@ export const propertyMetadata = {
 		description: "Submission Availability Code.",
 		example: "UPDATED",
 	},
+	submissionAvailabilityDescription: {
+		fieldLabels: {
+			label: "Submission Availability Description",
+			value: "submissionAvailabilityDescription",
+		},
+		description: "Submission Availability Description.",
+		example: "Updated on Host",
+	},
 	lastSubmissionId: {
 		fieldLabels: {
 			label: "last Submission Id",
@@ -6262,5 +6278,169 @@ export const propertyMetadata = {
 		},
 		description: "Date and time in which issue was close.",
 		example: "2019-04-23",
+	},
+
+	//Qa Cert Event/TEE/TEST Maintainance
+	testNumber: {
+		fieldLabels: {
+			label: "Test Number",
+			value: "testNumber",
+		},
+		description: "Unique Number of a Test Summary record.",
+		example: "EPA-007-14007",
+	},
+	testDescription: {
+		fieldLabels: {
+			label: "Test Description",
+			value: "testDescription",
+		},
+		description: "Test Description",
+		example: "HNOX",
+	},
+	testComment: {
+		fieldLabels: {
+			label: "Test Comment",
+			value: "testComment",
+		},
+		description: "Test Comment",
+		example: "Passed",
+	},
+	certEventCode: {
+		fieldLabels: {
+			label: "QA Cert Event Code",
+			value: "certEventCode",
+		},
+		description: "Unique Code for QA Cert Event.",
+		example: "102",
+	},
+	certEventDescription: {
+		fieldLabels: {
+			label: "QA Cert Event Description",
+			value: "certEventDescription",
+		},
+		description: "QA Cert Event Description",
+		example:
+			"Replace or Repair any of These Components of an Extractive or Dilution-type System---Photomultiplier, Lamp, Internal Analyzer Filter or Vacuum Pump, Capillary Tube, O3 Generator, Reaction Chamber, NO2 Converter, Ozonator Dryer, Sample Cell, Optical Filters",
+	},
+	beginDateTime: {
+		fieldLabels: {
+			label: "Test Summary Begin Date and Time",
+			value: "beginDateTime",
+		},
+		description: "Test Summary Begin Date and Time",
+		example: "07/20/2010 09:00",
+	},
+	endDateTime: {
+		fieldLabels: {
+			label: "Test Summary End Date and Time",
+			value: "endDateTime",
+		},
+		description: "Test Summary End Date and Time",
+		example: "07/20/2010 09:00",
+	},
+	eventDateTime: {
+		fieldLabels: {
+			label: "QA Cert Event Date and Time",
+			value: "eventDateTime",
+		},
+		description: "QA Cert Event Date and Time",
+		example: "07/20/2010 09:00",
+	},
+	conditionalDateTime: {
+		fieldLabels: {
+			label: "Conditional Date and Time",
+			value: "conditionalDateTime",
+		},
+		description: "Conditional Date and Time",
+		example: "07/20/2010 09:00",
+	},
+	lastCompletedDateTime: {
+		fieldLabels: {
+			label: "Last Completed Date and Time",
+			value: "lastCompletedDateTime",
+		},
+		description: "Last Completed Date and Time",
+		example: "07/20/2010 09:00",
+	},
+	requiredTestCode: {
+		fieldLabels: {
+			label: "Required Test Code",
+			value: "requiredTestCode",
+		},
+		description: "Required Test Code",
+		example: "2",
+	},
+	requiredTestDescription: {
+		fieldLabels: {
+			label: "Required Test Description",
+			value: "requiredTestDescription",
+		},
+		description: "Required Test Description",
+		example:
+			"Normal Load RATA, 7-day Calibration Error Test, Linearity Check, Cycle Time Test",
+	},
+	severityCode: {
+		fieldLabels: {
+			label: "Severity Code",
+			value: "severityCode",
+		},
+		description: "Severity Code",
+		example: "NONCRIT",
+	},
+	severityDescription: {
+		fieldLabels: {
+			label: "Severity Description",
+			value: "severityDescription",
+		},
+		description: "Severity Description",
+		example: "Non-Critical Error",
+	},
+	extensionExemptionCode: {
+		fieldLabels: {
+			label: "Extension Exemption Code",
+			value: "extensionExemptionCode",
+		},
+		description: "extension Exemption Code",
+		example: "NONQAOS",
+	},
+	extensionExemptionDescription: {
+		fieldLabels: {
+			label: "Extension Exemption Description",
+			value: "extensionExemptionDescription",
+		},
+		description: "Extension Exemption Description",
+		example: "Non-QA Operating Quarters for Ozone-Season Reporter",
+	},
+	hoursUsed: {
+		fieldLabels: {
+			label: "Hours Used",
+			value: "hoursUsed",
+		},
+		description: "Hours Used",
+		example: "1",
+	},
+	gracePeriodIndicator: {
+		fieldLabels: {
+			label: "Grace Period Indicator",
+			value: "gracePeriodIndicator",
+		},
+		description: "Grace Period Indicator",
+		example: "1",
+	},
+	testReasonCode: {
+		fieldLabels: {
+			label: "Test Reason Code",
+			value: "testReasonCode",
+		},
+		description: "Test Reason Code",
+		example: "QA",
+	},
+	testResultCode: {
+		fieldLabels: {
+			label: "Test Result Code",
+			value: "testResultCode",
+		},
+		description: "Test Result Code",
+		example: "PASSED",
 	},
 };
