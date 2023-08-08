@@ -1,3 +1,10 @@
+# [16.4.0](https://github.com/US-EPA-CAMD/easey-common/compare/v16.3.10...v16.4.0) (2023-08-08)
+
+
+### Features
+
+* **property-metadata:** add unit_id to property metadata ([bcae1fd](https://github.com/US-EPA-CAMD/easey-common/commit/bcae1fd7e595ce646e382d28909bd35f3daebafc))
+
 ## [16.3.10](https://github.com/US-EPA-CAMD/easey-common/compare/v16.3.9...v16.3.10) (2023-08-03)
 
 
