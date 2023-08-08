@@ -2955,6 +2955,14 @@ export const propertyMetadata = {
 		description: "Primary or Secondary fuel types combusted by the unit.",
 		example: "Coal",
 	},
+  unit_id: {
+		fieldLabels: {
+			label: "unit_id",
+			value: "unit_id",
+		},
+		description: "Database id for each unit at a facility.",
+		example: 5,
+	},
 	unitId: {
 		fieldLabels: {
 			label: "Unit ID",
