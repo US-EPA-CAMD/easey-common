@@ -2963,7 +2963,7 @@ export const propertyMetadata = {
 		description: "Database id for each unit at a facility.",
 		example: 5,
 	},
-	unitId: {//
+	unitId: {
 		fieldLabels: {
 			label: "Unit ID",
 			value: "unitId",
