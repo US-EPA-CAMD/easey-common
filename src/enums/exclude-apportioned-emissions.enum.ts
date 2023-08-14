@@ -12,5 +12,5 @@ export enum ExcludeApportionedEmissions {
   STEAM_LOAD = "steamLoad",
   SUM_OP_TIME = "sumOpTime",
   UNIT_TYPE = "unitType",
-  UNIT_ID = 'unit_id'
+  UNIT_ID = 'unit_id',
 }
