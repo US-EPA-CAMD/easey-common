@@ -1,3 +1,10 @@
+# [16.5.0](https://github.com/US-EPA-CAMD/easey-common/compare/v16.4.0...v16.5.0) (2023-08-14)
+
+
+### Features
+
+* **apportioned emissions:** add unit_id exclude params ([626ff11](https://github.com/US-EPA-CAMD/easey-common/commit/626ff118fd52109dc0db7cd23f839d81b82c5efb))
+
 # [16.4.0](https://github.com/US-EPA-CAMD/easey-common/compare/v16.3.10...v16.4.0) (2023-08-08)
 
 
