@@ -9,4 +9,5 @@ export enum ExcludeAllowanceTransactions {
   SELL_OWNER = "sellOwner",
   SELL_SOURCE_CATEGORY = "sellSourceCategory",
   SELL_STATE = "sellState",
+  UNIT_ID = 'unit_id',
 }

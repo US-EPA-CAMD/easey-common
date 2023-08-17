@@ -18,4 +18,5 @@ export enum ExcludeHourlyMatsApportionedEmissions {
   SO2_CONTROL_INFO = "so2ControlInfo",
   STEAM_LOAD = "steamLoad",
   UNIT_TYPE = "unitType",
+  UNIT_ID = 'unit_id',
 }

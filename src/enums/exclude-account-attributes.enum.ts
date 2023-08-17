@@ -4,4 +4,5 @@ export enum ExcludeAccountAttributes {
   NERC_REGION = "nercRegion",
   STATE_CODE = "stateCode",
   UNIT_ID = "unitId",
+  UNIT_ID_FK = 'unit_id',
 }
