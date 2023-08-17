@@ -1,3 +1,10 @@
+# [16.6.0](https://github.com/US-EPA-CAMD/easey-common/compare/v16.5.0...v16.6.0) (2023-08-17)
+
+
+### Features
+
+* **exclude params:** add unit_id to  exclude params ([a2bae80](https://github.com/US-EPA-CAMD/easey-common/commit/a2bae8007c904cf257c6b6a381bd1a63f591a2d8))
+
 # [16.5.0](https://github.com/US-EPA-CAMD/easey-common/compare/v16.4.0...v16.5.0) (2023-08-14)
 
 
