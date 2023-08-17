@@ -11,4 +11,5 @@ export enum ExcludeAllowanceCompliance {
   TOTAL_ALLOWANCES_DEDUCTED = "totalAllowancesDeducted",
   TOTAL_REQUIRED_DEDUCTIONS = "totalRequiredDeductions",
   UNITS_AFFECTED = "unitsAffected",
+  UNIT_ID = 'unit_id',
 }

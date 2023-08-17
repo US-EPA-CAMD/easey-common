@@ -23,4 +23,5 @@ export enum ExcludeFacilityAttributes {
   OP_STATUS_INFO = "operatingStatus",
   CAPACITY_INPUT = "maxHourlyHIRate",
   AGNC = "associatedGeneratorsAndNameplateCapacity",
+  UNIT_ID = 'unit_id',
 }

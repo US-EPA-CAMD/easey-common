@@ -18,4 +18,5 @@ export enum ExcludeHourlyApportionedEmissions {
   SO2_RATE_MEASURE_FLAG = "so2RateMeasureFlg",
   STEAM_LOAD = "steamLoad",
   UNIT_TYPE = "unitType",
+  UNIT_ID = 'unit_id',
 }
