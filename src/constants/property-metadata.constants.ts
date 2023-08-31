@@ -3205,6 +3205,15 @@ export const propertyMetadata = {
 		example: "SO2",
 	},
 
+	componentDTOAnalyticalPrincipleCode: {
+		fieldLabels: {
+			label: "Analytical Principle Code",
+			value: "analyticalPrincipleCode",
+		},
+		description: "Code used to identify the Analytical Principle.",
+		example: "BA",
+	},
+
 	componentDTOSampleAcquisitionMethodCode: {
 		fieldLabels: {
 			label: "Sample Acquisition Method",
