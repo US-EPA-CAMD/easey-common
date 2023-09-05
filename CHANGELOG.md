@@ -1,3 +1,10 @@
+# [16.8.0](https://github.com/US-EPA-CAMD/easey-common/compare/v16.7.0...v16.8.0) (2023-09-05)
+
+
+### Features
+
+* add DB Lookup pipe ([c6ad72b](https://github.com/US-EPA-CAMD/easey-common/commit/c6ad72bcbecab383776fa26a80ecb494632be861))
+
 # [16.7.0](https://github.com/US-EPA-CAMD/easey-common/compare/v16.6.0...v16.7.0) (2023-08-31)
 
 
