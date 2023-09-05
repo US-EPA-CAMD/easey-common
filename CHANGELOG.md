@@ -1,3 +1,10 @@
+## [16.8.1](https://github.com/US-EPA-CAMD/easey-common/compare/v16.8.0...v16.8.1) (2023-09-05)
+
+
+### Bug Fixes
+
+* add the fix for export ([759317e](https://github.com/US-EPA-CAMD/easey-common/commit/759317e6c83245432c4b6c0b0b7e2bb763994e16))
+
 # [16.8.0](https://github.com/US-EPA-CAMD/easey-common/compare/v16.7.0...v16.8.0) (2023-09-05)
 
 
