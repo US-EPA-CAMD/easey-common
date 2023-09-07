@@ -2955,7 +2955,7 @@ export const propertyMetadata = {
 		description: "Primary or Secondary fuel types combusted by the unit.",
 		example: "Coal",
 	},
-  unit_id: {
+	unit_id: {
 		fieldLabels: {
 			label: "unit_id",
 			value: "unit_id",
@@ -5060,6 +5060,16 @@ export const propertyMetadata = {
 		},
 		description:
 			"Full scale range in units of daily calibration for SO2, NOx, CO2, O2, HCl, and flow rate, must be greater than or equal to the span value.",
+		example: 200,
+	},
+
+	monitorSpanDTOScaleTransitionPoint: {
+		fieldLabels: {
+			label: "Scale Transition Point",
+			value: "scaleTransitionPoint",
+		},
+		description:
+			"If a dual range analyzer is installed for NOx, SO2 or CO2 (see ANALYZER RANGE DATA), report the concentration value at which the DAHS switches from recording on the normal range to recording on the secondary range (usually low to high). Report this value in both the low and high scale records. Scale transition point is not reported for FLOW, HCl, and Hg span.",
 		example: 200,
 	},
 
