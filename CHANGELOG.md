@@ -1,3 +1,10 @@
+# [16.9.0](https://github.com/US-EPA-CAMD/easey-common/compare/v16.8.1...v16.9.0) (2023-09-07)
+
+
+### Features
+
+* add monitorSpanDTOScaleTransitionPoint property metadata ([20f2239](https://github.com/US-EPA-CAMD/easey-common/commit/20f223901e4a08e22ffec2d25e12fa013964f322))
+
 ## [16.8.1](https://github.com/US-EPA-CAMD/easey-common/compare/v16.8.0...v16.8.1) (2023-09-05)
 
 
