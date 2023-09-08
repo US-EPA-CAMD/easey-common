@@ -1,3 +1,10 @@
+# [16.10.0](https://github.com/US-EPA-CAMD/easey-common/compare/v16.9.0...v16.10.0) (2023-09-08)
+
+
+### Features
+
+* add MatchesRegex Pipe ([d545567](https://github.com/US-EPA-CAMD/easey-common/commit/d5455672fd2e5316d817aba27a81d9e863a316e9))
+
 # [16.9.0](https://github.com/US-EPA-CAMD/easey-common/compare/v16.8.1...v16.9.0) (2023-09-07)
 
 
