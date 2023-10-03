@@ -1,3 +1,10 @@
+## [16.10.1](https://github.com/US-EPA-CAMD/easey-common/compare/v16.10.0...v16.10.1) (2023-10-03)
+
+
+### Bug Fixes
+
+* create a new version release ([f4844f7](https://github.com/US-EPA-CAMD/easey-common/commit/f4844f7f931e1191d7708dcc9dd08773e61c023e))
+
 # [16.10.0](https://github.com/US-EPA-CAMD/easey-common/compare/v16.9.0...v16.10.0) (2023-09-08)
 
 
