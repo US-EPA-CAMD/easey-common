@@ -10,6 +10,7 @@ export enum Program {
   CSOSG3 = "CSOSG3",
   CSSO2G1 = "CSSO2G1",
   CSSO2G2 = "CSSO2G2",
+  CSOSG2E = "CSOSG2E",
   NBP = "NBP",
   NHNOX = "NHNOX",
   NSPS4T = "NSPS4T",
