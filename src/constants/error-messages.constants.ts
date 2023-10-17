@@ -1,3 +1,4 @@
+import { ValidationArguments } from "class-validator";
 import { ApiConfigService } from "./api-config.service";
 
 const STATE_CODE = "state-code";
@@ -130,8 +131,10 @@ export class ErrorMessages {
     return `One or more excluded values cannot be removed`;
   }
 
-  public static MaxDecimalPlaces (parameter: string, maxDecimalPlaces: number) {
-    return `The ${parameter} is allowed only ${maxDecimalPlaces} decimal place(s)`
+  public static MaxDecimalPlaces ({ constraints, property, value }: ValidationArguments) {
+    const { maxDecimalPlaces } = constraints.find((el) => el.maxDecimalPlaces);
+    if (typeof value !== "number") return `The ${property} must be a number`;
+    return `The ${property} is allowed only ${maxDecimalPlaces} decimal place(s)`;
   }
 
   static ApiConfigLink(parameter: string) {
