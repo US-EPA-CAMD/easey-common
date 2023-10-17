@@ -1,3 +1,10 @@
+# [16.12.0](https://github.com/US-EPA-CAMD/easey-common/compare/v16.11.0...v16.12.0) (2023-10-17)
+
+
+### Features
+
+* **error messages:** update max decimal places error message ([1be4dbe](https://github.com/US-EPA-CAMD/easey-common/commit/1be4dbefc5e29bfdb2ce834f665fe6433b7c965e))
+
 # [16.11.0](https://github.com/US-EPA-CAMD/easey-common/compare/v16.10.1...v16.11.0) (2023-10-17)
 
 
