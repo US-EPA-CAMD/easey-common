@@ -130,6 +130,10 @@ export class ErrorMessages {
     return `One or more excluded values cannot be removed`;
   }
 
+  public static MaxDecimalPlaces (parameter: string, maxDecimalPlaces: number) {
+    return `The ${parameter} is allowed only ${maxDecimalPlaces} decimal place(s)`
+  }
+
   static ApiConfigLink(parameter: string) {
     const mdm = `${ApiConfigService.getMasterDataApi()}`;
 

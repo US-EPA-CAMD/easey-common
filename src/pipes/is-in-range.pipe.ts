@@ -69,6 +69,9 @@ export function IsInRange(
           }
           return true;
         },
+        defaultMessage: ({ property }: ValidationArguments) => {
+          return `The ${property} must be within the range of ${minVal} and ${maxVal}`;
+        },
       },
     });
   };
