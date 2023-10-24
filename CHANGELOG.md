@@ -1,3 +1,15 @@
+# [17.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v16.13.0...v17.0.0) (2023-10-24)
+
+
+### Features
+
+* upgraded node to version 20.8.x ([3b5bb81](https://github.com/US-EPA-CAMD/easey-common/commit/3b5bb81f5903b24f22aeccf3d5a509e410adb513))
+
+
+### BREAKING CHANGES
+
+* Upgrade Node to version 20.8.x
+
 # [16.13.0](https://github.com/US-EPA-CAMD/easey-common/compare/v16.12.0...v16.13.0) (2023-10-24)
 
 
