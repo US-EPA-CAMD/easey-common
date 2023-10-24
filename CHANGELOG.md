@@ -1,3 +1,15 @@
+# [16.13.0](https://github.com/US-EPA-CAMD/easey-common/compare/v16.12.0...v16.13.0) (2023-10-24)
+
+
+### Bug Fixes
+
+* added new program code ([a9c4417](https://github.com/US-EPA-CAMD/easey-common/commit/a9c44172275d107bc1bde1fc2480627c8ba2edfd))
+
+
+### Features
+
+* added CSOSG2E code to program filter ([742ee30](https://github.com/US-EPA-CAMD/easey-common/commit/742ee30616d6480df1d1d00c4d371fec7f0b0385))
+
 # [16.12.0](https://github.com/US-EPA-CAMD/easey-common/compare/v16.11.0...v16.12.0) (2023-10-17)
 
 
