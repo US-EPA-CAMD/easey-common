@@ -1,3 +1,10 @@
+# [11.3.0](https://github.com/US-EPA-CAMD/easey-common/compare/v11.2.2...v11.3.0) (2023-10-26)
+
+
+### Features
+
+* **program enum:** new csosg2e code ([35fb9d0](https://github.com/US-EPA-CAMD/easey-common/commit/35fb9d0a08bf1445e4e25d7ae3e977945dff664a))
+
 ## [11.2.2](https://github.com/US-EPA-CAMD/easey-common/compare/v11.2.1...v11.2.2) (2023-01-20)
 
 
