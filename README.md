@@ -1,46 +1,37 @@
 # easey-common package
-[![GitHub](https://img.shields.io/github/license/US-EPA-CAMD/easey-auth-api)](https://github.com/US-EPA-CAMD/easey-auth-api/blob/develop/LICENSE.md)
+[![GitHub](https://img.shields.io/github/license/US-EPA-CAMD/easey-common)](https://github.com/US-EPA-CAMD/easey-common/blob/develop/LICENSE.md)
 [![GitHub version](https://badge.fury.io/gh/US-EPA-CAMD%2Feasey-common.svg)](https://badge.fury.io/gh/US-EPA-CAMD%2Feasey-common)
 [![Release Workflow](https://github.com/US-EPA-CAMD/easey-common/workflows/Release%20Workflow/badge.svg)](https://github.com/US-EPA-CAMD/easey-common/actions)<br>
 
-- The easey-common package contains shared code from across the US-EPA-CAMD project. 
+The easey-common package contains shared code from across the US-EPA-CAMD project. 
  
 # Downloading and using easey-common
 
 ## Getting Started
-​
 These instructions will get you a copy of the project package up and running and downloaded.
 
 ### Prerequisites
-
 - Project running node
 - A ```.yarnrc``` file existing in the root directory, with the contents of: ``` @us-epa-camd:registry=https://npm.pkg.github.com ```
 - [Authenticate to github package registry on local machine](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry)
 
 ### Installing
-
 - Select desired version of package. The most up to date package version is [![GitHub version](https://badge.fury.io/gh/US-EPA-CAMD%2Feasey-common.svg)](https://badge.fury.io/gh/US-EPA-CAMD%2Feasey-common) . <br>
 - In terminal execute ```yarn add @us-epa-camd/easey-common``` for latest current version or ```yarn add @us-epa-camd/easey-common@VERSION``` to install a specific version
 
 ### Using
-
 - Import desired files from folder within package.
 - For example, to insert the logger: ``` import { Logger } from '@us-epa-camd/easey-common/logger'; ```
 
-
 # Adding and publishing to easey-common
 
-
 ## Getting Started 
-
 These instructions will show you how to edit the existing package, and publish a new version.
 
 ### Prerequisites
-
 - Cloned easey-common github master branch on your local machine
 
 ### Adding directories
-
 - Create a new folder in the ``` src ``` directory of the project
 - Create the export files that you wish to add inside of this folder
 - Create an ```index.ts``` file inside of the new folder
@@ -50,13 +41,12 @@ These instructions will show you how to edit the existing package, and publish a
 export { LoggerModule } from "./Logger.module";
 export { Logger } from "./Logger.service";
 ```
-### Adding files
 
+### Adding files
 - Create your file inside of the desired easey-common directory
 - Within the ```index.ts``` file of that directory, export the exported members of the new file
 
 ## Publishing new package version
-
 - On the current branch in terminal, add all file changes with ```git add .```
 - Commit files using ``` yarn commit ``` which executes the [commitizen](https://commitizen-tools.github.io/commitizen/) plugin, a commit formatter that is digestible by [semantic-release](https://semantic-release.gitbook.io/semantic-release/)
 - Follow the prompts and create your commit
