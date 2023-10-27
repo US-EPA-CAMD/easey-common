@@ -58,18 +58,31 @@ export { Logger } from "./Logger.service";
 ## Publishing new package version
 
 - On the current branch in terminal, add all file changes with ```git add .```
-- Commit the files using [commitizen](https://commitizen-tools.github.io/commitizen/), a commit formatter that is digestible by [semantic-release](https://semantic-release.gitbook.io/semantic-release/)
-``` yarn commit ```
+- Commit files using ``` yarn commit ``` which executes the [commitizen](https://commitizen-tools.github.io/commitizen/) plugin, a commit formatter that is digestible by [semantic-release](https://semantic-release.gitbook.io/semantic-release/)
 - Follow the prompts and create your commit
 - Push the commit to your current branch
 ``` git push origin CURRENT_BRANCH```
-- Github workflows for this package are set up to create new package versions whenever a push or merge to the ```master, next, next-major, beta, or alpha``` branches is executed
+- Github workflows for this package are set up to create new package versions whenever a push or merge to the ```N.B.x, N.x (N is a number), master, next, next-major, beta, or alpha``` branches is executed
 - Semantic-Release will version all code automatically, based on the input received from the commitizen commit
 
+## Maintenance Releases
+[semantic-release](https://semantic-release.gitbook.io/semantic-release/) supports releasing patches for previously released versions where it is not possible to fully upgrade to the more recent versions. This is accomplished using the `N.N.x and N.x` branch names where N is the version you want to release a patch. If it is required to release a patch to a previously released version then the following steps must be followed to properly release a new patch version.
+
+1. Determine the version to be patched
+2. Clone or pull latest from easey-common
+3. Create `N.N.x` or `N.x` branch
+   - If the version has subsequent versions after it
+     - Create `N.N.x` branch with N being the major and minor version of the version being patched
+     - Example using v1.0.0 to be patched and the v1.0.0 release tag
+       - `git checkout -b 1.0.x v1.0.0`
+   - If the version does NOT have subsequent versions after it
+     - Create `N.x` branch with N being the major version of the version being patched
+     - Example using v1.1.0 to be patched and the v1.1.0 release tag
+       - `git checkout -b 1.x v1.1.0`
+4. Implement changes in `N.N.x` or `N.x` branch and then follow the same steps above to commit changes using `yarn commit`
+5. Release workflow will release a new patch version for the version you choose to be patched
 
 ## License & Contributing
-
-​
 This project is licensed under the MIT License. We encourage you to read this project’s [License](https://github.com/US-EPA-CAMD/devops/blob/master/LICENSE), [Contributing Guidelines](https://github.com/US-EPA-CAMD/devops/blob/master/CONTRIBUTING.md), and [Code of Conduct](https://github.com/US-EPA-CAMD/devops/blob/master/CODE_OF_CONDUCT.md).
 
 ## Disclaimer
