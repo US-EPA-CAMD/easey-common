@@ -1,3 +1,15 @@
+# [11.4.0](https://github.com/US-EPA-CAMD/easey-common/compare/v11.3.0...v11.4.0) (2023-10-30)
+
+
+### Bug Fixes
+
+* new changes in program code ([27c5b34](https://github.com/US-EPA-CAMD/easey-common/commit/27c5b342fcd48d6a191bd06d6af16d3608d3f013)), closes [#5625](https://github.com/US-EPA-CAMD/easey-common/issues/5625)
+
+
+### Features
+
+* added code in 2 comp ([fb8a0a2](https://github.com/US-EPA-CAMD/easey-common/commit/fb8a0a2c88bbef17f68f6a753cfa23da93c24879))
+
 # [11.3.0](https://github.com/US-EPA-CAMD/easey-common/compare/v11.2.2...v11.3.0) (2023-10-26)
 
 
