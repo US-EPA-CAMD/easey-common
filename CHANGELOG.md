@@ -1,3 +1,10 @@
+## [11.4.1](https://github.com/US-EPA-CAMD/easey-common/compare/v11.4.0...v11.4.1) (2023-10-31)
+
+
+### Bug Fixes
+
+* fixed staging issue on preview data ([9f2a513](https://github.com/US-EPA-CAMD/easey-common/commit/9f2a513ab2c8eecdfe5f9df4cb082a9543f2b2e3)), closes [#4888](https://github.com/US-EPA-CAMD/easey-common/issues/4888)
+
 # [11.4.0](https://github.com/US-EPA-CAMD/easey-common/compare/v11.3.0...v11.4.0) (2023-10-30)
 
 
