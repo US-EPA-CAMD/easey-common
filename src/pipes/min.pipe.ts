@@ -18,7 +18,7 @@ export function Min(minVal: number, validationOptions?: ValidationOptions) {
 			validator: {
 				validate(value: any, args: ValidationArguments) {
 					if (value !== null) {
-						return min(+value, minVal);
+						return min(+value, minVal); 
 					}
 					return true;
 				},
