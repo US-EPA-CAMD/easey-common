@@ -8,14 +8,18 @@ let pgPwd = process.env.EASEY_DB_PWD || "password";
 let pgDb = process.env.EASEY_DB_NAME || "postgres";
 
 if (process.env.VCAP_SERVICES) {
+  const dbService = process.env.EASEY_DB_SERVICE || "camd-pg-db";
   const vcapSvc = JSON.parse(process.env.VCAP_SERVICES);
-  const vcapSvcCreds = vcapSvc["aws-rds"][0].credentials;
+  const rdsServices = vcapSvc["aws-rds"];
+  const svcCredentials = rdsServices
+    .find(o => o.name === dbService)
+    .credentials;
 
-  pgHost = vcapSvcCreds.host;
-  pgPort = +vcapSvcCreds.port;
-  pgUser = vcapSvcCreds.username;
-  pgPwd = vcapSvcCreds.password;
-  pgDb = vcapSvcCreds.name;
+  pgHost = svcCredentials.host;
+  pgPort = +svcCredentials.port;
+  pgUser = svcCredentials.username;
+  pgPwd = svcCredentials.password;
+  pgDb = svcCredentials.name;
 }
 
 export const dbConfig = registerAs("database", () => ({
