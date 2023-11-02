@@ -1,3 +1,10 @@
+# [17.1.0](https://github.com/US-EPA-CAMD/easey-common/compare/v17.0.0...v17.1.0) (2023-11-02)
+
+
+### Features
+
+* **db.config:** added db service env var ([6aa7ba8](https://github.com/US-EPA-CAMD/easey-common/commit/6aa7ba8737e8651326d588cf2b341daf1fa4620a))
+
 # [17.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v16.13.0...v17.0.0) (2023-10-24)
 
 
