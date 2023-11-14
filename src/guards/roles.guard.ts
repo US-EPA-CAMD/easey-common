@@ -1,4 +1,9 @@
-import { Injectable, CanActivate, ExecutionContext } from "@nestjs/common";
+import {
+  Injectable,
+  CanActivate,
+  ExecutionContext,
+  HttpStatus,
+} from "@nestjs/common";
 import { BadRequestException } from "@nestjs/common/exceptions";
 import { ConfigService } from "@nestjs/config";
 import { Reflector } from "@nestjs/core";
@@ -6,6 +11,7 @@ import { parseBool } from "../utilities";
 import { getManager } from "typeorm";
 import { LookupType } from "../enums";
 import { ValidatorParams } from "../interfaces";
+import { EaseyException } from "../exceptions";
 
 @Injectable()
 export class RolesGuard implements CanActivate {
@@ -40,9 +46,56 @@ export class RolesGuard implements CanActivate {
     return true;
   }
 
+  private async checkNotEvalOrSubmitted(
+    item: string,
+    lookupType: LookupType
+  ): Promise<boolean> {
+    let monPlanIds = [item]; //Default assumption is that this is a monPlanId
+    if (lookupType === LookupType.Location) {
+      const data = await this.returnManager().query(
+        `SELECT mon_plan_id 
+         FROM CAMDECMPSWKS.monitor_plan_location
+         WHERE mon_loc_id = $1`,
+        [item]
+      );
+
+      monPlanIds = data.map((d) => d.mon_plan_id);
+    } else if (lookupType === LookupType.Facility) {
+      return true;
+    }
+
+    const evalRecordsInProgress = await this.returnManager().query(
+      `SELECT * FROM CAMDECMPSAUX.evaluation_set es
+      JOIN CAMDECMPSAUX.evaluation_queue eq USING(evaluation_set_id)
+      WHERE mon_plan_id = ANY($1) AND status_cd NOT IN ('COMPLETE', 'ERROR');
+      `,
+      [monPlanIds]
+    );
+
+    const submissionRecordsInProgress = await this.returnManager().query(
+      `SELECT * FROM CAMDECMPSAUX.submission_set
+       WHERE mon_plan_id = ANY($1) AND status_cd NOT IN ('COMPLETE', 'ERROR');
+      `,
+      [monPlanIds]
+    );
+
+    if (
+      (evalRecordsInProgress && evalRecordsInProgress.length > 0) ||
+      (submissionRecordsInProgress && submissionRecordsInProgress.length > 0)
+    ) {
+      throw new EaseyException(
+        new Error(
+          "This location is currently being evaluated or submitted. Please try again after it is complete"
+        ),
+        HttpStatus.BAD_REQUEST
+      );
+    }
+    return true;
+  }
+
   //
   // Find the corresponding request parameter and check to see if the user has permissions
-  handlePathParamValidation(
+  async handlePathParamValidation(
     context: ExecutionContext,
     lookupKey,
     lookupList,
@@ -57,6 +110,7 @@ export class RolesGuard implements CanActivate {
       const lookupVal = params[lookupKey];
 
       if (
+        (await this.checkNotEvalOrSubmitted(lookupVal, lookupType)) &&
         this.checkEnforceCheckout(
           lookupVal,
           lookupType,
@@ -77,7 +131,7 @@ export class RolesGuard implements CanActivate {
   }
 
   // Recursively drills into a nested object and makes sure all properties are included in the lookup list
-  private recurseBody(
+  private async recurseBody(
     data,
     pathChunks,
     step,
@@ -88,6 +142,10 @@ export class RolesGuard implements CanActivate {
   ) {
     if (step === pathChunks.length - 1) {
       if (
+        (await this.checkNotEvalOrSubmitted(
+          data[pathChunks[step]],
+          lookupType
+        )) &&
         this.checkEnforceCheckout(
           data[pathChunks[step]],
           lookupType,
@@ -104,7 +162,7 @@ export class RolesGuard implements CanActivate {
     if (pathChunks[step] === "*") {
       for (const newChunk of data) {
         if (
-          this.recurseBody(
+          (await this.recurseBody(
             newChunk,
             pathChunks,
             step + 1,
@@ -112,7 +170,7 @@ export class RolesGuard implements CanActivate {
             lookupType,
             enforceCheckout,
             checkedOutCriteria
-          ) === false
+          )) === false
         ) {
           return false;
         }
@@ -155,7 +213,7 @@ export class RolesGuard implements CanActivate {
     );
   }
 
-  handleQueryParamValidation(
+  async handleQueryParamValidation(
     context: ExecutionContext,
     lookupKey,
     lookupList,
@@ -176,6 +234,7 @@ export class RolesGuard implements CanActivate {
 
         for (const chunk of pathChunks) {
           if (
+            !(await this.checkNotEvalOrSubmitted(chunk, lookupType)) ||
             !this.checkEnforceCheckout(
               chunk,
               lookupType,
@@ -195,6 +254,7 @@ export class RolesGuard implements CanActivate {
       }
 
       if (
+        (await this.checkNotEvalOrSubmitted(lookupVal, lookupType)) &&
         this.checkEnforceCheckout(
           lookupVal,
           lookupType,
@@ -241,7 +301,35 @@ export class RolesGuard implements CanActivate {
       context.getHandler()
     );
 
-    const facilitiesWithRole = facilities.map((p) => p.orisCode.toString());
+    if (params.requiredRoles) {
+      let containsARole = false;
+      for (const requiredRole of params.requiredRoles) {
+        if (request.user.roles.includes(requiredRole)) {
+          containsARole = true;
+          break;
+        }
+      }
+      if (!containsARole) {
+        return false;
+      }
+    }
+
+    //2) Check a users role, and determine if they can access a resource
+    //3) Check a users permissions for a facility and see if they can edit / submit a facility
+
+    const facilitiesWithRole = facilities
+      .filter((f) => {
+        if (params.permissionsForFacility) {
+          for (const permission of params.permissionsForFacility) {
+            if (f.permissions.includes(permission)) {
+              return true;
+            }
+          }
+          return false;
+        }
+        return true;
+      })
+      .map((p) => p.orisCode.toString());
 
     let enforceCheckout = true; //Determine if thise endpoint needs to enforce that all records are also currently checked out
     if (this.configService.get<boolean>("app.enableRoleGuardCheckoutCheck")) {
@@ -256,6 +344,7 @@ export class RolesGuard implements CanActivate {
       enforceCheckout = false;
     }
 
+    //Determine if location is checked out
     let checkedOutCriteria;
     if (enforceCheckout) {
       if (lookupType === LookupType.MonitorPlan) {
@@ -350,7 +439,8 @@ export class RolesGuard implements CanActivate {
           for (const ml of monitorLocations) {
             if (
               (enforceCheckout && !checkedOutCriteria.has(ml)) ||
-              !lookupDataList.has(ml)
+              !lookupDataList.has(ml) ||
+              !(await this.checkNotEvalOrSubmitted(ml, LookupType.Location))
             ) {
               return false;
             }
