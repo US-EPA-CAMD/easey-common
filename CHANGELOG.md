@@ -1,3 +1,15 @@
+# [17.2.0](https://github.com/US-EPA-CAMD/easey-common/compare/v17.1.0...v17.2.0) (2023-11-14)
+
+
+### Bug Fixes
+
+* removed broken test coverage ([422fe95](https://github.com/US-EPA-CAMD/easey-common/commit/422fe95a72fb33af73688983604a09454d36905b))
+
+
+### Features
+
+* added role / facility authorization to role guard ([ea23705](https://github.com/US-EPA-CAMD/easey-common/commit/ea23705c287beaaebea28f3de7b1e6d57eb4503e))
+
 # [17.1.0](https://github.com/US-EPA-CAMD/easey-common/compare/v17.0.0...v17.1.0) (2023-11-02)
 
 
