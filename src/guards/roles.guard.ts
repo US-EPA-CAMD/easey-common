@@ -48,8 +48,13 @@ export class RolesGuard implements CanActivate {
 
   private async checkNotEvalOrSubmitted(
     item: string,
-    lookupType: LookupType
+    lookupType: LookupType,
+    enforceEvalSubmit: boolean
   ): Promise<boolean> {
+    if (!enforceEvalSubmit) {
+      return true;
+    }
+
     let monPlanIds = [item]; //Default assumption is that this is a monPlanId
     if (lookupType === LookupType.Location) {
       const data = await this.returnManager().query(
@@ -101,7 +106,8 @@ export class RolesGuard implements CanActivate {
     lookupList,
     lookupType,
     enforceCheckout,
-    checkedOutCriteria
+    checkedOutCriteria,
+    enforceEvalSubmitCheck
   ) {
     const request = context.switchToHttp().getRequest();
     const params = request.params;
@@ -110,7 +116,11 @@ export class RolesGuard implements CanActivate {
       const lookupVal = params[lookupKey];
 
       if (
-        (await this.checkNotEvalOrSubmitted(lookupVal, lookupType)) &&
+        (await this.checkNotEvalOrSubmitted(
+          lookupVal,
+          lookupType,
+          enforceEvalSubmitCheck
+        )) &&
         this.checkEnforceCheckout(
           lookupVal,
           lookupType,
@@ -138,13 +148,15 @@ export class RolesGuard implements CanActivate {
     lookupList,
     lookupType,
     enforceCheckout,
-    checkedOutCriteria
+    checkedOutCriteria,
+    enforceEvalSubmitCheck
   ) {
     if (step === pathChunks.length - 1) {
       if (
         (await this.checkNotEvalOrSubmitted(
           data[pathChunks[step]],
-          lookupType
+          lookupType,
+          enforceEvalSubmitCheck
         )) &&
         this.checkEnforceCheckout(
           data[pathChunks[step]],
@@ -169,7 +181,8 @@ export class RolesGuard implements CanActivate {
             lookupList,
             lookupType,
             enforceCheckout,
-            checkedOutCriteria
+            checkedOutCriteria,
+            enforceEvalSubmitCheck
           )) === false
         ) {
           return false;
@@ -185,7 +198,8 @@ export class RolesGuard implements CanActivate {
         lookupList,
         lookupType,
         enforceCheckout,
-        checkedOutCriteria
+        checkedOutCriteria,
+        enforceEvalSubmitCheck
       );
     }
   }
@@ -197,7 +211,8 @@ export class RolesGuard implements CanActivate {
     lookupList,
     lookupType,
     enforceCheckout,
-    checkedOutCriteria
+    checkedOutCriteria,
+    enforceEvalSubmitCheck
   ) {
     const lookupKeyParts = lookupKey.split(".");
     let dataChunk = context.switchToHttp().getRequest().body;
@@ -209,7 +224,8 @@ export class RolesGuard implements CanActivate {
       lookupList,
       lookupType,
       enforceCheckout,
-      checkedOutCriteria
+      checkedOutCriteria,
+      enforceEvalSubmitCheck
     );
   }
 
@@ -220,6 +236,7 @@ export class RolesGuard implements CanActivate {
     lookupType,
     enforceCheckout,
     checkedOutCriteria,
+    enforceEvalSubmitCheck,
     isDelimitted = false
   ) {
     const request = context.switchToHttp().getRequest();
@@ -234,7 +251,11 @@ export class RolesGuard implements CanActivate {
 
         for (const chunk of pathChunks) {
           if (
-            !(await this.checkNotEvalOrSubmitted(chunk, lookupType)) ||
+            !(await this.checkNotEvalOrSubmitted(
+              chunk,
+              lookupType,
+              enforceEvalSubmitCheck
+            )) ||
             !this.checkEnforceCheckout(
               chunk,
               lookupType,
@@ -254,7 +275,11 @@ export class RolesGuard implements CanActivate {
       }
 
       if (
-        (await this.checkNotEvalOrSubmitted(lookupVal, lookupType)) &&
+        (await this.checkNotEvalOrSubmitted(
+          lookupVal,
+          lookupType,
+          enforceEvalSubmitCheck
+        )) &&
         this.checkEnforceCheckout(
           lookupVal,
           lookupType,
@@ -440,7 +465,11 @@ export class RolesGuard implements CanActivate {
             if (
               (enforceCheckout && !checkedOutCriteria.has(ml)) ||
               !lookupDataList.has(ml) ||
-              !(await this.checkNotEvalOrSubmitted(ml, LookupType.Location))
+              !(await this.checkNotEvalOrSubmitted(
+                ml,
+                LookupType.Location,
+                params.enforceEvalSubmitCheck
+              ))
             ) {
               return false;
             }
@@ -459,7 +488,8 @@ export class RolesGuard implements CanActivate {
         lookupDataList,
         lookupType,
         enforceCheckout,
-        checkedOutCriteria
+        checkedOutCriteria,
+        params.enforceEvalSubmitCheck
       );
     } else if (params.bodyParam) {
       return this.handleBodyParamValidation(
@@ -468,7 +498,8 @@ export class RolesGuard implements CanActivate {
         lookupDataList,
         lookupType,
         enforceCheckout,
-        checkedOutCriteria
+        checkedOutCriteria,
+        params.enforceEvalSubmitCheck
       );
     } else if (params.queryParam) {
       return this.handleQueryParamValidation(
@@ -478,6 +509,7 @@ export class RolesGuard implements CanActivate {
         lookupType,
         enforceCheckout,
         checkedOutCriteria,
+        params.enforceEvalSubmitCheck,
         params.isPipeDelimitted
       );
     } else {
