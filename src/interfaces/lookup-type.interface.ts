@@ -5,6 +5,7 @@ export interface ValidatorParams {
   importLocationSources?: string[];
   isPipeDelimitted?: boolean;
   enforceCheckout?: boolean;
+  enforceEvalSubmitCheck?: boolean;
   permissionsForFacility?: string[];
   requiredRoles?: string[];
 }
