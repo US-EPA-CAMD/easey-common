@@ -1,3 +1,10 @@
+## [17.2.3](https://github.com/US-EPA-CAMD/easey-common/compare/v17.2.2...v17.2.3) (2023-11-15)
+
+
+### Bug Fixes
+
+* fix EvalSubmit enforce flag ([2bee0de](https://github.com/US-EPA-CAMD/easey-common/commit/2bee0de71a097e92c6dbe7d43fe207169e85891e))
+
 ## [17.2.2](https://github.com/US-EPA-CAMD/easey-common/compare/v17.2.1...v17.2.2) (2023-11-15)
 
 
