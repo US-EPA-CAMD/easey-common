@@ -421,6 +421,14 @@ export class RolesGuard implements CanActivate {
         break;
     }
 
+    let enforceEvalSubmit = true;
+    if (
+      params.enforceEvalSubmitCheck !== null &&
+      params.enforceEvalSubmitCheck !== undefined
+    ) {
+      enforceEvalSubmit = params.enforceEvalSubmitCheck;
+    }
+
     if (params.importLocationSources) {
       for (const importLocationSource of params.importLocationSources) {
         const paths = importLocationSource.split(".");
@@ -468,7 +476,7 @@ export class RolesGuard implements CanActivate {
               !(await this.checkNotEvalOrSubmitted(
                 ml,
                 LookupType.Location,
-                params.enforceEvalSubmitCheck
+                enforceEvalSubmit
               ))
             ) {
               return false;
@@ -489,7 +497,7 @@ export class RolesGuard implements CanActivate {
         lookupType,
         enforceCheckout,
         checkedOutCriteria,
-        params.enforceEvalSubmitCheck
+        enforceEvalSubmit
       );
     } else if (params.bodyParam) {
       return this.handleBodyParamValidation(
@@ -499,7 +507,7 @@ export class RolesGuard implements CanActivate {
         lookupType,
         enforceCheckout,
         checkedOutCriteria,
-        params.enforceEvalSubmitCheck
+        enforceEvalSubmit
       );
     } else if (params.queryParam) {
       return this.handleQueryParamValidation(
@@ -509,7 +517,7 @@ export class RolesGuard implements CanActivate {
         lookupType,
         enforceCheckout,
         checkedOutCriteria,
-        params.enforceEvalSubmitCheck,
+        enforceEvalSubmit,
         params.isPipeDelimitted
       );
     } else {
