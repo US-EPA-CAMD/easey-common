@@ -1,3 +1,10 @@
+## [17.2.2](https://github.com/US-EPA-CAMD/easey-common/compare/v17.2.1...v17.2.2) (2023-11-15)
+
+
+### Bug Fixes
+
+* added support for get endpoints to function without eval/submit permissions ([4316e77](https://github.com/US-EPA-CAMD/easey-common/commit/4316e773b25f26a6ebc3e5247e9c5a93fae2d865))
+
 ## [17.2.1](https://github.com/US-EPA-CAMD/easey-common/compare/v17.2.0...v17.2.1) (2023-11-14)
 
 
