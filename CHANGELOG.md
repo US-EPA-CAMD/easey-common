@@ -1,3 +1,10 @@
+## [17.2.4](https://github.com/US-EPA-CAMD/easey-common/compare/v17.2.3...v17.2.4) (2023-11-16)
+
+
+### Bug Fixes
+
+* added support for admin role check ([7a42865](https://github.com/US-EPA-CAMD/easey-common/commit/7a42865f476485e7e47660f0860898957e20ac42))
+
 ## [17.2.3](https://github.com/US-EPA-CAMD/easey-common/compare/v17.2.2...v17.2.3) (2023-11-15)
 
 
