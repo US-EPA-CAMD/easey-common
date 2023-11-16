@@ -326,6 +326,13 @@ export class RolesGuard implements CanActivate {
       context.getHandler()
     );
 
+    if (
+      params.requiredRoles.includes("ECMPS Admin") &&
+      request.user.roles.includes("ECMPS Admin")
+    ) {
+      return true; //In the case the user has the required ECMPS admin role, let them through without performing other checks
+    }
+
     if (params.requiredRoles) {
       let containsARole = false;
       for (const requiredRole of params.requiredRoles) {
@@ -334,6 +341,7 @@ export class RolesGuard implements CanActivate {
           break;
         }
       }
+
       if (!containsARole) {
         return false;
       }
