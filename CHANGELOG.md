@@ -1,3 +1,10 @@
+## [17.2.7](https://github.com/US-EPA-CAMD/easey-common/compare/v17.2.6...v17.2.7) (2023-11-20)
+
+
+### Bug Fixes
+
+* fix to check if PEM cert exists before setting property ([9d2365c](https://github.com/US-EPA-CAMD/easey-common/commit/9d2365c6001b3f581fe8c28699cd7240446ceefb))
+
 ## [17.2.6](https://github.com/US-EPA-CAMD/easey-common/compare/v17.2.5...v17.2.6) (2023-11-20)
 
 
