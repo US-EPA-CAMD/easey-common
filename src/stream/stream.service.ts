@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
-import { ReadStream, readFileSync } from "fs";
+import { ReadStream, existsSync, readFileSync } from "fs";
 import { TlsOptions } from "tls";
 
 let Pool = require("pg-pool");
@@ -14,10 +14,17 @@ export class StreamService {
   constructor(private readonly configService: ConfigService) {
     const host = configService.get<string>("database.host");
     this.tlsOptions.rejectUnauthorized = host !== "localhost";
-    this.tlsOptions.ca =
-      host !== "localhost"
-        ? readFileSync(`${process.cwd()}\\us-gov-west-1-bundle.pem`).toString()
-        : null;
+
+    if (existsSync(`${process.cwd()}\\us-gov-west-1-bundle.pem`)) {
+      this.tlsOptions.ca =
+        host !== "localhost"
+          ? readFileSync(
+              `${process.cwd()}\\us-gov-west-1-bundle.pem`
+            ).toString()
+          : null;
+    } else {
+      this.tlsOptions.ca = null;
+    }
 
     this.pool = new Pool({
       user: this.configService.get<string>("database.user"),
