@@ -1,3 +1,11 @@
+## [17.2.5](https://github.com/US-EPA-CAMD/easey-common/compare/v17.2.4...v17.2.5) (2023-11-20)
+
+
+### Bug Fixes
+
+* added ssl connection ability to pg pool ([3cc0f27](https://github.com/US-EPA-CAMD/easey-common/commit/3cc0f279c03f75b403f0dbd5138d13b85da53eae))
+* fix directory look up on pem file ([98f8fe1](https://github.com/US-EPA-CAMD/easey-common/commit/98f8fe113c078540216ebdff96579953d347e330))
+
 ## [17.2.4](https://github.com/US-EPA-CAMD/easey-common/compare/v17.2.3...v17.2.4) (2023-11-16)
 
 
