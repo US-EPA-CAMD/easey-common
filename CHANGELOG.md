@@ -1,3 +1,10 @@
+## [17.2.6](https://github.com/US-EPA-CAMD/easey-common/compare/v17.2.5...v17.2.6) (2023-11-20)
+
+
+### Bug Fixes
+
+* added a fix to the path lookup ([fbefa89](https://github.com/US-EPA-CAMD/easey-common/commit/fbefa898d572cad07d5632f222a12f9f5f66b6ee))
+
 ## [17.2.5](https://github.com/US-EPA-CAMD/easey-common/compare/v17.2.4...v17.2.5) (2023-11-20)
 
 
