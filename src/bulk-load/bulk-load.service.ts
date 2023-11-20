@@ -19,7 +19,7 @@ export class BulkLoadService {
     this.tlsOptions.rejectUnauthorized = host !== "localhost";
     this.tlsOptions.ca =
       host !== "localhost"
-        ? readFileSync(`${process.cwd()}/us-gov-west-1-bundle.pem`).toString()
+        ? readFileSync(`${process.cwd()}\\us-gov-west-1-bundle.pem`).toString()
         : null;
 
     this.pool = new Pool({
