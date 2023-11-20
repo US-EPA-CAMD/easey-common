@@ -13,11 +13,13 @@ export class BulkLoadService {
   private tlsOptions: TlsOptions = { requestCert: true };
 
   constructor(private readonly configService: ConfigService) {
+    console.log(`Looking for: ${process.cwd()}/us-gov-west-1-bundle.pem`);
+
     const host = configService.get<string>("database.host");
     this.tlsOptions.rejectUnauthorized = host !== "localhost";
     this.tlsOptions.ca =
       host !== "localhost"
-        ? readFileSync("./us-gov-west-1-bundle.pem").toString()
+        ? readFileSync(`${process.cwd()}/us-gov-west-1-bundle.pem`).toString()
         : null;
 
     this.pool = new Pool({
