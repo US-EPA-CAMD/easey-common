@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
-import { WriteStream, readFileSync } from "fs";
+import { WriteStream, existsSync, readFileSync } from "fs";
 import { from as copyFrom } from "pg-copy-streams";
 import BulkLoadStream from "./bulk-load-stream";
 import { TlsOptions } from "tls";
@@ -17,10 +17,17 @@ export class BulkLoadService {
 
     const host = configService.get<string>("database.host");
     this.tlsOptions.rejectUnauthorized = host !== "localhost";
-    this.tlsOptions.ca =
-      host !== "localhost"
-        ? readFileSync(`${process.cwd()}\\us-gov-west-1-bundle.pem`).toString()
-        : null;
+
+    if (existsSync(`${process.cwd()}\\us-gov-west-1-bundle.pem`)) {
+      this.tlsOptions.ca =
+        host !== "localhost"
+          ? readFileSync(
+              `${process.cwd()}\\us-gov-west-1-bundle.pem`
+            ).toString()
+          : null;
+    } else {
+      this.tlsOptions.ca = null;
+    }
 
     this.pool = new Pool({
       user: this.configService.get<string>("database.user"),
