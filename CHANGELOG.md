@@ -1,3 +1,10 @@
+## [17.2.8](https://github.com/US-EPA-CAMD/easey-common/compare/v17.2.7...v17.2.8) (2023-11-27)
+
+
+### Bug Fixes
+
+* fix to param check in role guard ([01b93ff](https://github.com/US-EPA-CAMD/easey-common/commit/01b93ff8e68865cf8c4cc89f3f688411fff6c878))
+
 ## [17.2.7](https://github.com/US-EPA-CAMD/easey-common/compare/v17.2.6...v17.2.7) (2023-11-20)
 
 
