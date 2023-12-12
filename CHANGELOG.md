@@ -1,3 +1,10 @@
+## [17.2.9](https://github.com/US-EPA-CAMD/easey-common/compare/v17.2.8...v17.2.9) (2023-12-12)
+
+
+### Bug Fixes
+
+* **stream service:** tls/ssl ca cert not loading properly ([a17c35b](https://github.com/US-EPA-CAMD/easey-common/commit/a17c35bca0ae54f71beba23dd06d328edd5300a1))
+
 ## [17.2.8](https://github.com/US-EPA-CAMD/easey-common/compare/v17.2.7...v17.2.8) (2023-11-27)
 
 
