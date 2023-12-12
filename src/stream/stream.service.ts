@@ -16,6 +16,7 @@ export class StreamService {
     this.tlsOptions.rejectUnauthorized = host !== "localhost";
 
     if (existsSync(`${process.cwd()}\\us-gov-west-1-bundle.pem`)) {
+      console.log('Loading TLS/SSL us-gov-west-1-bundle.pem ca certificate...');
       this.tlsOptions.ca =
         host !== "localhost"
           ? readFileSync(
@@ -23,8 +24,16 @@ export class StreamService {
             ).toString()
           : null;
     } else {
+      console.log('No TLS/SSL cert available!');
       this.tlsOptions.ca = null;
     }
+
+    console.log('TLS/SSL Config (Stream Service):', {
+      ...this.tlsOptions,
+      ca: (this.tlsOptions.ca !== null)
+        ? `${this.tlsOptions.ca.slice(0, 30)}...(truncated for display only)`
+        : null
+    });
 
     this.pool = new Pool({
       user: this.configService.get<string>("database.user"),
