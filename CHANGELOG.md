@@ -1,3 +1,10 @@
+## [11.4.2](https://github.com/US-EPA-CAMD/easey-common/compare/v11.4.1...v11.4.2) (2023-12-13)
+
+
+### Bug Fixes
+
+* **removed in and name from swagger:** modified the swagger pages to remove the in and head ([5e18178](https://github.com/US-EPA-CAMD/easey-common/commit/5e181786cefe50d3c257e32867ce6c001af1d1fd))
+
 ## [11.4.1](https://github.com/US-EPA-CAMD/easey-common/compare/v11.4.0...v11.4.1) (2023-10-31)
 
 
