@@ -65,11 +65,9 @@ export async function applySwagger(app: INestApplication) {
   if (configService.get<boolean>("app.enableClientToken")) {
     swaggerDocOptions.addBearerAuth(
       {
-        in: "header",
         type: "http",
         scheme: "bearer",
         bearerFormat: "jwt",
-        name: "ClientToken",
         description:
           'Authorization "bearer" client jwt token required for api endpoints',
       },
