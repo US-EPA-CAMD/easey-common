@@ -335,7 +335,7 @@ export class RolesGuard implements CanActivate {
 
       let containsARole = false;
       for (const requiredRole of params.requiredRoles) {
-        if (request.user.roles.includes(requiredRole)) {
+        if (request.user.roles && request.user.roles.includes(requiredRole)) {
           containsARole = true;
           break;
         }
