@@ -1,3 +1,10 @@
+## [17.2.11](https://github.com/US-EPA-CAMD/easey-common/compare/v17.2.10...v17.2.11) (2024-02-22)
+
+
+### Bug Fixes
+
+* fix the import issue in emissions API ([12e0e8a](https://github.com/US-EPA-CAMD/easey-common/commit/12e0e8afbb1ec5ea5c73869e2ce7889a8d705f1b))
+
 ## [17.2.9](https://github.com/US-EPA-CAMD/easey-common/compare/v17.2.8...v17.2.9) (2023-12-12)
 
 
