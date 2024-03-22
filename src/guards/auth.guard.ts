@@ -49,7 +49,6 @@ export class AuthGuard implements CanActivate {
 
   async validateRequest(request): Promise<boolean> {
     const authHeader = request.headers.authorization;
-    console.log(authHeader);
     const forwardedForHeader = request.headers["x-forwarded-for"];
     let errorMsg =
       "Prior Authorization (User Security Token) required to access this resource.";
