@@ -3,8 +3,8 @@ import {
   ValidationOptions,
   ValidationArguments,
 } from "class-validator";
-
-import { FindManyOptions, getManager } from "typeorm";
+import { FindManyOptions } from "typeorm";
+import { IsValidCodeConstraint } from "../constraints/is-valid-code.constraint";
 
 export function IsValidCode(
   type: any,
@@ -17,21 +17,8 @@ export function IsValidCode(
       target: object.constructor,
       propertyName: propertyName,
       options: validationOptions,
-      validator: {
-        async validate(value: any, args: ValidationArguments) {
-          if (value) {
-            const manager = getManager();
-            let found;
-            if (findOption) {
-              found = await manager.findOne(type, findOption(args));
-            } else {
-              found = await manager.findOne(type, value);
-            }
-            return found != null;
-          }
-          return true;
-        },
-      },
+      constraints: [{ type, findOption }],
+      validator: IsValidCodeConstraint,
     });
   };
 }

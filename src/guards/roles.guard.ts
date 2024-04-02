@@ -8,7 +8,7 @@ import { BadRequestException } from "@nestjs/common/exceptions";
 import { ConfigService } from "@nestjs/config";
 import { Reflector } from "@nestjs/core";
 import { parseBool } from "../utilities";
-import { getManager } from "typeorm";
+import { DataSource } from "typeorm";
 import { LookupType } from "../enums";
 import { ValidatorParams } from "../interfaces";
 import { EaseyException } from "../exceptions";
@@ -17,12 +17,13 @@ import { EaseyException } from "../exceptions";
 export class RolesGuard implements CanActivate {
   constructor(
     private reflector: Reflector,
-    private configService: ConfigService
+    private configService: ConfigService,
+    private readonly dataSource: DataSource
   ) {}
 
-  // Need this to mock the getManager without mocking all of typeorm
+  // Need this to mock the entity manager without mocking all of typeorm
   returnManager(): any {
-    return getManager();
+    return this.dataSource.manager;
   }
 
   private checkEnforceCheckout(
