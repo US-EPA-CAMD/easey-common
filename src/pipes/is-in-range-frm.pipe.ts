@@ -10,9 +10,7 @@ import { IsInRangeFrmConstraint } from "../constraints/is-in-range-frm.constrain
  */
 export function IsInRangeFrm(
   code: string,
-  frmValues:
-    | Record<string, string | number>
-    | ((args: ValidationArguments) => Record<string, string | number>),
+  formatValues: object | ((args: ValidationArguments) => object),
   minVal: number,
   maxVal: number,
   isMinValValid = true,
@@ -26,7 +24,7 @@ export function IsInRangeFrm(
       propertyName: propertyName,
       options: validationOptions,
       constraints: [
-        { code, frmValues, minVal, maxVal, isMinValValid, isMaxValValid },
+        { code, formatValues, minVal, maxVal, isMinValValid, isMaxValValid },
       ],
       validator: IsInRangeFrmConstraint,
     });

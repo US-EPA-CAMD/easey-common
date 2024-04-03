@@ -3,24 +3,22 @@ import {
   ValidatorConstraint,
   ValidatorConstraintInterface,
 } from "class-validator";
+import isEmailValidator from "validator/lib/isEmail";
 import { Injectable } from "@nestjs/common";
 import { CheckCatalogService } from "../check-catalog/check-catalog.service";
 import { FrmOptions } from "../interfaces/validator-options.interface";
 
+/**
+ * A custom validator constraint that confirms a string is in the form of an email and formats the error message (if any) using the `CheckCatalogService`.
+ */
 @Injectable()
-@ValidatorConstraint({ name: "isNotNegativeFrm", async: false })
-export class IsNotNegativeFrmConstraint
-  implements ValidatorConstraintInterface
-{
+@ValidatorConstraint({ name: "isEmailFrm", async: false })
+export class IsEmailFrmConstraint implements ValidatorConstraintInterface {
   constructor(private readonly checkCatalogService: CheckCatalogService) {}
 
   validate(value: any, _args: ValidationArguments) {
-    if (value) {
-      if (typeof value === "number") {
-        if (value < 0) {
-          return false;
-        }
-      }
+    if (value !== null) {
+      return typeof value === "string" && isEmailValidator(value);
     }
     return true;
   }

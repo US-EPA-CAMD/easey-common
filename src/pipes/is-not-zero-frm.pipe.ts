@@ -10,9 +10,7 @@ import { IsNotZeroFrmConstraint } from "../constraints/is-not-zero-frm.constrain
  */
 export function IsNotZeroFrm(
   code: string,
-  formatValues:
-    | Record<string, string | number>
-    | ((args: ValidationArguments) => Record<string, string | number>),
+  formatValues: object | ((args: ValidationArguments) => object),
   validationOptions?: ValidationOptions
 ) {
   return function (object: Object, propertyName: string) {

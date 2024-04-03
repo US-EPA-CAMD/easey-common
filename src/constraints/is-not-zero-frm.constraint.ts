@@ -8,7 +8,7 @@ import { CheckCatalogService } from "../check-catalog/check-catalog.service";
 import { FrmOptions } from "../interfaces/validator-options.interface";
 
 /**
- * A custom validator that confirms a value is not zero and formats the error message (if any) using the `CheckCatalogService`.
+ * A custom validator that confirms a value is a number that is not zero and formats the result message (if any) using the `CheckCatalogService`.
  */
 @Injectable()
 @ValidatorConstraint({ name: "isNotZeroFrm", async: false })

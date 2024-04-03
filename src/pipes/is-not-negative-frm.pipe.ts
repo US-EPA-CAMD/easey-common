@@ -10,9 +10,7 @@ import { IsNotNegativeFrmConstraint } from "../constraints/is-not-negative-frm.c
  */
 export function IsNotNegativeFrm(
   code: string,
-  formatValues:
-    | Record<string, string | number>
-    | ((args: ValidationArguments) => Record<string, string | number>),
+  formatValues: object | ((args: ValidationArguments) => object),
   validationOptions?: ValidationOptions
 ) {
   return function (object: Object, propertyName: string) {

@@ -21,9 +21,7 @@ export interface DbLookupOptions {
 // Base options needed for validators that format their error message with the `CheckCatalog` service.
 export interface FrmOptions {
   code: string;
-  formatValues:
-    | Record<string, string | number>
-    | ((args: ValidationArguments) => Record<string, string | number>);
+  formatValues: object | ((args: ValidationArguments) => object);
 }
 
 export interface IsInRangeFrmOptions extends FrmOptions {
@@ -46,4 +44,8 @@ export interface MinFrmOptions extends FrmOptions {
 
 export interface MaxFrmOptions extends FrmOptions {
   maxVal: number;
+}
+
+export interface MaxLengthFrmOptions extends FrmOptions {
+  maxLength: number;
 }

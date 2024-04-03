@@ -3,25 +3,24 @@ import {
   ValidationArguments,
   ValidationOptions,
 } from "class-validator";
-import { MinFrmConstraint } from "../constraints/min-frm.constraint";
+import { IsEmailFrmConstraint } from "../constraints/is-email-frm.constraint";
 
 /**
- * A wrapper around the `Min` validator that formats the result message using the `CheckCatalogService`.
+ * A wrapper around the `IsEmail` validator that formats the result message using the `CheckCatalogService`.
  */
-export function MinFrm(
+export function IsEmailFrm(
   code: string,
   formatValues: object | ((args: ValidationArguments) => object),
-  minVal: number,
   validationOptions?: ValidationOptions
 ) {
   return function (object: Object, propertyName: string) {
     registerDecorator({
-      name: "minFrm",
+      name: "isEmailFrm",
       target: object.constructor,
       propertyName: propertyName,
       options: validationOptions,
-      constraints: [{ code, formatValues, minVal }],
-      validator: MinFrmConstraint,
+      constraints: [{ code, formatValues }],
+      validator: IsEmailFrmConstraint,
     });
   };
 }
