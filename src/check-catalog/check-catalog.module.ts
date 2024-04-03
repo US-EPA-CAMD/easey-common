@@ -1,8 +1,7 @@
-import { DynamicModule, Module, Global } from "@nestjs/common";
+import { DynamicModule, Module } from "@nestjs/common";
 import { CheckCatalogService } from "./check-catalog.service";
 import { VIEW_NAME } from "./check-catalog.constants";
 
-@Global()
 @Module({})
 export class CheckCatalogModule {
   static register(viewName: string): DynamicModule {
