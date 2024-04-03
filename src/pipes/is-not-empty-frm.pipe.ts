@@ -1,8 +1,4 @@
-import {
-  registerDecorator,
-  ValidationArguments,
-  ValidationOptions,
-} from "class-validator";
+import { registerDecorator, ValidationOptions } from "class-validator";
 import { IsNotEmptyFrmConstraint } from "../constraints/is-not-empty-frm.constraint";
 
 /**
@@ -10,9 +6,7 @@ import { IsNotEmptyFrmConstraint } from "../constraints/is-not-empty-frm.constra
  */
 export function IsNotEmptyFrm(
   code: string,
-  frmValues:
-    | Record<string, string | number>
-    | ((args: ValidationArguments) => Record<string, string | number>),
+  key: string,
   validationOptions?: ValidationOptions
 ) {
   return function (object: Object, propertyName: string) {
@@ -21,7 +15,7 @@ export function IsNotEmptyFrm(
       target: object.constructor,
       propertyName: propertyName,
       options: validationOptions,
-      constraints: [{ code, frmValues }],
+      constraints: [{ code, key }],
       validator: IsNotEmptyFrmConstraint,
     });
   };

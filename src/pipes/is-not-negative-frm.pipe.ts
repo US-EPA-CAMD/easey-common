@@ -1,8 +1,4 @@
-import {
-  registerDecorator,
-  ValidationArguments,
-  ValidationOptions,
-} from "class-validator";
+import { registerDecorator, ValidationOptions } from "class-validator";
 import { IsNotNegativeFrmConstraint } from "../constraints/is-not-negative-frm.constraint";
 
 /**
@@ -10,9 +6,7 @@ import { IsNotNegativeFrmConstraint } from "../constraints/is-not-negative-frm.c
  */
 export function IsNotNegativeFrm(
   code: string,
-  formatValues:
-    | Record<string, string | number>
-    | ((args: ValidationArguments) => Record<string, string | number>),
+  key: string,
   validationOptions?: ValidationOptions
 ) {
   return function (object: Object, propertyName: string) {
@@ -21,7 +15,7 @@ export function IsNotNegativeFrm(
       target: object.constructor,
       propertyName: propertyName,
       options: validationOptions,
-      constraints: [{ code, formatValues }],
+      constraints: [{ code, key }],
       validator: IsNotNegativeFrmConstraint,
     });
   };

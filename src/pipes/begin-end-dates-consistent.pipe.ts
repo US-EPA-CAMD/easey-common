@@ -1,45 +1,38 @@
-import { registerDecorator, ValidationArguments } from "class-validator";
-import { BeginEndDatesConsistentOptions } from "../interfaces/validator-options.interface";
+import {
+  registerDecorator,
+  ValidationOptions,
+  ValidationArguments,
+} from "class-validator";
 
 export function BeginEndDatesConsistent(
   validationOptions: BeginEndDatesConsistentOptions
 ) {
   return function (object: Object, propertyName: string) {
-    const {
-      beginDate = "beginDate",
-      beginHour = "beginHour",
-      beginMinute = "beginMinute",
-      endDate = "endDate",
-      endHour = "endHour",
-      endMinute = "endMinute",
-    } = validationOptions;
     registerDecorator({
       name: "beginEndDatesConsistent",
       target: object.constructor,
       propertyName: propertyName,
       options: validationOptions,
       constraints: [
-        {
-          beginDate,
-          beginHour,
-          beginMinute,
-          endDate,
-          endHour,
-          endMinute,
-        },
+        validationOptions.beginDate ? validationOptions.beginDate : "beginDate",
+        validationOptions.beginHour ? validationOptions.beginHour : "beginHour",
+        validationOptions.beginMinute
+          ? validationOptions.beginMinute
+          : "beginMinute",
+        validationOptions.endDate ? validationOptions.endDate : "endDate",
+        validationOptions.endHour ? validationOptions.endHour : "endHour",
+        validationOptions.endMinute ? validationOptions.endMinute : "endMinute",
       ],
       validator: {
-        validate(_value: any, args: ValidationArguments) {
+        validate(value: any, args: ValidationArguments) {
           const [
-            {
-              beginDate: beginDateField,
-              beginHour: beginHourField,
-              beginMinute: beginMinuteField,
-              endDate: endDateField,
-              endHour: endHourField,
-              endMinute: endMinuteField,
-            },
-          ] = args.constraints[0];
+            beginDateField,
+            beginHourField,
+            beginMinuteField,
+            endDateField,
+            endHourField,
+            endMinuteField,
+          ] = args.constraints;
 
           // Can't validate when missing required field
           if (
@@ -83,4 +76,13 @@ export function BeginEndDatesConsistent(
       },
     });
   };
+}
+
+export interface BeginEndDatesConsistentOptions extends ValidationOptions {
+  beginDate?: string;
+  beginHour?: string;
+  beginMinute?: string;
+  endDate?: string;
+  endHour?: string;
+  endMinute?: string;
 }

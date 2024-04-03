@@ -21,9 +21,10 @@ export { Max } from "./max.pipe";
 export { MaxFrm } from "./max-frm.pipe";
 export { IsEmail } from "./is-email.pipe";
 export { IsValidCode } from "./is-valid-code.pipe";
-export { IsValidCodeFrm } from "./is-valid-code-frm.pipe";
 export { MatchesRegEx } from "./matches-regex.pipe";
 export { DbLookup } from "./db-lookup.pipe";
-export { BeginEndDatesConsistent } from "./begin-end-dates-consistent.pipe";
-export { BeginEndDatesConsistentFrm } from "./begin-end-dates-consistent-frm.pipe";
+export {
+  BeginEndDatesConsistent,
+  BeginEndDatesConsistentOptions,
+} from "./begin-end-dates-consistent.pipe";
 export { EaseyValidationPipe } from "./easey-validation.pipe";

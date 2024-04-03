@@ -6,10 +6,7 @@ import {
 } from "class-validator";
 import { Injectable } from "@nestjs/common";
 import { CheckCatalogService } from "../check-catalog/check-catalog.service";
-import {
-  IsInRangeFrmOptions,
-  IsValidCodeFrmOptions,
-} from "../interfaces/validator-options.interface";
+import { IsInRangeFrmOptions } from "../interfaces/validator-options.interface";
 
 /**
  * A custom validator constraint that confirms a value is between a minimum and maximum and formats the result message (if any) using the `CheckCatalogService`.
@@ -76,11 +73,15 @@ export class IsInRangeFrmConstraint implements ValidatorConstraintInterface {
     return true;
   }
 
-  defaultMessage(args: ValidationArguments): string {
-    const { code, formatValues }: IsValidCodeFrmOptions = args.constraints[0];
-    return this.checkCatalogService.formatResultMessage(
-      code,
-      typeof formatValues === "function" ? formatValues(args) : formatValues
-    );
+  defaultMessage(args?: ValidationArguments): string {
+    const { code, key, minVal, maxVal }: IsInRangeFrmOptions =
+      args.constraints[0];
+    return this.checkCatalogService.formatResultMessage(code, {
+      value: args.value,
+      fieldname: args.property,
+      key,
+      minvalue: minVal,
+      maxvalue: maxVal,
+    });
   }
 }
