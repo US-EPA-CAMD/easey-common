@@ -4,7 +4,9 @@ import { BeginEndDatesConsistentFrmConstraint } from "../constraints/begin-end-d
 
 export function BeginEndDatesConsistentFrm(
   code: string,
-  formatValues: object | ((args: ValidationArguments) => object),
+  formatValues:
+    | Record<string, string | number>
+    | ((args: ValidationArguments) => Record<string, string | number>),
   validationOptions: BeginEndDatesConsistentOptions = {}
 ) {
   return function (object: Object, propertyName: string) {

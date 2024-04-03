@@ -10,5 +10,4 @@ export {
   IsValidCodeFrmOptions,
   MinFrmOptions,
   MaxFrmOptions,
-  MaxLengthFrmOptions,
 } from "./validator-options.interface";

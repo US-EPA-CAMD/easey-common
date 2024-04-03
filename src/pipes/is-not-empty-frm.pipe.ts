@@ -10,7 +10,9 @@ import { IsNotEmptyFrmConstraint } from "../constraints/is-not-empty-frm.constra
  */
 export function IsNotEmptyFrm(
   code: string,
-  formatValues: object | ((args: ValidationArguments) => object),
+  frmValues:
+    | Record<string, string | number>
+    | ((args: ValidationArguments) => Record<string, string | number>),
   validationOptions?: ValidationOptions
 ) {
   return function (object: Object, propertyName: string) {
@@ -19,7 +21,7 @@ export function IsNotEmptyFrm(
       target: object.constructor,
       propertyName: propertyName,
       options: validationOptions,
-      constraints: [{ code, formatValues }],
+      constraints: [{ code, frmValues }],
       validator: IsNotEmptyFrmConstraint,
     });
   };

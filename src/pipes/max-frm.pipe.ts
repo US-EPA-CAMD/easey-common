@@ -10,7 +10,9 @@ import { MaxFrmConstraint } from "../constraints/max-frm.constraint";
  */
 export function MaxFrm(
   code: string,
-  formatValues: object | ((args: ValidationArguments) => object),
+  formatValues:
+    | Record<string, string | number>
+    | ((args: ValidationArguments) => Record<string, string | number>),
   maxVal: number,
   validationOptions?: ValidationOptions
 ) {

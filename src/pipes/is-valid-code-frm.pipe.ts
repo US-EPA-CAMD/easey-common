@@ -8,7 +8,9 @@ import { IsValidCodeFrmConstraint } from "../constraints/is-valid-code-frm.const
 
 export function IsValidCodeFrm(
   code: string,
-  formatValues: object | ((args: ValidationArguments) => object),
+  formatValues:
+    | Record<string, string | number>
+    | ((args: ValidationArguments) => Record<string, string | number>),
   type: any,
   validationOptions?: ValidationOptions,
   findOption?: (ValidationArguments: ValidationArguments) => FindManyOptions

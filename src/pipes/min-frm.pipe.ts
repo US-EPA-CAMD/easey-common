@@ -10,7 +10,9 @@ import { MinFrmConstraint } from "../constraints/min-frm.constraint";
  */
 export function MinFrm(
   code: string,
-  formatValues: object | ((args: ValidationArguments) => object),
+  formatValues:
+    | Record<string, string | number>
+    | ((args: ValidationArguments) => Record<string, string | number>),
   minVal: number,
   validationOptions?: ValidationOptions
 ) {
