@@ -72,11 +72,11 @@ export class CheckCatalogService implements OnApplicationBootstrap {
     return message;
   }
 
-  formatResultMessage = (code: string, values?: {}): string => {
+  formatResultMessage(code: string, values?: {}): string {
     const result = CheckCatalogService.checkCatalog.find(
       (i) => i.code === code
     );
     const message = `[${code}] - ${result.message}`;
     return CheckCatalogService.formatMessage(message, values, result.plugins);
-  };
+  }
 }
