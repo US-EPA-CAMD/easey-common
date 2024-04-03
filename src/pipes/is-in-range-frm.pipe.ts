@@ -1,4 +1,8 @@
-import { registerDecorator, ValidationOptions } from "class-validator";
+import {
+  registerDecorator,
+  ValidationArguments,
+  ValidationOptions,
+} from "class-validator";
 import { IsInRangeFrmConstraint } from "../constraints/is-in-range-frm.constraint";
 
 /**
@@ -6,7 +10,9 @@ import { IsInRangeFrmConstraint } from "../constraints/is-in-range-frm.constrain
  */
 export function IsInRangeFrm(
   code: string,
-  key: string,
+  frmValues:
+    | Record<string, string | number>
+    | ((args: ValidationArguments) => Record<string, string | number>),
   minVal: number,
   maxVal: number,
   isMinValValid = true,
@@ -20,7 +26,7 @@ export function IsInRangeFrm(
       propertyName: propertyName,
       options: validationOptions,
       constraints: [
-        { code, key, minVal, maxVal, isMinValValid, isMaxValValid },
+        { code, frmValues, minVal, maxVal, isMinValValid, isMaxValValid },
       ],
       validator: IsInRangeFrmConstraint,
     });

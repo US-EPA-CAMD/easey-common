@@ -1,4 +1,8 @@
-import { registerDecorator, ValidationOptions } from "class-validator";
+import {
+  registerDecorator,
+  ValidationArguments,
+  ValidationOptions,
+} from "class-validator";
 import { MinFrmConstraint } from "../constraints/min-frm.constraint";
 
 /**
@@ -6,7 +10,9 @@ import { MinFrmConstraint } from "../constraints/min-frm.constraint";
  */
 export function MinFrm(
   code: string,
-  key: string,
+  formatValues:
+    | Record<string, string | number>
+    | ((args: ValidationArguments) => Record<string, string | number>),
   minVal: number,
   validationOptions?: ValidationOptions
 ) {
@@ -16,7 +22,7 @@ export function MinFrm(
       target: object.constructor,
       propertyName: propertyName,
       options: validationOptions,
-      constraints: [{ code, key, minVal }],
+      constraints: [{ code, formatValues, minVal }],
       validator: MinFrmConstraint,
     });
   };

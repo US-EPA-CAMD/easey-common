@@ -1,4 +1,8 @@
-import { registerDecorator, ValidationOptions } from "class-validator";
+import {
+  registerDecorator,
+  ValidationArguments,
+  ValidationOptions,
+} from "class-validator";
 import { MaxFrmConstraint } from "../constraints/max-frm.constraint";
 
 /**
@@ -6,7 +10,9 @@ import { MaxFrmConstraint } from "../constraints/max-frm.constraint";
  */
 export function MaxFrm(
   code: string,
-  key: string,
+  formatValues:
+    | Record<string, string | number>
+    | ((args: ValidationArguments) => Record<string, string | number>),
   maxVal: number,
   validationOptions?: ValidationOptions
 ) {
@@ -16,7 +22,7 @@ export function MaxFrm(
       target: object.constructor,
       propertyName: propertyName,
       options: validationOptions,
-      constraints: [{ code, key, maxVal }],
+      constraints: [{ code, formatValues, maxVal }],
       validator: MaxFrmConstraint,
     });
   };

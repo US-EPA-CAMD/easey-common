@@ -20,11 +20,11 @@ export class IsNotEmptyFrmConstraint implements ValidatorConstraintInterface {
     return isNotEmpty(value);
   }
 
-  defaultMessage(args?: ValidationArguments): string {
-    const { code, key }: FrmOptions = args.constraints[0];
-    return this.checkCatalogService.formatResultMessage(code, {
-      fieldname: args.property,
-      key,
-    });
+  defaultMessage(args: ValidationArguments): string {
+    const { code, formatValues }: FrmOptions = args.constraints[0];
+    return this.checkCatalogService.formatResultMessage(
+      code,
+      typeof formatValues === "function" ? formatValues(args) : formatValues
+    );
   }
 }

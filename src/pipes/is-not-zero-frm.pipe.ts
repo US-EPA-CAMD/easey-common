@@ -1,4 +1,8 @@
-import { registerDecorator, ValidationOptions } from "class-validator";
+import {
+  registerDecorator,
+  ValidationArguments,
+  ValidationOptions,
+} from "class-validator";
 import { IsNotZeroFrmConstraint } from "../constraints/is-not-zero-frm.constraint";
 
 /**
@@ -6,7 +10,9 @@ import { IsNotZeroFrmConstraint } from "../constraints/is-not-zero-frm.constrain
  */
 export function IsNotZeroFrm(
   code: string,
-  key: string,
+  formatValues:
+    | Record<string, string | number>
+    | ((args: ValidationArguments) => Record<string, string | number>),
   validationOptions?: ValidationOptions
 ) {
   return function (object: Object, propertyName: string) {
@@ -15,7 +21,7 @@ export function IsNotZeroFrm(
       target: object.constructor,
       propertyName: propertyName,
       options: validationOptions,
-      constraints: [{ code, key }],
+      constraints: [{ code, formatValues }],
       validator: IsNotZeroFrmConstraint,
     });
   };

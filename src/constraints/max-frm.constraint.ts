@@ -27,11 +27,11 @@ export class MaxFrmConstraint implements ValidatorConstraintInterface {
     return true;
   }
 
-  defaultMessage(args?: ValidationArguments): string {
-    const { code, key }: MaxFrmOptions = args.constraints[0];
-    return this.checkCatalogService.formatResultMessage(code, {
-      fieldname: args.property,
-      key,
-    });
+  defaultMessage(args: ValidationArguments): string {
+    const { code, formatValues }: MaxFrmOptions = args.constraints[0];
+    return this.checkCatalogService.formatResultMessage(
+      code,
+      typeof formatValues === "function" ? formatValues(args) : formatValues
+    );
   }
 }

@@ -1,5 +1,17 @@
-import { ValidationArguments } from "class-validator";
+import { ValidationArguments, ValidationOptions } from "class-validator";
 import { FindManyOptions, FindOneOptions } from "typeorm";
+
+export interface BeginEndDatesConsistentOptions extends ValidationOptions {
+  beginDate?: string;
+  beginHour?: string;
+  beginMinute?: string;
+  endDate?: string;
+  endHour?: string;
+  endMinute?: string;
+}
+
+export type BeginEndDatesConsistentFrmOptions =
+  Required<BeginEndDatesConsistentOptions> & FrmOptions;
 
 export interface DbLookupOptions {
   type: any;
@@ -9,7 +21,9 @@ export interface DbLookupOptions {
 // Base options needed for validators that format their error message with the `CheckCatalog` service.
 export interface FrmOptions {
   code: string;
-  key: string;
+  formatValues:
+    | Record<string, string | number>
+    | ((args: ValidationArguments) => Record<string, string | number>);
 }
 
 export interface IsInRangeFrmOptions extends FrmOptions {
@@ -23,6 +37,8 @@ export interface IsValidCodeOptions {
   type: any;
   findOption?: (args: ValidationArguments) => FindManyOptions;
 }
+
+export type IsValidCodeFrmOptions = IsValidCodeOptions & FrmOptions;
 
 export interface MinFrmOptions extends FrmOptions {
   minVal: number;

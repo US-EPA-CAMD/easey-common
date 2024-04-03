@@ -27,10 +27,11 @@ export class MinFrmConstraint implements ValidatorConstraintInterface {
     return true;
   }
 
-  defaultMessage(args?: ValidationArguments): string {
-    const { code, key }: MinFrmOptions = args.constraints[0];
-    return this.checkCatalogService.formatResultMessage(code, {
-      key,
-    });
+  defaultMessage(args: ValidationArguments): string {
+    const { code, formatValues }: MinFrmOptions = args.constraints[0];
+    return this.checkCatalogService.formatResultMessage(
+      code,
+      typeof formatValues === "function" ? formatValues(args) : formatValues
+    );
   }
 }

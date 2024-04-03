@@ -12,7 +12,7 @@ export function Min(minVal: number, validationOptions?: ValidationOptions) {
       propertyName: propertyName,
       options: validationOptions,
       validator: {
-        validate(value: any, args: ValidationArguments) {
+        validate(value: any, _args: ValidationArguments) {
           if (value !== null) {
             if (typeof value === "number") {
               return value >= minVal;
