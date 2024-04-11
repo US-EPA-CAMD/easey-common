@@ -9,7 +9,7 @@ import { DbLookupOptions } from "../interfaces/validator-options.interface";
 
 @Injectable()
 @ValidatorConstraint({ name: "dbLookup", async: true })
-export class DbLookupConstraint implements ValidatorConstraintInterface {
+export class DbLookupValidator implements ValidatorConstraintInterface {
   constructor(private readonly entityManager: EntityManager) {}
 
   async validate(value: any, args: ValidationArguments) {

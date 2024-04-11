@@ -4,7 +4,7 @@ import {
   ValidationArguments,
 } from "class-validator";
 import { FindManyOptions } from "typeorm";
-import { IsValidCodeConstraint } from "../constraints/is-valid-code.constraint";
+import { IsValidCodeValidator } from "../validators/is-valid-code.validator";
 
 export function IsValidCode(
   type: any,
@@ -18,7 +18,7 @@ export function IsValidCode(
       propertyName: propertyName,
       options: validationOptions,
       constraints: [{ type, findOption }],
-      validator: IsValidCodeConstraint,
+      validator: IsValidCodeValidator,
     });
   };
 }

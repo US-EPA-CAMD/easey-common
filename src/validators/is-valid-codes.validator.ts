@@ -9,7 +9,7 @@ import { IsValidCodeOptions } from "../interfaces/validator-options.interface";
 
 @Injectable()
 @ValidatorConstraint({ name: "isValidCodes", async: true })
-export class IsValidCodesConstraint implements ValidatorConstraintInterface {
+export class IsValidCodesValidator implements ValidatorConstraintInterface {
   constructor(private readonly entityManager: EntityManager) {}
 
   async validate(value: string | string[], args: ValidationArguments) {

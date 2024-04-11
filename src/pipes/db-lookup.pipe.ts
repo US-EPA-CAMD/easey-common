@@ -4,7 +4,7 @@ import {
   ValidationArguments,
 } from "class-validator";
 import { FindOneOptions } from "typeorm";
-import { DbLookupConstraint } from "../constraints/db-lookup.constraint";
+import { DbLookupValidator } from "../validators/db-lookup.validator";
 
 export function DbLookup(
   type: any,
@@ -18,7 +18,7 @@ export function DbLookup(
       propertyName: propertyName,
       options: validationOptions,
       constraints: [{ type, findOption }],
-      validator: DbLookupConstraint,
+      validator: DbLookupValidator,
     });
   };
 }
