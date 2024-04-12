@@ -4,7 +4,7 @@ import {
   ValidatorConstraintInterface,
 } from "class-validator";
 import { Injectable } from "@nestjs/common";
-import { EntityManager } from "typeorm";
+import { BaseEntity, EntityManager } from "typeorm";
 import { DbLookupOptions } from "../interfaces/validator-options.interface";
 
 @Injectable()
@@ -13,9 +13,21 @@ export class DbLookupValidator implements ValidatorConstraintInterface {
   constructor(private readonly entityManager: EntityManager) {}
 
   async validate(value: any, args: ValidationArguments) {
-    const { type, findOption }: DbLookupOptions = args.constraints[0];
-    if (value) {
-      const found = await this.entityManager.findOne(type, findOption(args));
+    const {
+      ignoreEmpty = true,
+      type,
+      findOption,
+    }: DbLookupOptions<BaseEntity> = args.constraints[0];
+
+    if (value || !ignoreEmpty) {
+      const found = await this.entityManager.findOne(
+        type,
+        findOption?.(args) ?? {
+          where: {
+            [args.property]: value,
+          },
+        }
+      );
       return found != null;
     }
     return true;

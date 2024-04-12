@@ -2,5 +2,5 @@ export { UserPermissionSet, CurrentUser } from "./current-user.interface";
 export { ValidatorParams } from "./lookup-type.interface";
 export {
   DbLookupOptions,
-  IsValidCodeOptions,
+  IsValidCodesOptions,
 } from "./validator-options.interface";

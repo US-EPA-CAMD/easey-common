@@ -5,7 +5,7 @@ import {
 } from "class-validator";
 import { Injectable } from "@nestjs/common";
 import { EntityManager } from "typeorm";
-import { IsValidCodeOptions } from "../interfaces/validator-options.interface";
+import { IsValidCodesOptions } from "../interfaces/validator-options.interface";
 
 @Injectable()
 @ValidatorConstraint({ name: "isValidCodes", async: true })
@@ -13,7 +13,7 @@ export class IsValidCodesValidator implements ValidatorConstraintInterface {
   constructor(private readonly entityManager: EntityManager) {}
 
   async validate(value: string | string[], args: ValidationArguments) {
-    const { type, findOption }: IsValidCodeOptions = args.constraints[0];
+    const { type, findOption }: IsValidCodesOptions = args.constraints[0];
     if (value) {
       if (typeof value === "string") {
         if (value.includes(",")) {
