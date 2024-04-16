@@ -1,3 +1,6 @@
+import { Test, TestingModule } from "@nestjs/testing";
+import { EntityManager } from "typeorm";
+
 import { CheckCatalogService } from "./check-catalog.service";
 
 const viewData = [
@@ -57,10 +60,32 @@ const viewData = [
   },
 ];
 
-/*describe("CheckCatalogService", () => {
+describe("CheckCatalogService", () => {
+  let service: CheckCatalogService;
+  let mockEntityManager: EntityManager;
+
   beforeEach(async () => {
-    jest.spyOn(CheckCatalogService, "getViewData").mockResolvedValue(viewData);
-    await CheckCatalogService.load("view");
+    // Mock the EntityManager's query method
+    mockEntityManager = {
+      query: jest.fn().mockResolvedValue(viewData),
+    } as any as EntityManager;
+
+    const module: TestingModule = await Test.createTestingModule({
+      providers: [
+        CheckCatalogService,
+        {
+          provide: EntityManager,
+          useValue: mockEntityManager,
+        },
+        {
+          provide: "VIEW_NAME",
+          useValue: "test_view",
+        },
+      ],
+    }).compile();
+
+    service = module.get<CheckCatalogService>(CheckCatalogService);
+    await service.onApplicationBootstrap();
   });
 
   it("[fieldname] [key]", async () => {
@@ -77,7 +102,6 @@ const viewData = [
   it("[Stack Pipe ID]", async () => {
     const stackPipeId = "1234";
     const checkTypeCode = "TEST-2-A";
-    await CheckCatalogService.load("view");
     const result = CheckCatalogService.formatResultMessage(checkTypeCode, {
       stackPipeId: stackPipeId,
     });
@@ -87,7 +111,6 @@ const viewData = [
   it("[ORIS Code]", async () => {
     const orisCode = "1234";
     const checkTypeCode = "TEST-3-A";
-    await CheckCatalogService.load("view");
     const result = CheckCatalogService.formatResultMessage(checkTypeCode, {
       orisCode: orisCode,
     });
@@ -97,7 +120,6 @@ const viewData = [
   it("[SystemID]", async () => {
     const systemId = "1234";
     const checkTypeCode = "TEST-4-A";
-    await CheckCatalogService.load("view");
     const result = CheckCatalogService.formatResultMessage(checkTypeCode, {
       systemID: systemId,
     });
@@ -107,7 +129,6 @@ const viewData = [
   it("[Stack/Pipe ID]", async () => {
     const stackPipeId = "1234";
     const checkTypeCode = "TEST-5-A";
-    await CheckCatalogService.load("view");
     const result = CheckCatalogService.formatResultMessage(checkTypeCode, {
       stackPipeId: stackPipeId,
     });
@@ -117,7 +138,6 @@ const viewData = [
   it("[UNADJUSTED_HRLY_VALUE]", async () => {
     const unadjustedHrlyValue = "1234";
     const checkTypeCode = "TEST-6-A";
-    await CheckCatalogService.load("view");
     const result = CheckCatalogService.formatResultMessage(checkTypeCode, {
       unadjustedHrlyValue: unadjustedHrlyValue,
     });
@@ -127,7 +147,6 @@ const viewData = [
   it("[SAMPLE-METHOD]", async () => {
     const sampleMethod = "1234";
     const checkTypeCode = "TEST-7-A";
-    await CheckCatalogService.load("view");
     const result = CheckCatalogService.formatResultMessage(checkTypeCode, {
       sampleMethod: sampleMethod,
     });
@@ -137,7 +156,6 @@ const viewData = [
   it("[Children]", async () => {
     const children = "1234";
     const checkTypeCode = "TEST-8-A";
-    await CheckCatalogService.load("view");
     const result = CheckCatalogService.formatResultMessage(checkTypeCode, {
       children: children,
     });
@@ -147,10 +165,9 @@ const viewData = [
   it("[Key]", async () => {
     const key = "1234";
     const checkTypeCode = "TEST-9-A";
-    await CheckCatalogService.load("view");
     const result = CheckCatalogService.formatResultMessage(checkTypeCode, {
       key: key,
     });
     expect(result).toEqual(`[${checkTypeCode}] - [${key}]`);
   });
-});*/
+});
