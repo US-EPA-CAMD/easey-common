@@ -1,3 +1,25 @@
+# [17.3.0](https://github.com/US-EPA-CAMD/easey-common/compare/v17.2.12...v17.3.0) (2024-04-16)
+
+
+### Bug Fixes
+
+* fixed issue with ConnectionService ([d44bdf2](https://github.com/US-EPA-CAMD/easey-common/commit/d44bdf29b47a34785018d7694a2085d2f8e1cdf3))
+
+
+### Features
+
+* added additional common pipes ([644fc25](https://github.com/US-EPA-CAMD/easey-common/commit/644fc25a10618dee67b45e716d530c309d9e0d86))
+* added IsValidCodes pipe ([f8da43d](https://github.com/US-EPA-CAMD/easey-common/commit/f8da43d7214ab5dca4cbc4851d6919f365815010))
+* added simple connection service ([43d5a62](https://github.com/US-EPA-CAMD/easey-common/commit/43d5a62693dc4be9635845454a1dccd3781a6c2d))
+* removed duplication in pipes, added missing packages ([46f1d6b](https://github.com/US-EPA-CAMD/easey-common/commit/46f1d6b6f39a8dfbfba195983ba4797b6f3def24))
+
+
+### Reverts
+
+* Revert "feat: added custom CheckCatalogService validator pipes" ([256e277](https://github.com/US-EPA-CAMD/easey-common/commit/256e2773f982605a53c928d59e3ff62a718c383b))
+* Revert "refactor: generalize formatting validators" ([94b5c86](https://github.com/US-EPA-CAMD/easey-common/commit/94b5c864759f90f3e240d2ab57e5cd7c04b78162))
+* added back tests, static function ([16cf0d6](https://github.com/US-EPA-CAMD/easey-common/commit/16cf0d6932915f0f3402fa6c93f517e01b92c683))
+
 ## [17.2.12](https://github.com/US-EPA-CAMD/easey-common/compare/v17.2.11...v17.2.12) (2024-03-25)
 
 
