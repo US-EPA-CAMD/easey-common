@@ -1,3 +1,4 @@
+export { IsAccountNumber } from "./is-account-number.pipe";
 export { IsDateGreaterThanEqualTo } from "./is-date-greater.pipe";
 export { IsInDateRange } from "./is-in-date-range.pipe";
 export { IsIsoFormat } from "./is-iso-format.pipe";
@@ -11,10 +12,12 @@ export { IsInEnum } from "./is-in-enum.pipe";
 export { IsInResponse } from "./is-in-response.pipe";
 export { IsNotEmptyString } from "./is-not-empty-string.pipe";
 export { IsDateInRangeLimit } from "./is-date-in-range-limit.pipe";
-export { Min } from "./min.pipe";
-export { Max } from "./max.pipe";
 export { IsEmail } from "./is-email.pipe";
 export { IsValidCode } from "./is-valid-code.pipe";
+export { IsValidCodes } from "./is-valid-codes.pipe";
+export { IsYearGreater } from "./is-year-greater.pipe";
+export { Min } from "./min.pipe";
+export { Max } from "./max.pipe";
 export { MatchesRegEx } from "./matches-regex.pipe";
 export { DbLookup } from "./db-lookup.pipe";
 export {

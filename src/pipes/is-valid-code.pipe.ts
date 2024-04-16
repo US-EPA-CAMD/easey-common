@@ -3,13 +3,13 @@ import {
   ValidationOptions,
   ValidationArguments,
 } from "class-validator";
-
-import { FindManyOptions, getManager } from "typeorm";
+import { FindOneOptions } from "typeorm";
+import { DbLookupValidator } from "../validators/db-lookup.validator";
 
 export function IsValidCode(
   type: any,
   validationOptions?: ValidationOptions,
-  findOption?: (ValidationArguments: ValidationArguments) => FindManyOptions
+  findOption?: (ValidationArguments: ValidationArguments) => FindOneOptions
 ) {
   return function (object: Object, propertyName: string) {
     registerDecorator({
@@ -17,21 +17,8 @@ export function IsValidCode(
       target: object.constructor,
       propertyName: propertyName,
       options: validationOptions,
-      validator: {
-        async validate(value: any, args: ValidationArguments) {
-          if (value) {
-            const manager = getManager();
-            let found;
-            if (findOption) {
-              found = await manager.findOne(type, findOption(args));
-            } else {
-              found = await manager.findOne(type, value);
-            }
-            return found != null;
-          }
-          return true;
-        },
-      },
+      constraints: [{ type, findOption, ignoreEmpty: true }],
+      validator: DbLookupValidator,
     });
   };
 }

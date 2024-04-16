@@ -2,31 +2,24 @@ import {
   registerDecorator,
   ValidationOptions,
   ValidationArguments,
-} from 'class-validator';
-
-import { getManager, FindOneOptions } from 'typeorm';
+} from "class-validator";
+import { FindOneOptions } from "typeorm";
+import { DbLookupValidator } from "../validators/db-lookup.validator";
 
 export function DbLookup(
   type: any,
-  findOption: (validationArguments: ValidationArguments) => FindOneOptions,
+  findOption?: (validationArguments: ValidationArguments) => FindOneOptions,
   validationOptions?: ValidationOptions,
+  ignoreEmpty = true
 ) {
-  return function(object: Object, propertyName: string) {
+  return function (object: Object, propertyName: string) {
     registerDecorator({
-      name: 'dbLookup',
+      name: "dbLookup",
       target: object.constructor,
       propertyName: propertyName,
       options: validationOptions,
-      validator: {
-        async validate(value: any, args: ValidationArguments) {
-          if (value) {
-            const manager = getManager();
-            const found = await manager.findOne(type, findOption(args));
-            return found != null;
-          }
-          return true;
-        },
-      },
+      constraints: [{ ignoreEmpty, type, findOption }],
+      validator: DbLookupValidator,
     });
   };
 }
