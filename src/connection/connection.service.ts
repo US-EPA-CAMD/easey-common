@@ -3,22 +3,24 @@ import { Injectable } from "@nestjs/common";
 
 @Injectable()
 export class ConnectionService {
-  private static readonly dataSource: DataSource;
-  private static readonly entityManager: EntityManager;
+  private static dataSource: DataSource;
+  private static entityManager: EntityManager;
 
   constructor(
-    readonly entityManager: EntityManager,
-    readonly dataSource: DataSource
-  ) {
-    this.dataSource = dataSource;
-    this.entityManager = entityManager;
+    private readonly entityManager: EntityManager,
+    private readonly dataSource: DataSource
+  ) {}
+
+  onApplicationBootstrap() {
+    ConnectionService.entityManager = this.entityManager;
+    ConnectionService.dataSource = this.dataSource;
   }
 
   static getEntityManager() {
-    return this.entityManager;
+    return ConnectionService.entityManager;
   }
 
   static getDataSource() {
-    return this.dataSource;
+    return ConnectionService.dataSource;
   }
 }
