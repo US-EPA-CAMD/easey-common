@@ -1,3 +1,15 @@
+## [17.2.12](https://github.com/US-EPA-CAMD/easey-common/compare/v17.2.11...v17.2.12) (2024-03-25)
+
+
+### Bug Fixes
+
+* **#6102:** addressed preparer role permissions edge case ([360f82d](https://github.com/US-EPA-CAMD/easey-common/commit/360f82db2c86e0f80c9b78c486d8ae50f788841f)), closes [#6102](https://github.com/US-EPA-CAMD/easey-common/issues/6102)
+
+
+### Reverts
+
+* **#6102:** added back a console log ([7e7872c](https://github.com/US-EPA-CAMD/easey-common/commit/7e7872c9483758ea3147b88a76a250ace48dc4b0)), closes [#6102](https://github.com/US-EPA-CAMD/easey-common/issues/6102)
+
 ## [17.2.11](https://github.com/US-EPA-CAMD/easey-common/compare/v17.2.10...v17.2.11) (2024-02-22)
 
 

@@ -10,7 +10,7 @@ import { Reflector } from "@nestjs/core";
 import { parseBool } from "../utilities";
 import { DataSource } from "typeorm";
 import { LookupType } from "../enums";
-import { ValidatorParams } from "../interfaces";
+import { UserPermissionSet, ValidatorParams } from "../interfaces";
 import { EaseyException } from "../exceptions";
 
 @Injectable()
@@ -40,7 +40,7 @@ export class RolesGuard implements CanActivate {
         if (!checkedOutCriteria.has(item)) {
           console.log("Location not checked out!");
           return false;
-        } //
+        }
       }
     }
 
@@ -56,7 +56,7 @@ export class RolesGuard implements CanActivate {
       return true;
     }
 
-    let monPlanIds = [item]; //Default assumption is that this is a monPlanId
+    let monPlanIds = [item]; // Default assumption is that this is a monPlanId
     if (lookupType === LookupType.Location) {
       const data = await this.returnManager().query(
         `SELECT mon_plan_id 
@@ -99,7 +99,6 @@ export class RolesGuard implements CanActivate {
     return true;
   }
 
-  //
   // Find the corresponding request parameter and check to see if the user has permissions
   async handlePathParamValidation(
     context: ExecutionContext,
@@ -316,7 +315,6 @@ export class RolesGuard implements CanActivate {
       }
     }
 
-    const facilities = request.user.facilities;
     const lookupType = this.reflector.get<number>(
       "lookupType",
       context.getHandler()
@@ -326,17 +324,20 @@ export class RolesGuard implements CanActivate {
       "params",
       context.getHandler()
     );
+
+    // Check a user's role, and determine if they can access a resource
+    const roles = request.user.roles ?? [];
     if (params.requiredRoles) {
       if (
         params.requiredRoles.includes("ECMPS Admin") &&
-        request.user.roles.includes("ECMPS Admin")
+        roles.includes("ECMPS Admin")
       ) {
-        return true; //In the case the user has the required ECMPS admin role, let them through without performing other checks
+        return true; // In the case the user has the required ECMPS admin role, let them through without performing other checks
       }
 
       let containsARole = false;
       for (const requiredRole of params.requiredRoles) {
-        if (request.user.roles && request.user.roles.includes(requiredRole)) {
+        if (roles.includes(requiredRole)) {
           containsARole = true;
           break;
         }
@@ -347,24 +348,23 @@ export class RolesGuard implements CanActivate {
       }
     }
 
-    //2) Check a users role, and determine if they can access a resource
-    //3) Check a users permissions for a facility and see if they can edit / submit a facility
-
+    // Check a users permissions for a facility and see if they can edit / submit a facility
+    const facilities: UserPermissionSet[] = request.user.facilities;
     const facilitiesWithRole = facilities
       .filter((f) => {
-        if (params.permissionsForFacility) {
-          for (const permission of params.permissionsForFacility) {
-            if (f.permissions.includes(permission)) {
-              return true;
-            }
+        // An empty array is returned from the permissions API if the user's only role is "Preparer": this should be interpreted to mean that they can perform any "preparer" activities for their list of facilities.
+        if (roles.length === 1 && roles[0] === "Preparer") return true;
+        if (!params.permissionsForFacility) return true;
+        for (const permission of params.permissionsForFacility) {
+          if (f.permissions.includes(permission)) {
+            return true;
           }
-          return false;
         }
-        return true;
+        return false;
       })
       .map((p) => p.orisCode.toString());
 
-    let enforceCheckout = true; //Determine if thise endpoint needs to enforce that all records are also currently checked out
+    let enforceCheckout = true; // Determine if thise endpoint needs to enforce that all records are also currently checked out
     if (this.configService.get<boolean>("app.enableRoleGuardCheckoutCheck")) {
       if (
         params.enforceCheckout !== null &&
@@ -377,11 +377,11 @@ export class RolesGuard implements CanActivate {
       enforceCheckout = false;
     }
 
-    //Determine if location is checked out
+    // Determine if location is checked out
     let checkedOutCriteria;
     if (enforceCheckout) {
       if (lookupType === LookupType.MonitorPlan) {
-        //Pull back all of our checked out monitor plans
+        // Pull back all of our checked out monitor plans
         checkedOutCriteria = await this.returnManager().query(
           "SELECT mon_plan_id FROM camdecmpswks.user_check_out WHERE checked_out_by = $1",
           [request.user.userId]
@@ -458,7 +458,7 @@ export class RolesGuard implements CanActivate {
           const stackPipeSet = new Set();
 
           for (const locationChunk of chunk) {
-            //Perform validation of the data
+            // Perform validation of the data
             unitSet.add(locationChunk["unitId"]);
             stackPipeSet.add(locationChunk["stackPipeId"]);
           }
@@ -496,7 +496,7 @@ export class RolesGuard implements CanActivate {
       return true;
     }
 
-    //Determine the validation that needs to get executed. In the case there is none, return true, and use the unpacked list of accesible location / plan / facility data from the decorators
+    // Determine the validation that needs to get executed. In the case there is none, return true, and use the unpacked list of accesible location / plan / facility data from the decorators
     if (params.pathParam) {
       return this.handlePathParamValidation(
         context,
