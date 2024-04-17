@@ -17,7 +17,9 @@ export function IsValidCode(
       target: object.constructor,
       propertyName: propertyName,
       options: validationOptions,
-      constraints: [{ type, findOption, ignoreEmpty: true }],
+      constraints: [
+        { type, findOption: findOption ?? "primary", ignoreEmpty: true },
+      ],
       validator: DbLookupValidator,
     });
   };

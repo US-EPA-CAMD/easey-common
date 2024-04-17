@@ -8,7 +8,9 @@ import {
 
 export interface DbLookupOptions<T extends BaseEntity> {
   ignoreEmpty?: boolean;
-  findOption?: (validationArguments: ValidationArguments) => FindOneOptions<T>;
+  findOption?:
+    | ((validationArguments: ValidationArguments) => FindOneOptions<T>)
+    | "primary";
   type: EntityTarget<T>;
 }
 
