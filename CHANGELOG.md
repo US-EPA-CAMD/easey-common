@@ -1,3 +1,10 @@
+## [17.3.1](https://github.com/US-EPA-CAMD/easey-common/compare/v17.3.0...v17.3.1) (2024-04-17)
+
+
+### Bug Fixes
+
+* reverted default behavior of IsValidCode ([411b67b](https://github.com/US-EPA-CAMD/easey-common/commit/411b67b4729256867f1fb1022a0216edc9f736df))
+
 # [17.3.0](https://github.com/US-EPA-CAMD/easey-common/compare/v17.2.12...v17.3.0) (2024-04-16)
 
 
