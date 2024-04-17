@@ -20,14 +20,23 @@ export class DbLookupValidator implements ValidatorConstraintInterface {
     }: DbLookupOptions<BaseEntity> = args.constraints[0];
 
     if (value || !ignoreEmpty) {
-      const found = await this.entityManager.findOne(
-        type,
-        findOption?.(args) ?? {
-          where: {
-            [args.property]: value,
-          },
-        }
-      );
+      const options =
+        findOption === "primary"
+          ? // Find by the entity's primary key.
+            {
+              where: {
+                [this.entityManager.getRepository(type).metadata
+                  .primaryColumns[0].propertyName]: value,
+              },
+            }
+          : // Use the provided find options.
+            findOption?.(args) ?? {
+              // Default to finding by the property with the same name.
+              where: {
+                [args.property]: value,
+              },
+            };
+      const found = await this.entityManager.findOne(type, options);
       return found != null;
     }
     return true;
