@@ -2424,7 +2424,7 @@ export const propertyMetadata = {
     },
     description:
       "The name of any company that owns an allowance account or an affected unit.The name of any company that operates an affected unit.",
-    example: "Alabama Power Company (Operator), Alabama Power Company (Owner)",
+    example: "Alabama Power Company (Operator) | Alabama Power Company (Owner)",
   },
   ownId: {
     fieldLabels: {
