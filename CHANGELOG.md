@@ -1,3 +1,10 @@
+## [11.4.3](https://github.com/US-EPA-CAMD/easey-common/compare/v11.4.2...v11.4.3) (2024-04-18)
+
+
+### Bug Fixes
+
+* ownerOperator delimiter ([54a9c00](https://github.com/US-EPA-CAMD/easey-common/commit/54a9c005ecde67f6707d1a346a81edf10e058ffc))
+
 ## [11.4.2](https://github.com/US-EPA-CAMD/easey-common/compare/v11.4.1...v11.4.2) (2023-12-13)
 
 
