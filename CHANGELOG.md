@@ -1,3 +1,10 @@
+## [11.4.4](https://github.com/US-EPA-CAMD/easey-common/compare/v11.4.3...v11.4.4) (2024-04-25)
+
+
+### Bug Fixes
+
+* sellOwner comma change to pipe and remove extra space in ownerOperater ([3d4912c](https://github.com/US-EPA-CAMD/easey-common/commit/3d4912cc037f605f8dc12e9ad1ab5c6b8f2d15b5))
+
 ## [11.4.3](https://github.com/US-EPA-CAMD/easey-common/compare/v11.4.2...v11.4.3) (2024-04-18)
 
 
