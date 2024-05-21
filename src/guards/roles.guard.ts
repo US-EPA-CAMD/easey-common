@@ -352,7 +352,7 @@ export class RolesGuard implements CanActivate {
     const facilities: UserPermissionSet[] = request.user.facilities;
     const facilitiesWithRole = facilities
       .filter((f) => {
-        // An empty array is returned from the responsibilities API if the user's only role is "Preparer": it is implied that a Preparer role carries all preparer permissions for their list of facilities.
+        // An empty facility permissions array is returned from the responsibilities API if the user's only role is "Preparer": it is implied that a Preparer role carries all preparer permissions for their list of facilities.
         if (
           params.requiredRoles?.includes(UserRole.PREPARER) &&
           roles.includes(UserRole.PREPARER)
