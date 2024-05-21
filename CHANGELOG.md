@@ -1,3 +1,15 @@
+# [17.4.0](https://github.com/US-EPA-CAMD/easey-common/compare/v17.3.1...v17.4.0) (2024-05-21)
+
+
+### Bug Fixes
+
+* **6215:** updated a comment ([01017ad](https://github.com/US-EPA-CAMD/easey-common/commit/01017add2d2b3055abb3a5b08865ab6c83c7ee86))
+
+
+### Features
+
+* **6215:** added 'UserRole' enum, updated role logic ([c3cdc09](https://github.com/US-EPA-CAMD/easey-common/commit/c3cdc09e40a659a5ed3554b4ef57bdc73c15551a))
+
 ## [17.3.1](https://github.com/US-EPA-CAMD/easey-common/compare/v17.3.0...v17.3.1) (2024-04-17)
 
 
