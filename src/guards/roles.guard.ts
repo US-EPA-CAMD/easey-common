@@ -9,7 +9,7 @@ import { ConfigService } from "@nestjs/config";
 import { Reflector } from "@nestjs/core";
 import { parseBool } from "../utilities";
 import { DataSource } from "typeorm";
-import { LookupType } from "../enums";
+import { LookupType, UserRole } from "../enums";
 import { UserPermissionSet, ValidatorParams } from "../interfaces";
 import { EaseyException } from "../exceptions";
 
@@ -329,8 +329,8 @@ export class RolesGuard implements CanActivate {
     const roles = request.user.roles ?? [];
     if (params.requiredRoles) {
       if (
-        params.requiredRoles.includes("ECMPS Admin") &&
-        roles.includes("ECMPS Admin")
+        params.requiredRoles.includes(UserRole.ADMIN) &&
+        roles.includes(UserRole.ADMIN)
       ) {
         return true; // In the case the user has the required ECMPS admin role, let them through without performing other checks
       }
@@ -352,8 +352,13 @@ export class RolesGuard implements CanActivate {
     const facilities: UserPermissionSet[] = request.user.facilities;
     const facilitiesWithRole = facilities
       .filter((f) => {
-        // An empty array is returned from the permissions API if the user's only role is "Preparer": this should be interpreted to mean that they can perform any "preparer" activities for their list of facilities.
-        if (roles.length === 1 && roles[0] === "Preparer") return true;
+        // An empty facility permissions array is returned from the responsibilities API if the user's only role is "Preparer": it is implied that a Preparer role carries all preparer permissions for their list of facilities.
+        if (
+          params.requiredRoles?.includes(UserRole.PREPARER) &&
+          roles.includes(UserRole.PREPARER)
+        ) {
+          return true;
+        }
         if (!params.permissionsForFacility) return true;
         for (const permission of params.permissionsForFacility) {
           if (f.permissions.includes(permission)) {
