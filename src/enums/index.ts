@@ -18,4 +18,5 @@ export { State } from "./state.enum";
 export { TransactionType } from "./transaction-type.enum";
 export { UnitFuelType } from "./unit-fuel-type.enum";
 export { UnitType } from "./unit-type.enum";
+export { UserRole } from "./user-role.enum";
 export { LookupType } from "./lookup-type.enum";
