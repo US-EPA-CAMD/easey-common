@@ -4,7 +4,7 @@ import {
   ValidatorConstraintInterface,
 } from "class-validator";
 import { Injectable } from "@nestjs/common";
-import { BaseEntity, EntityManager } from "typeorm";
+import { BaseEntity, EntityManager, IsNull } from "typeorm";
 import { DbLookupOptions } from "../interfaces/validator-options.interface";
 
 @Injectable()
@@ -26,14 +26,14 @@ export class DbLookupValidator implements ValidatorConstraintInterface {
             {
               where: {
                 [this.entityManager.getRepository(type).metadata
-                  .primaryColumns[0].propertyName]: value,
+                  .primaryColumns[0].propertyName]: value ?? IsNull(),
               },
             }
           : // Use the provided find options.
             findOption?.(args) ?? {
               // Default to finding by the property with the same name.
               where: {
-                [args.property]: value,
+                [args.property]: value ?? IsNull(),
               },
             };
       const found = await this.entityManager.findOne(type, options);
