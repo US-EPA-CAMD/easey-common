@@ -1,3 +1,10 @@
+## [17.4.1](https://github.com/US-EPA-CAMD/easey-common/compare/v17.4.0...v17.4.1) (2024-05-31)
+
+
+### Bug Fixes
+
+* **6185:** account for potentially null values with IsNull() helper ([a785097](https://github.com/US-EPA-CAMD/easey-common/commit/a78509767b5cc1e35b2f35045b2bc99d350e3f5b))
+
 # [17.4.0](https://github.com/US-EPA-CAMD/easey-common/compare/v17.3.1...v17.4.0) (2024-05-21)
 
 
