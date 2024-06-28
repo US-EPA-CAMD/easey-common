@@ -15,7 +15,11 @@ export class BulkLoadStream {
     this.hasWritten = false;
     this.stream = stream;
     this.status = "Writing";
-    this.finished = new Promise((resolve) => {
+    this.finished = new Promise((resolve, reject) => {
+      this.stream.on("error", (e) => {
+        reject(e.message);
+      });
+
       this.resolver = resolve;
     });
     this.client = client;
