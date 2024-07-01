@@ -40,17 +40,11 @@ export class UnitStackConfiguration extends BaseEntity {
   @Column({ name: 'update_date' })
   updateDate: Date;
 
-  @ManyToOne(
-    () => StackPipe,
-    stackPipe => stackPipe.unitStackConfigurations,
-  )
+  @ManyToOne(() => StackPipe, (stackPipe) => stackPipe.unitStackConfigurations)
   @JoinColumn({ name: 'stack_pipe_id' })
   stackPipe: StackPipe;
 
-  @ManyToOne(
-    () => Unit,
-    unit => unit.unitStackConfigurations,
-  )
+  @ManyToOne(() => Unit, (unit) => unit.unitStackConfigurations)
   @JoinColumn({ name: 'unit_id' })
   unit: Unit;
 }

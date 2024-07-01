@@ -5,6 +5,7 @@ import {
   PrimaryColumn,
   ManyToOne,
   JoinColumn,
+  OneToMany,
   OneToOne,
 } from 'typeorm';
 import { NumericColumnTransformer } from '../../transforms';
@@ -53,22 +54,13 @@ export class StackPipe extends BaseEntity {
   @Column({ type: 'timestamp', name: 'update_date' })
   updateDate: Date;
 
-  @ManyToOne(
-    () => Plant,
-    plant => plant.stackPipes,
-  )
+  @ManyToOne(() => Plant, (plant) => plant.stackPipes)
   @JoinColumn({ name: 'fac_id' })
   plant: Plant;
 
-  @OneToOne(
-    () => MonitorLocation,
-    location => location.stackPipe,
-  )
+  @OneToOne(() => MonitorLocation, (location) => location.stackPipe)
   location: MonitorLocation;
 
-  @OneToOne(
-    () => UnitStackConfiguration,
-    usc => usc.stackPipe,
-  )
+  @OneToMany(() => UnitStackConfiguration, (usc) => usc.stackPipe)
   unitStackConfigurations: UnitStackConfiguration[];
 }
