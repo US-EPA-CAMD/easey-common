@@ -1,3 +1,10 @@
+## [17.4.2](https://github.com/US-EPA-CAMD/easey-common/compare/v17.4.1...v17.4.2) (2024-07-01)
+
+
+### Bug Fixes
+
+* in bulk-load-stream added reject function in the finised Promise ([cc3d373](https://github.com/US-EPA-CAMD/easey-common/commit/cc3d37386479617528eed36df5c77a983510968a))
+
 ## [17.4.1](https://github.com/US-EPA-CAMD/easey-common/compare/v17.4.0...v17.4.1) (2024-05-31)
 
 
