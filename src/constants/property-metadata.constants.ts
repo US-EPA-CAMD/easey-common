@@ -2756,10 +2756,10 @@ export const propertyMetadata = {
         'Date control equipment was retired. This value will be null for active records.',
       example: null,
     },
-    stack_pipe_id: {
+    id: {
       fieldLabels: {
-        label: 'stack_pipe_id',
-        value: 'stack_pipe_id',
+        label: '',
+        value: 'id',
       },
       description: 'Database id for each stack/pipe at a facility.',
       example: 'MDC-9175C9B44B5D4FB3B446CAF99F5CF6C7',
@@ -2974,6 +2974,16 @@ export const propertyMetadata = {
     },
     description: 'Full description for the transaction type.',
     example: 'Initial Allocation',
+  },
+  unit: {
+    id: {
+      fieldLabels: {
+        label: '',
+        value: 'id',
+      },
+      description: 'Database id for each unit at a facility.',
+      example: 5,
+    },
   },
   unitFuelType: {
     fieldLabels: {
