@@ -9,7 +9,9 @@ import {
   JoinTable,
   JoinColumn,
 } from 'typeorm';
+
 import { NumericColumnTransformer } from '../transforms';
+import { EmissionEvaluation } from './emission-evaluation.entity';
 import { Plant } from './plant.entity';
 import { MonitorLocation } from './monitor-location.entity';
 import { MonitorPlanComment } from './monitor-plan-comment.entity';
@@ -112,17 +114,14 @@ export class MonitorPlan extends BaseEntity {
   })
   submissionAvailabilityCode: string;
 
-  @ManyToOne(
-    () => Plant,
-    plant => plant.plans,
-  )
+  @Column({ name: 'last_evaluated_date' })
+  lastEvaluatedDate: Date;
+
+  @ManyToOne(() => Plant, (plant) => plant.plans)
   @JoinColumn({ name: 'fac_id' })
   plant: Plant;
 
-  @ManyToMany(
-    () => MonitorLocation,
-    location => location.plans,
-  )
+  @ManyToMany(() => MonitorLocation, (location) => location.plans)
   @JoinTable({
     name: 'camdecmps.monitor_plan_location',
     joinColumn: {
@@ -136,20 +135,20 @@ export class MonitorPlan extends BaseEntity {
   })
   locations: MonitorLocation[];
 
-  @OneToMany(
-    () => MonitorPlanComment,
-    comment => comment.plan,
-  )
+  @OneToMany(() => MonitorPlanComment, (comment) => comment.plan)
   comments: MonitorPlanComment[];
 
   @OneToMany(
     () => MonitorPlanReportingFrequency,
-    reportFrequency => reportFrequency.plan,
+    (reportFrequency) => reportFrequency.plan,
   )
   reportingFrequencies: MonitorPlanReportingFrequency[];
 
   unitStackConfigurations: UnitStackConfiguration[];
 
-  @Column({ name: 'last_evaluated_date' })
-  lastEvaluatedDate: Date;
+  @OneToMany(
+    () => EmissionEvaluation,
+    (emissionEvaluation) => emissionEvaluation.monitorPlan,
+  )
+  emissionEvaluations: EmissionEvaluation[];
 }

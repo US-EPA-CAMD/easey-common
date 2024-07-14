@@ -1,5 +1,7 @@
 import { NumericColumnTransformer } from '../transforms';
-import { BaseEntity, Column, Entity, PrimaryColumn } from 'typeorm';
+import { BaseEntity, Column, Entity, OneToMany, PrimaryColumn } from 'typeorm';
+
+import { EmissionEvaluation } from './emission-evaluation.entity';
 
 @Entity({ name: 'camdecmpsmd.reporting_period' })
 export class ReportingPeriod extends BaseEntity {
@@ -55,4 +57,10 @@ export class ReportingPeriod extends BaseEntity {
     transformer: new NumericColumnTransformer(),
   })
   archiveInd: number;
+
+  @OneToMany(
+    () => EmissionEvaluation,
+    (emissionEvaluation) => emissionEvaluation.reportingPeriod,
+  )
+  emissionEvaluations: EmissionEvaluation[];
 }
