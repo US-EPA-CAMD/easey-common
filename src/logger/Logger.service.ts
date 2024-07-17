@@ -1,6 +1,6 @@
-import { ConsoleLogger, Injectable, Scope } from "@nestjs/common";
-import { ConfigService } from "@nestjs/config";
-const winston = require("winston");
+import { ConsoleLogger, Injectable, Scope } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
+const winston = require('winston');
 
 @Injectable({ scope: Scope.TRANSIENT })
 export class Logger extends ConsoleLogger {
@@ -17,8 +17,18 @@ export class Logger extends ConsoleLogger {
       transports: [new winston.transports.Console({})],
     });
 
-    if (this.configService.get<string>("app.env") === "local-dev") {
+    if (this.configService.get<string>('app.env') === 'local-dev') {
       this.isDevelopment = true;
+      const logFile = this.configService.get<string>('app.logFile');
+      const logLevel = this.configService.get<string>('app.logLevel');
+      if (logFile) {
+        this.logInstance.add(
+          new winston.transports.File({
+            filename: logFile,
+            ...(logLevel ? { level: logLevel } : {}),
+          }),
+        );
+      }
     }
   }
 
