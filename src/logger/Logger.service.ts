@@ -4,20 +4,18 @@ const { createLogger, format, transports } = require('winston');
 
 @Injectable({ scope: Scope.TRANSIENT })
 export class Logger extends ConsoleLogger {
-  private consoleLogInstance;
-  private fileLogInstance;
+  private consoleLogInstance: ReturnType<typeof createLogger>;
+  private fileLogInstance: ReturnType<typeof createLogger>;
   private isDevelopment = false;
 
   constructor(private readonly configService: ConfigService) {
     super();
 
     const {
-      align,
       cli,
       colorize,
       combine,
       level,
-      padLevels,
       prettyPrint,
       printf,
       json,
@@ -35,16 +33,16 @@ export class Logger extends ConsoleLogger {
       const logFileLevel = this.configService.get<string>('app.logFileLevel');
       if (logFile) {
         // Only initialize the file logger in the local environment if the log file is provided.
-        const template = printf((info) => {
+        const template = printf(({ timestamp, level, message }) => {
           return `${timestamp} ${level}: ${message}`;
         });
         this.fileLogInstance = createLogger({
-            format: combine(
+          format: combine(
             format((info) => {
               info.level = info.level.toUpperCase();
               return info;
             })(),
-            colorize:({ level: true, message: true }),
+            colorize({ level: true, message: true }),
             timestamp({ format: 'MM/DD/YYYY h:m:s A' }),
             template,
           ),
