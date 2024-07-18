@@ -11,16 +11,7 @@ export class Logger extends ConsoleLogger {
   constructor(private readonly configService: ConfigService) {
     super();
 
-    const {
-      cli,
-      colorize,
-      combine,
-      level,
-      prettyPrint,
-      printf,
-      json,
-      timestamp,
-    } = format;
+    const { combine, json, metadata, prettyPrint, timestamp } = format;
 
     this.consoleLogInstance = createLogger({
       format: combine(json(), prettyPrint()),
@@ -33,18 +24,15 @@ export class Logger extends ConsoleLogger {
       const logFileLevel = this.configService.get<string>('app.logFileLevel');
       if (logFile) {
         // Only initialize the file logger in the local environment if the log file is provided.
-        const template = printf(({ timestamp, level, message }) => {
-          return `${timestamp} ${level}: ${message}`;
-        });
         this.fileLogInstance = createLogger({
           format: combine(
             format((info) => {
               info.level = info.level.toUpperCase();
               return info;
             })(),
-            colorize({ level: true, message: true }),
+            metadata(),
+            json(),
             timestamp({ format: 'MM/DD/YYYY h:m:s A' }),
-            template,
           ),
           transports: [
             new transports.File({
@@ -57,10 +45,18 @@ export class Logger extends ConsoleLogger {
     }
   }
 
-  debug(message: any, context?: string) {
+  private getContext(): string | undefined {
+    return this.context;
+  }
+
+  debug(message: any, ...metadata: any[]) {
+    const context = this.getContext();
     super.debug(message, context);
     if (this.fileLogInstance) {
-      this.fileLogInstance.debug(message);
+      this.fileLogInstance.debug(message, {
+        ...metadata,
+        ...(context ? { context } : {}),
+      });
     }
   }
 
