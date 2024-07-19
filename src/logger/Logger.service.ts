@@ -49,13 +49,16 @@ export class Logger extends ConsoleLogger {
     return this.context;
   }
 
-  debug(message: any, ...metadata: any[]) {
-    const context = this.getContext();
-    super.debug(message, context);
+  debug(message: any, ...optionalParams: [...any, string?]) {
+    const context =
+      typeof optionalParams[optionalParams.length - 1] === 'string'
+        ? optionalParams.pop()
+        : this.getContext();
+    super.debug(message, optionalParams, context);
     if (this.fileLogInstance) {
       this.fileLogInstance.debug(message, {
-        ...metadata,
         ...(context ? { context } : {}),
+        data: optionalParams,
       });
     }
   }
