@@ -2985,6 +2985,16 @@ export const propertyMetadata = {
       example: 5,
     },
   },
+  unitDTO: {
+    associatedMonitorPlanIds: {
+      fieldLabels: {
+        label: '',
+        value: 'associatedMonitorPlanIds',
+      },
+      description: 'Unique identifier of monitor plans that contain this unit',
+      example: 'MDC-9175C9B44B5D4FB3B446CAF99F5CF6C7',
+    },
+  },
   unitFuelType: {
     fieldLabels: {
       label: '',
