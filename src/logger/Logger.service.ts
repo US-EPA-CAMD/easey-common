@@ -37,6 +37,7 @@ export class Logger extends ConsoleLogger {
           transports: [
             new transports.File({
               filename: logFile,
+              lazy: true,
               ...(logFileLevel ? { level: logFileLevel } : {}),
             }),
           ],
