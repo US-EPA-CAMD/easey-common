@@ -10,7 +10,7 @@
     "url": "git+https://github.com/US-EPA-CAMD/easey-common.git"
   },
   "engines": {
-    "node": ">= 20.8.0"
+    "node": "20.x"
   },
   "scripts": {
     "commit": "cz",
