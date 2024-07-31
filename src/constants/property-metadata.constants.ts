@@ -4651,9 +4651,9 @@ export const propertyMetadata = {
   lEEQualificationDTOPotentialAnnualMassEmissions: {
     fieldLabels: {
       label: 'Potential Annual Hg Mass Emissions',
-      value: 'potentialAnnualMassEmissions',
+      value: 'potentialAnnualHgMassEmissions',
     },
-    description: 'Potential annual mass emissions used for LEE qualification.',
+    description: 'Potential annual Hg mass emissions used for LEE qualification.',
     example: 10.2,
   },
 
