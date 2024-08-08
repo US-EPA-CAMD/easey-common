@@ -1,3 +1,28 @@
+# [17.5.0](https://github.com/US-EPA-CAMD/easey-common/compare/v17.4.2...v17.5.0) (2024-08-08)
+
+
+### Bug Fixes
+
+* **5995:** fixed entity relation ([ca9e9c8](https://github.com/US-EPA-CAMD/easey-common/commit/ca9e9c820749ee7346ea5cf8ac8c0b0088edbfde))
+* **5995:** logger syntax errors ([957162d](https://github.com/US-EPA-CAMD/easey-common/commit/957162da193a11eed0cda1b1bd5bd90c115e276d))
+* **5995:** updated Logger file write behavior ([c1250a8](https://github.com/US-EPA-CAMD/easey-common/commit/c1250a8760fec5bc1443111c6c11bbe021fc7658))
+* removed colorization from JSON that is destined for a file ([217c2f0](https://github.com/US-EPA-CAMD/easey-common/commit/217c2f0ea9f88ad1a908358f55045a58c15c2c5d))
+
+
+### Features
+
+* **5995:** added common entities, maps, and dtos ([4fd1070](https://github.com/US-EPA-CAMD/easey-common/commit/4fd10708dcb4a7b576f892bf00979092dfc96232))
+* **5995:** added custom exception ([21e0630](https://github.com/US-EPA-CAMD/easey-common/commit/21e06302b2dd2f6c9cf014f4a1dcb6202bc243e8))
+* **5995:** updated property metadata ([00b9867](https://github.com/US-EPA-CAMD/easey-common/commit/00b9867ebabddc5c1fcc3f73d94bcc047b0fc59f))
+* added ability to define custom log file and log level or file ([f639ba1](https://github.com/US-EPA-CAMD/easey-common/commit/f639ba14e45ddd51461e6453d8d8e6275506f415))
+* updated Logger to allow for optionally writing logs to file ([f0d69d1](https://github.com/US-EPA-CAMD/easey-common/commit/f0d69d158cf7bb1e6092cf52af91d45f4074c800))
+
+
+### Reverts
+
+* **5995:** added back root index ([8bc058c](https://github.com/US-EPA-CAMD/easey-common/commit/8bc058cd4c4c8a00f8759635068aaf84efc41edf))
+* **5995:** removed previously added maps and dtos ([b06da7f](https://github.com/US-EPA-CAMD/easey-common/commit/b06da7f0176fd210f2b69d839965a316a4e39214))
+
 ## [17.4.2](https://github.com/US-EPA-CAMD/easey-common/compare/v17.4.1...v17.4.2) (2024-07-01)
 
 
