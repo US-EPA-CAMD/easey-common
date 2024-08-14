@@ -1,3 +1,16 @@
+# [18.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v17.5.0...v18.0.0) (2024-08-14)
+
+
+### Bug Fixes
+
+* **6329:** updated the casing of a metadata key ([e0aa9a0](https://github.com/US-EPA-CAMD/easey-common/commit/e0aa9a02f58109277363f7b80fee00fdad1c9b6c))
+
+
+### BREAKING CHANGES
+
+* **6329:** This requires APIs that reference the metadata object to update their the key they
+use to access it.
+
 # [17.5.0](https://github.com/US-EPA-CAMD/easey-common/compare/v17.4.2...v17.5.0) (2024-08-08)
 
 
