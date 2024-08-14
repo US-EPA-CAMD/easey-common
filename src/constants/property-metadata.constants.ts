@@ -3429,7 +3429,7 @@ export const propertyMetadata = {
     example: 3,
   },
 
-  ductWafDTONumberOfTraversePointsWaf: {
+  ductWafDTONumberOfTraversePointsWAF: {
     fieldLabels: {
       label: 'Number of Traverse Points WAF',
       value: 'numberOfTraversePointsWaf',
@@ -4653,7 +4653,8 @@ export const propertyMetadata = {
       label: 'Potential Annual Hg Mass Emissions',
       value: 'potentialAnnualHgMassEmissions',
     },
-    description: 'Potential annual Hg mass emissions used for LEE qualification.',
+    description:
+      'Potential annual Hg mass emissions used for LEE qualification.',
     example: 10.2,
   },
 
