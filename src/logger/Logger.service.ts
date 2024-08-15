@@ -46,20 +46,12 @@ export class Logger extends ConsoleLogger {
     }
   }
 
-  private getContext(): string | undefined {
-    return this.context;
-  }
-
   debug(message: any, ...optionalParams: [...any, string?]) {
-    const context =
-      typeof optionalParams[optionalParams.length - 1] === 'string'
-        ? optionalParams.pop()
-        : this.getContext();
-    super.debug(message, optionalParams, context);
+    super.debug(message, ...optionalParams);
     if (this.fileLogInstance) {
       this.fileLogInstance.debug(message, {
-        ...(context ? { context } : {}),
-        data: optionalParams,
+        ...(this.context ? { context: this.context } : {}),
+        ...(optionalParams.length ? { data: optionalParams } : {}),
       });
     }
   }
