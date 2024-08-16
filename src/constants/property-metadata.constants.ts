@@ -3432,7 +3432,7 @@ export const propertyMetadata = {
   ductWafDTONumberOfTraversePointsWAF: {
     fieldLabels: {
       label: 'Number of Traverse Points WAF',
-      value: 'numberOfTraversePointsWaf',
+      value: 'numberOfTraversePointsWAF',
     },
     description: 'The number of Method 1 traverse points in the WAF test runs.',
     example: 48,
