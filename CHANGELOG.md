@@ -1,3 +1,10 @@
+## [17.5.1](https://github.com/US-EPA-CAMD/easey-common/compare/v17.5.0...v17.5.1) (2024-08-16)
+
+
+### Bug Fixes
+
+* numberOfTraversePointsWaf to numberOfTraversePointsWAF ([755ccaa](https://github.com/US-EPA-CAMD/easey-common/commit/755ccaabecad2cc24372f7c110cb229648b516b2))
+
 # [17.5.0](https://github.com/US-EPA-CAMD/easey-common/compare/v17.4.2...v17.5.0) (2024-08-08)
 
 
