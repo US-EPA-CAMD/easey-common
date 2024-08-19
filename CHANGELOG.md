@@ -1,3 +1,10 @@
+## [17.5.2](https://github.com/US-EPA-CAMD/easey-common/compare/v17.5.1...v17.5.2) (2024-08-19)
+
+
+### Bug Fixes
+
+* **5995:** issue with Logger debug method, removed CancelTransactionException ([c87b0ea](https://github.com/US-EPA-CAMD/easey-common/commit/c87b0eaeea8fe5385d94309f09b1f31d3a398f12))
+
 ## [17.5.1](https://github.com/US-EPA-CAMD/easey-common/compare/v17.5.0...v17.5.1) (2024-08-16)
 
 
