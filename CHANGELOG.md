@@ -1,3 +1,10 @@
+## [11.4.5](https://github.com/US-EPA-CAMD/easey-common/compare/v11.4.4...v11.4.5) (2024-08-27)
+
+
+### Bug Fixes
+
+* added pipeDelimited regex ([211319a](https://github.com/US-EPA-CAMD/easey-common/commit/211319aa21150cc2a0eb286768379440f42205ac)), closes [#6295](https://github.com/US-EPA-CAMD/easey-common/issues/6295)
+
 ## [11.4.4](https://github.com/US-EPA-CAMD/easey-common/compare/v11.4.3...v11.4.4) (2024-04-25)
 
 
