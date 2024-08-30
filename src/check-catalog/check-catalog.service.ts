@@ -1,12 +1,26 @@
-import { getManager } from "typeorm";
-import { Injectable } from "@nestjs/common";
+import { EntityManager } from "typeorm";
+import { Inject, Injectable, OnApplicationBootstrap } from "@nestjs/common";
+import { VIEW_NAME } from "./check-catalog.constants";
 
 @Injectable()
-export class CheckCatalogService {
+export class CheckCatalogService implements OnApplicationBootstrap {
   private static checkCatalog = [];
 
-  static async load(viewName: string) {
-    const results = await getManager().query(`SELECT * FROM ${viewName}`);
+  constructor(
+    private readonly entityManager: EntityManager,
+    @Inject(VIEW_NAME) private readonly viewName: string
+  ) {}
+
+  async onApplicationBootstrap() {
+    await this.load();
+  }
+
+  async getViewData() {
+    return await this.entityManager.query(`SELECT * FROM ${this.viewName}`);
+  }
+
+  async load() {
+    const results = await this.getViewData();
 
     CheckCatalogService.checkCatalog = results.map((i) => {
       const parts = i.resultMessage.split("[").filter((i) => i.includes("]"));
@@ -50,12 +64,12 @@ export class CheckCatalogService {
     return message;
   }
 
-  static formatResultMessage = (code: string, values?: {}): string => {
+  static formatResultMessage(code: string, values?: {}): string {
     let message = `[${code}]`;
     const result = CheckCatalogService.checkCatalog.find(
       (i) => i.code === code
     );
     message = `${message} - ${result.message}`;
     return CheckCatalogService.formatMessage(message, values, result.plugins);
-  };
+  }
 }

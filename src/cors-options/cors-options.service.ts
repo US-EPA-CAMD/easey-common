@@ -1,5 +1,5 @@
 import { Request } from "express";
-import { getManager } from "typeorm";
+import { EntityManager } from "typeorm";
 import {
   CorsOptions,
   CorsOptionsCallback,
@@ -9,7 +9,10 @@ import { Logger } from "../logger";
 
 @Injectable()
 export class CorsOptionsService {
-  constructor(private logger: Logger) {}
+  constructor(
+    private logger: Logger,
+    private readonly entityManager: EntityManager
+  ) {}
 
   configure = async (
     req: Request,
@@ -26,8 +29,7 @@ export class CorsOptionsService {
     req.res.setHeader("Expires", "0");
 
     if (originHeader !== null && originHeader !== undefined) {
-      const manager = getManager();
-      const corsResults = await manager.query(
+      const corsResults = await this.entityManager.query(
         "SELECT key, value FROM camdaux.cors_config"
       );
       const allowedOrigins = corsResults.filter((i) => i.key === "origin");
