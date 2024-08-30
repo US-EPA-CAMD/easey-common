@@ -5,8 +5,4 @@ export class Regex {
   public static commaDelimited(str: string): string {
     return `'((^${str}$)|([,][ ]*${str}$)|([,][ ]*${str}[,])|(^${str}[,])|(^${str} [(])|([,][ ]*${str} [(]))'`;
   }
-
-  public static pipeDelimited(str: string): string {
-    return `'((^${str}$)|([,][ ]*${str}$)|([,][ ]*${str}[,])|(^${str}[,])|(^${str} [(])|([|][ ]*${str} [(]))'`;
-  }
 }
