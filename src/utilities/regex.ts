@@ -7,6 +7,6 @@ export class Regex {
   }
 
   public static pipeDelimited(str: string): string {
-    return `'((^${str}$)|([,][ ]*${str}$)|([,][ ]*${str}[,])|(^${str}[,])|(^${str} [(])|([|][ ]*${str} [(]))'`;
+    return `'((^${str}$)|([|][ ]*${str}$)|([|][ ]*${str}[|])|(^${str}[|])|(^${str} [(])|([|][ ]*${str} [(]))'`;
   }
 }
