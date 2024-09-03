@@ -1,3 +1,10 @@
+## [11.4.7](https://github.com/US-EPA-CAMD/easey-common/compare/v11.4.6...v11.4.7) (2024-09-03)
+
+
+### Bug Fixes
+
+* added new regex helper function ([0be039c](https://github.com/US-EPA-CAMD/easey-common/commit/0be039cb176d4571b5d57299705f764721073844))
+
 ## [11.4.5](https://github.com/US-EPA-CAMD/easey-common/compare/v11.4.4...v11.4.5) (2024-08-27)
 
 
