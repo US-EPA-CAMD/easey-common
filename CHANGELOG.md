@@ -1,3 +1,10 @@
+## [11.4.8](https://github.com/US-EPA-CAMD/easey-common/compare/v11.4.7...v11.4.8) (2024-09-03)
+
+
+### Bug Fixes
+
+* comma to pipe ([1565cd5](https://github.com/US-EPA-CAMD/easey-common/commit/1565cd5047c16d76c29ec2b442732fd1799add68))
+
 ## [11.4.7](https://github.com/US-EPA-CAMD/easey-common/compare/v11.4.6...v11.4.7) (2024-09-03)
 
 
