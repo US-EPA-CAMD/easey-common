@@ -1,3 +1,10 @@
+## [11.4.9](https://github.com/US-EPA-CAMD/easey-common/compare/v11.4.8...v11.4.9) (2024-09-04)
+
+
+### Bug Fixes
+
+* fixed handling of 'each' in custom validators ([9a8dfab](https://github.com/US-EPA-CAMD/easey-common/commit/9a8dfabbdc98c328469ca98d825301ef665efc4f))
+
 ## [11.4.8](https://github.com/US-EPA-CAMD/easey-common/compare/v11.4.7...v11.4.8) (2024-09-03)
 
 
