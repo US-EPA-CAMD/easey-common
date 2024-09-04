@@ -22,7 +22,9 @@ export class DbLookupValidator implements ValidatorConstraintInterface {
     if (value || !ignoreEmpty) {
       const found = await this.entityManager.findOne(
         type,
-        findOption?.(args) ?? {
+        // Assign only the value in question to the `value` property of the `validationArguments` parameter
+        // (if `each` is true on the decorator, `args.value` will differ from `value`).
+        findOption?.({ ...args, value }) ?? {
           where: {
             [args.property]: value ?? IsNull(),
           },
