@@ -25,7 +25,12 @@ export class IsValidCodesValidator implements ValidatorConstraintInterface {
         }
       }
       value = value.filter((v) => v !== "");
-      const found = await this.entityManager.find(type, findOption(args));
+      const found = await this.entityManager.find(
+        type,
+        // Assign only the value in question to the `value` property of the `validationArguments` parameter
+        // (if `each` is true on the decorator, `args.value` will differ from `value`).
+        findOption({ ...args, value })
+      );
       return found.length === value.length;
     }
     return true;
