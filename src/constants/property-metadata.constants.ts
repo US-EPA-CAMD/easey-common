@@ -6518,4 +6518,320 @@ export const propertyMetadata = {
     description: 'Test Result Code',
     example: 'PASSED',
   },
+
+  //Unit (load based indicator, CO, CCO, etc.), unit program and reporting frequency. #6233
+  unitDTOId: {
+    fieldLabels: {
+      label: "Unit ID",
+      value: "id",
+    },
+    description: "Unique identifier for the unit.",
+    example: "1001",
+  },
+
+  unitDTONonLoadBasedIndicator: {
+    fieldLabels: {
+      label: "Non-Load Based Indicator",
+      value: "nonLoadBasedIndicator",
+    },
+    description: "Indicator that represents whether the unit is non-load based.",
+    example: "1",
+  },
+
+  unitDTOUserId: {
+    fieldLabels: {
+      label: "User ID",
+      value: "userId",
+    },
+    description: "The ID of the user who created or updated the record.",
+    example: "jdoe",
+  },
+
+  unitDTOAddDate: {
+    fieldLabels: {
+      label: "Add Date",
+      value: "addDate",
+    },
+    description: "The date when the unit record was added.",
+    example: "2024-08-29",
+  },
+
+  unitDTOUpdateDate: {
+    fieldLabels: {
+      label: "Update Date",
+      value: "updateDate",
+    },
+    description: "The date when the unit record was last updated.",
+    example: "2024-08-30",
+  },
+
+  unitDTOUnitid: {
+    fieldLabels: {
+      label: "Unit ID",
+      value: "unitid",
+    },
+    description: "ID of the unit.",
+    example: "UNIT_123",
+  },
+
+  unitDTOSourceCategoryCd: {
+    fieldLabels: {
+      label: "Source Category Code",
+      value: "sourceCategoryCd",
+    },
+    description: "Category code for the source of the unit.",
+    example: "SRC123",
+  },
+
+  unitDTOCommOpDate: {
+    fieldLabels: {
+      label: "Commercial Operation Date",
+      value: "commOpDate",
+    },
+    description: "The date when the unit began commercial operation.",
+    example: "01/01/2020",
+  },
+
+  unitDTOComrOpDate: {
+    fieldLabels: {
+      label: "Compliance Operation Date",
+      value: "comrOpDate",
+    },
+    description: "The date when the unit began compliance operation.",
+    example: "01/01/2020",
+  },
+
+  unitDTOOpStatusCd: {
+    fieldLabels: {
+      label: "Operational Status Code",
+      value: "opStatusCd",
+    },
+    description: "The operational status code of the unit.",
+    example: "OP",
+  },
+
+  unitDTOStatusBeginDate: {
+    fieldLabels: {
+      label: "Status Begin Date",
+      value: "statusBeginDate",
+    },
+    description: "The date when the current operational status of the unit began.",
+    example: "01/01/2020",
+  },
+
+  unitDTOUnitTypeCd: {
+    fieldLabels: {
+      label: "Unit Type Code",
+      value: "unitTypeCd",
+    },
+    description: "The type code of the unit.",
+    example: "UBT",
+  },
+
+  unitDTOAuditUser: {
+    fieldLabels: {
+      label: "Audit User",
+      value: "auditUser",
+    },
+    description: "The user ID of the person who performed the last audit on the unit record.",
+    example: "user@example.com",
+  },
+
+  unitDTOAuditDate: {
+    fieldLabels: {
+      label: "Audit Date",
+      value: "auditDate",
+    },
+    description: "The date and time when the last audit was performed on the unit record.",
+    example: "2023-01-01T00:00:00Z",
+  },
+
+  unitDTOActive: {
+    fieldLabels: {
+      label: "Active",
+      value: "active",
+    },
+    description: "Indicates whether the unit is currently active.",
+    example: true,
+  },
+
+  //program unit
+  unitProgramDTOUnitId: {
+    fieldLabels: {
+      label: "Unit ID",
+      value: "unitId",
+    },
+    description: "The identifier for the unit associated with the program.",
+    example: 12345,
+  },
+
+  unitProgramDTOProgramId: {
+    fieldLabels: {
+      label: "Program ID",
+      value: "programId",
+    },
+    description: "The identifier for the program associated with the unit.",
+    example: 67890,
+  },
+
+  unitProgramDTOProgramCode: {
+    fieldLabels: {
+      label: "Program Code",
+      value: "programCode",
+    },
+    description: "The code representing the specific program.",
+    example: "ARP",
+  },
+
+  unitProgramDTOClassCode: {
+    fieldLabels: {
+      label: "Class Code",
+      value: "classCode",
+    },
+    description: "The code representing the class associated with the program.",
+    example: "A",
+  },
+
+  unitProgramDTOUnitMonitorCertBeginDate: {
+    fieldLabels: {
+      label: "Unit Monitor Certification Begin Date",
+      value: "unitMonitorCertBeginDate",
+    },
+    description:
+        "The date when unit monitoring certification began for the program.",
+    example: "2024-01-01",
+  },
+
+  unitProgramDTOUnitMonitorCertDeadline: {
+    fieldLabels: {
+      label: "Unit Monitor Certification Deadline",
+      value: "unitMonitorCertDeadline",
+    },
+    description:
+        "The deadline date for completing unit monitoring certification.",
+    example: "2024-12-31",
+  },
+
+  unitProgramDTOEmissionsRecordingBeginDate: {
+    fieldLabels: {
+      label: "Emissions Recording Begin Date",
+      value: "emissionsRecordingBeginDate",
+    },
+    description:
+        "The date when emissions recording began under the program.",
+    example: "2024-01-01",
+  },
+
+  unitProgramDTOEndDate: {
+    fieldLabels: {
+      label: "End Date",
+      value: "endDate",
+    },
+    description:
+        "The end date for the program's association with the unit.",
+    example: "2025-12-31",
+  },
+
+  unitProgramDTOId: {
+    fieldLabels: {
+      label: "Unit Program ID",
+      value: "id",
+    },
+    description: "The unique identifier for the unit program record.",
+    example: "1234567890",
+  },
+
+  unitProgramDTOUserId: {
+    fieldLabels: {
+      label: "User ID",
+      value: "userId",
+    },
+    description: "The identifier for the user who last modified the record.",
+    example: "jdoe",
+  },
+
+  unitProgramDTOAddDate: {
+    fieldLabels: {
+      label: "Add Date",
+      value: "addDate",
+    },
+    description:
+        "The timestamp when the unit program record was created.",
+    example: "2024-08-01T00:00:00.000Z",
+  },
+
+  unitProgramDTOUpdateDate: {
+    fieldLabels: {
+      label: "Update Date",
+      value: "updateDate",
+    },
+    description:
+        "The timestamp when the unit program record was last updated.",
+    example: "2024-08-15T00:00:00.000Z",
+  },
+
+  unitProgramDTOActive: {
+    fieldLabels: {
+      label: "Active",
+      value: "active",
+    },
+    description: "Indicates whether the unit program is currently active.",
+    example: true,
+  },
+
+  //Reporting frequency
+  reportingFreqDTOReportFrequencyCode: {
+    fieldLabels: {
+      label: 'Report Frequency Code',
+      value: 'reportFrequencyCode',
+    },
+    description: 'The code representing the frequency at which the report is generated.',
+    example: 'QTR',  // Example could be quarterly (QTR)
+  },
+
+  reportingFreqDTOMonitoringPlanLocations: {
+    fieldLabels: {
+      label: 'Monitoring Plan Locations',
+      value: 'monitoringPlanLocations',
+    },
+    description: 'The locations covered under the monitoring plan.',
+    example: 'Site001, Site002',  // Example of monitoring plan location IDs or names
+  },
+
+  reportingFreqDTOBeginQuarter: {
+    fieldLabels: {
+      label: 'Begin Quarter',
+      value: 'beginQuarter',
+    },
+    description: 'The quarter in which reporting starts.',
+    example: '2024Q1',  // Example of quarter (e.g., first quarter of 2024)
+  },
+
+  reportingFreqDTOEndQuarter: {
+    fieldLabels: {
+      label: 'End Quarter',
+      value: 'endQuarter',
+    },
+    description: 'The quarter in which reporting ends, if applicable.',
+    example: '2024Q4',  // Example of quarter (e.g., fourth quarter of 2024)
+  },
+
+  reportingFreqDTOId: {
+    fieldLabels: {
+      label: 'ID',
+      value: 'id',
+    },
+    description: 'The unique identifier for the reporting frequency record.',
+    example: '12345',  // Example of an ID value
+  },
+
+  reportingFreqDTOActive: {
+    fieldLabels: {
+      label: 'Active',
+      value: 'active',
+    },
+    description: 'Indicates whether the reporting frequency record is active or not.',
+    example: true,  // Boolean example
+  },
+
 };
