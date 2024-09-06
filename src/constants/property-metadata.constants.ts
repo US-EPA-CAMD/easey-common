@@ -6830,7 +6830,7 @@ export const propertyMetadata = {
       label: 'Active',
       value: 'active',
     },
-    description: 'Indicates whether the reporting frequency record is active.',
+    description: 'Indicates whether the reporting frequency record is active or not.',
     example: true,  // Boolean example
   },
 
