@@ -1,3 +1,10 @@
+# [17.6.0](https://github.com/US-EPA-CAMD/easey-common/compare/v17.5.2...v17.6.0) (2024-09-06)
+
+
+### Features
+
+* added propertyMetadata to support tickets 6233 and 6342 ([ee1b366](https://github.com/US-EPA-CAMD/easey-common/commit/ee1b36673654822bc024d3653e0d2714f144af2f))
+
 ## [17.5.2](https://github.com/US-EPA-CAMD/easey-common/compare/v17.5.1...v17.5.2) (2024-08-19)
 
 
