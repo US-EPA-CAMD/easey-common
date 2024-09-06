@@ -6804,7 +6804,7 @@ export const propertyMetadata = {
       value: 'beginQuarter',
     },
     description: 'The quarter in which reporting starts.',
-    example: '2024Q1',  // Example of quarter (e.g., first quarter of 2024)
+    example: '2022 QTR1',  // Example of quarter (e.g., first quarter of 2024)
   },
 
   reportingFreqDTOEndQuarter: {
@@ -6813,7 +6813,7 @@ export const propertyMetadata = {
       value: 'endQuarter',
     },
     description: 'The quarter in which reporting ends, if applicable.',
-    example: '2024Q4',  // Example of quarter (e.g., fourth quarter of 2024)
+    example: '2024 QTR1',
   },
 
   reportingFreqDTOId: {
