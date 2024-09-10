@@ -6656,7 +6656,7 @@ export const propertyMetadata = {
   },
 
   //program unit
-  unitProgramDTOUnitId: {
+  unitProgramDTOUnitRecordId: {
     fieldLabels: {
       label: "Unit ID",
       value: "unitId",
