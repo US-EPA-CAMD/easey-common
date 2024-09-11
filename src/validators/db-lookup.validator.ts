@@ -2,13 +2,13 @@ import {
   ValidationArguments,
   ValidatorConstraint,
   ValidatorConstraintInterface,
-} from "class-validator";
-import { Injectable } from "@nestjs/common";
-import { BaseEntity, EntityManager, IsNull } from "typeorm";
-import { DbLookupOptions } from "../interfaces/validator-options.interface";
+} from 'class-validator';
+import { Injectable } from '@nestjs/common';
+import { BaseEntity, EntityManager, IsNull } from 'typeorm';
+import { DbLookupOptions } from '../interfaces/validator-options.interface';
 
 @Injectable()
-@ValidatorConstraint({ name: "dbLookup", async: true })
+@ValidatorConstraint({ name: 'dbLookup', async: true })
 export class DbLookupValidator implements ValidatorConstraintInterface {
   constructor(private readonly entityManager: EntityManager) {}
 
@@ -21,7 +21,7 @@ export class DbLookupValidator implements ValidatorConstraintInterface {
 
     if (value || !ignoreEmpty) {
       const options =
-        findOption === "primary"
+        findOption === 'primary'
           ? // Find by the entity's primary key.
             {
               where: {
@@ -30,7 +30,9 @@ export class DbLookupValidator implements ValidatorConstraintInterface {
               },
             }
           : // Use the provided find options.
-            findOption?.(args) ?? {
+            // Assign only the value in question to the `value` property of the `validationArguments` parameter
+            // (if `each` is true on the decorator, `args.value` will differ from `value`).
+            findOption?.({ ...args, value }) ?? {
               // Default to finding by the property with the same name.
               where: {
                 [args.property]: value ?? IsNull(),
