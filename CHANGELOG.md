@@ -1,3 +1,10 @@
+## [17.7.1](https://github.com/US-EPA-CAMD/easey-common/compare/v17.7.0...v17.7.1) (2024-09-11)
+
+
+### Bug Fixes
+
+* **6386:** passed the correct value to validator 'findOption' functions ([9879fb9](https://github.com/US-EPA-CAMD/easey-common/commit/9879fb952281deafcd9963363fff5d5c99b247de))
+
 # [17.7.0](https://github.com/US-EPA-CAMD/easey-common/compare/v17.6.0...v17.7.0) (2024-09-10)
 
 
