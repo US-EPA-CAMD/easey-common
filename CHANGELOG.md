@@ -1,3 +1,10 @@
+## [11.4.10](https://github.com/US-EPA-CAMD/easey-common/compare/v11.4.9...v11.4.10) (2024-09-25)
+
+
+### Bug Fixes
+
+* added version for monitorPlanDTO ([6bcf7b0](https://github.com/US-EPA-CAMD/easey-common/commit/6bcf7b08b1dd901995c6f22de794d64b50541091)), closes [#6339](https://github.com/US-EPA-CAMD/easey-common/issues/6339)
+
 ## [11.4.9](https://github.com/US-EPA-CAMD/easey-common/compare/v11.4.8...v11.4.9) (2024-09-04)
 
 
