@@ -6210,6 +6210,16 @@ export const propertyMetadata = {
     example: 3,
   },
 
+  monitorPlanDTOVersion: {
+    fieldLabels: {
+      label: "Version",
+      value: "version",
+    },
+    description:
+      "Version number of JSON schema used to generate the JSON object.",
+    example: 3,
+  },
+
   monitorPlanDTOFacId: {
     fieldLabels: {
       label: '',
