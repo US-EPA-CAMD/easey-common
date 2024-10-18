@@ -3,9 +3,9 @@ import {
   ValidatorConstraint,
   ValidatorConstraintInterface,
 } from 'class-validator';
-import { Injectable } from '@nestjs/common';
+import { Injectable, BadRequestException } from '@nestjs/common';
 import { BaseEntity, EntityManager, IsNull } from 'typeorm';
-import { DbLookupOptions } from '../interfaces/validator-options.interface';
+import { DbLookupOptions } from '../interfaces';
 
 @Injectable()
 @ValidatorConstraint({ name: 'dbLookup', async: true })
@@ -19,28 +19,53 @@ export class DbLookupValidator implements ValidatorConstraintInterface {
       findOption,
     }: DbLookupOptions<BaseEntity> = args.constraints[0];
 
+    // Handle empty or null values
     if (value || !ignoreEmpty) {
+      // Additional check for non-numeric input (assuming IDs are numeric)
+      if (isNaN(value)) {
+        throw new BadRequestException(`Invalid input: "${value}" is not a valid numeric identifier.`);
+      }
+
       const options =
         findOption === 'primary'
-          ? // Find by the entity's primary key.
-            {
+          ? {
+              // Find by the entity's primary key
               where: {
                 [this.entityManager.getRepository(type).metadata
                   .primaryColumns[0].propertyName]: value ?? IsNull(),
               },
             }
-          : // Use the provided find options.
-            // Assign only the value in question to the `value` property of the `validationArguments` parameter
-            // (if `each` is true on the decorator, `args.value` will differ from `value`).
+          : // Use the provided find options
             findOption?.({ ...args, value }) ?? {
-              // Default to finding by the property with the same name.
+              // Default to finding by the property with the same name as the value
               where: {
                 [args.property]: value ?? IsNull(),
               },
             };
-      const found = await this.entityManager.findOne(type, options);
-      return found != null;
+
+      try {
+        const found = await this.entityManager.findOne(type, options);
+
+        if (!found) {
+          // If no record is found, throw an exception with a clear message
+          return false;
+        }
+
+        return true; // Return true if the record is found
+      } catch (error) {
+        // Log the error and throw an internal server exception
+        console.error('Error during database lookup:', error);
+
+        // Directly rethrowing the error instead of throwing a new one if it's meaningful
+        throw new BadRequestException('Internal server error during database validation.');
+      }
     }
-    return true;
+
+    return true; // Default return if ignoreEmpty is true and value is empty
+  }
+
+  // Default error message (if needed)
+  defaultMessage(args: ValidationArguments): string {
+    return `Validation failed: Record with ID "${args.value}" was not found in the database.`;
   }
 }

@@ -30,7 +30,8 @@
     "xml2js": "^0.5.0",
     "word-wrap": "^1.2.5",
     "semver": "^7.5.2",
-    "tough-cookie": "^4.1.3"
+    "tough-cookie": "^4.1.3",
+    "class-validator": "0.14.0"
   },
   "dependencies": {
     "@golevelup/ts-jest": "^0.3.4",
@@ -39,6 +40,7 @@
     "@nestjs/config": "^1.0.2",
     "@nestjs/core": "^8.4.7",
     "@nestjs/swagger": "^5.1.2",
+    "@us-epa-camd/easey-common": "^17.7.2",
     "class-validator": "^0.14.0",
     "dotenv": "^10.0.0",
     "express": "^4.20.0",
