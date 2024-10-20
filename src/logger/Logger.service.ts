@@ -6,6 +6,7 @@ const { createLogger, format, transports } = require('winston');
 export class Logger extends ConsoleLogger {
   private consoleLogInstance: ReturnType<typeof createLogger>;
   private fileLogInstance: ReturnType<typeof createLogger>;
+  private auditLogInstance: ReturnType<typeof createLogger>;
   private isDevelopment = false;
 
   constructor(private readonly configService: ConfigService) {
@@ -15,6 +16,15 @@ export class Logger extends ConsoleLogger {
 
     this.consoleLogInstance = createLogger({
       format: combine(json(), prettyPrint()),
+      transports: [new transports.Console({})],
+    });
+
+    this.auditLogInstance = createLogger({
+      format: combine(
+        metadata(),
+        json(),
+        timestamp({ format: 'MM/DD/YYYY h:m:s A' })
+      ),
       transports: [new transports.Console({})],
     });
 
@@ -61,6 +71,18 @@ export class Logger extends ConsoleLogger {
     if (!this.isDevelopment) {
       //If in local development mode only show the internal errors
       this.consoleLogInstance.error(message, { ...args });
+    }
+  }
+
+  info(message: any, ...optionalParams: [...any, string?]) {
+    super.log(message, ...optionalParams);
+    if (this.auditLogInstance) {
+      this.auditLogInstance.log('info', message,
+        {
+          ...(this.context ? { context: this.context } : {}),
+          ...(optionalParams.length ? { data: optionalParams } : {}),
+        }
+      );
     }
   }
 }
