@@ -1,3 +1,10 @@
+## [17.7.3](https://github.com/US-EPA-CAMD/easey-common/compare/v17.7.2...v17.7.3) (2024-10-20)
+
+
+### Bug Fixes
+
+* added logger interception ([b4b194d](https://github.com/US-EPA-CAMD/easey-common/commit/b4b194d0e10101c0e78881ab7fe985fa44402faa))
+
 ## [17.7.2](https://github.com/US-EPA-CAMD/easey-common/compare/v17.7.1...v17.7.2) (2024-09-25)
 
 
