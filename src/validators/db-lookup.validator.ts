@@ -64,7 +64,7 @@ export class DbLookupValidator implements ValidatorConstraintInterface {
     return true; // Default return if ignoreEmpty is true and value is empty
   }
 
-  // Default error message (If/ needed)
+  // Default error message (If needed)
   defaultMessage(args: ValidationArguments): string {
     return `Validation failed: Record with ID "${args.value}" was not found in the database.`;
   }

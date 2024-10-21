@@ -54,7 +54,7 @@ export class IsValidCodesValidator implements ValidatorConstraintInterface {
     return true; // Return true if no value is provided (allowing optional validation)
   }
 
-  // Default error message for validation failure (VF)
+  // Default error message for validation failure
 defaultMessage(): string {
     return `Validation failed: One or more of the provided codes are invalid.`;
   }
