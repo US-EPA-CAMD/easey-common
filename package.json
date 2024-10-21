@@ -21,7 +21,7 @@
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint '*/**/*.{js,ts}' --quiet --fix",
     "semantic-release": "semantic-release",
-    "postbuild": "cp -r ./package.json ./lib",
+    "postbuild": "node -e \"require('fs').copyFile('./package.json', './lib/package.json', (err) => { if (err) throw err; console.log('package.json copied to /lib'); })\"",
     "postversion": "cp -r package.json .."
   },
   "resolutions": {
