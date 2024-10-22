@@ -16,27 +16,29 @@ export class LoggingInterceptor implements NestInterceptor {
         const methodName = context.getHandler().name;
         const eventName = methodNameToEventName[methodName] || methodName;
         const eventSource = req.ip;
-        const userId = req.user?.userId
+        const userId = req.user?.userId || req.body?.userId;
 
         return next
             .handle()
             .pipe(
-                tap(() => this.logger.info({
+                tap((response) => this.logger.info({
                     eventName,
-                    "eventOutcome": "success",
+                    eventOutcome: "Success",
                     eventSource,
                     userId,
+                    moreInfo: response
                 })
                 ), catchError((error: any) => {
                     if (error instanceof EaseyException) {
                         const status = error.getStatus();
                         const response: any = error.getResponse();
                         const message = response.message || 'Something went wrong';
+                        const eventOutcome = response.error(status);
                         const metadata = error.metadata || {}
 
                         this.logger.info({
                             eventName,
-                            eventOutcome: "error",
+                            eventOutcome,
                             eventSource,
                             userId,
                             moreInfo: { message, statusCode: status, metadata }
@@ -50,7 +52,7 @@ export class LoggingInterceptor implements NestInterceptor {
                     else {
                         this.logger.info({
                             eventName,
-                            eventOutcome: "error",
+                            eventOutcome: "Internal Server Error",
                             eventSource,
                             userId,
                             moreInfo: { message: error.message }
