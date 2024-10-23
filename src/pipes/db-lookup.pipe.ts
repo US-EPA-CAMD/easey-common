@@ -4,11 +4,18 @@ import {
   ValidationArguments,
 } from "class-validator";
 import { FindOneOptions } from "typeorm";
-import { DbLookupValidator } from "../validators/db-lookup.validator";
+import { DbLookupValidator } from '../validators';
 
 export function DbLookup(
   type: any,
-  findOption?: (validationArguments: ValidationArguments) => FindOneOptions,
+  findOption?:
+    | ((validationArguments: ValidationArguments) => FindOneOptions)
+    | "primary"
+    | {
+        validateNumeric?: boolean;
+        ignoreEmpty?: boolean;
+        findOption?: ((validationArguments: ValidationArguments) => FindOneOptions) | "primary";
+      },
   validationOptions?: ValidationOptions,
   ignoreEmpty = true
 ) {
@@ -18,7 +25,21 @@ export function DbLookup(
       target: object.constructor,
       propertyName: propertyName,
       options: validationOptions,
-      constraints: [{ ignoreEmpty, type, findOption }],
+      constraints: [
+        typeof findOption === "object" && !Array.isArray(findOption)
+          ? {
+              ignoreEmpty: findOption.ignoreEmpty ?? ignoreEmpty,
+              validateNumeric: findOption.validateNumeric ?? false,
+              type,
+              findOption: findOption.findOption,
+            }
+          : {
+              ignoreEmpty,
+              validateNumeric: false,
+              type,
+              findOption,
+            },
+      ],
       validator: DbLookupValidator,
     });
   };

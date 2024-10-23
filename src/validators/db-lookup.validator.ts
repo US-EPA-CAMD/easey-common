@@ -17,27 +17,25 @@ export class DbLookupValidator implements ValidatorConstraintInterface {
       ignoreEmpty = true,
       type,
       findOption,
+      validateNumeric = false,
     }: DbLookupOptions<BaseEntity> = args.constraints[0];
 
-    // Handle empty or null values
     if (value || !ignoreEmpty) {
-      // Additional check for non-numeric input (assuming IDs are numeric)
-      if (isNaN(value)) {
-        throw new BadRequestException(`Invalid input: "${value}" is not a valid numeric identifier.`);
+      if (validateNumeric && isNaN(value)) {
+        throw new BadRequestException(
+          `Invalid input: "${value}" must be a valid numeric value for this field.`
+        );
       }
 
       const options =
         findOption === 'primary'
           ? {
-              // Find by the entity's primary key
               where: {
                 [this.entityManager.getRepository(type).metadata
                   .primaryColumns[0].propertyName]: value ?? IsNull(),
               },
             }
-          : // Use the provided find options
-            findOption?.({ ...args, value }) ?? {
-              // Default to finding by the property with the same name as the value
+          : findOption?.({ ...args, value }) ?? {
               where: {
                 [args.property]: value ?? IsNull(),
               },
@@ -45,27 +43,19 @@ export class DbLookupValidator implements ValidatorConstraintInterface {
 
       try {
         const found = await this.entityManager.findOne(type, options);
-
-        if (!found) {
-          // If no record is found, throw an exception with a clear message
-          return false;
-        }
-
-        return true; // Return true if the record is found
+        return !!found;
       } catch (error) {
-        // Log the error and throw an internal server exception
         console.error('Error during database lookup:', error);
-
-        // Directly rethrowing the error instead of throwing a new one if it's meaningful
-        throw new BadRequestException('Internal server error during database validation.');
+        throw new BadRequestException(
+          'Database validation failed. Please try again or contact support if the issue persists.'
+        );
       }
     }
 
-    return true; // Default return if ignoreEmpty is true and value is empty
+    return true;
   }
 
-  // Default error message (If needed)
   defaultMessage(args: ValidationArguments): string {
-    return `Validation failed: Record with ID "${args.value}" was not found in the database.`;
+    return `Validation failed: Record with value "${args.value}" was not found in the database.`;
   }
 }
