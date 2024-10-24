@@ -3,14 +3,18 @@ import {
   ValidatorConstraint,
   ValidatorConstraintInterface,
 } from 'class-validator';
-import { Injectable, BadRequestException } from '@nestjs/common';
+import { Injectable, BadRequestException, Optional } from '@nestjs/common';
 import { BaseEntity, EntityManager, IsNull } from 'typeorm';
+import { ConfigService } from '@nestjs/config';
 import { DbLookupOptions } from '../interfaces';
 
 @Injectable()
 @ValidatorConstraint({ name: 'dbLookup', async: true })
 export class DbLookupValidator implements ValidatorConstraintInterface {
-  constructor(private readonly entityManager: EntityManager) {}
+  constructor(
+    private readonly entityManager: EntityManager,
+    @Optional() private readonly configService?: ConfigService,
+  ) {}
 
   async validate(value: any, args: ValidationArguments) {
     const {
@@ -27,8 +31,8 @@ export class DbLookupValidator implements ValidatorConstraintInterface {
         );
       }
 
-      const options =
-        findOption === 'primary'
+      try {
+        const options = findOption === 'primary'
           ? {
               where: {
                 [this.entityManager.getRepository(type).metadata
@@ -41,17 +45,17 @@ export class DbLookupValidator implements ValidatorConstraintInterface {
               },
             };
 
-      try {
         const found = await this.entityManager.findOne(type, options);
         return !!found;
       } catch (error) {
-        console.error('Error during database lookup:', error);
+        if (process.env.NODE_ENV !== 'test') {
+          console.error('Database lookup validation failed:', error);
+        }
         throw new BadRequestException(
-          'Database validation failed. Please try again or contact support if the issue persists.'
+          'Validation failed. Please verify your input and try again.'
         );
       }
     }
-
     return true;
   }
 
