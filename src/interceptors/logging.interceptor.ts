@@ -7,13 +7,14 @@ import { EaseyException } from '../exceptions';
 
 @Injectable()
 export class LoggingInterceptor implements NestInterceptor {
-    constructor(private readonly logger: Logger,) { }
+    constructor(private readonly logger: Logger) {}
 
     intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
 
         const httpContext = context.switchToHttp();
         const req = httpContext.getRequest();
         const methodName = context.getHandler().name;
+        const eventContext = context.getClass().name;
         const eventName = methodNameToEventName[methodName] || methodName;
         const eventSource = req.ip;
         const userId = req.user?.userId || req.body?.userId;
@@ -22,6 +23,7 @@ export class LoggingInterceptor implements NestInterceptor {
             .handle()
             .pipe(
                 tap((response) => this.logger.info({
+                    eventContext,
                     eventName,
                     eventOutcome: "Success",
                     eventSource,
@@ -37,6 +39,7 @@ export class LoggingInterceptor implements NestInterceptor {
                         const metadata = error.metadata || {}
 
                         this.logger.info({
+                            eventContext,
                             eventName,
                             eventOutcome,
                             eventSource,
@@ -51,6 +54,7 @@ export class LoggingInterceptor implements NestInterceptor {
                     }
                     else {
                         this.logger.info({
+                            eventContext,
                             eventName,
                             eventOutcome: "Internal Server Error",
                             eventSource,
