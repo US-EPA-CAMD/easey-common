@@ -1,18 +1,16 @@
-import { ValidationArguments } from 'class-validator';
-import {
-  BaseEntity,
-  EntityTarget,
-  FindManyOptions,
-  FindOneOptions,
-} from 'typeorm';
+import { ValidationArguments } from "class-validator";
+import { BaseEntity, EntityTarget, FindManyOptions, FindOneOptions } from "typeorm";
 
 export interface DbLookupOptions<T extends BaseEntity> {
   ignoreEmpty?: boolean;
   validateNumeric?: boolean;
-  findOption?:
-    | ((validationArguments: ValidationArguments) => FindOneOptions<T>)
-    | 'primary';
+  findOption?: ((validationArguments: ValidationArguments) => FindOneOptions<T>) | "primary";
   type: EntityTarget<T>;
+}
+
+export interface DbLookupConfig {
+  validateNumeric?: boolean;
+  ignoreEmpty?: boolean;
 }
 
 export interface IsValidCodesOptions {
