@@ -47,7 +47,7 @@ export class IsValidCodesValidator implements ValidatorConstraintInterface {
       } catch (error) {
         // Log the error and throw a meaningful exception
         console.error('Error during code validation:', error);
-        throw new BadRequestException('The supplied code could not be validated');
+        throw new BadRequestException('Please note, the supplied code could not be validated');
       }
     }
 

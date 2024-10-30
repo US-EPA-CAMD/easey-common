@@ -14,6 +14,7 @@ import { DbLookupConfig } from "../interfaces";
  * @param validationOptions - Standard class-validator options
  * @param dbLookupConfig - Additional validation configuration options
  */
+
 export function DbLookup(
   type: any,
   findOption: ((validationArguments: ValidationArguments) => FindOneOptions) | "primary",

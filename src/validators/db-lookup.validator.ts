@@ -1,15 +1,28 @@
 import { Injectable, BadRequestException } from '@nestjs/common';
 import { ValidationArguments, ValidatorConstraint, ValidatorConstraintInterface } from 'class-validator';
-import { EntityManager, IsNull } from 'typeorm';
-//import { DbLookupOptions } from '../interfaces';
+import { EntityManager, IsNull, BaseEntity } from 'typeorm';
+import { DbLookupOptions } from '../interfaces';
+
+/**
+ * Validator for database lookup validation
+ * Handles validation of values against database entities
+ */
 
 @Injectable()
 @ValidatorConstraint({ name: 'dbLookup', async: true })
 export class DbLookupValidator implements ValidatorConstraintInterface {
   constructor(private readonly entityManager: EntityManager) {}
 
+  /**
+   * Validates the input value against database records
+   * @param value - The value to validate
+   * @param args - Validation arguments containing constraints and property information
+   */
+
   async validate(value: any, args: ValidationArguments) {
-    const [{ type, findOption, validateNumeric, ignoreEmpty }] = args.constraints;
+    // Correctly handle the constraints array
+    const constraints = args.constraints[0] as DbLookupOptions<BaseEntity>;
+    const { type, findOption, validateNumeric, ignoreEmpty } = constraints;
 
     if (!value && ignoreEmpty) {
       return true;
