@@ -1,3 +1,11 @@
+# [17.8.0](https://github.com/US-EPA-CAMD/easey-common/compare/v17.7.4...v17.8.0) (2024-11-06)
+
+
+### Features
+
+* **6246:** added controller classname to logging interceptor ([e9a8df9](https://github.com/US-EPA-CAMD/easey-common/commit/e9a8df95de67574f44b6f57f671f9bf216bb7f02))
+* **6426:** added AuditLog wrapper decorator ([c03bf3a](https://github.com/US-EPA-CAMD/easey-common/commit/c03bf3a34c9937d75ddc6456ffa6a4aee596415e))
+
 ## [17.7.4](https://github.com/US-EPA-CAMD/easey-common/compare/v17.7.3...v17.7.4) (2024-10-23)
 
 
