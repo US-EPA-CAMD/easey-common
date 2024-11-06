@@ -15,7 +15,7 @@ export class MaintenanceMiddleware implements NestMiddleware {
   async use(request: Request, res: Response, next: NextFunction) {
     try {
       const url = this.configService.get("app.authApi").uri + "/authentication/login-state";
-      const apiKey = this.configService.get("app.apiKey") || request.headers["x-api-key"]; // mdm have not api key
+      const apiKey = this.configService.get("app.apiKey") || request.headers["x-api-key"];
 
       const forwardedForHeader = request.headers["x-forwarded-for"];
       let ip = request.ip;
@@ -23,7 +23,7 @@ export class MaintenanceMiddleware implements NestMiddleware {
         ip = (forwardedForHeader as string)?.split(",")[0];
       }
 
-      if(!apiKey){
+      if (!apiKey) {
         throw new EaseyException(new Error('API Key required via "x-api-key" request header!'), HttpStatus.BAD_REQUEST);
       }
 
@@ -84,23 +84,22 @@ export class MaintenanceMiddleware implements NestMiddleware {
     const clientTokenRequest = request.headers['x-client-token'];
     const forwardedForHeader = request.headers["x-forwarded-for"];
     let ip = request.ip;
-    const apiKey = this.configService.get("app.apiKey") || request.headers["x-api-key"]; // mdm have not api key
+    const apiKey = this.configService.get("app.apiKey") || request.headers["x-api-key"];
 
     if (
-      authHeader === null || authHeader === undefined ||
       clientId === null || clientId === undefined ||
       clientTokenRequest === null || clientTokenRequest === undefined
     ) {
       throw new EaseyException(new Error(this.errorMessage), HttpStatus.SERVICE_UNAVAILABLE);
     }
 
-    const splitString = authHeader.split(" ");
+    const splitString = authHeader && authHeader.split(" ")[1] || '';
     const clientToken = clientTokenRequest.split(" ");
 
     if (forwardedForHeader !== null && forwardedForHeader !== undefined) {
       ip = forwardedForHeader.split(",")[0];
     }
 
-    return await this.validateMaintenanceRequest(apiKey, splitString[1], ip, clientId, clientToken[1]);
+    return await this.validateMaintenanceRequest(apiKey, splitString, ip, clientId, clientToken[1]);
   }
 }
