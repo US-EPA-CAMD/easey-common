@@ -1,6 +1,6 @@
 {
   "name": "@us-epa-camd/easey-common",
-  "version": "17.7.4",
+  "version": "18.0.0",
   "description": "Shared easey package",
   "main": "index.js",
   "types": "index.d.js",
@@ -23,6 +23,9 @@
     "semantic-release": "semantic-release",
     "postbuild": "cp -r ./package.json ./lib",
     "postversion": "cp -r package.json .."
+  },
+  "resolutions": {
+    "xml2js": "^0.5.0"
   },
   "dependencies": {
     "@golevelup/ts-jest": "^0.3.4",
