@@ -24,6 +24,9 @@
     "postbuild": "cp -r ./package.json ./lib",
     "postversion": "cp -r package.json .."
   },
+  "resolutions": {
+    "xml2js": "^0.5.0"
+  },
   "dependencies": {
     "@golevelup/ts-jest": "^0.3.4",
     "@nestjs/axios": "3.1.1",
