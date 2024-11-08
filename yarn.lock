@@ -5438,9 +5438,9 @@ pg-connection-string@^2.6.4:
   resolved "https://registry.npmjs.org/pg-connection-string/-/pg-connection-string-2.6.4.tgz"
   integrity sha512-v+Z7W/0EO707aNMaAEfiGnGL9sxxumwLl2fJvCQtMn9Fxsg+lPpPkdcyBSv/KFgpGdYkMfn+EI1Or2EHjpgLCA==
 
-pg-copy-streams@^6.0.5:
+pg-copy-streams@^6.0.6:
   version "6.0.6"
-  resolved "https://registry.npmjs.org/pg-copy-streams/-/pg-copy-streams-6.0.6.tgz"
+  resolved "https://registry.yarnpkg.com/pg-copy-streams/-/pg-copy-streams-6.0.6.tgz#a24dbcbd2999f4ecd4ab919f92a1b256656e4f3c"
   integrity sha512-Z+Dd2C2NIDTsjyFKmc6a9QLlpM8tjpERx+43RSx0WmL7j3uNChERi3xSvZUL0hWJ1oRUn4S3fhyt3apdSrTyKQ==
   dependencies:
     obuf "^1.1.2"

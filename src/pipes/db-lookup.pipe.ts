@@ -5,23 +5,24 @@ import {
 } from "class-validator";
 import { FindOneOptions } from "typeorm";
 import { DbLookupValidator } from '../validators';
-import { DbLookupConfig } from "../interfaces";
+//import { DbLookupConfig } from "../interfaces";
 
 /**
  * Database lookup validation decorator
  * @param type - The entity type to validate against
  * @param findOption - Function to generate FindOneOptions or 'primary' for primary key lookup
  * @param validationOptions - Standard class-validator options
- * @param dbLookupConfig - Additional validation configuration options
+ * @param ignoreEmpty
  */
 
 export function DbLookup(
   type: any,
   findOption: ((validationArguments: ValidationArguments) => FindOneOptions) | "primary",
   validationOptions: ValidationOptions,
-  dbLookupConfig: DbLookupConfig = {}
+  ignoreEmpty = true
+  //dbLookupConfig: DbLookupConfig = {}
 ) {
-  return function (object: Object, propertyName: string) {
+  /*return function (object: Object, propertyName: string) {
     registerDecorator({
       name: "dbLookup",
       target: object.constructor,
@@ -33,6 +34,16 @@ export function DbLookup(
         validateNumeric: dbLookupConfig.validateNumeric ?? false,
         ignoreEmpty: dbLookupConfig.ignoreEmpty ?? true
       }],
+      validator: DbLookupValidator,
+
+   */
+    return function (object: Object, propertyName: string) {
+    registerDecorator({
+      name: "dbLookup",
+      target: object.constructor,
+      propertyName: propertyName,
+      options: validationOptions,
+      constraints: [{ ignoreEmpty, type, findOption }],
       validator: DbLookupValidator,
     });
   };
