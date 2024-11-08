@@ -63,4 +63,8 @@ export class Logger extends ConsoleLogger {
       this.consoleLogInstance.error(message, { ...args });
     }
   }
+
+  info(message: any, ...optionalParams: [...any, string?]) {
+    super.log(message, ...optionalParams);
+  }
 }
