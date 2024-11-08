@@ -1,4 +1,5 @@
-//export { AuditLogMetadata } from "./reflector-metadata.interface";
+// @ts-ignore
+export { AuditLogMetadata } from "./reflector-metadata.interface";
 export { UserPermissionSet, CurrentUser } from "./current-user.interface";
 export { ValidatorParams } from "./lookup-type.interface";
 export {
