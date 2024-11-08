@@ -65,6 +65,7 @@ describe("CheckCatalogService", () => {
   let mockEntityManager: EntityManager;
 
   beforeEach(async () => {
+    //Mock the EntityManager's query method
     mockEntityManager = {
       query: jest.fn().mockResolvedValue(viewData),
     } as any as EntityManager;

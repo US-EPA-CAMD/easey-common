@@ -1,2 +1,5 @@
 export { UserPermissionSet, CurrentUser } from "./current-user.interface";
-export * from './validator-options.interface';
+export {
+  DbLookupOptions,
+  IsValidCodesOptions,
+} from "./validator-options.interface";
