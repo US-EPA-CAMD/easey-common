@@ -48,14 +48,7 @@ export class CheckCatalogService implements OnApplicationBootstrap {
     let message = `[${code}] - ${result.message}`;
     const plugins = result.plugins;
 
-    message = CheckCatalogService.formatMessage(message, {
-      stackPipeId: values.stackPipeId ?? 'N/A',
-      orisCode: values.orisCode ?? 'N/A',
-      systemID: values.systemID ?? 'N/A',
-      unadjustedHrlyValue: values.unadjustedHrlyValue ?? 'N/A',
-      sampleMethod: values.sampleMethod ?? 'N/A',
-      ...values,
-    }, plugins);
+    message = CheckCatalogService.formatMessage(message, values, plugins);
 
     return message;
   }
