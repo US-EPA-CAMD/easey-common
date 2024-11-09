@@ -8,15 +8,7 @@ interface CheckItem {
   plugins: string[];
 }
 
-interface FormattedValues {
-  stackPipeId?: string;
-  orisCode?: string;
-  systemID?: string;
-  unadjustedHrlyValue?: string;
-  sampleMethod?: string;
-  [key: string]: string | undefined;
-}
-
+type FormattedValues = Record<string, string>;
 @Injectable()
 export class CheckCatalogService implements OnApplicationBootstrap {
   private static checkCatalog: CheckItem[] = [];
