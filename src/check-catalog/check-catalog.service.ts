@@ -63,16 +63,15 @@ export class CheckCatalogService implements OnApplicationBootstrap {
     return message;
   }
 
-  static getFieldnameFromPlugin(plugin: string): string {
-    const specialCases: { [key: string]: string } = {
-      "Stack Pipe ID": "stackPipeId",
-      "SystemID": "systemID",
-      "ORIS Code": "orisCode",
-      "UNADJUSTED_HRLY_VALUE": "unadjustedHrlyValue",
-      "SAMPLE-METHOD": "sampleMethod",
-      "Stack/Pipe ID": "stackPipeId",
-    };
+  static getFieldnameFromPlugin(plugin: string) {
+      const parts = plugin.replace(/[-|_|\/]/g, ' ').split(' ');
 
-    return specialCases[plugin] || plugin.toLowerCase();
+      return parts
+        .map((p, i) => {
+          if (i === 0) return p.toLowerCase();
+          return p.charAt(0).toUpperCase() + p.slice(1).toLowerCase();
+        })
+        .join('');
+  }
   }
 }
