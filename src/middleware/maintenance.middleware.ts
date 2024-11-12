@@ -23,10 +23,6 @@ export class MaintenanceMiddleware implements NestMiddleware {
         ip = (forwardedForHeader as string)?.split(",")[0];
       }
 
-      if (!apiKey) {
-        throw new EaseyException(new Error('API Key required via "x-api-key" request header!'), HttpStatus.BAD_REQUEST);
-      }
-
       const result = await firstValueFrom(
         this.httpService.get(url, {
           headers: {
