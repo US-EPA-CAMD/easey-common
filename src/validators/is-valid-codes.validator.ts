@@ -16,7 +16,7 @@ export class IsValidCodesValidator implements ValidatorConstraintInterface {
     const { type, findOption }: IsValidCodesOptions = args.constraints[0];
 
     if (value) {
-      // Split the value if it includes commas or pipes
+      // Split value if it includes commas or pipes
       if (typeof value === 'string') {
         if (value.includes(',')) {
           value = value.split(',');
@@ -27,7 +27,7 @@ export class IsValidCodesValidator implements ValidatorConstraintInterface {
         }
       }
 
-      // Filter out empty strings from the values array
+      // Filter out empty strings from values array
       value = value.filter((v) => v !== '');
 
       // Validate that input values are not empty or null
@@ -45,9 +45,13 @@ export class IsValidCodesValidator implements ValidatorConstraintInterface {
         // Return true only if the number of found records matches the input values
         return found.length === value.length;
       } catch (error) {
-        // Log the error and throw a meaningful exception
-        console.error('Error during code validation:', error);
-        throw new BadRequestException('Please note, the supplied code could not be validated');
+        // Log the error with structured logging and context
+        console.error(`[ERROR] [IsValidCodesValidator] Error during code validation`, {
+          property: args.property,
+          value,
+          error: error.message,
+        });
+        throw new BadRequestException('Please note, the supplied code could not be validated.');
       }
     }
 
@@ -55,7 +59,7 @@ export class IsValidCodesValidator implements ValidatorConstraintInterface {
   }
 
   // Default error message for validation failure
-defaultMessage(): string {
+  defaultMessage(): string {
     return `Validation failed: One or more of the provided codes are invalid.`;
   }
 }

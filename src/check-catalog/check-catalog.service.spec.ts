@@ -26,7 +26,7 @@ const viewData = [
     checkTypeCode: "TEST",
     checkNumber: 4,
     resultCode: "A",
-    resultMessage: "[SystemID]",
+    resultMessage: "[System ID]",
   },
   {
     checkTypeCode: "TEST",
@@ -65,7 +65,7 @@ describe("CheckCatalogService", () => {
   let mockEntityManager: EntityManager;
 
   beforeEach(async () => {
-    //Mock the EntityManager's query method
+    // Mock the EntityManager's query method
     mockEntityManager = {
       query: jest.fn().mockResolvedValue(viewData),
     } as any as EntityManager;
@@ -117,11 +117,11 @@ describe("CheckCatalogService", () => {
     expect(result).toEqual(`[${checkTypeCode}] - [${orisCode}]`);
   });
 
-  it("[SystemID]", async () => {
+  it("[System ID]", async () => {
     const systemId = "1234";
     const checkTypeCode = "TEST-4-A";
     const result = CheckCatalogService.formatResultMessage(checkTypeCode, {
-      systemID: systemId,
+      systemId: systemId,
     });
     expect(result).toEqual(`[${checkTypeCode}] - [${systemId}]`);
   });
