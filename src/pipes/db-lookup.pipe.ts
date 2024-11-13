@@ -10,6 +10,7 @@ import { DbLookupValidator } from '../validators';
  * Configuration interface for validation-specific options
  * Used by the DbLookup decorator
  */
+
 export interface DbLookupConfig {
   validateNumeric?: boolean;
   ignoreEmpty?: boolean;

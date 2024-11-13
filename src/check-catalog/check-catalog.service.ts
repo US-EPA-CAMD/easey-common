@@ -7,6 +7,7 @@ import { VIEW_NAME } from "./check-catalog.constants";
  * This can be adjusted based on the expected key-value pairs
  * that formatMessage will handle.
  */
+
 interface FormattedValues {
   [key: string]: any; // Can adjust `any` to a more specific type if needed
 }

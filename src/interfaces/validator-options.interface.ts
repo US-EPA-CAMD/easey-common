@@ -5,6 +5,7 @@ import { BaseEntity, EntityTarget, FindManyOptions, FindOneOptions } from "typeo
  * Complete options interface for database lookup validation
  * Used internally by the validator
  */
+
 export interface DbLookupOptions<T extends BaseEntity> {
   ignoreEmpty?: boolean;
   validateNumeric?: boolean;

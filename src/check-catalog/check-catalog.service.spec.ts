@@ -1,6 +1,5 @@
 import { Test, TestingModule } from "@nestjs/testing";
 import { EntityManager } from "typeorm";
-
 import { CheckCatalogService } from "./check-catalog.service";
 
 const viewData = [
