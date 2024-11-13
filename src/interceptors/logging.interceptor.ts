@@ -22,8 +22,13 @@ export class LoggingInterceptor implements NestInterceptor {
         const methodName = context.getHandler().name;
         const eventContext = context.getClass().name;
         const eventName = label || methodNameToEventName[methodName] || methodName;
-        const eventSource = req.ip;
         const userId = req.user?.userId || req.body?.userId;
+        const forwardedForHeader = req.headers["x-forwarded-for"];
+        let eventSource = req.ip;
+        
+        if (forwardedForHeader !== null && forwardedForHeader !== undefined) {
+            eventSource = forwardedForHeader.split(",")[0];
+        }
 
         return next
             .handle()
