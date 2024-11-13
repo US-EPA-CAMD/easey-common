@@ -21,7 +21,7 @@
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint '*/**/*.{js,ts}' --quiet --fix",
     "semantic-release": "semantic-release",
-    "postbuild": "copy package.json lib",
+    "postbuild": "cp package.json lib",
     "postversion": "cp -r package.json .."
   },
   "resolutions": {
