@@ -1,3 +1,13 @@
+## [11.4.11](https://github.com/US-EPA-CAMD/easey-common/compare/v11.4.10...v11.4.11) (2024-11-13)
+
+
+### Bug Fixes
+
+* imporve Input validation ([5341f7b](https://github.com/US-EPA-CAMD/easey-common/commit/5341f7b4aad1eedc4459faaf7790dffe8344e988)), closes [fix/#6416](https://github.com/US-EPA-CAMD/easey-common/issues/6416) [-#6419](https://github.com/-/issues/6419)
+* **improve input validation:** improved input validation & error-handling ([426146d](https://github.com/US-EPA-CAMD/easey-common/commit/426146d39a554fb5a1a87826e277a43e7e3c154d)), closes [fix/#6416](https://github.com/US-EPA-CAMD/easey-common/issues/6416) [-#6419](https://github.com/-/issues/6419)
+* **improve input validation:** to improve Input validation on the project ([71e31ae](https://github.com/US-EPA-CAMD/easey-common/commit/71e31ae352c5649c378edf9633d6de8db1d950dd)), closes [fix/#6416](https://github.com/US-EPA-CAMD/easey-common/issues/6416) [-#6419](https://github.com/-/issues/6419)
+* **improve input validator:** improved input validation - prevent issues relateed to unexpected type ([f6ae339](https://github.com/US-EPA-CAMD/easey-common/commit/f6ae3399a3f004684bb065ca539f119800f4bad4)), closes [#6416](https://github.com/US-EPA-CAMD/easey-common/issues/6416) [-#6419](https://github.com/-/issues/6419)
+
 ## [11.4.10](https://github.com/US-EPA-CAMD/easey-common/compare/v11.4.9...v11.4.10) (2024-09-25)
 
 
