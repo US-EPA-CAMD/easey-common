@@ -1,4 +1,4 @@
-import { uuidv4 } from "uuid";
+import { v4 as uuidv4 } from "uuid";
 
 export const getMetadata = (property: any, metadataKey: string) => {
   if (property.fieldLabels.value === "id") {
