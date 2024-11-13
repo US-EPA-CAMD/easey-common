@@ -35,7 +35,14 @@ export function DbLookup(
       target: object.constructor,
       propertyName: propertyName,
       options: validationOptions,
-      constraints: [{ ignoreEmpty: dbLookupConfig.ignoreEmpty ?? true, type, findOption }],
+      constraints: [
+        {
+          ignoreEmpty: dbLookupConfig.ignoreEmpty ?? true,
+          validateNumeric: dbLookupConfig.validateNumeric ?? false,
+          type,
+          findOption,
+        },
+      ],
       validator: DbLookupValidator,
     });
   };
