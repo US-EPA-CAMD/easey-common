@@ -106,7 +106,7 @@ export class LoggingInterceptor implements NestInterceptor {
     }
 
     filterRequestParams(request: any, bodyOutFields: AuditLogMetadata['bodyOutFields'], paramsOutFields: AuditLogMetadata['paramsOutFields'], queryOutFields: AuditLogMetadata['queryOutFields'], requestInFields: AuditLogMetadata['requestInFields']) {
-        if (!paramsOutFields || !bodyOutFields || !queryOutFields) {
+        if (!paramsOutFields && !bodyOutFields && !queryOutFields) {
             return {};
         }
 
@@ -124,7 +124,7 @@ export class LoggingInterceptor implements NestInterceptor {
         }
 
         if (queryOutFields === '*' || queryOutFields === 'all') {
-            result = { ...result, requestQuery }
+            result = { ...result, ...requestQuery }
         }
 
         if (paramsOutFields !== '*' && paramsOutFields !== 'all' && paramsOutFields.length && Object.getPrototypeOf(requestParams) === Object.prototype) {
