@@ -1,9 +1,8 @@
 export interface AuditLogMetadata {
-  infields?: string[] | '*' | 'all';
   label?: string;
-  outFields?: string[] | boolean | '*' | 'all';
-  bodyOutFields?: string[] | '*' | 'all';
-  paramsOutFields?: string[] | '*' | 'all';
-  queryOutFields?: string[] | '*' | 'all';
-  requestInFields?: string[];
+  omitFields?: string[];
+  requestBodyOutFields?: string[] | '*' | 'all';
+  requestParamsOutFields?: string[] | '*' | 'all';
+  requestQueryOutFields?: string[] | '*' | 'all';
+  responseBodyOutFields?: string[] | '*' | 'all';
 }

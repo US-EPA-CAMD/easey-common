@@ -6,16 +6,15 @@ import { AuditLogMetadata } from "../interfaces";
 const METADATA_KEY = 'auditLog';
 
 export function AuditLog({
-  infields = [],
   label = '',
-  outFields = [],
-  bodyOutFields = [],
-  paramsOutFields = [],
-  queryOutFields = [],
-  requestInFields = [],
+  omitFields = [],
+  requestBodyOutFields = [],
+  requestParamsOutFields = [],
+  requestQueryOutFields = [],
+  responseBodyOutFields = [],
 }: AuditLogMetadata = {}) {
   return applyDecorators(
-    SetMetadata(METADATA_KEY, { infields, label, outFields, bodyOutFields, paramsOutFields, queryOutFields, requestInFields }),
+    SetMetadata(METADATA_KEY, { label, omitFields, requestBodyOutFields, requestParamsOutFields, requestQueryOutFields, responseBodyOutFields }),
     UseInterceptors(LoggingInterceptor),
   );
 }
