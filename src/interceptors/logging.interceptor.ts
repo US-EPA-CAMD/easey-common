@@ -12,10 +12,10 @@ export class LoggingInterceptor implements NestInterceptor {
     constructor(
         private readonly logger: Logger,
         private readonly reflector: Reflector,
-    ) {}
+    ) { }
 
     intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
-        const { label, outFields } = this.reflector.get<AuditLogMetadata>('auditLog', context.getHandler()) ?? {};
+        const { bodyOutFields, infields, label, outFields, paramsOutFields, queryOutFields, requestInFields } = this.reflector.get<AuditLogMetadata>('auditLog', context.getHandler()) ?? {};
 
         const httpContext = context.switchToHttp();
         const req = httpContext.getRequest();
@@ -25,7 +25,7 @@ export class LoggingInterceptor implements NestInterceptor {
         const userId = req.user?.userId || req.body?.userId;
         const forwardedForHeader = req.headers["x-forwarded-for"];
         let eventSource = req.ip;
-        
+
         if (forwardedForHeader !== null && forwardedForHeader !== undefined) {
             eventSource = forwardedForHeader.split(",")[0];
         }
@@ -39,7 +39,7 @@ export class LoggingInterceptor implements NestInterceptor {
                     eventOutcome: "Success",
                     eventSource,
                     userId,
-                    moreInfo: this.filterResponse(response, outFields),
+                    moreInfo: { ...this.filterRequestParams(req, bodyOutFields, paramsOutFields, queryOutFields, requestInFields) as Object, ...this.filterResponse(response, outFields, infields) as Object },
                 })
                 ), catchError((error: any) => {
                     if (error instanceof EaseyException) {
@@ -80,20 +80,88 @@ export class LoggingInterceptor implements NestInterceptor {
             );
     }
 
-    filterResponse(response: unknown, outFields: AuditLogMetadata['outFields']) {
-        if (!outFields || !response || Object.getPrototypeOf(response) !== Object.prototype) {
+    filterResponse(response: unknown, outFields: AuditLogMetadata['outFields'], infields: AuditLogMetadata['infields']) {
+        let resp = response;
+
+        if (!outFields || !response || Object.getPrototypeOf(response) !== Object.prototype || infields === '*' || infields === 'all') {
             return {};
         }
 
-        if (outFields === true || outFields === '*' || outFields === 'all') {
-          return response;
+        if (infields && infields.length) {
+            for (let i = 0; i < infields.length; i++) {
+                delete resp[infields[i]];
+            }
         }
 
-        return Object.keys(response).reduce((acc, key) => {
+        if (outFields === true || outFields === '*' || outFields === 'all') {
+            return resp;
+        }
+
+        return Object.keys(resp).reduce((acc, key) => {
             if (outFields.includes(key)) {
-                acc[key] = response[key];
+                acc[key] = resp[key];
             }
             return acc;
         }, {});
+    }
+
+    filterRequestParams(request: any, bodyOutFields: AuditLogMetadata['bodyOutFields'], paramsOutFields: AuditLogMetadata['paramsOutFields'], queryOutFields: AuditLogMetadata['queryOutFields'], requestInFields: AuditLogMetadata['requestInFields']) {
+        if (!paramsOutFields || !bodyOutFields || !queryOutFields) {
+            return {};
+        }
+
+        const requestParams = request.params;
+        const requestBody = request.body;
+        const requestQuery = request.query;
+        let result = {};
+
+        if (paramsOutFields === '*' || paramsOutFields === 'all') {
+            result = { ...requestParams }
+        }
+
+        if (bodyOutFields === '*' || bodyOutFields === 'all') {
+            result = { ...result, ...requestBody }
+        }
+
+        if (queryOutFields === '*' || queryOutFields === 'all') {
+            result = { ...result, requestQuery }
+        }
+
+        if (paramsOutFields !== '*' && paramsOutFields !== 'all' && paramsOutFields.length && Object.getPrototypeOf(requestParams) === Object.prototype) {
+            const data = Object.keys(requestParams).reduce((acc, key) => {
+                if (paramsOutFields.includes(key)) {
+                    acc[key] = requestParams[key];
+                }
+                return acc;
+            }, {});
+            result = { ...result, ...data }
+        }
+
+        if (bodyOutFields !== '*' && bodyOutFields !== 'all' && bodyOutFields.length && Object.getPrototypeOf(requestBody) === Object.prototype) {
+            const data = Object.keys(requestBody).reduce((acc, key) => {
+                if (bodyOutFields.includes(key)) {
+                    acc[key] = requestBody[key];
+                }
+                return acc;
+            }, {});
+            result = { ...result, ...data }
+        }
+
+        if (queryOutFields !== '*' && queryOutFields !== 'all' && queryOutFields.length && Object.getPrototypeOf(requestQuery) === Object.prototype) {
+            const data = Object.keys(requestQuery).reduce((acc, key) => {
+                if (queryOutFields.includes(key)) {
+                    acc[key] = requestQuery[key];
+                }
+                return acc;
+            }, {});
+            result = { ...result, ...data }
+        }
+        if (requestInFields && requestInFields.length) {
+            for (let i = 0; i < requestInFields.length; i++) {
+                delete result[requestInFields[i]]
+            }
+        }
+
+        return result;
     }
 }
