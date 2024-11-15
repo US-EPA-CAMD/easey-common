@@ -1,3 +1,12 @@
+## [17.8.2](https://github.com/US-EPA-CAMD/easey-common/compare/v17.8.1...v17.8.2) (2024-11-15)
+
+
+### Bug Fixes
+
+* moreInfo updated ([422febd](https://github.com/US-EPA-CAMD/easey-common/commit/422febdcee1f75d23effbb4df44d8b97451a72c3))
+* update the filterRequestparam condition ([93fa6e8](https://github.com/US-EPA-CAMD/easey-common/commit/93fa6e86ecaaf5080df5e8abb8c6136dbdd19c3a))
+* updated with inFields and query,body,params ([efb8fe3](https://github.com/US-EPA-CAMD/easey-common/commit/efb8fe37053f23b05c55343e2ec3b47726cbd7b0))
+
 ## [17.8.1](https://github.com/US-EPA-CAMD/easey-common/compare/v17.8.0...v17.8.1) (2024-11-13)
 
 
