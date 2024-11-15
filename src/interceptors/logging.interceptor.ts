@@ -12,10 +12,10 @@ export class LoggingInterceptor implements NestInterceptor {
     constructor(
         private readonly logger: Logger,
         private readonly reflector: Reflector,
-    ) {}
+    ) { }
 
     intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
-        const { label, outFields } = this.reflector.get<AuditLogMetadata>('auditLog', context.getHandler()) ?? {};
+        const { label, omitFields, requestBodyOutFields, requestParamsOutFields, requestQueryOutFields, responseBodyOutFields } = this.reflector.get<AuditLogMetadata>('auditLog', context.getHandler()) ?? {};
 
         const httpContext = context.switchToHttp();
         const req = httpContext.getRequest();
@@ -25,7 +25,7 @@ export class LoggingInterceptor implements NestInterceptor {
         const userId = req.user?.userId || req.body?.userId;
         const forwardedForHeader = req.headers["x-forwarded-for"];
         let eventSource = req.ip;
-        
+
         if (forwardedForHeader !== null && forwardedForHeader !== undefined) {
             eventSource = forwardedForHeader.split(",")[0];
         }
@@ -39,7 +39,7 @@ export class LoggingInterceptor implements NestInterceptor {
                     eventOutcome: "Success",
                     eventSource,
                     userId,
-                    moreInfo: this.filterResponse(response, outFields),
+                    moreInfo: this.filterMoreInfo(req, response, responseBodyOutFields, requestBodyOutFields, requestParamsOutFields, requestQueryOutFields, omitFields),
                 })
                 ), catchError((error: any) => {
                     if (error instanceof EaseyException) {
@@ -80,18 +80,38 @@ export class LoggingInterceptor implements NestInterceptor {
             );
     }
 
-    filterResponse(response: unknown, outFields: AuditLogMetadata['outFields']) {
-        if (!outFields || !response || Object.getPrototypeOf(response) !== Object.prototype) {
+    filterMoreInfo(request: any, response: unknown, responseBodyOutFields: AuditLogMetadata['responseBodyOutFields'], requestBodyOutFields: AuditLogMetadata['requestBodyOutFields'], requestParamsOutFields: AuditLogMetadata['requestParamsOutFields'], requestQueryOutFields: AuditLogMetadata['requestQueryOutFields'], omitFields: AuditLogMetadata['omitFields']) {
+
+        const requestParams = request.params;
+        const requestBody = request.body;
+        const requestQuery = request.query;
+
+        const getFieldValues = (
+            fields: string[] | '*' | 'all' = [],
+            data: unknown,
+        ) => {
+            if (data && fields && Object.getPrototypeOf(data) === Object.prototype) {
+                if (fields === '*' || fields === 'all') {
+                    return data as Record<string, unknown>;
+                }
+                return Object.keys(data).reduce((acc, key) => {
+                    if (fields.includes(key)) {
+                        acc[key] = data[key];
+                    }
+                    return acc;
+                }, {});
+            }
             return {};
-        }
+        };
 
-        if (outFields === true || outFields === '*' || outFields === 'all') {
-          return response;
-        }
-
-        return Object.keys(response).reduce((acc, key) => {
-            if (outFields.includes(key)) {
-                acc[key] = response[key];
+        return Object.entries({
+            ...getFieldValues(requestParamsOutFields, requestParams),
+            ...getFieldValues(requestBodyOutFields, requestBody),
+            ...getFieldValues(requestQueryOutFields, requestQuery),
+            ...getFieldValues(responseBodyOutFields, response)
+        }).reduce((acc, [key, value]) => {
+            if (!omitFields?.includes(key)) {
+                acc[key] = value;
             }
             return acc;
         }, {});

@@ -7,10 +7,14 @@ const METADATA_KEY = 'auditLog';
 
 export function AuditLog({
   label = '',
-  outFields = [],
+  omitFields = [],
+  requestBodyOutFields = [],
+  requestParamsOutFields = [],
+  requestQueryOutFields = [],
+  responseBodyOutFields = [],
 }: AuditLogMetadata = {}) {
   return applyDecorators(
-    SetMetadata(METADATA_KEY, { label, outFields }),
+    SetMetadata(METADATA_KEY, { label, omitFields, requestBodyOutFields, requestParamsOutFields, requestQueryOutFields, responseBodyOutFields }),
     UseInterceptors(LoggingInterceptor),
   );
 }
