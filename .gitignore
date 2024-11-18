@@ -8,3 +8,8 @@ test-report.xml
 
 # logs
 yarn-error.log
+.env
+.env.test
+.env.local
+.idea/
+.npmrc
