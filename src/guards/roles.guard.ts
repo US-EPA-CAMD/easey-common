@@ -165,7 +165,7 @@ export class RolesGuard implements CanActivate {
           checkedOutCriteria
         )
       ) {
-        return lookupList.has(data[pathChunks[step]]);
+        return lookupList.has(data[pathChunks[step]].toString()); // The lookup list is a set of strings
       }
 
       return false;
