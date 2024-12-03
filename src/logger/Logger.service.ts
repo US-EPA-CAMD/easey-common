@@ -65,6 +65,6 @@ export class Logger extends ConsoleLogger {
   }
 
   info(message: any, ...optionalParams: [...any, string?]) {
-    super.log(message, ...optionalParams);
+    super.log(JSON.stringify(message), ...optionalParams);
   }
 }
