@@ -64,17 +64,20 @@ export class LoggingInterceptor implements NestInterceptor {
                         }, status));
                     }
                     else {
+                        const status = error.status || 500;
+                        const message = error.message || 'Internal Server Error';
+
                         this.logger.info({
                             eventContext,
                             eventName,
                             eventOutcome: "Internal Server Error",
                             eventSource,
                             userId,
-                            moreInfo: { message: error.message }
+                            moreInfo: { message, statusCode: status }
                         });
 
                         // For other errors, log and return a generic error response
-                        return throwError(() => new HttpException('Internal Server Error', 500));
+                        return throwError(() => new HttpException({ statusCode: status, message, }, status));
                     }
                 }),
             );
