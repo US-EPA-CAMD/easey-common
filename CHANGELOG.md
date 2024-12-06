@@ -1,3 +1,10 @@
+# [18.1.0](https://github.com/US-EPA-CAMD/easey-common/compare/v18.0.0...v18.1.0) (2024-12-06)
+
+
+### Features
+
+* updated a metadata example ([6253dee](https://github.com/US-EPA-CAMD/easey-common/commit/6253deebfeba551c57eaf0b935b71a388e22d986))
+
 ## [17.8.2](https://github.com/US-EPA-CAMD/easey-common/compare/v17.8.1...v17.8.2) (2024-11-15)
 
 
