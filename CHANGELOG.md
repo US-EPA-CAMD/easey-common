@@ -1,3 +1,13 @@
+## [18.1.1](https://github.com/US-EPA-CAMD/easey-common/compare/v18.1.0...v18.1.1) (2024-12-09)
+
+
+### Bug Fixes
+
+* add apikey validation ([1509650](https://github.com/US-EPA-CAMD/easey-common/commit/1509650184b87711313e9467fa4ebd937fedf80b))
+* authHeader validation remove ([1046778](https://github.com/US-EPA-CAMD/easey-common/commit/104677862ecc200058779ad7592aa37809d03bca))
+* maintenance middleware added ([3a23295](https://github.com/US-EPA-CAMD/easey-common/commit/3a232953c7ec6e8ee108e83b24726ecb193ae4f7))
+* remove api_key check ([a0e4139](https://github.com/US-EPA-CAMD/easey-common/commit/a0e41391681acc81c1324ceacadd7aab2dd4effc))
+
 # [18.1.0](https://github.com/US-EPA-CAMD/easey-common/compare/v18.0.0...v18.1.0) (2024-12-06)
 
 
