@@ -1,3 +1,10 @@
+## [18.1.2](https://github.com/US-EPA-CAMD/easey-common/compare/v18.1.1...v18.1.2) (2024-12-09)
+
+
+### Bug Fixes
+
+* **5995:** type bug in roles guard ([53239af](https://github.com/US-EPA-CAMD/easey-common/commit/53239af3b803ef2b639ac3ca8088c81b0f6fb23d))
+
 ## [18.1.1](https://github.com/US-EPA-CAMD/easey-common/compare/v18.1.0...v18.1.1) (2024-12-09)
 
 
