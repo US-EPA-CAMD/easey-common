@@ -6832,7 +6832,7 @@ export const propertyMetadata = {
       value: 'id',
     },
     description: 'The unique identifier for the reporting frequency record.',
-    example: '12345',  // Example of an ID value
+    example: '54321',  // Example of an ID value
   },
 
   reportingFreqDTOActive: {

@@ -1,3 +1,43 @@
+## [18.1.2](https://github.com/US-EPA-CAMD/easey-common/compare/v18.1.1...v18.1.2) (2024-12-09)
+
+
+### Bug Fixes
+
+* **5995:** type bug in roles guard ([53239af](https://github.com/US-EPA-CAMD/easey-common/commit/53239af3b803ef2b639ac3ca8088c81b0f6fb23d))
+
+## [18.1.1](https://github.com/US-EPA-CAMD/easey-common/compare/v18.1.0...v18.1.1) (2024-12-09)
+
+
+### Bug Fixes
+
+* add apikey validation ([1509650](https://github.com/US-EPA-CAMD/easey-common/commit/1509650184b87711313e9467fa4ebd937fedf80b))
+* authHeader validation remove ([1046778](https://github.com/US-EPA-CAMD/easey-common/commit/104677862ecc200058779ad7592aa37809d03bca))
+* maintenance middleware added ([3a23295](https://github.com/US-EPA-CAMD/easey-common/commit/3a232953c7ec6e8ee108e83b24726ecb193ae4f7))
+* remove api_key check ([a0e4139](https://github.com/US-EPA-CAMD/easey-common/commit/a0e41391681acc81c1324ceacadd7aab2dd4effc))
+
+# [18.1.0](https://github.com/US-EPA-CAMD/easey-common/compare/v18.0.0...v18.1.0) (2024-12-06)
+
+
+### Features
+
+* updated a metadata example ([6253dee](https://github.com/US-EPA-CAMD/easey-common/commit/6253deebfeba551c57eaf0b935b71a388e22d986))
+
+## [17.8.2](https://github.com/US-EPA-CAMD/easey-common/compare/v17.8.1...v17.8.2) (2024-11-15)
+
+
+### Bug Fixes
+
+* moreInfo updated ([422febd](https://github.com/US-EPA-CAMD/easey-common/commit/422febdcee1f75d23effbb4df44d8b97451a72c3))
+* update the filterRequestparam condition ([93fa6e8](https://github.com/US-EPA-CAMD/easey-common/commit/93fa6e86ecaaf5080df5e8abb8c6136dbdd19c3a))
+* updated with inFields and query,body,params ([efb8fe3](https://github.com/US-EPA-CAMD/easey-common/commit/efb8fe37053f23b05c55343e2ec3b47726cbd7b0))
+
+## [17.8.1](https://github.com/US-EPA-CAMD/easey-common/compare/v17.8.0...v17.8.1) (2024-11-13)
+
+
+### Bug Fixes
+
+* fix ip address and json stringify message ([b07d866](https://github.com/US-EPA-CAMD/easey-common/commit/b07d866f68aa0e1350a3254c824cd723a2c902ef))
+
 # [17.8.0](https://github.com/US-EPA-CAMD/easey-common/compare/v17.7.4...v17.8.0) (2024-11-06)
 
 
