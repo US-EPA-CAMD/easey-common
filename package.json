@@ -21,7 +21,7 @@
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint '*/**/*.{js,ts}' --quiet --fix",
     "semantic-release": "semantic-release",
-    "postbuild": "cp -r ./package.json ./lib",
+    "postbuild": "node -e \"require('fs').copyFile('./package.json', './lib/package.json', (err) => { if (err) throw err; console.log('package.json copied to /lib'); })\"",
     "postversion": "cp -r package.json .."
   },
   "resolutions": {
@@ -41,7 +41,7 @@
     "helmet": "^4.6.0",
     "json2csv": "^5.0.6",
     "pg": "^8.11.5",
-    "pg-copy-streams": "^6.0.5",
+    "pg-copy-streams": "^6.0.6",
     "pg-pool": "^3.6.2",
     "pg-query-stream": "^4.5.5",
     "reflect-metadata": "^0.1.13",
@@ -60,7 +60,7 @@
     "@types/json2csv": "^5.0.3",
     "@types/node": "^16.11.2",
     "@types/uuid": "^8.3.2",
-    "commitizen": "^4.2.4",
+    "commitizen": "^4.3.1",
     "cz-conventional-changelog": "^3.3.0",
     "jest": "^27.3.1",
     "jest-sonar-reporter": "^2.0.0",
@@ -75,6 +75,9 @@
       "json",
       "ts"
     ],
+    "moduleNameMapper": {
+      "^axios$": "axios/dist/node/axios.cjs"
+    },
     "rootDir": "src",
     "testRegex": ".spec.ts$",
     "transform": {
