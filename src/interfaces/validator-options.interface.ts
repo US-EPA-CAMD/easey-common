@@ -13,15 +13,6 @@ export interface DbLookupOptions<T extends BaseEntity> {
 }
 
 /**
- * Configuration interface for validation-specific options
- * Used by the DbLookup decorator
- */
-export interface DbLookupConfig {
-  validateNumeric?: boolean;
-  ignoreEmpty?: boolean;
-}
-
-/**
  * Options for validating multiple codes
  */
 export interface IsValidCodesOptions {

@@ -9,6 +9,7 @@ interface CheckItem {
 }
 
 type FormattedValues = Record<string, string>;
+
 @Injectable()
 export class CheckCatalogService implements OnApplicationBootstrap {
   private static checkCatalog: CheckItem[] = [];
@@ -45,15 +46,13 @@ export class CheckCatalogService implements OnApplicationBootstrap {
       return `[${code}]`;
     }
 
-    let message = `[${code}] - ${result.message}`;
+    const message = `[${code}] - ${result.message}`;
     const plugins = result.plugins;
 
-    message = CheckCatalogService.formatMessage(message, values, plugins);
-
-    return message;
+    return CheckCatalogService.formatMessage(message, values, plugins);
   }
 
-  static formatMessage(message: string, values: FormattedValues, plugins: string[]): string {
+  static formatMessage(message: string, values: FormattedValues = {}, plugins: string[] = []): string {
     plugins.forEach((plugin) => {
       const fieldname = CheckCatalogService.getFieldnameFromPlugin(plugin);
       const value = values[fieldname] ?? 'N/A';
@@ -72,6 +71,5 @@ export class CheckCatalogService implements OnApplicationBootstrap {
           return p.charAt(0).toUpperCase() + p.slice(1).toLowerCase();
         })
         .join('');
-  }
   }
 }
