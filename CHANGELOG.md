@@ -1,3 +1,10 @@
+## [18.1.4](https://github.com/US-EPA-CAMD/easey-common/compare/v18.1.3...v18.1.4) (2024-12-12)
+
+
+### Bug Fixes
+
+* added more swagger docorators. Added documentation in README on how to test locally. ([6b580d1](https://github.com/US-EPA-CAMD/easey-common/commit/6b580d1018987df221a389657d32e11968bab970))
+
 ## [18.1.3](https://github.com/US-EPA-CAMD/easey-common/compare/v18.1.2...v18.1.3) (2024-12-12)
 
 
