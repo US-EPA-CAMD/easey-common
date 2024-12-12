@@ -1,3 +1,10 @@
+## [18.1.5](https://github.com/US-EPA-CAMD/easey-common/compare/v18.1.4...v18.1.5) (2024-12-12)
+
+
+### Bug Fixes
+
+* adjusted swagger docorators to only include common decorators ([9537030](https://github.com/US-EPA-CAMD/easey-common/commit/95370308c888088f9b9d5c6c75fa3b75eb1fea3c))
+
 ## [18.1.4](https://github.com/US-EPA-CAMD/easey-common/compare/v18.1.3...v18.1.4) (2024-12-12)
 
 
