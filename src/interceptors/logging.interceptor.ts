@@ -15,7 +15,7 @@ export class LoggingInterceptor implements NestInterceptor {
     ) { }
 
     intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
-        const { label, omitFields, requestBodyOutFields, requestParamsOutFields, requestQueryOutFields, responseBodyOutFields } = this.reflector.get<AuditLogMetadata>('auditLog', context.getHandler()) ?? {};
+        const { label, omitFields, requestBodyOutFields, requestHeadersOutFields, requestParamsOutFields, requestQueryOutFields, responseBodyOutFields } = this.reflector.get<AuditLogMetadata>('auditLog', context.getHandler()) ?? {};
 
         const httpContext = context.switchToHttp();
         const req = httpContext.getRequest();
@@ -39,7 +39,7 @@ export class LoggingInterceptor implements NestInterceptor {
                     eventOutcome: "Success",
                     eventSource,
                     userId,
-                    moreInfo: this.filterMoreInfo(req, response, responseBodyOutFields, requestBodyOutFields, requestParamsOutFields, requestQueryOutFields, omitFields),
+                    moreInfo: this.filterMoreInfo(req, response, responseBodyOutFields, requestBodyOutFields, requestParamsOutFields, requestQueryOutFields, requestHeadersOutFields, omitFields),
                 })
                 ), catchError((error: any) => {
                     if (error instanceof EaseyException) {
@@ -83,11 +83,49 @@ export class LoggingInterceptor implements NestInterceptor {
             );
     }
 
-    filterMoreInfo(request: any, response: unknown, responseBodyOutFields: AuditLogMetadata['responseBodyOutFields'], requestBodyOutFields: AuditLogMetadata['requestBodyOutFields'], requestParamsOutFields: AuditLogMetadata['requestParamsOutFields'], requestQueryOutFields: AuditLogMetadata['requestQueryOutFields'], omitFields: AuditLogMetadata['omitFields']) {
+    // Generalized function to get values from dynamic JSON structure
+    getValuesFromData(keyPath: string, data: unknown) {
+        let result = [];
+        let keys = keyPath.split('.');
+
+        // Helper function to traverse the object recursively
+        function traverse(currentObj, keyPathParts) {
+            // Base case: if there are no more parts to the keyPath, we're at the target level
+            if (keyPathParts.length === 0) {
+                if (currentObj !== undefined) {
+                    // Push the value of the current object to the result
+                    result.push(currentObj);
+                }
+            } else {
+                // Get the next key in the path
+                let nextKey = keyPathParts.shift();
+
+                // If the current object is an array, we need to process each item in the array
+                if (Array.isArray(currentObj)) {
+                    currentObj.forEach(item => {
+                        if (item && item[nextKey] !== undefined) {
+                            traverse(item[nextKey], [...keyPathParts]);
+                        }
+                    });
+                } else if (currentObj && currentObj[nextKey] !== undefined) {
+                    // If it's an object and the key exists, go deeper
+                    traverse(currentObj[nextKey], keyPathParts);
+                }
+            }
+        }
+
+        // Start the recursive traversal with the provided data and key path
+        traverse(data, keys);
+
+        return result;
+    }
+
+    filterMoreInfo(request: any, response: unknown, responseBodyOutFields: AuditLogMetadata['responseBodyOutFields'], requestBodyOutFields: AuditLogMetadata['requestBodyOutFields'], requestParamsOutFields: AuditLogMetadata['requestParamsOutFields'], requestQueryOutFields: AuditLogMetadata['requestQueryOutFields'], requestHeadersOutFields: AuditLogMetadata['requestHeadersOutFields'], omitFields: AuditLogMetadata['omitFields']) {
 
         const requestParams = request.params;
         const requestBody = request.body;
         const requestQuery = request.query;
+        const requestHeaders = request.headers;
 
         const getFieldValues = (
             fields: string[] | '*' | 'all' = [],
@@ -97,9 +135,21 @@ export class LoggingInterceptor implements NestInterceptor {
                 if (fields === '*' || fields === 'all') {
                     return data as Record<string, unknown>;
                 }
+
+                const dotIncludeList = fields.filter(field => field.includes('.'));
+                const obj = {}
+                for (let i = 0; i < dotIncludeList.length; i++) {
+                    const result = this.getValuesFromData(dotIncludeList[i], data)
+                    obj[dotIncludeList[i]] = result;
+                }
+
                 return Object.keys(data).reduce((acc, key) => {
                     if (fields.includes(key)) {
                         acc[key] = data[key];
+                    }
+
+                    if (Object.keys(obj).length > 0) {
+                        acc = { ...acc, ...obj }
                     }
                     return acc;
                 }, {});
@@ -111,7 +161,8 @@ export class LoggingInterceptor implements NestInterceptor {
             ...getFieldValues(requestParamsOutFields, requestParams),
             ...getFieldValues(requestBodyOutFields, requestBody),
             ...getFieldValues(requestQueryOutFields, requestQuery),
-            ...getFieldValues(responseBodyOutFields, response)
+            ...getFieldValues(responseBodyOutFields, response),
+            ...getFieldValues(requestHeadersOutFields, requestHeaders)
         }).reduce((acc, [key, value]) => {
             if (!omitFields?.includes(key)) {
                 acc[key] = value;
