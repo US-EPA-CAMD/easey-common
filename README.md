@@ -72,6 +72,82 @@ export { Logger } from "./Logger.service";
 4. Implement changes in `N.N.x` or `N.x` branch and then follow the same steps above to commit changes using `yarn commit`
 5. Release workflow will release a new patch version for the version you choose to be patched
 
+# Testing `easey-common` changes locally 
+Making changes to `easey-common` usually involves first testing those changes locally before pushing to remote and merging to `master`. To test these changes against a backend-api (e.g. `easey-camd-services`), you can use local path dependencies to link the local version of `easey-common` to the backend API. This allows you to test changes without pushing `easey-common` to the remote repository.
+
+In the following instructions, we will use `easey-camd-services` as an example backend API to test local changes made to `easey-common`.
+
+By using **local path dependencies**, you can directly link the local version of `easey-common` to `easey-camd-services`.
+
+---
+
+## Steps to Use Local Path Dependencies
+
+### 1. Update Dependency in `easey-camd-services`
+- Navigate to the `easey-camd-services` project directory.
+- Open the `package.json` file.
+- Replace the `easey-common` dependency with a local file path reference:
+
+```json
+"dependencies": {
+  "easey-common": "file:../easey-common/lib"
+}
+```
+
+### 2. Install Dependencies
+- Run the following command in the `easey-camd-services` directory to install dependencies and link the local version of `easey-common`:
+
+```bash
+cd project/easey-camd-services
+yarn install
+```
+
+### 3. Build `easey-common` Locally
+- Navigate to the `easey-common` directory and rebuild the project whenever changes are made:
+
+```bash
+cd project/easey-common
+yarn build
+```
+
+- The rebuilt changes in `easey-common` will immediately reflect in `easey-camd-services`.
+
+### 4. Test Your Changes
+- Do `yarn build` in `easey-camd-services` to build the project.
+- Run and test `easey-camd-services` to verify the changes made in `easey-common`.
+
+---
+
+## Reverting to Remote Dependency
+Once testing is complete and the changes in `easey-common` are finalized, revert the dependency in `easey-camd-services` to the version published in the remote repository:
+
+1. Open `package.json` in `easey-camd-services` and replace the local file reference with the appropriate version number:
+
+```json
+"dependencies": {
+  "easey-common": "x.x.x"
+}
+```
+
+2. Run the following command to reinstall dependencies:
+
+```bash
+yarn install
+```
+
+---
+
+## Notes
+- Always ensure `easey-common` is rebuilt after making changes for the updates to reflect in `easey-camd-services`.
+- If you encounter any issues with local path dependencies, try clearing the `node_modules` directory and reinstalling dependencies:
+
+```bash
+rm -rf node_modules
+yarn install
+```
+
+This workflow allows faster development and testing of changes in `easey-common` while integrating with backend APIs.
+
 ## License & Contributing
 This project is licensed under the MIT License. We encourage you to read this project’s [License](https://github.com/US-EPA-CAMD/devops/blob/master/LICENSE), [Contributing Guidelines](https://github.com/US-EPA-CAMD/devops/blob/master/CONTRIBUTING.md), and [Code of Conduct](https://github.com/US-EPA-CAMD/devops/blob/master/CODE_OF_CONDUCT.md).
 
