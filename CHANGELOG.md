@@ -1,3 +1,10 @@
+## [18.1.3](https://github.com/US-EPA-CAMD/easey-common/compare/v18.1.2...v18.1.3) (2024-12-12)
+
+
+### Bug Fixes
+
+* add swagger decorator definitions for API visibility control (make APIs visible or hide them from the swagger page) ([fe7b4ad](https://github.com/US-EPA-CAMD/easey-common/commit/fe7b4ad431c9c4a29150bd7c2ce193b183f3b38d))
+
 ## [18.1.2](https://github.com/US-EPA-CAMD/easey-common/compare/v18.1.1...v18.1.2) (2024-12-09)
 
 
