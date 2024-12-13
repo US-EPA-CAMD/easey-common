@@ -1,15 +1,41 @@
 import { Injectable } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
-import { ReadStream } from "fs";
+import { existsSync, readFileSync, ReadStream } from "fs";
+import { TlsOptions } from "tls";
 
-let Pool = require("pg-pool");
+const Pool = require("pg-pool");
 const QueryStream = require("pg-query-stream");
 
 @Injectable()
 export class StreamService {
   private pool;
+  private tlsOptions: TlsOptions = { requestCert: true };
 
   constructor(private readonly configService: ConfigService) {
+    const host = configService.get<string>("database.host");
+    this.tlsOptions.rejectUnauthorized = host !== "localhost";
+
+    if (existsSync(`${process.cwd()}\\us-gov-west-1-bundle.pem`)) {
+      console.log("Loading TLS/SSL us-gov-west-1-bundle.pem ca certificate...");
+      this.tlsOptions.ca =
+        host !== "localhost"
+          ? readFileSync(
+              `${process.cwd()}\\us-gov-west-1-bundle.pem`
+            ).toString()
+          : null;
+    } else {
+      console.log("No TLS/SSL cert available!");
+      this.tlsOptions.ca = null;
+    }
+
+    console.log("TLS/SSL Config (Stream Service):", {
+      ...this.tlsOptions,
+      ca:
+        this.tlsOptions.ca !== null
+          ? `${this.tlsOptions.ca.slice(0, 30)}...(truncated for display only)`
+          : null,
+    });
+
     this.pool = new Pool({
       user: this.configService.get<string>("database.user"),
       host: this.configService.get<string>("database.host"),
@@ -20,6 +46,7 @@ export class StreamService {
       idleTimeoutMillis: 1000, // close idle clients after 1 second
       connectionTimeoutMillis: 5000, // return an error after 1 second if connection could not be established
       maxUses: 500, // close (and replace) a connection after it has been used 7500 times
+      ssl: this.tlsOptions,
     });
   }
 
