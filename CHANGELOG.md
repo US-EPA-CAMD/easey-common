@@ -1,3 +1,10 @@
+# [11.5.0](https://github.com/US-EPA-CAMD/easey-common/compare/v11.4.11...v11.5.0) (2024-12-13)
+
+
+### Features
+
+* **6396:** added SSL configuration to StreamService ([2d8e6ca](https://github.com/US-EPA-CAMD/easey-common/commit/2d8e6ca90148483859744f01df05dca34ae12175))
+
 ## [11.4.11](https://github.com/US-EPA-CAMD/easey-common/compare/v11.4.10...v11.4.11) (2024-11-13)
 
 
