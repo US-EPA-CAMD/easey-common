@@ -122,7 +122,7 @@ Semantic Release follows the **Semantic Versioning (SemVer)** standard to determ
 
 #### Example:
 If the current version is `18.5.1`:
-- Commit `fix: correct typo` → New version is `18.5.2`
+- Commit `fix: correct typo in method call` → New version is `18.5.2`
 - Commit `feat: add new API endpoint` → New version is `18.6.0`
 - Commit with `BREAKING CHANGE: update authentication flow` → New version is `19.0.0`
 
