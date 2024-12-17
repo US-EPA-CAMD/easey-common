@@ -1,3 +1,11 @@
+## [18.1.6](https://github.com/US-EPA-CAMD/easey-common/compare/v18.1.5...v18.1.6) (2024-12-17)
+
+
+### Bug Fixes
+
+* auditlog get value from inside the object ([85007a3](https://github.com/US-EPA-CAMD/easey-common/commit/85007a3a161811d6dc6face82541ce887f22dd93))
+* update audit log generic error response ([c936bb3](https://github.com/US-EPA-CAMD/easey-common/commit/c936bb320ee1c27c4023794df793b04fd0ed511a))
+
 ## [18.1.5](https://github.com/US-EPA-CAMD/easey-common/compare/v18.1.4...v18.1.5) (2024-12-12)
 
 
