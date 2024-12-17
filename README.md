@@ -72,6 +72,62 @@ export { Logger } from "./Logger.service";
 4. Implement changes in `N.N.x` or `N.x` branch and then follow the same steps above to commit changes using `yarn commit`
 5. Release workflow will release a new patch version for the version you choose to be patched
 
+## Using Manual Commit Messages to Tell Semantic Release to Create a New Version
+### How Semantic Release Works
+
+**Semantic Release** automates versioning and package publishing by analyzing commit messages in the Git repository. 
+
+---
+
+### 1. When Does Semantic Release Trigger a New Version?
+
+Semantic Release determines if a new version should be released by analyzing **conventional commit messages**. A new release is triggered if there are commits with keywords indicating a version change.
+
+#### Commit Message Keywords
+
+Semantic Release relies on [Conventional Commits](https://www.conventionalcommits.org/) to decide if a release is required:
+
+Assuming current easey-common version is 18.5.1
+- **`fix:`** (or `patch:`): Indicates a bug fix. Triggers a **patch release** (e.g., `18.5.2`).
+- **`feat:`**: Indicates a new feature. Triggers a **minor release** (e.g., `18.6.0`).
+- **Breaking Changes**: Any commit that contains `BREAKING CHANGE:` in the footer or commit description triggers a **major release** (e.g., `19.0.0`).
+
+#### Example:
+If these commits exist since the last release:
+1. `fix: resolve issue with guards` → Patch Release
+2. `feat: add additional user guards` → Minor Release
+3. `fix: Client guards now require a new http header` and `BREAKING CHANGE: deprecated old API` → Major Release
+
+Semantic Release will aggregate these and release the highest applicable version increment.
+
+---
+
+### 2. How Does Semantic Release Determine the New Version Number?
+
+Semantic Release follows the **Semantic Versioning (SemVer)** standard to determine the new version number. Based on the commit types, it increments the version number appropriately:
+
+- **Patch Release**:
+  Increment the last digit (e.g., `18.5.1` → `18.5.2`) for bug fixes (`fix:`).
+- **Minor Release**:
+  Increment the middle digit (e.g., `18.5.1` → `18.6.0`) for new features (`feat:`).
+- **Major Release**:
+  Increment the first digit (e.g., `18.5.1` → `19.0.0`) for breaking changes (`BREAKING CHANGE:`).
+
+#### Rules for Determination:
+1. **Aggregate Commit Types**:
+   If multiple commit types exist, the highest priority determines the version:
+    - Major > Minor > Patch
+2. **No Relevant Commits**:
+   If there are no `fix:`, `feat:`, or `BREAKING CHANGE` commits, no new version is released.
+
+#### Example:
+If the current version is `18.5.1`:
+- Commit `fix: correct typo` → New version is `18.5.2`
+- Commit `feat: add new API endpoint` → New version is `18.6.0`
+- Commit with `BREAKING CHANGE: update authentication flow` → New version is `19.0.0`
+
+---
+
 # Testing `easey-common` changes locally 
 Making changes to `easey-common` usually involves first testing those changes locally before pushing to remote and merging to `master`. To test these changes against a backend-api (e.g. `easey-camd-services`), you can use local path dependencies to link the local version of `easey-common` to the backend API. This allows you to test changes without pushing `easey-common` to the remote repository.
 
@@ -89,8 +145,10 @@ By using **local path dependencies**, you can directly link the local version of
 - Replace the `easey-common` dependency with a local file path reference:
 
 ```json
-"dependencies": {
-  "easey-common": "file:../easey-common/lib"
+{
+  "dependencies": {
+    "easey-common": "file:../easey-common/lib"
+  }
 }
 ```
 
@@ -124,8 +182,10 @@ Once testing is complete and the changes in `easey-common` are finalized, revert
 1. Open `package.json` in `easey-camd-services` and replace the local file reference with the appropriate version number:
 
 ```json
-"dependencies": {
-  "easey-common": "x.x.x"
+{
+    "dependencies": {
+      "easey-common": "x.x.x"
+    }
 }
 ```
 
