@@ -7,7 +7,7 @@ import {
 import { applyDecorators } from '@nestjs/common';
 import {getConfigValue} from "./functions";
 
-const env = getConfigValue('EASEY_CAMD_SERVICES_ENV', 'local-dev');
+const env = getConfigValue('app.env', 'local-dev');
 const enableSwagger = [
   'local-dev',
   'dev', 'develop', 'development',
