@@ -1,3 +1,21 @@
+# [19.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v18.1.6...v19.0.0) (2024-12-17)
+
+
+### Bug Fixes
+
+* **#6416-inputvalidator:** to Improve: ([bde1921](https://github.com/US-EPA-CAMD/easey-common/commit/bde19210ed078c4e06d224fbb2644fdbe75b3ac2)), closes [#6416](https://github.com/US-EPA-CAMD/easey-common/issues/6416) [Fix/#6416](https://github.com/US-EPA-CAMD/easey-common/issues/6416)
+* imporve input validation ([ce4ce0a](https://github.com/US-EPA-CAMD/easey-common/commit/ce4ce0a79eac79d90ec2a6cc441be6f031bfded1))
+* improve Input Validator ([27395ac](https://github.com/US-EPA-CAMD/easey-common/commit/27395ac51b28c38fcab00012b34f115a2e453d59)), closes [#6416](https://github.com/US-EPA-CAMD/easey-common/issues/6416)
+* **input validation, error-handling, testing, build:** to improve input validation & error-handling ([d2932a6](https://github.com/US-EPA-CAMD/easey-common/commit/d2932a643f395ef2467581ad39cc8467109cec92)), closes [Fix-#6416](https://github.com/Fix-/issues/6416) [#6417](https://github.com/US-EPA-CAMD/easey-common/issues/6417) [#6418](https://github.com/US-EPA-CAMD/easey-common/issues/6418) [#6419](https://github.com/US-EPA-CAMD/easey-common/issues/6419)
+* **input validator:** improve-Input Validation, Error-handling & logging & complete test suit ([6aeeedd](https://github.com/US-EPA-CAMD/easey-common/commit/6aeeedd6659f8856a20702e3c93a174201bdb214)), closes [#6416](https://github.com/US-EPA-CAMD/easey-common/issues/6416)
+* removed extra brace, optional parameters in function signature ([41f0fe3](https://github.com/US-EPA-CAMD/easey-common/commit/41f0fe356b0bbccc5542563f7164ef1f71f2ef50))
+* to imporve Input Validation logic ([5299be8](https://github.com/US-EPA-CAMD/easey-common/commit/5299be8bbd7a4b09e703326210fc7785e65f4f43)), closes [#6416](https://github.com/US-EPA-CAMD/easey-common/issues/6416)
+
+
+### BREAKING CHANGES
+
+* **input validation, error-handling, testing, build:** Changed the parameters of return type
+
 ## [18.1.6](https://github.com/US-EPA-CAMD/easey-common/compare/v18.1.5...v18.1.6) (2024-12-17)
 
 
