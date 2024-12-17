@@ -9,12 +9,13 @@ export function AuditLog({
   label = '',
   omitFields = [],
   requestBodyOutFields = [],
+  requestHeadersOutFields = [],
   requestParamsOutFields = [],
   requestQueryOutFields = [],
   responseBodyOutFields = [],
 }: AuditLogMetadata = {}) {
   return applyDecorators(
-    SetMetadata(METADATA_KEY, { label, omitFields, requestBodyOutFields, requestParamsOutFields, requestQueryOutFields, responseBodyOutFields }),
+    SetMetadata(METADATA_KEY, { label, omitFields, requestBodyOutFields, requestHeadersOutFields, requestParamsOutFields, requestQueryOutFields, responseBodyOutFields }),
     UseInterceptors(LoggingInterceptor),
   );
 }

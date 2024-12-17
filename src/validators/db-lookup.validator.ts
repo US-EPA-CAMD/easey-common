@@ -1,46 +1,63 @@
-import {
-  ValidationArguments,
-  ValidatorConstraint,
-  ValidatorConstraintInterface,
-} from 'class-validator';
-import { Injectable } from '@nestjs/common';
-import { BaseEntity, EntityManager, IsNull } from 'typeorm';
-import { DbLookupOptions } from '../interfaces/validator-options.interface';
+import { Injectable, BadRequestException } from '@nestjs/common';
+import { ValidationArguments, ValidatorConstraint, ValidatorConstraintInterface } from 'class-validator';
+import { EntityManager, IsNull, BaseEntity } from 'typeorm';
+import { DbLookupOptions } from '../interfaces';
+
+/**
+ * Validator for database lookup validation
+ * Handles validation of values against database entities
+ */
 
 @Injectable()
 @ValidatorConstraint({ name: 'dbLookup', async: true })
 export class DbLookupValidator implements ValidatorConstraintInterface {
   constructor(private readonly entityManager: EntityManager) {}
 
-  async validate(value: any, args: ValidationArguments) {
-    const {
-      ignoreEmpty = true,
-      type,
-      findOption,
-    }: DbLookupOptions<BaseEntity> = args.constraints[0];
+  /**
+   * Validates the input value against database records
+   * @param value - The value to validate
+   * @param args - Validation arguments containing constraints and property information
+   */
 
-    if (value || !ignoreEmpty) {
-      const options =
-        findOption === 'primary'
-          ? // Find by the entity's primary key.
-            {
-              where: {
-                [this.entityManager.getRepository(type).metadata
-                  .primaryColumns[0].propertyName]: value ?? IsNull(),
-              },
-            }
-          : // Use the provided find options.
-            // Assign only the value in question to the `value` property of the `validationArguments` parameter
-            // (if `each` is true on the decorator, `args.value` will differ from `value`).
-            findOption?.({ ...args, value }) ?? {
-              // Default to finding by the property with the same name.
-              where: {
-                [args.property]: value ?? IsNull(),
-              },
-            };
-      const found = await this.entityManager.findOne(type, options);
-      return found != null;
+  async validate(value: any, args: ValidationArguments) {
+    // Correctly handle the constraints array
+    const constraints = args.constraints[0] as DbLookupOptions<BaseEntity>;
+    const { type, findOption, validateNumeric, ignoreEmpty } = constraints;
+
+    if (!value && ignoreEmpty) {
+      return true;
     }
-    return true;
+
+    if (validateNumeric && value !== null) {
+      if (isNaN(Number(value)) || !String(value).match(/^\d+$/)) {
+        throw new BadRequestException(
+          `${args.property} must be a valid numeric value`
+        );
+      }
+    }
+
+    try {
+      const options = findOption === 'primary'
+        ? {
+            where: {
+              [this.entityManager.getRepository(type).metadata
+                .primaryColumns[0].propertyName]: value ?? IsNull(),
+            },
+          }
+        : findOption?.({ ...args, value }) ?? {
+            where: { [args.property]: value ?? IsNull() },
+          };
+
+      const found = await this.entityManager.findOne(type, options);
+      return !!found;
+    } catch (error) {
+      throw new BadRequestException(
+        `Validation failed for ${args.property}: ${error.message}`
+      );
+    }
+  }
+
+  defaultMessage(args: ValidationArguments) {
+    return `${args.property} with value '${args.value}' was not found in the database`;
   }
 }

@@ -1,3 +1,50 @@
+# [19.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v18.1.6...v19.0.0) (2024-12-17)
+
+
+### Bug Fixes
+
+* **#6416-inputvalidator:** to Improve: ([bde1921](https://github.com/US-EPA-CAMD/easey-common/commit/bde19210ed078c4e06d224fbb2644fdbe75b3ac2)), closes [#6416](https://github.com/US-EPA-CAMD/easey-common/issues/6416) [Fix/#6416](https://github.com/US-EPA-CAMD/easey-common/issues/6416)
+* imporve input validation ([ce4ce0a](https://github.com/US-EPA-CAMD/easey-common/commit/ce4ce0a79eac79d90ec2a6cc441be6f031bfded1))
+* improve Input Validator ([27395ac](https://github.com/US-EPA-CAMD/easey-common/commit/27395ac51b28c38fcab00012b34f115a2e453d59)), closes [#6416](https://github.com/US-EPA-CAMD/easey-common/issues/6416)
+* **input validation, error-handling, testing, build:** to improve input validation & error-handling ([d2932a6](https://github.com/US-EPA-CAMD/easey-common/commit/d2932a643f395ef2467581ad39cc8467109cec92)), closes [Fix-#6416](https://github.com/Fix-/issues/6416) [#6417](https://github.com/US-EPA-CAMD/easey-common/issues/6417) [#6418](https://github.com/US-EPA-CAMD/easey-common/issues/6418) [#6419](https://github.com/US-EPA-CAMD/easey-common/issues/6419)
+* **input validator:** improve-Input Validation, Error-handling & logging & complete test suit ([6aeeedd](https://github.com/US-EPA-CAMD/easey-common/commit/6aeeedd6659f8856a20702e3c93a174201bdb214)), closes [#6416](https://github.com/US-EPA-CAMD/easey-common/issues/6416)
+* removed extra brace, optional parameters in function signature ([41f0fe3](https://github.com/US-EPA-CAMD/easey-common/commit/41f0fe356b0bbccc5542563f7164ef1f71f2ef50))
+* to imporve Input Validation logic ([5299be8](https://github.com/US-EPA-CAMD/easey-common/commit/5299be8bbd7a4b09e703326210fc7785e65f4f43)), closes [#6416](https://github.com/US-EPA-CAMD/easey-common/issues/6416)
+
+
+### BREAKING CHANGES
+
+* **input validation, error-handling, testing, build:** Changed the parameters of return type
+
+## [18.1.6](https://github.com/US-EPA-CAMD/easey-common/compare/v18.1.5...v18.1.6) (2024-12-17)
+
+
+### Bug Fixes
+
+* auditlog get value from inside the object ([85007a3](https://github.com/US-EPA-CAMD/easey-common/commit/85007a3a161811d6dc6face82541ce887f22dd93))
+* update audit log generic error response ([c936bb3](https://github.com/US-EPA-CAMD/easey-common/commit/c936bb320ee1c27c4023794df793b04fd0ed511a))
+
+## [18.1.5](https://github.com/US-EPA-CAMD/easey-common/compare/v18.1.4...v18.1.5) (2024-12-12)
+
+
+### Bug Fixes
+
+* adjusted swagger docorators to only include common decorators ([9537030](https://github.com/US-EPA-CAMD/easey-common/commit/95370308c888088f9b9d5c6c75fa3b75eb1fea3c))
+
+## [18.1.4](https://github.com/US-EPA-CAMD/easey-common/compare/v18.1.3...v18.1.4) (2024-12-12)
+
+
+### Bug Fixes
+
+* added more swagger docorators. Added documentation in README on how to test locally. ([6b580d1](https://github.com/US-EPA-CAMD/easey-common/commit/6b580d1018987df221a389657d32e11968bab970))
+
+## [18.1.3](https://github.com/US-EPA-CAMD/easey-common/compare/v18.1.2...v18.1.3) (2024-12-12)
+
+
+### Bug Fixes
+
+* add swagger decorator definitions for API visibility control (make APIs visible or hide them from the swagger page) ([fe7b4ad](https://github.com/US-EPA-CAMD/easey-common/commit/fe7b4ad431c9c4a29150bd7c2ce193b183f3b38d))
+
 ## [18.1.2](https://github.com/US-EPA-CAMD/easey-common/compare/v18.1.1...v18.1.2) (2024-12-09)
 
 
