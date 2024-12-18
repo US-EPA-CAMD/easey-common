@@ -1,3 +1,10 @@
+## [19.0.1](https://github.com/US-EPA-CAMD/easey-common/compare/v19.0.0...v19.0.1) (2024-12-18)
+
+
+### Bug Fixes
+
+* **6419:** type error in the CheckCatalogService ([4af1692](https://github.com/US-EPA-CAMD/easey-common/commit/4af1692a79c775a3134b7c79c963385c47d1e3ad))
+
 # [19.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v18.1.6...v19.0.0) (2024-12-17)
 
 
