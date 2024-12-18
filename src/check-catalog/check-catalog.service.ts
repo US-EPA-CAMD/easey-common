@@ -8,7 +8,7 @@ interface CheckItem {
   plugins: string[];
 }
 
-type FormattedValues = Record<string, string>;
+type FormattedValues = Record<string, any>;
 
 @Injectable()
 export class CheckCatalogService implements OnApplicationBootstrap {
