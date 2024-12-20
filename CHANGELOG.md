@@ -1,3 +1,10 @@
+## [19.0.3](https://github.com/US-EPA-CAMD/easey-common/compare/v19.0.2...v19.0.3) (2024-12-20)
+
+
+### Bug Fixes
+
+* Corrected defect where decorators that depend on environment variables did not work when placed in easey-common ([930b724](https://github.com/US-EPA-CAMD/easey-common/commit/930b7241cad9f4b144868957e2832d4a9e25b185))
+
 ## [19.0.2](https://github.com/US-EPA-CAMD/easey-common/compare/v19.0.1...v19.0.2) (2024-12-18)
 
 
