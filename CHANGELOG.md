@@ -1,3 +1,10 @@
+## [19.0.2](https://github.com/US-EPA-CAMD/easey-common/compare/v19.0.1...v19.0.2) (2024-12-18)
+
+
+### Bug Fixes
+
+* now passing correct app.env parameter to getConfigValue call. ([376c1b4](https://github.com/US-EPA-CAMD/easey-common/commit/376c1b48ed659b016296a98737272472b1870eba))
+
 ## [19.0.1](https://github.com/US-EPA-CAMD/easey-common/compare/v19.0.0...v19.0.1) (2024-12-18)
 
 
