@@ -185,9 +185,11 @@ Once testing is complete and the changes in `easey-common` are finalized, revert
 }
 ```
 
-2. Run the following command to reinstall dependencies:
+2. Run the following command to reinstall dependencies (change x.y.z with the correct version):
 
 ```bash
+yarn remove @us-epa-camd/easey-common
+yarn add @us-epa-camd/easey-common@x.y.z
 yarn install
 ```
 
