@@ -141,8 +141,7 @@ By using **local path dependencies**, you can directly link the local version of
 
 ### 1. Update Dependency in `easey-camd-services`
 - Navigate to the `easey-camd-services` project directory.
-- Open the `package.json` file.
-- Replace the `easey-common` dependency with a local file path reference:
+- Update the `package.json` file and replace the `easey-common` dependency with a local file path reference:
 
 ```json
 {
@@ -151,17 +150,14 @@ By using **local path dependencies**, you can directly link the local version of
   }
 }
 ```
-
-### 2. Install Dependencies
 - Run the following command in the `easey-camd-services` directory to install dependencies and link the local version of `easey-common`:
 
 ```bash
-cd project/easey-camd-services
-yarn install
+yarn add file:./../easey-common/lib
+yarn build 
 ```
 
 ### 3. Build `easey-common` Locally
-- Navigate to the `easey-common` directory and rebuild the project whenever changes are made:
 
 ```bash
 cd project/easey-common
@@ -198,7 +194,7 @@ yarn install
 ---
 
 ## Notes
-- Always ensure `easey-common` is rebuilt after making changes for the updates to reflect in `easey-camd-services`.
+- Always ensure `easey-common` is rebuilt using `yarn build` after making changes for the updates to reflect in `easey-camd-services`.
 - If you encounter any issues with local path dependencies, try clearing the `node_modules` directory and reinstalling dependencies:
 
 ```bash
