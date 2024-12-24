@@ -6,7 +6,7 @@ const { createLogger, format, transports } = require('winston');
 export class Logger extends ConsoleLogger {
   private consoleLogInstance: ReturnType<typeof createLogger>;
   private fileLogInstance: ReturnType<typeof createLogger>;
-  private isDevelopment = false;
+  private isEnableDebug = false;
 
   constructor(private readonly configService: ConfigService) {
     super();
@@ -18,8 +18,8 @@ export class Logger extends ConsoleLogger {
       transports: [new transports.Console({})],
     });
 
-    if (this.configService.get<string>('app.env') === 'local-dev') {
-      this.isDevelopment = true;
+    if (this.configService.get<string>('app.enableDebug')) {
+      this.isEnableDebug = true;
       const logFile = this.configService.get<string>('app.logFile');
       const logFileLevel = this.configService.get<string>('app.logFileLevel');
       if (logFile) {
@@ -47,18 +47,20 @@ export class Logger extends ConsoleLogger {
   }
 
   debug(message: any, ...optionalParams: [...any, string?]) {
-    super.debug(message, ...optionalParams);
-    if (this.fileLogInstance) {
-      this.fileLogInstance.debug(message, {
-        ...(this.context ? { context: this.context } : {}),
-        ...(optionalParams.length ? { data: optionalParams } : {}),
-      });
+    if (this.isEnableDebug) {
+      super.debug(message, ...optionalParams);
+      if (this.fileLogInstance) {
+        this.fileLogInstance.debug(message, {
+          ...(this.context ? { context: this.context } : {}),
+          ...(optionalParams.length ? { data: optionalParams } : {}),
+        });
+      }
     }
   }
 
   error(message: any, stack?: string, context?: string, args?: object) {
     super.error(message, stack, context);
-    if (!this.isDevelopment) {
+    if (this.configService.get<string>('app.env') !== 'local-dev') {
       //If in local development mode only show the internal errors
       this.consoleLogInstance.error(message, { ...args });
     }
