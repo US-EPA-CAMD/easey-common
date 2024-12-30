@@ -1,4 +1,4 @@
-import { ConsoleLogger, Injectable, Scope } from '@nestjs/common';
+import { ConsoleLogger, Injectable, LogLevel, Scope } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 const { createLogger, format, transports } = require('winston');
 
@@ -6,7 +6,7 @@ const { createLogger, format, transports } = require('winston');
 export class Logger extends ConsoleLogger {
   private consoleLogInstance: ReturnType<typeof createLogger>;
   private fileLogInstance: ReturnType<typeof createLogger>;
-  private isEnableDebug = false;
+  private isDevelopment = false;
 
   constructor(private readonly configService: ConfigService) {
     super();
@@ -18,8 +18,8 @@ export class Logger extends ConsoleLogger {
       transports: [new transports.Console({})],
     });
 
-    if (this.configService.get<string>('app.enableDebug')) {
-      this.isEnableDebug = true;
+    if (this.configService.get<string>('app.env') === 'local-dev') {
+      this.isDevelopment = true;
       const logFile = this.configService.get<string>('app.logFile');
       const logFileLevel = this.configService.get<string>('app.logFileLevel');
       if (logFile) {
@@ -44,23 +44,31 @@ export class Logger extends ConsoleLogger {
         });
       }
     }
+
+    // Filter the log levels based on the environment.
+    const levels: LogLevel[] = ['log', 'error'];
+    if (this.configService.get<string>('app.enableDebug')) {
+      levels.push('debug');
+    }
+    if (this.isDevelopment) {
+      levels.push('verbose', 'warn');
+    }
+    this.setLogLevels(levels);
   }
 
   debug(message: any, ...optionalParams: [...any, string?]) {
-    if (this.isEnableDebug) {
-      super.debug(message, ...optionalParams);
-      if (this.fileLogInstance) {
-        this.fileLogInstance.debug(message, {
-          ...(this.context ? { context: this.context } : {}),
-          ...(optionalParams.length ? { data: optionalParams } : {}),
-        });
-      }
+    super.debug(message, ...optionalParams);
+    if (this.fileLogInstance) {
+      this.fileLogInstance.debug(message, {
+        ...(this.context ? { context: this.context } : {}),
+        ...(optionalParams.length ? { data: optionalParams } : {}),
+      });
     }
   }
 
   error(message: any, stack?: string, context?: string, args?: object) {
     super.error(message, stack, context);
-    if (this.configService.get<string>('app.env') !== 'local-dev') {
+    if (!this.isDevelopment) {
       //If in local development mode only show the internal errors
       this.consoleLogInstance.error(message, { ...args });
     }
