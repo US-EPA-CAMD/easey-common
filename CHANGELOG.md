@@ -1,3 +1,10 @@
+## [19.0.5](https://github.com/US-EPA-CAMD/easey-common/compare/v19.0.4...v19.0.5) (2025-01-03)
+
+
+### Bug Fixes
+
+* implement matchesRegex and isInRange ([32384cb](https://github.com/US-EPA-CAMD/easey-common/commit/32384cbec27aff41b1138149b9f4f30b0969cf75))
+
 ## [19.0.4](https://github.com/US-EPA-CAMD/easey-common/compare/v19.0.3...v19.0.4) (2025-01-03)
 
 
