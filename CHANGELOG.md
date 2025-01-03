@@ -1,3 +1,11 @@
+## [19.0.4](https://github.com/US-EPA-CAMD/easey-common/compare/v19.0.3...v19.0.4) (2025-01-03)
+
+
+### Bug Fixes
+
+* filter out debug logs ([0861e81](https://github.com/US-EPA-CAMD/easey-common/commit/0861e81e293003dbaa9580959ae0a3c841a3e1a3))
+* filter out debug logs in upper environments ([649353e](https://github.com/US-EPA-CAMD/easey-common/commit/649353e0eba1ae2c7c8883c5ac30b308682f69fe))
+
 ## [19.0.3](https://github.com/US-EPA-CAMD/easey-common/compare/v19.0.2...v19.0.3) (2024-12-20)
 
 
