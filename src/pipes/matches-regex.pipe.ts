@@ -1,8 +1,12 @@
-import {
-  registerDecorator,
-  ValidationOptions,
-  ValidationArguments,
-} from 'class-validator';
+import { registerDecorator, ValidationArguments, ValidationOptions } from "class-validator";
+
+export function matchesRegex(value: any, regex: string): boolean {
+  if (value) {
+    const RegValidator = new RegExp(regex);
+    return RegValidator.test(value);
+  }
+  return true;
+}
 
 export function MatchesRegEx(
   regex: string,
@@ -16,11 +20,7 @@ export function MatchesRegEx(
       options: validationOptions,
       validator: {
         validate(value: any, args: ValidationArguments) {
-          if (value) {
-            const RegValidator = new RegExp(regex);
-            return RegValidator.test(value);
-          }
-          return true;
+          return matchesRegex(value, regex);
         },
       },
     });

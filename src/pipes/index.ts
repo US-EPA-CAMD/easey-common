@@ -8,6 +8,7 @@ export { IsYearFormat } from "./is-year-format.pipe";
 export { IsInYearRange } from "./is-in-year-range.pipe";
 export { IsValidNumber } from "./is-valid-number.pipe";
 export { IsInRange } from "./is-in-range.pipe";
+export { isInRange } from "./is-in-range.pipe";
 export { IsInEnum } from "./is-in-enum.pipe";
 export { IsInResponse } from "./is-in-response.pipe";
 export { IsNotEmptyString } from "./is-not-empty-string.pipe";
@@ -19,6 +20,7 @@ export { IsYearGreater } from "./is-year-greater.pipe";
 export { Min } from "./min.pipe";
 export { Max } from "./max.pipe";
 export { MatchesRegEx } from "./matches-regex.pipe";
+export { matchesRegex } from "./matches-regex.pipe";
 export { DbLookup } from "./db-lookup.pipe";
 export {
   BeginEndDatesConsistent,
