@@ -1,4 +1,4 @@
-import { ConsoleLogger, Injectable, Scope } from '@nestjs/common';
+import { ConsoleLogger, Injectable, LogLevel, Scope } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 const { createLogger, format, transports } = require('winston');
 
@@ -44,6 +44,16 @@ export class Logger extends ConsoleLogger {
         });
       }
     }
+
+    // Filter the log levels based on the environment.
+    const levels: LogLevel[] = ['log', 'error'];
+    if (this.configService.get<string>('app.enableDebug')) {
+      levels.push('debug');
+    }
+    if (this.isDevelopment) {
+      levels.push('verbose', 'warn');
+    }
+    this.setLogLevels(levels);
   }
 
   debug(message: any, ...optionalParams: [...any, string?]) {
