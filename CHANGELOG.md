@@ -1,3 +1,10 @@
+## [19.0.7](https://github.com/US-EPA-CAMD/easey-common/compare/v19.0.6...v19.0.7) (2025-01-22)
+
+
+### Bug Fixes
+
+* Renamed data to items to avoid data.data references. ([d04555c](https://github.com/US-EPA-CAMD/easey-common/commit/d04555ce2e72cd3e8922f2f1ae5b6503292541bd))
+
 ## [19.0.6](https://github.com/US-EPA-CAMD/easey-common/compare/v19.0.5...v19.0.6) (2025-01-22)
 
 
