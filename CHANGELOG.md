@@ -1,3 +1,10 @@
+## [19.0.6](https://github.com/US-EPA-CAMD/easey-common/compare/v19.0.5...v19.0.6) (2025-01-22)
+
+
+### Bug Fixes
+
+* Added ArrayResponse interface to support returning an object that has an array object instead of returning the array directly in API calls (prevents JSON hijacking attempts) ([2a79b4e](https://github.com/US-EPA-CAMD/easey-common/commit/2a79b4efb16c88e44a0b74baf3aa7d0de968ddfc))
+
 ## [19.0.5](https://github.com/US-EPA-CAMD/easey-common/compare/v19.0.4...v19.0.5) (2025-01-03)
 
 
