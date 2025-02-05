@@ -34,6 +34,7 @@
     "@nestjs/config": "^3.3.0",
     "@nestjs/core": "^10.4.7",
     "@nestjs/swagger": "^8.0.2",
+    "@us-epa-camd/easey-common": "19.0.7",
     "axios": "^1.7.7",
     "class-validator": "^0.14.0",
     "dotenv": "^10.0.0",
