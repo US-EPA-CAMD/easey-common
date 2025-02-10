@@ -19,7 +19,7 @@ export class AuthGuard implements CanActivate {
   ) {}
 
   /**
-   * To Validate the provided security token by making a request to the Auth API.
+   * Validated the provided security token by making a request to the Auth API.
    * @param token - The security token provided in the request headers.
    * @param ip - The client IP address.
    * @returns Validated user data if the token is valid only.
@@ -69,10 +69,10 @@ export class AuthGuard implements CanActivate {
   /**
    * Validates the authorization headers and token format before calling `validateToken()`.
    * @param request - The incoming request object.
-   * @returns A boolean indicating whether the request is authorized.
+   * @returns Boolean indicating whether the request is authorized.
    * @throws UnauthorizedException if the token is missing or invalid.
    */
-  async validateRequest(request): Promise<boolean> {
+  async validateRequest(request: { headers: any; ip?: any; user: any; }): Promise<boolean> {
     const authHeader = request.headers.authorization;
     const forwardedForHeader = request.headers["x-forwarded-for"];
     const errorMsg = "Unauthorized access: Missing or invalid authorization token.";
