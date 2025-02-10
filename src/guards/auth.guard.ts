@@ -1,9 +1,10 @@
 import { firstValueFrom, Observable } from "rxjs";
 import {
-  HttpStatus,
   Injectable,
   CanActivate,
   ExecutionContext,
+  UnauthorizedException,
+  HttpStatus,
 } from "@nestjs/common";
 import { HttpService } from "@nestjs/axios";
 import { ConfigService } from "@nestjs/config";
@@ -13,17 +14,24 @@ import { EaseyException } from "../exceptions";
 @Injectable()
 export class AuthGuard implements CanActivate {
   constructor(
-    private configService: ConfigService,
-    private httpService: HttpService
+    private readonly configService: ConfigService,
+    private readonly httpService: HttpService
   ) {}
 
+  /**
+   * Validate the provided security token by making a request to the Auth API.
+   * @param token - The security token provided in the request headers.
+   * @param ip - The client IP address.
+   * @returns Validated user data if the token is valid only.
+   * @throws UnauthorizedException for invalid tokens or EaseyException for API errors.
+   */
   async validateToken(token: string, ip: string): Promise<any> {
     const apiKey = this.configService.get("app.apiKey");
-    const url = this.configService.get("app.authApi").uri + "/tokens/validate";
+    const authApiUrl = this.configService.get("app.authApi").uri + "/tokens/validate";
 
     try {
       const result = await firstValueFrom(
-        this.httpService.post(url, null, {
+        this.httpService.post(authApiUrl, null, {
           headers: {
             authorization: `Bearer ${token}`,
             "x-forwarded-for": ip,
@@ -34,60 +42,82 @@ export class AuthGuard implements CanActivate {
 
       return result.data;
     } catch (error) {
-      console.log(error);
       if (error.response) {
+        const status = error.response.status;
+
+        // Explicitly handle Unauthorized (401) errors
+        if (status === HttpStatus.UNAUTHORIZED) {
+          throw new UnauthorizedException("Invalid or expired token. Access denied.");
+        }
+
         throw new EaseyException(
-          new Error(
-            "An error occurred in while validating the user's security token."
-          ),
+          new Error("An error occurred while validating the security token."),
           HttpStatus.INTERNAL_SERVER_ERROR,
           error
         );
       }
+
+      // Generic catch for unexpected errors
+      throw new EaseyException(
+        new Error("Unexpected authentication validation error."),
+        HttpStatus.INTERNAL_SERVER_ERROR,
+        error
+      );
     }
   }
 
-  async validateRequest(request): Promise<boolean> {
+  /**
+   * To correctly validate the authorization headers and token format before calling `validateToken()`.
+   * @param request - The incoming request object.
+   * @returns The boolean indicating whether the request is authorized.
+   * @throws UnauthorizedException if the token is missing or invalid.
+   */
+  async validateRequest(request: { headers: any; ip?: any; user: any; }): Promise<boolean> {
     const authHeader = request.headers.authorization;
-    console.log(authHeader);
     const forwardedForHeader = request.headers["x-forwarded-for"];
-    let errorMsg =
-      "Prior Authorization (User Security Token) required to access this resource.";
+    const errorMsg = "Unauthorized access: Missing or invalid authorization token.";
 
-    if (authHeader === null || authHeader === undefined) {
-      throw new EaseyException(new Error(errorMsg), HttpStatus.BAD_REQUEST);
+    if (!authHeader) {
+      throw new UnauthorizedException(errorMsg);
     }
 
-    const splitString = authHeader.split(" ");
-    if (splitString.length !== 2 && splitString[0] !== "Bearer") {
-      throw new EaseyException(new Error(errorMsg), HttpStatus.BAD_REQUEST); //
+    const tokenParts = authHeader.split(" ");
+    if (tokenParts.length !== 2 || tokenParts[0] !== "Bearer") {
+      throw new UnauthorizedException("Invalid authorization format. Expected 'Bearer <token>'.");
     }
 
+    // Determine client IP address
     let ip = request.ip;
-    if (forwardedForHeader !== null && forwardedForHeader !== undefined) {
-      ip = forwardedForHeader.split(",")[0];
+    if (forwardedForHeader) {
+      ip = forwardedForHeader.split(",")[0].trim();
     }
 
-    const validatedToken = await this.validateToken(splitString[1], ip);
-
-    request.user = validatedToken;
+    // To validate the token with Auth API
+    const validatedToken = await this.validateToken(tokenParts[1], ip);
+    request.user = validatedToken; // Attach validated user data to request
 
     return true;
   }
 
+  /**
+   * The main guard function to control access to protected routes.
+   * @param context - The execution context for the request.
+   * @returns A boolean or a promise resolving to a boolean indicating authorization status.
+   */
   canActivate(
     context: ExecutionContext
   ): boolean | Promise<boolean> | Observable<boolean> {
     const request = context.switchToHttp().getRequest();
 
-    if (this.configService.get("app.enableAuthToken") === true) {
+    // If auth token enforcement is enabled, validate the request
+    if (this.configService.get("app.enableAuthToken")) {
       return this.validateRequest(request);
     }
 
+    // If auth is disabled, use a mock user from configuration (for local/dev environments)
     const currentUser: CurrentUser = JSON.parse(
       this.configService.get("app.currentUser")
     );
-
     request.user = currentUser;
 
     return true;
