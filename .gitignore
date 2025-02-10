@@ -13,4 +13,3 @@ yarn-error.log
 .env.local
 .idea/
 .npmrc
-/search_results.txt
