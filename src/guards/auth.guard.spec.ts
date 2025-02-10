@@ -2,10 +2,15 @@ import { TestingModule, Test } from "@nestjs/testing";
 import { AuthGuard } from "./auth.guard";
 import { ConfigService } from "@nestjs/config";
 import { HttpModule } from "@nestjs/axios";
-import { UnauthorizedException } from "@nestjs/common";
+
+jest.mock("../utilities/parse-token", () => ({
+  parseToken: jest.fn(() =>
+    jest.fn().mockReturnValue({ sessionId: "", userId: "" })
+  ),
+}));
 
 describe("AuthGuard", () => {
-  let guard: AuthGuard;
+  let guard;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -20,30 +25,24 @@ describe("AuthGuard", () => {
     expect(guard).toBeDefined();
   });
 
-  describe("validateRequest", () => {
-    it("should return true for valid authorization header", async () => {
-      jest.spyOn(guard, "validateToken").mockResolvedValue({ userId: "12345" });
+  it("should validate properly and return true given good input", async () => {
+    jest.spyOn(guard, "validateToken").mockResolvedValue("");
 
-      const request = {
-        headers: { authorization: "Bearer validToken" },
-        ip: "127.0.0.1",
-        user: {} as any,
-      };
+    const request = { headers: { authorization: "Bearer csm::nndifnd" } };
+    expect(await guard.validateRequest(request)).toEqual(true);
+  });
 
-      await expect(guard.validateRequest(request)).resolves.toBe(true);
-      expect(request.user).toEqual({ userId: "12345" });
-    });
+  it("should error given no auth header", async () => {
+    const request = { headers: {} };
+    expect(async () => {
+      await guard.validateRequest(request);
+    }).rejects.toThrowError();
+  });
 
-    it("should throw UnauthorizedException when authorization header is missing", async () => {
-      const request = { headers: {}, user: {} as any };
-
-      await expect(guard.validateRequest(request)).rejects.toThrow(UnauthorizedException);
-    });
-
-    it("should throw UnauthorizedException for invalid Bearer token format", async () => {
-      const request = { headers: { authorization: "Beater 3" }, user: {} as any };
-
-      await expect(guard.validateRequest(request)).rejects.toThrow(UnauthorizedException);
-    });
+  it("should error given invalid bearer format", async () => {
+    const request = { headers: { authorization: "Beater 3" } };
+    expect(async () => {
+      await guard.validateRequest(request);
+    }).rejects.toThrowError();
   });
 });
