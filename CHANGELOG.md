@@ -1,3 +1,10 @@
+## [19.0.8](https://github.com/US-EPA-CAMD/easey-common/compare/v19.0.7...v19.0.8) (2025-02-10)
+
+
+### Bug Fixes
+
+* **#6443:** update unauthorized response handling ([0e3bc90](https://github.com/US-EPA-CAMD/easey-common/commit/0e3bc90b3d6996053310fd5a2534889651da18ff)), closes [#6443](https://github.com/US-EPA-CAMD/easey-common/issues/6443)
+
 ## [19.0.7](https://github.com/US-EPA-CAMD/easey-common/compare/v19.0.6...v19.0.7) (2025-01-22)
 
 
