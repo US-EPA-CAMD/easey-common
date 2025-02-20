@@ -1,3 +1,10 @@
+## [19.0.9](https://github.com/US-EPA-CAMD/easey-common/compare/v19.0.8...v19.0.9) (2025-02-20)
+
+
+### Bug Fixes
+
+* disable Strict-Transport-Security from helmet ([23a4a52](https://github.com/US-EPA-CAMD/easey-common/commit/23a4a52d8a0c96e26f3456fa8d573cc26d1bdbf1))
+
 ## [19.0.8](https://github.com/US-EPA-CAMD/easey-common/compare/v19.0.7...v19.0.8) (2025-02-10)
 
 
