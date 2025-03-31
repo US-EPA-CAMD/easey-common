@@ -6,15 +6,25 @@ const { createLogger, format, transports } = require('winston');
 export class Logger extends ConsoleLogger {
   private consoleLogInstance: ReturnType<typeof createLogger>;
   private fileLogInstance: ReturnType<typeof createLogger>;
+  private infoLogInstance: ReturnType<typeof createLogger>;
   private isDevelopment = false;
 
   constructor(private readonly configService: ConfigService) {
     super();
 
-    const { combine, json, metadata, prettyPrint, timestamp } = format;
+    const { colorize, combine, json, metadata, prettyPrint, printf, timestamp } = format;
 
     this.consoleLogInstance = createLogger({
       format: combine(json(), prettyPrint()),
+      transports: [new transports.Console({})],
+    });
+
+    const infoFormat = printf(({ message }) => {
+      return `${message}`;
+    });
+
+    this.infoLogInstance = createLogger({
+      format: combine(json(), colorize({ all: true }), infoFormat),
       transports: [new transports.Console({})],
     });
 
@@ -75,6 +85,6 @@ export class Logger extends ConsoleLogger {
   }
 
   info(message: any, ...optionalParams: [...any, string?]) {
-    super.log(JSON.stringify(message), ...optionalParams);
+    this.infoLogInstance.info(JSON.stringify(message), ...optionalParams)
   }
 }
