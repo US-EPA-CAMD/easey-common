@@ -6,13 +6,13 @@ const { createLogger, format, transports } = require('winston');
 export class Logger extends ConsoleLogger {
   private consoleLogInstance: ReturnType<typeof createLogger>;
   private fileLogInstance: ReturnType<typeof createLogger>;
-  private infoLogInstance: ReturnType<typeof createLogger>;
+  private auditLogInstance: ReturnType<typeof createLogger>;
   private isDevelopment = false;
 
   constructor(private readonly configService: ConfigService) {
     super();
 
-    const { colorize, combine, json, metadata, prettyPrint, printf, timestamp } = format;
+    const { combine, json, metadata, prettyPrint, printf, timestamp } = format;
 
     this.consoleLogInstance = createLogger({
       format: combine(json(), prettyPrint()),
@@ -23,8 +23,8 @@ export class Logger extends ConsoleLogger {
       return `${message}`;
     });
 
-    this.infoLogInstance = createLogger({
-      format: combine(json(), colorize({ all: true }), infoFormat),
+    this.auditLogInstance = createLogger({
+      format: combine(json(), infoFormat),
       transports: [new transports.Console({})],
     });
 
@@ -85,6 +85,12 @@ export class Logger extends ConsoleLogger {
   }
 
   info(message: any, ...optionalParams: [...any, string?]) {
-    this.infoLogInstance.info(JSON.stringify(message), ...optionalParams)
+    super.log(JSON.stringify(message), ...optionalParams);
+  }
+
+  auditLog(message: any, ...optionalParams: [...any, string?]) {
+    if (this.configService.get<boolean>('app.enableAuditLog')) {
+      this.auditLogInstance.info(JSON.stringify(message), ...optionalParams);
+    }
   }
 }
