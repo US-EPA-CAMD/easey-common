@@ -2,8 +2,11 @@ export const parseBool = (
   value: any,
   defaultValue: boolean = false
 ): boolean => {
-  if (typeof value == "number" || value instanceof Number) {
+  if (typeof value === "number") {
     return value > 0;
+  }
+  if (value instanceof Number) {
+    return value.valueOf() > 0;
   }
   if (typeof value == "boolean" || value instanceof Boolean) {
     return Boolean(value);
