@@ -1,3 +1,18 @@
+# [21.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v20.0.0...v21.0.0) (2025-04-11)
+
+
+### Bug Fixes
+
+* updated version of types/node to node 20 ([41abae1](https://github.com/US-EPA-CAMD/easey-common/commit/41abae1f11c323e9e9698406c9c06464fd5daa5a))
+
+
+* Merge pull request #208 from US-EPA-CAMD/feature/#6628-upgrade-nestjs ([ad634b3](https://github.com/US-EPA-CAMD/easey-common/commit/ad634b34999d6f5b38a85a17342e1a909b97635d)), closes [#208](https://github.com/US-EPA-CAMD/easey-common/issues/208) [US-EPA-CAMD/feature/#6628](https://github.com/US-EPA-CAMD/feature//issues/6628)
+
+
+### BREAKING CHANGES
+
+* upgraded NestJS to version 11 and Express to 5
+
 # [20.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v19.0.9...v20.0.0) (2025-04-10)
 
 
