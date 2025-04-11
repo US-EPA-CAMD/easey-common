@@ -33,7 +33,7 @@ export class LoggingInterceptor implements NestInterceptor {
         return next
             .handle()
             .pipe(
-                tap((response) => this.logger.info({
+                tap((response) => this.logger.auditLog({
                     eventContext,
                     eventName,
                     eventOutcome: "Success",
@@ -49,7 +49,7 @@ export class LoggingInterceptor implements NestInterceptor {
                         const eventOutcome = response.error(status);
                         const metadata = error.metadata || {}
 
-                        this.logger.info({
+                        this.logger.auditLog({
                             eventContext,
                             eventName,
                             eventOutcome,
@@ -67,7 +67,7 @@ export class LoggingInterceptor implements NestInterceptor {
                         const status = error.status || 500;
                         const message = error.message || 'Internal Server Error';
 
-                        this.logger.info({
+                        this.logger.auditLog({
                             eventContext,
                             eventName,
                             eventOutcome: "Internal Server Error",
