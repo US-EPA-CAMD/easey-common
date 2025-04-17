@@ -1,3 +1,10 @@
+## [21.1.1](https://github.com/US-EPA-CAMD/easey-common/compare/v21.1.0...v21.1.1) (2025-04-17)
+
+
+### Bug Fixes
+
+* added a method that creates a runtime DTO class compatible with Swagger documentation for endpoints that return an array of items inside a standardized response wrapper (ArrayResponse). ([3c76634](https://github.com/US-EPA-CAMD/easey-common/commit/3c76634a91abdab4a580d0af675a6998351e28e1))
+
 # [21.1.0](https://github.com/US-EPA-CAMD/easey-common/compare/v21.0.0...v21.1.0) (2025-04-17)
 
 
