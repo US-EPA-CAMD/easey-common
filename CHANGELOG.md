@@ -1,3 +1,16 @@
+# [21.1.0](https://github.com/US-EPA-CAMD/easey-common/compare/v21.0.0...v21.1.0) (2025-04-17)
+
+
+### Bug Fixes
+
+* **6515:** updated several property metadata examples ([0390d5b](https://github.com/US-EPA-CAMD/easey-common/commit/0390d5b71fd3b4e818eb4023270f5897407d71ee))
+
+
+### Features
+
+* **6515:** added common utility functions ([cfaaa84](https://github.com/US-EPA-CAMD/easey-common/commit/cfaaa847b8d65748d344a8f3dd35532d50099df8))
+* **6515:** added property metadata for MATS Data Submission DTO ([a3408fb](https://github.com/US-EPA-CAMD/easey-common/commit/a3408fb0cec30e1e0a70430bc3f56ea2365018b0))
+
 # [21.0.0](https://github.com/US-EPA-CAMD/easey-common/compare/v20.0.0...v21.0.0) (2025-04-11)
 
 
