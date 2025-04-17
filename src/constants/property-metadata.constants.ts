@@ -3496,6 +3496,129 @@ export const propertyMetadata = {
     example: 9,
   },
 
+  matsDataSubmissionDTO: {
+    addDate: {
+      fieldLabels: {
+        label: '',
+        value: 'addDate',
+      },
+      description: 'Date and time in which record was added.',
+      example: '2016-02-23T00:00:00Z',
+    },
+    averagingGroupCode: {
+      fieldLabels: {
+        label: '',
+        value: 'averagingGroupCode',
+      },
+      description: 'Code used to identify the averaging group.',
+      example: '90',
+    },
+    id: {
+      fieldLabels: {
+        label: '',
+        value: 'id',
+      },
+      description: 'Unique identifier of a MATS submission record.',
+      example: '99',
+    },
+    locationId: {
+      fieldLabels: {
+        label: '',
+        value: 'locationId',
+      },
+      description: 'Unique identifier of a monitoring location record.',
+      example: '5770',
+    },
+    monitorPlanId: {
+      fieldLabels: {
+        label: '',
+        value: 'monitorPlanId',
+      },
+      description: 'Unique identifier of a monitor plan record.',
+      example: 'TWCORNEL5-C0E3879920A14159BAA98E03F1980A7A',
+    },
+    originalSubmissionId: {
+      fieldLabels: {
+        label: '',
+        value: 'originalSubmissionId',
+      },
+      description: 'For resubmissions, the ID of the original submission.',
+      example: '99',
+    },
+    pollutantCodes: {
+      fieldLabels: {
+        label: 'Pollutant Codes',
+        value: 'pollutantCodes',
+      },
+      description: 'Codes used to identify the MATS pollutant(s).',
+      example: 'FPM',
+    },
+    reportTypeCode: {
+      fieldLabels: {
+        label: '',
+        value: 'reportTypeCode',
+      },
+      description: 'Code used to identify the type of report.',
+      example: 'CR',
+    },
+    statusCode: {
+      fieldLabels: {
+        label: '',
+        value: 'statusCode',
+      },
+      description: 'Code used to identify the status of the MATS report.',
+      example: 'NEW',
+    },
+    testComment: {
+      fieldLabels: {
+        label: '',
+        value: 'testComment',
+      },
+      description: 'Comment field for the test.',
+      example: 'This is a comment',
+    },
+    testDate: {
+      fieldLabels: {
+        label: '',
+        value: 'testDate',
+      },
+      description: 'Date that the test occurred.',
+      example: '2016-02-23',
+    },
+    testMethodCodes: {
+      fieldLabels: {
+        label: 'Test Method Codes',
+        value: 'testMethodCodes',
+      },
+      description: 'Codes used to identify the MATS test method(s).',
+      example: '1',
+    },
+    testNumber: {
+      fieldLabels: {
+        label: '',
+        value: 'testNumber',
+      },
+      description: 'Test number for the test.',
+      example: '1',
+    },
+    updateDate: {
+      fieldLabels: {
+        label: '',
+        value: 'updateDate',
+      },
+      description: 'Date and time in which record was last updated.',
+      example: '2016-02-23T00:00:00Z',
+    },
+    userId: {
+      fieldLabels: {
+        label: '',
+        value: 'userId',
+      },
+      description: 'User account or source of data that added or updated record.',
+      example: 'abcde',
+    },
+  },
+
   matsMethodDTOId: {
     fieldLabels: {
       label: '',
