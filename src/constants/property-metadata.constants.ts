@@ -3503,7 +3503,7 @@ export const propertyMetadata = {
         value: 'addDate',
       },
       description: 'Date and time in which record was added.',
-      example: '2016-02-23',
+      example: '2016-02-23T00:00:00Z',
     },
     averagingGroupCode: {
       fieldLabels: {
@@ -3519,7 +3519,7 @@ export const propertyMetadata = {
         value: 'id',
       },
       description: 'Unique identifier of a MATS submission record.',
-      example: 99,
+      example: '99',
     },
     locationId: {
       fieldLabels: {
@@ -3543,7 +3543,7 @@ export const propertyMetadata = {
         value: 'originalSubmissionId',
       },
       description: 'For resubmissions, the ID of the original submission.',
-      example: 99,
+      example: '99',
     },
     pollutantCodes: {
       fieldLabels: {
@@ -3607,7 +3607,7 @@ export const propertyMetadata = {
         value: 'updateDate',
       },
       description: 'Date and time in which record was last updated.',
-      example: '2016-02-23',
+      example: '2016-02-23T00:00:00Z',
     },
     userId: {
       fieldLabels: {
