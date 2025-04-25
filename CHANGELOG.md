@@ -1,3 +1,11 @@
+## [21.1.2](https://github.com/US-EPA-CAMD/easey-common/compare/v21.1.1...v21.1.2) (2025-04-25)
+
+
+### Bug Fixes
+
+* added auditlog method ([050d837](https://github.com/US-EPA-CAMD/easey-common/commit/050d8373cfb23573c2df048e7b769de57970ea4f))
+* remove characters outside of JSON in audit event logs ([f80b324](https://github.com/US-EPA-CAMD/easey-common/commit/f80b32483e5be50f884229d410f7204ca67d057a))
+
 ## [21.1.1](https://github.com/US-EPA-CAMD/easey-common/compare/v21.1.0...v21.1.1) (2025-04-17)
 
 
