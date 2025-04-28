@@ -1,3 +1,10 @@
+## [21.1.4](https://github.com/US-EPA-CAMD/easey-common/compare/v21.1.3...v21.1.4) (2025-04-28)
+
+
+### Bug Fixes
+
+* updated dependencies ([0a357d8](https://github.com/US-EPA-CAMD/easey-common/commit/0a357d8f0b9509c114b037128471cdf94562f929))
+
 ## [21.1.3](https://github.com/US-EPA-CAMD/easey-common/compare/v21.1.2...v21.1.3) (2025-04-28)
 
 
