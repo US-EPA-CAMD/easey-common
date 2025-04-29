@@ -34,6 +34,7 @@
     "@nestjs/config": "^4.0.2",
     "@nestjs/core": "^11.1.0",
     "@nestjs/swagger": "^11.1.5",
+    "@nestjs/terminus": "^11.0.0",
     "axios": "^1.9.0",
     "class-validator": "^0.14.1",
     "dotenv": "^16.5.0",
@@ -75,9 +76,6 @@
       "json",
       "ts"
     ],
-    "moduleNameMapper": {
-      "^axios$": "axios/dist/node/axios.cjs"
-    },
     "rootDir": "src",
     "testRegex": ".spec.ts$",
     "transform": {
