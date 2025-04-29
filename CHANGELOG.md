@@ -1,3 +1,10 @@
+## [21.1.5](https://github.com/US-EPA-CAMD/easey-common/compare/v21.1.4...v21.1.5) (2025-04-29)
+
+
+### Bug Fixes
+
+* added common health endpoint module ([e7e8db4](https://github.com/US-EPA-CAMD/easey-common/commit/e7e8db4a9cdf2953da2f14bcc4588c3f3f7cfcdf))
+
 ## [21.1.4](https://github.com/US-EPA-CAMD/easey-common/compare/v21.1.3...v21.1.4) (2025-04-28)
 
 
