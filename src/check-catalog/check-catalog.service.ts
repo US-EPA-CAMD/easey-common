@@ -53,9 +53,16 @@ export class CheckCatalogService implements OnApplicationBootstrap {
   }
 
   static formatMessage(message: string, values: FormattedValues = {}, plugins: string[] = []): string {
+    const lowerCasedValues: Record<string, any> = {};
+    for (const key in values) {
+      lowerCasedValues[key.toLowerCase()] = values[key];
+    }
+
+    if (plugins.length === 0 && Object.keys(lowerCasedValues).length > 0) plugins = Object.keys(lowerCasedValues);
+
     plugins.forEach((plugin) => {
       const fieldname = CheckCatalogService.getFieldnameFromPlugin(plugin);
-      const value = values[fieldname] ?? 'N/A';
+      const value = lowerCasedValues[fieldname.toLowerCase()] ?? 'N/A';
       message = message.replace(`[${plugin}]`, `[${value}]`);
     });
 
