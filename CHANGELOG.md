@@ -1,3 +1,10 @@
+## [21.1.6](https://github.com/US-EPA-CAMD/easey-common/compare/v21.1.5...v21.1.6) (2025-05-29)
+
+
+### Bug Fixes
+
+* resolve issue with message format ([8110484](https://github.com/US-EPA-CAMD/easey-common/commit/81104846fb8f8089730f298f278d1cdb53891a72))
+
 ## [21.1.5](https://github.com/US-EPA-CAMD/easey-common/compare/v21.1.4...v21.1.5) (2025-04-29)
 
 
