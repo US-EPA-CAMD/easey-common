@@ -1,3 +1,10 @@
+## [21.1.7](https://github.com/US-EPA-CAMD/easey-common/compare/v21.1.6...v21.1.7) (2025-05-29)
+
+
+### Bug Fixes
+
+* added logging to identify health-check issue. ([9edb645](https://github.com/US-EPA-CAMD/easey-common/commit/9edb645140315399768af9a5b34dab5640701e76))
+
 ## [21.1.6](https://github.com/US-EPA-CAMD/easey-common/compare/v21.1.5...v21.1.6) (2025-05-29)
 
 
