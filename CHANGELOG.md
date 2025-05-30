@@ -1,3 +1,10 @@
+## [21.1.8](https://github.com/US-EPA-CAMD/easey-common/compare/v21.1.7...v21.1.8) (2025-05-30)
+
+
+### Bug Fixes
+
+* GatewayGuard now skips /health endpoints. ([36a8401](https://github.com/US-EPA-CAMD/easey-common/commit/36a8401240e1586873ce3cf681c8a955d319a71c))
+
 ## [21.1.7](https://github.com/US-EPA-CAMD/easey-common/compare/v21.1.6...v21.1.7) (2025-05-29)
 
 
