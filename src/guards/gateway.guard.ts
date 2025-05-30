@@ -41,6 +41,12 @@ export class GatewayGuard implements CanActivate {
   ): boolean | Promise<boolean> | Observable<boolean> {
     if (this.configService.get("app.enableSecretToken") === true) {
       const request = context.switchToHttp().getRequest();
+
+      // Skip validation for any health route
+      if (request.url.endsWith('/health')) {
+        return true;
+      }
+
       return this.validateRequest(request); //
     }
 
