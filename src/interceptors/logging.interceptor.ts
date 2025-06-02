@@ -122,10 +122,10 @@ export class LoggingInterceptor implements NestInterceptor {
 
     filterMoreInfo(request: any, response: unknown, responseBodyOutFields: AuditLogMetadata['responseBodyOutFields'], requestBodyOutFields: AuditLogMetadata['requestBodyOutFields'], requestParamsOutFields: AuditLogMetadata['requestParamsOutFields'], requestQueryOutFields: AuditLogMetadata['requestQueryOutFields'], requestHeadersOutFields: AuditLogMetadata['requestHeadersOutFields'], omitFields: AuditLogMetadata['omitFields']) {
 
-        const requestParams = request.params;
-        const requestBody = request.body;
-        const requestQuery = request.query;
-        const requestHeaders = request.headers;
+        const requestParams = Object.assign({}, request.params);
+        const requestBody = Object.assign({}, request.body);
+        const requestQuery = Object.assign({}, request.query);
+        const requestHeaders = Object.assign({}, request.headers);
 
         const getFieldValues = (
             fields: string[] | '*' | 'all' = [],
