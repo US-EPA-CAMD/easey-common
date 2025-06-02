@@ -1,3 +1,10 @@
+## [21.1.9](https://github.com/US-EPA-CAMD/easey-common/compare/v21.1.8...v21.1.9) (2025-06-02)
+
+
+### Bug Fixes
+
+* audit log moreInfo ([3c2db70](https://github.com/US-EPA-CAMD/easey-common/commit/3c2db70e2541b328f3062e60f7961667f2e8e1cb))
+
 ## [21.1.8](https://github.com/US-EPA-CAMD/easey-common/compare/v21.1.7...v21.1.8) (2025-05-30)
 
 
