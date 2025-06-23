@@ -6,12 +6,13 @@ export class BulkLoadStream {
   private delimiter: string;
   private hasWritten: boolean;
   private stream: WriteStream;
+  private fromQueryRunner: boolean;
 
   public status: string;
   public finished: Promise<boolean>;
   public static readonly nullChar: string = "./0";
 
-  constructor(stream: WriteStream, client: any, delimiter: string) {
+  constructor(stream: WriteStream, client: any, delimiter: string, fromQueryRunner: boolean = false) {
     this.hasWritten = false;
     this.stream = stream;
     this.status = "Writing";
@@ -25,13 +26,17 @@ export class BulkLoadStream {
     this.client = client;
     this.delimiter = delimiter;
 
+    this.fromQueryRunner = fromQueryRunner;
     this.stream.on("finish", () => {
       if (this.status != "Error") {
         this.status = "Complete";
       }
       this.resolver(true);
       this.stream.destroy();
-      this.client.release();
+      // Only release the client if it didn't come from a queryRunner
+      if (!this.fromQueryRunner) {
+        this.client.release();
+      }
     });
   }
 
