@@ -1,9 +1,12 @@
+//v0: easey-common/bulk-load/src/bulk-load.service.ts
+
 import { Injectable } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import { WriteStream, existsSync, readFileSync } from "fs";
 import { from as copyFrom } from "pg-copy-streams";
 import BulkLoadStream from "./bulk-load-stream";
 import { TlsOptions } from "tls";
+import { QueryRunner } from "typeorm";
 
 let Pool = require("pg-pool");
 
@@ -22,8 +25,8 @@ export class BulkLoadService {
       this.tlsOptions.ca =
         host !== "localhost"
           ? readFileSync(
-              `${process.cwd()}\\us-gov-west-1-bundle.pem`
-            ).toString()
+            `${process.cwd()}\\us-gov-west-1-bundle.pem`
+          ).toString()
           : null;
     } else {
       this.tlsOptions.ca = null;
@@ -46,28 +49,24 @@ export class BulkLoadService {
   async startBulkLoader(
     tableLocation: string,
     columns?: string[],
-    delimiter: string = ","
+    delimiter: string = ",",
+    queryRunner?: QueryRunner,
   ): Promise<BulkLoadStream> {
-    const client = await this.pool.connect();
+    // Use queryRunner's connection if provided, otherwise get from pool
+    const client = await (queryRunner ? queryRunner.connect() : this.pool.connect());
+    const fromQueryRunner = queryRunner !== undefined;
 
     let columnFormatting = "";
-    if (columns && columns.length > 0) {
-      columnFormatting = "(";
-      for (let i = 0; i < columns.length; i++) {
-        columnFormatting += `"${columns[i]}"`;
-        if (i < columns.length - 1) {
-          columnFormatting += ",";
-        }
-      }
-      columnFormatting += ")";
+    if (columns?.length) {
+      columnFormatting = `(${columns.map(c => `"${c}"`).join(",")})`;
     }
 
     const ingestStream: WriteStream = client.query(
       copyFrom(
         `COPY ${tableLocation} ${columnFormatting} FROM STDIN (DELIMITER '${delimiter}', NULL '${BulkLoadStream.nullChar}')`
-      )
+      ),
     );
 
-    return new BulkLoadStream(ingestStream, client, delimiter);
+    return new BulkLoadStream(ingestStream, client, delimiter, fromQueryRunner);
   }
 }
