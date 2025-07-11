@@ -1,3 +1,10 @@
+## [21.1.10](https://github.com/US-EPA-CAMD/easey-common/compare/v21.1.9...v21.1.10) (2025-07-11)
+
+
+### Bug Fixes
+
+* resolve issue with preparer access in facility permissions logic of canActivate ([cb1ebc3](https://github.com/US-EPA-CAMD/easey-common/commit/cb1ebc33edfea0e2f535d4d590d7d7adfb1fe0a6))
+
 ## [21.1.9](https://github.com/US-EPA-CAMD/easey-common/compare/v21.1.8...v21.1.9) (2025-06-02)
 
 
