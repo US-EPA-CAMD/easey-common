@@ -352,19 +352,30 @@ export class RolesGuard implements CanActivate {
     const facilities: UserPermissionSet[] = request.user.facilities;
     const facilitiesWithRole = facilities
       .filter((f) => {
-        // An empty facility permissions array is returned from the responsibilities API if the user's only role is "Preparer": it is implied that a Preparer role carries all preparer permissions for their list of facilities.
+        // An empty facility permissions array is returned from the responsibilities API if the user's only responsibility for the facility is "Prepare MP, QA, EM"
+        //  the "Prepare MP, QA, EM" responsibility means that the user has "preparer" rights for the facility
+        //    if the Preparer CDX role permits access, then a user with "preparer" rights for the facility has access for the facility
+        // also, the Submitter, Sponsor, and Initial Authorizer CDX roles all implictly include the rights provided under the CDX Preparer role,
+        //    if the Preparer CDX role permits access, then a the user that has any of these roles (or the Preparer CDX role) has access for the facility
         if (
           params.requiredRoles?.includes(UserRole.PREPARER) &&
-          roles.includes(UserRole.PREPARER)
+          (roles.includes(UserRole.PREPARER) || roles.includes(UserRole.SUBMITTER) || roles.includes(UserRole.SPONSOR) || roles.includes(UserRole.INITIAL_AUTHORIZER))
         ) {
-          return true;
+          // facility is in the user's list and the user has one of the required CDX roles; 
+          //  does not matter if the permissions list is empty or contains any specific submit rights,
+          //    the user's CDX role permits "preparer" access
+          // allow access
+          return true; 
         }
+        // access is not based on facility permissions; allow access
         if (!params.permissionsForFacility) return true;
         for (const permission of params.permissionsForFacility) {
           if (f.permissions.includes(permission)) {
+            // user has at least one of the required facility submit permissions; allow access
             return true;
           }
         }
+        // user does not have at least of the required facility submit permissions; do not allow access
         return false;
       })
       .map((p) => p.orisCode.toString());
