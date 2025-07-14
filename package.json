@@ -22,7 +22,8 @@
     "lint": "eslint '*/**/*.{js,ts}' --quiet --fix",
     "semantic-release": "semantic-release",
     "postbuild": "node -e \"require('fs').copyFile('./package.json', './lib/package.json', (err) => { if (err) throw err; console.log('package.json copied to /lib'); })\"",
-    "postversion": "cp -r package.json .."
+    "postversion": "cp -r package.json ..",
+    "prepack": "rm -rf dist && yarn build"
   },
   "resolutions": {
     "xml2js": "^0.5.0"
