@@ -460,7 +460,8 @@ export class RolesGuard implements CanActivate {
         const orisCode = chunk["orisCode"];
 
         if (!orisCode) {
-          //expected orisCode element was not found; do not allow access
+          //expected orisCode element was not found; 
+          //  do not allow access
           console.warn("Expected orisCode element was not found. Has the JSON element name changed?");
           return false;
         }
@@ -471,7 +472,8 @@ export class RolesGuard implements CanActivate {
           if (chunk[pathChunk]) {
             chunk = chunk[pathChunk];
           } else {
-            //expected location element was not found; do not allow access
+            //expected location element was not found; 
+            //  do not allow access
             console.warn("Expected location element was not found. Are you sure you passed the importLocationSources parameter correctly (i.e. matches the JSON element name(s)?");
             return false;
           }
@@ -487,7 +489,8 @@ export class RolesGuard implements CanActivate {
             const stackPipeChunk = locationChunk["stackPipeId"];
 
             if (!unitChunk && !stackPipeChunk) {
-              //no expected unit or stack pipe element was found; do not allow access
+              //no expected unit or stack pipe element was found; 
+              //  do not allow access
               console.warn("Expected unit or stack pipe element was not found. Have the JSON element names changed?");
               return false;
             }
