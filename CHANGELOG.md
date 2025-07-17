@@ -1,3 +1,10 @@
+## [21.1.11](https://github.com/US-EPA-CAMD/easey-common/compare/v21.1.10...v21.1.11) (2025-07-17)
+
+
+### Bug Fixes
+
+* Merge pull request [#223](https://github.com/US-EPA-CAMD/easey-common/issues/223) from US-EPA-CAMD/fix/6809-preparer-forbidden-resource ([55cc655](https://github.com/US-EPA-CAMD/easey-common/commit/55cc655ff3751e93337dfb606b9b8822e6c04662))
+
 ## [21.1.10](https://github.com/US-EPA-CAMD/easey-common/compare/v21.1.9...v21.1.10) (2025-07-11)
 
 
