@@ -1,3 +1,10 @@
+## [21.1.14](https://github.com/US-EPA-CAMD/easey-common/compare/v21.1.13...v21.1.14) (2025-07-17)
+
+
+### Bug Fixes
+
+* Merge pull request [#226](https://github.com/US-EPA-CAMD/easey-common/issues/226) from US-EPA-CAMD/fix/[#6748](https://github.com/US-EPA-CAMD/easey-common/issues/6748)-implement-trx-to-avoid-partial-imports ([51af623](https://github.com/US-EPA-CAMD/easey-common/commit/51af6238b2720158cfe958fb2c31e37b925f030c))
+
 ## [21.1.13](https://github.com/US-EPA-CAMD/easey-common/compare/v21.1.12...v21.1.13) (2025-07-17)
 
 
