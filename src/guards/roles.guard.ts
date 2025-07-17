@@ -459,13 +459,23 @@ export class RolesGuard implements CanActivate {
         let chunk = context.switchToHttp().getRequest().body;
         const orisCode = chunk["orisCode"];
 
+        if (!orisCode) {
+          //expected orisCode element was not found
+          //  do not allow access
+          console.warn("Expected orisCode element was not found. Has the JSON element name changed?");
+          return false;
+        }
+
         let foundChunk = true;
         for (const pathChunk of paths) {
           // Drill down into each location source
           if (chunk[pathChunk]) {
             chunk = chunk[pathChunk];
           } else {
-            foundChunk = false;
+            //expected location element was not found
+            //  do not allow access
+            console.warn("Expected location element was not found. Are you sure you passed the importLocationSources parameter correctly (i.e. matches the JSON element name(s)?");
+            return false;
           }
         }
 
@@ -475,6 +485,16 @@ export class RolesGuard implements CanActivate {
 
           for (const locationChunk of chunk) {
             // Perform validation of the data
+            const unitChunk = locationChunk["unitId"];
+            const stackPipeChunk = locationChunk["stackPipeId"];
+
+            if (!unitChunk && !stackPipeChunk) {
+              //no expected unit or stack pipe element was found
+              //  do not allow access
+              console.warn("Expected unit or stack pipe element was not found. Have the JSON element names changed?");
+              return false;
+            }
+            
             unitSet.add(locationChunk["unitId"]);
             stackPipeSet.add(locationChunk["stackPipeId"]);
           }
