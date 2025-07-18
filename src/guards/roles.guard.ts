@@ -35,7 +35,8 @@ export class RolesGuard implements CanActivate {
     if (enforceCheckout) {
       if (
         lookupType === LookupType.Location ||
-        lookupType === LookupType.MonitorPlan
+        lookupType === LookupType.MonitorPlan ||
+        lookupType === LookupType.Unit
       ) {
         if (!checkedOutCriteria.has(item)) {
           console.log("Location not checked out!");
@@ -65,6 +66,15 @@ export class RolesGuard implements CanActivate {
         [item]
       );
 
+      monPlanIds = data.map((d) => d.mon_plan_id);
+    } else if (lookupType === LookupType.Unit) {
+      const data = await this.returnManager().query(
+        `SELECT mon_plan_id 
+         FROM CAMDECMPSWKS.monitor_plan_location mpl
+         JOIN CAMDECMPSWKS.monitor_location ml USING(mon_loc_id)
+         WHERE unit_id = $1`,
+        [item]
+      );
       monPlanIds = data.map((d) => d.mon_plan_id);
     } else if (lookupType === LookupType.Facility) {
       return true;
@@ -415,6 +425,17 @@ export class RolesGuard implements CanActivate {
         checkedOutCriteria = new Set(
           checkedOutCriteria.map((c) => c["mon_loc_id"])
         );
+      } else if (lookupType === LookupType.Unit) {
+        checkedOutCriteria = await this.returnManager().query(
+          `SELECT unit_id FROM camdecmpswks.user_check_out
+           JOIN camdecmpswks.monitor_plan_location USING (mon_plan_id)
+           JOIN camdecmpswks.monitor_location USING (mon_loc_id)
+           WHERE checked_out_by = $1 AND unit_id IS NOT NULL`,
+          [request.user.userId],
+        );
+        checkedOutCriteria = new Set(
+          checkedOutCriteria.map((c) => c["unit_id"])
+        );
       }
     }
 
@@ -438,6 +459,14 @@ export class RolesGuard implements CanActivate {
         );
         lookupDataList = new Set(plans.map((o) => o["get_facility_plans"]));
         request.allowedPlans = lookupDataList;
+        break;
+      case LookupType.Unit:
+        const units = await this.returnManager().query(
+          "SELECT camdecmpswks.get_facility_units($1)",
+          [facilitiesWithRole]
+        );
+        lookupDataList = new Set(units.map((o) => o["get_facility_units"]));
+        request.allowedUnits = lookupDataList;
         break;
       case LookupType.Facility:
         lookupDataList = new Set(facilitiesWithRole);
