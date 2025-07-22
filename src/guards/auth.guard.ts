@@ -92,7 +92,7 @@ export class AuthGuard implements CanActivate {
       ip = forwardedForHeader.split(",")[0].trim();
     }
 
-    // To validate the token with Auth API
+    // Validate the token with Auth API
     const validatedToken = await this.validateToken(tokenParts[1], ip);
     request.user = validatedToken; // Attach validated user data to request
 
