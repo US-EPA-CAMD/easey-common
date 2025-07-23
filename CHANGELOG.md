@@ -1,3 +1,10 @@
+## [21.1.16](https://github.com/US-EPA-CAMD/easey-common/compare/v21.1.15...v21.1.16) (2025-07-23)
+
+
+### Bug Fixes
+
+* Merge pull request [#230](https://github.com/US-EPA-CAMD/easey-common/issues/230) from US-EPA-CAMD/fix/6848-correct-role-guard-location-validation ([4d8b3b4](https://github.com/US-EPA-CAMD/easey-common/commit/4d8b3b4b7ec1a7aa5a39ca02715049c9d276a936))
+
 ## [21.1.15](https://github.com/US-EPA-CAMD/easey-common/compare/v21.1.14...v21.1.15) (2025-07-22)
 
 
