@@ -454,32 +454,32 @@ export class RolesGuard implements CanActivate {
     }
 
     if (params.importLocationSources) {
+      let locationsFound = false;
+      let chunk = context.switchToHttp().getRequest().body;
+      
+      const orisCode = chunk["orisCode"];
+      if (!orisCode) {
+        //expected orisCode element was not found; 
+        //  do not allow access
+        console.warn("Expected orisCode element was not found. Has the JSON element name changed?");
+        return false;
+      }
+      
       for (const importLocationSource of params.importLocationSources) {
         const paths = importLocationSource.split(".");
-        let chunk = context.switchToHttp().getRequest().body;
-        const orisCode = chunk["orisCode"];
 
-        if (!orisCode) {
-          //expected orisCode element was not found; 
-          //  do not allow access
-          console.warn("Expected orisCode element was not found. Has the JSON element name changed?");
-          return false;
-        }
-
-        let foundChunk = true;
+        let foundChunk = false;
         for (const pathChunk of paths) {
           // Drill down into each location source
           if (chunk[pathChunk]) {
+            foundChunk = true;
             chunk = chunk[pathChunk];
-          } else {
-            //expected location element was not found; 
-            //  do not allow access
-            console.warn("Expected location element was not found. Are you sure you passed the importLocationSources parameter correctly (i.e. matches the JSON element name(s)?");
-            return false;
           }
         }
 
         if (foundChunk && chunk.length > 0) {
+          locationsFound = true;
+          
           const unitSet = new Set();
           const stackPipeSet = new Set();
 
@@ -527,6 +527,13 @@ export class RolesGuard implements CanActivate {
             }
           }
         }
+      }
+
+      if (!locationsFound) {
+          //expected location element was not found; 
+          //  do not allow access
+          console.warn("Expected location element was not found. Are you sure you passed the importLocationSources parameter correctly (i.e. matches the JSON element name(s)?");
+          return false;
       }
 
       return true;
