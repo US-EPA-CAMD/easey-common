@@ -469,21 +469,22 @@ export class RolesGuard implements CanActivate {
         const paths = importLocationSource.split(".");
 
         let foundChunk = false;
+        let importLocationChunk;
         for (const pathChunk of paths) {
           // Drill down into each location source
           if (chunk[pathChunk]) {
             foundChunk = true;
-            chunk = chunk[pathChunk];
+            importLocationChunk = chunk[pathChunk];
           }
         }
 
-        if (foundChunk && chunk.length > 0) {
+        if (foundChunk && importLocationChunk.length > 0) {
           locationsFound = true;
           
           const unitSet = new Set();
           const stackPipeSet = new Set();
 
-          for (const locationChunk of chunk) {
+          for (const locationChunk of importLocationChunk) {
             // Perform validation of the data
             const unitChunk = locationChunk["unitId"];
             const stackPipeChunk = locationChunk["stackPipeId"];
