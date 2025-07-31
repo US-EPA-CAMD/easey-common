@@ -5871,6 +5871,24 @@ export const propertyMetadata = {
     example: true,
   },
 
+  unitCapacityDTOBoilerTurbineBeginDate: {
+    fieldLabels: {
+      label: 'Boiler Turbine Begin Date',
+      value: 'boilerTurbineBeginDate',
+    },
+    description: 'Date on which monitoring began for a boiler or turbine unit.',
+    example: '2009-01-01',
+  },
+
+  unitCapacityDTOBoilerTurbineEndDate: {
+    fieldLabels: {
+      label: 'Boiler Turbine End Date',
+      value: 'boilerTurbineEndDate',
+    },
+    description: 'Date on which monitoring ended for a boiler or turbine unit.',
+    example: '2009-01-01',
+  },
+
   unitControlDTOId: {
     fieldLabels: {
       label: '',
@@ -6910,6 +6928,49 @@ export const propertyMetadata = {
     },
     description: "Indicates whether the unit program is currently active.",
     example: true,
+  },
+
+  userCheckOutDTO: {
+    checkedOutOn: {
+      fieldLabels: {
+        label: 'Checked Out On',
+        value: 'checkedOutOn',
+      },
+      description: 'The date and time when the monitor plan was checked out.',
+      example: '2023-10-01T12:00:00Z',
+    },
+    checkedOutBy: {
+      fieldLabels: {
+        label: 'Checked Out By',
+        value: 'checkedOutBy',
+      },
+      description: 'The user who checked out the monitor plan.',
+      example: 'abcdef',
+    },
+    facId: {
+      fieldLabels: {
+        label: 'Facility ID',
+        value: 'facId',
+      },
+      description: `The Facility ID code assigned by the Department of Energy's Energy Information Administration. The Energy Information Administration Plant ID code is also referred to as the "ORIS code", "ORISPL code", "Facility ID", or "Facility code", among other names. If a Plant ID code has not been assigned by the Department of Energy's Energy Information Administration, then plant code means a code beginning with "88" assigned by the EPA's Clean Air Markets Division for electronic reporting.`,
+      example: 3,
+    },
+    lastActivity: {
+      fieldLabels: {
+        label: 'Last Activity',
+        value: 'lastActivity',
+      },
+      description: "Date of a user's last checkout activity.",
+      example: '2023-10-01T00:00:00Z',
+    },
+    monPlanId: {
+      fieldLabels: {
+        label: '',
+        value: 'monPlanId',
+      },
+      description: 'Unique identifier of a monitor plan record.',
+      example: 'TWCORNEL5-C0E3879920A14159BAA98E03F1980A7A',
+    },
   },
 
   //Reporting frequency
