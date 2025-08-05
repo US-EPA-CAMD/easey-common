@@ -53,10 +53,8 @@ export async function applySwagger(app: INestApplication) {
   if (configService.get<boolean>("app.enableAuthToken")) {
     swaggerDocOptions.addBearerAuth(
       {
-        in: "header",
         type: "http",
         scheme: "bearer",
-        name: "Token",
         description:
           'Authorization "bearer" token required for data modification operations',
       },
@@ -67,13 +65,11 @@ export async function applySwagger(app: INestApplication) {
   if (configService.get<boolean>("app.enableClientToken")) {
     swaggerDocOptions.addBearerAuth(
       {
-        in: "header",
         type: "http",
         scheme: "bearer",
-        bearerFormat: "jwt",
-        name: "ClientToken",
+        bearerFormat: "JWT",
         description:
-          'Authorization "bearer" client jwt token required for api endpoints',
+          'Authorization "bearer" client JWT token required for api endpoints',
       },
       "ClientToken"
     );
