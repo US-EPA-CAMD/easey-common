@@ -1,3 +1,15 @@
+# [21.2.0](https://github.com/US-EPA-CAMD/easey-common/compare/v21.1.17...v21.2.0) (2025-08-05)
+
+
+### Bug Fixes
+
+* **6804:** corrected OpenAPI Security Scheme definitions ([9e1e02d](https://github.com/US-EPA-CAMD/easey-common/commit/9e1e02db4131a7b7d95f27c5179913cba1b6972a))
+
+
+### Features
+
+* **6804:** added property metadata entries ([b67bc06](https://github.com/US-EPA-CAMD/easey-common/commit/b67bc0608cae40fceac34ec6c9804403964a80f6))
+
 ## [21.1.17](https://github.com/US-EPA-CAMD/easey-common/compare/v21.1.16...v21.1.17) (2025-07-28)
 
 
