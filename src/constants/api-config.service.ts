@@ -35,4 +35,8 @@ export class ApiConfigService {
     const host = this.getHost("EMISSIONS", 8040);
     return `${host}/emissions-mgmt`;
   }
+
+  public static getDbHealthTimeout(): number {
+    return Number(process.env.EASEY_DB_HEALTH_TIMEOUT) || 5000;
+  }
 }
