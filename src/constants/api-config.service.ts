@@ -37,6 +37,6 @@ export class ApiConfigService {
   }
 
   public static getDbHealthTimeout(): number {
-    return Number(process.env.EASEY_DB_HEALTH_TIMEOUT) || 300000;
+    return Number(process.env.EASEY_DB_HEALTH_TIMEOUT) || 5000;
   }
 }
