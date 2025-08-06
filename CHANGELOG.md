@@ -1,3 +1,11 @@
+## [21.2.1](https://github.com/US-EPA-CAMD/easey-common/compare/v21.2.0...v21.2.1) (2025-08-06)
+
+
+### Bug Fixes
+
+* DB Health check now provides a configurable timeout value, defaults to 300000 ([a510646](https://github.com/US-EPA-CAMD/easey-common/commit/a510646ef28bbddfa1ed1ce55ceeaa3fd85a591e))
+* DB Health check now provides a configurable timeout value, defaults to 5000 ([6b24ca8](https://github.com/US-EPA-CAMD/easey-common/commit/6b24ca83b5d625c5decc9b290782c13b60f1c251))
+
 # [21.2.0](https://github.com/US-EPA-CAMD/easey-common/compare/v21.1.17...v21.2.0) (2025-08-05)
 
 
