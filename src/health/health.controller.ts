@@ -5,6 +5,7 @@ import {
     HealthCheckService,
     TypeOrmHealthIndicator,
 } from '@nestjs/terminus';
+import { ApiConfigService } from '../constants';
 
 @Controller()
 export class HealthController {
@@ -17,7 +18,7 @@ export class HealthController {
     @HealthCheck()
     check() {
         return this.health.check([
-            () => this.db.pingCheck('database'),
+            () => this.db.pingCheck('database', { timeout: ApiConfigService.getDbHealthTimeout() }),
         ]);
     }
 }
