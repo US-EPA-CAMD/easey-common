@@ -5353,10 +5353,10 @@ pg-copy-streams@^6.0.6:
   dependencies:
     obuf "^1.1.2"
 
-pg-cursor@^2.14.6:
-  version "2.14.6"
-  resolved "https://registry.npmjs.org/pg-cursor/-/pg-cursor-2.14.6.tgz#2b8553bfcada32cc8d7452a85677e55a06a74bf6"
-  integrity sha512-PColx8rSw5kINWDZTj/bg5I4ABh1I/5KsnW9oYw+OYwvEd5G0u67mkvAQo1RziH2pAFjFaPZXNu9FWah9WPneA==
+pg-cursor@^2.15.3:
+  version "2.15.3"
+  resolved "https://registry.yarnpkg.com/pg-cursor/-/pg-cursor-2.15.3.tgz#19f05739ff95366eed28e80191a6321d0e036395"
+  integrity sha512-eHw63TsiGtFEfAd7tOTZ+TLy+i/2ePKS20H84qCQ+aQ60pve05Okon9tKMC+YN3j6XyeFoHnaim7Lt9WVafQsA==
 
 pg-int8@1.0.1:
   version "1.0.1"
@@ -5373,12 +5373,12 @@ pg-protocol@^1.9.5:
   resolved "https://registry.npmjs.org/pg-protocol/-/pg-protocol-1.9.5.tgz#e544eff37d6ab79c26281d7c0b59ac9be4862686"
   integrity sha512-DYTWtWpfd5FOro3UnAfwvhD8jh59r2ig8bPtc9H8Ds7MscE/9NYruUQWFAOuraRl29jwcT2kyMFQ3MxeaVjUhg==
 
-pg-query-stream@^4.9.6:
-  version "4.9.6"
-  resolved "https://registry.npmjs.org/pg-query-stream/-/pg-query-stream-4.9.6.tgz#8b415bb390243ee375396c0eef236fe3a65dbadd"
-  integrity sha512-fJALA+mw8RrnajWQdWDdK8Yo9soI3qqOH9cpepWRegXi7UCEi9AArgPmjM9tkVUd6Y/G7kbr728RRpgT+ya72g==
+pg-query-stream@^4.10.3:
+  version "4.10.3"
+  resolved "https://registry.yarnpkg.com/pg-query-stream/-/pg-query-stream-4.10.3.tgz#ed4461c76a1115a36581614ed1897ef4ecee375a"
+  integrity sha512-h2utrzpOIzeT9JfaqfvBbVuvCfBjH86jNfVrGGTbyepKAIOyTfDew0lAt8bbJjs9n/I5bGDl7S2sx6h5hPyJxw==
   dependencies:
-    pg-cursor "^2.14.6"
+    pg-cursor "^2.15.3"
 
 pg-types@^2.1.0:
   version "2.2.0"
