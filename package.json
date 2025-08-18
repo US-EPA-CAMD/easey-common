@@ -41,7 +41,7 @@
     "express": "^5.1.0",
     "helmet": "^8.1.0",
     "json2csv": "^5.0.7",
-    "pg": "^8.15.6",
+    "pg": "^8.16.3",
     "pg-copy-streams": "^6.0.6",
     "pg-pool": "^3.10.1",
     "pg-query-stream": "^4.10.3",
