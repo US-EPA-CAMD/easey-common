@@ -1,3 +1,10 @@
+# [21.3.0](https://github.com/US-EPA-CAMD/easey-common/compare/v21.2.1...v21.3.0) (2025-08-20)
+
+
+### Features
+
+* **6790:** added LookupType.Unit and accompanying RolesGuard logic ([5ca3069](https://github.com/US-EPA-CAMD/easey-common/commit/5ca3069efb4727c69eafd78e431244e0c6cabe99))
+
 ## [21.2.1](https://github.com/US-EPA-CAMD/easey-common/compare/v21.2.0...v21.2.1) (2025-08-06)
 
 
