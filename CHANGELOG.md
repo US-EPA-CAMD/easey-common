@@ -1,3 +1,11 @@
+## [21.3.1](https://github.com/US-EPA-CAMD/easey-common/compare/v21.3.0...v21.3.1) (2025-08-21)
+
+
+### Bug Fixes
+
+* update yarn.lock ([8596e46](https://github.com/US-EPA-CAMD/easey-common/commit/8596e46896f947d6575ed8e1f1a11c2880fbdeab))
+* upgrade jest dependency from v29 to v30 ([604a377](https://github.com/US-EPA-CAMD/easey-common/commit/604a3770aeb7141de240191e84773636c152b3b9))
+
 # [21.3.0](https://github.com/US-EPA-CAMD/easey-common/compare/v21.2.1...v21.3.0) (2025-08-20)
 
 
