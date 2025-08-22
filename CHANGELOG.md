@@ -1,3 +1,10 @@
+## [21.3.2](https://github.com/US-EPA-CAMD/easey-common/compare/v21.3.1...v21.3.2) (2025-08-22)
+
+
+### Bug Fixes
+
+* sha.js update ([e387f13](https://github.com/US-EPA-CAMD/easey-common/commit/e387f13aeebbeab7f024ec5b083bd238ce839d87))
+
 ## [21.3.1](https://github.com/US-EPA-CAMD/easey-common/compare/v21.3.0...v21.3.1) (2025-08-21)
 
 
