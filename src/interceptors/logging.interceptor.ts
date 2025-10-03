@@ -117,7 +117,7 @@ export class LoggingInterceptor implements NestInterceptor {
         // Start the recursive traversal with the provided data and key path
         traverse(data, keys);
 
-        return result;
+        return [...new Set(result)];
     }
 
     filterMoreInfo(request: any, response: unknown, responseBodyOutFields: AuditLogMetadata['responseBodyOutFields'], requestBodyOutFields: AuditLogMetadata['requestBodyOutFields'], requestParamsOutFields: AuditLogMetadata['requestParamsOutFields'], requestQueryOutFields: AuditLogMetadata['requestQueryOutFields'], requestHeadersOutFields: AuditLogMetadata['requestHeadersOutFields'], omitFields: AuditLogMetadata['omitFields']) {
