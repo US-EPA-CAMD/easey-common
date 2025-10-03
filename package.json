@@ -67,7 +67,7 @@
     "jest-sonar-reporter": "^2.0.0",
     "prettier": "^3.6.2",
     "semantic-release": "^19.0.3",
-    "ts-jest": "^29.4.1",
+    "ts-jest": "^29.4.4",
     "typescript": "^5.9.3"
   },
   "jest": {
