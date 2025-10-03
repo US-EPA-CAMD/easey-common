@@ -1,3 +1,10 @@
+## [21.3.3](https://github.com/US-EPA-CAMD/easey-common/compare/v21.3.2...v21.3.3) (2025-10-03)
+
+
+### Bug Fixes
+
+* audit message output unique ([d182a8d](https://github.com/US-EPA-CAMD/easey-common/commit/d182a8d16acbda5205310965b0c638c7875d913d))
+
 ## [21.3.2](https://github.com/US-EPA-CAMD/easey-common/compare/v21.3.1...v21.3.2) (2025-08-22)
 
 
