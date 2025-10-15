@@ -1,6 +1,6 @@
 {
   "name": "@us-epa-camd/easey-common",
-  "version": "21.3.3",
+  "version": "21.3.4",
   "description": "Shared easey package",
   "main": "index.js",
   "types": "index.d.js",

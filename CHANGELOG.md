@@ -1,3 +1,10 @@
+## [21.3.4](https://github.com/US-EPA-CAMD/easey-common/compare/v21.3.3...v21.3.4) (2025-10-15)
+
+
+### Bug Fixes
+
+* updated typeOrm and updating version. ([d01e9aa](https://github.com/US-EPA-CAMD/easey-common/commit/d01e9aa95f56ae60e2ad03cf00c7b1c180bb5fd9))
+
 ## [21.3.3](https://github.com/US-EPA-CAMD/easey-common/compare/v21.3.2...v21.3.3) (2025-10-03)
 
 
