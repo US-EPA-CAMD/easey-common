@@ -35,7 +35,7 @@ export class MaintenanceMiddleware implements NestMiddleware {
       if (result.data.status === "DOWN") {
         throw new EaseyException(new Error(this.errorMessage), HttpStatus.SERVICE_UNAVAILABLE);
       } else if (result.data.status === "TEST") {
-        if (!request.headers['x-client-token']) {
+        if (!request.headers['x-app-identifier']) {
           throw new EaseyException(new Error(this.errorMessage), HttpStatus.SERVICE_UNAVAILABLE);
         }
 
@@ -56,12 +56,12 @@ export class MaintenanceMiddleware implements NestMiddleware {
 
   }
 
-  async validateMaintenanceRequest(apiKey: string, authToken: string, clientIp: string, clientId: string, clientToken: string): Promise<boolean> {
+  async validateMaintenanceRequest(apiKey: string, authToken: string, clientIp: string, appIdentifier: string): Promise<boolean> {
     const url = this.configService.get("app.authApi").uri + "/tokens/maintenance-validate";
 
     try {
       const result = await firstValueFrom(
-        this.httpService.post(url, { authToken, clientIp, clientId, clientToken }, {
+        this.httpService.post(url, { authToken, clientIp, appIdentifier }, {
           headers: {
             "x-api-key": apiKey,
           },
@@ -76,26 +76,33 @@ export class MaintenanceMiddleware implements NestMiddleware {
 
   async validateMaintenance(request): Promise<boolean> {
     const authHeader = request.headers.authorization;
-    const clientId = request.headers["x-client-id"];
-    const clientTokenRequest = request.headers['x-client-token'];
+    const appIdentifier = request.headers["x-app-identifier"];
     const forwardedForHeader = request.headers["x-forwarded-for"];
     let ip = request.ip;
     const apiKey = this.configService.get("app.apiKey") || request.headers["x-api-key"];
 
-    if (
-      clientId === null || clientId === undefined ||
-      clientTokenRequest === null || clientTokenRequest === undefined
-    ) {
-      throw new EaseyException(new Error(this.errorMessage), HttpStatus.SERVICE_UNAVAILABLE);
+    // Validate app identifier is present
+    if (!appIdentifier) {
+      throw new EaseyException(
+        new Error(this.errorMessage),
+        HttpStatus.SERVICE_UNAVAILABLE
+      );
     }
 
-    const splitString = authHeader && authHeader.split(" ")[1] || '';
-    const clientToken = clientTokenRequest.split(" ");
+    // Validate app identifier is recognized
+    if (!['campd-ui', 'ecmps-ui'].includes(appIdentifier)) {
+      throw new EaseyException(
+        new Error(this.errorMessage),
+        HttpStatus.SERVICE_UNAVAILABLE
+      );
+    }
 
-    if (forwardedForHeader !== null && forwardedForHeader !== undefined) {
+    const authToken = authHeader?.split(" ")[1] || '';
+
+    if (forwardedForHeader) {
       ip = forwardedForHeader.split(",")[0];
     }
 
-    return await this.validateMaintenanceRequest(apiKey, splitString, ip, clientId, clientToken[1]);
+    return await this.validateMaintenanceRequest(apiKey, authToken, ip, appIdentifier);
   }
 }
