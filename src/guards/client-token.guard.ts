@@ -42,12 +42,17 @@ export class ClientTokenGuard implements CanActivate {
       return false;
     } catch (error) {
       if (error.response) {
+         const metadata = {
+          message: error.response.data?.message || error.message,
+          code: error.response.data?.code || 'CLIENT_VALIDATION_ERROR',
+          status: error.response.status
+        };
         throw new EaseyException(
           new Error(
             "An error occurred while validating the client's security token."
           ),
           HttpStatus.INTERNAL_SERVER_ERROR,
-          error
+          metadata
         );
       }
     }

@@ -16,7 +16,7 @@ export class AuthGuard implements CanActivate {
   constructor(
     private readonly configService: ConfigService,
     private readonly httpService: HttpService
-  ) {}
+  ) { }
 
   /**
    * To validate the provided security token by making a request to the Auth API.
@@ -50,18 +50,30 @@ export class AuthGuard implements CanActivate {
           throw new UnauthorizedException("Invalid or expired token. Access denied.");
         }
 
+        // Extract relevant fields from the error response for metadata
+        const metadata = {
+          message: error.response.data?.message || error.message,
+          code: error.response.data?.code || 'AUTH_VALIDATION_ERROR',
+          status: error.response.status
+        };
+
         throw new EaseyException(
           new Error("An error occurred while validating the security token."),
           HttpStatus.INTERNAL_SERVER_ERROR,
-          error
+          metadata
         );
       }
-
+      
+      const metadata = {
+        message: error.message,
+        code: 'UNEXPECTED_AUTH_ERROR',
+        status: HttpStatus.INTERNAL_SERVER_ERROR
+      };
       // Generic catch for unexpected errors
       throw new EaseyException(
         new Error("Unexpected authentication validation error."),
         HttpStatus.INTERNAL_SERVER_ERROR,
-        error
+        metadata
       );
     }
   }
