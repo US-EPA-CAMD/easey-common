@@ -1,3 +1,10 @@
+## [21.3.6](https://github.com/US-EPA-CAMD/easey-common/compare/v21.3.5...v21.3.6) (2025-10-20)
+
+
+### Bug Fixes
+
+* [#6933](https://github.com/US-EPA-CAMD/easey-common/issues/6933) Fix security vulnerability that exposes CLIENT_ID and CLIENT_SECRET in the browser. ([632cd0b](https://github.com/US-EPA-CAMD/easey-common/commit/632cd0b7302050336f565707d81f38d4e0ec97a6))
+
 ## [21.3.5](https://github.com/US-EPA-CAMD/easey-common/compare/v21.3.4...v21.3.5) (2025-10-16)
 
 
