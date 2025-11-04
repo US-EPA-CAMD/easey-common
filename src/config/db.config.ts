@@ -21,7 +21,7 @@ if (process.env.VCAP_SERVICES) {
   pgUser = svcCredentials.username;
   pgPwd = svcCredentials.password;
   pgDb = svcCredentials.name;
-  pgReplicaHost = svcCredentials.replica_host || process.env.EASEY_DB_REPLICA_HOST || pgHost;
+  pgReplicaHost = svcCredentials.replica_host || pgHost;
 }
 
 export const dbConfig = registerAs("database", () => ({
