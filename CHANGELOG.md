@@ -1,3 +1,15 @@
+# [21.4.0](https://github.com/US-EPA-CAMD/easey-common/compare/v21.3.6...v21.4.0) (2025-11-04)
+
+
+### Bug Fixes
+
+* remove falling back to the EASEY_DB_REPLICA_HOST value ([5a0d849](https://github.com/US-EPA-CAMD/easey-common/commit/5a0d84937a9be6729b8f627097709a170dff0f08))
+
+
+### Features
+
+* added withSlaveConnection and withMasterConnection funtion for enable access to read replica ([2d980cf](https://github.com/US-EPA-CAMD/easey-common/commit/2d980cfc460b12920d107d1294c929172ecd1403))
+
 ## [21.3.6](https://github.com/US-EPA-CAMD/easey-common/compare/v21.3.5...v21.3.6) (2025-10-20)
 
 
