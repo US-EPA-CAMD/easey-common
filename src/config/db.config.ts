@@ -6,6 +6,7 @@ let pgPort = +process.env.EASEY_DB_PORT || 5432;
 let pgUser = process.env.EASEY_DB_USER || "postgres";
 let pgPwd = process.env.EASEY_DB_PWD || "password";
 let pgDb = process.env.EASEY_DB_NAME || "postgres";
+let pgReplicaHost = process.env.EASEY_DB_REPLICA_HOST || pgHost;
 
 if (process.env.VCAP_SERVICES) {
   const dbService = process.env.EASEY_DB_SERVICE || "camd-pg-db";
@@ -20,6 +21,7 @@ if (process.env.VCAP_SERVICES) {
   pgUser = svcCredentials.username;
   pgPwd = svcCredentials.password;
   pgDb = svcCredentials.name;
+  pgReplicaHost = svcCredentials.replica_host || process.env.EASEY_DB_REPLICA_HOST || pgHost;
 }
 
 export const dbConfig = registerAs("database", () => ({
@@ -28,4 +30,5 @@ export const dbConfig = registerAs("database", () => ({
   user: pgUser,
   pwd: pgPwd,
   name: pgDb,
+  replicaHost: pgReplicaHost,
 }));
