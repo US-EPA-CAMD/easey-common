@@ -1,3 +1,10 @@
+## [21.4.2](https://github.com/US-EPA-CAMD/easey-common/compare/v21.4.1...v21.4.2) (2025-11-07)
+
+
+### Bug Fixes
+
+* added useSlaveRepository - Executes a database operation using a slave ([528ec7b](https://github.com/US-EPA-CAMD/easey-common/commit/528ec7bae4622327f4ed9e8808d54a155e311b97))
+
 ## [21.4.1](https://github.com/US-EPA-CAMD/easey-common/compare/v21.4.0...v21.4.1) (2025-11-04)
 
 
