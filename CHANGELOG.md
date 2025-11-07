@@ -1,3 +1,10 @@
+## [21.4.3](https://github.com/US-EPA-CAMD/easey-common/compare/v21.4.2...v21.4.3) (2025-11-07)
+
+
+### Bug Fixes
+
+* added useSlaveryRepository to index.ts ([5e42a97](https://github.com/US-EPA-CAMD/easey-common/commit/5e42a9719d871e5997c726b60a8a46610521d1b9))
+
 ## [21.4.2](https://github.com/US-EPA-CAMD/easey-common/compare/v21.4.1...v21.4.2) (2025-11-07)
 
 
