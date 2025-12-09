@@ -1,3 +1,10 @@
+## [21.4.5](https://github.com/US-EPA-CAMD/easey-common/compare/v21.4.4...v21.4.5) (2025-12-09)
+
+
+### Bug Fixes
+
+* [#7009](https://github.com/US-EPA-CAMD/easey-common/issues/7009) Updated TypeORM Dependency to v 0.3.28 ([464fcc8](https://github.com/US-EPA-CAMD/easey-common/commit/464fcc8c3ba4715b4dcdaf1939b8eb5fb7d26a4e))
+
 ## [21.4.4](https://github.com/US-EPA-CAMD/easey-common/compare/v21.4.3...v21.4.4) (2025-12-02)
 
 
