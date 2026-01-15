@@ -1,3 +1,10 @@
+## [21.4.6](https://github.com/US-EPA-CAMD/easey-common/compare/v21.4.5...v21.4.6) (2026-01-15)
+
+
+### Bug Fixes
+
+* release new version ([fcd0292](https://github.com/US-EPA-CAMD/easey-common/commit/fcd0292e10301fb4761676db22d10380f817f34d))
+
 ## [21.4.5](https://github.com/US-EPA-CAMD/easey-common/compare/v21.4.4...v21.4.5) (2025-12-09)
 
 
