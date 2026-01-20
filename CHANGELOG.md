@@ -1,3 +1,11 @@
+# [21.5.0](https://github.com/US-EPA-CAMD/easey-common/compare/v21.4.6...v21.5.0) (2026-01-20)
+
+
+### Features
+
+* **7093:** update node version in workflows ([92fce4d](https://github.com/US-EPA-CAMD/easey-common/commit/92fce4dff03c11f33044105571bd68fc27f8a766))
+* **7093:** upgrade to Node v22 ([25b6829](https://github.com/US-EPA-CAMD/easey-common/commit/25b68295624b34101172884bc7676ced3ee7b799))
+
 ## [21.4.6](https://github.com/US-EPA-CAMD/easey-common/compare/v21.4.5...v21.4.6) (2026-01-15)
 
 
