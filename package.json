@@ -28,7 +28,7 @@
     "xml2js": "^0.5.0"
   },
   "dependencies": {
-    "@golevelup/ts-jest": "^0.7.0",
+    "@golevelup/ts-jest": "^1.2.1",
     "@nestjs/axios": "4.0.1",
     "@nestjs/common": "^11.1.14",
     "@nestjs/config": "^4.0.3",
