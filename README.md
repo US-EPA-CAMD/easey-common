@@ -8,7 +8,7 @@ The easey-common package contains shared code from across the US-EPA-CAMD projec
 # Downloading and using easey-common
 
 ## Getting Started
-These instructions will get you a copy of the project package up and running and downloaded.
+These instructions will get you a copy of the project up and running and downloaded.
 
 ### Prerequisites
 - Project running node
