@@ -1,3 +1,10 @@
+## [21.5.3](https://github.com/US-EPA-CAMD/easey-common/compare/v21.5.2...v21.5.3) (2026-04-21)
+
+
+### Bug Fixes
+
+* **83566:** resolve IsInYearRange max year at validation time, not module load ([775cfd1](https://github.com/US-EPA-CAMD/easey-common/commit/775cfd1a416d10eda2297794e6c2a0b27fad36ff))
+
 ## [21.5.2](https://github.com/US-EPA-CAMD/easey-common/compare/v21.5.1...v21.5.2) (2026-04-14)
 
 
