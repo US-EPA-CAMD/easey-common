@@ -2330,7 +2330,7 @@ export const propertyMetadata = {
     description:
       'Method or equipment used by the combustion unit to minimize NOx emissions.',
     example:
-      'Selective Catalytic Reduction, Low NOx Burner Technology w/ Separated OFA',
+      'Selective Catalytic Reduction | Low NOx Burner Technology w/ Separated OFA',
   },
   noxMass: {
     fieldLabels: {
