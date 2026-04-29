@@ -1,3 +1,10 @@
+## [21.5.4](https://github.com/US-EPA-CAMD/easey-common/compare/v21.5.3...v21.5.4) (2026-04-29)
+
+
+### Bug Fixes
+
+* trigger release for [#6897](https://github.com/US-EPA-CAMD/easey-common/issues/6897) delimiter regex update ([ad45985](https://github.com/US-EPA-CAMD/easey-common/commit/ad4598545400893057b7949c8c2f63ae3c686d7a))
+
 ## [21.5.3](https://github.com/US-EPA-CAMD/easey-common/compare/v21.5.2...v21.5.3) (2026-04-21)
 
 
