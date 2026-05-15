@@ -1,3 +1,10 @@
+## [21.5.5](https://github.com/US-EPA-CAMD/easey-common/compare/v21.5.4...v21.5.5) (2026-05-15)
+
+
+### Bug Fixes
+
+* **regex:** add quotes to regex patterns for valid PostgreSQL syntax ([57dab06](https://github.com/US-EPA-CAMD/easey-common/commit/57dab06f1a1126b88dba7f378f9cf7dc19691a53))
+
 ## [21.5.4](https://github.com/US-EPA-CAMD/easey-common/compare/v21.5.3...v21.5.4) (2026-04-29)
 
 
