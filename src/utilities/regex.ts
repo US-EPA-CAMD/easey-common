@@ -11,7 +11,7 @@ export class Regex {
    */
   public static commaDelimited(str: string): string {
     const s = Regex.escape(str);
-    return `((^${s}$)|([,][ ]*${s}$)|([,][ ]*${s}[,])|(^${s}[,])|(^${s} [(])|([,][ ]*${s} [(]))`;
+    return `'((^${s}$)|([,][ ]*${s}$)|([,][ ]*${s}[,])|(^${s}[,])|(^${s} [(])|([,][ ]*${s} [(]))'`;
   }
 
   /**
@@ -19,7 +19,7 @@ export class Regex {
    */
   public static pipeDelimited(str: string): string {
     const s = Regex.escape(str);
-    return `((^${s}$)|([|][ ]*${s}$)|([|][ ]*${s}[|])|(^${s}[|])|(^${s} [(])|([|][ ]*${s} [(]))`;
+    return `'((^${s}$)|([|][ ]*${s}$)|([|][ ]*${s}[|])|(^${s}[|])|(^${s} [(])|([|][ ]*${s} [(]))'`;
   }
 
 }
