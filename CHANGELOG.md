@@ -1,3 +1,10 @@
+## [21.5.7](https://github.com/US-EPA-CAMD/easey-common/compare/v21.5.6...v21.5.7) (2026-06-04)
+
+
+### Bug Fixes
+
+* [#7196](https://github.com/US-EPA-CAMD/easey-common/issues/7196) release new version as part of 7196 ([bcfa71f](https://github.com/US-EPA-CAMD/easey-common/commit/bcfa71f8c3f19e7a4fab52fb19096bcb8f47941d))
+
 ## [21.5.6](https://github.com/US-EPA-CAMD/easey-common/compare/v21.5.5...v21.5.6) (2026-06-02)
 
 
