@@ -48,7 +48,7 @@ export class RolesGuard implements CanActivate {
     return true;
   }
 
-  private async checkNotEvalOrSubmitted(
+  private async checkNotEvalSubmittedOrImporting(
     item: string,
     lookupType: LookupType,
     enforceEvalSubmit: boolean
@@ -95,13 +95,24 @@ export class RolesGuard implements CanActivate {
       [monPlanIds]
     );
 
+    // NEW is excluded: a draft import is still being assembled (its plan is
+    // checked out to the user), so only QUEUED/WIP imports lock the plan.
+    const importRecordsInProgress = await this.returnManager().query(
+      `SELECT * FROM CAMDECMPSAUX.import_set iset
+       JOIN CAMDECMPSAUX.import_queue iq USING(import_set_id)
+       WHERE iq.mon_plan_id = ANY($1) AND iset.status_cd NOT IN ('NEW', 'COMPLETE', 'ERROR');
+      `,
+      [monPlanIds]
+    );
+
     if (
       (evalRecordsInProgress && evalRecordsInProgress.length > 0) ||
-      (submissionRecordsInProgress && submissionRecordsInProgress.length > 0)
+      (submissionRecordsInProgress && submissionRecordsInProgress.length > 0) ||
+      (importRecordsInProgress && importRecordsInProgress.length > 0)
     ) {
       throw new EaseyException(
         new Error(
-          "This location is currently being evaluated or submitted. Please try again after it is complete"
+          "This location is currently being evaluated, submitted, or imported. Please try again after it is complete"
         ),
         HttpStatus.BAD_REQUEST
       );
@@ -126,7 +137,7 @@ export class RolesGuard implements CanActivate {
       const lookupVal = params[lookupKey];
 
       if (
-        (await this.checkNotEvalOrSubmitted(
+        (await this.checkNotEvalSubmittedOrImporting(
           lookupVal,
           lookupType,
           enforceEvalSubmitCheck
@@ -163,7 +174,7 @@ export class RolesGuard implements CanActivate {
   ) {
     if (step === pathChunks.length - 1) {
       if (
-        (await this.checkNotEvalOrSubmitted(
+        (await this.checkNotEvalSubmittedOrImporting(
           data[pathChunks[step]],
           lookupType,
           enforceEvalSubmitCheck
@@ -261,7 +272,7 @@ export class RolesGuard implements CanActivate {
 
         for (const chunk of pathChunks) {
           if (
-            !(await this.checkNotEvalOrSubmitted(
+            !(await this.checkNotEvalSubmittedOrImporting(
               chunk,
               lookupType,
               enforceEvalSubmitCheck
@@ -285,7 +296,7 @@ export class RolesGuard implements CanActivate {
       }
 
       if (
-        (await this.checkNotEvalOrSubmitted(
+        (await this.checkNotEvalSubmittedOrImporting(
           lookupVal,
           lookupType,
           enforceEvalSubmitCheck
@@ -547,7 +558,7 @@ export class RolesGuard implements CanActivate {
             if (
               (enforceCheckout && !checkedOutCriteria.has(ml)) ||
               !lookupDataList.has(ml) ||
-              !(await this.checkNotEvalOrSubmitted(
+              !(await this.checkNotEvalSubmittedOrImporting(
                 ml,
                 LookupType.Location,
                 enforceEvalSubmit
