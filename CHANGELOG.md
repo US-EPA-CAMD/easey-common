@@ -1,3 +1,11 @@
+## [21.5.8](https://github.com/US-EPA-CAMD/easey-common/compare/v21.5.7...v21.5.8) (2026-08-11)
+
+
+### Bug Fixes
+
+* Update typeorm dependency to 0.3.31 ([d9be29e](https://github.com/US-EPA-CAMD/easey-common/commit/d9be29e228dc7a921e9ebaeb7bec1adbb4f53d6f))
+* Update typeorm dependency to 0.3.31 ([cfec63e](https://github.com/US-EPA-CAMD/easey-common/commit/cfec63e3b18a89f8bdcd0442a7ca376283fb0ee6))
+
 ## [21.5.7](https://github.com/US-EPA-CAMD/easey-common/compare/v21.5.6...v21.5.7) (2026-06-04)
 
 
