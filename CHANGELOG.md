@@ -1,3 +1,15 @@
+# [21.6.0](https://github.com/US-EPA-CAMD/easey-common/compare/v21.5.8...v21.6.0) (2026-08-21)
+
+
+### Bug Fixes
+
+* **6037:** update blocking statuses ([8cb6628](https://github.com/US-EPA-CAMD/easey-common/commit/8cb662866983d16c6d7db5ade0e73efd757c3b99))
+
+
+### Features
+
+* **6037:** update role guard to check for in-progress bulk imports ([21e40bb](https://github.com/US-EPA-CAMD/easey-common/commit/21e40bbdc25d22b86925220a3540a60b2d0fed0f))
+
 ## [21.5.8](https://github.com/US-EPA-CAMD/easey-common/compare/v21.5.7...v21.5.8) (2026-08-11)
 
 
