@@ -1,3 +1,10 @@
+## [21.6.2](https://github.com/US-EPA-CAMD/easey-common/compare/v21.6.1...v21.6.2) (2026-09-03)
+
+
+### Bug Fixes
+
+* release a new version for dependabot updates ([a44fe68](https://github.com/US-EPA-CAMD/easey-common/commit/a44fe68d74274124ba6c5d374648c31a75d122d8))
+
 ## [21.6.1](https://github.com/US-EPA-CAMD/easey-common/compare/v21.6.0...v21.6.1) (2026-09-02)
 
 
