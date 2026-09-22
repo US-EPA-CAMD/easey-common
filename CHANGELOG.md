@@ -1,3 +1,10 @@
+## [21.6.3](https://github.com/US-EPA-CAMD/easey-common/compare/v21.6.2...v21.6.3) (2026-09-22)
+
+
+### Bug Fixes
+
+* added a period end of a sentence. [#6307](https://github.com/US-EPA-CAMD/easey-common/issues/6307) ([db9aef5](https://github.com/US-EPA-CAMD/easey-common/commit/db9aef578e56a6b1ea1c7ef8f7dfefc94de3d811))
+
 ## [21.6.2](https://github.com/US-EPA-CAMD/easey-common/compare/v21.6.1...v21.6.2) (2026-09-03)
 
 
