@@ -111,7 +111,7 @@ export class RolesGuard implements CanActivate {
     ) {
       throw new EaseyException(
         new Error(
-          "This location is currently being evaluated, submitted, or imported. Please try again after it is complete"
+          "This location is currently being evaluated, submitted, or imported. Please try again after it is complete."
         ),
         HttpStatus.BAD_REQUEST
       );
