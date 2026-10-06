@@ -1,3 +1,10 @@
+## [21.6.4](https://github.com/US-EPA-CAMD/easey-common/compare/v21.6.3...v21.6.4) (2026-10-06)
+
+
+### Bug Fixes
+
+* moved regex-parameter.ts to be shared from here  [#6307](https://github.com/US-EPA-CAMD/easey-common/issues/6307) ([0c79646](https://github.com/US-EPA-CAMD/easey-common/commit/0c7964698c44893ad213499f691c25569281d898))
+
 ## [21.6.3](https://github.com/US-EPA-CAMD/easey-common/compare/v21.6.2...v21.6.3) (2026-09-22)
 
 
