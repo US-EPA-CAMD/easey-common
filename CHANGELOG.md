@@ -1,3 +1,10 @@
+## [21.6.5](https://github.com/US-EPA-CAMD/easey-common/compare/v21.6.4...v21.6.5) (2026-10-08)
+
+
+### Bug Fixes
+
+* RolesGuard uses strict Set.has() comparisons. Previous String representation of numeric values will now need to be treated as ints. [#7307](https://github.com/US-EPA-CAMD/easey-common/issues/7307) ([8a71576](https://github.com/US-EPA-CAMD/easey-common/commit/8a715768e092001558fbdae884c89429f4432e1c))
+
 ## [21.6.4](https://github.com/US-EPA-CAMD/easey-common/compare/v21.6.3...v21.6.4) (2026-10-06)
 
 
