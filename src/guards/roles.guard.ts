@@ -444,7 +444,7 @@ export class RolesGuard implements CanActivate {
           [request.user.userId],
         );
         checkedOutCriteria = new Set(
-          checkedOutCriteria.map((c) => c["unit_id"])
+          checkedOutCriteria.map((c) => String(c["unit_id"]))
         );
       }
     }
@@ -475,7 +475,9 @@ export class RolesGuard implements CanActivate {
           "SELECT camdecmpswks.get_facility_units($1)",
           [facilitiesWithRole]
         );
-        lookupDataList = new Set(units.map((o) => o["get_facility_units"]));
+        lookupDataList = new Set(
+          units.map((o) => String(o["get_facility_units"]))
+        );
         request.allowedUnits = lookupDataList;
         break;
       case LookupType.Facility:
