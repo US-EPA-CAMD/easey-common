@@ -52,3 +52,5 @@ updates:
         versions: [">=12.0.0"]        
       - dependency-name: "undici"
         versions: [">=7.0.0"]
+      - dependency-name: "semantic-release"
+        versions: [">=26.0.0"]
